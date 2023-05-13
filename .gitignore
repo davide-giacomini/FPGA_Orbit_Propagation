@@ -1,0 +1,10 @@
+*prova*
+
+.vscode*
+src/*.o
+src/*_test
+src/*.txt
+
+# src/orbit_csv/
+
+vitis_hls.log
