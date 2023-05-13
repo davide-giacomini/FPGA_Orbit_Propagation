@@ -110,89 +110,8 @@ void print_info(const std::string& str, ...) {
 //     return 0;
 // }
 
-int write_matrix_to_csv(vector<array<double,N>> X, string filename) {
-
-    // Path to the directory
-    char * dir_path = "orbit_csv";
-    // Structure which would store the metadata
-    struct stat sb;
-    // Calls the function with path as argument
-    // If the file/directory exists at the path returns 0
-    // If block executes if path exists
-    if (stat(dir_path, &sb) != 0) {   // Directory doesn't exists
-        int status = mkdir(dir_path, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
-        if (status != 0) {
-            print_error("!ERROR! creating directory");
-            return -1;
-        }
-    }
-
-    ofstream outfile("orbit_csv/" + filename);
-
-    if (outfile.is_open()) {
-
-        outfile << fixed << setprecision(10); // set precision to 10 decimal places
-
-        for (int i = 0; i < X.size(); i++) {
-            for (int j = 0; j < N-1; j++) {
-                outfile << X[i][j] << ",";
-            }
-
-            outfile << X[i][N-1] << endl;
-        }
-        outfile.close();
-
-        cout << filename << " updated." << endl;
-
-    } else {
-
-        print_error("Error: Unable to open " + filename + ".");
-        return -1;
-    }
-
-    return 0;
-}
-
-int write_array_to_csv(vector<double> X, string filename) {
-
-    // Path to the directory
-    char * dir_path = "orbit_csv";
-    // Structure which would store the metadata
-    struct stat sb;
-    // Calls the function with path as argument
-    // If the file/directory exists at the path returns 0
-    // If block executes if path exists
-    if (stat(dir_path, &sb) != 0) {   // Directory doesn't exists
-        int status = mkdir(dir_path, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
-        if (status != 0) {
-            print_error("!ERROR! creating directory");
-            return -1;
-        }
-    }
-
-    ofstream outfile("orbit_csv/" + filename);
-
-    if (outfile.is_open()) {
-
-        outfile << fixed << setprecision(10); // set precision to 10 decimal places
-
-        for (int i = 0; i < X.size(); i++) {
-            outfile << X[i] << endl;
-        }
-        outfile.close();
-
-        cout << filename << " updated." << endl;
-
-    } else {
-
-        print_error("Error: Unable to open " + filename + ".");
-        return -1;
-    }
-
-    return 0;
-}
-
-int write_matrix_to_csv(d_fixed_t** X, int size, string filename) {
+template<typename T>
+int write_matrix_to_csv(T X, int size, string filename) {
 
     // Path to the directory
     char * dir_path = "orbit_csv";
@@ -237,7 +156,8 @@ int write_matrix_to_csv(d_fixed_t** X, int size, string filename) {
     return 0;
 }
 
-int write_array_to_csv(d_fixed_t* X, int size, string filename) {
+template<typename T>
+int write_array_to_csv(T X, int size, string filename) {
 
     // Path to the directory
     char * dir_path = "orbit_csv";
@@ -506,40 +426,31 @@ int main(int argc, char** argv)
     auto ode_cpu_wrapper = [MU](double* out, const double* in) { ode_cpu(out, in, MU); };
     rk45_cpu(ode_cpu_wrapper, yy, tt, y0, 0.0, TF, 15.0, TOL);
 
-    write_matrix_to_csv(yy, "y_rk45_tol09_cpp.csv");
-    write_array_to_csv(tt, "t_rk45_tol09_cpp.csv");
+    write_matrix_to_csv(yy, yy.size(), "y_rk45_tol09_cpp.csv");
+    write_array_to_csv(tt, tt.size(), "t_rk45_tol09_cpp.csv");
     // ****** CPU computation 1 computation ends ****** //
 
 
     // ****** FPGA computation 1 computation starts ****** //
-    // int size = 0;
-    // int rows = (int) (TF+1) / 5;
-    // d_fixed_t** yy_fpga = create_matrix<d_fixed_t>(rows, N);
-    // d_fixed_t* tt_fpga = new d_fixed_t[rows];
-    // d_uint_t* in_yy_fpga = new d_uint_t[L];
-    // d_uint_t* in_tt_fpga = new d_uint_t[L_T];
+    unsigned int size = 0;
+    double h_min = 0.1;
+    const unsigned int max_rows = ceil(TF/h_min) + 1;
+    double** yy_fpga = create_matrix<double>(max_rows, N);
+    double* tt_fpga = new double[max_rows];
 
-    // for (int n=0; n<N; n++) {
-    //     yy_fpga[0][n] = y0[n];
-    // }
+    for (int n=0; n<N; n++) {
+        yy_fpga[0][n] = y0[n];
+    }
+    tt_fpga[0] = 0.0;
 
-    // // Transfer in array with elements 512-bit wide
-    // memcpy(in_yy_fpga, yy_fpga[0], N * sizeof(d_fixed_t));
-    // memcpy(in_tt_fpga, tt_fpga   ,     sizeof(d_fixed_t));
+    //FPGA computation
+    runge_kutta_45(yy_fpga[0], tt_fpga, TF, 15.0, TOL, MU, size);
 
-    // //FPGA computation
-    // runge_kutta_45(in_yy_fpga, in_tt_fpga, TF, 100.0, TOL, MU, size);
+    write_matrix_to_csv(yy_fpga, size, "y_rk45_tol09_fpga_sim.csv");
+    write_array_to_csv(tt_fpga, size, "t_rk45_tol09_fpga_sim.csv");
 
-    // memcpy(yy_fpga[0], in_yy_fpga, size * N * sizeof(d_fixed_t));
-    // memcpy(tt_fpga   , in_tt_fpga, size *     sizeof(d_fixed_t));
-
-    // write_matrix_to_csv(yy_fpga, size, "rk45_cpp_fpga_1_computation.csv");
-    // write_array_to_csv(tt_fpga, size, "t_rk45_cpp_fpga_1_computation.csv");
-
-    // delete_matrix(yy_fpga);
-    // delete[] tt_fpga;
-    // delete[] in_yy_fpga;
-    // delete[] in_tt_fpga;
+    delete_matrix(yy_fpga);
+    delete[] tt_fpga;
     // ****** FPGA computation 1 computation ends ****** //
 
     cout << endl;   print_info("End of simulation.");   cout << endl;

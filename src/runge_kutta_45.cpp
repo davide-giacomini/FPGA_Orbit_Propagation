@@ -142,7 +142,7 @@ void ode_fpga(d_fixed_t out[N], const d_fixed_t in[N], const d_fixed_t c[N], d_f
 }
 
 // Remember that the top level function must have the same name as the file name
-void runge_kutta_45(d_uint_t* yy, d_uint_t* tt, const d_fixed_t tf, const d_fixed_t h, const d_fixed_t tol, const d_fixed_t mu, int& size){
+void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, const double tol, const double mu, unsigned int& size){
 
 	#pragma HLS ALLOCATION function instances=macply limit=1
 	#pragma HLS ALLOCATION function instances=division limit=1
@@ -152,9 +152,10 @@ void runge_kutta_45(d_uint_t* yy, d_uint_t* tt, const d_fixed_t tf, const d_fixe
 	#pragma HLS ALLOCATION function instances=dot_product limit=1
 
 	// The depth is necessary for the cosimulation. The depth is equal to the number of elements of the vector (matrix), no matter which data type it is. For example, for a vector V[256], depth=256, for a matrix M[256][256], the depth=65536. You have to synthesize WITH the depth, so that the cosimulation is able to know how many elements the m_axi will read.
-	// depth=L
-	#pragma HLS INTERFACE mode=m_axi bundle=X_BUS depth=3072 max_widen_bitwidth=1024 port=yy
-	#pragma HLS INTERFACE mode=m_axi bundle=T_BUS depth=512 max_widen_bitwidth=1024 port=tt
+	// depth_X_BUS = STEP_MAX*N, depth_T_BUS = STEP_MAX
+	// Can't select it here, but m_axi_alygnment_byte_size=64
+	#pragma HLS INTERFACE mode=m_axi bundle=X_BUS depth=12288 max_widen_bitwidth=1024 port=yy
+	#pragma HLS INTERFACE mode=m_axi bundle=T_BUS depth=2048 max_widen_bitwidth=1024 port=tt
 
 	#pragma HLS INTERFACE s_axilite port=yy
 	#pragma HLS INTERFACE s_axilite port=tt
@@ -182,42 +183,48 @@ void runge_kutta_45(d_uint_t* yy, d_uint_t* tt, const d_fixed_t tf, const d_fixe
 
     d_fixed_t k[DIMS][N];   // I declare k
 
-	d_fixed_t yy_loc[STEP_MAX][N], tt_loc[STEP_MAX];
-	d_fixed_t tf_loc = tf, mu_loc = mu, h_loc = h;
-	d_fixed_t tol_loc = tol, tol_squared = tol_loc*tol_loc, one_tenth_of_tol_squared = (d_fixed_t) 0.1*tol_loc*tol_loc;
+    d_fixed_t yy_loc[STEP_MAX][N], mu_loc = mu, h_loc = h0, tol_loc = tol;
+    d_t_t tt_loc[STEP_MAX], t0_loc, tf_loc = tf;
 
-	memcpy(yy_loc, yy, N * sizeof(d_fixed_t));
-	tt_loc[0] = 0.0;
+    for (int i=0; i<N; i++) {
+        yy_loc[0][i] = yy[i];
+    }
+    t0_loc = tt_loc[0] = tt[0];
 
-	int tk = 0;
-	int cycles = 0;
-	main_loop:while (tt_loc[tk] < tf_loc) {
+	unsigned int tk_prev = 0;
+    unsigned int tk_next = 0;
+	unsigned int cycles = 0;
+
+	main_loop:while (tt_loc[tk_prev] < tf_loc) {
         #pragma HLS loop_tripcount max=1000000 avg=500
-        
-        double tmp_h_loc = h_loc;
 
-		if (tk + 1 == STEP_MAX) {
-            //FIXME this case doesn't really work
-			// Copy into external memory (I don't copy the last one)
-			memcpy(yy + cycles * (STEP_MAX-1) * N, yy_loc, (STEP_MAX-1) * N * sizeof(d_fixed_t));
-			memcpy(tt + cycles * (STEP_MAX-1)    , tt_loc, (STEP_MAX-1) *     sizeof(d_fixed_t));
+        if (tk_prev == STEP_MAX-1) {
+            // As long as Q < STEP_MAX and STEP_MAX is a power of 2, (cycles*N * STEP_MAX/Q) will not be fractional
+            for (int i=0; i< STEP_MAX*N; i++) {
+                yy[cycles * STEP_MAX * N + i] = (double) ((d_fixed_t*) yy_loc)[i];
+            }
+            for (int i=0; i< STEP_MAX; i++) {
+                tt[cycles * STEP_MAX + i] = (double) tt_loc[i];
+            }
+
+			// Count cycle and reset tk_next
 			cycles++;
-
-			// Reset everything
-			tk = 0;
-			tt_loc[0] = tt_loc[STEP_MAX-1];
-			memcpy(yy_loc, &yy_loc[STEP_MAX-1], N * sizeof(d_fixed_t));
+			tk_next = 0;
+            // std::cout << cycles << std::endl;
 		}
+        else {
+            tk_next = tk_prev + 1;
+        }
 
-		if (tt_loc[tk] + h_loc > tf_loc) {
-			h_loc = tf_loc - tt_loc[tk];
+		if (tt_loc[tk_prev] + h_loc > tf_loc) {
+			h_loc = tf_loc - tt_loc[tk_prev];
 		}
 
         // ****** MORE COMPACT START ****** //
 
         d_fixed_t c[N] = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
 
-        ode_fpga(k[0], yy_loc[tk], c, mu_loc);   // First iteration
+        ode_fpga(k[0], yy_loc[tk_prev], c, mu_loc);   // First iteration
 
         outer:for (int i=1; i<DIMS; i++) {
 
@@ -233,7 +240,7 @@ void runge_kutta_45(d_uint_t* yy, d_uint_t* tt, const d_fixed_t tf, const d_fixe
                 c[n] = multiply(h_loc, sum);        // c[n] = h_loc * sum;
             }
 
-            ode_fpga(k[i], yy_loc[tk], c, mu_loc);
+            ode_fpga(k[i], yy_loc[tk_prev], c, mu_loc);
         }
 
         d_fixed_t e[N] = {0,0,0,0,0,0};
@@ -242,6 +249,8 @@ void runge_kutta_45(d_uint_t* yy, d_uint_t* tt, const d_fixed_t tf, const d_fixe
 
                 macply(e[n], E[j], k[j][n]);  // e[n] += E[j]*k[j][n];
             }
+
+            e[n] = multiply(h_loc, e[n]);        // e[n] *= h_loc;
         }
         // ****** MORE COMPACT END ****** //
 
@@ -277,21 +286,21 @@ void runge_kutta_45(d_uint_t* yy, d_uint_t* tt, const d_fixed_t tf, const d_fixe
 
         // d_tol_t e[D];
         // for (int d=0; d<D; d++) {
-        //     e[d] = E[0]*k[0][d] + E[1]*k[1][d] + E[2]*k[2][d] + E[3]*k[3][d] + E[4]*k[4][d] + E[5]*k[5][d];
+        //     e[d] = h * ( E[0]*k[0][d] + E[1]*k[1][d] + E[2]*k[2][d] + E[3]*k[3][d] + E[4]*k[4][d] + E[5]*k[5][d] );
         // }
         // ****** MORE READABLE END ****** //
 
-        d_fixed_t err = dot_product(e, e, D); // e[0]*e[0] + e[1]*e[1] + e[2]*e[2];
+        d_sqrsum_t squared_sum = 0;
+        sq_sum_loop:for (int i=0; i<N; i++) {
+            squared_sum += e[i]*e[i];
+        }
+        d_norm_t err; fxp_sqrt(err, squared_sum);
+
         d_fixed_t scale = 1.0;
+        d_fixed_t tol_step = tol_loc * h_loc / (tf_loc-t0_loc);
 
-        if (err <= tol_squared) {
+        if (err <= tol_step) {
 
-//            update_loop:for (int n=0; n<N; n++) {
-//                d_fixed_t sum = (B[0]*k[0][n] + B[1]*k[1][n] + B[2]*k[2][n] + B[3]*k[3][n] + B[4]*k[4][n] + B[5]*k[5][n]);
-//                yy_loc[tk+1][n] = yy_loc[tk][n] + h_loc * sum;
-//            }
-
-//             yy_loc[tk+1][n] = yy_loc[tk][n] + h_loc * (B[0]*k[0][n] + B[1]*k[1][n] + B[2]*k[2][n] + B[3]*k[3][n] + B[4]*k[4][n] + B[5]*k[5][n]);
             update_outer:for (int n=0; n<N; n++) {
 
                 d_fixed_t sum = 0;
@@ -300,33 +309,32 @@ void runge_kutta_45(d_uint_t* yy, d_uint_t* tt, const d_fixed_t tf, const d_fixe
                     macply(sum, B[j], k[j][n]);    // sum = B[0]*k[0][n] + B[1]*k[1][n] + B[2]*k[2][n] + B[3]*k[3][n] + B[4]*k[4][n] + B[5]*k[5][n]
                 }
 
-                yy_loc[tk+1][n] = yy_loc[tk][n] + multiply(h_loc, sum);
+                yy_loc[tk_next][n] = yy_loc[tk_prev][n] + multiply(h_loc, sum);
             }
 
 
-            tt_loc[tk+1] = tt_loc[tk] + h_loc;
-            tk++;
+            tt_loc[tk_next] = tt_loc[tk_prev] + h_loc;
 
-            if (err <= one_tenth_of_tol_squared) {
-                scale = 1.11;
-            }
+            tk_prev = tk_next;
+
+            scale = 1.11;
         }
         else {
             scale = 0.99;
         }
 
         h_loc *= scale;
-
-        // for (int n=0; n<N; n++) {
-        //         yy_loc[tk+1][n] = yy_loc[tk][n] + h_loc * (B[0]*k[0][n] + B[1]*k[1][n] + B[2]*k[2][n] + B[3]*k[3][n] + B[4]*k[4][n] + B[5]*k[5][n]);
-        //     }
-        // tt_loc[tk+1] = tt_loc[tk] + h_loc;
-        // tk++;
+        std::cout << tk_prev << std::endl;
+        // std::cout << h_loc << std::endl;
     }
 
-	memcpy(yy + cycles * STEP_MAX * N, yy_loc, (tk+1) * N * sizeof(d_fixed_t));
-	memcpy(tt + cycles * STEP_MAX    , tt_loc, (tk+1) *     sizeof(d_fixed_t));
-    size = tk+1;
+	last_copy_y:for (int i=0; i< (tk_next+1) * N; i++) {
+        yy[cycles * STEP_MAX * N + i] = ((d_fixed_t*) yy_loc)[i];
+    }
+    last_copy_t:for (int i=0; i< (tk_next+1); i++) {
+        tt[cycles * STEP_MAX + i] = tt_loc[i];
+    }
+    size = cycles * STEP_MAX + tk_next + 1;
 }
 
 //TODO to parallelize loops, I have to implement them in separate functions

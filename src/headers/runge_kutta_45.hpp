@@ -23,7 +23,7 @@
 #include "fxp_sqrt.h"
 // #include "hls_vector.h"  // If declared but not used, it throws an error
 
-#define W 64    // total digits in ap_fixed or ap_int
+#define W 100    // total digits in ap_fixed or ap_int
 #define I 20    // total integer digits in ap_fixed
 #define F W-I   // fractional digits
 
@@ -31,16 +31,12 @@
 #define N 2*D   // number of elements in a vector
 
 #define STEP_MAX 2048
-#define K 512   // number of bits for each element of the interface arrays
-#define L (int) ceil((double) N*STEP_MAX*8*sizeof(d_fixed_t)/ (double) K)
-#define L_T (int) ceil((double) STEP_MAX*8*sizeof(d_fixed_t)/ (double) K)
 
 typedef ap_fixed<W, I, AP_TRN, AP_WRAP> d_fixed_t;
-typedef ap_ufixed<W, I, AP_TRN, AP_WRAP> d_ufixed_t;
-typedef ap_uint<K> d_uint_t;
+typedef ap_fixed<W, I, AP_TRN, AP_WRAP> d_t_t;
 
 // Top function
-void runge_kutta_45(d_uint_t* yy, d_uint_t* tt, const d_fixed_t tf, const d_fixed_t h, const d_fixed_t tol, const d_fixed_t mu, int& size);
+void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, const double tol, const double mu, unsigned int& size);
 
 
 //  TODO this is the method used here: https://numerary.readthedocs.io/en/latest/dormand-prince-method.html
