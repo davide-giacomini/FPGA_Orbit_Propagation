@@ -23,7 +23,7 @@
 #include "fxp_sqrt.h"
 // #include "hls_vector.h"  // If declared but not used, it throws an error
 
-#define W 100    // total digits in ap_fixed or ap_int
+#define W 80    // total digits in ap_fixed or ap_int
 #define I 20    // total integer digits in ap_fixed
 #define F W-I   // fractional digits
 
