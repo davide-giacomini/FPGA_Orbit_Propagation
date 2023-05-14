@@ -1,0 +1,223 @@
+<stg><name>macply</name>
+
+
+<trans_list>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="2" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="4" bw="80" op_0_bw="80" op_1_bw="80">
+<![CDATA[
+entry:0 %y_read = read i80 @_ssdm_op_Read.ap_auto.i80, i80 %y
+
+]]></Node>
+<StgValue><ssdm name="y_read"/></StgValue>
+</operation>
+
+<operation id="3" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="5" bw="80" op_0_bw="80" op_1_bw="80">
+<![CDATA[
+entry:1 %x_read = read i80 @_ssdm_op_Read.ap_auto.i80, i80 %x
+
+]]></Node>
+<StgValue><ssdm name="x_read"/></StgValue>
+</operation>
+
+<operation id="4" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="6" bw="80" op_0_bw="80" op_1_bw="80">
+<![CDATA[
+entry:2 %result_V_read_1 = read i80 @_ssdm_op_Read.ap_auto.i80, i80 %result_V_read
+
+]]></Node>
+<StgValue><ssdm name="result_V_read_1"/></StgValue>
+</operation>
+
+<operation id="5" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="7" bw="140" op_0_bw="80">
+<![CDATA[
+entry:3 %sext_ln1316 = sext i80 %x_read
+
+]]></Node>
+<StgValue><ssdm name="sext_ln1316"/></StgValue>
+</operation>
+
+<operation id="6" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="8" bw="140" op_0_bw="80">
+<![CDATA[
+entry:4 %sext_ln1319 = sext i80 %y_read
+
+]]></Node>
+<StgValue><ssdm name="sext_ln1319"/></StgValue>
+</operation>
+
+<operation id="7" st_id="1" stage="1" lat="1">
+<core>Multiplier</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="9" bw="140" op_0_bw="140" op_1_bw="140">
+<![CDATA[
+entry:5 %r_V = mul i140 %sext_ln1319, i140 %sext_ln1316
+
+]]></Node>
+<StgValue><ssdm name="r_V"/></StgValue>
+</operation>
+
+<operation id="8" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="10" bw="140" op_0_bw="140" op_1_bw="80" op_2_bw="60">
+<![CDATA[
+entry:6 %lhs = bitconcatenate i140 @_ssdm_op_BitConcatenate.i140.i80.i60, i80 %result_V_read_1, i60 0
+
+]]></Node>
+<StgValue><ssdm name="lhs"/></StgValue>
+</operation>
+
+<operation id="9" st_id="1" stage="1" lat="1">
+<core>Adder</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="11" bw="140" op_0_bw="140" op_1_bw="140">
+<![CDATA[
+entry:7 %ret_V = add i140 %lhs, i140 %r_V
+
+]]></Node>
+<StgValue><ssdm name="ret_V"/></StgValue>
+</operation>
+
+<operation id="10" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="12" bw="80" op_0_bw="80" op_1_bw="140" op_2_bw="32" op_3_bw="32">
+<![CDATA[
+entry:8 %result_V_write_assign = partselect i80 @_ssdm_op_PartSelect.i80.i140.i32.i32, i140 %ret_V, i32 60, i32 139
+
+]]></Node>
+<StgValue><ssdm name="result_V_write_assign"/></StgValue>
+</operation>
+
+<operation id="11" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="13" bw="0" op_0_bw="80">
+<![CDATA[
+entry:9 %ret_ln51 = ret i80 %result_V_write_assign
+
+]]></Node>
+<StgValue><ssdm name="ret_ln51"/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+<port id="13" name="result_V_read" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="result_V_read"/></StgValue>
+</port>
+<port id="14" name="x" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="x"/></StgValue>
+</port>
+<port id="15" name="y" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="y"/></StgValue>
+</port>
+</ports>
+
+
+<dataflows>
+<dataflow id="17" from="_ssdm_op_Read.ap_auto.i80" to="y_read" fromId="16" toId="2">
+</dataflow>
+<dataflow id="18" from="y" to="y_read" fromId="15" toId="2">
+</dataflow>
+<dataflow id="19" from="_ssdm_op_Read.ap_auto.i80" to="x_read" fromId="16" toId="3">
+</dataflow>
+<dataflow id="20" from="x" to="x_read" fromId="14" toId="3">
+</dataflow>
+<dataflow id="21" from="_ssdm_op_Read.ap_auto.i80" to="result_V_read_1" fromId="16" toId="4">
+</dataflow>
+<dataflow id="22" from="result_V_read" to="result_V_read_1" fromId="13" toId="4">
+</dataflow>
+<dataflow id="23" from="x_read" to="sext_ln1316" fromId="3" toId="5">
+</dataflow>
+<dataflow id="24" from="y_read" to="sext_ln1319" fromId="2" toId="6">
+</dataflow>
+<dataflow id="25" from="sext_ln1319" to="r_V" fromId="6" toId="7">
+</dataflow>
+<dataflow id="26" from="sext_ln1316" to="r_V" fromId="5" toId="7">
+</dataflow>
+<dataflow id="28" from="_ssdm_op_BitConcatenate.i140.i80.i60" to="lhs" fromId="27" toId="8">
+</dataflow>
+<dataflow id="29" from="result_V_read_1" to="lhs" fromId="4" toId="8">
+</dataflow>
+<dataflow id="31" from="StgValue_30" to="lhs" fromId="30" toId="8">
+</dataflow>
+<dataflow id="32" from="lhs" to="ret_V" fromId="8" toId="9">
+</dataflow>
+<dataflow id="33" from="r_V" to="ret_V" fromId="7" toId="9">
+</dataflow>
+<dataflow id="35" from="_ssdm_op_PartSelect.i80.i140.i32.i32" to="result_V_write_assign" fromId="34" toId="10">
+</dataflow>
+<dataflow id="36" from="ret_V" to="result_V_write_assign" fromId="9" toId="10">
+</dataflow>
+<dataflow id="38" from="StgValue_37" to="result_V_write_assign" fromId="37" toId="10">
+</dataflow>
+<dataflow id="40" from="StgValue_39" to="result_V_write_assign" fromId="39" toId="10">
+</dataflow>
+<dataflow id="41" from="result_V_write_assign" to="ret_ln51" fromId="10" toId="11">
+</dataflow>
+</dataflows>
+
+
+</stg>

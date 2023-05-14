@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="rk45_vitis" solutionName="solution1" date="2023-05-14T17:33:56.903-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'runge_kutta_45_Pipeline_VITIS_LOOP_175_3/m_axi_T_BUS_BREADY' to 0." projectName="rk45_vitis" solutionName="solution1" date="2023-05-14T17:33:54.032-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'runge_kutta_45_Pipeline_VITIS_LOOP_175_3/m_axi_T_BUS_AWUSER' to 0." projectName="rk45_vitis" solutionName="solution1" date="2023-05-14T17:33:54.018-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'runge_kutta_45_Pipeline_VITIS_LOOP_175_3/m_axi_T_BUS_AWREGION' to 0." projectName="rk45_vitis" solutionName="solution1" date="2023-05-14T17:33:54.013-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'runge_kutta_45_Pipeline_VITIS_LOOP_175_3/m_axi_T_BUS_AWQOS' to 0." projectName="rk45_vitis" solutionName="solution1" date="2023-05-14T17:33:54.007-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'runge_kutta_45_Pipeline_VITIS_LOOP_175_3/m_axi_T_BUS_AWPROT' to 0." projectName="rk45_vitis" solutionName="solution1" date="2023-05-14T17:33:53.999-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'runge_kutta_45_Pipeline_VITIS_LOOP_175_3/m_axi_T_BUS_AWCACHE' to 0." projectName="rk45_vitis" solutionName="solution1" date="2023-05-14T17:33:53.994-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'runge_kutta_45_Pipeline_VITIS_LOOP_175_3/m_axi_T_BUS_AWLOCK' to 0." projectName="rk45_vitis" solutionName="solution1" date="2023-05-14T17:33:53.988-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'runge_kutta_45_Pipeline_VITIS_LOOP_175_3/m_axi_T_BUS_AWBURST' to 0." projectName="rk45_vitis" solutionName="solution1" date="2023-05-14T17:33:53.982-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'runge_kutta_45_Pipeline_VITIS_LOOP_175_3/m_axi_T_BUS_AWSIZE' to 0." projectName="rk45_vitis" solutionName="solution1" date="2023-05-14T17:33:53.978-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'runge_kutta_45_Pipeline_VITIS_LOOP_175_3/m_axi_T_BUS_AWLEN' to 0." projectName="rk45_vitis" solutionName="solution1" date="2023-05-14T17:33:53.971-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'runge_kutta_45_Pipeline_VITIS_LOOP_175_3/m_axi_T_BUS_AWID' to 0." projectName="rk45_vitis" solutionName="solution1" date="2023-05-14T17:33:53.965-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'runge_kutta_45_Pipeline_VITIS_LOOP_175_3/m_axi_T_BUS_AWADDR' to 0." projectName="rk45_vitis" solutionName="solution1" date="2023-05-14T17:33:53.959-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'runge_kutta_45_Pipeline_VITIS_LOOP_175_3/m_axi_T_BUS_AWVALID' to 0." projectName="rk45_vitis" solutionName="solution1" date="2023-05-14T17:33:53.955-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'runge_kutta_45_Pipeline_VITIS_LOOP_172_2/m_axi_X_BUS_BREADY' to 0." projectName="rk45_vitis" solutionName="solution1" date="2023-05-14T17:33:53.549-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'runge_kutta_45_Pipeline_VITIS_LOOP_172_2/m_axi_X_BUS_AWUSER' to 0." projectName="rk45_vitis" solutionName="solution1" date="2023-05-14T17:33:53.545-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'runge_kutta_45_Pipeline_VITIS_LOOP_172_2/m_axi_X_BUS_AWREGION' to 0." projectName="rk45_vitis" solutionName="solution1" date="2023-05-14T17:33:53.541-0500" type="Warning"/>
+      </synLog>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>
