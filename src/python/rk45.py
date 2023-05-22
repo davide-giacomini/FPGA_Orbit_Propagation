@@ -4,19 +4,19 @@ from utils import write_to_csv
 import constants
 
 # RK45 CONSTANTS
-C = np.array([0, 1/4, 3/8, 12/13, 1, 1/2])
+C = np.array([1/5, 3/10, 4/5, 8/9, 1, 1])
 
 A = np.array([[0, 0, 0, 0, 0],
-              [1/4, 0, 0, 0, 0],
-              [3/32, 9/32, 0, 0, 0],
-              [1932/2197, -7200/2197, 7296/2197, 0, 0],
-              [439/216, -8, 3680/513, -845/4104, 0],
-              [-8/27, 2, -3544/2565, 1859/4104, -11/40]])
+              [1/5, 0, 0, 0, 0],
+              [3/40, 9/40, 0, 0, 0],
+              [44/45, -56/15, 32/9, 0, 0],
+              [19372/6561, -25360/2187, 64448/6561, -212/729, 0],
+              [9017/3168, -355/33, 46732/5247, 49/176, -5103/18656]])
 
-B = np.array([16/135, 0, 6656/12825, 28561/56430, -9/50, 2/55]) # 5th order
-Bs = np.array([25/216, 0, 1408/2565, 2197/4104, -1/5, 0])   # 4th order
+B = np.array([35/384, 0, 500/1113, 125/192, -2187/6784, 11/84, 0]) # 5th order
+Bs = np.array([5179/57600, 0, 7571/16695, 393/640, -92097/339200, 187/2100, 1/40])   # 4th order
 
-def rk_45(f, t0, tf, y0, h, tol):
+def rk_45(f, t0, tf, y0, h, atol, rtol, max_h):
     
     # vettore degli istanti in cui risolvo la edo
     t_h = np.array([t0])
@@ -40,13 +40,15 @@ def rk_45(f, t0, tf, y0, h, tol):
         k_4 = f(t_h + C[4] * h, u_h[-1] + h * (A[4,0]*k_0 + A[4,1]*k_1 + A[4,2]*k_2 + A[4,3]*k_3))
         k_5 = f(t_h + C[5] * h, u_h[-1] + h * (A[5,0]*k_0 + A[5,1]*k_1 + A[5,2]*k_2 + A[5,3]*k_3 + A[5,4]*k_4))
 
-        e = h * ( (B[0] - Bs[0])*k_0 + (B[1] - Bs[1])*k_1 + (B[2] - Bs[2])*k_2 + (B[3] - Bs[3])*k_3 + (B[4] - Bs[4])*k_4 + (B[5] - Bs[5])*k_5 )
+        k_6 = f(t_h[-1] + h, u_h[-1] + h * (B[0]*k_0 + B[1]*k_1 + B[2]*k_2 + B[3]*k_3 + B[4]*k_4 + B[5]*k_5))
+
+        e = h * ( (B[0] - Bs[0])*k_0 + (B[1] - Bs[1])*k_1 + (B[2] - Bs[2])*k_2 + (B[3] - Bs[3])*k_3 + (B[4] - Bs[4])*k_4 + (B[5] - Bs[5])*k_5 + (B[6] - Bs[6])*k_6 )
 
         err = np.linalg.norm(e)  # I don't use the norm to see the difference with the C implementation
         scale = 1
-        tol_step = tol * h / (tf-t0)
+        tol_step = atol #* h / (tf-t0)
 
-        if (err <= tol_step):
+        if (err <= atol):
             u_h = np.vstack((u_h, u_h[-1] + h * (B[0]*k_0 + B[1]*k_1 + B[2]*k_2 + B[3]*k_3 + B[4]*k_4 + B[5]*k_5)))
             t_h = np.vstack((t_h, t_h[-1] + h))
 
@@ -56,6 +58,7 @@ def rk_45(f, t0, tf, y0, h, tol):
 
         else:
             scale = 0.99
+            # print(h)
 
         # # compute the optimal step size
         # scale = (2*tol_step/ (err + tol_step))**0.2
@@ -96,9 +99,29 @@ r0 = constants.r0
 v0 = constants.v0
 
 tf = tf_1_rev * n_rev
+t0 = 0
+
+L = np.linalg.norm(r0)
+T = L / np.linalg.norm(v0)
+mu_adim = mu / ( L**3 / T**2 )
+
+r0_adim = r0 / L
+v0_adim = v0 / (L/T)
+h_init_adim = h_init / T
+tf_adim = tf / T / T
+tf_adim = tf / T
+
+print(r0_adim)
+print(v0_adim)
+print(h_init_adim)
+print(tf_adim)
 
 ode_wrapper = lambda t, y: ode(t, y, mu)
-t_final, y_final, h_final = rk_45(ode_wrapper, 0.0, tf, np.concatenate((r0, v0)), h_init, tol) 
+t_final, y_final, h_final = rk_45(ode_wrapper, t0, tf, np.concatenate((r0, v0)), h_init, tol, 1e-14, 0.1*abs(tf-t0)) 
+
+y_final_adim = np.concatenate((y_final[:, :3] * L, y_final[:, 3:] * L/T), axis=-1)
+t_final_adim = t_final * T
+h_final_adim = h_final * T
 
 write_to_csv(y_final, "y_rk45_tol09_python.csv")
 write_to_csv(t_final, "t_rk45_tol09_python.csv")
