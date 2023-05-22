@@ -24,7 +24,7 @@ v0 = constants.v0
 
 tf = tf_1_rev * n_rev
 
-output = gen.solve_ode45(r0, v0, mu, tf, tol, nargout=2)
+output = gen.solve_ode45(r0, v0, mu, tf, tol, float(h_init), nargout=2)
 ode45_data = np.array(output[0])
 t_ode45 = np.array(output[1])
 

@@ -1,10 +1,10 @@
-function [ode_data, t_ode] = solve_ode45 (r0, v0, mu, tf, tol );
+function [ode_data, t_ode] = solve_ode45 (r0, v0, mu, tf, tol, h_init );
 
     y0 = [r0(1); r0(2); r0(3); v0(1); v0(2); v0(3)]';
     tspan = [0, tf];
 
     % Set the error tolerances
-    opts = odeset('RelTol', 1e-20,'AbsTol', tol, 'NormControl', true);  % |e(i)| <= max(RelTol*abs(y(i)),AbsTol(i)), hence having a very small RelTol is equal to ignore it 
+    opts = odeset('RelTol', 1e-20,'AbsTol', tol, 'NormControl', 'on', 'InitialStep', h_init);  % |e(i)| <= max(RelTol*abs(y(i)),AbsTol(i)), hence having a very small RelTol is equal to ignore it 
 
     % call ode45 to solve the ODE
     [t, y] = ode45(@(t,y) ode(t, y, mu), tspan, y0, opts);
