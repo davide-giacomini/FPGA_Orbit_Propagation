@@ -225,35 +225,37 @@ void ode_cpu(double* out, const double* in, double mu) {
     memcpy(out+D, v_out, D * sizeof(double));
 }
 
-void rk45_cpu(function<void(double*, const double*)> f, vector<array<double, N>>& yy, vector<double>& tt, const array<double, N>& y0, const double t0, const double tf, double h, const double tol) {
-    // RK45 constants
-    const int DIMS = 6;
-    const double C[DIMS]  = {0, 1./4, 3./8, 12./13, 1, 1./2};
-    const double B[DIMS]  = {16./135, 0, 6656./12825, 28561./56430, -9./50, 2./55};
-    const double Bs[DIMS] = {25./216, 0, 1408./2565, 2197./4104, -1./5, 0};
-    const double E[DIMS]  = {B[0] - Bs[0], B[1] - Bs[1], B[2] - Bs[2], B[3] - Bs[3], B[4] - Bs[4], B[5] - Bs[5]};
-    const double A[DIMS][DIMS-1] = {
-                                            {0, 0, 0, 0, 0},
-                                            {1./4, 0, 0, 0, 0},
-                                            {3./32, 9./32, 0, 0, 0},
-                                            {1932./2197, -7200./2197, 7296./2197, 0, 0},
-                                            {439./216, -8, 3680./513, -845./4104, 0},
-                                            {-8./27, 2, -3544./2565, 1859./4104, -11./40}
-                                        };
+void rk45_cpu(function<void(double*, const double*)> f, vector<array<double, N>>& yy, vector<double>& tt, const array<double, N>& y0, const double t0, const double tf, const double h0, const double atol, const double h_max, const double h_min) {
+    // RK5(4)7M CONSTANTS
+    const int P = 4;
+    const int Q = P+1;
+    const double C[Q+1]  = {1./5, 3./10, 4./5, 8./9, 1., 1.};
+    const double B[Q+2]  = {35./384, 0, 500./1113, 125./192, -2187./6784, 11./84, 0};
+    const double Bs[Q+2] = {5179./57600, 0, 7571./16695, 393./640, -92097./339200, 187./2100, 1./40};
+    const double E[Q+2]  = {B[0] - Bs[0], B[1] - Bs[1], B[2] - Bs[2], B[3] - Bs[3], B[4] - Bs[4], B[5] - Bs[5], B[6] - Bs[6]};
+    const double A[Q+1][Q] = {
+                                {0, 0, 0, 0, 0},
+                                {1./5, 0, 0, 0, 0},
+                                {3./40, 9./40, 0, 0, 0},
+                                {44./45, -56./15, 32./9, 0, 0},
+                                {19372./6561, -25360./2187, 64448./6561, -212./729, 0},
+                                {9017./3168, -355./33, 46732./5247, 49./176, -5103./18656}
+                            };
 
-    double k[DIMS][N];   // I declare k
+    double k[Q+2][N];   // I declare k
 
     if (t0 < 0.0)   throw invalid_argument("t0 must be non-negative");
     if (tf < 0.0)   throw invalid_argument("tf must be non-negative");
-    if (h < 0.0)    throw invalid_argument("h must be non-negative");
-    if (tol < 0.0)  throw invalid_argument("tol must be non-negative");
+    if (h0 < 0.0)    throw invalid_argument("h must be non-negative");
+    if (atol < 0.0)  throw invalid_argument("tol must be non-negative");
+    if (h_max < 0.0)  throw invalid_argument("h_max must be non-negative");
+    if (h_min < 0.0)  throw invalid_argument("h_min must be non-negative");
+    if (h_max < h_min)  throw invalid_argument("h_max must be greater than h_min");
 
-    // Clear and initialize t
-    tt.clear();
-    tt.push_back(t0);
-    // Clear and initialize y
-    yy.clear();
-    yy.push_back(y0);
+    // Clearing and initialization
+    tt.clear(); tt.push_back(t0);
+    yy.clear(); yy.push_back(y0);
+    double h = h0;
 
     while (tt.back() < tf) {
 
@@ -292,50 +294,50 @@ void rk45_cpu(function<void(double*, const double*)> f, vector<array<double, N>>
         // ****** MORE READABLE START ****** //
         f(k[0], yy.back().data());
 
-        double in[N];
+        double y_in[N];
 
         for (int n=0; n<N; n++) {
-            in[n] = yy.back()[n] + h *(A[1][0]*k[0][n]);
+            y_in[n] = yy.back()[n] + h *(A[1][0]*k[0][n]);
         }
-        f(k[1], in);
+        f(k[1], y_in);
 
         for (int n=0; n<N; n++) {
-            in[n] = yy.back()[n] + h * (A[2][0]*k[0][n] + A[2][1]*k[1][n]);
+            y_in[n] = yy.back()[n] + h * (A[2][0]*k[0][n] + A[2][1]*k[1][n]);
         }
-        f(k[2], in);
+        f(k[2], y_in);
 
         for (int n = 0; n < N; n++) {
-            in[n] = yy.back()[n] + h * (A[3][0]*k[0][n] + A[3][1]*k[1][n] + A[3][2]*k[2][n]);
+            y_in[n] = yy.back()[n] + h * (A[3][0]*k[0][n] + A[3][1]*k[1][n] + A[3][2]*k[2][n]);
         }
-        f(k[3], in);
+        f(k[3], y_in);
 
         for (int n = 0; n < N; n++) {
-            in[n] = yy.back()[n] + h * (A[4][0]*k[0][n] + A[4][1]*k[1][n] + A[4][2]*k[2][n] + A[4][3]*k[3][n]);
+            y_in[n] = yy.back()[n] + h * (A[4][0]*k[0][n] + A[4][1]*k[1][n] + A[4][2]*k[2][n] + A[4][3]*k[3][n]);
         }
-        f(k[4], in);
+        f(k[4], y_in);
 
         for (int n = 0; n < N; n++) {
-            in[n] = yy.back()[n] + h * (A[5][0]*k[0][n] + A[5][1]*k[1][n] + A[5][2]*k[2][n] + A[5][3]*k[3][n] + A[5][4]*k[4][n]);
+            y_in[n] = yy.back()[n] + h * (A[5][0]*k[0][n] + A[5][1]*k[1][n] + A[5][2]*k[2][n] + A[5][3]*k[3][n] + A[5][4]*k[4][n]);
         }
-        f(k[5], in);
+        f(k[5], y_in);
+
+        for (int n = 0; n < N; n++) {
+            y_in[n] = yy.back()[n] + h * (B[0]*k[0][n] + B[1]*k[1][n] + B[2]*k[2][n] + B[3]*k[3][n] + B[4]*k[4][n] + B[5]*k[5][n]);
+        }
+        f(k[6], y_in);
 
         double e[N];
         for (int n=0; n<N; n++) {
-            e[n] = h * ( E[0]*k[0][n] + E[1]*k[1][n] + E[2]*k[2][n] + E[3]*k[3][n] + E[4]*k[4][n] + E[5]*k[5][n] );
+            e[n] = h * ( E[0]*k[0][n] + E[1]*k[1][n] + E[2]*k[2][n] + E[3]*k[3][n] + E[4]*k[4][n] + E[5]*k[5][n] + E[6]*k[6][n]);
         }
         // ****** MORE READABLE END ****** //
 
         double err = norm(e, N);
         double scale = 1.0;
-        double tol_step = tol * h / (tf-t0);
 
-        if (err <= tol_step) {
+        if (err <= atol) {
 
-            array<double,N> y_next;
-            for (int n=0; n<N; n++) {
-                y_next[n] = yy.back()[n] + h * (B[0]*k[0][n] + B[1]*k[1][n] + B[2]*k[2][n] + B[3]*k[3][n] + B[4]*k[4][n] + B[5]*k[5][n]);
-            }
-
+            array<double,N> y_next = { y_in[0], y_in[1], y_in[2], y_in[3], y_in[4], y_in[5] };
             yy.push_back(y_next);
             tt.push_back(tt.back() + h);
 
@@ -346,9 +348,9 @@ void rk45_cpu(function<void(double*, const double*)> f, vector<array<double, N>>
         }
 
         // // compute the optimal step size
-        // scale = pow((2*tol_step/ (err + tol_step)), 0.2);
+        // scale = pow(0.9*(atol / err), 1./6);
 
-        h *= scale;
+        h = max(min(h*scale, h_max), h_min);
     }
 }
 
@@ -397,18 +399,22 @@ int main(int argc, char** argv)
     const int N_REV = 1;                                                // Number of revolutions
     const double MU = 398600.4418;                                      // Earth gravitational constant
     const double TOL = (argc > 1) ? stod(argv[1]) : 1e-09;              // Tolerance value
-    const double TF = (argc > 2) ? stod(argv[2]) : (T_REV * N_REV);     // Final time
+    const double H0 = (argc > 2) ? stod(argv[2]) : 15.0;                // Initial time step
+    const double TF = (argc > 3) ? stod(argv[3]) : (T_REV * N_REV);     // Final time
+    const double T0 = (argc > 4) ? stod(argv[4]) : 0.0;                 // Initial time
+    const double H_MAX = (argc > 5) ? stod(argv[5]) : 0.1*abs(TF-T0);   // Maximum time step
+    const double H_MIN = (argc > 6) ? stod(argv[6]) : 0.1;              // Minimum time step
 
     // Initial vector values
     const double r0[D] = {
-        (argc > 8) ? stod(argv[3]) : 6893.65420319622,
-        (argc > 8) ? stod(argv[4]) : 607.768615848904,
-        (argc > 8) ? stod(argv[5]) : 1052.68612189611
+        (argc > 12) ? stod(argv[7]) : 6893.65420319622,
+        (argc > 12) ? stod(argv[8]) : 607.768615848904,
+        (argc > 12) ? stod(argv[9]) : 1052.68612189611
     };
     const double v0[D] = {
-        (argc > 8) ? stod(argv[6]) : -1.31035840240472,
-        (argc > 8) ? stod(argv[7]) : 3.71570593010086,
-        (argc > 8) ? stod(argv[8]) : 6.43579145691966
+        (argc > 12) ? stod(argv[10]) : -1.31035840240472,
+        (argc > 12) ? stod(argv[11]) : 3.71570593010086,
+        (argc > 12) ? stod(argv[12]) : 6.43579145691966
     };
     const array<double, N> y0 = { r0[0], r0[1], r0[2], v0[0], v0[1], v0[2] };
 
@@ -424,7 +430,7 @@ int main(int argc, char** argv)
     vector<double> tt;
 
     auto ode_cpu_wrapper = [MU](double* out, const double* in) { ode_cpu(out, in, MU); };
-    rk45_cpu(ode_cpu_wrapper, yy, tt, y0, 0.0, TF, 15.0, TOL);
+    rk45_cpu(ode_cpu_wrapper, yy, tt, y0, T0, TF, H0, TOL, H_MAX, H_MIN);
 
     write_matrix_to_csv(yy, yy.size(), "y_rk45_tol09_cpp.csv");
     write_array_to_csv(tt, tt.size(), "t_rk45_tol09_cpp.csv");
@@ -433,8 +439,7 @@ int main(int argc, char** argv)
 
     // ****** FPGA computation 1 computation starts ****** //
     unsigned int size = 0;
-    double h_min = 0.1;
-    const unsigned int max_rows = ceil(TF/h_min) + 1;
+    const unsigned int max_rows = ceil(TF/H_MIN) + 1;
     double** yy_fpga = create_matrix<double>(max_rows, N);
     double* tt_fpga = new double[max_rows];
 
@@ -444,7 +449,7 @@ int main(int argc, char** argv)
     tt_fpga[0] = 0.0;
 
     //FPGA computation
-    runge_kutta_45(yy_fpga[0], tt_fpga, TF, 15.0, TOL, MU, size);
+    runge_kutta_45(yy_fpga[0], tt_fpga, TF, H0, TOL, H_MAX, H_MIN, MU, size);
 
     write_matrix_to_csv(yy_fpga, size, "y_rk45_tol09_fpga_sim.csv");
     write_array_to_csv(tt_fpga, size, "t_rk45_tol09_fpga_sim.csv");

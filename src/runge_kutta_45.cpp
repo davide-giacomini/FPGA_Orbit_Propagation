@@ -108,7 +108,7 @@ void ode_fpga(d_fixed_t out[N], const d_fixed_t in[N], const d_fixed_t c[N], d_f
 }
 
 // Remember that the top level function must have the same name as the file name
-void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, const double tol, const double mu, unsigned int& size){
+void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, const double atol, const double h_max, const double h_min, const double mu, unsigned int& size){
 
 	#pragma HLS ALLOCATION function instances=macply limit=1
 	#pragma HLS ALLOCATION function instances=division limit=1
@@ -127,35 +127,40 @@ void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, co
 	#pragma HLS INTERFACE s_axilite port=tt
 	#pragma HLS INTERFACE s_axilite port=tf
 	#pragma HLS INTERFACE s_axilite port=h0
-	#pragma HLS INTERFACE s_axilite port=tol
+	#pragma HLS INTERFACE s_axilite port=atol
+	#pragma HLS INTERFACE s_axilite port=h_max
+	#pragma HLS INTERFACE s_axilite port=h_min
 	#pragma HLS INTERFACE s_axilite port=mu
 	#pragma HLS INTERFACE s_axilite port=size
 	#pragma HLS INTERFACE s_axilite port=return
 
-	// RK45 constants
-    const int DIMS = 6;
-    const d_fixed_t C[DIMS]  = {0, 1./4, 3./8, 12./13, 1, 1./2};
-    const d_fixed_t B[DIMS]  = {16./135, 0, 6656./12825, 28561./56430, -9./50, 2./55};
-    const d_fixed_t Bs[DIMS] = {25./216, 0, 1408./2565, 2197./4104, -1./5, 0};
-    const d_fixed_t E[DIMS]  = {B[0] - Bs[0], B[1] - Bs[1], B[2] - Bs[2], B[3] - Bs[3], B[4] - Bs[4], B[5] - Bs[5]};
-    const d_fixed_t A[DIMS][DIMS-1] = {
-                                            {0, 0, 0, 0, 0},
-                                            {1./4, 0, 0, 0, 0},
-                                            {3./32, 9./32, 0, 0, 0},
-                                            {1932./2197, -7200./2197, 7296./2197, 0, 0},
-                                            {439./216, -8, 3680./513, -845./4104, 0},
-                                            {-8./27, 2, -3544./2565, 1859./4104, -11./40}
-                                        };
+	// RK5(4)7M CONSTANTS
+    const int P = 4;
+    const int Q = P+1;
+    const d_fixed_t C[Q+1]  = {1./5, 3./10, 4./5, 8./9, 1., 1.};
+    const d_fixed_t B[Q+2]  = {35./384, 0, 500./1113, 125./192, -2187./6784, 11./84, 0};
+    const d_fixed_t Bs[Q+2] = {5179./57600, 0, 7571./16695, 393./640, -92097./339200, 187./2100, 1./40};
+    const d_fixed_t E[Q+2]  = {B[0] - Bs[0], B[1] - Bs[1], B[2] - Bs[2], B[3] - Bs[3], B[4] - Bs[4], B[5] - Bs[5], B[6] - Bs[6]};
+    const d_fixed_t A[Q+1][Q] = {
+                                    {0, 0, 0, 0, 0},
+                                    {1./5, 0, 0, 0, 0},
+                                    {3./40, 9./40, 0, 0, 0},
+                                    {44./45, -56./15, 32./9, 0, 0},
+                                    {19372./6561, -25360./2187, 64448./6561, -212./729, 0},
+                                    {9017./3168, -355./33, 46732./5247, 49./176, -5103./18656}
+                                };
 
-    d_fixed_t k[DIMS][N];   // I declare k
+    d_fixed_t k[Q+2][N];   // I declare k
 
-    d_fixed_t yy_loc[STEP_MAX][N], mu_loc = mu, h_loc = h0, tol_loc = tol;
-    d_t_t tt_loc[STEP_MAX], t0_loc, tf_loc = tf;
+    const d_fixed_t mu_loc = mu, atol_loc = atol, h_max_loc = h_max, h_min_loc = h_min;
+    const d_t_t tf_loc = tf;
+    d_fixed_t yy_loc[STEP_MAX][N], h_loc = h0;
+    d_t_t tt_loc[STEP_MAX];
 
     for (int i=0; i<N; i++) {
         yy_loc[0][i] = yy[i];
     }
-    t0_loc = tt_loc[0] = tt[0];
+    const d_t_t t0_loc = tt_loc[0] = tt[0];
 
 	unsigned int tk_prev = 0;
     unsigned int tk_next = 0;
@@ -192,12 +197,12 @@ void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, co
 
         ode_fpga(k[0], yy_loc[tk_prev], c, mu_loc);   // First iteration
 
-        k_outer:for (int i=1; i<DIMS; i++) {
+        k_outer:for (int i=1; i<Q+1; i++) {
 
         	k_middle:for (int n=0; n < N; n++) {
 
                 d_fixed_t sum = 0;
-                inner:for (int j=0; j<i; j++) {
+                k_inner:for (int j=0; j<i; j++) {
 					#pragma HLS loop_tripcount max=5
                 
 //                    sum += multiply(A[i][j], k[j][n]);
@@ -210,9 +215,23 @@ void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, co
             ode_fpga(k[i], yy_loc[tk_prev], c, mu_loc);
         }
 
+        // y_new
+        y_new_outer:for (int n=0; n < N; n++) {
+
+            d_fixed_t sum = 0;
+            y_new_inner:for (int j=0; j<Q+2; j++) {
+                #pragma HLS loop_tripcount max=5
+            
+                macply(sum, B[j], k[j][n]);    // sum += A[i][j]*k[j][n];
+            }
+
+            c[n] = multiply(h_loc, sum);        // c[n] = h_loc * sum;
+        }
+        ode_fpga(k[Q+1], yy_loc[tk_prev], c, mu_loc);
+
         d_fixed_t e[N] = {0,0,0,0,0,0};
         err_outer:for (int n=0; n<N; n++) {
-            err_inner:for (int j=0; j<DIMS; j++) {
+            err_inner:for (int j=0; j<Q+2; j++) {
 				#pragma HLS PIPELINE off
 
                 // e[n] += multiply(E[j], k[j][n]);
@@ -229,35 +248,27 @@ void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, co
         d_norm_t err; fxp_sqrt(err, squared_sum);
 
         d_fixed_t scale = 1.0;
-        d_fixed_t tol_step = division(tol_loc * h_loc, tf_loc-t0_loc);
 
-        if (err <= tol_step) {
+        if (err <= atol_loc) {
 
             update_outer:for (int n=0; n<N; n++) {
-
-                d_fixed_t sum = 0;
-                update_inner:for (int j=0; j<DIMS; j++) {
-					#pragma HLS PIPELINE off
-            
-                	// sum += multiply(B[j], k[j][n]);
-                   macply(sum, B[j], k[j][n]);    // sum = B[0]*k[0][n] + B[1]*k[1][n] + B[2]*k[2][n] + B[3]*k[3][n] + B[4]*k[4][n] + B[5]*k[5][n]
-                }
-
-                yy_loc[tk_next][n] = yy_loc[tk_prev][n] + multiply(h_loc, sum);
+                yy_loc[tk_next][n] = yy_loc[tk_prev][n] + c[n];
             }
-
-
             tt_loc[tk_next] = tt_loc[tk_prev] + h_loc;
 
             tk_prev = tk_next;
 
             scale = 1.11;
+
+            std::cout << tk_next + STEP_MAX * cycles << std::endl;
         }
         else {
             scale = 0.99;
         }
 
         h_loc *= scale;
+        h_loc = h_loc < h_max_loc ? h_loc : h_max_loc;
+        h_loc = h_loc > h_min_loc ? h_loc : h_min_loc;
     }
 
     unsigned int t_gap = cycles * STEP_MAX;
