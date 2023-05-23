@@ -150,22 +150,60 @@ u64 XRunge_kutta_45_Get_h0(XRunge_kutta_45 *InstancePtr) {
     return Data;
 }
 
-void XRunge_kutta_45_Set_tol(XRunge_kutta_45 *InstancePtr, u64 Data) {
+void XRunge_kutta_45_Set_atol(XRunge_kutta_45 *InstancePtr, u64 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XRunge_kutta_45_WriteReg(InstancePtr->Control_BaseAddress, XRUNGE_KUTTA_45_CONTROL_ADDR_TOL_DATA, (u32)(Data));
-    XRunge_kutta_45_WriteReg(InstancePtr->Control_BaseAddress, XRUNGE_KUTTA_45_CONTROL_ADDR_TOL_DATA + 4, (u32)(Data >> 32));
+    XRunge_kutta_45_WriteReg(InstancePtr->Control_BaseAddress, XRUNGE_KUTTA_45_CONTROL_ADDR_ATOL_DATA, (u32)(Data));
+    XRunge_kutta_45_WriteReg(InstancePtr->Control_BaseAddress, XRUNGE_KUTTA_45_CONTROL_ADDR_ATOL_DATA + 4, (u32)(Data >> 32));
 }
 
-u64 XRunge_kutta_45_Get_tol(XRunge_kutta_45 *InstancePtr) {
+u64 XRunge_kutta_45_Get_atol(XRunge_kutta_45 *InstancePtr) {
     u64 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XRunge_kutta_45_ReadReg(InstancePtr->Control_BaseAddress, XRUNGE_KUTTA_45_CONTROL_ADDR_TOL_DATA);
-    Data += (u64)XRunge_kutta_45_ReadReg(InstancePtr->Control_BaseAddress, XRUNGE_KUTTA_45_CONTROL_ADDR_TOL_DATA + 4) << 32;
+    Data = XRunge_kutta_45_ReadReg(InstancePtr->Control_BaseAddress, XRUNGE_KUTTA_45_CONTROL_ADDR_ATOL_DATA);
+    Data += (u64)XRunge_kutta_45_ReadReg(InstancePtr->Control_BaseAddress, XRUNGE_KUTTA_45_CONTROL_ADDR_ATOL_DATA + 4) << 32;
+    return Data;
+}
+
+void XRunge_kutta_45_Set_h_max(XRunge_kutta_45 *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XRunge_kutta_45_WriteReg(InstancePtr->Control_BaseAddress, XRUNGE_KUTTA_45_CONTROL_ADDR_H_MAX_DATA, (u32)(Data));
+    XRunge_kutta_45_WriteReg(InstancePtr->Control_BaseAddress, XRUNGE_KUTTA_45_CONTROL_ADDR_H_MAX_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XRunge_kutta_45_Get_h_max(XRunge_kutta_45 *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XRunge_kutta_45_ReadReg(InstancePtr->Control_BaseAddress, XRUNGE_KUTTA_45_CONTROL_ADDR_H_MAX_DATA);
+    Data += (u64)XRunge_kutta_45_ReadReg(InstancePtr->Control_BaseAddress, XRUNGE_KUTTA_45_CONTROL_ADDR_H_MAX_DATA + 4) << 32;
+    return Data;
+}
+
+void XRunge_kutta_45_Set_h_min(XRunge_kutta_45 *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XRunge_kutta_45_WriteReg(InstancePtr->Control_BaseAddress, XRUNGE_KUTTA_45_CONTROL_ADDR_H_MIN_DATA, (u32)(Data));
+    XRunge_kutta_45_WriteReg(InstancePtr->Control_BaseAddress, XRUNGE_KUTTA_45_CONTROL_ADDR_H_MIN_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XRunge_kutta_45_Get_h_min(XRunge_kutta_45 *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XRunge_kutta_45_ReadReg(InstancePtr->Control_BaseAddress, XRUNGE_KUTTA_45_CONTROL_ADDR_H_MIN_DATA);
+    Data += (u64)XRunge_kutta_45_ReadReg(InstancePtr->Control_BaseAddress, XRUNGE_KUTTA_45_CONTROL_ADDR_H_MIN_DATA + 4) << 32;
     return Data;
 }
 
