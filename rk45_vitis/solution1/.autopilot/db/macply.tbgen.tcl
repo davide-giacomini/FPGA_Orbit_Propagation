@@ -57,7 +57,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "result_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "x", "Type" : "None", "Direction" : "I"},
 			{"Name" : "y", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_80s_80s_140_1_1_U67", "Parent" : "0"}]}
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_80s_80s_140_1_1_U68", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {

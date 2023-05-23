@@ -118,8 +118,8 @@ set RtlHierarchyInfo {[
 			{"Name" : "r_in_V_0_01_out", "Type" : "Vld", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_70_1", "PipelineType" : "NotSupport"}]},
-	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_Pipeline_VITIS_LOOP_70_1_fu_112.mux_32_80_1_1_U11", "Parent" : "1"},
-	{"ID" : "3", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_Pipeline_VITIS_LOOP_70_1_fu_112.mux_32_80_1_1_U12", "Parent" : "1"},
+	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_Pipeline_VITIS_LOOP_70_1_fu_112.mux_32_80_1_1_U12", "Parent" : "1"},
+	{"ID" : "3", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_Pipeline_VITIS_LOOP_70_1_fu_112.mux_32_80_1_1_U13", "Parent" : "1"},
 	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_Pipeline_VITIS_LOOP_70_1_fu_112.flow_control_loop_pipe_sequential_init_U", "Parent" : "1"},
 	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_Pipeline_sq_sum_loop_fu_131", "Parent" : "0", "Child" : ["6", "7", "8"],
 		"CDFG" : "vel_der_Pipeline_sq_sum_loop",
@@ -143,8 +143,8 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "sq_sum_loop", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter1", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter1", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter1", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "6", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_Pipeline_sq_sum_loop_fu_131.mux_32_80_1_1_U23", "Parent" : "5"},
-	{"ID" : "7", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_Pipeline_sq_sum_loop_fu_131.mul_80s_80s_160_1_1_U24", "Parent" : "5"},
+	{"ID" : "6", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_Pipeline_sq_sum_loop_fu_131.mux_32_80_1_1_U24", "Parent" : "5"},
+	{"ID" : "7", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_Pipeline_sq_sum_loop_fu_131.mul_80s_80s_160_1_1_U25", "Parent" : "5"},
 	{"ID" : "8", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_Pipeline_sq_sum_loop_fu_131.flow_control_loop_pipe_sequential_init_U", "Parent" : "5"},
 	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_Pipeline_sqrt_loop_fu_139", "Parent" : "0", "Child" : ["10"],
 		"CDFG" : "vel_der_Pipeline_sqrt_loop",
@@ -184,9 +184,9 @@ set RtlHierarchyInfo {[
 		"Port" : [
 			{"Name" : "num", "Type" : "None", "Direction" : "I"},
 			{"Name" : "den", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "12", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_division_fu_145.sdiv_200ns_163ns_200_204_seq_1_U32", "Parent" : "11"},
-	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_32_80_1_1_U36", "Parent" : "0"},
-	{"ID" : "14", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_140s_140s_140_1_1_U37", "Parent" : "0"}]}
+	{"ID" : "12", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_division_fu_145.sdiv_200ns_163ns_140_204_seq_1_U33", "Parent" : "11"},
+	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_32_80_1_1_U37", "Parent" : "0"},
+	{"ID" : "14", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_140s_140s_140_1_1_U38", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {

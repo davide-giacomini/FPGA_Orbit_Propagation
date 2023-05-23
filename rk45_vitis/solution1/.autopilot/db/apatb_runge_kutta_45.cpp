@@ -26,8 +26,12 @@ using namespace sc_dt;
 #define AUTOTB_TVOUT_tf "../tv/cdatafile/c.runge_kutta_45.autotvout_tf.dat"
 #define AUTOTB_TVIN_h0 "../tv/cdatafile/c.runge_kutta_45.autotvin_h0.dat"
 #define AUTOTB_TVOUT_h0 "../tv/cdatafile/c.runge_kutta_45.autotvout_h0.dat"
-#define AUTOTB_TVIN_tol "../tv/cdatafile/c.runge_kutta_45.autotvin_tol.dat"
-#define AUTOTB_TVOUT_tol "../tv/cdatafile/c.runge_kutta_45.autotvout_tol.dat"
+#define AUTOTB_TVIN_atol "../tv/cdatafile/c.runge_kutta_45.autotvin_atol.dat"
+#define AUTOTB_TVOUT_atol "../tv/cdatafile/c.runge_kutta_45.autotvout_atol.dat"
+#define AUTOTB_TVIN_h_max "../tv/cdatafile/c.runge_kutta_45.autotvin_h_max.dat"
+#define AUTOTB_TVOUT_h_max "../tv/cdatafile/c.runge_kutta_45.autotvout_h_max.dat"
+#define AUTOTB_TVIN_h_min "../tv/cdatafile/c.runge_kutta_45.autotvin_h_min.dat"
+#define AUTOTB_TVOUT_h_min "../tv/cdatafile/c.runge_kutta_45.autotvout_h_min.dat"
 #define AUTOTB_TVIN_mu "../tv/cdatafile/c.runge_kutta_45.autotvin_mu.dat"
 #define AUTOTB_TVOUT_mu "../tv/cdatafile/c.runge_kutta_45.autotvout_mu.dat"
 #define AUTOTB_TVIN_size "../tv/cdatafile/c.runge_kutta_45.autotvin_size.dat"
@@ -44,7 +48,9 @@ using namespace sc_dt;
 #define AUTOTB_TVOUT_PC_tt "../tv/rtldatafile/rtl.runge_kutta_45.autotvout_tt.dat"
 #define AUTOTB_TVOUT_PC_tf "../tv/rtldatafile/rtl.runge_kutta_45.autotvout_tf.dat"
 #define AUTOTB_TVOUT_PC_h0 "../tv/rtldatafile/rtl.runge_kutta_45.autotvout_h0.dat"
-#define AUTOTB_TVOUT_PC_tol "../tv/rtldatafile/rtl.runge_kutta_45.autotvout_tol.dat"
+#define AUTOTB_TVOUT_PC_atol "../tv/rtldatafile/rtl.runge_kutta_45.autotvout_atol.dat"
+#define AUTOTB_TVOUT_PC_h_max "../tv/rtldatafile/rtl.runge_kutta_45.autotvout_h_max.dat"
+#define AUTOTB_TVOUT_PC_h_min "../tv/rtldatafile/rtl.runge_kutta_45.autotvout_h_min.dat"
 #define AUTOTB_TVOUT_PC_mu "../tv/rtldatafile/rtl.runge_kutta_45.autotvout_mu.dat"
 #define AUTOTB_TVOUT_PC_size "../tv/rtldatafile/rtl.runge_kutta_45.autotvout_size.dat"
 #define AUTOTB_TVOUT_PC_T_BUS "../tv/rtldatafile/rtl.runge_kutta_45.autotvout_T_BUS.dat"
@@ -282,7 +288,9 @@ INTER_TCL_FILE(const char* name) {
   tt_depth = 0;
   tf_depth = 0;
   h0_depth = 0;
-  tol_depth = 0;
+  atol_depth = 0;
+  h_max_depth = 0;
+  h_min_depth = 0;
   mu_depth = 0;
   size_depth = 0;
   T_BUS_depth = 0;
@@ -308,7 +316,9 @@ string get_depth_list () {
   total_list << "{tt " << tt_depth << "}\n";
   total_list << "{tf " << tf_depth << "}\n";
   total_list << "{h0 " << h0_depth << "}\n";
-  total_list << "{tol " << tol_depth << "}\n";
+  total_list << "{atol " << atol_depth << "}\n";
+  total_list << "{h_max " << h_max_depth << "}\n";
+  total_list << "{h_min " << h_min_depth << "}\n";
   total_list << "{mu " << mu_depth << "}\n";
   total_list << "{size " << size_depth << "}\n";
   total_list << "{T_BUS " << T_BUS_depth << "}\n";
@@ -326,7 +336,9 @@ void set_string(std::string list, std::string* class_list) {
     int tt_depth;
     int tf_depth;
     int h0_depth;
-    int tol_depth;
+    int atol_depth;
+    int h_max_depth;
+    int h_min_depth;
     int mu_depth;
     int size_depth;
     int T_BUS_depth;
@@ -339,9 +351,9 @@ void set_string(std::string list, std::string* class_list) {
 
 
 struct __cosim_s64__ { char data[64]; };
-extern "C" void runge_kutta_45_hw_stub_wrapper(volatile void *, volatile void *, double, double, double, double, volatile void *);
+extern "C" void runge_kutta_45_hw_stub_wrapper(volatile void *, volatile void *, double, double, double, double, double, double, volatile void *);
 
-extern "C" void apatb_runge_kutta_45_hw(volatile void * __xlx_apatb_param_yy, volatile void * __xlx_apatb_param_tt, double __xlx_apatb_param_tf, double __xlx_apatb_param_h0, double __xlx_apatb_param_tol, double __xlx_apatb_param_mu, volatile void * __xlx_apatb_param_size) {
+extern "C" void apatb_runge_kutta_45_hw(volatile void * __xlx_apatb_param_yy, volatile void * __xlx_apatb_param_tt, double __xlx_apatb_param_tf, double __xlx_apatb_param_h0, double __xlx_apatb_param_atol, double __xlx_apatb_param_h_max, double __xlx_apatb_param_h_min, double __xlx_apatb_param_mu, volatile void * __xlx_apatb_param_size) {
   refine_signal_handler();
   fstream wrapc_switch_file_token;
   wrapc_switch_file_token.open(".hls_cosim_wrapc_switch.log");
@@ -550,15 +562,37 @@ aesl_fh.write(AUTOTB_TVIN_h0, formatData(pos, 64));
 aesl_fh.write(AUTOTB_TVIN_h0, end_str());
 }
 
-// print tol Transactions
+// print atol Transactions
 {
-aesl_fh.write(AUTOTB_TVIN_tol, begin_str(AESL_transaction));
+aesl_fh.write(AUTOTB_TVIN_atol, begin_str(AESL_transaction));
 {
-auto *pos = (unsigned char*)&__xlx_apatb_param_tol;
-aesl_fh.write(AUTOTB_TVIN_tol, formatData(pos, 64));
+auto *pos = (unsigned char*)&__xlx_apatb_param_atol;
+aesl_fh.write(AUTOTB_TVIN_atol, formatData(pos, 64));
 }
-  tcl_file.set_num(1, &tcl_file.tol_depth);
-aesl_fh.write(AUTOTB_TVIN_tol, end_str());
+  tcl_file.set_num(1, &tcl_file.atol_depth);
+aesl_fh.write(AUTOTB_TVIN_atol, end_str());
+}
+
+// print h_max Transactions
+{
+aesl_fh.write(AUTOTB_TVIN_h_max, begin_str(AESL_transaction));
+{
+auto *pos = (unsigned char*)&__xlx_apatb_param_h_max;
+aesl_fh.write(AUTOTB_TVIN_h_max, formatData(pos, 64));
+}
+  tcl_file.set_num(1, &tcl_file.h_max_depth);
+aesl_fh.write(AUTOTB_TVIN_h_max, end_str());
+}
+
+// print h_min Transactions
+{
+aesl_fh.write(AUTOTB_TVIN_h_min, begin_str(AESL_transaction));
+{
+auto *pos = (unsigned char*)&__xlx_apatb_param_h_min;
+aesl_fh.write(AUTOTB_TVIN_h_min, formatData(pos, 64));
+}
+  tcl_file.set_num(1, &tcl_file.h_min_depth);
+aesl_fh.write(AUTOTB_TVIN_h_min, end_str());
 }
 
 // print mu Transactions
@@ -584,7 +618,7 @@ aesl_fh.write(AUTOTB_TVIN_size, end_str());
 }
 
 CodeState = CALL_C_DUT;
-runge_kutta_45_hw_stub_wrapper(__xlx_apatb_param_yy, __xlx_apatb_param_tt, __xlx_apatb_param_tf, __xlx_apatb_param_h0, __xlx_apatb_param_tol, __xlx_apatb_param_mu, __xlx_apatb_param_size);
+runge_kutta_45_hw_stub_wrapper(__xlx_apatb_param_yy, __xlx_apatb_param_tt, __xlx_apatb_param_tf, __xlx_apatb_param_h0, __xlx_apatb_param_atol, __xlx_apatb_param_h_max, __xlx_apatb_param_h_min, __xlx_apatb_param_mu, __xlx_apatb_param_size);
 CodeState = DUMP_OUTPUTS;
 #ifdef USE_BINARY_TV_FILE
 {

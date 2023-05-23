@@ -14,19 +14,19 @@ set C_modelName {runge_kutta_45_Pipeline_last_copy_t}
 set C_modelType { void 0 }
 set C_modelArgList {
 	{ T_BUS int 512 regular {axi_master 1}  }
-	{ add351 int 32 regular  }
+	{ add382 int 32 regular  }
 	{ tt_loc_V int 80 regular {array 2048 { 1 3 } 1 1 }  }
 	{ tt int 64 regular  }
-	{ zext_ln269 int 35 regular  }
-	{ trunc_ln7 int 6 regular  }
+	{ zext_ln279 int 35 regular  }
+	{ trunc_ln5 int 6 regular  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "T_BUS", "interface" : "axi_master", "bitwidth" : 512, "direction" : "WRITEONLY", "bitSlice":[ {"cElement": [{"cName": "tt","offset": { "type": "dynamic","port_name": "tt","bundle": "control"},"direction": "READWRITE"}]}]} , 
- 	{ "Name" : "add351", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
+ 	{ "Name" : "add382", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "tt_loc_V", "interface" : "memory", "bitwidth" : 80, "direction" : "READONLY"} , 
  	{ "Name" : "tt", "interface" : "wire", "bitwidth" : 64, "direction" : "READONLY"} , 
- 	{ "Name" : "zext_ln269", "interface" : "wire", "bitwidth" : 35, "direction" : "READONLY"} , 
- 	{ "Name" : "trunc_ln7", "interface" : "wire", "bitwidth" : 6, "direction" : "READONLY"} ]}
+ 	{ "Name" : "zext_ln279", "interface" : "wire", "bitwidth" : 35, "direction" : "READONLY"} , 
+ 	{ "Name" : "trunc_ln5", "interface" : "wire", "bitwidth" : 6, "direction" : "READONLY"} ]}
 # RTL Port declarations: 
 set portNum 59
 set portList { 
@@ -82,13 +82,13 @@ set portList {
 	{ m_axi_T_BUS_BRESP sc_in sc_lv 2 signal 0 } 
 	{ m_axi_T_BUS_BID sc_in sc_lv 1 signal 0 } 
 	{ m_axi_T_BUS_BUSER sc_in sc_lv 1 signal 0 } 
-	{ add351 sc_in sc_lv 32 signal 1 } 
+	{ add382 sc_in sc_lv 32 signal 1 } 
 	{ tt_loc_V_address0 sc_out sc_lv 11 signal 2 } 
 	{ tt_loc_V_ce0 sc_out sc_logic 1 signal 2 } 
 	{ tt_loc_V_q0 sc_in sc_lv 80 signal 2 } 
 	{ tt sc_in sc_lv 64 signal 3 } 
-	{ zext_ln269 sc_in sc_lv 35 signal 4 } 
-	{ trunc_ln7 sc_in sc_lv 6 signal 5 } 
+	{ zext_ln279 sc_in sc_lv 35 signal 4 } 
+	{ trunc_ln5 sc_in sc_lv 6 signal 5 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -143,13 +143,13 @@ set NewPortList {[
  	{ "name": "m_axi_T_BUS_BRESP", "direction": "in", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "T_BUS", "role": "BRESP" }} , 
  	{ "name": "m_axi_T_BUS_BID", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "T_BUS", "role": "BID" }} , 
  	{ "name": "m_axi_T_BUS_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "T_BUS", "role": "BUSER" }} , 
- 	{ "name": "add351", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "add351", "role": "default" }} , 
+ 	{ "name": "add382", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "add382", "role": "default" }} , 
  	{ "name": "tt_loc_V_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":11, "type": "signal", "bundle":{"name": "tt_loc_V", "role": "address0" }} , 
  	{ "name": "tt_loc_V_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "tt_loc_V", "role": "ce0" }} , 
  	{ "name": "tt_loc_V_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":80, "type": "signal", "bundle":{"name": "tt_loc_V", "role": "q0" }} , 
  	{ "name": "tt", "direction": "in", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "tt", "role": "default" }} , 
- 	{ "name": "zext_ln269", "direction": "in", "datatype": "sc_lv", "bitwidth":35, "type": "signal", "bundle":{"name": "zext_ln269", "role": "default" }} , 
- 	{ "name": "trunc_ln7", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "trunc_ln7", "role": "default" }}  ]}
+ 	{ "name": "zext_ln279", "direction": "in", "datatype": "sc_lv", "bitwidth":35, "type": "signal", "bundle":{"name": "zext_ln279", "role": "default" }} , 
+ 	{ "name": "trunc_ln5", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "trunc_ln5", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1"],
@@ -172,11 +172,11 @@ set RtlHierarchyInfo {[
 					{"Name" : "T_BUS_blk_n_AW", "Type" : "RtlSignal"},
 					{"Name" : "T_BUS_blk_n_W", "Type" : "RtlSignal"},
 					{"Name" : "T_BUS_blk_n_B", "Type" : "RtlSignal"}]},
-			{"Name" : "add351", "Type" : "None", "Direction" : "I"},
+			{"Name" : "add382", "Type" : "None", "Direction" : "I"},
 			{"Name" : "tt_loc_V", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "tt", "Type" : "None", "Direction" : "I"},
-			{"Name" : "zext_ln269", "Type" : "None", "Direction" : "I"},
-			{"Name" : "trunc_ln7", "Type" : "None", "Direction" : "I"}],
+			{"Name" : "zext_ln279", "Type" : "None", "Direction" : "I"},
+			{"Name" : "trunc_ln5", "Type" : "None", "Direction" : "I"}],
 		"Loop" : [
 			{"Name" : "last_copy_t", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter7", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter7", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
@@ -186,11 +186,11 @@ set RtlHierarchyInfo {[
 set ArgLastReadFirstWriteLatency {
 	runge_kutta_45_Pipeline_last_copy_t {
 		T_BUS {Type O LastRead 3 FirstWrite 2}
-		add351 {Type I LastRead 0 FirstWrite -1}
+		add382 {Type I LastRead 0 FirstWrite -1}
 		tt_loc_V {Type I LastRead 0 FirstWrite -1}
 		tt {Type I LastRead 0 FirstWrite -1}
-		zext_ln269 {Type I LastRead 0 FirstWrite -1}
-		trunc_ln7 {Type I LastRead 0 FirstWrite -1}}}
+		zext_ln279 {Type I LastRead 0 FirstWrite -1}
+		trunc_ln5 {Type I LastRead 0 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
@@ -205,9 +205,9 @@ set PipelineEnableSignalInfo {[
 
 set Spec2ImplPortList { 
 	 { m_axi {  { m_axi_T_BUS_AWVALID VALID 1 1 }  { m_axi_T_BUS_AWREADY READY 0 1 }  { m_axi_T_BUS_AWADDR ADDR 1 64 }  { m_axi_T_BUS_AWID ID 1 1 }  { m_axi_T_BUS_AWLEN SIZE 1 32 }  { m_axi_T_BUS_AWSIZE BURST 1 3 }  { m_axi_T_BUS_AWBURST LOCK 1 2 }  { m_axi_T_BUS_AWLOCK CACHE 1 2 }  { m_axi_T_BUS_AWCACHE PROT 1 4 }  { m_axi_T_BUS_AWPROT QOS 1 3 }  { m_axi_T_BUS_AWQOS REGION 1 4 }  { m_axi_T_BUS_AWREGION USER 1 4 }  { m_axi_T_BUS_AWUSER DATA 1 1 }  { m_axi_T_BUS_WVALID VALID 1 1 }  { m_axi_T_BUS_WREADY READY 0 1 }  { m_axi_T_BUS_WDATA FIFONUM 1 512 }  { m_axi_T_BUS_WSTRB STRB 1 64 }  { m_axi_T_BUS_WLAST LAST 1 1 }  { m_axi_T_BUS_WID ID 1 1 }  { m_axi_T_BUS_WUSER DATA 1 1 }  { m_axi_T_BUS_ARVALID VALID 1 1 }  { m_axi_T_BUS_ARREADY READY 0 1 }  { m_axi_T_BUS_ARADDR ADDR 1 64 }  { m_axi_T_BUS_ARID ID 1 1 }  { m_axi_T_BUS_ARLEN SIZE 1 32 }  { m_axi_T_BUS_ARSIZE BURST 1 3 }  { m_axi_T_BUS_ARBURST LOCK 1 2 }  { m_axi_T_BUS_ARLOCK CACHE 1 2 }  { m_axi_T_BUS_ARCACHE PROT 1 4 }  { m_axi_T_BUS_ARPROT QOS 1 3 }  { m_axi_T_BUS_ARQOS REGION 1 4 }  { m_axi_T_BUS_ARREGION USER 1 4 }  { m_axi_T_BUS_ARUSER DATA 1 1 }  { m_axi_T_BUS_RVALID VALID 0 1 }  { m_axi_T_BUS_RREADY READY 1 1 }  { m_axi_T_BUS_RDATA FIFONUM 0 512 }  { m_axi_T_BUS_RLAST LAST 0 1 }  { m_axi_T_BUS_RID ID 0 1 }  { m_axi_T_BUS_RFIFONUM LEN 0 9 }  { m_axi_T_BUS_RUSER DATA 0 1 }  { m_axi_T_BUS_RRESP RESP 0 2 }  { m_axi_T_BUS_BVALID VALID 0 1 }  { m_axi_T_BUS_BREADY READY 1 1 }  { m_axi_T_BUS_BRESP RESP 0 2 }  { m_axi_T_BUS_BID ID 0 1 }  { m_axi_T_BUS_BUSER DATA 0 1 } } }
-	add351 { ap_none {  { add351 in_data 0 32 } } }
+	add382 { ap_none {  { add382 in_data 0 32 } } }
 	tt_loc_V { ap_memory {  { tt_loc_V_address0 mem_address 1 11 }  { tt_loc_V_ce0 mem_ce 1 1 }  { tt_loc_V_q0 in_data 0 80 } } }
 	tt { ap_none {  { tt in_data 0 64 } } }
-	zext_ln269 { ap_none {  { zext_ln269 in_data 0 35 } } }
-	trunc_ln7 { ap_none {  { trunc_ln7 in_data 0 6 } } }
+	zext_ln279 { ap_none {  { zext_ln279 in_data 0 35 } } }
+	trunc_ln5 { ap_none {  { trunc_ln5 in_data 0 6 } } }
 }

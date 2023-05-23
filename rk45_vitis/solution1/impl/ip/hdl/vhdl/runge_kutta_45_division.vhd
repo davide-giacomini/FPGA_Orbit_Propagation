@@ -18,8 +18,8 @@ port (
     ap_idle : OUT STD_LOGIC;
     ap_ready : OUT STD_LOGIC;
     num : IN STD_LOGIC_VECTOR (79 downto 0);
-    den : IN STD_LOGIC_VECTOR (161 downto 0);
-    ap_return : OUT STD_LOGIC_VECTOR (203 downto 0) );
+    den : IN STD_LOGIC_VECTOR (160 downto 0);
+    ap_return : OUT STD_LOGIC_VECTOR (139 downto 0) );
 end;
 
 
@@ -234,7 +234,7 @@ architecture behav of runge_kutta_45_division is
     constant ap_const_lv32_0 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
     constant ap_const_lv120_0 : STD_LOGIC_VECTOR (119 downto 0) := "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
     constant ap_const_lv32_CB : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000011001011";
-    constant ap_const_lv204_lc_1 : STD_LOGIC_VECTOR (203 downto 0) := "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_const_lv140_lc_1 : STD_LOGIC_VECTOR (139 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
 
 attribute shreg_extract : string;
     signal ap_CS_fsm : STD_LOGIC_VECTOR (203 downto 0) := "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001";
@@ -242,15 +242,16 @@ attribute shreg_extract : string;
     attribute fsm_encoding of ap_CS_fsm : signal is "none";
     signal ap_CS_fsm_state1 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state1 : signal is "none";
-    signal grp_fu_36_p0 : STD_LOGIC_VECTOR (199 downto 0);
-    signal grp_fu_36_p1 : STD_LOGIC_VECTOR (162 downto 0);
-    signal grp_fu_36_p2 : STD_LOGIC_VECTOR (199 downto 0);
+    signal sext_ln1349_fu_32_p1 : STD_LOGIC_VECTOR (161 downto 0);
+    signal grp_fu_40_p0 : STD_LOGIC_VECTOR (199 downto 0);
+    signal grp_fu_40_p1 : STD_LOGIC_VECTOR (162 downto 0);
+    signal grp_fu_40_p2 : STD_LOGIC_VECTOR (139 downto 0);
     signal ap_CS_fsm_state204 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state204 : signal is "none";
-    signal grp_fu_36_ap_start : STD_LOGIC;
-    signal grp_fu_36_ap_done : STD_LOGIC;
-    signal sext_ln447_fu_42_p1 : STD_LOGIC_VECTOR (203 downto 0);
-    signal ap_return_preg : STD_LOGIC_VECTOR (203 downto 0) := "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
+    signal grp_fu_40_ap_start : STD_LOGIC;
+    signal grp_fu_40_ap_done : STD_LOGIC;
+    signal trunc_ln0_fu_46_p1 : STD_LOGIC_VECTOR (139 downto 0);
+    signal ap_return_preg : STD_LOGIC_VECTOR (139 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
     signal ap_NS_fsm : STD_LOGIC_VECTOR (203 downto 0);
     signal ap_ST_fsm_state1_blk : STD_LOGIC;
     signal ap_ST_fsm_state2_blk : STD_LOGIC;
@@ -456,10 +457,10 @@ attribute shreg_extract : string;
     signal ap_ST_fsm_state202_blk : STD_LOGIC;
     signal ap_ST_fsm_state203_blk : STD_LOGIC;
     signal ap_ST_fsm_state204_blk : STD_LOGIC;
-    signal grp_fu_36_p10 : STD_LOGIC_VECTOR (199 downto 0);
+    signal grp_fu_40_p10 : STD_LOGIC_VECTOR (199 downto 0);
     signal ap_ce_reg : STD_LOGIC;
 
-    component runge_kutta_45_sdiv_200ns_163ns_200_204_seq_1 IS
+    component runge_kutta_45_sdiv_200ns_163ns_140_204_seq_1 IS
     generic (
         ID : INTEGER;
         NUM_STAGE : INTEGER;
@@ -474,28 +475,28 @@ attribute shreg_extract : string;
         din0 : IN STD_LOGIC_VECTOR (199 downto 0);
         din1 : IN STD_LOGIC_VECTOR (162 downto 0);
         ce : IN STD_LOGIC;
-        dout : OUT STD_LOGIC_VECTOR (199 downto 0) );
+        dout : OUT STD_LOGIC_VECTOR (139 downto 0) );
     end component;
 
 
 
 begin
-    sdiv_200ns_163ns_200_204_seq_1_U32 : component runge_kutta_45_sdiv_200ns_163ns_200_204_seq_1
+    sdiv_200ns_163ns_140_204_seq_1_U33 : component runge_kutta_45_sdiv_200ns_163ns_140_204_seq_1
     generic map (
         ID => 1,
         NUM_STAGE => 204,
         din0_WIDTH => 200,
         din1_WIDTH => 163,
-        dout_WIDTH => 200)
+        dout_WIDTH => 140)
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        start => grp_fu_36_ap_start,
-        done => grp_fu_36_ap_done,
-        din0 => grp_fu_36_p0,
-        din1 => grp_fu_36_p1,
+        start => grp_fu_40_ap_start,
+        done => grp_fu_40_ap_done,
+        din0 => grp_fu_40_p0,
+        din1 => grp_fu_40_p1,
         ce => ap_const_logic_1,
-        dout => grp_fu_36_p2);
+        dout => grp_fu_40_p2);
 
 
 
@@ -517,10 +518,10 @@ begin
     begin
         if (ap_clk'event and ap_clk =  '1') then
             if (ap_rst = '1') then
-                ap_return_preg <= ap_const_lv204_lc_1;
+                ap_return_preg <= ap_const_lv140_lc_1;
             else
                 if ((ap_const_logic_1 = ap_CS_fsm_state204)) then 
-                    ap_return_preg <= sext_ln447_fu_42_p1;
+                    ap_return_preg <= trunc_ln0_fu_46_p1;
                 end if; 
             end if;
         end if;
@@ -1192,28 +1193,29 @@ begin
     end process;
 
 
-    ap_return_assign_proc : process(ap_CS_fsm_state204, sext_ln447_fu_42_p1, ap_return_preg)
+    ap_return_assign_proc : process(ap_CS_fsm_state204, trunc_ln0_fu_46_p1, ap_return_preg)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state204)) then 
-            ap_return <= sext_ln447_fu_42_p1;
+            ap_return <= trunc_ln0_fu_46_p1;
         else 
             ap_return <= ap_return_preg;
         end if; 
     end process;
 
 
-    grp_fu_36_ap_start_assign_proc : process(ap_start, ap_CS_fsm_state1)
+    grp_fu_40_ap_start_assign_proc : process(ap_start, ap_CS_fsm_state1)
     begin
         if (((ap_start = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
-            grp_fu_36_ap_start <= ap_const_logic_1;
+            grp_fu_40_ap_start <= ap_const_logic_1;
         else 
-            grp_fu_36_ap_start <= ap_const_logic_0;
+            grp_fu_40_ap_start <= ap_const_logic_0;
         end if; 
     end process;
 
-    grp_fu_36_p0 <= (num & ap_const_lv120_0);
-    grp_fu_36_p1 <= grp_fu_36_p10(163 - 1 downto 0);
-    grp_fu_36_p10 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(den),200));
-        sext_ln447_fu_42_p1 <= std_logic_vector(IEEE.numeric_std.resize(signed(grp_fu_36_p2),204));
+    grp_fu_40_p0 <= (num & ap_const_lv120_0);
+    grp_fu_40_p1 <= grp_fu_40_p10(163 - 1 downto 0);
+    grp_fu_40_p10 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(sext_ln1349_fu_32_p1),200));
+        sext_ln1349_fu_32_p1 <= std_logic_vector(IEEE.numeric_std.resize(signed(den),162));
 
+    trunc_ln0_fu_46_p1 <= grp_fu_40_p2(140 - 1 downto 0);
 end behav;

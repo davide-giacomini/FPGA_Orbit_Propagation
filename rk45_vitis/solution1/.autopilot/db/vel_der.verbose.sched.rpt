@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'vel_der'
 ================================================================
-* Date:           Sun May 14 17:33:48 2023
+* Date:           Mon May 22 17:32:29 2023
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        rk45_vitis
@@ -112,28 +112,25 @@ ST_4 : Operation 28 [1/2] (0.95ns)   --->   "%call_ln0 = call void @vel_der_Pipe
 State 5 <SV = 4> <Delay = 5.07>
 ST_5 : Operation 29 [1/1] (0.00ns)   --->   "%mu_read = read i80 @_ssdm_op_Read.ap_auto.i80, i80 %mu"   --->   Operation 29 'read' 'mu_read' <Predicate = true> <Delay = 0.00>
 ST_5 : Operation 30 [1/1] (0.00ns)   --->   "%X_V_4_loc_load = load i161 %X_V_4_loc"   --->   Operation 30 'load' 'X_V_4_loc_load' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 31 [1/1] (0.00ns)   --->   "%sext_ln73 = sext i161 %X_V_4_loc_load" [src/headers/fxp_sqrt.h:73]   --->   Operation 31 'sext' 'sext_ln73' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 32 [2/2] (1.58ns)   --->   "%call_ln0 = call void @vel_der_Pipeline_sqrt_loop, i161 %X_V_4_loc_load, i81 %Q_V_2_loc"   --->   Operation 32 'call' 'call_ln0' <Predicate = true> <Delay = 1.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_5 : Operation 33 [2/2] (5.07ns)   --->   "%mu_over_r_squared_V = call i204 @division, i80 %mu_read, i162 %sext_ln73" [src/runge_kutta_45.cpp:83]   --->   Operation 33 'call' 'mu_over_r_squared_V' <Predicate = true> <Delay = 5.07> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_5 : Operation 31 [2/2] (1.58ns)   --->   "%call_ln0 = call void @vel_der_Pipeline_sqrt_loop, i161 %X_V_4_loc_load, i81 %Q_V_2_loc"   --->   Operation 31 'call' 'call_ln0' <Predicate = true> <Delay = 1.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_5 : Operation 32 [2/2] (5.07ns)   --->   "%mu_over_r_squared_V = call i140 @division, i80 %mu_read, i161 %X_V_4_loc_load" [src/runge_kutta_45.cpp:83]   --->   Operation 32 'call' 'mu_over_r_squared_V' <Predicate = true> <Delay = 5.07> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 6 <SV = 5> <Delay = 5.07>
-ST_6 : Operation 34 [1/2] (1.48ns)   --->   "%call_ln0 = call void @vel_der_Pipeline_sqrt_loop, i161 %X_V_4_loc_load, i81 %Q_V_2_loc"   --->   Operation 34 'call' 'call_ln0' <Predicate = true> <Delay = 1.48> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_6 : Operation 35 [1/2] (5.07ns)   --->   "%mu_over_r_squared_V = call i204 @division, i80 %mu_read, i162 %sext_ln73" [src/runge_kutta_45.cpp:83]   --->   Operation 35 'call' 'mu_over_r_squared_V' <Predicate = true> <Delay = 5.07> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_6 : Operation 36 [1/1] (0.00ns)   --->   "%trunc_ln1453 = trunc i204 %mu_over_r_squared_V"   --->   Operation 36 'trunc' 'trunc_ln1453' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 33 [1/2] (1.48ns)   --->   "%call_ln0 = call void @vel_der_Pipeline_sqrt_loop, i161 %X_V_4_loc_load, i81 %Q_V_2_loc"   --->   Operation 33 'call' 'call_ln0' <Predicate = true> <Delay = 1.48> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 34 [1/2] (5.07ns)   --->   "%mu_over_r_squared_V = call i140 @division, i80 %mu_read, i161 %X_V_4_loc_load" [src/runge_kutta_45.cpp:83]   --->   Operation 34 'call' 'mu_over_r_squared_V' <Predicate = true> <Delay = 5.07> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 7 <SV = 6> <Delay = 5.07>
-ST_7 : Operation 37 [1/1] (0.00ns)   --->   "%Q_V_2_loc_load = load i81 %Q_V_2_loc"   --->   Operation 37 'load' 'Q_V_2_loc_load' <Predicate = true> <Delay = 0.00>
-ST_7 : Operation 38 [1/1] (0.00ns)   --->   "%shl_ln = bitconcatenate i141 @_ssdm_op_BitConcatenate.i141.i81.i60, i81 %Q_V_2_loc_load, i60 0"   --->   Operation 38 'bitconcatenate' 'shl_ln' <Predicate = true> <Delay = 0.00>
-ST_7 : Operation 39 [1/1] (0.00ns)   --->   "%zext_ln84 = zext i141 %shl_ln" [src/runge_kutta_45.cpp:84]   --->   Operation 39 'zext' 'zext_ln84' <Predicate = true> <Delay = 0.00>
-ST_7 : Operation 40 [2/2] (5.07ns)   --->   "%op_V = call i204 @division, i80 %tmp_4, i162 %zext_ln84" [src/runge_kutta_45.cpp:84]   --->   Operation 40 'call' 'op_V' <Predicate = true> <Delay = 5.07> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_7 : Operation 35 [1/1] (0.00ns)   --->   "%Q_V_2_loc_load = load i81 %Q_V_2_loc"   --->   Operation 35 'load' 'Q_V_2_loc_load' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 36 [1/1] (0.00ns)   --->   "%shl_ln = bitconcatenate i141 @_ssdm_op_BitConcatenate.i141.i81.i60, i81 %Q_V_2_loc_load, i60 0"   --->   Operation 36 'bitconcatenate' 'shl_ln' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 37 [1/1] (0.00ns)   --->   "%zext_ln84 = zext i141 %shl_ln" [src/runge_kutta_45.cpp:84]   --->   Operation 37 'zext' 'zext_ln84' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 38 [2/2] (5.07ns)   --->   "%versor_r_i = call i140 @division, i80 %tmp_4, i161 %zext_ln84"   --->   Operation 38 'call' 'versor_r_i' <Predicate = true> <Delay = 5.07> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 8 <SV = 7> <Delay = 31.0>
-ST_8 : Operation 41 [1/2] (5.07ns)   --->   "%op_V = call i204 @division, i80 %tmp_4, i162 %zext_ln84" [src/runge_kutta_45.cpp:84]   --->   Operation 41 'call' 'op_V' <Predicate = true> <Delay = 5.07> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_8 : Operation 42 [1/1] (0.00ns)   --->   "%versor_r_i = trunc i204 %op_V"   --->   Operation 42 'trunc' 'versor_r_i' <Predicate = true> <Delay = 0.00>
-ST_8 : Operation 43 [1/1] (5.70ns)   --->   "%r_V_2 = sub i140 0, i140 %trunc_ln1453"   --->   Operation 43 'sub' 'r_V_2' <Predicate = true> <Delay = 5.70> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_8 : Operation 44 [1/1] (25.3ns)   --->   "%r_V_3 = mul i140 %versor_r_i, i140 %r_V_2"   --->   Operation 44 'mul' 'r_V_3' <Predicate = true> <Delay = 25.3> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 0> <II = 1> <Delay = 25.3> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_8 : Operation 45 [1/1] (0.00ns)   --->   "%this_V_write_assign = partselect i80 @_ssdm_op_PartSelect.i80.i140.i32.i32, i140 %r_V_3, i32 60, i32 139"   --->   Operation 45 'partselect' 'this_V_write_assign' <Predicate = true> <Delay = 0.00>
-ST_8 : Operation 46 [1/1] (0.00ns)   --->   "%ret_ln87 = ret i80 %this_V_write_assign" [src/runge_kutta_45.cpp:87]   --->   Operation 46 'ret' 'ret_ln87' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 39 [1/2] (5.07ns)   --->   "%versor_r_i = call i140 @division, i80 %tmp_4, i161 %zext_ln84"   --->   Operation 39 'call' 'versor_r_i' <Predicate = true> <Delay = 5.07> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 40 [1/1] (5.70ns)   --->   "%r_V_2 = sub i140 0, i140 %mu_over_r_squared_V"   --->   Operation 40 'sub' 'r_V_2' <Predicate = true> <Delay = 5.70> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 41 [1/1] (25.3ns)   --->   "%r_V_3 = mul i140 %versor_r_i, i140 %r_V_2"   --->   Operation 41 'mul' 'r_V_3' <Predicate = true> <Delay = 25.3> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 0> <II = 1> <Delay = 25.3> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 42 [1/1] (0.00ns)   --->   "%this_V_write_assign = partselect i80 @_ssdm_op_PartSelect.i80.i140.i32.i32, i140 %r_V_3, i32 60, i32 139"   --->   Operation 42 'partselect' 'this_V_write_assign' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 43 [1/1] (0.00ns)   --->   "%ret_ln87 = ret i80 %this_V_write_assign" [src/runge_kutta_45.cpp:87]   --->   Operation 43 'ret' 'ret_ln87' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -153,7 +150,7 @@ The critical path consists of the following:
  <State 3>: 1.71ns
 The critical path consists of the following:
 	wire read operation ('i_read') on port 'i' [13]  (0 ns)
-	'mux' operation ('tmp_4', src/runge_kutta_45.cpp:84) [32]  (1.71 ns)
+	'mux' operation ('tmp_4', src/runge_kutta_45.cpp:84) [31]  (1.71 ns)
 
  <State 4>: 0.959ns
 The critical path consists of the following:
@@ -162,21 +159,21 @@ The critical path consists of the following:
  <State 5>: 5.07ns
 The critical path consists of the following:
 	wire read operation ('mu_read') on port 'mu' [12]  (0 ns)
-	'call' operation ('mu_over_r_squared.V', src/runge_kutta_45.cpp:83) to 'division' [31]  (5.07 ns)
+	'call' operation ('mu_over_r_squared.V', src/runge_kutta_45.cpp:83) to 'division' [30]  (5.07 ns)
 
  <State 6>: 5.07ns
 The critical path consists of the following:
-	'call' operation ('mu_over_r_squared.V', src/runge_kutta_45.cpp:83) to 'division' [31]  (5.07 ns)
+	'call' operation ('mu_over_r_squared.V', src/runge_kutta_45.cpp:83) to 'division' [30]  (5.07 ns)
 
  <State 7>: 5.07ns
 The critical path consists of the following:
-	'load' operation ('Q_V_2_loc_load') on local variable 'Q_V_2_loc' [30]  (0 ns)
-	'call' operation ('op_V', src/runge_kutta_45.cpp:84) to 'division' [35]  (5.07 ns)
+	'load' operation ('Q_V_2_loc_load') on local variable 'Q_V_2_loc' [29]  (0 ns)
+	'call' operation ('versor_r_i') to 'division' [34]  (5.07 ns)
 
  <State 8>: 31.1ns
 The critical path consists of the following:
-	'sub' operation ('r.V') [38]  (5.7 ns)
-	'mul' operation ('r.V') [39]  (25.4 ns)
+	'sub' operation ('r.V') [35]  (5.7 ns)
+	'mul' operation ('r.V') [36]  (25.4 ns)
 
 
 ============================================================

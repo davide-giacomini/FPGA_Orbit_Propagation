@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'ode_fpga'" level="0">
-<item name = "Date">Sun May 14 17:33:55 2023
+<item name = "Date">Mon May 22 17:32:37 2023
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
 <item name = "Project">rk45_vitis</item>
@@ -57,7 +57,7 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 264, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">-, 36, 2573, 6824, -</column>
+<column name="Instance">-, 36, 2347, 6824, -</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, -, 194, -</column>
 <column name="Register">-, -, 1505, -, -</column>
@@ -69,11 +69,11 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="mux_32_80_1_1_U59">mux_32_80_1_1, 0, 0, 0, 14, 0</column>
 <column name="mux_32_80_1_1_U60">mux_32_80_1_1, 0, 0, 0, 14, 0</column>
+<column name="mux_32_80_1_1_U61">mux_32_80_1_1, 0, 0, 0, 14, 0</column>
 <column name="grp_ode_fpga_Pipeline_1_fu_220">ode_fpga_Pipeline_1, 0, 0, 4, 73, 0</column>
 <column name="grp_ode_fpga_Pipeline_2_fu_230">ode_fpga_Pipeline_2, 0, 0, 4, 84, 0</column>
-<column name="grp_vel_der_fu_208">vel_der, 0, 36, 2565, 6639, 0</column>
+<column name="grp_vel_der_fu_208">vel_der, 0, 36, 2339, 6639, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -92,16 +92,16 @@
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
 <column name="add_ln101_fu_499_p2">+, 0, 0, 10, 2, 1</column>
 <column name="add_ptr_sum_fu_347_p2">+, 0, 0, 11, 3, 2</column>
-<column name="empty_76_fu_288_p2">+, 0, 0, 10, 2, 1</column>
-<column name="empty_77_fu_294_p2">+, 0, 0, 17, 14, 14</column>
-<column name="empty_78_fu_341_p2">+, 0, 0, 10, 2, 1</column>
-<column name="empty_79_fu_357_p2">+, 0, 0, 17, 14, 14</column>
-<column name="empty_80_fu_405_p2">+, 0, 0, 10, 2, 1</column>
-<column name="empty_81_fu_448_p2">+, 0, 0, 10, 2, 1</column>
+<column name="empty_77_fu_288_p2">+, 0, 0, 10, 2, 1</column>
+<column name="empty_78_fu_294_p2">+, 0, 0, 17, 14, 14</column>
+<column name="empty_79_fu_341_p2">+, 0, 0, 10, 2, 1</column>
+<column name="empty_80_fu_357_p2">+, 0, 0, 17, 14, 14</column>
+<column name="empty_81_fu_405_p2">+, 0, 0, 10, 2, 1</column>
+<column name="empty_82_fu_448_p2">+, 0, 0, 10, 2, 1</column>
 <column name="r_out_V_0_fu_610_p2">+, 0, 0, 87, 80, 80</column>
 <column name="sum2_fu_454_p2">+, 0, 0, 11, 3, 2</column>
-<column name="empty_75_fu_264_p2">-, 0, 0, 17, 14, 14</column>
-<column name="empty_84_fu_563_p2">-, 0, 0, 14, 6, 6</column>
+<column name="empty_76_fu_264_p2">-, 0, 0, 17, 14, 14</column>
+<column name="empty_85_fu_563_p2">-, 0, 0, 14, 6, 6</column>
 <column name="exitcond104_fu_442_p2">icmp, 0, 0, 8, 2, 2</column>
 <column name="exitcond115_fu_399_p2">icmp, 0, 0, 8, 2, 2</column>
 <column name="exitcond126_fu_335_p2">icmp, 0, 0, 8, 2, 2</column>
@@ -135,12 +135,12 @@
 <column name="cv_V_2_1_fu_112">80, 0, 80, 0</column>
 <column name="cv_V_2_2_fu_116">80, 0, 80, 0</column>
 <column name="cv_V_2_fu_108">80, 0, 80, 0</column>
-<column name="empty_75_reg_698">13, 0, 14, 1</column>
-<column name="empty_76_reg_711">2, 0, 2, 0</column>
-<column name="empty_78_reg_753">2, 0, 2, 0</column>
-<column name="empty_80_reg_795">2, 0, 2, 0</column>
-<column name="empty_81_reg_837">2, 0, 2, 0</column>
-<column name="empty_84_reg_935">5, 0, 6, 1</column>
+<column name="empty_76_reg_698">13, 0, 14, 1</column>
+<column name="empty_77_reg_711">2, 0, 2, 0</column>
+<column name="empty_79_reg_753">2, 0, 2, 0</column>
+<column name="empty_81_reg_795">2, 0, 2, 0</column>
+<column name="empty_82_reg_837">2, 0, 2, 0</column>
+<column name="empty_85_reg_935">5, 0, 6, 1</column>
 <column name="grp_ode_fpga_Pipeline_1_fu_220_ap_start_reg">1, 0, 1, 0</column>
 <column name="grp_ode_fpga_Pipeline_2_fu_230_ap_start_reg">1, 0, 1, 0</column>
 <column name="grp_vel_der_fu_208_ap_start_reg">1, 0, 1, 0</column>

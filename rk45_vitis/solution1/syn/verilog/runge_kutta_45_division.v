@@ -231,24 +231,25 @@ output   ap_done;
 output   ap_idle;
 output   ap_ready;
 input  [79:0] num;
-input  [161:0] den;
-output  [203:0] ap_return;
+input  [160:0] den;
+output  [139:0] ap_return;
 
 reg ap_done;
 reg ap_idle;
 reg ap_ready;
-reg[203:0] ap_return;
+reg[139:0] ap_return;
 
 (* fsm_encoding = "none" *) reg   [203:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
-wire   [199:0] grp_fu_36_p0;
-wire   [162:0] grp_fu_36_p1;
-wire   [199:0] grp_fu_36_p2;
+wire  signed [161:0] sext_ln1349_fu_32_p1;
+wire   [199:0] grp_fu_40_p0;
+wire   [162:0] grp_fu_40_p1;
+wire   [139:0] grp_fu_40_p2;
 wire    ap_CS_fsm_state204;
-reg    grp_fu_36_ap_start;
-wire    grp_fu_36_ap_done;
-wire  signed [203:0] sext_ln447_fu_42_p1;
-reg   [203:0] ap_return_preg;
+reg    grp_fu_40_ap_start;
+wire    grp_fu_40_ap_done;
+wire   [139:0] trunc_ln0_fu_46_p1;
+reg   [139:0] ap_return_preg;
 reg   [203:0] ap_NS_fsm;
 reg    ap_ST_fsm_state1_blk;
 wire    ap_ST_fsm_state2_blk;
@@ -454,30 +455,30 @@ wire    ap_ST_fsm_state201_blk;
 wire    ap_ST_fsm_state202_blk;
 wire    ap_ST_fsm_state203_blk;
 wire    ap_ST_fsm_state204_blk;
-wire   [199:0] grp_fu_36_p10;
+wire   [199:0] grp_fu_40_p10;
 wire    ap_ce_reg;
 
 // power-on initialization
 initial begin
 #0 ap_CS_fsm = 204'd1;
-#0 ap_return_preg = 204'd0;
+#0 ap_return_preg = 140'd0;
 end
 
-runge_kutta_45_sdiv_200ns_163ns_200_204_seq_1 #(
+runge_kutta_45_sdiv_200ns_163ns_140_204_seq_1 #(
     .ID( 1 ),
     .NUM_STAGE( 204 ),
     .din0_WIDTH( 200 ),
     .din1_WIDTH( 163 ),
-    .dout_WIDTH( 200 ))
-sdiv_200ns_163ns_200_204_seq_1_U32(
+    .dout_WIDTH( 140 ))
+sdiv_200ns_163ns_140_204_seq_1_U33(
     .clk(ap_clk),
     .reset(ap_rst),
-    .start(grp_fu_36_ap_start),
-    .done(grp_fu_36_ap_done),
-    .din0(grp_fu_36_p0),
-    .din1(grp_fu_36_p1),
+    .start(grp_fu_40_ap_start),
+    .done(grp_fu_40_ap_done),
+    .din0(grp_fu_40_p0),
+    .din1(grp_fu_40_p1),
     .ce(1'b1),
-    .dout(grp_fu_36_p2)
+    .dout(grp_fu_40_p2)
 );
 
 always @ (posedge ap_clk) begin
@@ -490,10 +491,10 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_return_preg <= 204'd0;
+        ap_return_preg <= 140'd0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state204)) begin
-            ap_return_preg <= sext_ln447_fu_42_p1;
+            ap_return_preg <= trunc_ln0_fu_46_p1;
         end
     end
 end
@@ -938,7 +939,7 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state204)) begin
-        ap_return = sext_ln447_fu_42_p1;
+        ap_return = trunc_ln0_fu_46_p1;
     end else begin
         ap_return = ap_return_preg;
     end
@@ -946,9 +947,9 @@ end
 
 always @ (*) begin
     if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
-        grp_fu_36_ap_start = 1'b1;
+        grp_fu_40_ap_start = 1'b1;
     end else begin
-        grp_fu_36_ap_start = 1'b0;
+        grp_fu_40_ap_start = 1'b0;
     end
 end
 
@@ -1580,12 +1581,14 @@ assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
 
 assign ap_CS_fsm_state204 = ap_CS_fsm[32'd203];
 
-assign grp_fu_36_p0 = {{num}, {120'd0}};
+assign grp_fu_40_p0 = {{num}, {120'd0}};
 
-assign grp_fu_36_p1 = grp_fu_36_p10;
+assign grp_fu_40_p1 = grp_fu_40_p10;
 
-assign grp_fu_36_p10 = den;
+assign grp_fu_40_p10 = $unsigned(sext_ln1349_fu_32_p1);
 
-assign sext_ln447_fu_42_p1 = $signed(grp_fu_36_p2);
+assign sext_ln1349_fu_32_p1 = $signed(den);
+
+assign trunc_ln0_fu_46_p1 = grp_fu_40_p2[139:0];
 
 endmodule //runge_kutta_45_division

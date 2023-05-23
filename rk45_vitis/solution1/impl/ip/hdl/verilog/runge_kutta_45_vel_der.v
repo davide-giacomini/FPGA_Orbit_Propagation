@@ -58,16 +58,14 @@ reg[79:0] ap_return;
 (* fsm_encoding = "none" *) reg   [7:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
 wire   [79:0] tmp_4_fu_164_p5;
-reg   [79:0] tmp_4_reg_299;
+reg   [79:0] tmp_4_reg_287;
 wire    ap_CS_fsm_state3;
 wire    ap_CS_fsm_state5;
-wire  signed [161:0] sext_ln73_fu_180_p1;
-reg  signed [161:0] sext_ln73_reg_312;
-wire   [139:0] trunc_ln1453_fu_185_p1;
-reg   [139:0] trunc_ln1453_reg_317;
+wire  signed [139:0] grp_division_fu_145_ap_return;
+reg   [139:0] mu_over_r_squared_V_reg_300;
 wire    ap_CS_fsm_state6;
-wire   [161:0] zext_ln84_fu_200_p1;
-reg   [161:0] zext_ln84_reg_322;
+wire   [160:0] zext_ln84_fu_192_p1;
+reg   [160:0] zext_ln84_reg_305;
 wire    ap_CS_fsm_state7;
 wire    grp_vel_der_Pipeline_VITIS_LOOP_70_1_fu_112_ap_start;
 wire    grp_vel_der_Pipeline_VITIS_LOOP_70_1_fu_112_ap_done;
@@ -96,8 +94,7 @@ wire    grp_division_fu_145_ap_done;
 wire    grp_division_fu_145_ap_idle;
 wire    grp_division_fu_145_ap_ready;
 reg   [79:0] grp_division_fu_145_num;
-reg   [161:0] grp_division_fu_145_den;
-wire   [203:0] grp_division_fu_145_ap_return;
+reg   [160:0] grp_division_fu_145_den;
 reg    grp_vel_der_Pipeline_VITIS_LOOP_70_1_fu_112_ap_start_reg;
 wire    ap_CS_fsm_state2;
 reg    grp_vel_der_Pipeline_sq_sum_loop_fu_131_ap_start_reg;
@@ -105,11 +102,9 @@ wire    ap_CS_fsm_state4;
 reg    grp_vel_der_Pipeline_sqrt_loop_fu_139_ap_start_reg;
 reg    grp_division_fu_145_ap_start_reg;
 wire    ap_CS_fsm_state8;
-wire  signed [160:0] sext_ln73_fu_180_p0;
-wire   [140:0] shl_ln_fu_192_p3;
-wire  signed [139:0] r_V_3_fu_214_p0;
-wire  signed [139:0] r_V_3_fu_214_p1;
-wire   [139:0] r_V_3_fu_214_p2;
+wire   [140:0] shl_ln_fu_184_p3;
+wire  signed [139:0] r_V_3_fu_202_p1;
+wire   [139:0] r_V_3_fu_202_p2;
 reg   [79:0] ap_return_preg;
 reg   [7:0] ap_NS_fsm;
 reg    ap_ST_fsm_state1_blk;
@@ -200,7 +195,7 @@ runge_kutta_45_mux_32_80_1_1 #(
     .din2_WIDTH( 80 ),
     .din3_WIDTH( 2 ),
     .dout_WIDTH( 80 ))
-mux_32_80_1_1_U36(
+mux_32_80_1_1_U37(
     .din0(grp_vel_der_Pipeline_VITIS_LOOP_70_1_fu_112_r_in_V_0_01_out),
     .din1(grp_vel_der_Pipeline_VITIS_LOOP_70_1_fu_112_r_in_V_1_02_out),
     .din2(grp_vel_der_Pipeline_VITIS_LOOP_70_1_fu_112_r_in_V_2_03_out),
@@ -214,10 +209,10 @@ runge_kutta_45_mul_140s_140s_140_1_1 #(
     .din0_WIDTH( 140 ),
     .din1_WIDTH( 140 ),
     .dout_WIDTH( 140 ))
-mul_140s_140s_140_1_1_U37(
-    .din0(r_V_3_fu_214_p0),
-    .din1(r_V_3_fu_214_p1),
-    .dout(r_V_3_fu_214_p2)
+mul_140s_140s_140_1_1_U38(
+    .din0(grp_division_fu_145_ap_return),
+    .din1(r_V_3_fu_202_p1),
+    .dout(r_V_3_fu_202_p2)
 );
 
 always @ (posedge ap_clk) begin
@@ -233,7 +228,7 @@ always @ (posedge ap_clk) begin
         ap_return_preg <= 80'd0;
     end else begin
         if (((1'b1 == ap_CS_fsm_state8) & (grp_division_fu_145_ap_done == 1'b1))) begin
-            ap_return_preg <= {{r_V_3_fu_214_p2[139:60]}};
+            ap_return_preg <= {{r_V_3_fu_202_p2[139:60]}};
         end
     end
 end
@@ -287,26 +282,20 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state5)) begin
-        sext_ln73_reg_312 <= sext_ln73_fu_180_p1;
+    if ((1'b1 == ap_CS_fsm_state6)) begin
+        mu_over_r_squared_V_reg_300 <= grp_division_fu_145_ap_return;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state3)) begin
-        tmp_4_reg_299 <= tmp_4_fu_164_p5;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state6)) begin
-        trunc_ln1453_reg_317 <= trunc_ln1453_fu_185_p1;
+        tmp_4_reg_287 <= tmp_4_fu_164_p5;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state7)) begin
-        zext_ln84_reg_322[140 : 60] <= zext_ln84_fu_200_p1[140 : 60];
+        zext_ln84_reg_305[140 : 60] <= zext_ln84_fu_192_p1[140 : 60];
     end
 end
 
@@ -382,7 +371,7 @@ end
 
 always @ (*) begin
     if (((1'b1 == ap_CS_fsm_state8) & (grp_division_fu_145_ap_done == 1'b1))) begin
-        ap_return = {{r_V_3_fu_214_p2[139:60]}};
+        ap_return = {{r_V_3_fu_202_p2[139:60]}};
     end else begin
         ap_return = ap_return_preg;
     end
@@ -390,9 +379,9 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state8)) begin
-        grp_division_fu_145_den = zext_ln84_reg_322;
+        grp_division_fu_145_den = zext_ln84_reg_305;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        grp_division_fu_145_den = sext_ln73_reg_312;
+        grp_division_fu_145_den = grp_vel_der_Pipeline_sq_sum_loop_fu_131_X_V_4_out;
     end else begin
         grp_division_fu_145_den = 'bx;
     end
@@ -400,7 +389,7 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state8)) begin
-        grp_division_fu_145_num = tmp_4_reg_299;
+        grp_division_fu_145_num = tmp_4_reg_287;
     end else if ((1'b1 == ap_CS_fsm_state6)) begin
         grp_division_fu_145_num = mu;
     end else begin
@@ -428,7 +417,7 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state4;
         end
         ap_ST_fsm_state4 : begin
-            if (((1'b1 == ap_CS_fsm_state4) & (grp_vel_der_Pipeline_sq_sum_loop_fu_131_ap_done == 1'b1))) begin
+            if (((grp_vel_der_Pipeline_sq_sum_loop_fu_131_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state4))) begin
                 ap_NS_fsm = ap_ST_fsm_state5;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state4;
@@ -488,23 +477,15 @@ assign grp_vel_der_Pipeline_sq_sum_loop_fu_131_ap_start = grp_vel_der_Pipeline_s
 
 assign grp_vel_der_Pipeline_sqrt_loop_fu_139_ap_start = grp_vel_der_Pipeline_sqrt_loop_fu_139_ap_start_reg;
 
-assign r_V_3_fu_214_p0 = grp_division_fu_145_ap_return[139:0];
+assign r_V_3_fu_202_p1 = (140'd0 - mu_over_r_squared_V_reg_300);
 
-assign r_V_3_fu_214_p1 = (140'd0 - trunc_ln1453_reg_317);
+assign shl_ln_fu_184_p3 = {{grp_vel_der_Pipeline_sqrt_loop_fu_139_Q_V_2_out}, {60'd0}};
 
-assign sext_ln73_fu_180_p0 = grp_vel_der_Pipeline_sq_sum_loop_fu_131_X_V_4_out;
-
-assign sext_ln73_fu_180_p1 = sext_ln73_fu_180_p0;
-
-assign shl_ln_fu_192_p3 = {{grp_vel_der_Pipeline_sqrt_loop_fu_139_Q_V_2_out}, {60'd0}};
-
-assign trunc_ln1453_fu_185_p1 = grp_division_fu_145_ap_return[139:0];
-
-assign zext_ln84_fu_200_p1 = shl_ln_fu_192_p3;
+assign zext_ln84_fu_192_p1 = shl_ln_fu_184_p3;
 
 always @ (posedge ap_clk) begin
-    zext_ln84_reg_322[59:0] <= 60'b000000000000000000000000000000000000000000000000000000000000;
-    zext_ln84_reg_322[161:141] <= 21'b000000000000000000000;
+    zext_ln84_reg_305[59:0] <= 60'b000000000000000000000000000000000000000000000000000000000000;
+    zext_ln84_reg_305[160:141] <= 20'b00000000000000000000;
 end
 
 endmodule //runge_kutta_45_vel_der

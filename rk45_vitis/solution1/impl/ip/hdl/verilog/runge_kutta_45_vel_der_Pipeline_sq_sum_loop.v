@@ -87,7 +87,7 @@ runge_kutta_45_mux_32_80_1_1 #(
     .din2_WIDTH( 80 ),
     .din3_WIDTH( 2 ),
     .dout_WIDTH( 80 ))
-mux_32_80_1_1_U23(
+mux_32_80_1_1_U24(
     .din0(r_in_V_0_01_reload),
     .din1(r_in_V_1_02_reload),
     .din2(r_in_V_2_03_reload),
@@ -101,7 +101,7 @@ runge_kutta_45_mul_80s_80s_160_1_1 #(
     .din0_WIDTH( 80 ),
     .din1_WIDTH( 80 ),
     .dout_WIDTH( 160 ))
-mul_80s_80s_160_1_1_U24(
+mul_80s_80s_160_1_1_U25(
     .din0(r_V_1_fu_114_p0),
     .din1(r_V_1_fu_114_p1),
     .dout(r_V_1_fu_114_p2)

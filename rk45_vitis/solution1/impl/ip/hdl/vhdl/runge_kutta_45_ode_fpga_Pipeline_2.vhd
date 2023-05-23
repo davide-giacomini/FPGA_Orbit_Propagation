@@ -54,14 +54,14 @@ attribute shreg_extract : string;
     signal ap_ready_int : STD_LOGIC;
     signal p_cast_fu_134_p1 : STD_LOGIC_VECTOR (63 downto 0);
     signal loop_index_t_fu_40 : STD_LOGIC_VECTOR (1 downto 0);
-    signal empty_70_fu_95_p2 : STD_LOGIC_VECTOR (1 downto 0);
+    signal empty_71_fu_95_p2 : STD_LOGIC_VECTOR (1 downto 0);
     signal ap_loop_init : STD_LOGIC;
     signal ap_sig_allocacmp_loop_index_t_load : STD_LOGIC_VECTOR (1 downto 0);
     signal tmp_7_fu_105_p5 : STD_LOGIC_VECTOR (79 downto 0);
     signal loop_index_t_cast_fu_101_p1 : STD_LOGIC_VECTOR (2 downto 0);
     signal add_ptr53_sum_fu_118_p2 : STD_LOGIC_VECTOR (2 downto 0);
     signal add_ptr53_sum_cast1_fu_124_p1 : STD_LOGIC_VECTOR (5 downto 0);
-    signal empty_71_fu_128_p2 : STD_LOGIC_VECTOR (5 downto 0);
+    signal empty_72_fu_128_p2 : STD_LOGIC_VECTOR (5 downto 0);
     signal ap_done_reg : STD_LOGIC := '0';
     signal ap_continue_int : STD_LOGIC;
     signal ap_done_int : STD_LOGIC;
@@ -107,7 +107,7 @@ attribute shreg_extract : string;
 
 
 begin
-    mux_32_80_1_1_U53 : component runge_kutta_45_mux_32_80_1_1
+    mux_32_80_1_1_U54 : component runge_kutta_45_mux_32_80_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
@@ -175,7 +175,7 @@ begin
         if (ap_clk'event and ap_clk = '1') then
             if (((ap_const_logic_1 = ap_CS_fsm_state1) and (ap_start_int = ap_const_logic_1))) then
                 if ((exitcond1_fu_89_p2 = ap_const_lv1_0)) then 
-                    loop_index_t_fu_40 <= empty_70_fu_95_p2;
+                    loop_index_t_fu_40 <= empty_71_fu_95_p2;
                 elsif ((ap_loop_init = ap_const_logic_1)) then 
                     loop_index_t_fu_40 <= ap_const_lv2_0;
                 end if;
@@ -262,8 +262,8 @@ begin
         end if; 
     end process;
 
-    empty_70_fu_95_p2 <= std_logic_vector(unsigned(ap_sig_allocacmp_loop_index_t_load) + unsigned(ap_const_lv2_1));
-    empty_71_fu_128_p2 <= std_logic_vector(unsigned(empty) + unsigned(add_ptr53_sum_cast1_fu_124_p1));
+    empty_71_fu_95_p2 <= std_logic_vector(unsigned(ap_sig_allocacmp_loop_index_t_load) + unsigned(ap_const_lv2_1));
+    empty_72_fu_128_p2 <= std_logic_vector(unsigned(empty) + unsigned(add_ptr53_sum_cast1_fu_124_p1));
     exitcond1_fu_89_p2 <= "1" when (ap_sig_allocacmp_loop_index_t_load = ap_const_lv2_3) else "0";
     loop_index_t_cast_fu_101_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(ap_sig_allocacmp_loop_index_t_load),3));
     out_r_address0 <= p_cast_fu_134_p1(6 - 1 downto 0);
@@ -288,5 +288,5 @@ begin
         end if; 
     end process;
 
-    p_cast_fu_134_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(empty_71_fu_128_p2),64));
+    p_cast_fu_134_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(empty_72_fu_128_p2),64));
 end behav;

@@ -94,7 +94,7 @@ runge_kutta_45_mux_32_80_1_1 #(
     .din2_WIDTH( 80 ),
     .din3_WIDTH( 2 ),
     .dout_WIDTH( 80 ))
-mux_32_80_1_1_U11(
+mux_32_80_1_1_U12(
     .din0(p_read),
     .din1(p_read1),
     .din2(p_read2),
@@ -110,7 +110,7 @@ runge_kutta_45_mux_32_80_1_1 #(
     .din2_WIDTH( 80 ),
     .din3_WIDTH( 2 ),
     .dout_WIDTH( 80 ))
-mux_32_80_1_1_U12(
+mux_32_80_1_1_U13(
     .din0(p_read3),
     .din1(p_read4),
     .din2(p_read5),

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'runge_kutta_45_Pipeline_sq_sum_loop'" level="0">
-<item name = "Date">Sun May 14 17:33:55 2023
+<item name = "Date">Mon May 22 17:32:38 2023
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
 <item name = "Project">rk45_vitis</item>
@@ -62,7 +62,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="mul_80s_80s_160_1_1_U81">mul_80s_80s_160_1_1, 0, 15, 0, 91, 0</column>
+<column name="mul_80s_80s_160_1_1_U76">mul_80s_80s_160_1_1, 0, 15, 0, 91, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -79,9 +79,9 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln226_fu_81_p2">+, 0, 0, 11, 3, 1</column>
+<column name="add_ln244_fu_81_p2">+, 0, 0, 11, 3, 1</column>
 <column name="p_Val2_s_fu_114_p2">+, 0, 0, 169, 162, 162</column>
-<column name="icmp_ln226_fu_75_p2">icmp, 0, 0, 8, 3, 3</column>
+<column name="icmp_ln244_fu_75_p2">icmp, 0, 0, 8, 3, 3</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>

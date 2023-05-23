@@ -11,7 +11,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 88 \
+    id 87 \
     name yy_loc_V \
     reset_level 1 \
     sync_rst true \
@@ -29,7 +29,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 86 \
+    id 85 \
     name X_BUS \
     type other \
     dir O \
@@ -44,22 +44,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 87 \
-    name mul335 \
+    id 86 \
+    name mul366 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_mul335 \
+    corename dc_mul366 \
     op interface \
-    ports { mul335 { I 32 vector } } \
+    ports { mul366 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 89 \
+    id 88 \
     name yy \
     type other \
     dir I \
@@ -74,30 +74,30 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 90 \
-    name zext_ln266 \
+    id 89 \
+    name zext_ln276 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_zext_ln266 \
+    corename dc_zext_ln276 \
     op interface \
-    ports { zext_ln266 { I 35 vector } } \
+    ports { zext_ln276 { I 35 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 91 \
-    name trunc_ln2 \
+    id 90 \
+    name trunc_ln1 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_trunc_ln2 \
+    corename dc_trunc_ln1 \
     op interface \
-    ports { trunc_ln2 { I 6 vector } } \
+    ports { trunc_ln1 { I 6 vector } } \
 } "
 }
 

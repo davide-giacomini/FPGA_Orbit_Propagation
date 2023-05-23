@@ -9,11 +9,15 @@
   <xd:arg xd:name="tf" xd:originalName="tf" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x2C" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
   <xd:arg xd:name="h0" xd:originalName="h0" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x34" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
   <xd:arg xd:name="h0" xd:originalName="h0" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x38" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
-  <xd:arg xd:name="tol" xd:originalName="tol" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x40" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
-  <xd:arg xd:name="tol" xd:originalName="tol" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x44" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
-  <xd:arg xd:name="mu" xd:originalName="mu" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x4C" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
-  <xd:arg xd:name="mu" xd:originalName="mu" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x50" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
-  <xd:arg xd:name="*(size)" xd:originalName="size" xd:direction="out" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x58" xd:statusOffset="0x5C" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="atol" xd:originalName="atol" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x40" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="atol" xd:originalName="atol" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x44" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="h_max" xd:originalName="h_max" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x4C" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="h_max" xd:originalName="h_max" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x50" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="h_min" xd:originalName="h_min" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x58" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="h_min" xd:originalName="h_min" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x5C" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="mu" xd:originalName="mu" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x64" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="mu" xd:originalName="mu" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x68" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(size)" xd:originalName="size" xd:direction="out" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x70" xd:statusOffset="0x74" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
   <xd:latencyEstimates xd:best-case="undef" xd:worst-case="undef" xd:average-case="undef"/>
-  <xd:resourceEstimates xd:LUT="39893" xd:FF="16345" xd:BRAM="0" xd:DSP="107"/>
+  <xd:resourceEstimates xd:LUT="38589" xd:FF="15059" xd:BRAM="0" xd:DSP="92"/>
 </xd:acceleratorMap>

@@ -1,0 +1,137 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'ap_fixed_base'" level="0">
+<item name = "Date">Mon May 22 17:32:34 2023
+</item>
+<item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
+<item name = "Project">rk45_vitis</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg400-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">50.00 ns, 17.470 ns, 13.50 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 984, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, -, -, -, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, -, -</column>
+<column name="Register">-, -, -, -, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, 0, 1, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="add_ln616_fu_120_p2">+, 0, 0, 12, 12, 7</column>
+<column name="F2_fu_108_p2">-, 0, 0, 12, 11, 12</column>
+<column name="man_V_11_fu_88_p2">-, 0, 0, 61, 1, 54</column>
+<column name="sub_ln616_fu_126_p2">-, 0, 0, 12, 6, 12</column>
+<column name="and_ln617_fu_208_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln620_6_fu_232_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln620_fu_226_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln638_6_fu_268_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln638_fu_250_p2">and, 0, 0, 2, 1, 1</column>
+<column name="ashr_ln621_fu_170_p2">ashr, 0, 0, 161, 54, 54</column>
+<column name="icmp_ln606_fu_102_p2">icmp, 0, 0, 28, 63, 1</column>
+<column name="icmp_ln616_6_fu_256_p2">icmp, 0, 0, 12, 12, 6</column>
+<column name="icmp_ln616_fu_114_p2">icmp, 0, 0, 12, 12, 6</column>
+<column name="icmp_ln617_fu_140_p2">icmp, 0, 0, 12, 12, 6</column>
+<column name="icmp_ln620_fu_150_p2">icmp, 0, 0, 12, 12, 6</column>
+<column name="icmp_ln638_fu_156_p2">icmp, 0, 0, 12, 12, 7</column>
+<column name="or_ln616_fu_238_p2">or, 0, 0, 2, 1, 1</column>
+<column name="or_ln617_fu_214_p2">or, 0, 0, 2, 1, 1</column>
+<column name="or_ln638_6_fu_288_p2">or, 0, 0, 2, 1, 1</column>
+<column name="or_ln638_7_fu_306_p2">or, 0, 0, 2, 1, 1</column>
+<column name="or_ln638_8_fu_320_p2">or, 0, 0, 2, 1, 1</column>
+<column name="or_ln638_fu_274_p2">or, 0, 0, 2, 1, 1</column>
+<column name="ap_return">select, 0, 0, 80, 1, 80</column>
+<column name="man_V_12_fu_94_p3">select, 0, 0, 54, 1, 54</column>
+<column name="select_ln623_fu_184_p3">select, 0, 0, 2, 1, 2</column>
+<column name="select_ln638_4_fu_294_p3">select, 0, 0, 54, 1, 54</column>
+<column name="select_ln638_5_fu_312_p3">select, 0, 0, 80, 1, 80</column>
+<column name="select_ln638_fu_280_p3">select, 0, 0, 80, 1, 1</column>
+<column name="sh_amt_fu_132_p3">select, 0, 0, 12, 1, 12</column>
+<column name="shl_ln639_fu_196_p2">shl, 0, 0, 246, 80, 80</column>
+<column name="xor_ln606_fu_202_p2">xor, 0, 0, 2, 1, 2</column>
+<column name="xor_ln616_fu_244_p2">xor, 0, 0, 2, 1, 2</column>
+<column name="xor_ln617_fu_220_p2">xor, 0, 0, 2, 1, 2</column>
+<column name="xor_ln638_fu_262_p2">xor, 0, 0, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_ready">out, 1, ap_ctrl_hs, ap_fixed_base, return value</column>
+<column name="ap_return">out, 80, ap_ctrl_hs, ap_fixed_base, return value</column>
+<column name="d">in, 64, ap_none, d, scalar</column>
+</table>
+</item>
+</section>
+</profile>

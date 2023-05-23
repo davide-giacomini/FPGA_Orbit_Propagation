@@ -34,7 +34,9 @@ module runge_kutta_45_control_s_axi
     output wire [63:0]                   tt,
     output wire [63:0]                   tf,
     output wire [63:0]                   h0,
-    output wire [63:0]                   tol,
+    output wire [63:0]                   atol,
+    output wire [63:0]                   h_max,
+    output wire [63:0]                   h_min,
     output wire [63:0]                   mu,
     input  wire [31:0]                   size,
     input  wire                          size_ap_vld,
@@ -83,56 +85,72 @@ module runge_kutta_45_control_s_axi
 // 0x38 : Data signal of h0
 //        bit 31~0 - h0[63:32] (Read/Write)
 // 0x3c : reserved
-// 0x40 : Data signal of tol
-//        bit 31~0 - tol[31:0] (Read/Write)
-// 0x44 : Data signal of tol
-//        bit 31~0 - tol[63:32] (Read/Write)
+// 0x40 : Data signal of atol
+//        bit 31~0 - atol[31:0] (Read/Write)
+// 0x44 : Data signal of atol
+//        bit 31~0 - atol[63:32] (Read/Write)
 // 0x48 : reserved
-// 0x4c : Data signal of mu
-//        bit 31~0 - mu[31:0] (Read/Write)
-// 0x50 : Data signal of mu
-//        bit 31~0 - mu[63:32] (Read/Write)
+// 0x4c : Data signal of h_max
+//        bit 31~0 - h_max[31:0] (Read/Write)
+// 0x50 : Data signal of h_max
+//        bit 31~0 - h_max[63:32] (Read/Write)
 // 0x54 : reserved
-// 0x58 : Data signal of size
+// 0x58 : Data signal of h_min
+//        bit 31~0 - h_min[31:0] (Read/Write)
+// 0x5c : Data signal of h_min
+//        bit 31~0 - h_min[63:32] (Read/Write)
+// 0x60 : reserved
+// 0x64 : Data signal of mu
+//        bit 31~0 - mu[31:0] (Read/Write)
+// 0x68 : Data signal of mu
+//        bit 31~0 - mu[63:32] (Read/Write)
+// 0x6c : reserved
+// 0x70 : Data signal of size
 //        bit 31~0 - size[31:0] (Read)
-// 0x5c : Control signal of size
+// 0x74 : Control signal of size
 //        bit 0  - size_ap_vld (Read/COR)
 //        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
 localparam
-    ADDR_AP_CTRL     = 7'h00,
-    ADDR_GIE         = 7'h04,
-    ADDR_IER         = 7'h08,
-    ADDR_ISR         = 7'h0c,
-    ADDR_YY_DATA_0   = 7'h10,
-    ADDR_YY_DATA_1   = 7'h14,
-    ADDR_YY_CTRL     = 7'h18,
-    ADDR_TT_DATA_0   = 7'h1c,
-    ADDR_TT_DATA_1   = 7'h20,
-    ADDR_TT_CTRL     = 7'h24,
-    ADDR_TF_DATA_0   = 7'h28,
-    ADDR_TF_DATA_1   = 7'h2c,
-    ADDR_TF_CTRL     = 7'h30,
-    ADDR_H0_DATA_0   = 7'h34,
-    ADDR_H0_DATA_1   = 7'h38,
-    ADDR_H0_CTRL     = 7'h3c,
-    ADDR_TOL_DATA_0  = 7'h40,
-    ADDR_TOL_DATA_1  = 7'h44,
-    ADDR_TOL_CTRL    = 7'h48,
-    ADDR_MU_DATA_0   = 7'h4c,
-    ADDR_MU_DATA_1   = 7'h50,
-    ADDR_MU_CTRL     = 7'h54,
-    ADDR_SIZE_DATA_0 = 7'h58,
-    ADDR_SIZE_CTRL   = 7'h5c,
-    WRIDLE           = 2'd0,
-    WRDATA           = 2'd1,
-    WRRESP           = 2'd2,
-    WRRESET          = 2'd3,
-    RDIDLE           = 2'd0,
-    RDDATA           = 2'd1,
-    RDRESET          = 2'd2,
+    ADDR_AP_CTRL      = 7'h00,
+    ADDR_GIE          = 7'h04,
+    ADDR_IER          = 7'h08,
+    ADDR_ISR          = 7'h0c,
+    ADDR_YY_DATA_0    = 7'h10,
+    ADDR_YY_DATA_1    = 7'h14,
+    ADDR_YY_CTRL      = 7'h18,
+    ADDR_TT_DATA_0    = 7'h1c,
+    ADDR_TT_DATA_1    = 7'h20,
+    ADDR_TT_CTRL      = 7'h24,
+    ADDR_TF_DATA_0    = 7'h28,
+    ADDR_TF_DATA_1    = 7'h2c,
+    ADDR_TF_CTRL      = 7'h30,
+    ADDR_H0_DATA_0    = 7'h34,
+    ADDR_H0_DATA_1    = 7'h38,
+    ADDR_H0_CTRL      = 7'h3c,
+    ADDR_ATOL_DATA_0  = 7'h40,
+    ADDR_ATOL_DATA_1  = 7'h44,
+    ADDR_ATOL_CTRL    = 7'h48,
+    ADDR_H_MAX_DATA_0 = 7'h4c,
+    ADDR_H_MAX_DATA_1 = 7'h50,
+    ADDR_H_MAX_CTRL   = 7'h54,
+    ADDR_H_MIN_DATA_0 = 7'h58,
+    ADDR_H_MIN_DATA_1 = 7'h5c,
+    ADDR_H_MIN_CTRL   = 7'h60,
+    ADDR_MU_DATA_0    = 7'h64,
+    ADDR_MU_DATA_1    = 7'h68,
+    ADDR_MU_CTRL      = 7'h6c,
+    ADDR_SIZE_DATA_0  = 7'h70,
+    ADDR_SIZE_CTRL    = 7'h74,
+    WRIDLE            = 2'd0,
+    WRDATA            = 2'd1,
+    WRRESP            = 2'd2,
+    WRRESET           = 2'd3,
+    RDIDLE            = 2'd0,
+    RDDATA            = 2'd1,
+    RDRESET           = 2'd2,
     ADDR_BITS                = 7;
 
 //------------------------Local signal-------------------
@@ -166,7 +184,9 @@ localparam
     reg  [63:0]                   int_tt = 'b0;
     reg  [63:0]                   int_tf = 'b0;
     reg  [63:0]                   int_h0 = 'b0;
-    reg  [63:0]                   int_tol = 'b0;
+    reg  [63:0]                   int_atol = 'b0;
+    reg  [63:0]                   int_h_max = 'b0;
+    reg  [63:0]                   int_h_min = 'b0;
     reg  [63:0]                   int_mu = 'b0;
     reg                           int_size_ap_vld;
     reg  [31:0]                   int_size = 'b0;
@@ -303,11 +323,23 @@ always @(posedge ACLK) begin
                 ADDR_H0_DATA_1: begin
                     rdata <= int_h0[63:32];
                 end
-                ADDR_TOL_DATA_0: begin
-                    rdata <= int_tol[31:0];
+                ADDR_ATOL_DATA_0: begin
+                    rdata <= int_atol[31:0];
                 end
-                ADDR_TOL_DATA_1: begin
-                    rdata <= int_tol[63:32];
+                ADDR_ATOL_DATA_1: begin
+                    rdata <= int_atol[63:32];
+                end
+                ADDR_H_MAX_DATA_0: begin
+                    rdata <= int_h_max[31:0];
+                end
+                ADDR_H_MAX_DATA_1: begin
+                    rdata <= int_h_max[63:32];
+                end
+                ADDR_H_MIN_DATA_0: begin
+                    rdata <= int_h_min[31:0];
+                end
+                ADDR_H_MIN_DATA_1: begin
+                    rdata <= int_h_min[63:32];
                 end
                 ADDR_MU_DATA_0: begin
                     rdata <= int_mu[31:0];
@@ -337,7 +369,9 @@ assign yy                = int_yy;
 assign tt                = int_tt;
 assign tf                = int_tf;
 assign h0                = int_h0;
-assign tol               = int_tol;
+assign atol              = int_atol;
+assign h_max             = int_h_max;
+assign h_min             = int_h_min;
 assign mu                = int_mu;
 // int_interrupt
 always @(posedge ACLK) begin
@@ -551,23 +585,63 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_tol[31:0]
+// int_atol[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_tol[31:0] <= 0;
+        int_atol[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_TOL_DATA_0)
-            int_tol[31:0] <= (WDATA[31:0] & wmask) | (int_tol[31:0] & ~wmask);
+        if (w_hs && waddr == ADDR_ATOL_DATA_0)
+            int_atol[31:0] <= (WDATA[31:0] & wmask) | (int_atol[31:0] & ~wmask);
     end
 end
 
-// int_tol[63:32]
+// int_atol[63:32]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_tol[63:32] <= 0;
+        int_atol[63:32] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_TOL_DATA_1)
-            int_tol[63:32] <= (WDATA[31:0] & wmask) | (int_tol[63:32] & ~wmask);
+        if (w_hs && waddr == ADDR_ATOL_DATA_1)
+            int_atol[63:32] <= (WDATA[31:0] & wmask) | (int_atol[63:32] & ~wmask);
+    end
+end
+
+// int_h_max[31:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_h_max[31:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_H_MAX_DATA_0)
+            int_h_max[31:0] <= (WDATA[31:0] & wmask) | (int_h_max[31:0] & ~wmask);
+    end
+end
+
+// int_h_max[63:32]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_h_max[63:32] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_H_MAX_DATA_1)
+            int_h_max[63:32] <= (WDATA[31:0] & wmask) | (int_h_max[63:32] & ~wmask);
+    end
+end
+
+// int_h_min[31:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_h_min[31:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_H_MIN_DATA_0)
+            int_h_min[31:0] <= (WDATA[31:0] & wmask) | (int_h_min[31:0] & ~wmask);
+    end
+end
+
+// int_h_min[63:32]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_h_min[63:32] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_H_MIN_DATA_1)
+            int_h_min[63:32] <= (WDATA[31:0] & wmask) | (int_h_min[63:32] & ~wmask);
     end
 end
 

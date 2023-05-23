@@ -9,7 +9,7 @@ address0, ce0, q0, reset,clk);
 
 parameter DataWidth = 61;
 parameter AddressWidth = 3;
-parameter AddressRange = 6;
+parameter AddressRange = 7;
 
 input[AddressWidth-1:0] address0;
 input ce0;

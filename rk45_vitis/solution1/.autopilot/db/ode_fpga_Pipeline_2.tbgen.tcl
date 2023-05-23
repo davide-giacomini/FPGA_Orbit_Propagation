@@ -17,7 +17,7 @@ set C_modelArgList {
 	{ v_out_V_1_08 int 80 regular  }
 	{ v_out_V_2_09 int 80 regular  }
 	{ empty int 6 regular  }
-	{ out_r int 80 regular {array 36 { 0 3 } 0 1 }  }
+	{ out_r int 80 regular {array 42 { 0 3 } 0 1 }  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "v_out_V_0_07", "interface" : "wire", "bitwidth" : 80, "direction" : "READONLY"} , 
@@ -82,7 +82,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "out_r", "Type" : "Memory", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "Loop 1", "PipelineType" : "NotSupport"}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_32_80_1_1_U53", "Parent" : "0"},
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_32_80_1_1_U54", "Parent" : "0"},
 	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.flow_control_loop_pipe_sequential_init_U", "Parent" : "0"}]}
 
 

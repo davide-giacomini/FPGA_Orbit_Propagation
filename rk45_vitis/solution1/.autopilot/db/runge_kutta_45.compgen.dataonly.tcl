@@ -34,7 +34,7 @@ h0 {
 	offset 52
 	offset_end 63
 }
-tol { 
+atol { 
 	dir I
 	width 64
 	depth 1
@@ -42,7 +42,7 @@ tol {
 	offset 64
 	offset_end 75
 }
-mu { 
+h_max { 
 	dir I
 	width 64
 	depth 1
@@ -50,13 +50,29 @@ mu {
 	offset 76
 	offset_end 87
 }
+h_min { 
+	dir I
+	width 64
+	depth 1
+	mode ap_none
+	offset 88
+	offset_end 99
+}
+mu { 
+	dir I
+	width 64
+	depth 1
+	mode ap_none
+	offset 100
+	offset_end 111
+}
 size { 
 	dir O
 	width 32
 	depth 1
 	mode ap_vld
-	offset 88
-	offset_end 95
+	offset 112
+	offset_end 119
 }
 ap_start { }
 ap_done { }

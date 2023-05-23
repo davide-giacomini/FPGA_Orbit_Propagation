@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'ode_fpga_Pipeline_1'
 ================================================================
-* Date:           Sun May 14 17:33:55 2023
+* Date:           Mon May 22 17:32:37 2023
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        rk45_vitis
@@ -73,7 +73,7 @@
     +-------------------+---------------+---------+----+---+----+-----+
     |      Instance     |     Module    | BRAM_18K| DSP| FF| LUT| URAM|
     +-------------------+---------------+---------+----+---+----+-----+
-    |mux_32_80_1_1_U47  |mux_32_80_1_1  |        0|   0|  0|  14|    0|
+    |mux_32_80_1_1_U48  |mux_32_80_1_1  |        0|   0|  0|  14|    0|
     +-------------------+---------------+---------+----+---+----+-----+
     |Total              |               |        0|   0|  0|  14|    0|
     +-------------------+---------------+---------+----+---+----+-----+
@@ -91,8 +91,8 @@
     +---------------------+----------+----+---+----+------------+------------+
     |    Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +---------------------+----------+----+---+----+------------+------------+
-    |empty_72_fu_93_p2    |         +|   0|  0|  10|           2|           1|
-    |empty_73_fu_116_p2   |         +|   0|  0|  14|           6|           6|
+    |empty_73_fu_93_p2    |         +|   0|  0|  10|           2|           1|
+    |empty_74_fu_116_p2   |         +|   0|  0|  14|           6|           6|
     |exitcond82_fu_87_p2  |      icmp|   0|  0|   8|           2|           2|
     +---------------------+----------+----+---+----+------------+------------+
     |Total                |          |   0|  0|  32|          10|           9|
@@ -196,15 +196,15 @@ ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%loop_index17_t_load = load i2 %loo
 ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 12 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 13 [1/1] (0.95ns)   --->   "%exitcond82 = icmp_eq  i2 %loop_index17_t_load, i2 3"   --->   Operation 13 'icmp' 'exitcond82' <Predicate = true> <Delay = 0.95> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.95> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 3, i64 3, i64 3"   --->   Operation 14 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 15 [1/1] (1.56ns)   --->   "%empty_72 = add i2 %loop_index17_t_load, i2 1"   --->   Operation 15 'add' 'empty_72' <Predicate = true> <Delay = 1.56> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 15 [1/1] (1.56ns)   --->   "%empty_73 = add i2 %loop_index17_t_load, i2 1"   --->   Operation 15 'add' 'empty_73' <Predicate = true> <Delay = 1.56> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%br_ln0 = br i1 %exitcond82, void %load-store-loop16.split, void %load-store-loop.preheader.exitStub"   --->   Operation 16 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%loop_index17_t_cast1 = zext i2 %loop_index17_t_load"   --->   Operation 17 'zext' 'loop_index17_t_cast1' <Predicate = (!exitcond82)> <Delay = 0.00>
 ST_1 : Operation 18 [1/1] (1.70ns)   --->   "%tmp_6 = mux i80 @_ssdm_op_Mux.ap_auto.3i80.i2, i80 %r_out_V_0_04_read, i80 %r_out_V_1_05_read, i80 %r_out_V_2_06_read, i2 %loop_index17_t_load"   --->   Operation 18 'mux' 'tmp_6' <Predicate = (!exitcond82)> <Delay = 1.70> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 1.70> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 19 [1/1] (1.82ns)   --->   "%empty_73 = add i6 %tmp, i6 %loop_index17_t_cast1"   --->   Operation 19 'add' 'empty_73' <Predicate = (!exitcond82)> <Delay = 1.82> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%p_cast = zext i6 %empty_73"   --->   Operation 20 'zext' 'p_cast' <Predicate = (!exitcond82)> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (1.82ns)   --->   "%empty_74 = add i6 %tmp, i6 %loop_index17_t_cast1"   --->   Operation 19 'add' 'empty_74' <Predicate = (!exitcond82)> <Delay = 1.82> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%p_cast = zext i6 %empty_74"   --->   Operation 20 'zext' 'p_cast' <Predicate = (!exitcond82)> <Delay = 0.00>
 ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%out_addr = getelementptr i80 %out_r, i64 0, i64 %p_cast"   --->   Operation 21 'getelementptr' 'out_addr' <Predicate = (!exitcond82)> <Delay = 0.00>
-ST_1 : Operation 22 [1/1] (3.25ns)   --->   "%store_ln0 = store i80 %tmp_6, i6 %out_addr"   --->   Operation 22 'store' 'store_ln0' <Predicate = (!exitcond82)> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 80> <Depth = 36> <RAM>
-ST_1 : Operation 23 [1/1] (1.58ns)   --->   "%store_ln0 = store i2 %empty_72, i2 %loop_index17_t"   --->   Operation 23 'store' 'store_ln0' <Predicate = (!exitcond82)> <Delay = 1.58>
+ST_1 : Operation 22 [1/1] (3.25ns)   --->   "%store_ln0 = store i80 %tmp_6, i6 %out_addr"   --->   Operation 22 'store' 'store_ln0' <Predicate = (!exitcond82)> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 80> <Depth = 42> <RAM>
+ST_1 : Operation 23 [1/1] (1.58ns)   --->   "%store_ln0 = store i2 %empty_73, i2 %loop_index17_t"   --->   Operation 23 'store' 'store_ln0' <Predicate = (!exitcond82)> <Delay = 1.58>
 ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%br_ln0 = br void %load-store-loop16"   --->   Operation 24 'br' 'br_ln0' <Predicate = (!exitcond82)> <Delay = 0.00>
 ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 25 'ret' 'ret_ln0' <Predicate = (exitcond82)> <Delay = 0.00>
 
@@ -242,11 +242,11 @@ loop_index17_t_load   (load             ) [ 00]
 specpipeline_ln0      (specpipeline     ) [ 00]
 exitcond82            (icmp             ) [ 01]
 speclooptripcount_ln0 (speclooptripcount) [ 00]
-empty_72              (add              ) [ 00]
+empty_73              (add              ) [ 00]
 br_ln0                (br               ) [ 00]
 loop_index17_t_cast1  (zext             ) [ 00]
 tmp_6                 (mux              ) [ 00]
-empty_73              (add              ) [ 00]
+empty_74              (add              ) [ 00]
 p_cast                (zext             ) [ 00]
 out_addr              (getelementptr    ) [ 00]
 store_ln0             (store            ) [ 00]
@@ -550,7 +550,7 @@ ret_ln0               (ret              ) [ 00]
 </bind>
 </comp>
 
-<comp id="93" class="1004" name="empty_72_fu_93">
+<comp id="93" class="1004" name="empty_73_fu_93">
 <pin_list>
 <pin id="94" dir="0" index="0" bw="2" slack="0"/>
 <pin id="95" dir="0" index="1" bw="1" slack="0"/>
@@ -558,7 +558,7 @@ ret_ln0               (ret              ) [ 00]
 </pin_list>
 <bind>
 <opcode="add(8) " fcode="add"/>
-<opset="empty_72/1 "/>
+<opset="empty_73/1 "/>
 </bind>
 </comp>
 
@@ -588,7 +588,7 @@ ret_ln0               (ret              ) [ 00]
 </bind>
 </comp>
 
-<comp id="116" class="1004" name="empty_73_fu_116">
+<comp id="116" class="1004" name="empty_74_fu_116">
 <pin_list>
 <pin id="117" dir="0" index="0" bw="6" slack="0"/>
 <pin id="118" dir="0" index="1" bw="2" slack="0"/>
@@ -596,7 +596,7 @@ ret_ln0               (ret              ) [ 00]
 </pin_list>
 <bind>
 <opcode="add(8) " fcode="add"/>
-<opset="empty_73/1 "/>
+<opset="empty_74/1 "/>
 </bind>
 </comp>
 
@@ -721,11 +721,11 @@ ret_ln0               (ret              ) [ 00]
 		store_ln0 : 1
 		loop_index17_t_load : 1
 		exitcond82 : 2
-		empty_72 : 2
+		empty_73 : 2
 		br_ln0 : 3
 		loop_index17_t_cast1 : 2
 		tmp_6 : 2
-		empty_73 : 3
+		empty_74 : 3
 		p_cast : 4
 		out_addr : 5
 		store_ln0 : 6
@@ -740,8 +740,8 @@ ret_ln0               (ret              ) [ 00]
 |----------|------------------------------|---------|---------|
 | Operation|        Functional Unit       |    FF   |   LUT   |
 |----------|------------------------------|---------|---------|
-|    add   |        empty_72_fu_93        |    0    |    10   |
-|          |        empty_73_fu_116       |    0    |    14   |
+|    add   |        empty_73_fu_93        |    0    |    10   |
+|          |        empty_74_fu_116       |    0    |    14   |
 |----------|------------------------------|---------|---------|
 |    mux   |         tmp_6_fu_103         |    0    |    14   |
 |----------|------------------------------|---------|---------|

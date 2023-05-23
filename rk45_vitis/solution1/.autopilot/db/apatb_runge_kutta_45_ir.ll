@@ -4,7 +4,7 @@ target datalayout = "e-m:e-i64:64-i128:128-i256:256-i512:512-i1024:1024-i2048:20
 target triple = "fpga64-xilinx-none"
 
 ; Function Attrs: noinline
-define void @apatb_runge_kutta_45_ir(double* noalias nocapture nonnull %yy, double* noalias nocapture nonnull %tt, double %tf, double %h0, double %tol, double %mu, i32* noalias nocapture nonnull dereferenceable(4) %size) local_unnamed_addr #0 {
+define void @apatb_runge_kutta_45_ir(double* noalias nocapture nonnull %yy, double* noalias nocapture nonnull %tt, double %tf, double %h0, double %atol, double %h_max, double %h_min, double %mu, i32* noalias nocapture nonnull dereferenceable(4) %size) local_unnamed_addr #0 {
 entry:
   %malloccall = tail call i8* @malloc(i64 98304)
   %yy_copy = bitcast i8* %malloccall to [12288 x double]*
@@ -16,7 +16,7 @@ entry:
   call fastcc void @copy_in([12288 x double]* nonnull %0, [12288 x double]* %yy_copy, [2048 x double]* nonnull %1, [2048 x double]* %tt_copy, i32* nonnull %size, i32* nonnull align 512 %size_copy)
   %2 = getelementptr inbounds [12288 x double], [12288 x double]* %yy_copy, i32 0, i32 0
   %3 = getelementptr inbounds [2048 x double], [2048 x double]* %tt_copy, i32 0, i32 0
-  call void @apatb_runge_kutta_45_hw(double* %2, double* %3, double %tf, double %h0, double %tol, double %mu, i32* %size_copy)
+  call void @apatb_runge_kutta_45_hw(double* %2, double* %3, double %tf, double %h0, double %atol, double %h_max, double %h_min, double %mu, i32* %size_copy)
   call void @copy_back([12288 x double]* %0, [12288 x double]* %yy_copy, [2048 x double]* %1, [2048 x double]* %tt_copy, i32* %size, i32* %size_copy)
   tail call void @free(i8* %malloccall)
   tail call void @free(i8* %malloccall1)
@@ -112,7 +112,7 @@ entry:
 
 declare void @free(i8*) local_unnamed_addr
 
-declare void @apatb_runge_kutta_45_hw(double*, double*, double, double, double, double, i32*)
+declare void @apatb_runge_kutta_45_hw(double*, double*, double, double, double, double, double, double, i32*)
 
 ; Function Attrs: argmemonly noinline norecurse
 define internal fastcc void @copy_back([12288 x double]* noalias, [12288 x double]* noalias readonly, [2048 x double]* noalias, [2048 x double]* noalias readonly, i32* noalias, i32* noalias readonly align 512) unnamed_addr #3 {
@@ -123,19 +123,19 @@ entry:
   ret void
 }
 
-define void @runge_kutta_45_hw_stub_wrapper(double*, double*, double, double, double, double, i32*) #4 {
+define void @runge_kutta_45_hw_stub_wrapper(double*, double*, double, double, double, double, double, double, i32*) #4 {
 entry:
-  %7 = bitcast double* %0 to [12288 x double]*
-  %8 = bitcast double* %1 to [2048 x double]*
-  call void @copy_out([12288 x double]* null, [12288 x double]* %7, [2048 x double]* null, [2048 x double]* %8, i32* null, i32* %6)
-  %9 = bitcast [12288 x double]* %7 to double*
-  %10 = bitcast [2048 x double]* %8 to double*
-  call void @runge_kutta_45_hw_stub(double* %9, double* %10, double %2, double %3, double %4, double %5, i32* %6)
-  call void @copy_in([12288 x double]* null, [12288 x double]* %7, [2048 x double]* null, [2048 x double]* %8, i32* null, i32* %6)
+  %9 = bitcast double* %0 to [12288 x double]*
+  %10 = bitcast double* %1 to [2048 x double]*
+  call void @copy_out([12288 x double]* null, [12288 x double]* %9, [2048 x double]* null, [2048 x double]* %10, i32* null, i32* %8)
+  %11 = bitcast [12288 x double]* %9 to double*
+  %12 = bitcast [2048 x double]* %10 to double*
+  call void @runge_kutta_45_hw_stub(double* %11, double* %12, double %2, double %3, double %4, double %5, double %6, double %7, i32* %8)
+  call void @copy_in([12288 x double]* null, [12288 x double]* %9, [2048 x double]* null, [2048 x double]* %10, i32* null, i32* %8)
   ret void
 }
 
-declare void @runge_kutta_45_hw_stub(double*, double*, double, double, double, double, i32*)
+declare void @runge_kutta_45_hw_stub(double*, double*, double, double, double, double, double, double, i32*)
 
 attributes #0 = { noinline "fpga.wrapper.func"="wrapper" }
 attributes #1 = { argmemonly noinline norecurse "fpga.wrapper.func"="copyin" }

@@ -20,7 +20,7 @@ using namespace sc_dt;
 struct runge_kutta_45_k_V_RAM_AUTO_1R1W_ram : public sc_core::sc_module {
 
   static const unsigned DataWidth = 80;
-  static const unsigned AddressRange = 36;
+  static const unsigned AddressRange = 42;
   static const unsigned AddressWidth = 6;
 
 //latency = 1
@@ -77,7 +77,7 @@ SC_MODULE(runge_kutta_45_k_V_RAM_AUTO_1R1W) {
 
 
 static const unsigned DataWidth = 80;
-static const unsigned AddressRange = 36;
+static const unsigned AddressRange = 42;
 static const unsigned AddressWidth = 6;
 
 sc_core::sc_in <sc_lv<AddressWidth> > address0;

@@ -290,7 +290,7 @@ for.body:5 %br_ln70 = br i1 %icmp_ln70, void %for.body.split, void %for.body13.p
 
 <Node id="30" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-for.body.split:0 %specloopname_ln70 = specloopname void @_ssdm_op_SpecLoopName, void @empty_15
+for.body.split:0 %specloopname_ln70 = specloopname void @_ssdm_op_SpecLoopName, void @empty_17
 
 ]]></Node>
 <StgValue><ssdm name="specloopname_ln70"/></StgValue>

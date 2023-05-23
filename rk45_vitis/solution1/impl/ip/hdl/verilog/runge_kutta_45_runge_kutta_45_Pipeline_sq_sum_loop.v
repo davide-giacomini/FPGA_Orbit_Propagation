@@ -47,7 +47,7 @@ reg    ap_idle_pp0;
 wire    ap_block_state1_pp0_stage0_iter0;
 wire    ap_block_state2_pp0_stage0_iter1;
 wire    ap_block_pp0_stage0_subdone;
-wire   [0:0] icmp_ln226_fu_75_p2;
+wire   [0:0] icmp_ln244_fu_75_p2;
 reg    ap_condition_exit_pp0_iter0_stage0;
 wire    ap_loop_exit_ready;
 reg    ap_ready_int;
@@ -58,7 +58,7 @@ reg   [161:0] p_Result_s_fu_34;
 wire   [161:0] p_Val2_s_fu_114_p2;
 wire    ap_loop_init;
 reg   [2:0] i_fu_38;
-wire   [2:0] add_ln226_fu_81_p2;
+wire   [2:0] add_ln244_fu_81_p2;
 reg   [2:0] ap_sig_allocacmp_i_5;
 wire    ap_block_pp0_stage0_01001;
 wire  signed [79:0] r_V_4_fu_104_p0;
@@ -87,7 +87,7 @@ runge_kutta_45_mul_80s_80s_160_1_1 #(
     .din0_WIDTH( 80 ),
     .din1_WIDTH( 80 ),
     .dout_WIDTH( 160 ))
-mul_80s_80s_160_1_1_U81(
+mul_80s_80s_160_1_1_U76(
     .din0(r_V_4_fu_104_p0),
     .din1(r_V_4_fu_104_p1),
     .dout(r_V_4_fu_104_p2)
@@ -142,8 +142,8 @@ end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        if (((icmp_ln226_fu_75_p2 == 1'd0) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
-            i_fu_38 <= add_ln226_fu_81_p2;
+        if (((icmp_ln244_fu_75_p2 == 1'd0) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
+            i_fu_38 <= add_ln244_fu_81_p2;
         end else if ((ap_loop_init == 1'b1)) begin
             i_fu_38 <= 3'd0;
         end
@@ -161,7 +161,7 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (*) begin
-    if (((icmp_ln226_fu_75_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((icmp_ln244_fu_75_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         X_V_7_out_ap_vld = 1'b1;
     end else begin
         X_V_7_out_ap_vld = 1'b0;
@@ -169,7 +169,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((icmp_ln226_fu_75_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((icmp_ln244_fu_75_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_condition_exit_pp0_iter0_stage0 = 1'b1;
     end else begin
         ap_condition_exit_pp0_iter0_stage0 = 1'b0;
@@ -237,7 +237,7 @@ end
 
 assign X_V_7_out = p_Result_s_fu_34;
 
-assign add_ln226_fu_81_p2 = (ap_sig_allocacmp_i_5 + 3'd1);
+assign add_ln244_fu_81_p2 = (ap_sig_allocacmp_i_5 + 3'd1);
 
 assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd0];
 
@@ -261,7 +261,7 @@ assign ap_loop_exit_ready = ap_condition_exit_pp0_iter0_stage0;
 
 assign e_V_address0 = zext_ln73_fu_87_p1;
 
-assign icmp_ln226_fu_75_p2 = ((ap_sig_allocacmp_i_5 == 3'd6) ? 1'b1 : 1'b0);
+assign icmp_ln244_fu_75_p2 = ((ap_sig_allocacmp_i_5 == 3'd6) ? 1'b1 : 1'b0);
 
 assign p_Val2_s_fu_114_p2 = ($signed(sext_ln859_fu_110_p1) + $signed(p_Result_s_fu_34));
 

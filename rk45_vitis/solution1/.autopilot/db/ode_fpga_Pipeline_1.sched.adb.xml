@@ -184,10 +184,10 @@ load-store-loop16:3 %speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_Sp
 
 <Node id="18" bw="2" op_0_bw="2" op_1_bw="2">
 <![CDATA[
-load-store-loop16:4 %empty_72 = add i2 %loop_index17_t_load, i2 1
+load-store-loop16:4 %empty_73 = add i2 %loop_index17_t_load, i2 1
 
 ]]></Node>
-<StgValue><ssdm name="empty_72"/></StgValue>
+<StgValue><ssdm name="empty_73"/></StgValue>
 </operation>
 
 <operation id="16" st_id="1" stage="1" lat="1">
@@ -247,10 +247,10 @@ load-store-loop16.split:1 %tmp_6 = mux i80 @_ssdm_op_Mux.ap_auto.3i80.i2, i80 %r
 
 <Node id="23" bw="6" op_0_bw="6" op_1_bw="6">
 <![CDATA[
-load-store-loop16.split:2 %empty_73 = add i6 %tmp, i6 %loop_index17_t_cast1
+load-store-loop16.split:2 %empty_74 = add i6 %tmp, i6 %loop_index17_t_cast1
 
 ]]></Node>
-<StgValue><ssdm name="empty_73"/></StgValue>
+<StgValue><ssdm name="empty_74"/></StgValue>
 </operation>
 
 <operation id="20" st_id="1" stage="1" lat="1">
@@ -263,7 +263,7 @@ load-store-loop16.split:2 %empty_73 = add i6 %tmp, i6 %loop_index17_t_cast1
 
 <Node id="24" bw="64" op_0_bw="6">
 <![CDATA[
-load-store-loop16.split:3 %p_cast = zext i6 %empty_73
+load-store-loop16.split:3 %p_cast = zext i6 %empty_74
 
 ]]></Node>
 <StgValue><ssdm name="p_cast"/></StgValue>
@@ -311,7 +311,7 @@ load-store-loop16.split:5 %store_ln0 = store i80 %tmp_6, i6 %out_addr
 
 <Node id="27" bw="0" op_0_bw="2" op_1_bw="2" op_2_bw="0" op_3_bw="0">
 <![CDATA[
-load-store-loop16.split:6 %store_ln0 = store i2 %empty_72, i2 %loop_index17_t
+load-store-loop16.split:6 %store_ln0 = store i2 %empty_73, i2 %loop_index17_t
 
 ]]></Node>
 <StgValue><ssdm name="store_ln0"/></StgValue>

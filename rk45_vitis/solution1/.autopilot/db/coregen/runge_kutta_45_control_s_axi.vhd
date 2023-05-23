@@ -37,7 +37,9 @@ port (
     tt                    :out  STD_LOGIC_VECTOR(63 downto 0);
     tf                    :out  STD_LOGIC_VECTOR(63 downto 0);
     h0                    :out  STD_LOGIC_VECTOR(63 downto 0);
-    tol                   :out  STD_LOGIC_VECTOR(63 downto 0);
+    atol                  :out  STD_LOGIC_VECTOR(63 downto 0);
+    h_max                 :out  STD_LOGIC_VECTOR(63 downto 0);
+    h_min                 :out  STD_LOGIC_VECTOR(63 downto 0);
     mu                    :out  STD_LOGIC_VECTOR(63 downto 0);
     size                  :in   STD_LOGIC_VECTOR(31 downto 0);
     size_ap_vld           :in   STD_LOGIC;
@@ -88,19 +90,29 @@ end entity runge_kutta_45_control_s_axi;
 -- 0x38 : Data signal of h0
 --        bit 31~0 - h0[63:32] (Read/Write)
 -- 0x3c : reserved
--- 0x40 : Data signal of tol
---        bit 31~0 - tol[31:0] (Read/Write)
--- 0x44 : Data signal of tol
---        bit 31~0 - tol[63:32] (Read/Write)
+-- 0x40 : Data signal of atol
+--        bit 31~0 - atol[31:0] (Read/Write)
+-- 0x44 : Data signal of atol
+--        bit 31~0 - atol[63:32] (Read/Write)
 -- 0x48 : reserved
--- 0x4c : Data signal of mu
---        bit 31~0 - mu[31:0] (Read/Write)
--- 0x50 : Data signal of mu
---        bit 31~0 - mu[63:32] (Read/Write)
+-- 0x4c : Data signal of h_max
+--        bit 31~0 - h_max[31:0] (Read/Write)
+-- 0x50 : Data signal of h_max
+--        bit 31~0 - h_max[63:32] (Read/Write)
 -- 0x54 : reserved
--- 0x58 : Data signal of size
+-- 0x58 : Data signal of h_min
+--        bit 31~0 - h_min[31:0] (Read/Write)
+-- 0x5c : Data signal of h_min
+--        bit 31~0 - h_min[63:32] (Read/Write)
+-- 0x60 : reserved
+-- 0x64 : Data signal of mu
+--        bit 31~0 - mu[31:0] (Read/Write)
+-- 0x68 : Data signal of mu
+--        bit 31~0 - mu[63:32] (Read/Write)
+-- 0x6c : reserved
+-- 0x70 : Data signal of size
 --        bit 31~0 - size[31:0] (Read)
--- 0x5c : Control signal of size
+-- 0x74 : Control signal of size
 --        bit 0  - size_ap_vld (Read/COR)
 --        others - reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
@@ -110,30 +122,36 @@ architecture behave of runge_kutta_45_control_s_axi is
     signal wstate  : states := wrreset;
     signal rstate  : states := rdreset;
     signal wnext, rnext: states;
-    constant ADDR_AP_CTRL     : INTEGER := 16#00#;
-    constant ADDR_GIE         : INTEGER := 16#04#;
-    constant ADDR_IER         : INTEGER := 16#08#;
-    constant ADDR_ISR         : INTEGER := 16#0c#;
-    constant ADDR_YY_DATA_0   : INTEGER := 16#10#;
-    constant ADDR_YY_DATA_1   : INTEGER := 16#14#;
-    constant ADDR_YY_CTRL     : INTEGER := 16#18#;
-    constant ADDR_TT_DATA_0   : INTEGER := 16#1c#;
-    constant ADDR_TT_DATA_1   : INTEGER := 16#20#;
-    constant ADDR_TT_CTRL     : INTEGER := 16#24#;
-    constant ADDR_TF_DATA_0   : INTEGER := 16#28#;
-    constant ADDR_TF_DATA_1   : INTEGER := 16#2c#;
-    constant ADDR_TF_CTRL     : INTEGER := 16#30#;
-    constant ADDR_H0_DATA_0   : INTEGER := 16#34#;
-    constant ADDR_H0_DATA_1   : INTEGER := 16#38#;
-    constant ADDR_H0_CTRL     : INTEGER := 16#3c#;
-    constant ADDR_TOL_DATA_0  : INTEGER := 16#40#;
-    constant ADDR_TOL_DATA_1  : INTEGER := 16#44#;
-    constant ADDR_TOL_CTRL    : INTEGER := 16#48#;
-    constant ADDR_MU_DATA_0   : INTEGER := 16#4c#;
-    constant ADDR_MU_DATA_1   : INTEGER := 16#50#;
-    constant ADDR_MU_CTRL     : INTEGER := 16#54#;
-    constant ADDR_SIZE_DATA_0 : INTEGER := 16#58#;
-    constant ADDR_SIZE_CTRL   : INTEGER := 16#5c#;
+    constant ADDR_AP_CTRL      : INTEGER := 16#00#;
+    constant ADDR_GIE          : INTEGER := 16#04#;
+    constant ADDR_IER          : INTEGER := 16#08#;
+    constant ADDR_ISR          : INTEGER := 16#0c#;
+    constant ADDR_YY_DATA_0    : INTEGER := 16#10#;
+    constant ADDR_YY_DATA_1    : INTEGER := 16#14#;
+    constant ADDR_YY_CTRL      : INTEGER := 16#18#;
+    constant ADDR_TT_DATA_0    : INTEGER := 16#1c#;
+    constant ADDR_TT_DATA_1    : INTEGER := 16#20#;
+    constant ADDR_TT_CTRL      : INTEGER := 16#24#;
+    constant ADDR_TF_DATA_0    : INTEGER := 16#28#;
+    constant ADDR_TF_DATA_1    : INTEGER := 16#2c#;
+    constant ADDR_TF_CTRL      : INTEGER := 16#30#;
+    constant ADDR_H0_DATA_0    : INTEGER := 16#34#;
+    constant ADDR_H0_DATA_1    : INTEGER := 16#38#;
+    constant ADDR_H0_CTRL      : INTEGER := 16#3c#;
+    constant ADDR_ATOL_DATA_0  : INTEGER := 16#40#;
+    constant ADDR_ATOL_DATA_1  : INTEGER := 16#44#;
+    constant ADDR_ATOL_CTRL    : INTEGER := 16#48#;
+    constant ADDR_H_MAX_DATA_0 : INTEGER := 16#4c#;
+    constant ADDR_H_MAX_DATA_1 : INTEGER := 16#50#;
+    constant ADDR_H_MAX_CTRL   : INTEGER := 16#54#;
+    constant ADDR_H_MIN_DATA_0 : INTEGER := 16#58#;
+    constant ADDR_H_MIN_DATA_1 : INTEGER := 16#5c#;
+    constant ADDR_H_MIN_CTRL   : INTEGER := 16#60#;
+    constant ADDR_MU_DATA_0    : INTEGER := 16#64#;
+    constant ADDR_MU_DATA_1    : INTEGER := 16#68#;
+    constant ADDR_MU_CTRL      : INTEGER := 16#6c#;
+    constant ADDR_SIZE_DATA_0  : INTEGER := 16#70#;
+    constant ADDR_SIZE_CTRL    : INTEGER := 16#74#;
     constant ADDR_BITS         : INTEGER := 7;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
@@ -166,7 +184,9 @@ architecture behave of runge_kutta_45_control_s_axi is
     signal int_tt              : UNSIGNED(63 downto 0) := (others => '0');
     signal int_tf              : UNSIGNED(63 downto 0) := (others => '0');
     signal int_h0              : UNSIGNED(63 downto 0) := (others => '0');
-    signal int_tol             : UNSIGNED(63 downto 0) := (others => '0');
+    signal int_atol            : UNSIGNED(63 downto 0) := (others => '0');
+    signal int_h_max           : UNSIGNED(63 downto 0) := (others => '0');
+    signal int_h_min           : UNSIGNED(63 downto 0) := (others => '0');
     signal int_mu              : UNSIGNED(63 downto 0) := (others => '0');
     signal int_size_ap_vld     : STD_LOGIC;
     signal int_size            : UNSIGNED(31 downto 0) := (others => '0');
@@ -314,10 +334,18 @@ begin
                         rdata_data <= RESIZE(int_h0(31 downto 0), 32);
                     when ADDR_H0_DATA_1 =>
                         rdata_data <= RESIZE(int_h0(63 downto 32), 32);
-                    when ADDR_TOL_DATA_0 =>
-                        rdata_data <= RESIZE(int_tol(31 downto 0), 32);
-                    when ADDR_TOL_DATA_1 =>
-                        rdata_data <= RESIZE(int_tol(63 downto 32), 32);
+                    when ADDR_ATOL_DATA_0 =>
+                        rdata_data <= RESIZE(int_atol(31 downto 0), 32);
+                    when ADDR_ATOL_DATA_1 =>
+                        rdata_data <= RESIZE(int_atol(63 downto 32), 32);
+                    when ADDR_H_MAX_DATA_0 =>
+                        rdata_data <= RESIZE(int_h_max(31 downto 0), 32);
+                    when ADDR_H_MAX_DATA_1 =>
+                        rdata_data <= RESIZE(int_h_max(63 downto 32), 32);
+                    when ADDR_H_MIN_DATA_0 =>
+                        rdata_data <= RESIZE(int_h_min(31 downto 0), 32);
+                    when ADDR_H_MIN_DATA_1 =>
+                        rdata_data <= RESIZE(int_h_min(63 downto 32), 32);
                     when ADDR_MU_DATA_0 =>
                         rdata_data <= RESIZE(int_mu(31 downto 0), 32);
                     when ADDR_MU_DATA_1 =>
@@ -344,7 +372,9 @@ begin
     tt                   <= STD_LOGIC_VECTOR(int_tt);
     tf                   <= STD_LOGIC_VECTOR(int_tf);
     h0                   <= STD_LOGIC_VECTOR(int_h0);
-    tol                  <= STD_LOGIC_VECTOR(int_tol);
+    atol                 <= STD_LOGIC_VECTOR(int_atol);
+    h_max                <= STD_LOGIC_VECTOR(int_h_max);
+    h_min                <= STD_LOGIC_VECTOR(int_h_min);
     mu                   <= STD_LOGIC_VECTOR(int_mu);
 
     process (ACLK)
@@ -609,8 +639,8 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_TOL_DATA_0) then
-                    int_tol(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_tol(31 downto 0));
+                if (w_hs = '1' and waddr = ADDR_ATOL_DATA_0) then
+                    int_atol(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_atol(31 downto 0));
                 end if;
             end if;
         end if;
@@ -620,8 +650,52 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_TOL_DATA_1) then
-                    int_tol(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_tol(63 downto 32));
+                if (w_hs = '1' and waddr = ADDR_ATOL_DATA_1) then
+                    int_atol(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_atol(63 downto 32));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_H_MAX_DATA_0) then
+                    int_h_max(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_h_max(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_H_MAX_DATA_1) then
+                    int_h_max(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_h_max(63 downto 32));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_H_MIN_DATA_0) then
+                    int_h_min(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_h_min(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_H_MIN_DATA_1) then
+                    int_h_min(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_h_min(63 downto 32));
                 end if;
             end if;
         end if;

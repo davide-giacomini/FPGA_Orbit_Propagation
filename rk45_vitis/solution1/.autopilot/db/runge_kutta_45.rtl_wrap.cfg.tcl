@@ -52,7 +52,31 @@ set Interface "wire"
 set DataType "double"
 set Port [list $PortName $Interface $DataType $Pointer $Dims $Const    $Volatile $ArrayOpt]
 lappend PortList $Port
-set PortName "tol"
+set PortName "atol"
+set BitWidth "64"
+set ArrayOpt ""
+set Const "0"
+set Volatile "0"
+set Pointer "0"
+set Reference "0"
+set Dims [list 0]
+set Interface "wire"
+set DataType "double"
+set Port [list $PortName $Interface $DataType $Pointer $Dims $Const    $Volatile $ArrayOpt]
+lappend PortList $Port
+set PortName "h_max"
+set BitWidth "64"
+set ArrayOpt ""
+set Const "0"
+set Volatile "0"
+set Pointer "0"
+set Reference "0"
+set Dims [list 0]
+set Interface "wire"
+set DataType "double"
+set Port [list $PortName $Interface $DataType $Pointer $Dims $Const    $Volatile $ArrayOpt]
+lappend PortList $Port
+set PortName "h_min"
 set BitWidth "64"
 set ArrayOpt ""
 set Const "0"

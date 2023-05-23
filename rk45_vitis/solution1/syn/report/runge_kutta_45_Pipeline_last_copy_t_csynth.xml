@@ -635,8 +635,8 @@
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>add351</name>
-<Object>add351</Object>
+<name>add382</name>
+<Object>add382</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -690,8 +690,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>zext_ln269</name>
-<Object>zext_ln269</Object>
+<name>zext_ln279</name>
+<Object>zext_ln279</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -701,8 +701,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>trunc_ln7</name>
-<Object>trunc_ln7</Object>
+<name>trunc_ln5</name>
+<Object>trunc_ln5</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>

@@ -28,7 +28,7 @@ runge_kutta_45_mul_80s_80s_160_1_1 #(
     .din0_WIDTH( 80 ),
     .din1_WIDTH( 80 ),
     .dout_WIDTH( 160 ))
-mul_80s_80s_160_1_1_U78(
+mul_80s_80s_160_1_1_U73(
     .din0(y),
     .din1(x),
     .dout(r_V_fu_26_p2)

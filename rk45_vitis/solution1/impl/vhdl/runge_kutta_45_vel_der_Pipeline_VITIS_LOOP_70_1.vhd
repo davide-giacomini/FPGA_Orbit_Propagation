@@ -111,7 +111,7 @@ attribute shreg_extract : string;
 
 
 begin
-    mux_32_80_1_1_U11 : component runge_kutta_45_mux_32_80_1_1
+    mux_32_80_1_1_U12 : component runge_kutta_45_mux_32_80_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
@@ -127,7 +127,7 @@ begin
         din3 => ap_sig_allocacmp_i,
         dout => tmp_1_fu_141_p5);
 
-    mux_32_80_1_1_U12 : component runge_kutta_45_mux_32_80_1_1
+    mux_32_80_1_1_U13 : component runge_kutta_45_mux_32_80_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,

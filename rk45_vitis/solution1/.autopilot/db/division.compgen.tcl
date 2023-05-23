@@ -1,6 +1,6 @@
 # This script segment is generated automatically by AutoPilot
 
-set name runge_kutta_45_sdiv_200ns_163ns_200_204_seq_1
+set name runge_kutta_45_sdiv_200ns_163ns_140_204_seq_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {sdiv} IMPL {auto_seq} LATENCY 203 ALLOW_PRAGMA 1
 }
@@ -16,7 +16,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 34 \
+    id 35 \
     name num \
     type other \
     dir I \
@@ -31,7 +31,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 35 \
+    id 36 \
     name den \
     type other \
     dir I \
@@ -39,7 +39,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_den \
     op interface \
-    ports { den { I 162 vector } } \
+    ports { den { I 161 vector } } \
 } "
 }
 
@@ -67,7 +67,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename ap_return \
     op interface \
-    ports { ap_return { O 204 vector } } \
+    ports { ap_return { O 140 vector } } \
 } "
 }
 
