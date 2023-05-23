@@ -43,40 +43,54 @@
 // 0x38 : Data signal of h0
 //        bit 31~0 - h0[63:32] (Read/Write)
 // 0x3c : reserved
-// 0x40 : Data signal of tol
-//        bit 31~0 - tol[31:0] (Read/Write)
-// 0x44 : Data signal of tol
-//        bit 31~0 - tol[63:32] (Read/Write)
+// 0x40 : Data signal of atol
+//        bit 31~0 - atol[31:0] (Read/Write)
+// 0x44 : Data signal of atol
+//        bit 31~0 - atol[63:32] (Read/Write)
 // 0x48 : reserved
-// 0x4c : Data signal of mu
-//        bit 31~0 - mu[31:0] (Read/Write)
-// 0x50 : Data signal of mu
-//        bit 31~0 - mu[63:32] (Read/Write)
+// 0x4c : Data signal of h_max
+//        bit 31~0 - h_max[31:0] (Read/Write)
+// 0x50 : Data signal of h_max
+//        bit 31~0 - h_max[63:32] (Read/Write)
 // 0x54 : reserved
-// 0x58 : Data signal of size
+// 0x58 : Data signal of h_min
+//        bit 31~0 - h_min[31:0] (Read/Write)
+// 0x5c : Data signal of h_min
+//        bit 31~0 - h_min[63:32] (Read/Write)
+// 0x60 : reserved
+// 0x64 : Data signal of mu
+//        bit 31~0 - mu[31:0] (Read/Write)
+// 0x68 : Data signal of mu
+//        bit 31~0 - mu[63:32] (Read/Write)
+// 0x6c : reserved
+// 0x70 : Data signal of size
 //        bit 31~0 - size[31:0] (Read)
-// 0x5c : Control signal of size
+// 0x74 : Control signal of size
 //        bit 0  - size_ap_vld (Read/COR)
 //        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
-#define XRUNGE_KUTTA_45_CONTROL_ADDR_AP_CTRL   0x00
-#define XRUNGE_KUTTA_45_CONTROL_ADDR_GIE       0x04
-#define XRUNGE_KUTTA_45_CONTROL_ADDR_IER       0x08
-#define XRUNGE_KUTTA_45_CONTROL_ADDR_ISR       0x0c
-#define XRUNGE_KUTTA_45_CONTROL_ADDR_YY_DATA   0x10
-#define XRUNGE_KUTTA_45_CONTROL_BITS_YY_DATA   64
-#define XRUNGE_KUTTA_45_CONTROL_ADDR_TT_DATA   0x1c
-#define XRUNGE_KUTTA_45_CONTROL_BITS_TT_DATA   64
-#define XRUNGE_KUTTA_45_CONTROL_ADDR_TF_DATA   0x28
-#define XRUNGE_KUTTA_45_CONTROL_BITS_TF_DATA   64
-#define XRUNGE_KUTTA_45_CONTROL_ADDR_H0_DATA   0x34
-#define XRUNGE_KUTTA_45_CONTROL_BITS_H0_DATA   64
-#define XRUNGE_KUTTA_45_CONTROL_ADDR_TOL_DATA  0x40
-#define XRUNGE_KUTTA_45_CONTROL_BITS_TOL_DATA  64
-#define XRUNGE_KUTTA_45_CONTROL_ADDR_MU_DATA   0x4c
-#define XRUNGE_KUTTA_45_CONTROL_BITS_MU_DATA   64
-#define XRUNGE_KUTTA_45_CONTROL_ADDR_SIZE_DATA 0x58
-#define XRUNGE_KUTTA_45_CONTROL_BITS_SIZE_DATA 32
-#define XRUNGE_KUTTA_45_CONTROL_ADDR_SIZE_CTRL 0x5c
+#define XRUNGE_KUTTA_45_CONTROL_ADDR_AP_CTRL    0x00
+#define XRUNGE_KUTTA_45_CONTROL_ADDR_GIE        0x04
+#define XRUNGE_KUTTA_45_CONTROL_ADDR_IER        0x08
+#define XRUNGE_KUTTA_45_CONTROL_ADDR_ISR        0x0c
+#define XRUNGE_KUTTA_45_CONTROL_ADDR_YY_DATA    0x10
+#define XRUNGE_KUTTA_45_CONTROL_BITS_YY_DATA    64
+#define XRUNGE_KUTTA_45_CONTROL_ADDR_TT_DATA    0x1c
+#define XRUNGE_KUTTA_45_CONTROL_BITS_TT_DATA    64
+#define XRUNGE_KUTTA_45_CONTROL_ADDR_TF_DATA    0x28
+#define XRUNGE_KUTTA_45_CONTROL_BITS_TF_DATA    64
+#define XRUNGE_KUTTA_45_CONTROL_ADDR_H0_DATA    0x34
+#define XRUNGE_KUTTA_45_CONTROL_BITS_H0_DATA    64
+#define XRUNGE_KUTTA_45_CONTROL_ADDR_ATOL_DATA  0x40
+#define XRUNGE_KUTTA_45_CONTROL_BITS_ATOL_DATA  64
+#define XRUNGE_KUTTA_45_CONTROL_ADDR_H_MAX_DATA 0x4c
+#define XRUNGE_KUTTA_45_CONTROL_BITS_H_MAX_DATA 64
+#define XRUNGE_KUTTA_45_CONTROL_ADDR_H_MIN_DATA 0x58
+#define XRUNGE_KUTTA_45_CONTROL_BITS_H_MIN_DATA 64
+#define XRUNGE_KUTTA_45_CONTROL_ADDR_MU_DATA    0x64
+#define XRUNGE_KUTTA_45_CONTROL_BITS_MU_DATA    64
+#define XRUNGE_KUTTA_45_CONTROL_ADDR_SIZE_DATA  0x70
+#define XRUNGE_KUTTA_45_CONTROL_BITS_SIZE_DATA  32
+#define XRUNGE_KUTTA_45_CONTROL_ADDR_SIZE_CTRL  0x74
 

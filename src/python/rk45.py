@@ -103,37 +103,37 @@ h_max = 0.1*abs(tf-t0)  # same as default in matlab
 h_min = 0.1             # just a small number
 
 #**** Non adimensional starts *****#
-# ode_wrapper = lambda t, y: ode(t, y, mu)
-# t_final, y_final, h_final = rk_45(ode_wrapper, t0, tf, np.concatenate((r0, v0)), h_init, tol, h_max, h_min) 
+ode_wrapper = lambda t, y: ode(t, y, mu)
+t_final, y_final, h_final = rk_45(ode_wrapper, t0, tf, np.concatenate((r0, v0)), h_init, tol, h_max, h_min) 
 
-# write_to_csv(y_final, "y_rk45_tol09_python.csv")
-# write_to_csv(t_final, "t_rk45_tol09_python.csv")
-# write_to_csv(h_final, "h_rk45_tol09_python.csv")
+write_to_csv(y_final, "y_rk45_tol09_python.csv")
+write_to_csv(t_final, "t_rk45_tol09_python.csv")
+write_to_csv(h_final, "h_rk45_tol09_python.csv")
 #**** Non adimensional ends *****#
 
 
 #**** Adimensional starts ****#
-L = np.linalg.norm(r0)
-T = L / np.linalg.norm(v0)
-mu_adim = mu / ( L**3 / T**2 )
+# L = np.linalg.norm(r0)
+# T = L / np.linalg.norm(v0)
+# mu_adim = mu / ( L**3 / T**2 )
 
-r0_adim = r0 / L
-v0_adim = v0 / (L/T)
-h_init_adim = h_init / T
-t0_adim = t0 / T
-tf_adim = tf / T
-tol_adim = tol / L
-h_max_adim = h_max / T
-h_min_adim = h_min / T
+# r0_adim = r0 / L
+# v0_adim = v0 / (L/T)
+# h_init_adim = h_init / T
+# t0_adim = t0 / T
+# tf_adim = tf / T
+# tol_adim = tol / L
+# h_max_adim = h_max / T
+# h_min_adim = h_min / T
 
-ode_wrapper = lambda t, y: ode(t, y, mu_adim)
-t_final, y_final, h_final = rk_45(ode_wrapper, t0_adim, tf_adim, np.concatenate((r0_adim, v0_adim)), h_init_adim, tol_adim, h_max_adim, h_min_adim) 
+# ode_wrapper = lambda t, y: ode(t, y, mu_adim)
+# t_final, y_final, h_final = rk_45(ode_wrapper, t0_adim, tf_adim, np.concatenate((r0_adim, v0_adim)), h_init_adim, tol_adim, h_max_adim, h_min_adim) 
 
-y_final_adim = np.concatenate((y_final[:, :3] * L, y_final[:, 3:] * L/T), axis=-1)
-t_final_adim = t_final * T
-h_final_adim = h_final * T
+# y_final_adim = np.concatenate((y_final[:, :3] * L, y_final[:, 3:] * L/T), axis=-1)
+# t_final_adim = t_final * T
+# h_final_adim = h_final * T
 
-write_to_csv(y_final_adim, "y_rk45_tol09_adim_python.csv")
-write_to_csv(t_final_adim, "t_rk45_tol09_adim_python.csv")
-write_to_csv(h_final_adim, "h_rk45_tol09_adim_python.csv")
+# write_to_csv(y_final_adim, "y_rk45_tol09_adim_python.csv")
+# write_to_csv(t_final_adim, "t_rk45_tol09_adim_python.csv")
+# write_to_csv(h_final_adim, "h_rk45_tol09_adim_python.csv")
 #**** Adimensional ends ****#

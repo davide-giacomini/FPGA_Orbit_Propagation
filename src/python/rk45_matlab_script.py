@@ -15,7 +15,6 @@ gen.addpath(gen.genpath(script_directory+'/../../matlab'))
 mu = constants.mu
 tol = constants.tol
 h_init = constants.h_init
-N_steps = constants.N_steps
 tf_1_rev = constants.tf_1_rev
 n_rev = constants.n_rev
 

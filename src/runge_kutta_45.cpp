@@ -204,8 +204,8 @@ void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, co
                 d_fixed_t sum = 0;
                 k_inner:for (int j=0; j<i; j++) {
 					#pragma HLS loop_tripcount max=5
+					#pragma HLS PIPELINE rewind
                 
-//                    sum += multiply(A[i][j], k[j][n]);
                     macply(sum, A[i][j], k[j][n]);    // sum += A[i][j]*k[j][n];
                 }
 
@@ -220,7 +220,7 @@ void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, co
 
             d_fixed_t sum = 0;
             y_new_inner:for (int j=0; j<Q+2; j++) {
-                #pragma HLS loop_tripcount max=5
+				#pragma HLS PIPELINE rewind
             
                 macply(sum, B[j], k[j][n]);    // sum += A[i][j]*k[j][n];
             }
@@ -232,9 +232,8 @@ void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, co
         d_fixed_t e[N] = {0,0,0,0,0,0};
         err_outer:for (int n=0; n<N; n++) {
             err_inner:for (int j=0; j<Q+2; j++) {
-				#pragma HLS PIPELINE off
+				#pragma HLS PIPELINE rewind
 
-                // e[n] += multiply(E[j], k[j][n]);
                 macply(e[n], E[j], k[j][n]);  // e[n] += E[j]*k[j][n];
             }
 
@@ -251,7 +250,7 @@ void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, co
 
         if (err <= atol_loc) {
 
-            update_outer:for (int n=0; n<N; n++) {
+            update:for (int n=0; n<N; n++) {
                 yy_loc[tk_next][n] = yy_loc[tk_prev][n] + c[n];
             }
             tt_loc[tk_next] = tt_loc[tk_prev] + h_loc;
@@ -259,8 +258,6 @@ void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, co
             tk_prev = tk_next;
 
             scale = 1.11;
-
-            std::cout << tk_next + STEP_MAX * cycles << std::endl;
         }
         else {
             scale = 0.99;
