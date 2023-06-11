@@ -21,6 +21,7 @@ n_rev = constants.n_rev
 r0 = constants.r0
 v0 = constants.v0
 
+print("Revolution time: " , tf_1_rev)
 tf = tf_1_rev * n_rev
 
 output = gen.solve_ode45(r0, v0, mu, tf, tol, float(h_init), nargout=2)

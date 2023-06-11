@@ -25,6 +25,7 @@ def rk_45(f, t0, tf, y0, h0, atol, h_max, h_min):
     u_h = np.array([y0])        # initial shape = (0,6)
     t_h = np.array([t0])        # initial shape = (0,1)
     h_h = np.array([h0])    # initial shape = (0,1)
+    tolerance_respected = True
 
     while (t_h[-1] < tf):
 
@@ -52,11 +53,16 @@ def rk_45(f, t0, tf, y0, h0, atol, h_max, h_min):
         if (err <= atol):
             u_h = np.vstack((u_h, ynew))
             t_h = np.vstack((t_h, t_h[-1] + h))
-
             h_h = np.vstack(((h_h, h)))
             
             scale = 1.11
 
+        elif (h <= h_min):  # In case it's the last one, it could be less than h_min
+            u_h = np.vstack((u_h, ynew))
+            t_h = np.vstack((t_h, t_h[-1] + h))
+            h_h = np.vstack(((h_h, h)))
+
+            tolerance_respected = False
         else:
             scale = 0.99
 
@@ -65,7 +71,7 @@ def rk_45(f, t0, tf, y0, h0, atol, h_max, h_min):
 
         h = max(min(h*scale, h_max), h_min)
 
-    return t_h, u_h, h_h
+    return t_h, u_h, h_h, tolerance_respected
 
 
 def ode(t, y, mu):
@@ -99,12 +105,15 @@ n_rev = constants.n_rev
 tf = tf_1_rev * n_rev
 t0 = constants.t0
 
+print("Revolution time: " , tf_1_rev)
+
 h_max = 0.1*abs(tf-t0)  # same as default in matlab
 h_min = 0.1             # just a small number
 
 #**** Non adimensional starts *****#
 ode_wrapper = lambda t, y: ode(t, y, mu)
-t_final, y_final, h_final = rk_45(ode_wrapper, t0, tf, np.concatenate((r0, v0)), h_init, tol, h_max, h_min) 
+t_final, y_final, h_final, tolerance_respected = rk_45(ode_wrapper, t0, tf, np.concatenate((r0, v0)), h_init, tol, h_max, h_min)
+print(tolerance_respected)
 
 write_to_csv(y_final, "y_rk45_tol09_python.csv")
 write_to_csv(t_final, "t_rk45_tol09_python.csv")
