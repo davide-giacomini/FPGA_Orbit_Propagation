@@ -36,7 +36,7 @@ typedef ap_fixed<W, I, AP_TRN, AP_WRAP> d_fixed_t;
 typedef ap_fixed<W, I, AP_TRN, AP_WRAP> d_t_t;
 
 // Top function
-void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, const double atol, const double h_max, const double h_min, const double mu, unsigned int& size);
+void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, const double atol, const double h_max, const double h_min, const double mu, unsigned int& size, bool& flag);
 
 
 //  TODO this is the method used here: https://numerary.readthedocs.io/en/latest/dormand-prince-method.html

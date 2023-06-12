@@ -23,93 +23,6 @@ void print_info(const std::string& str, ...) {
     std::cout << std::endl;
 }
 
-// int check_initialization(d_fixed_t X0_FPGA[N], const array<double,N>& X0_CPU, const array<double, D>& r0, const array<double, D>& v0) {
-//     // Check initialization
-//     for (int i=0; i<N; i++) {
-//         if (X0_FPGA[i] != (d_fixed_t) X0_CPU[i]) {
-//             printf("Error at index [%d] (decimal): %s != %s\n", i, X0_FPGA[i].to_string(10).c_str(), ((d_fixed_t) X0_CPU[i]).to_string(10).c_str());
-//             printf("Error at index [%d] (binary): %s != %s\n", i, X0_FPGA[i].to_string().c_str(), ((d_fixed_t) X0_CPU[i]).to_string().c_str());
-//             return -1;
-//         }
-// 	}
-// 	for (int i=0; i<D; i++) {
-//         if (X0_FPGA[i] != (d_fixed_t) r0[i]) {
-//             printf("Error at index [%d] (decimal): %s != %s\n", i, X0_FPGA[i].to_string(10).c_str(), ((d_fixed_t) r0[i]).to_string(10).c_str());
-//             printf("Error at index [%d] (binary): %s != %s\n", i, X0_FPGA[i].to_string().c_str(), ((d_fixed_t) r0[i]).to_string().c_str());
-//             return -1;
-//         }
-//         if (X0_FPGA[i+D] != (d_fixed_t) v0[i]) {
-//             printf("Error at index [%d] (decimal): %s != %s\n", i+D, X0_FPGA[i+D].to_string(10).c_str(), ((d_fixed_t) v0[i]).to_string(10).c_str());
-//             printf("Error at index [%d] (binary): %s != %s\n", i+D, X0_FPGA[i+D].to_string().c_str(), ((d_fixed_t) v0[i]).to_string().c_str());
-//             return -1;
-//         }
-// 	}
-
-//     return 0;
-// }
-
-// int check_transfer_correctness(d_uint_t* in, d_fixed_t* X_FPGA, string error_message) {
-
-//     d_fixed_t in_tmp[STEP_MAX*N];
-//     int size = 8*sizeof(d_fixed_t);
-
-//     for (int i=0; i<(int)L; i++){
-//         for (int j=0; j<K/size; j++) {
-//             int lower = j*size;
-//             int upper = j*size + size - 1;
-//             unsigned long long tmp_int = in[i].range(upper,lower);
-//             d_fixed_t tmp_fixed = *((d_fixed_t*) &tmp_int);
-
-//             int index = i*K/size+j;
-//             in_tmp[index] = tmp_fixed; // `K/size` is always a perfect integer, because size always returns a power of 2. `K/size` is the number of elements ap_fixed inside each element of the big array.
-//             double tmp_double = (double) tmp_fixed;
-
-//             // Check that `X_FPGA` has been coindexrrectly copied into `in`
-//             if (in_tmp[index] != ((d_fixed_t*) X_FPGA)[index]) {
-//                 print_error(error_message + ":");
-//                 printf("in(%d) = %s;\n", index, in_tmp[index].to_string(10).c_str());
-//                 printf("in(%d) = %s;\n", index, in_tmp[index].to_string().c_str());
-//                 printf("X_FPGA(%d) = %s;\n", index, ((d_fixed_t*) X_FPGA)[index].to_string(10).c_str());
-//                 printf("X_FPGA(%d) = %s;\n", index, ((d_fixed_t*) X_FPGA)[index].to_string().c_str());
-//                 return -1;
-//             }
-
-//             // The length of the original matrix may not be divisible per K, hence I have to check if I am going out of bound when I rebuild it.
-//             if (index >= STEP_MAX*N-1) break;
-//         }
-//     }
-
-//     return 0;
-// }
-
-// int final_check(d_fixed_t X_FPGA[T][N], double X_CPU[T][N], string error_message, double tolerance, bool print_matlab_format) {
-
-//     for (int t=0; t<T; t++) {
-//         for (int n=0; n<N; n++) {
-            
-//             if ( fabs( (double) X_FPGA[t][n] - X_CPU[t][n]) > tolerance) {
-                
-//                 print_error(error_message + "; tolerance was " + to_string(tolerance) + ":");
-//                 printf("X_CPU(%d, %d) = %.10lf;\n", t+1, n+1, X_CPU[t][n]);
-//                 // printf("X_CPU(%d, %d) = %s;\n", t+1, n+1, ((d_fixed_t) X_CPU[t][n]).to_string(10).c_str());
-//                 // printf("X_CPU(%d, %d) = %s;\n", t+1, n+1, ((d_fixed_t) X_CPU[t][n]).to_string().c_str());
-//                 printf("X_FPGA(%d, %d) = %s;\n", t+1, n+1, X_FPGA[t][n].to_string(10).c_str());
-//                 // printf("X_FPGA(%d, %d) = %s;\n", t+1, n+1, X_FPGA[t][n].to_string().c_str());
-
-//                 return -1;
-//             }
-
-//             // Print the difference between `X_CPU` an `X_FPGA` in Matlab format
-//             if (print_matlab_format) {
-//                 printf("X_CPU(%d, %d) = %.10lf;\n", t+1, n+1, X_CPU[t][n]);
-//                 printf("X_FPGA(%d, %d) = %s;\n", t+1, n+1, X_FPGA[t][n].to_string(10).c_str());
-//             }
-//         }
-//     }
-
-//     return 0;
-// }
-
 template<typename T>
 int write_matrix_to_csv(T X, int size, string filename) {
 
@@ -225,7 +138,7 @@ void ode_cpu(double* out, const double* in, double mu) {
     memcpy(out+D, v_out, D * sizeof(double));
 }
 
-void rk45_cpu(function<void(double*, const double*)> f, vector<array<double, N>>& yy, vector<double>& tt, const array<double, N>& y0, const double t0, const double tf, const double h0, const double atol, const double h_max, const double h_min) {
+void rk45_cpu(function<void(double*, const double*)> f, vector<array<double, N>>& yy, vector<double>& tt, bool& flag, const array<double, N>& y0, const double t0, const double tf, const double h0, const double atol, const double h_max, const double h_min) {
     // RK5(4)7M CONSTANTS
     const int P = 4;
     const int Q = P+1;
@@ -255,6 +168,7 @@ void rk45_cpu(function<void(double*, const double*)> f, vector<array<double, N>>
     // Clearing and initialization
     tt.clear(); tt.push_back(t0);
     yy.clear(); yy.push_back(y0);
+    flag = true;
     double h = h0;
 
     while (tt.back() < tf) {
@@ -343,6 +257,13 @@ void rk45_cpu(function<void(double*, const double*)> f, vector<array<double, N>>
 
             scale = 1.11;
         }
+        else if (h <= h_min) {  // In case it's the last one, it could be less than h_min
+            array<double,N> y_next = { y_in[0], y_in[1], y_in[2], y_in[3], y_in[4], y_in[5] };
+            yy.push_back(y_next);
+            tt.push_back(tt.back() + h);
+
+            flag = false;
+        }
         else {
             scale = 0.99;
         }
@@ -428,9 +349,10 @@ int main(int argc, char** argv)
     // ****** CPU computation 1 computation starts ****** //
     vector<array<double, N>> yy;
     vector<double> tt;
+    bool flag;
 
     auto ode_cpu_wrapper = [MU](double* out, const double* in) { ode_cpu(out, in, MU); };
-    rk45_cpu(ode_cpu_wrapper, yy, tt, y0, T0, TF, H0, TOL, H_MAX, H_MIN);
+    rk45_cpu(ode_cpu_wrapper, yy, tt, flag, y0, T0, TF, H0, TOL, H_MAX, H_MIN);
 
     write_matrix_to_csv(yy, yy.size(), "y_rk45_tol09_cpp.csv");
     write_array_to_csv(tt, tt.size(), "t_rk45_tol09_cpp.csv");
@@ -439,6 +361,7 @@ int main(int argc, char** argv)
 
     // ****** FPGA computation 1 computation starts ****** //
     unsigned int size = 0;
+    bool flag_fpga;
     const unsigned int max_rows = ceil(TF/H_MIN) + 1;
     double** yy_fpga = create_matrix<double>(max_rows, N);
     double* tt_fpga = new double[max_rows];
@@ -449,7 +372,7 @@ int main(int argc, char** argv)
     tt_fpga[0] = 0.0;
 
     //FPGA computation
-    runge_kutta_45(yy_fpga[0], tt_fpga, TF, H0, TOL, H_MAX, H_MIN, MU, size);
+    runge_kutta_45(yy_fpga[0], tt_fpga, TF, H0, TOL, H_MAX, H_MIN, MU, size, flag_fpga);
 
     write_matrix_to_csv(yy_fpga, size, "y_rk45_tol09_fpga_sim.csv");
     write_array_to_csv(tt_fpga, size, "t_rk45_tol09_fpga_sim.csv");

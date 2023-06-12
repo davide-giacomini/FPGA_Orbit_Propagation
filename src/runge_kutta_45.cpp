@@ -108,7 +108,7 @@ void ode_fpga(d_fixed_t out[N], const d_fixed_t in[N], const d_fixed_t c[N], d_f
 }
 
 // Remember that the top level function must have the same name as the file name
-void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, const double atol, const double h_max, const double h_min, const double mu, unsigned int& size){
+void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, const double atol, const double h_max, const double h_min, const double mu, unsigned int& size,bool& flag){
 
 	#pragma HLS ALLOCATION function instances=macply limit=1
 	#pragma HLS ALLOCATION function instances=division limit=1
@@ -132,6 +132,7 @@ void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, co
 	#pragma HLS INTERFACE s_axilite port=h_min
 	#pragma HLS INTERFACE s_axilite port=mu
 	#pragma HLS INTERFACE s_axilite port=size
+	#pragma HLS INTERFACE s_axilite port=flag
 	#pragma HLS INTERFACE s_axilite port=return
 
 	// RK5(4)7M CONSTANTS
@@ -165,6 +166,7 @@ void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, co
 	unsigned int tk_prev = 0;
     unsigned int tk_next = 0;
 	unsigned int cycles = 0;
+    ap_uint<1> flag_loc = true;
 
 	main_loop:while (tt_loc[tk_prev] < tf_loc) {
         #pragma HLS loop_tripcount max=1000000 avg=500
@@ -250,7 +252,7 @@ void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, co
 
         if (err <= atol_loc) {
 
-            update:for (int n=0; n<N; n++) {
+            update_1:for (int n=0; n<N; n++) {
                 yy_loc[tk_next][n] = yy_loc[tk_prev][n] + c[n];
             }
             tt_loc[tk_next] = tt_loc[tk_prev] + h_loc;
@@ -259,6 +261,16 @@ void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, co
 
             scale = 1.11;
         }
+        else if (h_loc <= h_min_loc) {
+            update_2:for (int n=0; n<N; n++) {
+                yy_loc[tk_next][n] = yy_loc[tk_prev][n] + c[n];
+            }
+            tt_loc[tk_next] = tt_loc[tk_prev] + h_loc;
+
+            tk_prev = tk_next;
+
+            flag_loc = false;
+        }
         else {
             scale = 0.99;
         }
@@ -266,6 +278,8 @@ void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, co
         h_loc *= scale;
         h_loc = h_loc < h_max_loc ? h_loc : h_max_loc;
         h_loc = h_loc > h_min_loc ? h_loc : h_min_loc;
+
+        std::cout << tk_prev + cycles*STEP_MAX << std::endl;
     }
 
     unsigned int t_gap = cycles * STEP_MAX;
@@ -278,6 +292,7 @@ void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, co
         tt[t_gap + i] = tt_loc[i];
     }
     size = cycles * STEP_MAX + tk_next + 1;
+    flag = flag_loc;
 }
 
 //TODO to parallelize loops, I have to implement them in separate functions
