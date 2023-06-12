@@ -17,6 +17,7 @@
 #include <sys/stat.h>
 #include <algorithm>
 #include <vector>
+#include <json.hpp>
 
 #include "ap_fixed.h"
 #include "hls_math.h"

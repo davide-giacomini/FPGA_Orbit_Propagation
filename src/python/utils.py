@@ -6,11 +6,11 @@ import numpy as np
 import matlab.engine
 import os
 
-def write_to_csv(X, filename):
+def write_to_csv(X, filename, dir):
     script_directory = os.path.dirname(os.path.abspath(__file__))
     
     # Path to the directory
-    dir_path = script_directory + "/../orbit_csv"
+    dir_path = script_directory + "/../orbit_csv/" + dir
 
     print(dir_path)
 

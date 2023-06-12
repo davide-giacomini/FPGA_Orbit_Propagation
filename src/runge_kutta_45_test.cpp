@@ -315,35 +315,49 @@ void delete_matrix(T** matrix) {
 
 int main(int argc, char** argv)
 {
-    // Set default values and override them if provided from command line
-    const double T_REV = 5828.516637686026;                             // Time in seconds for one revolution (used `orbital_period.m`)
-    const int N_REV = 1;                                                // Number of revolutions
-    const double MU = 398600.4418;                                      // Earth gravitational constant
-    const double TOL = (argc > 1) ? stod(argv[1]) : 1e-09;              // Tolerance value
-    const double H0 = (argc > 2) ? stod(argv[2]) : 15.0;                // Initial time step
-    const double TF = (argc > 3) ? stod(argv[3]) : (T_REV * N_REV);     // Final time
-    const double T0 = (argc > 4) ? stod(argv[4]) : 0.0;                 // Initial time
-    const double H_MAX = (argc > 5) ? stod(argv[5]) : 0.1*abs(TF-T0);   // Maximum time step
-    const double H_MIN = (argc > 6) ? stod(argv[6]) : 0.1;              // Minimum time step
+    // Read JSON data from a file
+    std::ifstream file("constants/constants.json");
+    nlohmann::json json_data;
+    file >> json_data;
 
-    // Initial vector values
-    const double r0[D] = {
-        (argc > 12) ? stod(argv[7]) : 6893.65420319622,
-        (argc > 12) ? stod(argv[8]) : 607.768615848904,
-        (argc > 12) ? stod(argv[9]) : 1052.68612189611
-    };
-    const double v0[D] = {
-        (argc > 12) ? stod(argv[10]) : -1.31035840240472,
-        (argc > 12) ? stod(argv[11]) : 3.71570593010086,
-        (argc > 12) ? stod(argv[12]) : 6.43579145691966
-    };
+    // Extract values from the JSON object
+    const double T_REV = json_data.value("T_REV", 5828.516637686026);
+    const int N_REV = json_data.value("N_REV", 1);
+    const double MU = json_data.value("MU", 398600.4418);
+    const double TOL = json_data.value("TOL", 1e-09);
+    const double H0 = json_data.value("H0", 15.0);
+    const double TF = json_data.value("TF", T_REV * N_REV);
+    const double T0 = json_data.value("T0", 0.0);
+    const double H_MAX = json_data.value("H_MAX", 0.1 * std::abs(TF - T0));
+    const double H_MIN = json_data.value("H_MIN", 0.1);
+    const vector<double> r0 = json_data["r0"];
+    const vector<double> v0 = json_data["v0"];
     const array<double, N> y0 = { r0[0], r0[1], r0[2], v0[0], v0[1], v0[2] };
+
+    // Display the extracted values
+    std::cout << "T_REV: " << T_REV << std::endl;
+    std::cout << "N_REV: " << N_REV << std::endl;
+    std::cout << "MU: " << MU << std::endl;
+    std::cout << "TOL: " << TOL << std::endl;
+    std::cout << "H0: " << H0 << std::endl;
+    std::cout << "TF: " << TF << std::endl;
+    std::cout << "T0: " << T0 << std::endl;
+    std::cout << "H_MAX: " << H_MAX << std::endl;
+    std::cout << "H_MIN: " << H_MIN << std::endl;
+    std::cout << "y0: " << y0[0] << ", " << y0[1] << ", " << y0[2] << ", " << y0[3] << ", " << y0[4] << ", " << y0[5] << std::endl;
 
     cout << endl; print_info("Simulation starting..."); cout << endl;
 
     cout << endl;
-    print_info("Tolerance set to: %e", TOL);
-    print_info("Final time set to: %f", TF);
+    print_info("T_REV: %f", T_REV);
+    print_info("N_REV: %f", N_REV);
+    print_info("MU: %f", MU);
+    print_info("TOL: %e", TOL);
+    print_info("H0: %f", H0);
+    print_info("TF: %f", TF);
+    print_info("H_MAX: %f", H_MAX);
+    print_info("H_MIN: %f", H_MIN);
+    print_info("y0: [%f, %f, %f, %f, %f, %f]", y0[0], y0[1], y0[2], y0[3], y0[4], y0[5]);
     cout << endl;
 
     // ****** CPU computation 1 computation starts ****** //

@@ -1,0 +1,54 @@
+[
+    {
+      "Type": "LEO",
+      "T_REV": 5828.516637686026,
+      "N_REV": 5,
+      "MU": 398600.4418,
+      "TOL": 1e-09,
+      "H0": 15.0,
+      "T0": 0.0,
+      "H_MIN": 0.1,
+      "r0": [6893.65420319622, 607.768615848904, 1052.68612189611],
+      "v0": [-1.31035840240472, 3.71570593010086, 6.43579145691966],
+      "dir": "LEO_orbit",
+      "_comments": [
+        "LEO orbit -- don't know which is"
+      ]
+    },
+    {
+      "Type": "GTO",
+      "T_REV": 68346.64468025357928127050,
+      "N_REV": 5,
+      "MU": 398600.4418,
+      "TOL": 1e-09,
+      "H0": 15.0,
+      "T0": 0.0,
+      "H_MIN": 0.1,
+      "r0": [6054.30795817484, -3072.03883303992, -133.115352431876],
+      "v0": [4.64750094824087, 9.18608475681236, -0.62056520749034],
+      "dir": "GTO_orbit",
+      "_comments": [
+        "GTO orbit - Geosynchronous transfer orbit, very elliptical and characterized by low pericentre and high apocentre.",
+        "For this orbit there are significant changes of velocity along the trajectoy, spacecraft are very fast at the pericentre and very slow at the apocentre.",
+        "These kinds of orbit are usually a stress-test for the orbit propagators"
+      ]
+    },
+    {
+      "Type": "67P - Rosetta comet",
+      "T_REV": 202771631.54115575551986694336,
+      "N_REV": 5,
+      "MU": 1.3271E+11,
+      "TOL": 1e-09,
+      "H0": 10000,
+      "T0": 0.0,
+      "H_MIN": 1000,
+      "r0": [5.895349907345363E+02, 1.920471874450068E+08, 1.046996733994131E+07],
+      "v0": [-3.271319714698291E+01, 7.091805000507681E+00, 1.698390637263203E+00],
+      "dir": "67P_orbit",
+      "_comments": [
+        "Interplanetary orbit",
+        "67P - Rosetta comet. Also here we have an orbit of a comet which is elliptical. The orbital period is roughly 6.45 years, so take care of using larger (dimensional) step-sizes here, not minutes but most likely days.",
+        "NB: the motion is around the Sun, so use the Sun gravitational parameter (usually indicated as GM or mu) provided below to propagate the orbit."
+      ]
+    }
+  ]
