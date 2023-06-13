@@ -24,24 +24,24 @@ void print_info(const std::string& str, ...) {
 }
 
 template<typename T>
-int write_matrix_to_csv(T X, int size, string filename) {
+int write_matrix_to_csv(T X, int size, string filename, string dir) {
 
     // Path to the directory
-    char * dir_path = "orbit_csv";
+    string dir_path = "orbit_csv/" + dir;
     // Structure which would store the metadata
     struct stat sb;
     // Calls the function with path as argument
     // If the file/directory exists at the path returns 0
     // If block executes if path exists
-    if (stat(dir_path, &sb) != 0) {   // Directory doesn't exists
-        int status = mkdir(dir_path, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+    if (stat(dir_path.c_str(), &sb) != 0) {   // Directory doesn't exists
+        int status = mkdir(dir_path.c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
         if (status != 0) {
             print_error("!ERROR! creating directory");
             return -1;
         }
     }
 
-    ofstream outfile("orbit_csv/" + filename);
+    ofstream outfile(dir_path + "/" + filename);
 
     if (outfile.is_open()) {
 
@@ -70,24 +70,24 @@ int write_matrix_to_csv(T X, int size, string filename) {
 }
 
 template<typename T>
-int write_array_to_csv(T X, int size, string filename) {
+int write_array_to_csv(T X, int size, string filename, string dir) {
 
     // Path to the directory
-    char * dir_path = "orbit_csv";
+    string dir_path = "orbit_csv/" + dir;
     // Structure which would store the metadata
     struct stat sb;
     // Calls the function with path as argument
     // If the file/directory exists at the path returns 0
     // If block executes if path exists
-    if (stat(dir_path, &sb) != 0) {   // Directory doesn't exists
-        int status = mkdir(dir_path, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+    if (stat(dir_path.c_str(), &sb) != 0) {   // Directory doesn't exists
+        int status = mkdir(dir_path.c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
         if (status != 0) {
             print_error("!ERROR! creating directory");
             return -1;
         }
     }
 
-    ofstream outfile("orbit_csv/" + filename);
+    ofstream outfile(dir_path + "/" + filename);
 
     if (outfile.is_open()) {
         
@@ -315,49 +315,44 @@ void delete_matrix(T** matrix) {
 
 int main(int argc, char** argv)
 {
+    const int orbit_type = (argc > 1) ? std::stoi(argv[1]) : 0;
+
     // Read JSON data from a file
     std::ifstream file("constants/constants.json");
     nlohmann::json json_data;
     file >> json_data;
 
-    // Extract values from the JSON object
-    const double T_REV = json_data.value("T_REV", 5828.516637686026);
-    const int N_REV = json_data.value("N_REV", 1);
-    const double MU = json_data.value("MU", 398600.4418);
-    const double TOL = json_data.value("TOL", 1e-09);
-    const double H0 = json_data.value("H0", 15.0);
-    const double TF = json_data.value("TF", T_REV * N_REV);
-    const double T0 = json_data.value("T0", 0.0);
-    const double H_MAX = json_data.value("H_MAX", 0.1 * std::abs(TF - T0));
-    const double H_MIN = json_data.value("H_MIN", 0.1);
-    const vector<double> r0 = json_data["r0"];
-    const vector<double> v0 = json_data["v0"];
-    const array<double, N> y0 = { r0[0], r0[1], r0[2], v0[0], v0[1], v0[2] };
+    // Access the object of the json to access the orbit type
+    nlohmann::json& json_object = json_data[orbit_type];
 
-    // Display the extracted values
-    std::cout << "T_REV: " << T_REV << std::endl;
-    std::cout << "N_REV: " << N_REV << std::endl;
-    std::cout << "MU: " << MU << std::endl;
-    std::cout << "TOL: " << TOL << std::endl;
-    std::cout << "H0: " << H0 << std::endl;
-    std::cout << "TF: " << TF << std::endl;
-    std::cout << "T0: " << T0 << std::endl;
-    std::cout << "H_MAX: " << H_MAX << std::endl;
-    std::cout << "H_MIN: " << H_MIN << std::endl;
-    std::cout << "y0: " << y0[0] << ", " << y0[1] << ", " << y0[2] << ", " << y0[3] << ", " << y0[4] << ", " << y0[5] << std::endl;
+    // Extract values from the JSON object
+    const string dir = json_object.value("dir", "default");
+    const double T_REV = json_object.value("T_REV", 5828.516637686026);
+    const int N_REV = json_object.value("N_REV", 1);
+    const double MU = json_object.value("MU", 398600.4418);
+    const double TOL = json_object.value("TOL", 1e-09);
+    const double H0 = json_object.value("H0", 15.0);
+    const double TF = json_object.value("TF", T_REV * N_REV);
+    const double T0 = json_object.value("T0", 0.0);
+    const double H_MAX = json_object.value("H_MAX", 0.1 * std::abs(TF - T0));
+    const double H_MIN = json_object.value("H_MIN", 0.1);
+    const vector<double> r0 = json_object["r0"];
+    const vector<double> v0 = json_object["v0"];
+    const array<double, N> y0 = { r0[0], r0[1], r0[2], v0[0], v0[1], v0[2] };
 
     cout << endl; print_info("Simulation starting..."); cout << endl;
 
     cout << endl;
+    print_info("Orbit type: " + json_object.value("Type", "ERROR"));
     print_info("T_REV: %f", T_REV);
-    print_info("N_REV: %f", N_REV);
+    print_info("N_REV: %d", N_REV);
     print_info("MU: %f", MU);
     print_info("TOL: %e", TOL);
     print_info("H0: %f", H0);
     print_info("TF: %f", TF);
     print_info("H_MAX: %f", H_MAX);
     print_info("H_MIN: %f", H_MIN);
-    print_info("y0: [%f, %f, %f, %f, %f, %f]", y0[0], y0[1], y0[2], y0[3], y0[4], y0[5]);
+    print_info("y0: [%e, %e, %e, %e, %e, %e]", y0[0], y0[1], y0[2], y0[3], y0[4], y0[5]);
     cout << endl;
 
     // ****** CPU computation 1 computation starts ****** //
@@ -368,8 +363,8 @@ int main(int argc, char** argv)
     auto ode_cpu_wrapper = [MU](double* out, const double* in) { ode_cpu(out, in, MU); };
     rk45_cpu(ode_cpu_wrapper, yy, tt, flag, y0, T0, TF, H0, TOL, H_MAX, H_MIN);
 
-    write_matrix_to_csv(yy, yy.size(), "y_rk45_tol09_cpp.csv");
-    write_array_to_csv(tt, tt.size(), "t_rk45_tol09_cpp.csv");
+    write_matrix_to_csv(yy, yy.size(), "y_rk45_tol09_cpp.csv", dir);
+    write_array_to_csv(tt, tt.size(), "t_rk45_tol09_cpp.csv", dir);
     // ****** CPU computation 1 computation ends ****** //
 
 
@@ -388,8 +383,8 @@ int main(int argc, char** argv)
     //FPGA computation
     runge_kutta_45(yy_fpga[0], tt_fpga, TF, H0, TOL, H_MAX, H_MIN, MU, size, flag_fpga);
 
-    write_matrix_to_csv(yy_fpga, size, "y_rk45_tol09_fpga_sim.csv");
-    write_array_to_csv(tt_fpga, size, "t_rk45_tol09_fpga_sim.csv");
+    write_matrix_to_csv(yy_fpga, size, "y_rk45_tol09_fpga_sim.csv", dir);
+    write_array_to_csv(tt_fpga, size, "t_rk45_tol09_fpga_sim.csv", dir);
 
     delete_matrix(yy_fpga);
     delete[] tt_fpga;
