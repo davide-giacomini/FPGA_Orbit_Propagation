@@ -20,12 +20,13 @@ n_rev = constants.n_rev
 
 r0 = constants.r0
 v0 = constants.v0
+t0 = constants.t0
 
 print("Revolution time: " , tf_1_rev)
 tf = tf_1_rev * n_rev
 print("tf: ", tf)
 
-output = gen.solve_ode45(r0, v0, mu, tf, tol, float(h_init), nargout=2)
+output = gen.solve_ode45(r0, v0, mu, t0, tf, tol, float(h_init), nargout=2)
 ode45_data = np.array(output[0])
 t_ode45 = np.array(output[1])
 

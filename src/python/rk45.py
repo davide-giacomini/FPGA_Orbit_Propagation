@@ -111,13 +111,13 @@ h_max = 0.1*abs(tf-t0)  # same as default in matlab
 h_min = 0.1             # just a small number
 
 #**** Non adimensional starts *****#
-# ode_wrapper = lambda t, y: ode(t, y, mu)
-# t_final, y_final, h_final, tolerance_respected = rk_45(ode_wrapper, t0, tf, np.concatenate((r0, v0)), h_init, tol, h_max, h_min)
-# print("Tolerance respected: ", tolerance_respected)
+ode_wrapper = lambda t, y: ode(t, y, mu)
+t_final, y_final, h_final, tolerance_respected = rk_45(ode_wrapper, t0, tf, np.concatenate((r0, v0)), h_init, tol, h_max, h_min)
+print("Tolerance respected: ", tolerance_respected)
 
-# write_to_csv(y_final, "y_rk45_tol09_python.csv", constants.dir)
-# write_to_csv(t_final, "t_rk45_tol09_python.csv", constants.dir)
-# write_to_csv(h_final, "h_rk45_tol09_python.csv", constants.dir)
+write_to_csv(y_final, "y_rk45_tol09_python.csv", constants.dir)
+write_to_csv(t_final, "t_rk45_tol09_python.csv", constants.dir)
+write_to_csv(h_final, "h_rk45_tol09_python.csv", constants.dir)
 #**** Non adimensional ends *****#
 
 ### Stiamo parlando di numeri molto alti. Il tempo finale sta sui 10^10 e la posizione finale sta sui 10^9

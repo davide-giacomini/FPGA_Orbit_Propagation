@@ -27,6 +27,20 @@ r0 = np.array(json_object['r0']) # km
 v0 = np.array(json_object['v0']) # km/s
 dir = json_object['dir']
 
+if (json_object['Type'] == "67P - Rosetta comet"):
+
+    L = 149597870.707 # 1AU
+    T = 86400 # 1 day
+
+    tf_1_rev = tf_1_rev / T
+    mu = mu / ( L**3 / T**2 )
+    r0 = r0 / L
+    v0 = v0 / (L/T)
+    h_init = h_init / T
+    t0 = t0 / T
+    h_min = h_min / T
+
+
 # # LEO orbit -- don't know which is
 # r0 = np.array([6893.65420319622, 607.768615848904, 1052.68612189611]) # km
 # v0 = np.array([-1.31035840240472, 3.71570593010086, 6.43579145691966]) # km/s
