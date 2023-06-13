@@ -1,6 +1,6 @@
 # This script segment is generated automatically by AutoPilot
 
-set name runge_kutta_45_mul_80s_80s_160_1_1
+set name runge_kutta_45_mul_100s_100s_200_1_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 0 ALLOW_PRAGMA 1
 }
@@ -24,7 +24,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_r_in_V_0_01_reload \
     op interface \
-    ports { r_in_V_0_01_reload { I 80 vector } } \
+    ports { r_in_V_0_01_reload { I 100 vector } } \
 } "
 }
 
@@ -39,7 +39,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_r_in_V_1_02_reload \
     op interface \
-    ports { r_in_V_1_02_reload { I 80 vector } } \
+    ports { r_in_V_1_02_reload { I 100 vector } } \
 } "
 }
 
@@ -54,7 +54,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_r_in_V_2_03_reload \
     op interface \
-    ports { r_in_V_2_03_reload { I 80 vector } } \
+    ports { r_in_V_2_03_reload { I 100 vector } } \
 } "
 }
 
@@ -69,7 +69,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_X_V_4_out \
     op interface \
-    ports { X_V_4_out { O 161 vector } X_V_4_out_ap_vld { O 1 bit } } \
+    ports { X_V_4_out { O 201 vector } X_V_4_out_ap_vld { O 1 bit } } \
 } "
 }
 

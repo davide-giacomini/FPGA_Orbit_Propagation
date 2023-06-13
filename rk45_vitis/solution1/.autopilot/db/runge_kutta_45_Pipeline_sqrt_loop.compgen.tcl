@@ -18,7 +18,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_X_V_7_reload \
     op interface \
-    ports { X_V_7_reload { I 162 vector } } \
+    ports { X_V_7_reload { I 202 vector } } \
 } "
 }
 
@@ -33,7 +33,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_Q_V_5_out \
     op interface \
-    ports { Q_V_5_out { O 81 vector } Q_V_5_out_ap_vld { O 1 bit } } \
+    ports { Q_V_5_out { O 101 vector } Q_V_5_out_ap_vld { O 1 bit } } \
 } "
 }
 

@@ -18,7 +18,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir I \
     corename e_V \
     op interface \
-    ports { e_V_address0 { O 3 vector } e_V_ce0 { O 1 bit } e_V_q0 { I 80 vector } } \
+    ports { e_V_address0 { O 3 vector } e_V_ce0 { O 1 bit } e_V_q0 { I 100 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'e_V'"
@@ -37,7 +37,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_X_V_7_out \
     op interface \
-    ports { X_V_7_out { O 162 vector } X_V_7_out_ap_vld { O 1 bit } } \
+    ports { X_V_7_out { O 202 vector } X_V_7_out_ap_vld { O 1 bit } } \
 } "
 }
 

@@ -36,17 +36,17 @@ input   ap_start;
 output   ap_done;
 output   ap_idle;
 output   ap_ready;
-input  [79:0] p_read;
-input  [79:0] p_read1;
-input  [79:0] p_read2;
-input  [79:0] p_read3;
-input  [79:0] p_read4;
-input  [79:0] p_read5;
-output  [79:0] r_in_V_2_03_out;
+input  [99:0] p_read;
+input  [99:0] p_read1;
+input  [99:0] p_read2;
+input  [99:0] p_read3;
+input  [99:0] p_read4;
+input  [99:0] p_read5;
+output  [99:0] r_in_V_2_03_out;
 output   r_in_V_2_03_out_ap_vld;
-output  [79:0] r_in_V_1_02_out;
+output  [99:0] r_in_V_1_02_out;
 output   r_in_V_1_02_out_ap_vld;
-output  [79:0] r_in_V_0_01_out;
+output  [99:0] r_in_V_0_01_out;
 output   r_in_V_0_01_out_ap_vld;
 
 reg ap_idle;
@@ -66,12 +66,12 @@ wire   [1:0] add_ln70_fu_135_p2;
 wire    ap_loop_init;
 reg   [1:0] ap_sig_allocacmp_i;
 wire   [1:0] i_load_fu_126_p1;
-reg   [79:0] r_in_V_1_fu_52;
-wire   [79:0] r_in_V_1_4_fu_165_p2;
-reg   [79:0] r_in_V_1_1_fu_56;
-reg   [79:0] r_in_V_1_2_fu_60;
-wire   [79:0] tmp_2_fu_153_p5;
-wire   [79:0] tmp_1_fu_141_p5;
+reg   [99:0] r_in_V_1_fu_52;
+wire   [99:0] r_in_V_1_4_fu_165_p2;
+reg   [99:0] r_in_V_1_1_fu_56;
+reg   [99:0] r_in_V_1_2_fu_60;
+wire   [99:0] tmp_2_fu_153_p5;
+wire   [99:0] tmp_1_fu_141_p5;
 reg    ap_done_reg;
 wire    ap_continue_int;
 reg    ap_done_int;
@@ -86,15 +86,15 @@ initial begin
 #0 ap_done_reg = 1'b0;
 end
 
-runge_kutta_45_mux_32_80_1_1 #(
+runge_kutta_45_mux_32_100_1_1 #(
     .ID( 1 ),
     .NUM_STAGE( 1 ),
-    .din0_WIDTH( 80 ),
-    .din1_WIDTH( 80 ),
-    .din2_WIDTH( 80 ),
+    .din0_WIDTH( 100 ),
+    .din1_WIDTH( 100 ),
+    .din2_WIDTH( 100 ),
     .din3_WIDTH( 2 ),
-    .dout_WIDTH( 80 ))
-mux_32_80_1_1_U12(
+    .dout_WIDTH( 100 ))
+mux_32_100_1_1_U12(
     .din0(p_read),
     .din1(p_read1),
     .din2(p_read2),
@@ -102,15 +102,15 @@ mux_32_80_1_1_U12(
     .dout(tmp_1_fu_141_p5)
 );
 
-runge_kutta_45_mux_32_80_1_1 #(
+runge_kutta_45_mux_32_100_1_1 #(
     .ID( 1 ),
     .NUM_STAGE( 1 ),
-    .din0_WIDTH( 80 ),
-    .din1_WIDTH( 80 ),
-    .din2_WIDTH( 80 ),
+    .din0_WIDTH( 100 ),
+    .din1_WIDTH( 100 ),
+    .din2_WIDTH( 100 ),
     .din3_WIDTH( 2 ),
-    .dout_WIDTH( 80 ))
-mux_32_80_1_1_U13(
+    .dout_WIDTH( 100 ))
+mux_32_100_1_1_U13(
     .din0(p_read3),
     .din1(p_read4),
     .din2(p_read5),

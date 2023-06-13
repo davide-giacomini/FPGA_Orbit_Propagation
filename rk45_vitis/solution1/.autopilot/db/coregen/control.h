@@ -62,6 +62,12 @@
 // 0x74 : Control signal of size
 //        bit 0  - size_ap_vld (Read/COR)
 //        others - reserved
+// 0x80 : Data signal of flag
+//        bit 0  - flag[0] (Read)
+//        others - reserved
+// 0x84 : Control signal of flag
+//        bit 0  - flag_ap_vld (Read/COR)
+//        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 #define CONTROL_ADDR_AP_CTRL    0x00
@@ -87,3 +93,6 @@
 #define CONTROL_ADDR_SIZE_DATA  0x70
 #define CONTROL_BITS_SIZE_DATA  32
 #define CONTROL_ADDR_SIZE_CTRL  0x74
+#define CONTROL_ADDR_FLAG_DATA  0x80
+#define CONTROL_BITS_FLAG_DATA  1
+#define CONTROL_ADDR_FLAG_CTRL  0x84

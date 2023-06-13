@@ -6,7 +6,7 @@
 `timescale 1ns/1ps
 module runge_kutta_45_control_s_axi
 #(parameter
-    C_S_AXI_ADDR_WIDTH = 7,
+    C_S_AXI_ADDR_WIDTH = 8,
     C_S_AXI_DATA_WIDTH = 32
 )(
     input  wire                          ACLK,
@@ -40,6 +40,8 @@ module runge_kutta_45_control_s_axi
     output wire [63:0]                   mu,
     input  wire [31:0]                   size,
     input  wire                          size_ap_vld,
+    input  wire [0:0]                    flag,
+    input  wire                          flag_ap_vld,
     output wire                          ap_start,
     input  wire                          ap_done,
     input  wire                          ap_ready,
@@ -110,40 +112,48 @@ module runge_kutta_45_control_s_axi
 // 0x74 : Control signal of size
 //        bit 0  - size_ap_vld (Read/COR)
 //        others - reserved
+// 0x80 : Data signal of flag
+//        bit 0  - flag[0] (Read)
+//        others - reserved
+// 0x84 : Control signal of flag
+//        bit 0  - flag_ap_vld (Read/COR)
+//        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
 localparam
-    ADDR_AP_CTRL      = 7'h00,
-    ADDR_GIE          = 7'h04,
-    ADDR_IER          = 7'h08,
-    ADDR_ISR          = 7'h0c,
-    ADDR_YY_DATA_0    = 7'h10,
-    ADDR_YY_DATA_1    = 7'h14,
-    ADDR_YY_CTRL      = 7'h18,
-    ADDR_TT_DATA_0    = 7'h1c,
-    ADDR_TT_DATA_1    = 7'h20,
-    ADDR_TT_CTRL      = 7'h24,
-    ADDR_TF_DATA_0    = 7'h28,
-    ADDR_TF_DATA_1    = 7'h2c,
-    ADDR_TF_CTRL      = 7'h30,
-    ADDR_H0_DATA_0    = 7'h34,
-    ADDR_H0_DATA_1    = 7'h38,
-    ADDR_H0_CTRL      = 7'h3c,
-    ADDR_ATOL_DATA_0  = 7'h40,
-    ADDR_ATOL_DATA_1  = 7'h44,
-    ADDR_ATOL_CTRL    = 7'h48,
-    ADDR_H_MAX_DATA_0 = 7'h4c,
-    ADDR_H_MAX_DATA_1 = 7'h50,
-    ADDR_H_MAX_CTRL   = 7'h54,
-    ADDR_H_MIN_DATA_0 = 7'h58,
-    ADDR_H_MIN_DATA_1 = 7'h5c,
-    ADDR_H_MIN_CTRL   = 7'h60,
-    ADDR_MU_DATA_0    = 7'h64,
-    ADDR_MU_DATA_1    = 7'h68,
-    ADDR_MU_CTRL      = 7'h6c,
-    ADDR_SIZE_DATA_0  = 7'h70,
-    ADDR_SIZE_CTRL    = 7'h74,
+    ADDR_AP_CTRL      = 8'h00,
+    ADDR_GIE          = 8'h04,
+    ADDR_IER          = 8'h08,
+    ADDR_ISR          = 8'h0c,
+    ADDR_YY_DATA_0    = 8'h10,
+    ADDR_YY_DATA_1    = 8'h14,
+    ADDR_YY_CTRL      = 8'h18,
+    ADDR_TT_DATA_0    = 8'h1c,
+    ADDR_TT_DATA_1    = 8'h20,
+    ADDR_TT_CTRL      = 8'h24,
+    ADDR_TF_DATA_0    = 8'h28,
+    ADDR_TF_DATA_1    = 8'h2c,
+    ADDR_TF_CTRL      = 8'h30,
+    ADDR_H0_DATA_0    = 8'h34,
+    ADDR_H0_DATA_1    = 8'h38,
+    ADDR_H0_CTRL      = 8'h3c,
+    ADDR_ATOL_DATA_0  = 8'h40,
+    ADDR_ATOL_DATA_1  = 8'h44,
+    ADDR_ATOL_CTRL    = 8'h48,
+    ADDR_H_MAX_DATA_0 = 8'h4c,
+    ADDR_H_MAX_DATA_1 = 8'h50,
+    ADDR_H_MAX_CTRL   = 8'h54,
+    ADDR_H_MIN_DATA_0 = 8'h58,
+    ADDR_H_MIN_DATA_1 = 8'h5c,
+    ADDR_H_MIN_CTRL   = 8'h60,
+    ADDR_MU_DATA_0    = 8'h64,
+    ADDR_MU_DATA_1    = 8'h68,
+    ADDR_MU_CTRL      = 8'h6c,
+    ADDR_SIZE_DATA_0  = 8'h70,
+    ADDR_SIZE_CTRL    = 8'h74,
+    ADDR_FLAG_DATA_0  = 8'h80,
+    ADDR_FLAG_CTRL    = 8'h84,
     WRIDLE            = 2'd0,
     WRDATA            = 2'd1,
     WRRESP            = 2'd2,
@@ -151,7 +161,7 @@ localparam
     RDIDLE            = 2'd0,
     RDDATA            = 2'd1,
     RDRESET           = 2'd2,
-    ADDR_BITS                = 7;
+    ADDR_BITS                = 8;
 
 //------------------------Local signal-------------------
     reg  [1:0]                    wstate = WRRESET;
@@ -190,6 +200,8 @@ localparam
     reg  [63:0]                   int_mu = 'b0;
     reg                           int_size_ap_vld;
     reg  [31:0]                   int_size = 'b0;
+    reg                           int_flag_ap_vld;
+    reg  [0:0]                    int_flag = 'b0;
 
 //------------------------Instantiation------------------
 
@@ -352,6 +364,12 @@ always @(posedge ACLK) begin
                 end
                 ADDR_SIZE_CTRL: begin
                     rdata[0] <= int_size_ap_vld;
+                end
+                ADDR_FLAG_DATA_0: begin
+                    rdata <= int_flag[0:0];
+                end
+                ADDR_FLAG_CTRL: begin
+                    rdata[0] <= int_flag_ap_vld;
                 end
             endcase
         end
@@ -684,6 +702,28 @@ always @(posedge ACLK) begin
             int_size_ap_vld <= 1'b1;
         else if (ar_hs && raddr == ADDR_SIZE_CTRL)
             int_size_ap_vld <= 1'b0; // clear on read
+    end
+end
+
+// int_flag
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_flag <= 0;
+    else if (ACLK_EN) begin
+        if (flag_ap_vld)
+            int_flag <= flag;
+    end
+end
+
+// int_flag_ap_vld
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_flag_ap_vld <= 1'b0;
+    else if (ACLK_EN) begin
+        if (flag_ap_vld)
+            int_flag_ap_vld <= 1'b1;
+        else if (ar_hs && raddr == ADDR_FLAG_CTRL)
+            int_flag_ap_vld <= 1'b0; // clear on read
     end
 end
 

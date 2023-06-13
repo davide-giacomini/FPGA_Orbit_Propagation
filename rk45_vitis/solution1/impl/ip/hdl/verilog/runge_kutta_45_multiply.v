@@ -16,19 +16,19 @@ module runge_kutta_45_multiply (
 
 
 output   ap_ready;
-input  [79:0] x;
-input  [79:0] y;
-output  [159:0] ap_return;
+input  [99:0] x;
+input  [99:0] y;
+output  [199:0] ap_return;
 
-wire   [159:0] r_V_fu_26_p2;
+wire   [199:0] r_V_fu_26_p2;
 
-runge_kutta_45_mul_80s_80s_160_1_1 #(
+runge_kutta_45_mul_100s_100s_200_1_1 #(
     .ID( 1 ),
     .NUM_STAGE( 1 ),
-    .din0_WIDTH( 80 ),
-    .din1_WIDTH( 80 ),
-    .dout_WIDTH( 160 ))
-mul_80s_80s_160_1_1_U73(
+    .din0_WIDTH( 100 ),
+    .din1_WIDTH( 100 ),
+    .dout_WIDTH( 200 ))
+mul_100s_100s_200_1_1_U73(
     .din0(y),
     .din1(x),
     .dout(r_V_fu_26_p2)

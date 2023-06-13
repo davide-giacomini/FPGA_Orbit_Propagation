@@ -9,7 +9,7 @@ use IEEE.NUMERIC_STD.all;
 
 entity runge_kutta_45_control_s_axi is
 generic (
-    C_S_AXI_ADDR_WIDTH    : INTEGER := 7;
+    C_S_AXI_ADDR_WIDTH    : INTEGER := 8;
     C_S_AXI_DATA_WIDTH    : INTEGER := 32);
 port (
     ACLK                  :in   STD_LOGIC;
@@ -43,6 +43,8 @@ port (
     mu                    :out  STD_LOGIC_VECTOR(63 downto 0);
     size                  :in   STD_LOGIC_VECTOR(31 downto 0);
     size_ap_vld           :in   STD_LOGIC;
+    flag                  :in   STD_LOGIC_VECTOR(0 downto 0);
+    flag_ap_vld           :in   STD_LOGIC;
     ap_start              :out  STD_LOGIC;
     ap_done               :in   STD_LOGIC;
     ap_ready              :in   STD_LOGIC;
@@ -115,6 +117,12 @@ end entity runge_kutta_45_control_s_axi;
 -- 0x74 : Control signal of size
 --        bit 0  - size_ap_vld (Read/COR)
 --        others - reserved
+-- 0x80 : Data signal of flag
+--        bit 0  - flag[0] (Read)
+--        others - reserved
+-- 0x84 : Control signal of flag
+--        bit 0  - flag_ap_vld (Read/COR)
+--        others - reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 architecture behave of runge_kutta_45_control_s_axi is
@@ -152,7 +160,9 @@ architecture behave of runge_kutta_45_control_s_axi is
     constant ADDR_MU_CTRL      : INTEGER := 16#6c#;
     constant ADDR_SIZE_DATA_0  : INTEGER := 16#70#;
     constant ADDR_SIZE_CTRL    : INTEGER := 16#74#;
-    constant ADDR_BITS         : INTEGER := 7;
+    constant ADDR_FLAG_DATA_0  : INTEGER := 16#80#;
+    constant ADDR_FLAG_CTRL    : INTEGER := 16#84#;
+    constant ADDR_BITS         : INTEGER := 8;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
     signal wmask               : UNSIGNED(C_S_AXI_DATA_WIDTH-1 downto 0);
@@ -190,6 +200,8 @@ architecture behave of runge_kutta_45_control_s_axi is
     signal int_mu              : UNSIGNED(63 downto 0) := (others => '0');
     signal int_size_ap_vld     : STD_LOGIC;
     signal int_size            : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_flag_ap_vld     : STD_LOGIC;
+    signal int_flag            : UNSIGNED(0 downto 0) := (others => '0');
 
 
 begin
@@ -354,6 +366,10 @@ begin
                         rdata_data <= RESIZE(int_size(31 downto 0), 32);
                     when ADDR_SIZE_CTRL =>
                         rdata_data(0) <= int_size_ap_vld;
+                    when ADDR_FLAG_DATA_0 =>
+                        rdata_data <= RESIZE(int_flag(0 downto 0), 32);
+                    when ADDR_FLAG_CTRL =>
+                        rdata_data(0) <= int_flag_ap_vld;
                     when others =>
                         NULL;
                     end case;
@@ -746,6 +762,34 @@ begin
                     int_size_ap_vld <= '1';
                 elsif (ar_hs = '1' and raddr = ADDR_SIZE_CTRL) then
                     int_size_ap_vld <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_flag <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (flag_ap_vld = '1') then
+                    int_flag <= UNSIGNED(flag);
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_flag_ap_vld <= '0';
+            elsif (ACLK_EN = '1') then
+                if (flag_ap_vld = '1') then
+                    int_flag_ap_vld <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_FLAG_CTRL) then
+                    int_flag_ap_vld <= '0'; -- clear on read
                 end if;
             end if;
         end if;

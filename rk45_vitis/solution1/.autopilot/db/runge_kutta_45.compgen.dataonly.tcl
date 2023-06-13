@@ -74,6 +74,14 @@ size {
 	offset 112
 	offset_end 119
 }
+flag { 
+	dir O
+	width 1
+	depth 1
+	mode ap_vld
+	offset 128
+	offset_end 135
+}
 ap_start { }
 ap_done { }
 ap_ready { }

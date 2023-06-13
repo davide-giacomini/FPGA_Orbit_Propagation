@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'ap_fixed_base'
 ================================================================
-* Date:           Mon May 22 17:32:26 2023
+* Date:           Tue Jun 13 00:34:29 2023
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        rk45_vitis
@@ -20,7 +20,7 @@
     +--------+----------+-----------+------------+
     |  Clock |  Target  | Estimated | Uncertainty|
     +--------+----------+-----------+------------+
-    |ap_clk  |  50.00 ns|  17.470 ns|    13.50 ns|
+    |ap_clk  |  50.00 ns|  17.593 ns|    13.50 ns|
     +--------+----------+-----------+------------+
 
 + Latency: 
@@ -78,7 +78,7 @@ IsGatedGlobalClock: 0
 
 * FSM state operations: 
 
-State 1 <SV = 0> <Delay = 17.4>
+State 1 <SV = 0> <Delay = 17.5>
 ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%d_read = read i64 @_ssdm_op_Read.ap_auto.double, i64 %d"   --->   Operation 2 'read' 'd_read' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%ireg = bitcast i64 %d_read"   --->   Operation 3 'bitcast' 'ireg' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%trunc_ln590 = trunc i64 %ireg"   --->   Operation 4 'trunc' 'trunc_ln590' <Predicate = true> <Delay = 0.00>
@@ -99,14 +99,14 @@ ST_1 : Operation 18 [1/1] (0.69ns)   --->   "%sh_amt = select i1 %icmp_ln616, i1
 ST_1 : Operation 19 [1/1] (1.99ns)   --->   "%icmp_ln617 = icmp_eq  i12 %F2, i12 60"   --->   Operation 19 'icmp' 'icmp_ln617' <Predicate = true> <Delay = 1.99> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 20 [1/1] (0.00ns) (grouped into LUT with out node select_ln638_5)   --->   "%sext_ln618 = sext i54 %man_V_12"   --->   Operation 20 'sext' 'sext_ln618' <Predicate = (!or_ln638 & or_ln638_6 & or_ln638_8)> <Delay = 0.00>
 ST_1 : Operation 21 [1/1] (1.99ns)   --->   "%icmp_ln620 = icmp_ult  i12 %sh_amt, i12 54"   --->   Operation 21 'icmp' 'icmp_ln620' <Predicate = true> <Delay = 1.99> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 22 [1/1] (1.99ns)   --->   "%icmp_ln638 = icmp_ult  i12 %sh_amt, i12 80"   --->   Operation 22 'icmp' 'icmp_ln638' <Predicate = true> <Delay = 1.99> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 22 [1/1] (1.99ns)   --->   "%icmp_ln638 = icmp_ult  i12 %sh_amt, i12 100"   --->   Operation 22 'icmp' 'icmp_ln638' <Predicate = true> <Delay = 1.99> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%sext_ln621 = sext i12 %sh_amt"   --->   Operation 23 'sext' 'sext_ln621' <Predicate = (or_ln638_8)> <Delay = 0.00>
 ST_1 : Operation 24 [1/1] (0.00ns) (grouped into LUT with out node select_ln638_4)   --->   "%zext_ln621 = zext i32 %sext_ln621"   --->   Operation 24 'zext' 'zext_ln621' <Predicate = (and_ln620_6 & !or_ln638_6 & or_ln638_8)> <Delay = 0.00>
 ST_1 : Operation 25 [1/1] (0.00ns) (grouped into LUT with out node select_ln638_4)   --->   "%ashr_ln621 = ashr i54 %man_V_12, i54 %zext_ln621"   --->   Operation 25 'ashr' 'ashr_ln621' <Predicate = (and_ln620_6 & !or_ln638_6 & or_ln638_8)> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 4.61> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 26 [1/1] (0.00ns) (grouped into LUT with out node select_ln638_8)   --->   "%tmp = bitselect i1 @_ssdm_op_BitSelect.i1.i64.i32, i64 %ireg, i32 63"   --->   Operation 26 'bitselect' 'tmp' <Predicate = (!or_ln638_8)> <Delay = 0.00>
-ST_1 : Operation 27 [1/1] (0.00ns) (grouped into LUT with out node select_ln638_8)   --->   "%select_ln623 = select i1 %tmp, i80 1208925819614629174706175, i80 0"   --->   Operation 27 'select' 'select_ln623' <Predicate = (!or_ln638_8)> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 27 [1/1] (0.00ns) (grouped into LUT with out node select_ln638_8)   --->   "%select_ln623 = select i1 %tmp, i100 1267650600228229401496703205375, i100 0"   --->   Operation 27 'select' 'select_ln623' <Predicate = (!or_ln638_8)> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
 ST_1 : Operation 28 [1/1] (0.00ns) (grouped into LUT with out node select_ln638_5)   --->   "%zext_ln639 = zext i32 %sext_ln621"   --->   Operation 28 'zext' 'zext_ln639' <Predicate = (!or_ln638 & or_ln638_6 & or_ln638_8)> <Delay = 0.00>
-ST_1 : Operation 29 [1/1] (0.00ns) (grouped into LUT with out node select_ln638_5)   --->   "%shl_ln639 = shl i80 %sext_ln618, i80 %zext_ln639"   --->   Operation 29 'shl' 'shl_ln639' <Predicate = (!or_ln638 & or_ln638_6 & or_ln638_8)> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 4.61> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 29 [1/1] (0.00ns) (grouped into LUT with out node select_ln638_5)   --->   "%shl_ln639 = shl i100 %sext_ln618, i100 %zext_ln639"   --->   Operation 29 'shl' 'shl_ln639' <Predicate = (!or_ln638 & or_ln638_6 & or_ln638_8)> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 4.61> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 30 [1/1] (0.00ns) (grouped into LUT with out node or_ln638_8)   --->   "%xor_ln606 = xor i1 %icmp_ln606, i1 1"   --->   Operation 30 'xor' 'xor_ln606' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 31 [1/1] (0.00ns) (grouped into LUT with out node or_ln638_8)   --->   "%and_ln617 = and i1 %icmp_ln617, i1 %xor_ln606"   --->   Operation 31 'and' 'and_ln617' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 32 [1/1] (0.97ns)   --->   "%or_ln617 = or i1 %icmp_ln606, i1 %icmp_ln617"   --->   Operation 32 'or' 'or_ln617' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
@@ -120,15 +120,15 @@ ST_1 : Operation 39 [1/1] (1.99ns)   --->   "%icmp_ln616_6 = icmp_slt  i12 %F2, 
 ST_1 : Operation 40 [1/1] (0.00ns) (grouped into LUT with out node or_ln638)   --->   "%xor_ln638 = xor i1 %icmp_ln638, i1 1"   --->   Operation 40 'xor' 'xor_ln638' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 41 [1/1] (0.00ns) (grouped into LUT with out node or_ln638)   --->   "%and_ln638_6 = and i1 %icmp_ln616_6, i1 %xor_ln638"   --->   Operation 41 'and' 'and_ln638_6' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 42 [1/1] (0.97ns) (out node of the LUT)   --->   "%or_ln638 = or i1 %icmp_ln606, i1 %and_ln638_6"   --->   Operation 42 'or' 'or_ln638' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 43 [1/1] (0.00ns) (grouped into LUT with out node select_ln638_5)   --->   "%select_ln638 = select i1 %or_ln638, i80 0, i80 %shl_ln639"   --->   Operation 43 'select' 'select_ln638' <Predicate = (or_ln638_6 & or_ln638_8)> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.04> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 43 [1/1] (0.00ns) (grouped into LUT with out node select_ln638_5)   --->   "%select_ln638 = select i1 %or_ln638, i100 0, i100 %shl_ln639"   --->   Operation 43 'select' 'select_ln638' <Predicate = (or_ln638_6 & or_ln638_8)> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.16> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
 ST_1 : Operation 44 [1/1] (0.97ns) (out node of the LUT)   --->   "%or_ln638_6 = or i1 %or_ln638, i1 %and_ln638"   --->   Operation 44 'or' 'or_ln638_6' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 45 [1/1] (4.61ns) (out node of the LUT)   --->   "%select_ln638_4 = select i1 %and_ln620_6, i54 %ashr_ln621, i54 %man_V_12"   --->   Operation 45 'select' 'select_ln638_4' <Predicate = (!or_ln638_6 & or_ln638_8)> <Delay = 4.61> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
 ST_1 : Operation 46 [1/1] (0.00ns) (grouped into LUT with out node select_ln638_5)   --->   "%sext_ln638 = sext i54 %select_ln638_4"   --->   Operation 46 'sext' 'sext_ln638' <Predicate = (!or_ln638_6 & or_ln638_8)> <Delay = 0.00>
 ST_1 : Operation 47 [1/1] (0.00ns) (grouped into LUT with out node or_ln638_8)   --->   "%or_ln638_7 = or i1 %and_ln620_6, i1 %and_ln617"   --->   Operation 47 'or' 'or_ln638_7' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 48 [1/1] (4.61ns) (out node of the LUT)   --->   "%select_ln638_5 = select i1 %or_ln638_6, i80 %select_ln638, i80 %sext_ln638"   --->   Operation 48 'select' 'select_ln638_5' <Predicate = (or_ln638_8)> <Delay = 4.61> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.04> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 48 [1/1] (4.61ns) (out node of the LUT)   --->   "%select_ln638_5 = select i1 %or_ln638_6, i100 %select_ln638, i100 %sext_ln638"   --->   Operation 48 'select' 'select_ln638_5' <Predicate = (or_ln638_8)> <Delay = 4.61> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.16> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
 ST_1 : Operation 49 [1/1] (0.97ns) (out node of the LUT)   --->   "%or_ln638_8 = or i1 %or_ln638_6, i1 %or_ln638_7"   --->   Operation 49 'or' 'or_ln638_8' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 50 [1/1] (1.04ns) (out node of the LUT)   --->   "%select_ln638_8 = select i1 %or_ln638_8, i80 %select_ln638_5, i80 %select_ln623"   --->   Operation 50 'select' 'select_ln638_8' <Predicate = true> <Delay = 1.04> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.04> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%ret_ln704 = ret i80 %select_ln638_8"   --->   Operation 51 'ret' 'ret_ln704' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (1.16ns) (out node of the LUT)   --->   "%select_ln638_8 = select i1 %or_ln638_8, i100 %select_ln638_5, i100 %select_ln623"   --->   Operation 50 'select' 'select_ln638_8' <Predicate = true> <Delay = 1.16> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.16> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%ret_ln704 = ret i100 %select_ln638_8"   --->   Operation 51 'ret' 'ret_ln704' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -586,7 +586,7 @@ ret_ln704      (ret           ) [ 00]
 <comp id="146" class="1004" name="sext_ln618_fu_146">
 <pin_list>
 <pin id="147" dir="0" index="0" bw="54" slack="0"/>
-<pin id="148" dir="1" index="1" bw="80" slack="0"/>
+<pin id="148" dir="1" index="1" bw="100" slack="0"/>
 </pin_list>
 <bind>
 <opcode="sext(35) " fcode="sext"/>
@@ -670,7 +670,7 @@ ret_ln704      (ret           ) [ 00]
 <pin id="185" dir="0" index="0" bw="1" slack="0"/>
 <pin id="186" dir="0" index="1" bw="1" slack="0"/>
 <pin id="187" dir="0" index="2" bw="1" slack="0"/>
-<pin id="188" dir="1" index="3" bw="80" slack="0"/>
+<pin id="188" dir="1" index="3" bw="100" slack="0"/>
 </pin_list>
 <bind>
 <opcode="select(49) " fcode="select"/>
@@ -681,7 +681,7 @@ ret_ln704      (ret           ) [ 00]
 <comp id="192" class="1004" name="zext_ln639_fu_192">
 <pin_list>
 <pin id="193" dir="0" index="0" bw="12" slack="0"/>
-<pin id="194" dir="1" index="1" bw="80" slack="0"/>
+<pin id="194" dir="1" index="1" bw="100" slack="0"/>
 </pin_list>
 <bind>
 <opcode="zext(34) " fcode="zext"/>
@@ -693,7 +693,7 @@ ret_ln704      (ret           ) [ 00]
 <pin_list>
 <pin id="197" dir="0" index="0" bw="54" slack="0"/>
 <pin id="198" dir="0" index="1" bw="32" slack="0"/>
-<pin id="199" dir="1" index="2" bw="80" slack="0"/>
+<pin id="199" dir="1" index="2" bw="100" slack="0"/>
 </pin_list>
 <bind>
 <opcode="shl(20) " fcode="shl"/>
@@ -861,8 +861,8 @@ ret_ln704      (ret           ) [ 00]
 <pin_list>
 <pin id="281" dir="0" index="0" bw="1" slack="0"/>
 <pin id="282" dir="0" index="1" bw="1" slack="0"/>
-<pin id="283" dir="0" index="2" bw="80" slack="0"/>
-<pin id="284" dir="1" index="3" bw="80" slack="0"/>
+<pin id="283" dir="0" index="2" bw="100" slack="0"/>
+<pin id="284" dir="1" index="3" bw="100" slack="0"/>
 </pin_list>
 <bind>
 <opcode="select(49) " fcode="select"/>
@@ -898,7 +898,7 @@ ret_ln704      (ret           ) [ 00]
 <comp id="302" class="1004" name="sext_ln638_fu_302">
 <pin_list>
 <pin id="303" dir="0" index="0" bw="54" slack="0"/>
-<pin id="304" dir="1" index="1" bw="80" slack="0"/>
+<pin id="304" dir="1" index="1" bw="100" slack="0"/>
 </pin_list>
 <bind>
 <opcode="sext(35) " fcode="sext"/>
@@ -921,9 +921,9 @@ ret_ln704      (ret           ) [ 00]
 <comp id="312" class="1004" name="select_ln638_5_fu_312">
 <pin_list>
 <pin id="313" dir="0" index="0" bw="1" slack="0"/>
-<pin id="314" dir="0" index="1" bw="80" slack="0"/>
+<pin id="314" dir="0" index="1" bw="100" slack="0"/>
 <pin id="315" dir="0" index="2" bw="54" slack="0"/>
-<pin id="316" dir="1" index="3" bw="80" slack="0"/>
+<pin id="316" dir="1" index="3" bw="100" slack="0"/>
 </pin_list>
 <bind>
 <opcode="select(49) " fcode="select"/>
@@ -946,9 +946,9 @@ ret_ln704      (ret           ) [ 00]
 <comp id="326" class="1004" name="select_ln638_8_fu_326">
 <pin_list>
 <pin id="327" dir="0" index="0" bw="1" slack="0"/>
-<pin id="328" dir="0" index="1" bw="80" slack="0"/>
-<pin id="329" dir="0" index="2" bw="80" slack="0"/>
-<pin id="330" dir="1" index="3" bw="80" slack="2147483647"/>
+<pin id="328" dir="0" index="1" bw="100" slack="0"/>
+<pin id="329" dir="0" index="2" bw="100" slack="0"/>
+<pin id="330" dir="1" index="3" bw="100" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="select(49) " fcode="select"/>
@@ -1231,10 +1231,10 @@ ret_ln704      (ret           ) [ 00]
 |          |     man_V_12_fu_94    |    0    |    54   |
 |          |     sh_amt_fu_132     |    0    |    12   |
 |          |  select_ln623_fu_184  |    0    |    2    |
-|  select  |  select_ln638_fu_280  |    0    |    80   |
+|  select  |  select_ln638_fu_280  |    0    |   100   |
 |          | select_ln638_4_fu_294 |    0    |    54   |
-|          | select_ln638_5_fu_312 |    0    |    80   |
-|          | select_ln638_8_fu_326 |    0    |    80   |
+|          | select_ln638_5_fu_312 |    0    |   100   |
+|          | select_ln638_8_fu_326 |    0    |   100   |
 |----------|-----------------------|---------|---------|
 |   ashr   |   ashr_ln621_fu_170   |    0    |   161   |
 |----------|-----------------------|---------|---------|
@@ -1292,7 +1292,7 @@ ret_ln704      (ret           ) [ 00]
 |   sext   |   sext_ln621_fu_162   |    0    |    0    |
 |          |   sext_ln638_fu_302   |    0    |    0    |
 |----------|-----------------------|---------|---------|
-|   Total  |                       |    0    |   898   |
+|   Total  |                       |    0    |   958   |
 |----------|-----------------------|---------|---------|
 
 Memories:
@@ -1314,10 +1314,10 @@ N/A
 +-----------+--------+--------+
 |           |   FF   |   LUT  |
 +-----------+--------+--------+
-|  Function |    0   |   898  |
+|  Function |    0   |   958  |
 |   Memory  |    -   |    -   |
 |Multiplexer|    -   |    -   |
 |  Register |    -   |    -   |
 +-----------+--------+--------+
-|   Total   |    0   |   898  |
+|   Total   |    0   |   958  |
 +-----------+--------+--------+

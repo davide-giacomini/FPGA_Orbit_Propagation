@@ -18,7 +18,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_sext_ln73 \
     op interface \
-    ports { sext_ln73 { I 161 vector } } \
+    ports { sext_ln73 { I 201 vector } } \
 } "
 }
 
@@ -33,7 +33,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_Q_V_2_out \
     op interface \
-    ports { Q_V_2_out { O 81 vector } Q_V_2_out_ap_vld { O 1 bit } } \
+    ports { Q_V_2_out { O 101 vector } Q_V_2_out_ap_vld { O 1 bit } } \
 } "
 }
 

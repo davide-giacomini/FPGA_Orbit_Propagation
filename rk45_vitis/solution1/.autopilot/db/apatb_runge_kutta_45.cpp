@@ -36,6 +36,8 @@ using namespace sc_dt;
 #define AUTOTB_TVOUT_mu "../tv/cdatafile/c.runge_kutta_45.autotvout_mu.dat"
 #define AUTOTB_TVIN_size "../tv/cdatafile/c.runge_kutta_45.autotvin_size.dat"
 #define AUTOTB_TVOUT_size "../tv/cdatafile/c.runge_kutta_45.autotvout_size.dat"
+#define AUTOTB_TVIN_flag "../tv/cdatafile/c.runge_kutta_45.autotvin_flag.dat"
+#define AUTOTB_TVOUT_flag "../tv/cdatafile/c.runge_kutta_45.autotvout_flag.dat"
 #define AUTOTB_TVIN_T_BUS "../tv/cdatafile/c.runge_kutta_45.autotvin_T_BUS.dat"
 #define AUTOTB_TVOUT_T_BUS "../tv/cdatafile/c.runge_kutta_45.autotvout_T_BUS.dat"
 #define AUTOTB_TVIN_X_BUS "../tv/cdatafile/c.runge_kutta_45.autotvin_X_BUS.dat"
@@ -53,6 +55,7 @@ using namespace sc_dt;
 #define AUTOTB_TVOUT_PC_h_min "../tv/rtldatafile/rtl.runge_kutta_45.autotvout_h_min.dat"
 #define AUTOTB_TVOUT_PC_mu "../tv/rtldatafile/rtl.runge_kutta_45.autotvout_mu.dat"
 #define AUTOTB_TVOUT_PC_size "../tv/rtldatafile/rtl.runge_kutta_45.autotvout_size.dat"
+#define AUTOTB_TVOUT_PC_flag "../tv/rtldatafile/rtl.runge_kutta_45.autotvout_flag.dat"
 #define AUTOTB_TVOUT_PC_T_BUS "../tv/rtldatafile/rtl.runge_kutta_45.autotvout_T_BUS.dat"
 #define AUTOTB_TVOUT_PC_X_BUS "../tv/rtldatafile/rtl.runge_kutta_45.autotvout_X_BUS.dat"
 
@@ -293,6 +296,7 @@ INTER_TCL_FILE(const char* name) {
   h_min_depth = 0;
   mu_depth = 0;
   size_depth = 0;
+  flag_depth = 0;
   T_BUS_depth = 0;
   X_BUS_depth = 0;
   trans_num =0;
@@ -321,6 +325,7 @@ string get_depth_list () {
   total_list << "{h_min " << h_min_depth << "}\n";
   total_list << "{mu " << mu_depth << "}\n";
   total_list << "{size " << size_depth << "}\n";
+  total_list << "{flag " << flag_depth << "}\n";
   total_list << "{T_BUS " << T_BUS_depth << "}\n";
   total_list << "{X_BUS " << X_BUS_depth << "}\n";
   return total_list.str();
@@ -341,6 +346,7 @@ void set_string(std::string list, std::string* class_list) {
     int h_min_depth;
     int mu_depth;
     int size_depth;
+    int flag_depth;
     int T_BUS_depth;
     int X_BUS_depth;
     int trans_num;
@@ -351,9 +357,9 @@ void set_string(std::string list, std::string* class_list) {
 
 
 struct __cosim_s64__ { char data[64]; };
-extern "C" void runge_kutta_45_hw_stub_wrapper(volatile void *, volatile void *, double, double, double, double, double, double, volatile void *);
+extern "C" void runge_kutta_45_hw_stub_wrapper(volatile void *, volatile void *, double, double, double, double, double, double, volatile void *, volatile void *);
 
-extern "C" void apatb_runge_kutta_45_hw(volatile void * __xlx_apatb_param_yy, volatile void * __xlx_apatb_param_tt, double __xlx_apatb_param_tf, double __xlx_apatb_param_h0, double __xlx_apatb_param_atol, double __xlx_apatb_param_h_max, double __xlx_apatb_param_h_min, double __xlx_apatb_param_mu, volatile void * __xlx_apatb_param_size) {
+extern "C" void apatb_runge_kutta_45_hw(volatile void * __xlx_apatb_param_yy, volatile void * __xlx_apatb_param_tt, double __xlx_apatb_param_tf, double __xlx_apatb_param_h0, double __xlx_apatb_param_atol, double __xlx_apatb_param_h_max, double __xlx_apatb_param_h_min, double __xlx_apatb_param_mu, volatile void * __xlx_apatb_param_size, volatile void * __xlx_apatb_param_flag) {
   refine_signal_handler();
   fstream wrapc_switch_file_token;
   wrapc_switch_file_token.open(".hls_cosim_wrapc_switch.log");
@@ -413,6 +419,54 @@ static AESL_FILE_HANDLER aesl_fh;
 ((char*)__xlx_apatb_param_size)[0*4+1] = size_pc_buffer[0].range(15, 8).to_int64();
 ((char*)__xlx_apatb_param_size)[0*4+2] = size_pc_buffer[0].range(23, 16).to_int64();
 ((char*)__xlx_apatb_param_size)[0*4+3] = size_pc_buffer[0].range(31, 24).to_int64();
+}
+        } // end transaction
+      } // end file is good
+    } // end post check logic bolck
+  {
+      static ifstream rtl_tv_out_file;
+      if (!rtl_tv_out_file.is_open()) {
+        rtl_tv_out_file.open(AUTOTB_TVOUT_PC_flag);
+        if (rtl_tv_out_file.good()) {
+          rtl_tv_out_file >> AESL_token;
+          if (AESL_token != "[[[runtime]]]")
+            exit(1);
+        }
+      }
+  
+      if (rtl_tv_out_file.good()) {
+        rtl_tv_out_file >> AESL_token; 
+        rtl_tv_out_file >> AESL_num;  // transaction number
+        if (AESL_token != "[[transaction]]") {
+          cerr << "Unexpected token: " << AESL_token << endl;
+          exit(1);
+        }
+        if (atoi(AESL_num.c_str()) == AESL_transaction_pc) {
+          std::vector<sc_bv<1> > flag_pc_buffer(1);
+          int i = 0;
+          bool has_unknown_value = false;
+          rtl_tv_out_file >> AESL_token; //data
+          while (AESL_token != "[[/transaction]]"){
+
+            has_unknown_value |= RTLOutputCheckAndReplacement(AESL_token);
+  
+            // push token into output port buffer
+            if (AESL_token != "") {
+              flag_pc_buffer[i] = AESL_token.c_str();;
+              i++;
+            }
+  
+            rtl_tv_out_file >> AESL_token; //data or [[/transaction]]
+            if (AESL_token == "[[[/runtime]]]" || rtl_tv_out_file.eof())
+              exit(1);
+          }
+          if (has_unknown_value) {
+            cerr << "WARNING: [SIM 212-201] RTL produces unknown value 'x' or 'X' on port " 
+                 << "flag" << ", possible cause: There are uninitialized variables in the C design."
+                 << endl; 
+          }
+  
+          if (i > 0) {((char*)__xlx_apatb_param_flag)[0*1+0] = flag_pc_buffer[0].range(0, 0).to_uint64();
 }
         } // end transaction
       } // end file is good
@@ -617,8 +671,19 @@ aesl_fh.write(AUTOTB_TVIN_size, formatData(pos, 32));
 aesl_fh.write(AUTOTB_TVIN_size, end_str());
 }
 
+// print flag Transactions
+{
+aesl_fh.write(AUTOTB_TVIN_flag, begin_str(AESL_transaction));
+{
+auto *pos = (unsigned char*)__xlx_apatb_param_flag;
+aesl_fh.write(AUTOTB_TVIN_flag, formatData(pos, 1));
+}
+  tcl_file.set_num(1, &tcl_file.flag_depth);
+aesl_fh.write(AUTOTB_TVIN_flag, end_str());
+}
+
 CodeState = CALL_C_DUT;
-runge_kutta_45_hw_stub_wrapper(__xlx_apatb_param_yy, __xlx_apatb_param_tt, __xlx_apatb_param_tf, __xlx_apatb_param_h0, __xlx_apatb_param_atol, __xlx_apatb_param_h_max, __xlx_apatb_param_h_min, __xlx_apatb_param_mu, __xlx_apatb_param_size);
+runge_kutta_45_hw_stub_wrapper(__xlx_apatb_param_yy, __xlx_apatb_param_tt, __xlx_apatb_param_tf, __xlx_apatb_param_h0, __xlx_apatb_param_atol, __xlx_apatb_param_h_max, __xlx_apatb_param_h_min, __xlx_apatb_param_mu, __xlx_apatb_param_size, __xlx_apatb_param_flag);
 CodeState = DUMP_OUTPUTS;
 #ifdef USE_BINARY_TV_FILE
 {
@@ -683,6 +748,17 @@ aesl_fh.write(AUTOTB_TVOUT_size, formatData(pos, 32));
 }
   tcl_file.set_num(1, &tcl_file.size_depth);
 aesl_fh.write(AUTOTB_TVOUT_size, end_str());
+}
+
+// print flag Transactions
+{
+aesl_fh.write(AUTOTB_TVOUT_flag, begin_str(AESL_transaction));
+{
+auto *pos = (unsigned char*)__xlx_apatb_param_flag;
+aesl_fh.write(AUTOTB_TVOUT_flag, formatData(pos, 1));
+}
+  tcl_file.set_num(1, &tcl_file.flag_depth);
+aesl_fh.write(AUTOTB_TVOUT_flag, end_str());
 }
 
 CodeState = DELETE_CHAR_BUFFERS;

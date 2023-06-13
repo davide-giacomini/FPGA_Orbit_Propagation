@@ -5,28 +5,28 @@
 <ModuleName>runge_kutta_45</ModuleName>
 <InstancesList>
 <Instance>
-<InstName>grp_ap_fixed_base_fu_989</InstName>
+<InstName>grp_ap_fixed_base_fu_1062</InstName>
 <ModuleName>ap_fixed_base</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>989</ID>
+<ID>1062</ID>
 </Instance>
 <Instance>
-<InstName>atol_loc_V_ap_fixed_base_fu_994</InstName>
+<InstName>atol_loc_V_ap_fixed_base_fu_1067</InstName>
 <ModuleName>ap_fixed_base</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>994</ID>
+<ID>1067</ID>
 </Instance>
 <Instance>
-<InstName>tf_loc_V_ap_fixed_base_fu_999</InstName>
+<InstName>tf_loc_V_ap_fixed_base_fu_1072</InstName>
 <ModuleName>ap_fixed_base</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>999</ID>
+<ID>1072</ID>
 </Instance>
 <Instance>
-<InstName>grp_runge_kutta_45_Pipeline_VITIS_LOOP_160_1_fu_1005</InstName>
-<ModuleName>runge_kutta_45_Pipeline_VITIS_LOOP_160_1</ModuleName>
+<InstName>grp_runge_kutta_45_Pipeline_VITIS_LOOP_161_1_fu_1078</InstName>
+<ModuleName>runge_kutta_45_Pipeline_VITIS_LOOP_161_1</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>1005</ID>
+<ID>1078</ID>
 <InstancesList>
 <Instance>
 <InstName>ref_tmp1_ap_fixed_base_fu_136</InstName>
@@ -37,22 +37,22 @@
 </InstancesList>
 </Instance>
 <Instance>
-<InstName>grp_runge_kutta_45_Pipeline_VITIS_LOOP_177_2_fu_1014</InstName>
-<ModuleName>runge_kutta_45_Pipeline_VITIS_LOOP_177_2</ModuleName>
+<InstName>grp_runge_kutta_45_Pipeline_VITIS_LOOP_179_2_fu_1087</InstName>
+<ModuleName>runge_kutta_45_Pipeline_VITIS_LOOP_179_2</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>1014</ID>
+<ID>1087</ID>
 </Instance>
 <Instance>
-<InstName>grp_runge_kutta_45_Pipeline_VITIS_LOOP_180_3_fu_1022</InstName>
-<ModuleName>runge_kutta_45_Pipeline_VITIS_LOOP_180_3</ModuleName>
+<InstName>grp_runge_kutta_45_Pipeline_VITIS_LOOP_182_3_fu_1095</InstName>
+<ModuleName>runge_kutta_45_Pipeline_VITIS_LOOP_182_3</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>1022</ID>
+<ID>1095</ID>
 </Instance>
 <Instance>
-<InstName>grp_ode_fpga_fu_868</InstName>
+<InstName>grp_ode_fpga_fu_941</InstName>
 <ModuleName>ode_fpga</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>868</ID>
+<ID>941</ID>
 <InstancesList>
 <Instance>
 <InstName>grp_vel_der_fu_208</InstName>
@@ -101,46 +101,52 @@
 </InstancesList>
 </Instance>
 <Instance>
-<InstName>grp_macply_fu_900</InstName>
+<InstName>grp_macply_fu_973</InstName>
 <ModuleName>macply</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>900</ID>
+<ID>973</ID>
 </Instance>
 <Instance>
-<InstName>grp_multiply_fu_962</InstName>
+<InstName>grp_multiply_fu_1035</InstName>
 <ModuleName>multiply</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>962</ID>
+<ID>1035</ID>
 </Instance>
 <Instance>
-<InstName>grp_runge_kutta_45_Pipeline_sq_sum_loop_fu_1030</InstName>
+<InstName>grp_runge_kutta_45_Pipeline_sq_sum_loop_fu_1103</InstName>
 <ModuleName>runge_kutta_45_Pipeline_sq_sum_loop</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>1030</ID>
+<ID>1103</ID>
 </Instance>
 <Instance>
-<InstName>grp_runge_kutta_45_Pipeline_sqrt_loop_fu_1036</InstName>
+<InstName>grp_runge_kutta_45_Pipeline_sqrt_loop_fu_1109</InstName>
 <ModuleName>runge_kutta_45_Pipeline_sqrt_loop</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>1036</ID>
+<ID>1109</ID>
 </Instance>
 <Instance>
-<InstName>grp_runge_kutta_45_Pipeline_update_fu_1042</InstName>
-<ModuleName>runge_kutta_45_Pipeline_update</ModuleName>
+<InstName>grp_runge_kutta_45_Pipeline_update_1_fu_1115</InstName>
+<ModuleName>runge_kutta_45_Pipeline_update_1</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>1042</ID>
+<ID>1115</ID>
 </Instance>
 <Instance>
-<InstName>grp_runge_kutta_45_Pipeline_last_copy_y_fu_1051</InstName>
+<InstName>grp_runge_kutta_45_Pipeline_update_2_fu_1124</InstName>
+<ModuleName>runge_kutta_45_Pipeline_update_2</ModuleName>
+<IsCompInst>true</IsCompInst>
+<ID>1124</ID>
+</Instance>
+<Instance>
+<InstName>grp_runge_kutta_45_Pipeline_last_copy_y_fu_1133</InstName>
 <ModuleName>runge_kutta_45_Pipeline_last_copy_y</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>1051</ID>
+<ID>1133</ID>
 </Instance>
 <Instance>
-<InstName>grp_runge_kutta_45_Pipeline_last_copy_t_fu_1062</InstName>
+<InstName>grp_runge_kutta_45_Pipeline_last_copy_t_fu_1144</InstName>
 <ModuleName>runge_kutta_45_Pipeline_last_copy_t</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>1062</ID>
+<ID>1144</ID>
 </Instance>
 </InstancesList>
 </TopModule>
@@ -154,7 +160,7 @@
 <TargetClockPeriod>50.00</TargetClockPeriod>
 <ClockUncertainty>13.50</ClockUncertainty>
 <TargetInitiationInterval>4294967295</TargetInitiationInterval>
-<EstimatedClockPeriod>17.470</EstimatedClockPeriod>
+<EstimatedClockPeriod>17.593</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <Best-caseLatency>0</Best-caseLatency>
@@ -173,9 +179,9 @@
 <FF>0</FF>
 <AVAIL_FF>106400</AVAIL_FF>
 <UTIL_FF>0</UTIL_FF>
-<LUT>984</LUT>
+<LUT>1123</LUT>
 <AVAIL_LUT>53200</AVAIL_LUT>
-<UTIL_LUT>1</UTIL_LUT>
+<UTIL_LUT>2</UTIL_LUT>
 <BRAM_18K>0</BRAM_18K>
 <AVAIL_BRAM>280</AVAIL_BRAM>
 <UTIL_BRAM>0</UTIL_BRAM>
@@ -207,7 +213,7 @@
 <IOProtocol>ap_ctrl_hs</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -224,9 +230,9 @@
 </InterfaceSummary>
 </Module>
 <Module>
-<Name>runge_kutta_45_Pipeline_VITIS_LOOP_160_1</Name>
+<Name>runge_kutta_45_Pipeline_VITIS_LOOP_161_1</Name>
 <Loops>
-<VITIS_LOOP_160_1></VITIS_LOOP_160_1>
+<VITIS_LOOP_161_1></VITIS_LOOP_161_1>
 </Loops>
 <PerformanceEstimates>
 <SummaryOfTimingAnalysis>
@@ -245,8 +251,8 @@
 <PipelineType>no</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
-<VITIS_LOOP_160_1>
-<Name>VITIS_LOOP_160_1</Name>
+<VITIS_LOOP_161_1>
+<Name>VITIS_LOOP_161_1</Name>
 <TripCount>6</TripCount>
 <Latency>14</Latency>
 <AbsoluteTimeLatency>0.700 us</AbsoluteTimeLatency>
@@ -256,7 +262,7 @@
 <InstanceList>
 <Instance>ref_tmp1_ap_fixed_base_fu_136</Instance>
 </InstanceList>
-</VITIS_LOOP_160_1>
+</VITIS_LOOP_161_1>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 <AreaEstimates>
@@ -281,7 +287,7 @@
 <InterfaceSummary>
 <RtlPorts>
 <name>ap_clk</name>
-<Object>runge_kutta_45_Pipeline_VITIS_LOOP_160_1</Object>
+<Object>runge_kutta_45_Pipeline_VITIS_LOOP_161_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -292,7 +298,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_rst</name>
-<Object>runge_kutta_45_Pipeline_VITIS_LOOP_160_1</Object>
+<Object>runge_kutta_45_Pipeline_VITIS_LOOP_161_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -303,7 +309,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_start</name>
-<Object>runge_kutta_45_Pipeline_VITIS_LOOP_160_1</Object>
+<Object>runge_kutta_45_Pipeline_VITIS_LOOP_161_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -314,7 +320,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_done</name>
-<Object>runge_kutta_45_Pipeline_VITIS_LOOP_160_1</Object>
+<Object>runge_kutta_45_Pipeline_VITIS_LOOP_161_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -325,7 +331,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_idle</name>
-<Object>runge_kutta_45_Pipeline_VITIS_LOOP_160_1</Object>
+<Object>runge_kutta_45_Pipeline_VITIS_LOOP_161_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -336,7 +342,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_ready</name>
-<Object>runge_kutta_45_Pipeline_VITIS_LOOP_160_1</Object>
+<Object>runge_kutta_45_Pipeline_VITIS_LOOP_161_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -346,8 +352,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>atol_loc_V_ap_fixed_base_fu_994_p_din1</name>
-<Object>runge_kutta_45_Pipeline_VITIS_LOOP_160_1</Object>
+<name>atol_loc_V_ap_fixed_base_fu_1067_p_din1</name>
+<Object>runge_kutta_45_Pipeline_VITIS_LOOP_161_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -357,19 +363,19 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>atol_loc_V_ap_fixed_base_fu_994_p_dout0</name>
-<Object>runge_kutta_45_Pipeline_VITIS_LOOP_160_1</Object>
+<name>atol_loc_V_ap_fixed_base_fu_1067_p_dout0</name>
+<Object>runge_kutta_45_Pipeline_VITIS_LOOP_161_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>atol_loc_V_ap_fixed_base_fu_994_p_ready</name>
-<Object>runge_kutta_45_Pipeline_VITIS_LOOP_160_1</Object>
+<name>atol_loc_V_ap_fixed_base_fu_1067_p_ready</name>
+<Object>runge_kutta_45_Pipeline_VITIS_LOOP_161_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -925,7 +931,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -953,9 +959,9 @@
 </InterfaceSummary>
 </Module>
 <Module>
-<Name>runge_kutta_45_Pipeline_VITIS_LOOP_177_2</Name>
+<Name>runge_kutta_45_Pipeline_VITIS_LOOP_179_2</Name>
 <Loops>
-<VITIS_LOOP_177_2></VITIS_LOOP_177_2>
+<VITIS_LOOP_179_2></VITIS_LOOP_179_2>
 </Loops>
 <PerformanceEstimates>
 <SummaryOfTimingAnalysis>
@@ -974,8 +980,8 @@
 <PipelineType>no</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
-<VITIS_LOOP_177_2>
-<Name>VITIS_LOOP_177_2</Name>
+<VITIS_LOOP_179_2>
+<Name>VITIS_LOOP_179_2</Name>
 <TripCount>12288</TripCount>
 <Latency>12289</Latency>
 <AbsoluteTimeLatency>0.614 ms</AbsoluteTimeLatency>
@@ -984,7 +990,7 @@
 <PipelineType>yes</PipelineType>
 <InstanceList>
 </InstanceList>
-</VITIS_LOOP_177_2>
+</VITIS_LOOP_179_2>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 <AreaEstimates>
@@ -992,7 +998,7 @@
 <FF>534</FF>
 <AVAIL_FF>106400</AVAIL_FF>
 <UTIL_FF>~0</UTIL_FF>
-<LUT>2142</LUT>
+<LUT>2451</LUT>
 <AVAIL_LUT>53200</AVAIL_LUT>
 <UTIL_LUT>4</UTIL_LUT>
 <BRAM_18K>0</BRAM_18K>
@@ -1009,7 +1015,7 @@
 <InterfaceSummary>
 <RtlPorts>
 <name>ap_clk</name>
-<Object>runge_kutta_45_Pipeline_VITIS_LOOP_177_2</Object>
+<Object>runge_kutta_45_Pipeline_VITIS_LOOP_179_2</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -1020,7 +1026,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_rst</name>
-<Object>runge_kutta_45_Pipeline_VITIS_LOOP_177_2</Object>
+<Object>runge_kutta_45_Pipeline_VITIS_LOOP_179_2</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -1031,7 +1037,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_start</name>
-<Object>runge_kutta_45_Pipeline_VITIS_LOOP_177_2</Object>
+<Object>runge_kutta_45_Pipeline_VITIS_LOOP_179_2</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -1042,7 +1048,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_done</name>
-<Object>runge_kutta_45_Pipeline_VITIS_LOOP_177_2</Object>
+<Object>runge_kutta_45_Pipeline_VITIS_LOOP_179_2</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -1053,7 +1059,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_idle</name>
-<Object>runge_kutta_45_Pipeline_VITIS_LOOP_177_2</Object>
+<Object>runge_kutta_45_Pipeline_VITIS_LOOP_179_2</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -1064,7 +1070,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_ready</name>
-<Object>runge_kutta_45_Pipeline_VITIS_LOOP_177_2</Object>
+<Object>runge_kutta_45_Pipeline_VITIS_LOOP_179_2</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -1580,8 +1586,8 @@
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>sext_ln177</name>
-<Object>sext_ln177</Object>
+<name>sext_ln179</name>
+<Object>sext_ln179</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -1620,15 +1626,15 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 </InterfaceSummary>
 </Module>
 <Module>
-<Name>runge_kutta_45_Pipeline_VITIS_LOOP_180_3</Name>
+<Name>runge_kutta_45_Pipeline_VITIS_LOOP_182_3</Name>
 <Loops>
-<VITIS_LOOP_180_3></VITIS_LOOP_180_3>
+<VITIS_LOOP_182_3></VITIS_LOOP_182_3>
 </Loops>
 <PerformanceEstimates>
 <SummaryOfTimingAnalysis>
@@ -1647,8 +1653,8 @@
 <PipelineType>no</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
-<VITIS_LOOP_180_3>
-<Name>VITIS_LOOP_180_3</Name>
+<VITIS_LOOP_182_3>
+<Name>VITIS_LOOP_182_3</Name>
 <TripCount>2048</TripCount>
 <Latency>2049</Latency>
 <AbsoluteTimeLatency>0.102 ms</AbsoluteTimeLatency>
@@ -1657,7 +1663,7 @@
 <PipelineType>yes</PipelineType>
 <InstanceList>
 </InstanceList>
-</VITIS_LOOP_180_3>
+</VITIS_LOOP_182_3>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 <AreaEstimates>
@@ -1665,7 +1671,7 @@
 <FF>532</FF>
 <AVAIL_FF>106400</AVAIL_FF>
 <UTIL_FF>~0</UTIL_FF>
-<LUT>2137</LUT>
+<LUT>2446</LUT>
 <AVAIL_LUT>53200</AVAIL_LUT>
 <UTIL_LUT>4</UTIL_LUT>
 <BRAM_18K>0</BRAM_18K>
@@ -1682,7 +1688,7 @@
 <InterfaceSummary>
 <RtlPorts>
 <name>ap_clk</name>
-<Object>runge_kutta_45_Pipeline_VITIS_LOOP_180_3</Object>
+<Object>runge_kutta_45_Pipeline_VITIS_LOOP_182_3</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -1693,7 +1699,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_rst</name>
-<Object>runge_kutta_45_Pipeline_VITIS_LOOP_180_3</Object>
+<Object>runge_kutta_45_Pipeline_VITIS_LOOP_182_3</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -1704,7 +1710,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_start</name>
-<Object>runge_kutta_45_Pipeline_VITIS_LOOP_180_3</Object>
+<Object>runge_kutta_45_Pipeline_VITIS_LOOP_182_3</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -1715,7 +1721,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_done</name>
-<Object>runge_kutta_45_Pipeline_VITIS_LOOP_180_3</Object>
+<Object>runge_kutta_45_Pipeline_VITIS_LOOP_182_3</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -1726,7 +1732,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_idle</name>
-<Object>runge_kutta_45_Pipeline_VITIS_LOOP_180_3</Object>
+<Object>runge_kutta_45_Pipeline_VITIS_LOOP_182_3</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -1737,7 +1743,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_ready</name>
-<Object>runge_kutta_45_Pipeline_VITIS_LOOP_180_3</Object>
+<Object>runge_kutta_45_Pipeline_VITIS_LOOP_182_3</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -2253,8 +2259,8 @@
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>sext_ln180</name>
-<Object>sext_ln180</Object>
+<name>sext_ln182</name>
+<Object>sext_ln182</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -2293,7 +2299,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 </InterfaceSummary>
@@ -2307,7 +2313,7 @@
 <SummaryOfTimingAnalysis>
 <TargetClockPeriod>50.00</TargetClockPeriod>
 <ClockUncertainty>13.50</ClockUncertainty>
-<EstimatedClockPeriod>5.685</EstimatedClockPeriod>
+<EstimatedClockPeriod>6.258</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <Best-caseLatency>5</Best-caseLatency>
@@ -2335,10 +2341,10 @@
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
-<FF>244</FF>
+<FF>304</FF>
 <AVAIL_FF>106400</AVAIL_FF>
 <UTIL_FF>~0</UTIL_FF>
-<LUT>160</LUT>
+<LUT>180</LUT>
 <AVAIL_LUT>53200</AVAIL_LUT>
 <UTIL_LUT>~0</UTIL_LUT>
 <BRAM_18K>0</BRAM_18K>
@@ -2427,7 +2433,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -2438,7 +2444,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -2449,7 +2455,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -2460,7 +2466,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -2471,7 +2477,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -2482,7 +2488,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -2493,7 +2499,7 @@
 <IOProtocol>ap_vld</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -2515,7 +2521,7 @@
 <IOProtocol>ap_vld</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -2537,7 +2543,7 @@
 <IOProtocol>ap_vld</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -2562,7 +2568,7 @@
 <SummaryOfTimingAnalysis>
 <TargetClockPeriod>50.00</TargetClockPeriod>
 <ClockUncertainty>13.50</ClockUncertainty>
-<EstimatedClockPeriod>23.745</EstimatedClockPeriod>
+<EstimatedClockPeriod>26.581</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <Best-caseLatency>5</Best-caseLatency>
@@ -2590,13 +2596,13 @@
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
-<DSP>15</DSP>
+<DSP>16</DSP>
 <AVAIL_DSP>220</AVAIL_DSP>
-<UTIL_DSP>6</UTIL_DSP>
-<FF>166</FF>
+<UTIL_DSP>7</UTIL_DSP>
+<FF>206</FF>
 <AVAIL_FF>106400</AVAIL_FF>
 <UTIL_FF>~0</UTIL_FF>
-<LUT>329</LUT>
+<LUT>445</LUT>
 <AVAIL_LUT>53200</AVAIL_LUT>
 <UTIL_LUT>~0</UTIL_LUT>
 <BRAM_18K>0</BRAM_18K>
@@ -2682,7 +2688,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -2693,7 +2699,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -2704,7 +2710,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -2715,7 +2721,7 @@
 <IOProtocol>ap_vld</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>161</Bits>
+<Bits>201</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -2740,24 +2746,24 @@
 <SummaryOfTimingAnalysis>
 <TargetClockPeriod>50.00</TargetClockPeriod>
 <ClockUncertainty>13.50</ClockUncertainty>
-<EstimatedClockPeriod>9.219</EstimatedClockPeriod>
+<EstimatedClockPeriod>10.416</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
-<Best-caseLatency>83</Best-caseLatency>
-<Average-caseLatency>83</Average-caseLatency>
-<Worst-caseLatency>83</Worst-caseLatency>
-<Best-caseRealTimeLatency>4.150 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>4.150 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>4.150 us</Worst-caseRealTimeLatency>
-<PipelineInitiationInterval>83</PipelineInitiationInterval>
+<Best-caseLatency>103</Best-caseLatency>
+<Average-caseLatency>103</Average-caseLatency>
+<Worst-caseLatency>103</Worst-caseLatency>
+<Best-caseRealTimeLatency>5.150 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>5.150 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>5.150 us</Worst-caseRealTimeLatency>
+<PipelineInitiationInterval>103</PipelineInitiationInterval>
 <PipelineType>no</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <sqrt_loop>
 <Name>sqrt_loop</Name>
-<TripCount>81</TripCount>
-<Latency>81</Latency>
-<AbsoluteTimeLatency>4.050 us</AbsoluteTimeLatency>
+<TripCount>101</TripCount>
+<Latency>101</Latency>
+<AbsoluteTimeLatency>5.050 us</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>1</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -2768,12 +2774,12 @@
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
-<FF>413</FF>
+<FF>513</FF>
 <AVAIL_FF>106400</AVAIL_FF>
 <UTIL_FF>~0</UTIL_FF>
-<LUT>490</LUT>
+<LUT>590</LUT>
 <AVAIL_LUT>53200</AVAIL_LUT>
-<UTIL_LUT>~0</UTIL_LUT>
+<UTIL_LUT>1</UTIL_LUT>
 <BRAM_18K>0</BRAM_18K>
 <AVAIL_BRAM>280</AVAIL_BRAM>
 <UTIL_BRAM>0</UTIL_BRAM>
@@ -2860,7 +2866,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>161</Bits>
+<Bits>201</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -2871,7 +2877,7 @@
 <IOProtocol>ap_vld</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>81</Bits>
+<Bits>101</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -2896,24 +2902,24 @@
 <EstimatedClockPeriod>5.071</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
-<Best-caseLatency>203</Best-caseLatency>
-<Average-caseLatency>203</Average-caseLatency>
-<Worst-caseLatency>203</Worst-caseLatency>
-<Best-caseRealTimeLatency>10.150 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>10.150 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>10.150 us</Worst-caseRealTimeLatency>
-<PipelineInitiationInterval>203</PipelineInitiationInterval>
+<Best-caseLatency>223</Best-caseLatency>
+<Average-caseLatency>223</Average-caseLatency>
+<Worst-caseLatency>223</Worst-caseLatency>
+<Best-caseRealTimeLatency>11.150 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>11.150 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>11.150 us</Worst-caseRealTimeLatency>
+<PipelineInitiationInterval>223</PipelineInitiationInterval>
 <PipelineType>no</PipelineType>
 </SummaryOfOverallLatency>
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
-<FF>1123</FF>
+<FF>1163</FF>
 <AVAIL_FF>106400</AVAIL_FF>
 <UTIL_FF>1</UTIL_FF>
-<LUT>1570</LUT>
+<LUT>1676</LUT>
 <AVAIL_LUT>53200</AVAIL_LUT>
-<UTIL_LUT>2</UTIL_LUT>
+<UTIL_LUT>3</UTIL_LUT>
 <BRAM_18K>0</BRAM_18K>
 <AVAIL_BRAM>280</AVAIL_BRAM>
 <UTIL_BRAM>0</UTIL_BRAM>
@@ -3000,7 +3006,7 @@
 <IOProtocol>ap_ctrl_hs</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>140</Bits>
+<Bits>160</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -3011,7 +3017,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -3022,7 +3028,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>161</Bits>
+<Bits>201</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 </InterfaceSummary>
@@ -3033,30 +3039,30 @@
 <SummaryOfTimingAnalysis>
 <TargetClockPeriod>50.00</TargetClockPeriod>
 <ClockUncertainty>13.50</ClockUncertainty>
-<EstimatedClockPeriod>31.057</EstimatedClockPeriod>
+<EstimatedClockPeriod>26.581</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
-<Best-caseLatency>423</Best-caseLatency>
-<Average-caseLatency>423</Average-caseLatency>
-<Worst-caseLatency>423</Worst-caseLatency>
-<Best-caseRealTimeLatency>21.150 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>21.150 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>21.150 us</Worst-caseRealTimeLatency>
-<PipelineInitiationInterval>423</PipelineInitiationInterval>
+<Best-caseLatency>464</Best-caseLatency>
+<Average-caseLatency>464</Average-caseLatency>
+<Worst-caseLatency>464</Worst-caseLatency>
+<Best-caseRealTimeLatency>23.200 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>23.200 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>23.200 us</Worst-caseRealTimeLatency>
+<PipelineInitiationInterval>464</PipelineInitiationInterval>
 <PipelineType>no</PipelineType>
 </SummaryOfOverallLatency>
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
-<DSP>36</DSP>
+<DSP>37</DSP>
 <AVAIL_DSP>220</AVAIL_DSP>
 <UTIL_DSP>16</UTIL_DSP>
-<FF>2339</FF>
+<FF>3021</FF>
 <AVAIL_FF>106400</AVAIL_FF>
 <UTIL_FF>2</UTIL_FF>
-<LUT>6639</LUT>
+<LUT>3359</LUT>
 <AVAIL_LUT>53200</AVAIL_LUT>
-<UTIL_LUT>12</UTIL_LUT>
+<UTIL_LUT>6</UTIL_LUT>
 <BRAM_18K>0</BRAM_18K>
 <AVAIL_BRAM>280</AVAIL_BRAM>
 <UTIL_BRAM>0</UTIL_BRAM>
@@ -3140,7 +3146,7 @@
 <IOProtocol>ap_ctrl_hs</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -3151,7 +3157,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -3162,7 +3168,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -3173,7 +3179,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -3195,7 +3201,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -3206,7 +3212,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -3217,7 +3223,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -3228,7 +3234,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 </InterfaceSummary>
@@ -3362,7 +3368,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -3373,7 +3379,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -3384,7 +3390,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -3439,7 +3445,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 </InterfaceSummary>
@@ -3573,7 +3579,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -3584,7 +3590,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -3595,7 +3601,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -3650,7 +3656,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 </InterfaceSummary>
@@ -3668,16 +3674,16 @@
 <SummaryOfTimingAnalysis>
 <TargetClockPeriod>50.00</TargetClockPeriod>
 <ClockUncertainty>13.50</ClockUncertainty>
-<EstimatedClockPeriod>31.057</EstimatedClockPeriod>
+<EstimatedClockPeriod>26.581</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
-<Best-caseLatency>1317</Best-caseLatency>
-<Average-caseLatency>1317</Average-caseLatency>
-<Worst-caseLatency>1317</Worst-caseLatency>
-<Best-caseRealTimeLatency>65.850 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>65.850 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>65.850 us</Worst-caseRealTimeLatency>
-<PipelineInitiationInterval>1317</PipelineInitiationInterval>
+<Best-caseLatency>1440</Best-caseLatency>
+<Average-caseLatency>1440</Average-caseLatency>
+<Worst-caseLatency>1440</Worst-caseLatency>
+<Best-caseRealTimeLatency>72.000 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>72.000 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>72.000 us</Worst-caseRealTimeLatency>
+<PipelineInitiationInterval>1440</PipelineInitiationInterval>
 <PipelineType>no</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
@@ -3728,10 +3734,10 @@
 <update_vel_pos>
 <Name>update_vel_pos</Name>
 <TripCount>3</TripCount>
-<Latency>1275</Latency>
-<AbsoluteTimeLatency>63.750 us</AbsoluteTimeLatency>
-<IterationLatency>425</IterationLatency>
-<PipelineDepth>425</PipelineDepth>
+<Latency>1398</Latency>
+<AbsoluteTimeLatency>69.900 us</AbsoluteTimeLatency>
+<IterationLatency>466</IterationLatency>
+<PipelineDepth>466</PipelineDepth>
 <PipelineType>no</PipelineType>
 <InstanceList>
 <Instance>grp_vel_der_fu_208</Instance>
@@ -3741,15 +3747,15 @@
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
-<DSP>36</DSP>
+<DSP>37</DSP>
 <AVAIL_DSP>220</AVAIL_DSP>
 <UTIL_DSP>16</UTIL_DSP>
-<FF>3852</FF>
+<FF>4894</FF>
 <AVAIL_FF>106400</AVAIL_FF>
-<UTIL_FF>3</UTIL_FF>
-<LUT>7282</LUT>
+<UTIL_FF>4</UTIL_FF>
+<LUT>4022</LUT>
 <AVAIL_LUT>53200</AVAIL_LUT>
-<UTIL_LUT>13</UTIL_LUT>
+<UTIL_LUT>7</UTIL_LUT>
 <BRAM_18K>0</BRAM_18K>
 <AVAIL_BRAM>280</AVAIL_BRAM>
 <UTIL_BRAM>0</UTIL_BRAM>
@@ -3866,7 +3872,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -3910,7 +3916,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -3954,7 +3960,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -3965,7 +3971,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 </InterfaceSummary>
@@ -3977,7 +3983,7 @@
 <TargetClockPeriod>50.00</TargetClockPeriod>
 <ClockUncertainty>13.50</ClockUncertainty>
 <TargetInitiationInterval>4294967295</TargetInitiationInterval>
-<EstimatedClockPeriod>19.834</EstimatedClockPeriod>
+<EstimatedClockPeriod>22.104</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <Best-caseLatency>0</Best-caseLatency>
@@ -3999,7 +4005,7 @@
 <FF>0</FF>
 <AVAIL_FF>106400</AVAIL_FF>
 <UTIL_FF>0</UTIL_FF>
-<LUT>238</LUT>
+<LUT>334</LUT>
 <AVAIL_LUT>53200</AVAIL_LUT>
 <UTIL_LUT>~0</UTIL_LUT>
 <BRAM_18K>0</BRAM_18K>
@@ -4030,7 +4036,7 @@
 <IOProtocol>ap_ctrl_hs</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -4041,7 +4047,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -4052,7 +4058,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -4063,7 +4069,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 </InterfaceSummary>
@@ -4074,7 +4080,7 @@
 <SummaryOfTimingAnalysis>
 <TargetClockPeriod>50.00</TargetClockPeriod>
 <ClockUncertainty>13.50</ClockUncertainty>
-<EstimatedClockPeriod>14.130</EstimatedClockPeriod>
+<EstimatedClockPeriod>15.814</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <Best-caseLatency>0</Best-caseLatency>
@@ -4089,13 +4095,13 @@
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
-<DSP>15</DSP>
+<DSP>16</DSP>
 <AVAIL_DSP>220</AVAIL_DSP>
-<UTIL_DSP>6</UTIL_DSP>
+<UTIL_DSP>7</UTIL_DSP>
 <FF>0</FF>
 <AVAIL_FF>106400</AVAIL_FF>
 <UTIL_FF>0</UTIL_FF>
-<LUT>91</LUT>
+<LUT>167</LUT>
 <AVAIL_LUT>53200</AVAIL_LUT>
 <UTIL_LUT>~0</UTIL_LUT>
 <BRAM_18K>0</BRAM_18K>
@@ -4126,7 +4132,7 @@
 <IOProtocol>ap_ctrl_hs</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>160</Bits>
+<Bits>200</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -4137,7 +4143,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -4148,7 +4154,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 </InterfaceSummary>
@@ -4162,7 +4168,7 @@
 <SummaryOfTimingAnalysis>
 <TargetClockPeriod>50.00</TargetClockPeriod>
 <ClockUncertainty>13.50</ClockUncertainty>
-<EstimatedClockPeriod>24.380</EstimatedClockPeriod>
+<EstimatedClockPeriod>27.204</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <Best-caseLatency>8</Best-caseLatency>
@@ -4190,13 +4196,13 @@
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
-<DSP>15</DSP>
+<DSP>16</DSP>
 <AVAIL_DSP>220</AVAIL_DSP>
-<UTIL_DSP>6</UTIL_DSP>
-<FF>168</FF>
+<UTIL_DSP>7</UTIL_DSP>
+<FF>208</FF>
 <AVAIL_FF>106400</AVAIL_FF>
 <UTIL_FF>~0</UTIL_FF>
-<LUT>326</LUT>
+<LUT>442</LUT>
 <AVAIL_LUT>53200</AVAIL_LUT>
 <UTIL_LUT>~0</UTIL_LUT>
 <BRAM_18K>0</BRAM_18K>
@@ -4304,7 +4310,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -4315,7 +4321,7 @@
 <IOProtocol>ap_vld</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>162</Bits>
+<Bits>202</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -4340,24 +4346,24 @@
 <SummaryOfTimingAnalysis>
 <TargetClockPeriod>50.00</TargetClockPeriod>
 <ClockUncertainty>13.50</ClockUncertainty>
-<EstimatedClockPeriod>9.219</EstimatedClockPeriod>
+<EstimatedClockPeriod>10.416</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
-<Best-caseLatency>83</Best-caseLatency>
-<Average-caseLatency>83</Average-caseLatency>
-<Worst-caseLatency>83</Worst-caseLatency>
-<Best-caseRealTimeLatency>4.150 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>4.150 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>4.150 us</Worst-caseRealTimeLatency>
-<PipelineInitiationInterval>83</PipelineInitiationInterval>
+<Best-caseLatency>103</Best-caseLatency>
+<Average-caseLatency>103</Average-caseLatency>
+<Worst-caseLatency>103</Worst-caseLatency>
+<Best-caseRealTimeLatency>5.150 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>5.150 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>5.150 us</Worst-caseRealTimeLatency>
+<PipelineInitiationInterval>103</PipelineInitiationInterval>
 <PipelineType>no</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <sqrt_loop>
 <Name>sqrt_loop</Name>
-<TripCount>81</TripCount>
-<Latency>81</Latency>
-<AbsoluteTimeLatency>4.050 us</AbsoluteTimeLatency>
+<TripCount>101</TripCount>
+<Latency>101</Latency>
+<AbsoluteTimeLatency>5.050 us</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>1</PipelineDepth>
 <PipelineType>yes</PipelineType>
@@ -4368,12 +4374,12 @@
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
-<FF>413</FF>
+<FF>513</FF>
 <AVAIL_FF>106400</AVAIL_FF>
 <UTIL_FF>~0</UTIL_FF>
-<LUT>490</LUT>
+<LUT>590</LUT>
 <AVAIL_LUT>53200</AVAIL_LUT>
-<UTIL_LUT>~0</UTIL_LUT>
+<UTIL_LUT>1</UTIL_LUT>
 <BRAM_18K>0</BRAM_18K>
 <AVAIL_BRAM>280</AVAIL_BRAM>
 <UTIL_BRAM>0</UTIL_BRAM>
@@ -4460,7 +4466,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>162</Bits>
+<Bits>202</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -4471,7 +4477,7 @@
 <IOProtocol>ap_vld</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>81</Bits>
+<Bits>101</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -4488,15 +4494,15 @@
 </InterfaceSummary>
 </Module>
 <Module>
-<Name>runge_kutta_45_Pipeline_update</Name>
+<Name>runge_kutta_45_Pipeline_update_1</Name>
 <Loops>
-<update></update>
+<update_1></update_1>
 </Loops>
 <PerformanceEstimates>
 <SummaryOfTimingAnalysis>
 <TargetClockPeriod>50.00</TargetClockPeriod>
 <ClockUncertainty>13.50</ClockUncertainty>
-<EstimatedClockPeriod>10.486</EstimatedClockPeriod>
+<EstimatedClockPeriod>11.059</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <Best-caseLatency>8</Best-caseLatency>
@@ -4509,8 +4515,8 @@
 <PipelineType>no</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
-<update>
-<Name>update</Name>
+<update_1>
+<Name>update_1</Name>
 <TripCount>6</TripCount>
 <Latency>6</Latency>
 <AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
@@ -4519,7 +4525,7 @@
 <PipelineType>yes</PipelineType>
 <InstanceList>
 </InstanceList>
-</update>
+</update_1>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 <AreaEstimates>
@@ -4527,7 +4533,7 @@
 <FF>20</FF>
 <AVAIL_FF>106400</AVAIL_FF>
 <UTIL_FF>~0</UTIL_FF>
-<LUT>178</LUT>
+<LUT>198</LUT>
 <AVAIL_LUT>53200</AVAIL_LUT>
 <UTIL_LUT>~0</UTIL_LUT>
 <BRAM_18K>0</BRAM_18K>
@@ -4544,7 +4550,7 @@
 <InterfaceSummary>
 <RtlPorts>
 <name>ap_clk</name>
-<Object>runge_kutta_45_Pipeline_update</Object>
+<Object>runge_kutta_45_Pipeline_update_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -4555,7 +4561,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_rst</name>
-<Object>runge_kutta_45_Pipeline_update</Object>
+<Object>runge_kutta_45_Pipeline_update_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -4566,7 +4572,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_start</name>
-<Object>runge_kutta_45_Pipeline_update</Object>
+<Object>runge_kutta_45_Pipeline_update_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -4577,7 +4583,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_done</name>
-<Object>runge_kutta_45_Pipeline_update</Object>
+<Object>runge_kutta_45_Pipeline_update_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -4588,7 +4594,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_idle</name>
-<Object>runge_kutta_45_Pipeline_update</Object>
+<Object>runge_kutta_45_Pipeline_update_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -4599,7 +4605,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_ready</name>
-<Object>runge_kutta_45_Pipeline_update</Object>
+<Object>runge_kutta_45_Pipeline_update_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -4609,8 +4615,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>sub_ln85941</name>
-<Object>sub_ln85941</Object>
+<name>sub_ln85945</name>
+<Object>sub_ln85945</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -4660,7 +4666,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -4693,12 +4699,12 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>sub_ln254</name>
-<Object>sub_ln254</Object>
+<name>sub_ln256</name>
+<Object>sub_ln256</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -4737,7 +4743,262 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+</InterfaceSummary>
+</Module>
+<Module>
+<Name>runge_kutta_45_Pipeline_update_2</Name>
+<Loops>
+<update_2></update_2>
+</Loops>
+<PerformanceEstimates>
+<SummaryOfTimingAnalysis>
+<TargetClockPeriod>50.00</TargetClockPeriod>
+<ClockUncertainty>13.50</ClockUncertainty>
+<EstimatedClockPeriod>11.059</EstimatedClockPeriod>
+</SummaryOfTimingAnalysis>
+<SummaryOfOverallLatency>
+<Best-caseLatency>8</Best-caseLatency>
+<Average-caseLatency>8</Average-caseLatency>
+<Worst-caseLatency>8</Worst-caseLatency>
+<Best-caseRealTimeLatency>0.400 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.400 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.400 us</Worst-caseRealTimeLatency>
+<PipelineInitiationInterval>8</PipelineInitiationInterval>
+<PipelineType>no</PipelineType>
+</SummaryOfOverallLatency>
+<SummaryOfLoopLatency>
+<update_2>
+<Name>update_2</Name>
+<TripCount>6</TripCount>
+<Latency>6</Latency>
+<AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
+<PipelineII>1</PipelineII>
+<PipelineDepth>2</PipelineDepth>
+<PipelineType>yes</PipelineType>
+<InstanceList>
+</InstanceList>
+</update_2>
+</SummaryOfLoopLatency>
+</PerformanceEstimates>
+<AreaEstimates>
+<Resources>
+<FF>20</FF>
+<AVAIL_FF>106400</AVAIL_FF>
+<UTIL_FF>~0</UTIL_FF>
+<LUT>198</LUT>
+<AVAIL_LUT>53200</AVAIL_LUT>
+<UTIL_LUT>~0</UTIL_LUT>
+<BRAM_18K>0</BRAM_18K>
+<AVAIL_BRAM>280</AVAIL_BRAM>
+<UTIL_BRAM>0</UTIL_BRAM>
+<DSP>0</DSP>
+<AVAIL_DSP>220</AVAIL_DSP>
+<UTIL_DSP>0</UTIL_DSP>
+<URAM>0</URAM>
+<AVAIL_URAM>0</AVAIL_URAM>
+<UTIL_URAM>0</UTIL_URAM>
+</Resources>
+</AreaEstimates>
+<InterfaceSummary>
+<RtlPorts>
+<name>ap_clk</name>
+<Object>runge_kutta_45_Pipeline_update_2</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_rst</name>
+<Object>runge_kutta_45_Pipeline_update_2</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_start</name>
+<Object>runge_kutta_45_Pipeline_update_2</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_done</name>
+<Object>runge_kutta_45_Pipeline_update_2</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_idle</name>
+<Object>runge_kutta_45_Pipeline_update_2</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_ready</name>
+<Object>runge_kutta_45_Pipeline_update_2</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>sub_ln85945</name>
+<Object>sub_ln85945</Object>
+<Type>scalar</Type>
+<Scope></Scope>
+<IOProtocol>ap_none</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>14</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>yy_loc_V_address0</name>
+<Object>yy_loc_V</Object>
+<Type>array</Type>
+<Scope></Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>14</Bits>
+<Attribute>address</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>yy_loc_V_ce0</name>
+<Object>yy_loc_V</Object>
+<Type>array</Type>
+<Scope></Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>yy_loc_V_we0</name>
+<Object>yy_loc_V</Object>
+<Type>array</Type>
+<Scope></Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>yy_loc_V_d0</name>
+<Object>yy_loc_V</Object>
+<Type>array</Type>
+<Scope></Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>100</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>yy_loc_V_address1</name>
+<Object>yy_loc_V</Object>
+<Type>array</Type>
+<Scope></Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>14</Bits>
+<Attribute>address</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>yy_loc_V_ce1</name>
+<Object>yy_loc_V</Object>
+<Type>array</Type>
+<Scope></Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>yy_loc_V_q1</name>
+<Object>yy_loc_V</Object>
+<Type>array</Type>
+<Scope></Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>100</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>sub_ln266</name>
+<Object>sub_ln266</Object>
+<Type>scalar</Type>
+<Scope></Scope>
+<IOProtocol>ap_none</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>14</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>c_V_address0</name>
+<Object>c_V</Object>
+<Type>array</Type>
+<Scope></Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>3</Bits>
+<Attribute>address</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>c_V_ce0</name>
+<Object>c_V</Object>
+<Type>array</Type>
+<Scope></Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>c_V_q0</name>
+<Object>c_V</Object>
+<Type>array</Type>
+<Scope></Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 </InterfaceSummary>
@@ -4770,7 +5031,7 @@
 <Latency>undef</Latency>
 <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
-<PipelineDepth>8</PipelineDepth>
+<PipelineDepth>9</PipelineDepth>
 <PipelineType>yes</PipelineType>
 <InstanceList>
 </InstanceList>
@@ -4779,10 +5040,10 @@
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
-<FF>812</FF>
+<FF>982</FF>
 <AVAIL_FF>106400</AVAIL_FF>
 <UTIL_FF>~0</UTIL_FF>
-<LUT>4329</LUT>
+<LUT>4638</LUT>
 <AVAIL_LUT>53200</AVAIL_LUT>
 <UTIL_LUT>8</UTIL_LUT>
 <BRAM_18K>0</BRAM_18K>
@@ -5370,8 +5631,8 @@
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>mul366</name>
-<Object>mul366</Object>
+<name>mul397</name>
+<Object>mul397</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -5410,7 +5671,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -5425,8 +5686,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>zext_ln276</name>
-<Object>zext_ln276</Object>
+<name>zext_ln288</name>
+<Object>zext_ln288</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -5488,9 +5749,9 @@
 <FF>684</FF>
 <AVAIL_FF>106400</AVAIL_FF>
 <UTIL_FF>~0</UTIL_FF>
-<LUT>4218</LUT>
+<LUT>4527</LUT>
 <AVAIL_LUT>53200</AVAIL_LUT>
-<UTIL_LUT>7</UTIL_LUT>
+<UTIL_LUT>8</UTIL_LUT>
 <BRAM_18K>0</BRAM_18K>
 <AVAIL_BRAM>280</AVAIL_BRAM>
 <UTIL_BRAM>0</UTIL_BRAM>
@@ -6076,8 +6337,8 @@
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>add382</name>
-<Object>add382</Object>
+<name>add413</name>
+<Object>add413</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -6116,7 +6377,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -6131,8 +6392,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>zext_ln279</name>
-<Object>zext_ln279</Object>
+<name>zext_ln291</name>
+<Object>zext_ln291</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -6196,36 +6457,37 @@
 <max>1000000</max>
 </range>
 </TripCount>
-<Latency>9519 ~ 22005999999</Latency>
-<AbsoluteTimeLatency>0.476 ms ~ 1.1e+03 sec</AbsoluteTimeLatency>
+<Latency>10400 ~ 22886999999</Latency>
+<AbsoluteTimeLatency>0.520 ms ~ 1.1e+03 sec</AbsoluteTimeLatency>
 <IterationLatency>
 <range>
-<min>9520</min>
-<max>22006</max>
+<min>10401</min>
+<max>22887</max>
 </range>
 </IterationLatency>
-<PipelineDepth>9520 ~ 22006</PipelineDepth>
+<PipelineDepth>10401 ~ 22887</PipelineDepth>
 <PipelineType>no</PipelineType>
 <InstanceList>
-<Instance>grp_ode_fpga_fu_868</Instance>
-<Instance>grp_runge_kutta_45_Pipeline_VITIS_LOOP_177_2_fu_1014</Instance>
-<Instance>grp_runge_kutta_45_Pipeline_VITIS_LOOP_180_3_fu_1022</Instance>
-<Instance>grp_runge_kutta_45_Pipeline_sq_sum_loop_fu_1030</Instance>
-<Instance>grp_runge_kutta_45_Pipeline_sqrt_loop_fu_1036</Instance>
-<Instance>grp_runge_kutta_45_Pipeline_update_fu_1042</Instance>
+<Instance>grp_ode_fpga_fu_941</Instance>
+<Instance>grp_runge_kutta_45_Pipeline_VITIS_LOOP_179_2_fu_1087</Instance>
+<Instance>grp_runge_kutta_45_Pipeline_VITIS_LOOP_182_3_fu_1095</Instance>
+<Instance>grp_runge_kutta_45_Pipeline_sq_sum_loop_fu_1103</Instance>
+<Instance>grp_runge_kutta_45_Pipeline_sqrt_loop_fu_1109</Instance>
+<Instance>grp_runge_kutta_45_Pipeline_update_1_fu_1115</Instance>
+<Instance>grp_runge_kutta_45_Pipeline_update_2_fu_1124</Instance>
 </InstanceList>
 <k_outer>
 <Name>k_outer</Name>
 <TripCount>5</TripCount>
-<Latency>6659 ~ 6839</Latency>
-<AbsoluteTimeLatency>0.333 ms ~ 0.342 ms</AbsoluteTimeLatency>
+<Latency>7274 ~ 7454</Latency>
+<AbsoluteTimeLatency>0.364 ms ~ 0.373 ms</AbsoluteTimeLatency>
 <IterationLatency>
 <range>
-<min>1332</min>
-<max>1368</max>
+<min>1455</min>
+<max>1491</max>
 </range>
 </IterationLatency>
-<PipelineDepth>1332 ~ 1368</PipelineDepth>
+<PipelineDepth>1455 ~ 1491</PipelineDepth>
 <PipelineType>no</PipelineType>
 <InstanceList>
 </InstanceList>
@@ -6243,7 +6505,7 @@
 <PipelineDepth>2 ~ 8</PipelineDepth>
 <PipelineType>no</PipelineType>
 <InstanceList>
-<Instance>grp_multiply_fu_962</Instance>
+<Instance>grp_multiply_fu_1035</Instance>
 </InstanceList>
 <k_inner>
 <Name>k_inner</Name>
@@ -6259,7 +6521,7 @@
 <PipelineDepth>2</PipelineDepth>
 <PipelineType>yes</PipelineType>
 <InstanceList>
-<Instance>grp_macply_fu_900</Instance>
+<Instance>grp_macply_fu_973</Instance>
 </InstanceList>
 </k_inner>
 </k_middle>
@@ -6313,16 +6575,16 @@
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
-<BRAM_18K>94</BRAM_18K>
+<BRAM_18K>117</BRAM_18K>
 <AVAIL_BRAM>280</AVAIL_BRAM>
-<UTIL_BRAM>33</UTIL_BRAM>
-<DSP>92</DSP>
+<UTIL_BRAM>41</UTIL_BRAM>
+<DSP>96</DSP>
 <AVAIL_DSP>220</AVAIL_DSP>
-<UTIL_DSP>41</UTIL_DSP>
-<FF>15059</FF>
+<UTIL_DSP>43</UTIL_DSP>
+<FF>16893</FF>
 <AVAIL_FF>106400</AVAIL_FF>
-<UTIL_FF>14</UTIL_FF>
-<LUT>38589</LUT>
+<UTIL_FF>15</UTIL_FF>
+<LUT>38375</LUT>
 <AVAIL_LUT>53200</AVAIL_LUT>
 <UTIL_LUT>72</UTIL_LUT>
 <URAM>0</URAM>
@@ -6339,7 +6601,7 @@
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>bool</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -6350,7 +6612,7 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>bool</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -6359,9 +6621,9 @@
 <Type>pointer</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>in</Dir>
-<Bits>7</Bits>
+<Bits>8</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>bool</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -6372,7 +6634,7 @@
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>bool</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -6383,7 +6645,7 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>bool</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -6394,7 +6656,7 @@
 <Dir>in</Dir>
 <Bits>32</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>bool</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -6405,7 +6667,7 @@
 <Dir>in</Dir>
 <Bits>4</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>bool</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -6416,7 +6678,7 @@
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>bool</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -6427,7 +6689,7 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>bool</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -6436,9 +6698,9 @@
 <Type>pointer</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>in</Dir>
-<Bits>7</Bits>
+<Bits>8</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>bool</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -6449,7 +6711,7 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>bool</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -6460,7 +6722,7 @@
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>bool</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -6471,7 +6733,7 @@
 <Dir>out</Dir>
 <Bits>32</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>bool</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -6482,7 +6744,7 @@
 <Dir>out</Dir>
 <Bits>2</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>bool</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -6493,7 +6755,7 @@
 <Dir>out</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>bool</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -6504,7 +6766,7 @@
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>bool</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>
@@ -6515,7 +6777,7 @@
 <Dir>out</Dir>
 <Bits>2</Bits>
 <Attribute>unknown</Attribute>
-<CType>int</CType>
+<CType>bool</CType>
 <HasCtrl>1</HasCtrl>
 </RtlPorts>
 <RtlPorts>

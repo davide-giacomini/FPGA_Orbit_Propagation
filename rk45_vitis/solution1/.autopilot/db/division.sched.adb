@@ -7,7 +7,7 @@
 	<cdfg class_id="1" tracking_level="1" version="0" object_id="_0">
 		<name>division</name>
 		<module_structure>Sequential</module_structure>
-		<ret_bitwidth>140</ret_bitwidth>
+		<ret_bitwidth>160</ret_bitwidth>
 		<ports class_id="2" tracking_level="0" version="0">
 			<count>2</count>
 			<item_version>0</item_version>
@@ -37,7 +37,7 @@
 						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>80</bitwidth>
+					<bitwidth>100</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -70,10 +70,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1030252495</coreId>
+						<coreId>4191555647</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>161</bitwidth>
+					<bitwidth>201</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -110,10 +110,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1030567792</coreId>
+						<coreId>863395689</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>161</bitwidth>
+					<bitwidth>201</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -153,10 +153,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1950521088</coreId>
+						<coreId>863395689</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>80</bitwidth>
+					<bitwidth>100</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -182,8 +182,8 @@
 						<fileName>/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h</fileName>
 						<fileDirectory>/home/davide/Projects/runge_kutta_45</fileDirectory>
 						<lineNumber>884</lineNumber>
-						<contextFuncName>operator=&amp;lt;80, 20, true, AP_TRN, AP_WRAP, 0&amp;gt;</contextFuncName>
-						<contextNormFuncName>operator_assign_80_20_true_AP_TRN_AP_WRAP_0</contextNormFuncName>
+						<contextFuncName>operator=&amp;lt;100, 40, true, AP_TRN, AP_WRAP, 0&amp;gt;</contextFuncName>
+						<contextNormFuncName>operator_assign_100_40_true_AP_TRN_AP_WRAP_0</contextNormFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
@@ -195,7 +195,7 @@
 									<item class_id="13" tracking_level="0" version="0">
 										<first class_id="14" tracking_level="0" version="0">
 											<first>/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h</first>
-											<second>operator=&amp;lt;80, 20, true, AP_TRN, AP_WRAP, 0&amp;gt;</second>
+											<second>operator=&amp;lt;100, 40, true, AP_TRN, AP_WRAP, 0&amp;gt;</second>
 										</first>
 										<second>884</second>
 									</item>
@@ -210,10 +210,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1030199872</coreId>
+						<coreId>863395689</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>200</bitwidth>
+					<bitwidth>220</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -240,8 +240,8 @@
 						<fileName>/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h</fileName>
 						<fileDirectory>/home/davide/Projects/runge_kutta_45</fileDirectory>
 						<lineNumber>1349</lineNumber>
-						<contextFuncName>operator/&amp;lt;162, 42, false, AP_TRN, AP_WRAP, 0&amp;gt;</contextFuncName>
-						<contextNormFuncName>operator_div_162_42_false_AP_TRN_AP_WRAP_0</contextNormFuncName>
+						<contextFuncName>operator/&amp;lt;202, 82, false, AP_TRN, AP_WRAP, 0&amp;gt;</contextFuncName>
+						<contextNormFuncName>operator_div_202_82_false_AP_TRN_AP_WRAP_0</contextNormFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
@@ -253,7 +253,7 @@
 									<item>
 										<first>
 											<first>/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h</first>
-											<second>operator/&amp;lt;162, 42, false, AP_TRN, AP_WRAP, 0&amp;gt;</second>
+											<second>operator/&amp;lt;202, 82, false, AP_TRN, AP_WRAP, 0&amp;gt;</second>
 										</first>
 										<second>1349</second>
 									</item>
@@ -268,10 +268,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1029811216</coreId>
+						<coreId>4193616672</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>162</bitwidth>
+					<bitwidth>202</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -296,8 +296,8 @@
 						<fileName>/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h</fileName>
 						<fileDirectory>/home/davide/Projects/runge_kutta_45</fileDirectory>
 						<lineNumber>1349</lineNumber>
-						<contextFuncName>operator/&amp;lt;162, 42, false, AP_TRN, AP_WRAP, 0&amp;gt;</contextFuncName>
-						<contextNormFuncName>operator_div_162_42_false_AP_TRN_AP_WRAP_0</contextNormFuncName>
+						<contextFuncName>operator/&amp;lt;202, 82, false, AP_TRN, AP_WRAP, 0&amp;gt;</contextFuncName>
+						<contextNormFuncName>operator_div_202_82_false_AP_TRN_AP_WRAP_0</contextNormFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
@@ -309,7 +309,7 @@
 									<item>
 										<first>
 											<first>/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h</first>
-											<second>operator/&amp;lt;162, 42, false, AP_TRN, AP_WRAP, 0&amp;gt;</second>
+											<second>operator/&amp;lt;202, 82, false, AP_TRN, AP_WRAP, 0&amp;gt;</second>
 										</first>
 										<second>1349</second>
 									</item>
@@ -324,10 +324,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1029811216</coreId>
+						<coreId>4194283552</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>200</bitwidth>
+					<bitwidth>220</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -352,8 +352,8 @@
 						<fileName>/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h</fileName>
 						<fileDirectory>/home/davide/Projects/runge_kutta_45</fileDirectory>
 						<lineNumber>1349</lineNumber>
-						<contextFuncName>operator/&amp;lt;162, 42, false, AP_TRN, AP_WRAP, 0&amp;gt;</contextFuncName>
-						<contextNormFuncName>operator_div_162_42_false_AP_TRN_AP_WRAP_0</contextNormFuncName>
+						<contextFuncName>operator/&amp;lt;202, 82, false, AP_TRN, AP_WRAP, 0&amp;gt;</contextFuncName>
+						<contextNormFuncName>operator_div_202_82_false_AP_TRN_AP_WRAP_0</contextNormFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
@@ -365,7 +365,7 @@
 									<item>
 										<first>
 											<first>/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h</first>
-											<second>operator/&amp;lt;162, 42, false, AP_TRN, AP_WRAP, 0&amp;gt;</second>
+											<second>operator/&amp;lt;202, 82, false, AP_TRN, AP_WRAP, 0&amp;gt;</second>
 										</first>
 										<second>1349</second>
 									</item>
@@ -380,10 +380,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1030200480</coreId>
+						<coreId>4194467904</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>140</bitwidth>
+					<bitwidth>160</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -409,8 +409,8 @@
 						<fileName>/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed.h</fileName>
 						<fileDirectory>/home/davide/Projects/runge_kutta_45</fileDirectory>
 						<lineNumber>0</lineNumber>
-						<contextFuncName>ap_ufixed&amp;lt;200, 140, true, AP_TRN, AP_WRAP, 0&amp;gt;</contextFuncName>
-						<contextNormFuncName>ap_ufixed_200_140_true_AP_TRN_AP_WRAP_0_s</contextNormFuncName>
+						<contextFuncName>ap_ufixed&amp;lt;220, 160, true, AP_TRN, AP_WRAP, 0&amp;gt;</contextFuncName>
+						<contextNormFuncName>ap_ufixed_220_160_true_AP_TRN_AP_WRAP_0_s</contextNormFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
@@ -422,7 +422,7 @@
 									<item>
 										<first>
 											<first>/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed.h</first>
-											<second>ap_ufixed&amp;lt;200, 140, true, AP_TRN, AP_WRAP, 0&amp;gt;</second>
+											<second>ap_ufixed&amp;lt;220, 160, true, AP_TRN, AP_WRAP, 0&amp;gt;</second>
 										</first>
 										<second>0</second>
 									</item>
@@ -437,10 +437,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1029796304</coreId>
+						<coreId>4194183952</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>140</bitwidth>
+					<bitwidth>160</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -493,7 +493,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1029595360</coreId>
+						<coreId>4193587632</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -539,7 +539,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1030427904</coreId>
+						<coreId>4193262320</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>120</bitwidth>
@@ -573,7 +573,7 @@
 					<coreName></coreName>
 					<isStorage>0</isStorage>
 					<storageDepth>0</storageDepth>
-					<coreId>1029811216</coreId>
+					<coreId>4194478320</coreId>
 					<rtlModuleName></rtlModuleName>
 				</Obj>
 				<node_objs>
@@ -686,8 +686,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>203</mMinLatency>
-			<mMaxLatency>203</mMaxLatency>
+			<mMinLatency>223</mMinLatency>
+			<mMaxLatency>223</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -736,20 +736,20 @@
 			<first>8</first>
 			<second>
 				<first>0</first>
-				<second>203</second>
+				<second>223</second>
 			</second>
 		</item>
 		<item>
 			<first>9</first>
 			<second>
-				<first>203</first>
+				<first>223</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>10</first>
 			<second>
-				<first>203</first>
+				<first>223</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -761,7 +761,7 @@
 			<first>11</first>
 			<second class_id="31" tracking_level="0" version="0">
 				<first>0</first>
-				<second>203</second>
+				<second>223</second>
 			</second>
 		</item>
 	</bblk_ent_exit>

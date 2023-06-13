@@ -47,7 +47,7 @@
 <AreaEstimates>
 <Resources>
 <FF>684</FF>
-<LUT>4218</LUT>
+<LUT>4527</LUT>
 <BRAM_18K>0</BRAM_18K>
 <DSP>0</DSP>
 <URAM>0</URAM>
@@ -635,8 +635,8 @@
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>add382</name>
-<Object>add382</Object>
+<name>add413</name>
+<Object>add413</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -675,7 +675,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -690,8 +690,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>zext_ln279</name>
-<Object>zext_ln279</Object>
+<name>zext_ln291</name>
+<Object>zext_ln291</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>

@@ -1,19 +1,19 @@
 # This script segment is generated automatically by AutoPilot
 
 set id 12
-set name runge_kutta_45_mux_32_80_1_1
+set name runge_kutta_45_mux_32_100_1_1
 set corename simcore_mux
 set op mux
 set stage_num 1
-set din0_width 80
+set din0_width 100
 set din0_signed 0
-set din1_width 80
+set din1_width 100
 set din1_signed 0
-set din2_width 80
+set din2_width 100
 set din2_signed 0
 set din3_width 2
 set din3_signed 0
-set dout_width 80
+set dout_width 100
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mux} IMPL {auto} LATENCY 0 ALLOW_PRAGMA 1
 }
@@ -65,7 +65,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_p_read \
     op interface \
-    ports { p_read { I 80 vector } } \
+    ports { p_read { I 100 vector } } \
 } "
 }
 
@@ -80,7 +80,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_p_read1 \
     op interface \
-    ports { p_read1 { I 80 vector } } \
+    ports { p_read1 { I 100 vector } } \
 } "
 }
 
@@ -95,7 +95,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_p_read2 \
     op interface \
-    ports { p_read2 { I 80 vector } } \
+    ports { p_read2 { I 100 vector } } \
 } "
 }
 
@@ -110,7 +110,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_p_read3 \
     op interface \
-    ports { p_read3 { I 80 vector } } \
+    ports { p_read3 { I 100 vector } } \
 } "
 }
 
@@ -125,7 +125,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_p_read4 \
     op interface \
-    ports { p_read4 { I 80 vector } } \
+    ports { p_read4 { I 100 vector } } \
 } "
 }
 
@@ -140,7 +140,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_p_read5 \
     op interface \
-    ports { p_read5 { I 80 vector } } \
+    ports { p_read5 { I 100 vector } } \
 } "
 }
 
@@ -155,7 +155,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_r_in_V_2_03_out \
     op interface \
-    ports { r_in_V_2_03_out { O 80 vector } r_in_V_2_03_out_ap_vld { O 1 bit } } \
+    ports { r_in_V_2_03_out { O 100 vector } r_in_V_2_03_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -170,7 +170,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_r_in_V_1_02_out \
     op interface \
-    ports { r_in_V_1_02_out { O 80 vector } r_in_V_1_02_out_ap_vld { O 1 bit } } \
+    ports { r_in_V_1_02_out { O 100 vector } r_in_V_1_02_out_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -185,7 +185,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_r_in_V_0_01_out \
     op interface \
-    ports { r_in_V_0_01_out { O 80 vector } r_in_V_0_01_out_ap_vld { O 1 bit } } \
+    ports { r_in_V_0_01_out { O 100 vector } r_in_V_0_01_out_ap_vld { O 1 bit } } \
 } "
 }
 

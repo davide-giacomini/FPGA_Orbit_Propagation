@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'runge_kutta_45'" level="0">
-<item name = "Date">Mon May 22 17:32:33 2023
+<item name = "Date">Tue Jun 13 00:34:40 2023
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
 <item name = "Project">rk45_vitis</item>
@@ -31,26 +31,27 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_ode_fpga_fu_868">ode_fpga, 1317, 1317, 65.850 us, 65.850 us, 1317, 1317, no</column>
-<column name="grp_macply_fu_900">macply, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
-<column name="grp_multiply_fu_962">multiply, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
-<column name="grp_ap_fixed_base_fu_989">ap_fixed_base, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
-<column name="atol_loc_V_ap_fixed_base_fu_994">ap_fixed_base, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
-<column name="tf_loc_V_ap_fixed_base_fu_999">ap_fixed_base, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
-<column name="grp_runge_kutta_45_Pipeline_VITIS_LOOP_160_1_fu_1005">runge_kutta_45_Pipeline_VITIS_LOOP_160_1, 16, 16, 0.800 us, 0.800 us, 16, 16, no</column>
-<column name="grp_runge_kutta_45_Pipeline_VITIS_LOOP_177_2_fu_1014">runge_kutta_45_Pipeline_VITIS_LOOP_177_2, 12291, 12291, 0.615 ms, 0.615 ms, 12291, 12291, no</column>
-<column name="grp_runge_kutta_45_Pipeline_VITIS_LOOP_180_3_fu_1022">runge_kutta_45_Pipeline_VITIS_LOOP_180_3, 2051, 2051, 0.103 ms, 0.103 ms, 2051, 2051, no</column>
-<column name="grp_runge_kutta_45_Pipeline_sq_sum_loop_fu_1030">runge_kutta_45_Pipeline_sq_sum_loop, 8, 8, 0.400 us, 0.400 us, 8, 8, no</column>
-<column name="grp_runge_kutta_45_Pipeline_sqrt_loop_fu_1036">runge_kutta_45_Pipeline_sqrt_loop, 83, 83, 4.150 us, 4.150 us, 83, 83, no</column>
-<column name="grp_runge_kutta_45_Pipeline_update_fu_1042">runge_kutta_45_Pipeline_update, 8, 8, 0.400 us, 0.400 us, 8, 8, no</column>
-<column name="grp_runge_kutta_45_Pipeline_last_copy_y_fu_1051">runge_kutta_45_Pipeline_last_copy_y, ?, ?, ?, ?, ?, ?, no</column>
-<column name="grp_runge_kutta_45_Pipeline_last_copy_t_fu_1062">runge_kutta_45_Pipeline_last_copy_t, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_ode_fpga_fu_941">ode_fpga, 1440, 1440, 72.000 us, 72.000 us, 1440, 1440, no</column>
+<column name="grp_macply_fu_973">macply, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="grp_multiply_fu_1035">multiply, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
+<column name="grp_ap_fixed_base_fu_1062">ap_fixed_base, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="atol_loc_V_ap_fixed_base_fu_1067">ap_fixed_base, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="tf_loc_V_ap_fixed_base_fu_1072">ap_fixed_base, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="grp_runge_kutta_45_Pipeline_VITIS_LOOP_161_1_fu_1078">runge_kutta_45_Pipeline_VITIS_LOOP_161_1, 16, 16, 0.800 us, 0.800 us, 16, 16, no</column>
+<column name="grp_runge_kutta_45_Pipeline_VITIS_LOOP_179_2_fu_1087">runge_kutta_45_Pipeline_VITIS_LOOP_179_2, 12291, 12291, 0.615 ms, 0.615 ms, 12291, 12291, no</column>
+<column name="grp_runge_kutta_45_Pipeline_VITIS_LOOP_182_3_fu_1095">runge_kutta_45_Pipeline_VITIS_LOOP_182_3, 2051, 2051, 0.103 ms, 0.103 ms, 2051, 2051, no</column>
+<column name="grp_runge_kutta_45_Pipeline_sq_sum_loop_fu_1103">runge_kutta_45_Pipeline_sq_sum_loop, 8, 8, 0.400 us, 0.400 us, 8, 8, no</column>
+<column name="grp_runge_kutta_45_Pipeline_sqrt_loop_fu_1109">runge_kutta_45_Pipeline_sqrt_loop, 103, 103, 5.150 us, 5.150 us, 103, 103, no</column>
+<column name="grp_runge_kutta_45_Pipeline_update_1_fu_1115">runge_kutta_45_Pipeline_update_1, 8, 8, 0.400 us, 0.400 us, 8, 8, no</column>
+<column name="grp_runge_kutta_45_Pipeline_update_2_fu_1124">runge_kutta_45_Pipeline_update_2, 8, 8, 0.400 us, 0.400 us, 8, 8, no</column>
+<column name="grp_runge_kutta_45_Pipeline_last_copy_y_fu_1133">runge_kutta_45_Pipeline_last_copy_y, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_runge_kutta_45_Pipeline_last_copy_t_fu_1144">runge_kutta_45_Pipeline_last_copy_t, ?, ?, ?, ?, ?, ?, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- main_loop">9519, 22005999999, 9520 ~ 22006, -, -, 0 ~ 1000000, no</column>
-<column name=" + k_outer">6659, 6839, 1332 ~ 1368, -, -, 5, no</column>
+<column name="- main_loop">10400, 22886999999, 10401 ~ 22887, -, -, 0 ~ 1000000, no</column>
+<column name=" + k_outer">7274, 7454, 1455 ~ 1491, -, -, 5, no</column>
 <column name="  ++ k_middle">11, 47, 2 ~ 8, -, -, 6, no</column>
 <column name="   +++ k_inner">1, 5, 2, 1, 1, 1 ~ 5, yes</column>
 <column name=" + y_new_outer">59, 59, 10, -, -, 6, no</column>

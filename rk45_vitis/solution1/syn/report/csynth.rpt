@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'runge_kutta_45'
 ================================================================
 + General Information: 
-    * Date:           Mon May 22 17:32:43 2023
+    * Date:           Tue Jun 13 00:34:55 2023
     * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
     * Project:        rk45_vitis
     * Solution:       solution1 (Vivado IP Flow Target)
@@ -15,60 +15,62 @@
 + Performance & Resource Estimates: 
     
     PS: '+' for module; 'o' for loop; '*' for dataflow
-    +----------------------------------------------+------+-------+-------------+-----------+----------+---------+---------+----------+----------+----------+-------------+-------------+-----+
-    |                    Modules                   | Issue|       |   Latency   |  Latency  | Iteration|         |   Trip  |          |          |          |             |             |     |
-    |                    & Loops                   | Type | Slack |   (cycles)  |    (ns)   |  Latency | Interval|  Count  | Pipelined|   BRAM   |    DSP   |      FF     |     LUT     | URAM|
-    +----------------------------------------------+------+-------+-------------+-----------+----------+---------+---------+----------+----------+----------+-------------+-------------+-----+
-    |+ runge_kutta_45                              |     -|   0.00|            -|          -|         -|        -|        -|        no|  94 (33%)|  92 (41%)|  15059 (14%)|  38589 (72%)|    -|
-    | + ap_fixed_base                              |    II|  19.03|            0|      0.000|         -|        1|        -|       yes|         -|         -|            -|     984 (1%)|    -|
-    | + ap_fixed_base                              |    II|  19.03|            0|      0.000|         -|        1|        -|       yes|         -|         -|            -|     984 (1%)|    -|
-    | + ap_fixed_base                              |    II|  19.03|            0|      0.000|         -|        1|        -|       yes|         -|         -|            -|     984 (1%)|    -|
-    | + runge_kutta_45_Pipeline_VITIS_LOOP_160_1   |     -|   0.00|           16|    800.000|         -|       16|        -|        no|         -|         -|    923 (~0%)|    2492 (4%)|    -|
-    |  o VITIS_LOOP_160_1                          |     -|  36.50|           14|    700.000|        10|        1|        6|       yes|         -|         -|            -|            -|    -|
-    |   + ap_fixed_base                            |    II|  19.03|            0|      0.000|         -|        1|        -|       yes|         -|         -|            -|     984 (1%)|    -|
-    | + runge_kutta_45_Pipeline_last_copy_y        |     -|   0.00|            -|          -|         -|        -|        -|        no|         -|         -|    812 (~0%)|    4329 (8%)|    -|
-    |  o last_copy_y                               |     -|  36.50|            -|          -|         8|        1|        -|       yes|         -|         -|            -|            -|    -|
-    | + runge_kutta_45_Pipeline_last_copy_t        |     -|   0.00|            -|          -|         -|        -|        -|        no|         -|         -|    684 (~0%)|    4218 (7%)|    -|
-    |  o last_copy_t                               |     -|  36.50|            -|          -|         8|        1|        -|       yes|         -|         -|            -|            -|    -|
-    | o main_loop                                  |     -|  36.50|  22005999999|  1.100e+12|     22006|        -|  1000000|        no|         -|         -|            -|            -|    -|
-    |  + ode_fpga                                  |     -|   5.44|         1317|  6.585e+04|         -|     1317|        -|        no|         -|  36 (16%)|    3852 (3%)|   7282 (13%)|    -|
-    |   + ode_fpga_Pipeline_1                      |     -|  31.42|            5|    250.000|         -|        5|        -|        no|         -|         -|      4 (~0%)|     73 (~0%)|    -|
-    |    o Loop 1                                  |     -|  36.50|            3|    150.000|         1|        1|        3|       yes|         -|         -|            -|            -|    -|
-    |   + ode_fpga_Pipeline_2                      |     -|  29.77|            5|    250.000|         -|        5|        -|        no|         -|         -|      4 (~0%)|     84 (~0%)|    -|
-    |    o Loop 1                                  |     -|  36.50|            3|    150.000|         1|        1|        3|       yes|         -|         -|            -|            -|    -|
-    |   o Loop 1                                   |     -|  36.50|            6|    300.000|         2|        -|        3|        no|         -|         -|            -|            -|    -|
-    |   o Loop 2                                   |     -|  36.50|            6|    300.000|         2|        -|        3|        no|         -|         -|            -|            -|    -|
-    |   o Loop 3                                   |     -|  36.50|            6|    300.000|         2|        -|        3|        no|         -|         -|            -|            -|    -|
-    |   o Loop 4                                   |     -|  36.50|            6|    300.000|         2|        -|        3|        no|         -|         -|            -|            -|    -|
-    |   o update_vel_pos                           |     -|  36.50|         1275|  6.375e+04|       425|        -|        3|        no|         -|         -|            -|            -|    -|
-    |    + vel_der                                 |     -|   5.44|          423|  2.115e+04|         -|      423|        -|        no|         -|  36 (16%)|    2339 (2%)|   6639 (12%)|    -|
-    |     + vel_der_Pipeline_VITIS_LOOP_70_1       |     -|  30.81|            5|    250.000|         -|        5|        -|        no|         -|         -|    244 (~0%)|    160 (~0%)|    -|
-    |      o VITIS_LOOP_70_1                       |     -|  36.50|            3|    150.000|         1|        1|        3|       yes|         -|         -|            -|            -|    -|
-    |     + vel_der_Pipeline_sq_sum_loop           |     -|  12.75|            5|    250.000|         -|        5|        -|        no|         -|   15 (6%)|    166 (~0%)|    329 (~0%)|    -|
-    |      o sq_sum_loop                           |     -|  36.50|            3|    150.000|         1|        1|        3|       yes|         -|         -|            -|            -|    -|
-    |     + vel_der_Pipeline_sqrt_loop             |     -|  27.28|           83|  4.150e+03|         -|       83|        -|        no|         -|         -|    413 (~0%)|    490 (~0%)|    -|
-    |      o sqrt_loop                             |     -|  36.50|           81|  4.050e+03|         1|        1|       81|       yes|         -|         -|            -|            -|    -|
-    |     + division                               |     -|  31.43|          203|  1.015e+04|         -|      203|        -|        no|         -|         -|    1123 (1%)|    1570 (2%)|    -|
-    |  + runge_kutta_45_Pipeline_VITIS_LOOP_177_2  |     -|   0.00|        12291|  6.146e+05|         -|    12291|        -|        no|         -|         -|    534 (~0%)|    2142 (4%)|    -|
-    |   o VITIS_LOOP_177_2                         |     -|  36.50|        12289|  6.144e+05|         3|        1|    12288|       yes|         -|         -|            -|            -|    -|
-    |  + runge_kutta_45_Pipeline_VITIS_LOOP_180_3  |     -|   0.00|         2051|  1.026e+05|         -|     2051|        -|        no|         -|         -|    532 (~0%)|    2137 (4%)|    -|
-    |   o VITIS_LOOP_180_3                         |     -|  36.50|         2049|  1.024e+05|         3|        1|     2048|       yes|         -|         -|            -|            -|    -|
-    |  + runge_kutta_45_Pipeline_sq_sum_loop       |     -|  12.12|            8|    400.000|         -|        8|        -|        no|         -|   15 (6%)|    168 (~0%)|    326 (~0%)|    -|
-    |   o sq_sum_loop                              |     -|  36.50|            6|    300.000|         2|        1|        6|       yes|         -|         -|            -|            -|    -|
-    |  + runge_kutta_45_Pipeline_sqrt_loop         |     -|  27.28|           83|  4.150e+03|         -|       83|        -|        no|         -|         -|    413 (~0%)|    490 (~0%)|    -|
-    |   o sqrt_loop                                |     -|  36.50|           81|  4.050e+03|         1|        1|       81|       yes|         -|         -|            -|            -|    -|
-    |  + runge_kutta_45_Pipeline_update            |     -|  26.01|            8|    400.000|         -|        8|        -|        no|         -|         -|     20 (~0%)|    178 (~0%)|    -|
-    |   o update                                   |     -|  36.50|            6|    300.000|         2|        1|        6|       yes|         -|         -|            -|            -|    -|
-    |  o k_outer                                   |     -|  36.50|         6839|  3.420e+05|      1368|        -|        5|        no|         -|         -|            -|            -|    -|
-    |   o k_middle                                 |     -|  36.50|           47|  2.350e+03|         8|        -|        6|        no|         -|         -|            -|            -|    -|
-    |    + multiply                                |     -|  22.37|            0|      0.000|         -|        0|        -|        no|         -|   15 (6%)|            -|     91 (~0%)|    -|
-    |    o k_inner                                 |     -|  36.50|            5|    250.000|         2|        1|        5|       yes|         -|         -|            -|            -|    -|
-    |     + macply                                 |    II|  16.67|            0|      0.000|         -|        1|        -|       yes|         -|   15 (6%)|            -|    238 (~0%)|    -|
-    |  o y_new_outer                               |     -|  36.50|           59|  2.950e+03|        10|        -|        6|        no|         -|         -|            -|            -|    -|
-    |   o y_new_inner                              |     -|  36.50|            7|    350.000|         2|        1|        7|       yes|         -|         -|            -|            -|    -|
-    |  o err_outer                                 |     -|  36.50|           59|  2.950e+03|        10|        -|        6|        no|         -|         -|            -|            -|    -|
-    |   o err_inner                                |     -|  36.50|            7|    350.000|         2|        1|        7|       yes|         -|         -|            -|            -|    -|
-    +----------------------------------------------+------+-------+-------------+-----------+----------+---------+---------+----------+----------+----------+-------------+-------------+-----+
+    +----------------------------------------------+------+-------+-------------+-----------+----------+---------+---------+----------+-----------+----------+-------------+-------------+-----+
+    |                    Modules                   | Issue|       |   Latency   |  Latency  | Iteration|         |   Trip  |          |           |          |             |             |     |
+    |                    & Loops                   | Type | Slack |   (cycles)  |    (ns)   |  Latency | Interval|  Count  | Pipelined|   BRAM    |    DSP   |      FF     |     LUT     | URAM|
+    +----------------------------------------------+------+-------+-------------+-----------+----------+---------+---------+----------+-----------+----------+-------------+-------------+-----+
+    |+ runge_kutta_45                              |     -|   0.00|            -|          -|         -|        -|        -|        no|  117 (41%)|  96 (43%)|  16893 (15%)|  38375 (72%)|    -|
+    | + ap_fixed_base                              |    II|  18.91|            0|      0.000|         -|        1|        -|       yes|          -|         -|            -|    1123 (2%)|    -|
+    | + ap_fixed_base                              |    II|  18.91|            0|      0.000|         -|        1|        -|       yes|          -|         -|            -|    1123 (2%)|    -|
+    | + ap_fixed_base                              |    II|  18.91|            0|      0.000|         -|        1|        -|       yes|          -|         -|            -|    1123 (2%)|    -|
+    | + runge_kutta_45_Pipeline_VITIS_LOOP_161_1   |     -|   0.00|           16|    800.000|         -|       16|        -|        no|          -|         -|    923 (~0%)|    2492 (4%)|    -|
+    |  o VITIS_LOOP_161_1                          |     -|  36.50|           14|    700.000|        10|        1|        6|       yes|          -|         -|            -|            -|    -|
+    |   + ap_fixed_base                            |    II|  18.91|            0|      0.000|         -|        1|        -|       yes|          -|         -|            -|    1123 (2%)|    -|
+    | + runge_kutta_45_Pipeline_last_copy_y        |     -|   0.00|            -|          -|         -|        -|        -|        no|          -|         -|    982 (~0%)|    4638 (8%)|    -|
+    |  o last_copy_y                               |     -|  36.50|            -|          -|         9|        1|        -|       yes|          -|         -|            -|            -|    -|
+    | + runge_kutta_45_Pipeline_last_copy_t        |     -|   0.00|            -|          -|         -|        -|        -|        no|          -|         -|    684 (~0%)|    4527 (8%)|    -|
+    |  o last_copy_t                               |     -|  36.50|            -|          -|         8|        1|        -|       yes|          -|         -|            -|            -|    -|
+    | o main_loop                                  |     -|  36.50|  22886999999|  1.144e+12|     22887|        -|  1000000|        no|          -|         -|            -|            -|    -|
+    |  + ode_fpga                                  |     -|   9.92|         1440|  7.200e+04|         -|     1440|        -|        no|          -|  37 (16%)|    4894 (4%)|    4022 (7%)|    -|
+    |   + ode_fpga_Pipeline_1                      |     -|  31.42|            5|    250.000|         -|        5|        -|        no|          -|         -|      4 (~0%)|     73 (~0%)|    -|
+    |    o Loop 1                                  |     -|  36.50|            3|    150.000|         1|        1|        3|       yes|          -|         -|            -|            -|    -|
+    |   + ode_fpga_Pipeline_2                      |     -|  29.77|            5|    250.000|         -|        5|        -|        no|          -|         -|      4 (~0%)|     84 (~0%)|    -|
+    |    o Loop 1                                  |     -|  36.50|            3|    150.000|         1|        1|        3|       yes|          -|         -|            -|            -|    -|
+    |   o Loop 1                                   |     -|  36.50|            6|    300.000|         2|        -|        3|        no|          -|         -|            -|            -|    -|
+    |   o Loop 2                                   |     -|  36.50|            6|    300.000|         2|        -|        3|        no|          -|         -|            -|            -|    -|
+    |   o Loop 3                                   |     -|  36.50|            6|    300.000|         2|        -|        3|        no|          -|         -|            -|            -|    -|
+    |   o Loop 4                                   |     -|  36.50|            6|    300.000|         2|        -|        3|        no|          -|         -|            -|            -|    -|
+    |   o update_vel_pos                           |     -|  36.50|         1398|  6.990e+04|       466|        -|        3|        no|          -|         -|            -|            -|    -|
+    |    + vel_der                                 |     -|   9.92|          464|  2.320e+04|         -|      464|        -|        no|          -|  37 (16%)|    3021 (2%)|    3359 (6%)|    -|
+    |     + vel_der_Pipeline_VITIS_LOOP_70_1       |     -|  30.24|            5|    250.000|         -|        5|        -|        no|          -|         -|    304 (~0%)|    180 (~0%)|    -|
+    |      o VITIS_LOOP_70_1                       |     -|  36.50|            3|    150.000|         1|        1|        3|       yes|          -|         -|            -|            -|    -|
+    |     + vel_der_Pipeline_sq_sum_loop           |     -|   9.92|            5|    250.000|         -|        5|        -|        no|          -|   16 (7%)|    206 (~0%)|    445 (~0%)|    -|
+    |      o sq_sum_loop                           |     -|  36.50|            3|    150.000|         1|        1|        3|       yes|          -|         -|            -|            -|    -|
+    |     + vel_der_Pipeline_sqrt_loop             |     -|  26.08|          103|  5.150e+03|         -|      103|        -|        no|          -|         -|    513 (~0%)|     590 (1%)|    -|
+    |      o sqrt_loop                             |     -|  36.50|          101|  5.050e+03|         1|        1|      101|       yes|          -|         -|            -|            -|    -|
+    |     + division                               |     -|  31.43|          223|  1.115e+04|         -|      223|        -|        no|          -|         -|    1163 (1%)|    1676 (3%)|    -|
+    |  + runge_kutta_45_Pipeline_VITIS_LOOP_179_2  |     -|   0.00|        12291|  6.146e+05|         -|    12291|        -|        no|          -|         -|    534 (~0%)|    2451 (4%)|    -|
+    |   o VITIS_LOOP_179_2                         |     -|  36.50|        12289|  6.144e+05|         3|        1|    12288|       yes|          -|         -|            -|            -|    -|
+    |  + runge_kutta_45_Pipeline_VITIS_LOOP_182_3  |     -|   0.00|         2051|  1.026e+05|         -|     2051|        -|        no|          -|         -|    532 (~0%)|    2446 (4%)|    -|
+    |   o VITIS_LOOP_182_3                         |     -|  36.50|         2049|  1.024e+05|         3|        1|     2048|       yes|          -|         -|            -|            -|    -|
+    |  + runge_kutta_45_Pipeline_sq_sum_loop       |     -|   9.30|            8|    400.000|         -|        8|        -|        no|          -|   16 (7%)|    208 (~0%)|    442 (~0%)|    -|
+    |   o sq_sum_loop                              |     -|  36.50|            6|    300.000|         2|        1|        6|       yes|          -|         -|            -|            -|    -|
+    |  + runge_kutta_45_Pipeline_sqrt_loop         |     -|  26.08|          103|  5.150e+03|         -|      103|        -|        no|          -|         -|    513 (~0%)|     590 (1%)|    -|
+    |   o sqrt_loop                                |     -|  36.50|          101|  5.050e+03|         1|        1|      101|       yes|          -|         -|            -|            -|    -|
+    |  + runge_kutta_45_Pipeline_update_1          |     -|  25.44|            8|    400.000|         -|        8|        -|        no|          -|         -|     20 (~0%)|    198 (~0%)|    -|
+    |   o update_1                                 |     -|  36.50|            6|    300.000|         2|        1|        6|       yes|          -|         -|            -|            -|    -|
+    |  + runge_kutta_45_Pipeline_update_2          |     -|  25.44|            8|    400.000|         -|        8|        -|        no|          -|         -|     20 (~0%)|    198 (~0%)|    -|
+    |   o update_2                                 |     -|  36.50|            6|    300.000|         2|        1|        6|       yes|          -|         -|            -|            -|    -|
+    |  o k_outer                                   |     -|  36.50|         7454|  3.727e+05|      1491|        -|        5|        no|          -|         -|            -|            -|    -|
+    |   o k_middle                                 |     -|  36.50|           47|  2.350e+03|         8|        -|        6|        no|          -|         -|            -|            -|    -|
+    |    + multiply                                |     -|  20.69|            0|      0.000|         -|        0|        -|        no|          -|   16 (7%)|            -|    167 (~0%)|    -|
+    |    o k_inner                                 |     -|  36.50|            5|    250.000|         2|        1|        5|       yes|          -|         -|            -|            -|    -|
+    |     + macply                                 |    II|  14.40|            0|      0.000|         -|        1|        -|       yes|          -|   15 (6%)|            -|    334 (~0%)|    -|
+    |  o y_new_outer                               |     -|  36.50|           59|  2.950e+03|        10|        -|        6|        no|          -|         -|            -|            -|    -|
+    |   o y_new_inner                              |     -|  36.50|            7|    350.000|         2|        1|        7|       yes|          -|         -|            -|            -|    -|
+    |  o err_outer                                 |     -|  36.50|           59|  2.950e+03|        10|        -|        6|        no|          -|         -|            -|            -|    -|
+    |   o err_inner                                |     -|  36.50|            7|    350.000|         2|        1|        7|       yes|          -|         -|            -|            -|    -|
+    +----------------------------------------------+------+-------+-------------+-----------+----------+---------+---------+----------+-----------+----------+-------------+-------------+-----+
 
 
 ================================================================
@@ -87,7 +89,7 @@
 +---------------+------------+---------------+--------+----------+
 | Interface     | Data Width | Address Width | Offset | Register |
 +---------------+------------+---------------+--------+----------+
-| s_axi_control | 32         | 7             | 16     | 0        |
+| s_axi_control | 32         | 8             | 16     | 0        |
 +---------------+------------+---------------+--------+----------+
 
 * S_AXILITE Registers
@@ -116,6 +118,8 @@
 | s_axi_control | mu_2      | 0x68   | 32    | W      | Data signal of mu                |                                                                      |
 | s_axi_control | size      | 0x70   | 32    | R      | Data signal of size              |                                                                      |
 | s_axi_control | size_ctrl | 0x74   | 32    | R      | Control signal of size           | 0=size_ap_vld                                                        |
+| s_axi_control | flag      | 0x80   | 32    | R      | Data signal of flag              |                                                                      |
+| s_axi_control | flag_ctrl | 0x84   | 32    | R      | Control signal of flag           | 0=flag_ap_vld                                                        |
 +---------------+-----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
 
 * TOP LEVEL CONTROL
@@ -145,6 +149,7 @@
 | h_min    | in        | double const  |
 | mu       | in        | double const  |
 | size     | out       | unsigned int& |
+| flag     | out       | bool&         |
 +----------+-----------+---------------+
 
 * SW-to-HW Mapping
@@ -171,6 +176,8 @@
 | mu       | s_axi_control | register  |          | name=mu_2 offset=0x68 range=32      |
 | size     | s_axi_control | register  |          | name=size offset=0x70 range=32      |
 | size     | s_axi_control | register  |          | name=size_ctrl offset=0x74 range=32 |
+| flag     | s_axi_control | register  |          | name=flag offset=0x80 range=32      |
+| flag     | s_axi_control | register  |          | name=flag_ctrl offset=0x84 range=32 |
 +----------+---------------+-----------+----------+-------------------------------------+
 
 
@@ -183,15 +190,15 @@
 +--------------+-----------+--------+-------+-------------------------------+
 | HW Interface | Direction | Length | Width | Location                      |
 +--------------+-----------+--------+-------+-------------------------------+
-| m_axi_X_BUS  | write     | 1536   | 512   | src/runge_kutta_45.cpp:177:31 |
-| m_axi_T_BUS  | write     | 256    | 512   | src/runge_kutta_45.cpp:180:31 |
+| m_axi_X_BUS  | write     | 1536   | 512   | src/runge_kutta_45.cpp:179:31 |
+| m_axi_T_BUS  | write     | 256    | 512   | src/runge_kutta_45.cpp:182:31 |
 +--------------+-----------+--------+-------+-------------------------------+
 
 * Inferred Bursts and Widening Missed
 +--------------+----------+-------------+------------------------------------------------+------------+-------------------------------+
 | HW Interface | Variable | Loop        | Problem                                        | Resolution | Location                      |
 +--------------+----------+-------------+------------------------------------------------+------------+-------------------------------+
-| m_axi_T_BUS  | tt       | last_copy_t | Sequential access length is not divisible by 2 | 214-234    | src/runge_kutta_45.cpp:279:17 |
+| m_axi_T_BUS  | tt       | last_copy_t | Sequential access length is not divisible by 2 | 214-234    | src/runge_kutta_45.cpp:291:17 |
 +--------------+----------+-------------+------------------------------------------------+------------+-------------------------------+
 
     * Resolution URL: www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=XXX-YYY.html (replace XXX-YYY with column value)
@@ -199,162 +206,169 @@
 ================================================================
 == Bind Op Report
 ================================================================
-+----------------------------------------------------+-----+--------+---------------+-----+--------+---------+
-| Name                                               | DSP | Pragma | Variable      | Op  | Impl   | Latency |
-+----------------------------------------------------+-----+--------+---------------+-----+--------+---------+
-| + runge_kutta_45                                   | 92  |        |               |     |        |         |
-|   man_V_2_fu_1159_p2                               | -   |        | man_V_2       | sub | fabric | 0       |
-|   F2_fu_1179_p2                                    | -   |        | F2            | sub | fabric | 0       |
-|   add_ln616_fu_1191_p2                             | -   |        | add_ln616     | add | fabric | 0       |
-|   sub_ln616_fu_1197_p2                             | -   |        | sub_ln616     | sub | fabric | 0       |
-|   man_V_6_fu_1432_p2                               | -   |        | man_V_6       | sub | fabric | 0       |
-|   F2_1_fu_1452_p2                                  | -   |        | F2_1          | sub | fabric | 0       |
-|   add_ln616_1_fu_1464_p2                           | -   |        | add_ln616_1   | add | fabric | 0       |
-|   sub_ln616_1_fu_1470_p2                           | -   |        | sub_ln616_1   | sub | fabric | 0       |
-|   man_V_7_fu_1705_p2                               | -   |        | man_V_7       | sub | fabric | 0       |
-|   F2_2_fu_1725_p2                                  | -   |        | F2_2          | sub | fabric | 0       |
-|   add_ln616_2_fu_1737_p2                           | -   |        | add_ln616_2   | add | fabric | 0       |
-|   sub_ln616_2_fu_1743_p2                           | -   |        | sub_ln616_2   | sub | fabric | 0       |
-|   add_ln189_fu_1994_p2                             | -   |        | add_ln189     | add | fabric | 0       |
-|   y_gap_1_fu_2024_p2                               | -   |        | y_gap_1       | sub | fabric | 0       |
-|   add_ln177_fu_2042_p2                             | -   |        | add_ln177     | add | fabric | 0       |
-|   add_ln180_fu_2069_p2                             | -   |        | add_ln180     | add | fabric | 0       |
-|   cycles_1_fu_2104_p2                              | -   |        | cycles_1      | add | fabric | 0       |
-|   ret_V_fu_2118_p2                                 | -   |        | ret_V         | add | fabric | 0       |
-|   h_loc_fu_2129_p2                                 | -   |        | h_loc         | sub | fabric | 0       |
-|   add_ln209_fu_2170_p2                             | -   |        | add_ln209     | add | fabric | 0       |
-|   n_fu_2182_p2                                     | -   |        | n             | add | fabric | 0       |
-|   add_ln209_1_fu_2192_p2                           | -   |        | add_ln209_1   | add | fabric | 0       |
-|   j_fu_2243_p2                                     | -   |        | j             | add | fabric | 0       |
-|   i_fu_2271_p2                                     | -   |        | i             | add | fabric | 0       |
-|   n_2_fu_2283_p2                                   | -   |        | n_2           | add | fabric | 0       |
-|   j_1_fu_2335_p2                                   | -   |        | j_1           | add | fabric | 0       |
-|   n_3_fu_2371_p2                                   | -   |        | n_3           | add | fabric | 0       |
-|   j_2_fu_2440_p2                                   | -   |        | j_2           | add | fabric | 0       |
-|   sub_ln254_fu_2510_p2                             | -   |        | sub_ln254     | sub | fabric | 0       |
-|   add_ln859_fu_2517_p2                             | -   |        | add_ln859     | add | fabric | 0       |
-|   mul_61ns_80s_140_1_1_U97                         | 11  |        | r_V_5         | mul | auto   | 0       |
-|   sub_ln859_fu_2552_p2                             | -   |        | sub_ln859     | sub | fabric | 0       |
-|   y_gap_fu_2642_p2                                 | -   |        | y_gap         | sub | fabric | 0       |
-|   add382_fu_2682_p2                                | -   |        | add382        | add | fabric | 0       |
-|   size                                             | -   |        | add_ln282     | add | fabric | 0       |
-|  + ap_fixed_base (grp_ap_fixed_base_fu_989)        | 0   |        |               |     |        |         |
-|    man_V_11_fu_88_p2                               | -   |        | man_V_11      | sub | fabric | 0       |
-|    F2_fu_108_p2                                    | -   |        | F2            | sub | fabric | 0       |
-|    add_ln616_fu_120_p2                             | -   |        | add_ln616     | add | fabric | 0       |
-|    sub_ln616_fu_126_p2                             | -   |        | sub_ln616     | sub | fabric | 0       |
-|  + ap_fixed_base (atol_loc_V_ap_fixed_base_fu_994) | 0   |        |               |     |        |         |
-|    man_V_11_fu_88_p2                               | -   |        | man_V_11      | sub | fabric | 0       |
-|    F2_fu_108_p2                                    | -   |        | F2            | sub | fabric | 0       |
-|    add_ln616_fu_120_p2                             | -   |        | add_ln616     | add | fabric | 0       |
-|    sub_ln616_fu_126_p2                             | -   |        | sub_ln616     | sub | fabric | 0       |
-|  + ap_fixed_base (tf_loc_V_ap_fixed_base_fu_999)   | 0   |        |               |     |        |         |
-|    man_V_11_fu_88_p2                               | -   |        | man_V_11      | sub | fabric | 0       |
-|    F2_fu_108_p2                                    | -   |        | F2            | sub | fabric | 0       |
-|    add_ln616_fu_120_p2                             | -   |        | add_ln616     | add | fabric | 0       |
-|    sub_ln616_fu_126_p2                             | -   |        | sub_ln616     | sub | fabric | 0       |
-|  + runge_kutta_45_Pipeline_VITIS_LOOP_160_1        | 0   |        |               |     |        |         |
-|    add_ln160_fu_161_p2                             | -   |        | add_ln160     | add | fabric | 0       |
-|    add_ln161_fu_193_p2                             | -   |        | add_ln161     | add | fabric | 0       |
-|    add_ln161_1_fu_209_p2                           | -   |        | add_ln161_1   | add | fabric | 0       |
-|   + ap_fixed_base (ref_tmp1_ap_fixed_base_fu_136)  | 0   |        |               |     |        |         |
-|     man_V_11_fu_88_p2                              | -   |        | man_V_11      | sub | fabric | 0       |
-|     F2_fu_108_p2                                   | -   |        | F2            | sub | fabric | 0       |
-|     add_ln616_fu_120_p2                            | -   |        | add_ln616     | add | fabric | 0       |
-|     sub_ln616_fu_126_p2                            | -   |        | sub_ln616     | sub | fabric | 0       |
-|  + runge_kutta_45_Pipeline_VITIS_LOOP_177_2        | 0   |        |               |     |        |         |
-|    add_ln177_fu_184_p2                             | -   |        | add_ln177     | add | fabric | 0       |
-|    tmp_V_fu_229_p2                                 | -   |        | tmp_V         | sub | fabric | 0       |
-|    NZeros_10_fu_295_p2                             | -   |        | NZeros_10     | add | fabric | 0       |
-|    sub_ln1095_fu_309_p2                            | -   |        | sub_ln1095    | sub | fabric | 0       |
-|    lsb_index_fu_315_p2                             | -   |        | lsb_index     | add | fabric | 0       |
-|    sub_ln1098_fu_341_p2                            | -   |        | sub_ln1098    | sub | fabric | 0       |
-|    add_ln1105_fu_423_p2                            | -   |        | add_ln1105    | add | fabric | 0       |
-|    sub_ln1106_fu_439_p2                            | -   |        | sub_ln1106    | sub | fabric | 0       |
-|    m_13_fu_475_p2                                  | -   |        | m_13          | add | fabric | 0       |
-|  + runge_kutta_45_Pipeline_VITIS_LOOP_180_3        | 0   |        |               |     |        |         |
-|    add_ln180_fu_184_p2                             | -   |        | add_ln180     | add | fabric | 0       |
-|    tmp_V_fu_229_p2                                 | -   |        | tmp_V         | sub | fabric | 0       |
-|    NZeros_7_fu_295_p2                              | -   |        | NZeros_7      | add | fabric | 0       |
-|    sub_ln1095_fu_309_p2                            | -   |        | sub_ln1095    | sub | fabric | 0       |
-|    lsb_index_fu_315_p2                             | -   |        | lsb_index     | add | fabric | 0       |
-|    sub_ln1098_fu_341_p2                            | -   |        | sub_ln1098    | sub | fabric | 0       |
-|    add_ln1105_fu_423_p2                            | -   |        | add_ln1105    | add | fabric | 0       |
-|    sub_ln1106_fu_439_p2                            | -   |        | sub_ln1106    | sub | fabric | 0       |
-|    m_9_fu_475_p2                                   | -   |        | m_9           | add | fabric | 0       |
-|  + ode_fpga                                        | 36  |        |               |     |        |         |
-|    empty_76_fu_264_p2                              | -   |        | empty_76      | sub | fabric | 0       |
-|    empty_77_fu_288_p2                              | -   |        | empty_77      | add | fabric | 0       |
-|    empty_78_fu_294_p2                              | -   |        | empty_78      | add | fabric | 0       |
-|    empty_79_fu_341_p2                              | -   |        | empty_79      | add | fabric | 0       |
-|    add_ptr_sum_fu_347_p2                           | -   |        | add_ptr_sum   | add | fabric | 0       |
-|    empty_80_fu_357_p2                              | -   |        | empty_80      | add | fabric | 0       |
-|    empty_81_fu_405_p2                              | -   |        | empty_81      | add | fabric | 0       |
-|    empty_82_fu_448_p2                              | -   |        | empty_82      | add | fabric | 0       |
-|    sum2_fu_454_p2                                  | -   |        | sum2          | add | fabric | 0       |
-|    add_ln101_fu_499_p2                             | -   |        | add_ln101     | add | fabric | 0       |
-|    r_out_V_0_fu_610_p2                             | -   |        | r_out_V_0     | add | fabric | 0       |
-|    empty_85_fu_563_p2                              | -   |        | empty_85      | sub | fabric | 0       |
-|   + vel_der                                        | 36  |        |               |     |        |         |
-|     r_V_3_fu_202_p1                                | -   |        | r_V_2         | sub | fabric | 0       |
-|     mul_140s_140s_140_1_1_U38                      | 21  |        | r_V_3         | mul | auto   | 0       |
-|    + vel_der_Pipeline_VITIS_LOOP_70_1              | 0   |        |               |     |        |         |
-|      add_ln70_fu_135_p2                            | -   |        | add_ln70      | add | fabric | 0       |
-|      r_in_V_1_4_fu_165_p2                          | -   |        | r_in_V_1_4    | add | fabric | 0       |
-|    + vel_der_Pipeline_sq_sum_loop                  | 15  |        |               |     |        |         |
-|      add_ln75_fu_92_p2                             | -   |        | add_ln75      | add | fabric | 0       |
-|      mul_80s_80s_160_1_1_U25                       | 15  |        | r_V_1         | mul | auto   | 0       |
-|      p_Val2_s_fu_124_p2                            | -   |        | p_Val2_s      | add | fabric | 0       |
-|    + vel_der_Pipeline_sqrt_loop                    | 0   |        |               |     |        |         |
-|      i_2_fu_122_p2                                 | -   |        | i_2           | add | fabric | 0       |
-|      T_V_fu_177_p2                                 | -   |        | T_V           | sub | fabric | 0       |
-|   + ode_fpga_Pipeline_1                            | 0   |        |               |     |        |         |
-|     empty_73_fu_93_p2                              | -   |        | empty_73      | add | fabric | 0       |
-|     empty_74_fu_116_p2                             | -   |        | empty_74      | add | fabric | 0       |
-|   + ode_fpga_Pipeline_2                            | 0   |        |               |     |        |         |
-|     empty_71_fu_95_p2                              | -   |        | empty_71      | add | fabric | 0       |
-|     add_ptr53_sum_fu_118_p2                        | -   |        | add_ptr53_sum | add | fabric | 0       |
-|     empty_72_fu_128_p2                             | -   |        | empty_72      | add | fabric | 0       |
-|  + macply                                          | 15  |        |               |     |        |         |
-|    mul_80s_80s_140_1_1_U68                         | 15  |        | r_V           | mul | auto   | 0       |
-|    ret_V_fu_58_p2                                  | -   |        | ret_V         | add | fabric | 0       |
-|  + multiply                                        | 15  |        |               |     |        |         |
-|    mul_80s_80s_160_1_1_U73                         | 15  |        | r_V           | mul | auto   | 0       |
-|  + runge_kutta_45_Pipeline_sq_sum_loop             | 15  |        |               |     |        |         |
-|    add_ln244_fu_81_p2                              | -   |        | add_ln244     | add | fabric | 0       |
-|    mul_80s_80s_160_1_1_U76                         | 15  |        | r_V_4         | mul | auto   | 0       |
-|    p_Val2_s_fu_114_p2                              | -   |        | p_Val2_s      | add | fabric | 0       |
-|  + runge_kutta_45_Pipeline_sqrt_loop               | 0   |        |               |     |        |         |
-|    i_4_fu_118_p2                                   | -   |        | i_4           | add | fabric | 0       |
-|    T_V_fu_173_p2                                   | -   |        | T_V           | sub | fabric | 0       |
-|  + runge_kutta_45_Pipeline_update                  | 0   |        |               |     |        |         |
-|    add_ln253_fu_104_p2                             | -   |        | add_ln253     | add | fabric | 0       |
-|    add_ln859_fu_119_p2                             | -   |        | add_ln859     | add | fabric | 0       |
-|    add_ln254_fu_130_p2                             | -   |        | add_ln254     | add | fabric | 0       |
-|    yy_loc_V_d0                                     | -   |        | add_ln859_1   | add | fabric | 0       |
-|  + runge_kutta_45_Pipeline_last_copy_y             | 0   |        |               |     |        |         |
-|    add_ln276_fu_221_p2                             | -   |        | add_ln276     | add | fabric | 0       |
-|    tmp_V_fu_312_p2                                 | -   |        | tmp_V         | sub | fabric | 0       |
-|    NZeros_1_fu_378_p2                              | -   |        | NZeros_1      | add | fabric | 0       |
-|    sub_ln1095_fu_392_p2                            | -   |        | sub_ln1095    | sub | fabric | 0       |
-|    lsb_index_fu_398_p2                             | -   |        | lsb_index     | add | fabric | 0       |
-|    sub_ln1098_fu_424_p2                            | -   |        | sub_ln1098    | sub | fabric | 0       |
-|    add_ln1105_fu_506_p2                            | -   |        | add_ln1105    | add | fabric | 0       |
-|    sub_ln1106_fu_522_p2                            | -   |        | sub_ln1106    | sub | fabric | 0       |
-|    m_1_fu_558_p2                                   | -   |        | m_1           | add | fabric | 0       |
-|    add_ln277_1_fu_657_p2                           | -   |        | add_ln277_1   | add | fabric | 0       |
-|  + runge_kutta_45_Pipeline_last_copy_t             | 0   |        |               |     |        |         |
-|    add_ln279_fu_204_p2                             | -   |        | add_ln279     | add | fabric | 0       |
-|    tmp_V_fu_272_p2                                 | -   |        | tmp_V         | sub | fabric | 0       |
-|    NZeros_4_fu_338_p2                              | -   |        | NZeros_4      | add | fabric | 0       |
-|    sub_ln1095_fu_352_p2                            | -   |        | sub_ln1095    | sub | fabric | 0       |
-|    lsb_index_fu_358_p2                             | -   |        | lsb_index     | add | fabric | 0       |
-|    sub_ln1098_fu_384_p2                            | -   |        | sub_ln1098    | sub | fabric | 0       |
-|    add_ln1105_fu_466_p2                            | -   |        | add_ln1105    | add | fabric | 0       |
-|    sub_ln1106_fu_482_p2                            | -   |        | sub_ln1106    | sub | fabric | 0       |
-|    m_5_fu_518_p2                                   | -   |        | m_5           | add | fabric | 0       |
-|    add_ln280_1_fu_609_p2                           | -   |        | add_ln280_1   | add | fabric | 0       |
-+----------------------------------------------------+-----+--------+---------------+-----+--------+---------+
++-----------------------------------------------------+-----+--------+---------------+-----+--------+---------+
+| Name                                                | DSP | Pragma | Variable      | Op  | Impl   | Latency |
++-----------------------------------------------------+-----+--------+---------------+-----+--------+---------+
+| + runge_kutta_45                                    | 96  |        |               |     |        |         |
+|   man_V_2_fu_1247_p2                                | -   |        | man_V_2       | sub | fabric | 0       |
+|   F2_fu_1267_p2                                     | -   |        | F2            | sub | fabric | 0       |
+|   add_ln616_fu_1279_p2                              | -   |        | add_ln616     | add | fabric | 0       |
+|   sub_ln616_fu_1285_p2                              | -   |        | sub_ln616     | sub | fabric | 0       |
+|   man_V_6_fu_1520_p2                                | -   |        | man_V_6       | sub | fabric | 0       |
+|   F2_1_fu_1540_p2                                   | -   |        | F2_1          | sub | fabric | 0       |
+|   add_ln616_1_fu_1552_p2                            | -   |        | add_ln616_1   | add | fabric | 0       |
+|   sub_ln616_1_fu_1558_p2                            | -   |        | sub_ln616_1   | sub | fabric | 0       |
+|   man_V_7_fu_1793_p2                                | -   |        | man_V_7       | sub | fabric | 0       |
+|   F2_2_fu_1813_p2                                   | -   |        | F2_2          | sub | fabric | 0       |
+|   add_ln616_2_fu_1825_p2                            | -   |        | add_ln616_2   | add | fabric | 0       |
+|   sub_ln616_2_fu_1831_p2                            | -   |        | sub_ln616_2   | sub | fabric | 0       |
+|   add_ln191_fu_2082_p2                              | -   |        | add_ln191     | add | fabric | 0       |
+|   y_gap_1_fu_2112_p2                                | -   |        | y_gap_1       | sub | fabric | 0       |
+|   add_ln179_fu_2130_p2                              | -   |        | add_ln179     | add | fabric | 0       |
+|   add_ln182_fu_2157_p2                              | -   |        | add_ln182     | add | fabric | 0       |
+|   cycles_1_fu_2192_p2                               | -   |        | cycles_1      | add | fabric | 0       |
+|   ret_V_fu_2206_p2                                  | -   |        | ret_V         | add | fabric | 0       |
+|   h_loc_fu_2217_p2                                  | -   |        | h_loc         | sub | fabric | 0       |
+|   add_ln211_fu_2258_p2                              | -   |        | add_ln211     | add | fabric | 0       |
+|   n_fu_2270_p2                                      | -   |        | n             | add | fabric | 0       |
+|   add_ln211_1_fu_2280_p2                            | -   |        | add_ln211_1   | add | fabric | 0       |
+|   j_fu_2331_p2                                      | -   |        | j             | add | fabric | 0       |
+|   i_fu_2359_p2                                      | -   |        | i             | add | fabric | 0       |
+|   n_3_fu_2371_p2                                    | -   |        | n_3           | add | fabric | 0       |
+|   j_1_fu_2423_p2                                    | -   |        | j_1           | add | fabric | 0       |
+|   n_4_fu_2459_p2                                    | -   |        | n_4           | add | fabric | 0       |
+|   j_2_fu_2528_p2                                    | -   |        | j_2           | add | fabric | 0       |
+|   sub_ln256_fu_2598_p2                              | -   |        | sub_ln256     | sub | fabric | 0       |
+|   grp_fu_1168_p2                                    | -   |        | add_ln859     | add | fabric | 0       |
+|   sub_ln266_fu_2628_p2                              | -   |        | sub_ln266     | sub | fabric | 0       |
+|   grp_fu_1168_p2                                    | -   |        | add_ln859_3   | add | fabric | 0       |
+|   mul_61ns_100s_160_1_1_U101                        | 12  |        | r_V_5         | mul | auto   | 0       |
+|   sub_ln859_fu_2664_p2                              | -   |        | sub_ln859     | sub | fabric | 0       |
+|   y_gap_fu_2754_p2                                  | -   |        | y_gap         | sub | fabric | 0       |
+|   add413_fu_2794_p2                                 | -   |        | add413        | add | fabric | 0       |
+|   size                                              | -   |        | add_ln294     | add | fabric | 0       |
+|  + ap_fixed_base (grp_ap_fixed_base_fu_1062)        | 0   |        |               |     |        |         |
+|    man_V_11_fu_88_p2                                | -   |        | man_V_11      | sub | fabric | 0       |
+|    F2_fu_108_p2                                     | -   |        | F2            | sub | fabric | 0       |
+|    add_ln616_fu_120_p2                              | -   |        | add_ln616     | add | fabric | 0       |
+|    sub_ln616_fu_126_p2                              | -   |        | sub_ln616     | sub | fabric | 0       |
+|  + ap_fixed_base (atol_loc_V_ap_fixed_base_fu_1067) | 0   |        |               |     |        |         |
+|    man_V_11_fu_88_p2                                | -   |        | man_V_11      | sub | fabric | 0       |
+|    F2_fu_108_p2                                     | -   |        | F2            | sub | fabric | 0       |
+|    add_ln616_fu_120_p2                              | -   |        | add_ln616     | add | fabric | 0       |
+|    sub_ln616_fu_126_p2                              | -   |        | sub_ln616     | sub | fabric | 0       |
+|  + ap_fixed_base (tf_loc_V_ap_fixed_base_fu_1072)   | 0   |        |               |     |        |         |
+|    man_V_11_fu_88_p2                                | -   |        | man_V_11      | sub | fabric | 0       |
+|    F2_fu_108_p2                                     | -   |        | F2            | sub | fabric | 0       |
+|    add_ln616_fu_120_p2                              | -   |        | add_ln616     | add | fabric | 0       |
+|    sub_ln616_fu_126_p2                              | -   |        | sub_ln616     | sub | fabric | 0       |
+|  + runge_kutta_45_Pipeline_VITIS_LOOP_161_1         | 0   |        |               |     |        |         |
+|    add_ln161_fu_161_p2                              | -   |        | add_ln161     | add | fabric | 0       |
+|    add_ln162_fu_193_p2                              | -   |        | add_ln162     | add | fabric | 0       |
+|    add_ln162_1_fu_209_p2                            | -   |        | add_ln162_1   | add | fabric | 0       |
+|   + ap_fixed_base (ref_tmp1_ap_fixed_base_fu_136)   | 0   |        |               |     |        |         |
+|     man_V_11_fu_88_p2                               | -   |        | man_V_11      | sub | fabric | 0       |
+|     F2_fu_108_p2                                    | -   |        | F2            | sub | fabric | 0       |
+|     add_ln616_fu_120_p2                             | -   |        | add_ln616     | add | fabric | 0       |
+|     sub_ln616_fu_126_p2                             | -   |        | sub_ln616     | sub | fabric | 0       |
+|  + runge_kutta_45_Pipeline_VITIS_LOOP_179_2         | 0   |        |               |     |        |         |
+|    add_ln179_fu_186_p2                              | -   |        | add_ln179     | add | fabric | 0       |
+|    tmp_V_fu_231_p2                                  | -   |        | tmp_V         | sub | fabric | 0       |
+|    NZeros_10_fu_297_p2                              | -   |        | NZeros_10     | add | fabric | 0       |
+|    sub_ln1095_fu_311_p2                             | -   |        | sub_ln1095    | sub | fabric | 0       |
+|    lsb_index_fu_317_p2                              | -   |        | lsb_index     | add | fabric | 0       |
+|    sub_ln1098_fu_343_p2                             | -   |        | sub_ln1098    | sub | fabric | 0       |
+|    add_ln1105_fu_425_p2                             | -   |        | add_ln1105    | add | fabric | 0       |
+|    sub_ln1106_fu_441_p2                             | -   |        | sub_ln1106    | sub | fabric | 0       |
+|    m_13_fu_477_p2                                   | -   |        | m_13          | add | fabric | 0       |
+|  + runge_kutta_45_Pipeline_VITIS_LOOP_182_3         | 0   |        |               |     |        |         |
+|    add_ln182_fu_186_p2                              | -   |        | add_ln182     | add | fabric | 0       |
+|    tmp_V_fu_231_p2                                  | -   |        | tmp_V         | sub | fabric | 0       |
+|    NZeros_7_fu_297_p2                               | -   |        | NZeros_7      | add | fabric | 0       |
+|    sub_ln1095_fu_311_p2                             | -   |        | sub_ln1095    | sub | fabric | 0       |
+|    lsb_index_fu_317_p2                              | -   |        | lsb_index     | add | fabric | 0       |
+|    sub_ln1098_fu_343_p2                             | -   |        | sub_ln1098    | sub | fabric | 0       |
+|    add_ln1105_fu_425_p2                             | -   |        | add_ln1105    | add | fabric | 0       |
+|    sub_ln1106_fu_441_p2                             | -   |        | sub_ln1106    | sub | fabric | 0       |
+|    m_9_fu_477_p2                                    | -   |        | m_9           | add | fabric | 0       |
+|  + ode_fpga                                         | 37  |        |               |     |        |         |
+|    empty_78_fu_264_p2                               | -   |        | empty_78      | sub | fabric | 0       |
+|    empty_79_fu_288_p2                               | -   |        | empty_79      | add | fabric | 0       |
+|    empty_80_fu_294_p2                               | -   |        | empty_80      | add | fabric | 0       |
+|    empty_81_fu_341_p2                               | -   |        | empty_81      | add | fabric | 0       |
+|    add_ptr_sum_fu_347_p2                            | -   |        | add_ptr_sum   | add | fabric | 0       |
+|    empty_82_fu_357_p2                               | -   |        | empty_82      | add | fabric | 0       |
+|    empty_83_fu_405_p2                               | -   |        | empty_83      | add | fabric | 0       |
+|    empty_84_fu_448_p2                               | -   |        | empty_84      | add | fabric | 0       |
+|    sum2_fu_454_p2                                   | -   |        | sum2          | add | fabric | 0       |
+|    add_ln101_fu_499_p2                              | -   |        | add_ln101     | add | fabric | 0       |
+|    r_out_V_0_fu_610_p2                              | -   |        | r_out_V_0     | add | fabric | 0       |
+|    empty_87_fu_563_p2                               | -   |        | empty_87      | sub | fabric | 0       |
+|   + vel_der                                         | 37  |        |               |     |        |         |
+|     grp_fu_207_p1                                   | -   |        | r_V_2         | sub | fabric | 0       |
+|     mul_160s_160s_160_2_1_U38                       | 21  |        | r_V_3         | mul | auto   | 1       |
+|    + vel_der_Pipeline_VITIS_LOOP_70_1               | 0   |        |               |     |        |         |
+|      add_ln70_fu_135_p2                             | -   |        | add_ln70      | add | fabric | 0       |
+|      r_in_V_1_4_fu_165_p2                           | -   |        | r_in_V_1_4    | add | fabric | 0       |
+|    + vel_der_Pipeline_sq_sum_loop                   | 16  |        |               |     |        |         |
+|      add_ln75_fu_92_p2                              | -   |        | add_ln75      | add | fabric | 0       |
+|      mul_100s_100s_200_1_1_U25                      | 16  |        | r_V_1         | mul | auto   | 0       |
+|      p_Val2_s_fu_124_p2                             | -   |        | p_Val2_s      | add | fabric | 0       |
+|    + vel_der_Pipeline_sqrt_loop                     | 0   |        |               |     |        |         |
+|      i_2_fu_122_p2                                  | -   |        | i_2           | add | fabric | 0       |
+|      T_V_fu_177_p2                                  | -   |        | T_V           | sub | fabric | 0       |
+|   + ode_fpga_Pipeline_1                             | 0   |        |               |     |        |         |
+|     empty_75_fu_93_p2                               | -   |        | empty_75      | add | fabric | 0       |
+|     empty_76_fu_116_p2                              | -   |        | empty_76      | add | fabric | 0       |
+|   + ode_fpga_Pipeline_2                             | 0   |        |               |     |        |         |
+|     empty_73_fu_95_p2                               | -   |        | empty_73      | add | fabric | 0       |
+|     add_ptr53_sum_fu_118_p2                         | -   |        | add_ptr53_sum | add | fabric | 0       |
+|     empty_74_fu_128_p2                              | -   |        | empty_74      | add | fabric | 0       |
+|  + macply                                           | 15  |        |               |     |        |         |
+|    mul_100s_100s_160_1_1_U68                        | 15  |        | r_V           | mul | auto   | 0       |
+|    ret_V_fu_58_p2                                   | -   |        | ret_V         | add | fabric | 0       |
+|  + multiply                                         | 16  |        |               |     |        |         |
+|    mul_100s_100s_200_1_1_U73                        | 16  |        | r_V           | mul | auto   | 0       |
+|  + runge_kutta_45_Pipeline_sq_sum_loop              | 16  |        |               |     |        |         |
+|    add_ln246_fu_81_p2                               | -   |        | add_ln246     | add | fabric | 0       |
+|    mul_100s_100s_200_1_1_U76                        | 16  |        | r_V_4         | mul | auto   | 0       |
+|    p_Val2_s_fu_114_p2                               | -   |        | p_Val2_s      | add | fabric | 0       |
+|  + runge_kutta_45_Pipeline_sqrt_loop                | 0   |        |               |     |        |         |
+|    i_4_fu_118_p2                                    | -   |        | i_4           | add | fabric | 0       |
+|    T_V_fu_173_p2                                    | -   |        | T_V           | sub | fabric | 0       |
+|  + runge_kutta_45_Pipeline_update_1                 | 0   |        |               |     |        |         |
+|    add_ln255_fu_104_p2                              | -   |        | add_ln255     | add | fabric | 0       |
+|    add_ln859_fu_119_p2                              | -   |        | add_ln859     | add | fabric | 0       |
+|    add_ln256_fu_130_p2                              | -   |        | add_ln256     | add | fabric | 0       |
+|    yy_loc_V_d0                                      | -   |        | add_ln859_2   | add | fabric | 0       |
+|  + runge_kutta_45_Pipeline_update_2                 | 0   |        |               |     |        |         |
+|    add_ln265_fu_104_p2                              | -   |        | add_ln265     | add | fabric | 0       |
+|    add_ln859_fu_119_p2                              | -   |        | add_ln859     | add | fabric | 0       |
+|    add_ln266_fu_130_p2                              | -   |        | add_ln266     | add | fabric | 0       |
+|    yy_loc_V_d0                                      | -   |        | add_ln859_1   | add | fabric | 0       |
+|  + runge_kutta_45_Pipeline_last_copy_y              | 0   |        |               |     |        |         |
+|    add_ln288_fu_223_p2                              | -   |        | add_ln288     | add | fabric | 0       |
+|    tmp_V_fu_308_p2                                  | -   |        | tmp_V         | sub | fabric | 0       |
+|    NZeros_1_fu_371_p2                               | -   |        | NZeros_1      | add | fabric | 0       |
+|    sub_ln1095_fu_385_p2                             | -   |        | sub_ln1095    | sub | fabric | 0       |
+|    lsb_index_fu_391_p2                              | -   |        | lsb_index     | add | fabric | 0       |
+|    sub_ln1098_fu_417_p2                             | -   |        | sub_ln1098    | sub | fabric | 0       |
+|    add_ln1105_fu_499_p2                             | -   |        | add_ln1105    | add | fabric | 0       |
+|    sub_ln1106_fu_515_p2                             | -   |        | sub_ln1106    | sub | fabric | 0       |
+|    m_1_fu_551_p2                                    | -   |        | m_1           | add | fabric | 0       |
+|    add_ln289_1_fu_649_p2                            | -   |        | add_ln289_1   | add | fabric | 0       |
+|  + runge_kutta_45_Pipeline_last_copy_t              | 0   |        |               |     |        |         |
+|    add_ln291_fu_206_p2                              | -   |        | add_ln291     | add | fabric | 0       |
+|    tmp_V_fu_274_p2                                  | -   |        | tmp_V         | sub | fabric | 0       |
+|    NZeros_4_fu_340_p2                               | -   |        | NZeros_4      | add | fabric | 0       |
+|    sub_ln1095_fu_354_p2                             | -   |        | sub_ln1095    | sub | fabric | 0       |
+|    lsb_index_fu_360_p2                              | -   |        | lsb_index     | add | fabric | 0       |
+|    sub_ln1098_fu_386_p2                             | -   |        | sub_ln1098    | sub | fabric | 0       |
+|    add_ln1105_fu_468_p2                             | -   |        | add_ln1105    | add | fabric | 0       |
+|    sub_ln1106_fu_484_p2                             | -   |        | sub_ln1106    | sub | fabric | 0       |
+|    m_5_fu_520_p2                                    | -   |        | m_5           | add | fabric | 0       |
+|    add_ln292_1_fu_611_p2                            | -   |        | add_ln292_1   | add | fabric | 0       |
++-----------------------------------------------------+-----+--------+---------------+-----+--------+---------+
 
 
 ================================================================
@@ -363,10 +377,10 @@
 +------------------+------+------+--------+----------+---------+------+---------+
 | Name             | BRAM | URAM | Pragma | Variable | Storage | Impl | Latency |
 +------------------+------+------+--------+----------+---------+------+---------+
-| + runge_kutta_45 | 94   | 0    |        |          |         |      |         |
+| + runge_kutta_45 | 117  | 0    |        |          |         |      |         |
 |   k_V_U          | 3    | -    |        | k_V      | ram_1p  | auto | 1       |
-|   yy_loc_V_U     | 80   | -    |        | yy_loc_V | ram_s2p | auto | 1       |
-|   tt_loc_V_U     | 9    | -    |        | tt_loc_V | ram_1p  | auto | 1       |
+|   yy_loc_V_U     | 100  | -    |        | yy_loc_V | ram_s2p | auto | 1       |
+|   tt_loc_V_U     | 12   | -    |        | tt_loc_V | ram_1p  | auto | 1       |
 |   c_V_U          | -    | -    |        | c_V      | ram_t2p | auto | 1       |
 |   e_V_U          | -    | -    |        | e_V      | ram_t2p | auto | 1       |
 |   A_U            | 2    | -    |        | A        | rom_1p  | auto | 1       |
@@ -413,12 +427,13 @@
 | interface      | s_axilite port=h_min                                               | src/runge_kutta_45.cpp:132 in runge_kutta_45, h_min  |
 | interface      | s_axilite port=mu                                                  | src/runge_kutta_45.cpp:133 in runge_kutta_45, mu     |
 | interface      | s_axilite port=size                                                | src/runge_kutta_45.cpp:134 in runge_kutta_45, size   |
-| interface      | s_axilite port=return                                              | src/runge_kutta_45.cpp:135 in runge_kutta_45, return |
-| loop_tripcount | max=1000000 avg=500                                                | src/runge_kutta_45.cpp:170 in runge_kutta_45         |
-| loop_tripcount | max=5                                                              | src/runge_kutta_45.cpp:206 in runge_kutta_45         |
-| pipeline       | rewind                                                             | src/runge_kutta_45.cpp:207 in runge_kutta_45         |
-| pipeline       | rewind                                                             | src/runge_kutta_45.cpp:223 in runge_kutta_45         |
-| pipeline       | rewind                                                             | src/runge_kutta_45.cpp:235 in runge_kutta_45         |
+| interface      | s_axilite port=flag                                                | src/runge_kutta_45.cpp:135 in runge_kutta_45, flag   |
+| interface      | s_axilite port=return                                              | src/runge_kutta_45.cpp:136 in runge_kutta_45, return |
+| loop_tripcount | max=1000000 avg=500                                                | src/runge_kutta_45.cpp:172 in runge_kutta_45         |
+| loop_tripcount | max=5                                                              | src/runge_kutta_45.cpp:208 in runge_kutta_45         |
+| pipeline       | rewind                                                             | src/runge_kutta_45.cpp:209 in runge_kutta_45         |
+| pipeline       | rewind                                                             | src/runge_kutta_45.cpp:225 in runge_kutta_45         |
+| pipeline       | rewind                                                             | src/runge_kutta_45.cpp:237 in runge_kutta_45         |
 +----------------+--------------------------------------------------------------------+------------------------------------------------------+
 
 

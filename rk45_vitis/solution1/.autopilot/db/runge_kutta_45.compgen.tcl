@@ -1,13 +1,13 @@
 # This script segment is generated automatically by AutoPilot
 
-set name runge_kutta_45_mul_61ns_80s_140_1_1
+set name runge_kutta_45_mul_61ns_100s_160_1_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 0 ALLOW_PRAGMA 1
 }
 
 
 # Memory (RAM/ROM)  definition:
-set ID 99
+set ID 103
 set hasByteEnable 0
 set MemName runge_kutta_45_A_ROM_AUTO_1R
 set CoreName ap_simcore_mem
@@ -86,7 +86,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 100
+set ID 104
 set hasByteEnable 0
 set MemName runge_kutta_45_B_ROM_AUTO_1R
 set CoreName ap_simcore_mem
@@ -165,7 +165,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 101
+set ID 105
 set hasByteEnable 0
 set MemName runge_kutta_45_E1_ROM_AUTO_1R
 set CoreName ap_simcore_mem
@@ -244,12 +244,12 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 102
+set ID 106
 set hasByteEnable 0
 set MemName runge_kutta_45_k_V_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
-set DataWd 80
+set DataWd 100
 set AddrRange 42
 set AddrWd 6
 set impl_style auto
@@ -323,12 +323,12 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 103
+set ID 107
 set hasByteEnable 0
 set MemName runge_kutta_45_yy_loc_V_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
 set PortList { 2 1 }
-set DataWd 80
+set DataWd 100
 set AddrRange 12288
 set AddrWd 14
 set impl_style auto
@@ -402,12 +402,12 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 104
+set ID 108
 set hasByteEnable 0
 set MemName runge_kutta_45_tt_loc_V_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
-set DataWd 80
+set DataWd 100
 set AddrRange 2048
 set AddrWd 11
 set impl_style auto
@@ -481,12 +481,12 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 105
+set ID 109
 set hasByteEnable 0
 set MemName runge_kutta_45_c_V_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
 set PortList { 2 0 }
-set DataWd 80
+set DataWd 100
 set AddrRange 6
 set AddrWd 3
 set impl_style auto
@@ -496,7 +496,7 @@ set ROMData { }
 set HasInitializer 0
 set Initializer $ROMData
 set NumOfStage 2
-set DelayBudget 2.3135
+set DelayBudget 2.30287
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
     eval "ap_gen_simcore_mem { \
@@ -560,12 +560,12 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 106
+set ID 110
 set hasByteEnable 0
 set MemName runge_kutta_45_e_V_RAM_AUTO_1R1W
 set CoreName ap_simcore_mem
 set PortList { 2 2 }
-set DataWd 80
+set DataWd 100
 set AddrRange 6
 set AddrWd 3
 set impl_style auto
@@ -575,7 +575,7 @@ set ROMData { }
 set HasInitializer 0
 set Initializer $ROMData
 set NumOfStage 2
-set DelayBudget 2.3135
+set DelayBudget 2.30287
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
     eval "ap_gen_simcore_mem { \
@@ -731,6 +731,14 @@ size {
 	offset 112
 	offset_end 119
 }
+flag { 
+	dir O
+	width 1
+	depth 1
+	mode ap_vld
+	offset 128
+	offset_end 135
+}
 ap_start { }
 ap_done { }
 ap_ready { }
@@ -745,7 +753,7 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 107 \
+			id 111 \
 			corename runge_kutta_45_control_axilite \
 			name runge_kutta_45_control_s_axi \
 			ports {$port_control} \

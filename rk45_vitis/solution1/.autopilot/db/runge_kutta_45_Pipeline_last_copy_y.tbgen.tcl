@@ -14,18 +14,18 @@ set C_modelName {runge_kutta_45_Pipeline_last_copy_y}
 set C_modelType { void 0 }
 set C_modelArgList {
 	{ X_BUS int 512 regular {axi_master 1}  }
-	{ mul366 int 32 regular  }
-	{ yy_loc_V int 80 regular {array 12288 { 1 3 } 1 1 }  }
+	{ mul397 int 32 regular  }
+	{ yy_loc_V int 100 regular {array 12288 { 1 3 } 1 1 }  }
 	{ yy int 64 regular  }
-	{ zext_ln276 int 35 regular  }
+	{ zext_ln288 int 35 regular  }
 	{ trunc_ln1 int 6 regular  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "X_BUS", "interface" : "axi_master", "bitwidth" : 512, "direction" : "WRITEONLY", "bitSlice":[ {"cElement": [{"cName": "yy","offset": { "type": "dynamic","port_name": "yy","bundle": "control"},"direction": "READWRITE"}]}]} , 
- 	{ "Name" : "mul366", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
- 	{ "Name" : "yy_loc_V", "interface" : "memory", "bitwidth" : 80, "direction" : "READONLY"} , 
+ 	{ "Name" : "mul397", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
+ 	{ "Name" : "yy_loc_V", "interface" : "memory", "bitwidth" : 100, "direction" : "READONLY"} , 
  	{ "Name" : "yy", "interface" : "wire", "bitwidth" : 64, "direction" : "READONLY"} , 
- 	{ "Name" : "zext_ln276", "interface" : "wire", "bitwidth" : 35, "direction" : "READONLY"} , 
+ 	{ "Name" : "zext_ln288", "interface" : "wire", "bitwidth" : 35, "direction" : "READONLY"} , 
  	{ "Name" : "trunc_ln1", "interface" : "wire", "bitwidth" : 6, "direction" : "READONLY"} ]}
 # RTL Port declarations: 
 set portNum 59
@@ -82,12 +82,12 @@ set portList {
 	{ m_axi_X_BUS_BRESP sc_in sc_lv 2 signal 0 } 
 	{ m_axi_X_BUS_BID sc_in sc_lv 1 signal 0 } 
 	{ m_axi_X_BUS_BUSER sc_in sc_lv 1 signal 0 } 
-	{ mul366 sc_in sc_lv 32 signal 1 } 
+	{ mul397 sc_in sc_lv 32 signal 1 } 
 	{ yy_loc_V_address0 sc_out sc_lv 14 signal 2 } 
 	{ yy_loc_V_ce0 sc_out sc_logic 1 signal 2 } 
-	{ yy_loc_V_q0 sc_in sc_lv 80 signal 2 } 
+	{ yy_loc_V_q0 sc_in sc_lv 100 signal 2 } 
 	{ yy sc_in sc_lv 64 signal 3 } 
-	{ zext_ln276 sc_in sc_lv 35 signal 4 } 
+	{ zext_ln288 sc_in sc_lv 35 signal 4 } 
 	{ trunc_ln1 sc_in sc_lv 6 signal 5 } 
 }
 set NewPortList {[ 
@@ -143,12 +143,12 @@ set NewPortList {[
  	{ "name": "m_axi_X_BUS_BRESP", "direction": "in", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "X_BUS", "role": "BRESP" }} , 
  	{ "name": "m_axi_X_BUS_BID", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "X_BUS", "role": "BID" }} , 
  	{ "name": "m_axi_X_BUS_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "X_BUS", "role": "BUSER" }} , 
- 	{ "name": "mul366", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "mul366", "role": "default" }} , 
+ 	{ "name": "mul397", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "mul397", "role": "default" }} , 
  	{ "name": "yy_loc_V_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":14, "type": "signal", "bundle":{"name": "yy_loc_V", "role": "address0" }} , 
  	{ "name": "yy_loc_V_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "yy_loc_V", "role": "ce0" }} , 
- 	{ "name": "yy_loc_V_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":80, "type": "signal", "bundle":{"name": "yy_loc_V", "role": "q0" }} , 
+ 	{ "name": "yy_loc_V_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":100, "type": "signal", "bundle":{"name": "yy_loc_V", "role": "q0" }} , 
  	{ "name": "yy", "direction": "in", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "yy", "role": "default" }} , 
- 	{ "name": "zext_ln276", "direction": "in", "datatype": "sc_lv", "bitwidth":35, "type": "signal", "bundle":{"name": "zext_ln276", "role": "default" }} , 
+ 	{ "name": "zext_ln288", "direction": "in", "datatype": "sc_lv", "bitwidth":35, "type": "signal", "bundle":{"name": "zext_ln288", "role": "default" }} , 
  	{ "name": "trunc_ln1", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "trunc_ln1", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
@@ -172,24 +172,24 @@ set RtlHierarchyInfo {[
 					{"Name" : "X_BUS_blk_n_AW", "Type" : "RtlSignal"},
 					{"Name" : "X_BUS_blk_n_W", "Type" : "RtlSignal"},
 					{"Name" : "X_BUS_blk_n_B", "Type" : "RtlSignal"}]},
-			{"Name" : "mul366", "Type" : "None", "Direction" : "I"},
+			{"Name" : "mul397", "Type" : "None", "Direction" : "I"},
 			{"Name" : "yy_loc_V", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "yy", "Type" : "None", "Direction" : "I"},
-			{"Name" : "zext_ln276", "Type" : "None", "Direction" : "I"},
+			{"Name" : "zext_ln288", "Type" : "None", "Direction" : "I"},
 			{"Name" : "trunc_ln1", "Type" : "None", "Direction" : "I"}],
 		"Loop" : [
 			{"Name" : "last_copy_y", "PipelineType" : "UPC",
-				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter7", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter7", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
+				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter8", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter8", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.flow_control_loop_pipe_sequential_init_U", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	runge_kutta_45_Pipeline_last_copy_y {
-		X_BUS {Type O LastRead 3 FirstWrite 2}
-		mul366 {Type I LastRead 0 FirstWrite -1}
+		X_BUS {Type O LastRead 4 FirstWrite 3}
+		mul397 {Type I LastRead 0 FirstWrite -1}
 		yy_loc_V {Type I LastRead 0 FirstWrite -1}
 		yy {Type I LastRead 0 FirstWrite -1}
-		zext_ln276 {Type I LastRead 0 FirstWrite -1}
+		zext_ln288 {Type I LastRead 0 FirstWrite -1}
 		trunc_ln1 {Type I LastRead 0 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
@@ -205,9 +205,9 @@ set PipelineEnableSignalInfo {[
 
 set Spec2ImplPortList { 
 	 { m_axi {  { m_axi_X_BUS_AWVALID VALID 1 1 }  { m_axi_X_BUS_AWREADY READY 0 1 }  { m_axi_X_BUS_AWADDR ADDR 1 64 }  { m_axi_X_BUS_AWID ID 1 1 }  { m_axi_X_BUS_AWLEN SIZE 1 32 }  { m_axi_X_BUS_AWSIZE BURST 1 3 }  { m_axi_X_BUS_AWBURST LOCK 1 2 }  { m_axi_X_BUS_AWLOCK CACHE 1 2 }  { m_axi_X_BUS_AWCACHE PROT 1 4 }  { m_axi_X_BUS_AWPROT QOS 1 3 }  { m_axi_X_BUS_AWQOS REGION 1 4 }  { m_axi_X_BUS_AWREGION USER 1 4 }  { m_axi_X_BUS_AWUSER DATA 1 1 }  { m_axi_X_BUS_WVALID VALID 1 1 }  { m_axi_X_BUS_WREADY READY 0 1 }  { m_axi_X_BUS_WDATA FIFONUM 1 512 }  { m_axi_X_BUS_WSTRB STRB 1 64 }  { m_axi_X_BUS_WLAST LAST 1 1 }  { m_axi_X_BUS_WID ID 1 1 }  { m_axi_X_BUS_WUSER DATA 1 1 }  { m_axi_X_BUS_ARVALID VALID 1 1 }  { m_axi_X_BUS_ARREADY READY 0 1 }  { m_axi_X_BUS_ARADDR ADDR 1 64 }  { m_axi_X_BUS_ARID ID 1 1 }  { m_axi_X_BUS_ARLEN SIZE 1 32 }  { m_axi_X_BUS_ARSIZE BURST 1 3 }  { m_axi_X_BUS_ARBURST LOCK 1 2 }  { m_axi_X_BUS_ARLOCK CACHE 1 2 }  { m_axi_X_BUS_ARCACHE PROT 1 4 }  { m_axi_X_BUS_ARPROT QOS 1 3 }  { m_axi_X_BUS_ARQOS REGION 1 4 }  { m_axi_X_BUS_ARREGION USER 1 4 }  { m_axi_X_BUS_ARUSER DATA 1 1 }  { m_axi_X_BUS_RVALID VALID 0 1 }  { m_axi_X_BUS_RREADY READY 1 1 }  { m_axi_X_BUS_RDATA FIFONUM 0 512 }  { m_axi_X_BUS_RLAST LAST 0 1 }  { m_axi_X_BUS_RID ID 0 1 }  { m_axi_X_BUS_RFIFONUM LEN 0 9 }  { m_axi_X_BUS_RUSER DATA 0 1 }  { m_axi_X_BUS_RRESP RESP 0 2 }  { m_axi_X_BUS_BVALID VALID 0 1 }  { m_axi_X_BUS_BREADY READY 1 1 }  { m_axi_X_BUS_BRESP RESP 0 2 }  { m_axi_X_BUS_BID ID 0 1 }  { m_axi_X_BUS_BUSER DATA 0 1 } } }
-	mul366 { ap_none {  { mul366 in_data 0 32 } } }
-	yy_loc_V { ap_memory {  { yy_loc_V_address0 mem_address 1 14 }  { yy_loc_V_ce0 mem_ce 1 1 }  { yy_loc_V_q0 in_data 0 80 } } }
+	mul397 { ap_none {  { mul397 in_data 0 32 } } }
+	yy_loc_V { ap_memory {  { yy_loc_V_address0 mem_address 1 14 }  { yy_loc_V_ce0 mem_ce 1 1 }  { yy_loc_V_q0 in_data 0 100 } } }
 	yy { ap_none {  { yy in_data 0 64 } } }
-	zext_ln276 { ap_none {  { zext_ln276 in_data 0 35 } } }
+	zext_ln288 { ap_none {  { zext_ln288 in_data 0 35 } } }
 	trunc_ln1 { ap_none {  { trunc_ln1 in_data 0 6 } } }
 }

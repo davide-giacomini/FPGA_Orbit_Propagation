@@ -299,7 +299,7 @@ entry_ifconv:17 %icmp_ln617 = icmp_eq  i12 %F2, i12 60
 </and_exp></or_exp>
 </condition>
 
-<Node id="20" bw="80" op_0_bw="54">
+<Node id="20" bw="100" op_0_bw="54">
 <![CDATA[
 entry_ifconv:18 %sext_ln618 = sext i54 %man_V_12
 
@@ -331,7 +331,7 @@ entry_ifconv:19 %icmp_ln620 = icmp_ult  i12 %sh_amt, i12 54
 
 <Node id="22" bw="1" op_0_bw="12" op_1_bw="12">
 <![CDATA[
-entry_ifconv:20 %icmp_ln638 = icmp_ult  i12 %sh_amt, i12 80
+entry_ifconv:20 %icmp_ln638 = icmp_ult  i12 %sh_amt, i12 100
 
 ]]></Node>
 <StgValue><ssdm name="icmp_ln638"/></StgValue>
@@ -413,9 +413,9 @@ entry_ifconv:24 %tmp = bitselect i1 @_ssdm_op_BitSelect.i1.i64.i32, i64 %ireg, i
 </and_exp></or_exp>
 </condition>
 
-<Node id="27" bw="80" op_0_bw="1" op_1_bw="80" op_2_bw="80">
+<Node id="27" bw="100" op_0_bw="1" op_1_bw="100" op_2_bw="100">
 <![CDATA[
-entry_ifconv:25 %select_ln623 = select i1 %tmp, i80 1208925819614629174706175, i80 0
+entry_ifconv:25 %select_ln623 = select i1 %tmp, i100 1267650600228229401496703205375, i100 0
 
 ]]></Node>
 <StgValue><ssdm name="select_ln623"/></StgValue>
@@ -431,7 +431,7 @@ entry_ifconv:25 %select_ln623 = select i1 %tmp, i80 1208925819614629174706175, i
 </and_exp></or_exp>
 </condition>
 
-<Node id="28" bw="80" op_0_bw="32">
+<Node id="28" bw="100" op_0_bw="32">
 <![CDATA[
 entry_ifconv:26 %zext_ln639 = zext i32 %sext_ln621
 
@@ -449,9 +449,9 @@ entry_ifconv:26 %zext_ln639 = zext i32 %sext_ln621
 </and_exp></or_exp>
 </condition>
 
-<Node id="29" bw="80" op_0_bw="80" op_1_bw="80">
+<Node id="29" bw="100" op_0_bw="100" op_1_bw="100">
 <![CDATA[
-entry_ifconv:27 %shl_ln639 = shl i80 %sext_ln618, i80 %zext_ln639
+entry_ifconv:27 %shl_ln639 = shl i100 %sext_ln618, i100 %zext_ln639
 
 ]]></Node>
 <StgValue><ssdm name="shl_ln639"/></StgValue>
@@ -661,9 +661,9 @@ entry_ifconv:40 %or_ln638 = or i1 %icmp_ln606, i1 %and_ln638_6
 </and_exp></or_exp>
 </condition>
 
-<Node id="43" bw="80" op_0_bw="1" op_1_bw="80" op_2_bw="80">
+<Node id="43" bw="100" op_0_bw="1" op_1_bw="100" op_2_bw="100">
 <![CDATA[
-entry_ifconv:41 %select_ln638 = select i1 %or_ln638, i80 0, i80 %shl_ln639
+entry_ifconv:41 %select_ln638 = select i1 %or_ln638, i100 0, i100 %shl_ln639
 
 ]]></Node>
 <StgValue><ssdm name="select_ln638"/></StgValue>
@@ -710,7 +710,7 @@ entry_ifconv:43 %select_ln638_4 = select i1 %and_ln620_6, i54 %ashr_ln621, i54 %
 </and_exp></or_exp>
 </condition>
 
-<Node id="46" bw="80" op_0_bw="54">
+<Node id="46" bw="100" op_0_bw="54">
 <![CDATA[
 entry_ifconv:44 %sext_ln638 = sext i54 %select_ln638_4
 
@@ -741,9 +741,9 @@ entry_ifconv:45 %or_ln638_7 = or i1 %and_ln620_6, i1 %and_ln617
 </and_exp></or_exp>
 </condition>
 
-<Node id="48" bw="80" op_0_bw="1" op_1_bw="80" op_2_bw="80">
+<Node id="48" bw="100" op_0_bw="1" op_1_bw="100" op_2_bw="100">
 <![CDATA[
-entry_ifconv:46 %select_ln638_5 = select i1 %or_ln638_6, i80 %select_ln638, i80 %sext_ln638
+entry_ifconv:46 %select_ln638_5 = select i1 %or_ln638_6, i100 %select_ln638, i100 %sext_ln638
 
 ]]></Node>
 <StgValue><ssdm name="select_ln638_5"/></StgValue>
@@ -771,9 +771,9 @@ entry_ifconv:47 %or_ln638_8 = or i1 %or_ln638_6, i1 %or_ln638_7
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="50" bw="80" op_0_bw="1" op_1_bw="80" op_2_bw="80">
+<Node id="50" bw="100" op_0_bw="1" op_1_bw="100" op_2_bw="100">
 <![CDATA[
-entry_ifconv:48 %select_ln638_8 = select i1 %or_ln638_8, i80 %select_ln638_5, i80 %select_ln623
+entry_ifconv:48 %select_ln638_8 = select i1 %or_ln638_8, i100 %select_ln638_5, i100 %select_ln623
 
 ]]></Node>
 <StgValue><ssdm name="select_ln638_8"/></StgValue>
@@ -786,9 +786,9 @@ entry_ifconv:48 %select_ln638_8 = select i1 %or_ln638_8, i80 %select_ln638_5, i8
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="51" bw="0" op_0_bw="80">
+<Node id="51" bw="0" op_0_bw="100">
 <![CDATA[
-entry_ifconv:49 %ret_ln704 = ret i80 %select_ln638_8
+entry_ifconv:49 %ret_ln704 = ret i100 %select_ln638_8
 
 ]]></Node>
 <StgValue><ssdm name="ret_ln704"/></StgValue>

@@ -13,12 +13,12 @@ set hasInterrupt 0
 set C_modelName {runge_kutta_45_Pipeline_sqrt_loop}
 set C_modelType { void 0 }
 set C_modelArgList {
-	{ X_V_7_reload int 162 regular  }
-	{ Q_V_5_out int 81 regular {pointer 1}  }
+	{ X_V_7_reload int 202 regular  }
+	{ Q_V_5_out int 101 regular {pointer 1}  }
 }
 set C_modelArgMapList {[ 
-	{ "Name" : "X_V_7_reload", "interface" : "wire", "bitwidth" : 162, "direction" : "READONLY"} , 
- 	{ "Name" : "Q_V_5_out", "interface" : "wire", "bitwidth" : 81, "direction" : "WRITEONLY"} ]}
+	{ "Name" : "X_V_7_reload", "interface" : "wire", "bitwidth" : 202, "direction" : "READONLY"} , 
+ 	{ "Name" : "Q_V_5_out", "interface" : "wire", "bitwidth" : 101, "direction" : "WRITEONLY"} ]}
 # RTL Port declarations: 
 set portNum 9
 set portList { 
@@ -28,8 +28,8 @@ set portList {
 	{ ap_done sc_out sc_logic 1 predone -1 } 
 	{ ap_idle sc_out sc_logic 1 done -1 } 
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
-	{ X_V_7_reload sc_in sc_lv 162 signal 0 } 
-	{ Q_V_5_out sc_out sc_lv 81 signal 1 } 
+	{ X_V_7_reload sc_in sc_lv 202 signal 0 } 
+	{ Q_V_5_out sc_out sc_lv 101 signal 1 } 
 	{ Q_V_5_out_ap_vld sc_out sc_logic 1 outvld 1 } 
 }
 set NewPortList {[ 
@@ -39,8 +39,8 @@ set NewPortList {[
  	{ "name": "ap_done", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "predone", "bundle":{"name": "ap_done", "role": "default" }} , 
  	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
- 	{ "name": "X_V_7_reload", "direction": "in", "datatype": "sc_lv", "bitwidth":162, "type": "signal", "bundle":{"name": "X_V_7_reload", "role": "default" }} , 
- 	{ "name": "Q_V_5_out", "direction": "out", "datatype": "sc_lv", "bitwidth":81, "type": "signal", "bundle":{"name": "Q_V_5_out", "role": "default" }} , 
+ 	{ "name": "X_V_7_reload", "direction": "in", "datatype": "sc_lv", "bitwidth":202, "type": "signal", "bundle":{"name": "X_V_7_reload", "role": "default" }} , 
+ 	{ "name": "Q_V_5_out", "direction": "out", "datatype": "sc_lv", "bitwidth":101, "type": "signal", "bundle":{"name": "Q_V_5_out", "role": "default" }} , 
  	{ "name": "Q_V_5_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "Q_V_5_out", "role": "ap_vld" }}  ]}
 
 set RtlHierarchyInfo {[
@@ -50,7 +50,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "83", "EstimateLatencyMax" : "83",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "103", "EstimateLatencyMax" : "103",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -75,8 +75,8 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "83", "Max" : "83"}
-	, {"Name" : "Interval", "Min" : "83", "Max" : "83"}
+	{"Name" : "Latency", "Min" : "103", "Max" : "103"}
+	, {"Name" : "Interval", "Min" : "103", "Max" : "103"}
 ]}
 
 set PipelineEnableSignalInfo {[
@@ -84,6 +84,6 @@ set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
-	X_V_7_reload { ap_none {  { X_V_7_reload in_data 0 162 } } }
-	Q_V_5_out { ap_vld {  { Q_V_5_out out_data 1 81 }  { Q_V_5_out_ap_vld out_vld 1 1 } } }
+	X_V_7_reload { ap_none {  { X_V_7_reload in_data 0 202 } } }
+	Q_V_5_out { ap_vld {  { Q_V_5_out out_data 1 101 }  { Q_V_5_out_ap_vld out_vld 1 1 } } }
 }

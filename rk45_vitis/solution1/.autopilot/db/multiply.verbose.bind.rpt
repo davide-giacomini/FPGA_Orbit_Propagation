@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'multiply'
 ================================================================
-* Date:           Mon May 22 17:32:30 2023
+* Date:           Tue Jun 13 00:34:36 2023
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        rk45_vitis
@@ -20,7 +20,7 @@
     +--------+----------+-----------+------------+
     |  Clock |  Target  | Estimated | Uncertainty|
     +--------+----------+-----------+------------+
-    |ap_clk  |  50.00 ns|  14.130 ns|    13.50 ns|
+    |ap_clk  |  50.00 ns|  15.814 ns|    13.50 ns|
     +--------+----------+-----------+------------+
 
 + Latency: 
@@ -74,13 +74,13 @@ IsGatedGlobalClock: 0
 
 * FSM state operations: 
 
-State 1 <SV = 0> <Delay = 14.1>
-ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%y_read = read i80 @_ssdm_op_Read.ap_auto.i80, i80 %y"   --->   Operation 2 'read' 'y_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%x_read = read i80 @_ssdm_op_Read.ap_auto.i80, i80 %x"   --->   Operation 3 'read' 'x_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%sext_ln1317 = sext i80 %x_read"   --->   Operation 4 'sext' 'sext_ln1317' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%sext_ln1319 = sext i80 %y_read"   --->   Operation 5 'sext' 'sext_ln1319' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 6 [1/1] (14.1ns)   --->   "%r_V = mul i160 %sext_ln1319, i160 %sext_ln1317"   --->   Operation 6 'mul' 'r_V' <Predicate = true> <Delay = 14.1> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 0> <II = 1> <Delay = 14.1> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%ret_ln55 = ret i160 %r_V" [src/runge_kutta_45.cpp:55]   --->   Operation 7 'ret' 'ret_ln55' <Predicate = true> <Delay = 0.00>
+State 1 <SV = 0> <Delay = 15.8>
+ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%y_read = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %y"   --->   Operation 2 'read' 'y_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%x_read = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %x"   --->   Operation 3 'read' 'x_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%sext_ln1317 = sext i100 %x_read"   --->   Operation 4 'sext' 'sext_ln1317' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%sext_ln1319 = sext i100 %y_read"   --->   Operation 5 'sext' 'sext_ln1319' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (15.8ns)   --->   "%r_V = mul i200 %sext_ln1319, i200 %sext_ln1317"   --->   Operation 6 'mul' 'r_V' <Predicate = true> <Delay = 15.8> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 0> <II = 1> <Delay = 15.8> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%ret_ln55 = ret i200 %r_V" [src/runge_kutta_45.cpp:55]   --->   Operation 7 'ret' 'ret_ln55' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -136,15 +136,15 @@ ret_ln55    (ret ) [ 00]
 <pin id="5" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i80"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i100"/></StgValue>
 </bind>
 </comp>
 
 <comp id="6" class="1004" name="y_read_read_fu_6">
 <pin_list>
-<pin id="7" dir="0" index="0" bw="80" slack="0"/>
-<pin id="8" dir="0" index="1" bw="80" slack="0"/>
-<pin id="9" dir="1" index="2" bw="80" slack="0"/>
+<pin id="7" dir="0" index="0" bw="100" slack="0"/>
+<pin id="8" dir="0" index="1" bw="100" slack="0"/>
+<pin id="9" dir="1" index="2" bw="100" slack="0"/>
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
@@ -154,9 +154,9 @@ ret_ln55    (ret ) [ 00]
 
 <comp id="12" class="1004" name="x_read_read_fu_12">
 <pin_list>
-<pin id="13" dir="0" index="0" bw="80" slack="0"/>
-<pin id="14" dir="0" index="1" bw="80" slack="0"/>
-<pin id="15" dir="1" index="2" bw="80" slack="0"/>
+<pin id="13" dir="0" index="0" bw="100" slack="0"/>
+<pin id="14" dir="0" index="1" bw="100" slack="0"/>
+<pin id="15" dir="1" index="2" bw="100" slack="0"/>
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
@@ -166,8 +166,8 @@ ret_ln55    (ret ) [ 00]
 
 <comp id="18" class="1004" name="sext_ln1317_fu_18">
 <pin_list>
-<pin id="19" dir="0" index="0" bw="80" slack="0"/>
-<pin id="20" dir="1" index="1" bw="160" slack="0"/>
+<pin id="19" dir="0" index="0" bw="100" slack="0"/>
+<pin id="20" dir="1" index="1" bw="200" slack="0"/>
 </pin_list>
 <bind>
 <opcode="sext(35) " fcode="sext"/>
@@ -177,8 +177,8 @@ ret_ln55    (ret ) [ 00]
 
 <comp id="22" class="1004" name="sext_ln1319_fu_22">
 <pin_list>
-<pin id="23" dir="0" index="0" bw="80" slack="0"/>
-<pin id="24" dir="1" index="1" bw="160" slack="0"/>
+<pin id="23" dir="0" index="0" bw="100" slack="0"/>
+<pin id="24" dir="1" index="1" bw="200" slack="0"/>
 </pin_list>
 <bind>
 <opcode="sext(35) " fcode="sext"/>
@@ -188,9 +188,9 @@ ret_ln55    (ret ) [ 00]
 
 <comp id="26" class="1004" name="r_V_fu_26">
 <pin_list>
-<pin id="27" dir="0" index="0" bw="80" slack="0"/>
-<pin id="28" dir="0" index="1" bw="80" slack="0"/>
-<pin id="29" dir="1" index="2" bw="160" slack="2147483647"/>
+<pin id="27" dir="0" index="0" bw="100" slack="0"/>
+<pin id="28" dir="0" index="1" bw="100" slack="0"/>
+<pin id="29" dir="1" index="2" bw="200" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="mul(12) " fcode="mul"/>
@@ -241,7 +241,7 @@ ret_ln55    (ret ) [ 00]
 |----------|-------------------|---------|---------|---------|
 | Operation|  Functional Unit  |   DSP   |    FF   |   LUT   |
 |----------|-------------------|---------|---------|---------|
-|    mul   |     r_V_fu_26     |    15   |    0    |    91   |
+|    mul   |     r_V_fu_26     |    16   |    0    |   167   |
 |----------|-------------------|---------|---------|---------|
 |   read   |  y_read_read_fu_6 |    0    |    0    |    0    |
 |          | x_read_read_fu_12 |    0    |    0    |    0    |
@@ -249,7 +249,7 @@ ret_ln55    (ret ) [ 00]
 |   sext   | sext_ln1317_fu_18 |    0    |    0    |    0    |
 |          | sext_ln1319_fu_22 |    0    |    0    |    0    |
 |----------|-------------------|---------|---------|---------|
-|   Total  |                   |    15   |    0    |    91   |
+|   Total  |                   |    16   |    0    |   167   |
 |----------|-------------------|---------|---------|---------|
 
 Memories:
@@ -271,10 +271,10 @@ N/A
 +-----------+--------+--------+--------+
 |           |   DSP  |   FF   |   LUT  |
 +-----------+--------+--------+--------+
-|  Function |   15   |    0   |   91   |
+|  Function |   16   |    0   |   167  |
 |   Memory  |    -   |    -   |    -   |
 |Multiplexer|    -   |    -   |    -   |
 |  Register |    -   |    -   |    -   |
 +-----------+--------+--------+--------+
-|   Total   |   15   |    0   |   91   |
+|   Total   |   16   |    0   |   167  |
 +-----------+--------+--------+--------+

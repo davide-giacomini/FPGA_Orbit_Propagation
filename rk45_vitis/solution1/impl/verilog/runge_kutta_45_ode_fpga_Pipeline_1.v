@@ -32,14 +32,14 @@ input   ap_start;
 output   ap_done;
 output   ap_idle;
 output   ap_ready;
-input  [79:0] r_out_V_0_04;
-input  [79:0] r_out_V_1_05;
-input  [79:0] r_out_V_2_06;
+input  [99:0] r_out_V_0_04;
+input  [99:0] r_out_V_1_05;
+input  [99:0] r_out_V_2_06;
 input  [5:0] empty;
 output  [5:0] out_r_address0;
 output   out_r_ce0;
 output   out_r_we0;
-output  [79:0] out_r_d0;
+output  [99:0] out_r_d0;
 
 reg ap_idle;
 reg out_r_ce0;
@@ -54,12 +54,12 @@ wire    ap_loop_exit_ready;
 reg    ap_ready_int;
 wire   [63:0] p_cast_fu_122_p1;
 reg   [1:0] loop_index17_t_fu_38;
-wire   [1:0] empty_73_fu_93_p2;
+wire   [1:0] empty_75_fu_93_p2;
 wire    ap_loop_init;
 reg   [1:0] ap_sig_allocacmp_loop_index17_t_load;
-wire   [79:0] tmp_6_fu_103_p5;
+wire   [99:0] tmp_6_fu_103_p5;
 wire   [5:0] loop_index17_t_cast1_fu_99_p1;
-wire   [5:0] empty_74_fu_116_p2;
+wire   [5:0] empty_76_fu_116_p2;
 reg    ap_done_reg;
 wire    ap_continue_int;
 reg    ap_done_int;
@@ -74,15 +74,15 @@ initial begin
 #0 ap_done_reg = 1'b0;
 end
 
-runge_kutta_45_mux_32_80_1_1 #(
+runge_kutta_45_mux_32_100_1_1 #(
     .ID( 1 ),
     .NUM_STAGE( 1 ),
-    .din0_WIDTH( 80 ),
-    .din1_WIDTH( 80 ),
-    .din2_WIDTH( 80 ),
+    .din0_WIDTH( 100 ),
+    .din1_WIDTH( 100 ),
+    .din2_WIDTH( 100 ),
     .din3_WIDTH( 2 ),
-    .dout_WIDTH( 80 ))
-mux_32_80_1_1_U48(
+    .dout_WIDTH( 100 ))
+mux_32_100_1_1_U48(
     .din0(r_out_V_0_04),
     .din1(r_out_V_1_05),
     .din2(r_out_V_2_06),
@@ -128,7 +128,7 @@ end
 always @ (posedge ap_clk) begin
     if (((1'b1 == ap_CS_fsm_state1) & (ap_start_int == 1'b1))) begin
         if ((exitcond82_fu_87_p2 == 1'd0)) begin
-            loop_index17_t_fu_38 <= empty_73_fu_93_p2;
+            loop_index17_t_fu_38 <= empty_75_fu_93_p2;
         end else if ((ap_loop_init == 1'b1)) begin
             loop_index17_t_fu_38 <= 2'd0;
         end
@@ -218,9 +218,9 @@ end
 
 assign ap_loop_exit_ready = ap_condition_exit_pp0_iter0_stage0;
 
-assign empty_73_fu_93_p2 = (ap_sig_allocacmp_loop_index17_t_load + 2'd1);
+assign empty_75_fu_93_p2 = (ap_sig_allocacmp_loop_index17_t_load + 2'd1);
 
-assign empty_74_fu_116_p2 = (empty + loop_index17_t_cast1_fu_99_p1);
+assign empty_76_fu_116_p2 = (empty + loop_index17_t_cast1_fu_99_p1);
 
 assign exitcond82_fu_87_p2 = ((ap_sig_allocacmp_loop_index17_t_load == 2'd3) ? 1'b1 : 1'b0);
 
@@ -230,6 +230,6 @@ assign out_r_address0 = p_cast_fu_122_p1;
 
 assign out_r_d0 = tmp_6_fu_103_p5;
 
-assign p_cast_fu_122_p1 = empty_74_fu_116_p2;
+assign p_cast_fu_122_p1 = empty_76_fu_116_p2;
 
 endmodule //runge_kutta_45_ode_fpga_Pipeline_1

@@ -106,6 +106,8 @@ void XRunge_kutta_45_Set_mu(XRunge_kutta_45 *InstancePtr, u64 Data);
 u64 XRunge_kutta_45_Get_mu(XRunge_kutta_45 *InstancePtr);
 u32 XRunge_kutta_45_Get_size(XRunge_kutta_45 *InstancePtr);
 u32 XRunge_kutta_45_Get_size_vld(XRunge_kutta_45 *InstancePtr);
+u32 XRunge_kutta_45_Get_flag(XRunge_kutta_45 *InstancePtr);
+u32 XRunge_kutta_45_Get_flag_vld(XRunge_kutta_45 *InstancePtr);
 
 void XRunge_kutta_45_InterruptGlobalEnable(XRunge_kutta_45 *InstancePtr);
 void XRunge_kutta_45_InterruptGlobalDisable(XRunge_kutta_45 *InstancePtr);

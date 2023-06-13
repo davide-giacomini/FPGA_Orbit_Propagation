@@ -32,7 +32,7 @@ newFuncRoot:0 %i_1 = alloca i32 1
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="11" bw="80" op_0_bw="32">
+<Node id="11" bw="100" op_0_bw="32">
 <![CDATA[
 newFuncRoot:1 %r_in_V_1 = alloca i32 1
 
@@ -47,7 +47,7 @@ newFuncRoot:1 %r_in_V_1 = alloca i32 1
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="12" bw="80" op_0_bw="32">
+<Node id="12" bw="100" op_0_bw="32">
 <![CDATA[
 newFuncRoot:2 %r_in_V_1_1 = alloca i32 1
 
@@ -62,7 +62,7 @@ newFuncRoot:2 %r_in_V_1_1 = alloca i32 1
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="13" bw="80" op_0_bw="32">
+<Node id="13" bw="100" op_0_bw="32">
 <![CDATA[
 newFuncRoot:3 %r_in_V_1_2 = alloca i32 1
 
@@ -77,9 +77,9 @@ newFuncRoot:3 %r_in_V_1_2 = alloca i32 1
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="14" bw="80" op_0_bw="80" op_1_bw="80">
+<Node id="14" bw="100" op_0_bw="100" op_1_bw="100">
 <![CDATA[
-newFuncRoot:4 %p_read_1 = read i80 @_ssdm_op_Read.ap_auto.i80, i80 %p_read5
+newFuncRoot:4 %p_read_1 = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %p_read5
 
 ]]></Node>
 <StgValue><ssdm name="p_read_1"/></StgValue>
@@ -92,9 +92,9 @@ newFuncRoot:4 %p_read_1 = read i80 @_ssdm_op_Read.ap_auto.i80, i80 %p_read5
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="15" bw="80" op_0_bw="80" op_1_bw="80">
+<Node id="15" bw="100" op_0_bw="100" op_1_bw="100">
 <![CDATA[
-newFuncRoot:5 %p_read_2 = read i80 @_ssdm_op_Read.ap_auto.i80, i80 %p_read4
+newFuncRoot:5 %p_read_2 = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %p_read4
 
 ]]></Node>
 <StgValue><ssdm name="p_read_2"/></StgValue>
@@ -107,9 +107,9 @@ newFuncRoot:5 %p_read_2 = read i80 @_ssdm_op_Read.ap_auto.i80, i80 %p_read4
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="16" bw="80" op_0_bw="80" op_1_bw="80">
+<Node id="16" bw="100" op_0_bw="100" op_1_bw="100">
 <![CDATA[
-newFuncRoot:6 %p_read_3 = read i80 @_ssdm_op_Read.ap_auto.i80, i80 %p_read3
+newFuncRoot:6 %p_read_3 = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %p_read3
 
 ]]></Node>
 <StgValue><ssdm name="p_read_3"/></StgValue>
@@ -122,9 +122,9 @@ newFuncRoot:6 %p_read_3 = read i80 @_ssdm_op_Read.ap_auto.i80, i80 %p_read3
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="17" bw="80" op_0_bw="80" op_1_bw="80">
+<Node id="17" bw="100" op_0_bw="100" op_1_bw="100">
 <![CDATA[
-newFuncRoot:7 %p_read_4 = read i80 @_ssdm_op_Read.ap_auto.i80, i80 %p_read2
+newFuncRoot:7 %p_read_4 = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %p_read2
 
 ]]></Node>
 <StgValue><ssdm name="p_read_4"/></StgValue>
@@ -137,9 +137,9 @@ newFuncRoot:7 %p_read_4 = read i80 @_ssdm_op_Read.ap_auto.i80, i80 %p_read2
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="18" bw="80" op_0_bw="80" op_1_bw="80">
+<Node id="18" bw="100" op_0_bw="100" op_1_bw="100">
 <![CDATA[
-newFuncRoot:8 %p_read_5 = read i80 @_ssdm_op_Read.ap_auto.i80, i80 %p_read1
+newFuncRoot:8 %p_read_5 = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %p_read1
 
 ]]></Node>
 <StgValue><ssdm name="p_read_5"/></StgValue>
@@ -152,9 +152,9 @@ newFuncRoot:8 %p_read_5 = read i80 @_ssdm_op_Read.ap_auto.i80, i80 %p_read1
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="19" bw="80" op_0_bw="80" op_1_bw="80">
+<Node id="19" bw="100" op_0_bw="100" op_1_bw="100">
 <![CDATA[
-newFuncRoot:9 %p_read_6 = read i80 @_ssdm_op_Read.ap_auto.i80, i80 %p_read
+newFuncRoot:9 %p_read_6 = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %p_read
 
 ]]></Node>
 <StgValue><ssdm name="p_read_6"/></StgValue>
@@ -290,7 +290,7 @@ for.body:5 %br_ln70 = br i1 %icmp_ln70, void %for.body.split, void %for.body13.p
 
 <Node id="30" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-for.body.split:0 %specloopname_ln70 = specloopname void @_ssdm_op_SpecLoopName, void @empty_17
+for.body.split:0 %specloopname_ln70 = specloopname void @_ssdm_op_SpecLoopName, void @empty_18
 
 ]]></Node>
 <StgValue><ssdm name="specloopname_ln70"/></StgValue>
@@ -304,9 +304,9 @@ for.body.split:0 %specloopname_ln70 = specloopname void @_ssdm_op_SpecLoopName, 
 </and_exp></or_exp>
 </condition>
 
-<Node id="31" bw="80" op_0_bw="80" op_1_bw="80" op_2_bw="80" op_3_bw="80" op_4_bw="2">
+<Node id="31" bw="100" op_0_bw="100" op_1_bw="100" op_2_bw="100" op_3_bw="100" op_4_bw="2">
 <![CDATA[
-for.body.split:1 %tmp_1 = mux i80 @_ssdm_op_Mux.ap_auto.3i80.i2, i80 %p_read_6, i80 %p_read_5, i80 %p_read_4, i2 %i
+for.body.split:1 %tmp_1 = mux i100 @_ssdm_op_Mux.ap_auto.3i100.i2, i100 %p_read_6, i100 %p_read_5, i100 %p_read_4, i2 %i
 
 ]]></Node>
 <StgValue><ssdm name="tmp_1"/></StgValue>
@@ -320,9 +320,9 @@ for.body.split:1 %tmp_1 = mux i80 @_ssdm_op_Mux.ap_auto.3i80.i2, i80 %p_read_6, 
 </and_exp></or_exp>
 </condition>
 
-<Node id="32" bw="80" op_0_bw="80" op_1_bw="80" op_2_bw="80" op_3_bw="80" op_4_bw="2">
+<Node id="32" bw="100" op_0_bw="100" op_1_bw="100" op_2_bw="100" op_3_bw="100" op_4_bw="2">
 <![CDATA[
-for.body.split:2 %tmp_2 = mux i80 @_ssdm_op_Mux.ap_auto.3i80.i2, i80 %p_read_3, i80 %p_read_2, i80 %p_read_1, i2 %i
+for.body.split:2 %tmp_2 = mux i100 @_ssdm_op_Mux.ap_auto.3i100.i2, i100 %p_read_3, i100 %p_read_2, i100 %p_read_1, i2 %i
 
 ]]></Node>
 <StgValue><ssdm name="tmp_2"/></StgValue>
@@ -336,9 +336,9 @@ for.body.split:2 %tmp_2 = mux i80 @_ssdm_op_Mux.ap_auto.3i80.i2, i80 %p_read_3, 
 </and_exp></or_exp>
 </condition>
 
-<Node id="33" bw="80" op_0_bw="80" op_1_bw="80">
+<Node id="33" bw="100" op_0_bw="100" op_1_bw="100">
 <![CDATA[
-for.body.split:3 %r_in_V_1_4 = add i80 %tmp_2, i80 %tmp_1
+for.body.split:3 %r_in_V_1_4 = add i100 %tmp_2, i100 %tmp_1
 
 ]]></Node>
 <StgValue><ssdm name="r_in_V_1_4"/></StgValue>
@@ -369,9 +369,9 @@ for.body.split:4 %switch_ln71 = switch i2 %i, void %branch2, i2 0, void %for.bod
 </and_exp></or_exp>
 </condition>
 
-<Node id="36" bw="0" op_0_bw="80" op_1_bw="80">
+<Node id="36" bw="0" op_0_bw="100" op_1_bw="100">
 <![CDATA[
-for.body.split.for.body.split9_crit_edge12:0 %store_ln71 = store i80 %r_in_V_1_4, i80 %r_in_V_1_1
+for.body.split.for.body.split9_crit_edge12:0 %store_ln71 = store i100 %r_in_V_1_4, i100 %r_in_V_1_1
 
 ]]></Node>
 <StgValue><ssdm name="store_ln71"/></StgValue>
@@ -403,9 +403,9 @@ for.body.split.for.body.split9_crit_edge12:1 %br_ln71 = br void %for.body.split9
 </and_exp></or_exp>
 </condition>
 
-<Node id="39" bw="0" op_0_bw="80" op_1_bw="80">
+<Node id="39" bw="0" op_0_bw="100" op_1_bw="100">
 <![CDATA[
-for.body.split.for.body.split9_crit_edge:0 %store_ln71 = store i80 %r_in_V_1_4, i80 %r_in_V_1
+for.body.split.for.body.split9_crit_edge:0 %store_ln71 = store i100 %r_in_V_1_4, i100 %r_in_V_1
 
 ]]></Node>
 <StgValue><ssdm name="store_ln71"/></StgValue>
@@ -438,9 +438,9 @@ for.body.split.for.body.split9_crit_edge:1 %br_ln71 = br void %for.body.split9
 </and_exp></or_exp>
 </condition>
 
-<Node id="42" bw="0" op_0_bw="80" op_1_bw="80">
+<Node id="42" bw="0" op_0_bw="100" op_1_bw="100">
 <![CDATA[
-branch2:0 %store_ln71 = store i80 %r_in_V_1_4, i80 %r_in_V_1_2
+branch2:0 %store_ln71 = store i100 %r_in_V_1_4, i100 %r_in_V_1_2
 
 ]]></Node>
 <StgValue><ssdm name="store_ln71"/></StgValue>
@@ -504,9 +504,9 @@ for.body.split9:1 %br_ln70 = br void %for.body
 </and_exp></or_exp>
 </condition>
 
-<Node id="48" bw="80" op_0_bw="80">
+<Node id="48" bw="100" op_0_bw="100">
 <![CDATA[
-for.body13.preheader.exitStub:0 %r_in_V_1_load = load i80 %r_in_V_1
+for.body13.preheader.exitStub:0 %r_in_V_1_load = load i100 %r_in_V_1
 
 ]]></Node>
 <StgValue><ssdm name="r_in_V_1_load"/></StgValue>
@@ -520,9 +520,9 @@ for.body13.preheader.exitStub:0 %r_in_V_1_load = load i80 %r_in_V_1
 </and_exp></or_exp>
 </condition>
 
-<Node id="49" bw="80" op_0_bw="80">
+<Node id="49" bw="100" op_0_bw="100">
 <![CDATA[
-for.body13.preheader.exitStub:1 %r_in_V_1_1_load = load i80 %r_in_V_1_1
+for.body13.preheader.exitStub:1 %r_in_V_1_1_load = load i100 %r_in_V_1_1
 
 ]]></Node>
 <StgValue><ssdm name="r_in_V_1_1_load"/></StgValue>
@@ -536,9 +536,9 @@ for.body13.preheader.exitStub:1 %r_in_V_1_1_load = load i80 %r_in_V_1_1
 </and_exp></or_exp>
 </condition>
 
-<Node id="50" bw="80" op_0_bw="80">
+<Node id="50" bw="100" op_0_bw="100">
 <![CDATA[
-for.body13.preheader.exitStub:2 %r_in_V_1_2_load = load i80 %r_in_V_1_2
+for.body13.preheader.exitStub:2 %r_in_V_1_2_load = load i100 %r_in_V_1_2
 
 ]]></Node>
 <StgValue><ssdm name="r_in_V_1_2_load"/></StgValue>
@@ -552,9 +552,9 @@ for.body13.preheader.exitStub:2 %r_in_V_1_2_load = load i80 %r_in_V_1_2
 </and_exp></or_exp>
 </condition>
 
-<Node id="51" bw="0" op_0_bw="0" op_1_bw="80" op_2_bw="80">
+<Node id="51" bw="0" op_0_bw="0" op_1_bw="100" op_2_bw="100">
 <![CDATA[
-for.body13.preheader.exitStub:3 %write_ln0 = write void @_ssdm_op_Write.ap_auto.i80P0A, i80 %r_in_V_2_03_out, i80 %r_in_V_1_2_load
+for.body13.preheader.exitStub:3 %write_ln0 = write void @_ssdm_op_Write.ap_auto.i100P0A, i100 %r_in_V_2_03_out, i100 %r_in_V_1_2_load
 
 ]]></Node>
 <StgValue><ssdm name="write_ln0"/></StgValue>
@@ -568,9 +568,9 @@ for.body13.preheader.exitStub:3 %write_ln0 = write void @_ssdm_op_Write.ap_auto.
 </and_exp></or_exp>
 </condition>
 
-<Node id="52" bw="0" op_0_bw="0" op_1_bw="80" op_2_bw="80">
+<Node id="52" bw="0" op_0_bw="0" op_1_bw="100" op_2_bw="100">
 <![CDATA[
-for.body13.preheader.exitStub:4 %write_ln0 = write void @_ssdm_op_Write.ap_auto.i80P0A, i80 %r_in_V_1_02_out, i80 %r_in_V_1_1_load
+for.body13.preheader.exitStub:4 %write_ln0 = write void @_ssdm_op_Write.ap_auto.i100P0A, i100 %r_in_V_1_02_out, i100 %r_in_V_1_1_load
 
 ]]></Node>
 <StgValue><ssdm name="write_ln0"/></StgValue>
@@ -584,9 +584,9 @@ for.body13.preheader.exitStub:4 %write_ln0 = write void @_ssdm_op_Write.ap_auto.
 </and_exp></or_exp>
 </condition>
 
-<Node id="53" bw="0" op_0_bw="0" op_1_bw="80" op_2_bw="80">
+<Node id="53" bw="0" op_0_bw="0" op_1_bw="100" op_2_bw="100">
 <![CDATA[
-for.body13.preheader.exitStub:5 %write_ln0 = write void @_ssdm_op_Write.ap_auto.i80P0A, i80 %r_in_V_0_01_out, i80 %r_in_V_1_load
+for.body13.preheader.exitStub:5 %write_ln0 = write void @_ssdm_op_Write.ap_auto.i100P0A, i100 %r_in_V_0_01_out, i100 %r_in_V_1_load
 
 ]]></Node>
 <StgValue><ssdm name="write_ln0"/></StgValue>
@@ -651,27 +651,27 @@ for.body13.preheader.exitStub:6 %ret_ln0 = ret
 </dataflow>
 <dataflow id="61" from="StgValue_57" to="r_in_V_1_2" fromId="57" toId="7">
 </dataflow>
-<dataflow id="63" from="_ssdm_op_Read.ap_auto.i80" to="p_read_1" fromId="62" toId="8">
+<dataflow id="63" from="_ssdm_op_Read.ap_auto.i100" to="p_read_1" fromId="62" toId="8">
 </dataflow>
 <dataflow id="64" from="p_read5" to="p_read_1" fromId="53" toId="8">
 </dataflow>
-<dataflow id="65" from="_ssdm_op_Read.ap_auto.i80" to="p_read_2" fromId="62" toId="9">
+<dataflow id="65" from="_ssdm_op_Read.ap_auto.i100" to="p_read_2" fromId="62" toId="9">
 </dataflow>
 <dataflow id="66" from="p_read4" to="p_read_2" fromId="52" toId="9">
 </dataflow>
-<dataflow id="67" from="_ssdm_op_Read.ap_auto.i80" to="p_read_3" fromId="62" toId="10">
+<dataflow id="67" from="_ssdm_op_Read.ap_auto.i100" to="p_read_3" fromId="62" toId="10">
 </dataflow>
 <dataflow id="68" from="p_read3" to="p_read_3" fromId="51" toId="10">
 </dataflow>
-<dataflow id="69" from="_ssdm_op_Read.ap_auto.i80" to="p_read_4" fromId="62" toId="11">
+<dataflow id="69" from="_ssdm_op_Read.ap_auto.i100" to="p_read_4" fromId="62" toId="11">
 </dataflow>
 <dataflow id="70" from="p_read2" to="p_read_4" fromId="50" toId="11">
 </dataflow>
-<dataflow id="71" from="_ssdm_op_Read.ap_auto.i80" to="p_read_5" fromId="62" toId="12">
+<dataflow id="71" from="_ssdm_op_Read.ap_auto.i100" to="p_read_5" fromId="62" toId="12">
 </dataflow>
 <dataflow id="72" from="p_read1" to="p_read_5" fromId="49" toId="12">
 </dataflow>
-<dataflow id="73" from="_ssdm_op_Read.ap_auto.i80" to="p_read_6" fromId="62" toId="13">
+<dataflow id="73" from="_ssdm_op_Read.ap_auto.i100" to="p_read_6" fromId="62" toId="13">
 </dataflow>
 <dataflow id="74" from="p_read" to="p_read_6" fromId="48" toId="13">
 </dataflow>
@@ -713,9 +713,9 @@ for.body13.preheader.exitStub:6 %ret_ln0 = ret
 </dataflow>
 <dataflow id="103" from="_ssdm_op_SpecLoopName" to="specloopname_ln70" fromId="102" toId="22">
 </dataflow>
-<dataflow id="105" from="empty_17" to="specloopname_ln70" fromId="104" toId="22">
+<dataflow id="105" from="empty_18" to="specloopname_ln70" fromId="104" toId="22">
 </dataflow>
-<dataflow id="107" from="_ssdm_op_Mux.ap_auto.3i80.i2" to="tmp_1" fromId="106" toId="23">
+<dataflow id="107" from="_ssdm_op_Mux.ap_auto.3i100.i2" to="tmp_1" fromId="106" toId="23">
 </dataflow>
 <dataflow id="108" from="p_read_6" to="tmp_1" fromId="13" toId="23">
 </dataflow>
@@ -725,7 +725,7 @@ for.body13.preheader.exitStub:6 %ret_ln0 = ret
 </dataflow>
 <dataflow id="111" from="i" to="tmp_1" fromId="16" toId="23">
 </dataflow>
-<dataflow id="112" from="_ssdm_op_Mux.ap_auto.3i80.i2" to="tmp_2" fromId="106" toId="24">
+<dataflow id="112" from="_ssdm_op_Mux.ap_auto.3i100.i2" to="tmp_2" fromId="106" toId="24">
 </dataflow>
 <dataflow id="113" from="p_read_3" to="tmp_2" fromId="10" toId="24">
 </dataflow>
@@ -767,19 +767,19 @@ for.body13.preheader.exitStub:6 %ret_ln0 = ret
 </dataflow>
 <dataflow id="132" from="r_in_V_1_2" to="r_in_V_1_2_load" fromId="7" toId="37">
 </dataflow>
-<dataflow id="134" from="_ssdm_op_Write.ap_auto.i80P0A" to="write_ln0" fromId="133" toId="38">
+<dataflow id="134" from="_ssdm_op_Write.ap_auto.i100P0A" to="write_ln0" fromId="133" toId="38">
 </dataflow>
 <dataflow id="135" from="r_in_V_2_03_out" to="write_ln0" fromId="54" toId="38">
 </dataflow>
 <dataflow id="136" from="r_in_V_1_2_load" to="write_ln0" fromId="37" toId="38">
 </dataflow>
-<dataflow id="137" from="_ssdm_op_Write.ap_auto.i80P0A" to="write_ln0" fromId="133" toId="39">
+<dataflow id="137" from="_ssdm_op_Write.ap_auto.i100P0A" to="write_ln0" fromId="133" toId="39">
 </dataflow>
 <dataflow id="138" from="r_in_V_1_02_out" to="write_ln0" fromId="55" toId="39">
 </dataflow>
 <dataflow id="139" from="r_in_V_1_1_load" to="write_ln0" fromId="36" toId="39">
 </dataflow>
-<dataflow id="140" from="_ssdm_op_Write.ap_auto.i80P0A" to="write_ln0" fromId="133" toId="40">
+<dataflow id="140" from="_ssdm_op_Write.ap_auto.i100P0A" to="write_ln0" fromId="133" toId="40">
 </dataflow>
 <dataflow id="141" from="r_in_V_0_01_out" to="write_ln0" fromId="56" toId="40">
 </dataflow>

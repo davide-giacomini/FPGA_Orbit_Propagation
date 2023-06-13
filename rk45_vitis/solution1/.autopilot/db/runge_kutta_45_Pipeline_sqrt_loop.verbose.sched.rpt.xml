@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'runge_kutta_45_Pipeline_sqrt_loop'" level="0">
-<item name = "Date">Mon May 22 17:32:30 2023
+<item name = "Date">Tue Jun 13 00:34:36 2023
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
 <item name = "Project">rk45_vitis</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">50.00 ns, 9.219 ns, 13.50 ns</column>
+<column name="ap_clk">50.00 ns, 10.416 ns, 13.50 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">83, 83, 4.150 us, 4.150 us, 83, 83, no</column>
+<column name="">103, 103, 5.150 us, 5.150 us, 103, 103, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- sqrt_loop">81, 81, 1, 1, 4, 81, yes</column>
+<column name="- sqrt_loop">101, 101, 1, 1, 4, 101, yes</column>
 </table>
 </item>
 </section>

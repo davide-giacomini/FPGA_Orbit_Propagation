@@ -17,17 +17,17 @@ port (
     ap_done : OUT STD_LOGIC;
     ap_idle : OUT STD_LOGIC;
     ap_ready : OUT STD_LOGIC;
-    p_read : IN STD_LOGIC_VECTOR (79 downto 0);
-    p_read1 : IN STD_LOGIC_VECTOR (79 downto 0);
-    p_read2 : IN STD_LOGIC_VECTOR (79 downto 0);
-    p_read3 : IN STD_LOGIC_VECTOR (79 downto 0);
-    p_read4 : IN STD_LOGIC_VECTOR (79 downto 0);
-    p_read5 : IN STD_LOGIC_VECTOR (79 downto 0);
-    r_in_V_2_03_out : OUT STD_LOGIC_VECTOR (79 downto 0);
+    p_read : IN STD_LOGIC_VECTOR (99 downto 0);
+    p_read1 : IN STD_LOGIC_VECTOR (99 downto 0);
+    p_read2 : IN STD_LOGIC_VECTOR (99 downto 0);
+    p_read3 : IN STD_LOGIC_VECTOR (99 downto 0);
+    p_read4 : IN STD_LOGIC_VECTOR (99 downto 0);
+    p_read5 : IN STD_LOGIC_VECTOR (99 downto 0);
+    r_in_V_2_03_out : OUT STD_LOGIC_VECTOR (99 downto 0);
     r_in_V_2_03_out_ap_vld : OUT STD_LOGIC;
-    r_in_V_1_02_out : OUT STD_LOGIC_VECTOR (79 downto 0);
+    r_in_V_1_02_out : OUT STD_LOGIC_VECTOR (99 downto 0);
     r_in_V_1_02_out_ap_vld : OUT STD_LOGIC;
-    r_in_V_0_01_out : OUT STD_LOGIC_VECTOR (79 downto 0);
+    r_in_V_0_01_out : OUT STD_LOGIC_VECTOR (99 downto 0);
     r_in_V_0_01_out_ap_vld : OUT STD_LOGIC );
 end;
 
@@ -60,12 +60,12 @@ attribute shreg_extract : string;
     signal ap_loop_init : STD_LOGIC;
     signal ap_sig_allocacmp_i : STD_LOGIC_VECTOR (1 downto 0);
     signal i_load_fu_126_p1 : STD_LOGIC_VECTOR (1 downto 0);
-    signal r_in_V_1_fu_52 : STD_LOGIC_VECTOR (79 downto 0);
-    signal r_in_V_1_4_fu_165_p2 : STD_LOGIC_VECTOR (79 downto 0);
-    signal r_in_V_1_1_fu_56 : STD_LOGIC_VECTOR (79 downto 0);
-    signal r_in_V_1_2_fu_60 : STD_LOGIC_VECTOR (79 downto 0);
-    signal tmp_2_fu_153_p5 : STD_LOGIC_VECTOR (79 downto 0);
-    signal tmp_1_fu_141_p5 : STD_LOGIC_VECTOR (79 downto 0);
+    signal r_in_V_1_fu_52 : STD_LOGIC_VECTOR (99 downto 0);
+    signal r_in_V_1_4_fu_165_p2 : STD_LOGIC_VECTOR (99 downto 0);
+    signal r_in_V_1_1_fu_56 : STD_LOGIC_VECTOR (99 downto 0);
+    signal r_in_V_1_2_fu_60 : STD_LOGIC_VECTOR (99 downto 0);
+    signal tmp_2_fu_153_p5 : STD_LOGIC_VECTOR (99 downto 0);
+    signal tmp_1_fu_141_p5 : STD_LOGIC_VECTOR (99 downto 0);
     signal ap_done_reg : STD_LOGIC := '0';
     signal ap_continue_int : STD_LOGIC;
     signal ap_done_int : STD_LOGIC;
@@ -74,7 +74,7 @@ attribute shreg_extract : string;
     signal ap_start_int : STD_LOGIC;
     signal ap_ce_reg : STD_LOGIC;
 
-    component runge_kutta_45_mux_32_80_1_1 IS
+    component runge_kutta_45_mux_32_100_1_1 IS
     generic (
         ID : INTEGER;
         NUM_STAGE : INTEGER;
@@ -84,11 +84,11 @@ attribute shreg_extract : string;
         din3_WIDTH : INTEGER;
         dout_WIDTH : INTEGER );
     port (
-        din0 : IN STD_LOGIC_VECTOR (79 downto 0);
-        din1 : IN STD_LOGIC_VECTOR (79 downto 0);
-        din2 : IN STD_LOGIC_VECTOR (79 downto 0);
+        din0 : IN STD_LOGIC_VECTOR (99 downto 0);
+        din1 : IN STD_LOGIC_VECTOR (99 downto 0);
+        din2 : IN STD_LOGIC_VECTOR (99 downto 0);
         din3 : IN STD_LOGIC_VECTOR (1 downto 0);
-        dout : OUT STD_LOGIC_VECTOR (79 downto 0) );
+        dout : OUT STD_LOGIC_VECTOR (99 downto 0) );
     end component;
 
 
@@ -111,15 +111,15 @@ attribute shreg_extract : string;
 
 
 begin
-    mux_32_80_1_1_U12 : component runge_kutta_45_mux_32_80_1_1
+    mux_32_100_1_1_U12 : component runge_kutta_45_mux_32_100_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
-        din0_WIDTH => 80,
-        din1_WIDTH => 80,
-        din2_WIDTH => 80,
+        din0_WIDTH => 100,
+        din1_WIDTH => 100,
+        din2_WIDTH => 100,
         din3_WIDTH => 2,
-        dout_WIDTH => 80)
+        dout_WIDTH => 100)
     port map (
         din0 => p_read,
         din1 => p_read1,
@@ -127,15 +127,15 @@ begin
         din3 => ap_sig_allocacmp_i,
         dout => tmp_1_fu_141_p5);
 
-    mux_32_80_1_1_U13 : component runge_kutta_45_mux_32_80_1_1
+    mux_32_100_1_1_U13 : component runge_kutta_45_mux_32_100_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
-        din0_WIDTH => 80,
-        din1_WIDTH => 80,
-        din2_WIDTH => 80,
+        din0_WIDTH => 100,
+        din1_WIDTH => 100,
+        din2_WIDTH => 100,
         din3_WIDTH => 2,
-        dout_WIDTH => 80)
+        dout_WIDTH => 100)
     port map (
         din0 => p_read3,
         din1 => p_read4,

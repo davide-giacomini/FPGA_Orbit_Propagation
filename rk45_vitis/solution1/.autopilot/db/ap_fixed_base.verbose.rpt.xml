@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'ap_fixed_base'" level="0">
-<item name = "Date">Mon May 22 17:32:34 2023
+<item name = "Date">Tue Jun 13 00:34:42 2023
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
 <item name = "Project">rk45_vitis</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">50.00 ns, 17.470 ns, 13.50 ns</column>
+<column name="ap_clk">50.00 ns, 17.593 ns, 13.50 ns</column>
 </table>
 </item>
 </section>
@@ -47,14 +47,14 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="DSP">-, -, -, -, -</column>
-<column name="Expression">-, -, 0, 984, -</column>
+<column name="Expression">-, -, 0, 1123, -</column>
 <column name="FIFO">-, -, -, -, -</column>
 <column name="Instance">-, -, -, -, -</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, -, -, -</column>
 <column name="Register">-, -, -, -, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
-<specialColumn name="Utilization (%)">0, 0, 0, 1, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, 0, 2, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -99,14 +99,14 @@
 <column name="or_ln638_7_fu_306_p2">or, 0, 0, 2, 1, 1</column>
 <column name="or_ln638_8_fu_320_p2">or, 0, 0, 2, 1, 1</column>
 <column name="or_ln638_fu_274_p2">or, 0, 0, 2, 1, 1</column>
-<column name="ap_return">select, 0, 0, 80, 1, 80</column>
+<column name="ap_return">select, 0, 0, 100, 1, 100</column>
 <column name="man_V_12_fu_94_p3">select, 0, 0, 54, 1, 54</column>
 <column name="select_ln623_fu_184_p3">select, 0, 0, 2, 1, 2</column>
 <column name="select_ln638_4_fu_294_p3">select, 0, 0, 54, 1, 54</column>
-<column name="select_ln638_5_fu_312_p3">select, 0, 0, 80, 1, 80</column>
-<column name="select_ln638_fu_280_p3">select, 0, 0, 80, 1, 1</column>
+<column name="select_ln638_5_fu_312_p3">select, 0, 0, 100, 1, 100</column>
+<column name="select_ln638_fu_280_p3">select, 0, 0, 100, 1, 1</column>
 <column name="sh_amt_fu_132_p3">select, 0, 0, 12, 1, 12</column>
-<column name="shl_ln639_fu_196_p2">shl, 0, 0, 246, 80, 80</column>
+<column name="shl_ln639_fu_196_p2">shl, 0, 0, 325, 100, 100</column>
 <column name="xor_ln606_fu_202_p2">xor, 0, 0, 2, 1, 2</column>
 <column name="xor_ln616_fu_244_p2">xor, 0, 0, 2, 1, 2</column>
 <column name="xor_ln617_fu_220_p2">xor, 0, 0, 2, 1, 2</column>
@@ -129,7 +129,7 @@
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
 <column name="ap_ready">out, 1, ap_ctrl_hs, ap_fixed_base, return value</column>
-<column name="ap_return">out, 80, ap_ctrl_hs, ap_fixed_base, return value</column>
+<column name="ap_return">out, 100, ap_ctrl_hs, ap_fixed_base, return value</column>
 <column name="d">in, 64, ap_none, d, scalar</column>
 </table>
 </item>

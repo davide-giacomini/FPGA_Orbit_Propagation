@@ -29,10 +29,10 @@ input   ap_start;
 output   ap_done;
 output   ap_idle;
 output   ap_ready;
-input  [79:0] r_in_V_0_01_reload;
-input  [79:0] r_in_V_1_02_reload;
-input  [79:0] r_in_V_2_03_reload;
-output  [160:0] X_V_4_out;
+input  [99:0] r_in_V_0_01_reload;
+input  [99:0] r_in_V_1_02_reload;
+input  [99:0] r_in_V_2_03_reload;
+output  [200:0] X_V_4_out;
 output   X_V_4_out_ap_vld;
 
 reg ap_idle;
@@ -51,19 +51,19 @@ reg    ap_condition_exit_pp0_iter1_stage0;
 wire    ap_loop_exit_ready;
 reg    ap_ready_int;
 wire    ap_block_pp0_stage0_11001;
-reg   [160:0] p_Result_s_fu_40;
-wire   [160:0] p_Val2_s_fu_124_p2;
+reg   [200:0] p_Result_s_fu_40;
+wire   [200:0] p_Val2_s_fu_124_p2;
 wire    ap_loop_init;
 wire    ap_block_pp0_stage0;
 reg   [1:0] i_2_fu_44;
 wire   [1:0] add_ln75_fu_92_p2;
 wire    ap_block_pp0_stage0_01001;
-wire   [79:0] r_V_fu_101_p5;
-wire  signed [79:0] r_V_1_fu_114_p0;
-wire  signed [159:0] sext_ln1317_fu_110_p1;
-wire  signed [79:0] r_V_1_fu_114_p1;
-wire   [159:0] r_V_1_fu_114_p2;
-wire  signed [160:0] sext_ln859_fu_120_p1;
+wire   [99:0] r_V_fu_101_p5;
+wire  signed [99:0] r_V_1_fu_114_p0;
+wire  signed [199:0] sext_ln1317_fu_110_p1;
+wire  signed [99:0] r_V_1_fu_114_p1;
+wire   [199:0] r_V_1_fu_114_p2;
+wire  signed [200:0] sext_ln859_fu_120_p1;
 reg    ap_done_reg;
 wire    ap_continue_int;
 reg    ap_done_int;
@@ -79,15 +79,15 @@ initial begin
 #0 ap_done_reg = 1'b0;
 end
 
-runge_kutta_45_mux_32_80_1_1 #(
+runge_kutta_45_mux_32_100_1_1 #(
     .ID( 1 ),
     .NUM_STAGE( 1 ),
-    .din0_WIDTH( 80 ),
-    .din1_WIDTH( 80 ),
-    .din2_WIDTH( 80 ),
+    .din0_WIDTH( 100 ),
+    .din1_WIDTH( 100 ),
+    .din2_WIDTH( 100 ),
     .din3_WIDTH( 2 ),
-    .dout_WIDTH( 80 ))
-mux_32_80_1_1_U24(
+    .dout_WIDTH( 100 ))
+mux_32_100_1_1_U24(
     .din0(r_in_V_0_01_reload),
     .din1(r_in_V_1_02_reload),
     .din2(r_in_V_2_03_reload),
@@ -95,13 +95,13 @@ mux_32_80_1_1_U24(
     .dout(r_V_fu_101_p5)
 );
 
-runge_kutta_45_mul_80s_80s_160_1_1 #(
+runge_kutta_45_mul_100s_100s_200_1_1 #(
     .ID( 1 ),
     .NUM_STAGE( 1 ),
-    .din0_WIDTH( 80 ),
-    .din1_WIDTH( 80 ),
-    .dout_WIDTH( 160 ))
-mul_80s_80s_160_1_1_U25(
+    .din0_WIDTH( 100 ),
+    .din1_WIDTH( 100 ),
+    .dout_WIDTH( 200 ))
+mul_100s_100s_200_1_1_U25(
     .din0(r_V_1_fu_114_p0),
     .din1(r_V_1_fu_114_p1),
     .dout(r_V_1_fu_114_p2)
@@ -167,7 +167,7 @@ end
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         if ((ap_loop_init == 1'b1)) begin
-            p_Result_s_fu_40 <= 161'd0;
+            p_Result_s_fu_40 <= 201'd0;
         end else if (((icmp_ln75_fu_86_p2 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1))) begin
             p_Result_s_fu_40 <= p_Val2_s_fu_124_p2;
         end

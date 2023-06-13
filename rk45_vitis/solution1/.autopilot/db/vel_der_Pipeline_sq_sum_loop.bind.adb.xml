@@ -23,7 +23,7 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="5" bw="161" op_0_bw="32">
+<Node id="5" bw="201" op_0_bw="32">
 <![CDATA[
 newFuncRoot:0 %p_Result_s = alloca i32 1
 
@@ -53,9 +53,9 @@ newFuncRoot:1 %i_2 = alloca i32 1
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="7" bw="80" op_0_bw="80" op_1_bw="80">
+<Node id="7" bw="100" op_0_bw="100" op_1_bw="100">
 <![CDATA[
-newFuncRoot:2 %r_in_V_2_03_reload_read = read i80 @_ssdm_op_Read.ap_auto.i80, i80 %r_in_V_2_03_reload
+newFuncRoot:2 %r_in_V_2_03_reload_read = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %r_in_V_2_03_reload
 
 ]]></Node>
 <StgValue><ssdm name="r_in_V_2_03_reload_read"/></StgValue>
@@ -68,9 +68,9 @@ newFuncRoot:2 %r_in_V_2_03_reload_read = read i80 @_ssdm_op_Read.ap_auto.i80, i8
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="8" bw="80" op_0_bw="80" op_1_bw="80">
+<Node id="8" bw="100" op_0_bw="100" op_1_bw="100">
 <![CDATA[
-newFuncRoot:3 %r_in_V_1_02_reload_read = read i80 @_ssdm_op_Read.ap_auto.i80, i80 %r_in_V_1_02_reload
+newFuncRoot:3 %r_in_V_1_02_reload_read = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %r_in_V_1_02_reload
 
 ]]></Node>
 <StgValue><ssdm name="r_in_V_1_02_reload_read"/></StgValue>
@@ -83,9 +83,9 @@ newFuncRoot:3 %r_in_V_1_02_reload_read = read i80 @_ssdm_op_Read.ap_auto.i80, i8
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="9" bw="80" op_0_bw="80" op_1_bw="80">
+<Node id="9" bw="100" op_0_bw="100" op_1_bw="100">
 <![CDATA[
-newFuncRoot:4 %r_in_V_0_01_reload_read = read i80 @_ssdm_op_Read.ap_auto.i80, i80 %r_in_V_0_01_reload
+newFuncRoot:4 %r_in_V_0_01_reload_read = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %r_in_V_0_01_reload
 
 ]]></Node>
 <StgValue><ssdm name="r_in_V_0_01_reload_read"/></StgValue>
@@ -113,9 +113,9 @@ newFuncRoot:5 %store_ln0 = store i2 0, i2 %i_2
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="11" bw="0" op_0_bw="161" op_1_bw="161">
+<Node id="11" bw="0" op_0_bw="201" op_1_bw="201">
 <![CDATA[
-newFuncRoot:6 %store_ln0 = store i161 0, i161 %p_Result_s
+newFuncRoot:6 %store_ln0 = store i201 0, i201 %p_Result_s
 
 ]]></Node>
 <StgValue><ssdm name="store_ln0"/></StgValue>
@@ -223,7 +223,7 @@ for.body13:4 %add_ln75 = add i2 %i, i2 1
 
 <Node id="19" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
-for.body13:5 %br_ln75 = br i1 %icmp_ln75, void %for.body13.split, void %_ZlSILi162ELb0EER11ap_int_baseIXT_EXT0_EES2_i.exit.i.preheader.exitStub
+for.body13:5 %br_ln75 = br i1 %icmp_ln75, void %for.body13.split, void %_ZlSILi202ELb0EER11ap_int_baseIXT_EXT0_EES2_i.exit.i.preheader.exitStub
 
 ]]></Node>
 <StgValue><ssdm name="br_ln75"/></StgValue>
@@ -237,9 +237,9 @@ for.body13:5 %br_ln75 = br i1 %icmp_ln75, void %for.body13.split, void %_ZlSILi1
 </and_exp></or_exp>
 </condition>
 
-<Node id="21" bw="161" op_0_bw="161" op_1_bw="0">
+<Node id="21" bw="201" op_0_bw="201" op_1_bw="0">
 <![CDATA[
-for.body13.split:0 %p_Result_load_1 = load i161 %p_Result_s
+for.body13.split:0 %p_Result_load_1 = load i201 %p_Result_s
 
 ]]></Node>
 <StgValue><ssdm name="p_Result_load_1"/></StgValue>
@@ -255,7 +255,7 @@ for.body13.split:0 %p_Result_load_1 = load i161 %p_Result_s
 
 <Node id="22" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-for.body13.split:1 %specloopname_ln75 = specloopname void @_ssdm_op_SpecLoopName, void @empty_16
+for.body13.split:1 %specloopname_ln75 = specloopname void @_ssdm_op_SpecLoopName, void @empty_17
 
 ]]></Node>
 <StgValue><ssdm name="specloopname_ln75"/></StgValue>
@@ -269,9 +269,9 @@ for.body13.split:1 %specloopname_ln75 = specloopname void @_ssdm_op_SpecLoopName
 </and_exp></or_exp>
 </condition>
 
-<Node id="23" bw="80" op_0_bw="80" op_1_bw="80" op_2_bw="80" op_3_bw="80" op_4_bw="2">
+<Node id="23" bw="100" op_0_bw="100" op_1_bw="100" op_2_bw="100" op_3_bw="100" op_4_bw="2">
 <![CDATA[
-for.body13.split:2 %r_V = mux i80 @_ssdm_op_Mux.ap_auto.3i80.i2, i80 %r_in_V_0_01_reload_read, i80 %r_in_V_1_02_reload_read, i80 %r_in_V_2_03_reload_read, i2 %i
+for.body13.split:2 %r_V = mux i100 @_ssdm_op_Mux.ap_auto.3i100.i2, i100 %r_in_V_0_01_reload_read, i100 %r_in_V_1_02_reload_read, i100 %r_in_V_2_03_reload_read, i2 %i
 
 ]]></Node>
 <StgValue><ssdm name="r_V"/></StgValue>
@@ -285,9 +285,9 @@ for.body13.split:2 %r_V = mux i80 @_ssdm_op_Mux.ap_auto.3i80.i2, i80 %r_in_V_0_0
 </and_exp></or_exp>
 </condition>
 
-<Node id="24" bw="160" op_0_bw="80">
+<Node id="24" bw="200" op_0_bw="100">
 <![CDATA[
-for.body13.split:3 %sext_ln1317 = sext i80 %r_V
+for.body13.split:3 %sext_ln1317 = sext i100 %r_V
 
 ]]></Node>
 <StgValue><ssdm name="sext_ln1317"/></StgValue>
@@ -301,9 +301,9 @@ for.body13.split:3 %sext_ln1317 = sext i80 %r_V
 </and_exp></or_exp>
 </condition>
 
-<Node id="25" bw="160" op_0_bw="160" op_1_bw="160">
+<Node id="25" bw="200" op_0_bw="200" op_1_bw="200">
 <![CDATA[
-for.body13.split:4 %r_V_1 = mul i160 %sext_ln1317, i160 %sext_ln1317
+for.body13.split:4 %r_V_1 = mul i200 %sext_ln1317, i200 %sext_ln1317
 
 ]]></Node>
 <StgValue><ssdm name="r_V_1"/></StgValue>
@@ -317,9 +317,9 @@ for.body13.split:4 %r_V_1 = mul i160 %sext_ln1317, i160 %sext_ln1317
 </and_exp></or_exp>
 </condition>
 
-<Node id="26" bw="161" op_0_bw="160">
+<Node id="26" bw="201" op_0_bw="200">
 <![CDATA[
-for.body13.split:5 %sext_ln859 = sext i160 %r_V_1
+for.body13.split:5 %sext_ln859 = sext i200 %r_V_1
 
 ]]></Node>
 <StgValue><ssdm name="sext_ln859"/></StgValue>
@@ -333,9 +333,9 @@ for.body13.split:5 %sext_ln859 = sext i160 %r_V_1
 </and_exp></or_exp>
 </condition>
 
-<Node id="27" bw="161" op_0_bw="161" op_1_bw="161">
+<Node id="27" bw="201" op_0_bw="201" op_1_bw="201">
 <![CDATA[
-for.body13.split:6 %p_Val2_s = add i161 %sext_ln859, i161 %p_Result_load_1
+for.body13.split:6 %p_Val2_s = add i201 %sext_ln859, i201 %p_Result_load_1
 
 ]]></Node>
 <StgValue><ssdm name="p_Val2_s"/></StgValue>
@@ -365,9 +365,9 @@ for.body13.split:7 %store_ln75 = store i2 %add_ln75, i2 %i_2
 </and_exp></or_exp>
 </condition>
 
-<Node id="29" bw="0" op_0_bw="161" op_1_bw="161" op_2_bw="0" op_3_bw="0">
+<Node id="29" bw="0" op_0_bw="201" op_1_bw="201" op_2_bw="0" op_3_bw="0">
 <![CDATA[
-for.body13.split:8 %store_ln75 = store i161 %p_Val2_s, i161 %p_Result_s
+for.body13.split:8 %store_ln75 = store i201 %p_Val2_s, i201 %p_Result_s
 
 ]]></Node>
 <StgValue><ssdm name="store_ln75"/></StgValue>
@@ -397,9 +397,9 @@ for.body13.split:9 %br_ln75 = br void %for.body13
 </and_exp></or_exp>
 </condition>
 
-<Node id="32" bw="161" op_0_bw="161" op_1_bw="0">
+<Node id="32" bw="201" op_0_bw="201" op_1_bw="0">
 <![CDATA[
-_ZlSILi162ELb0EER11ap_int_baseIXT_EXT0_EES2_i.exit.i.preheader.exitStub:0 %p_Result_load = load i161 %p_Result_s
+_ZlSILi202ELb0EER11ap_int_baseIXT_EXT0_EES2_i.exit.i.preheader.exitStub:0 %p_Result_load = load i201 %p_Result_s
 
 ]]></Node>
 <StgValue><ssdm name="p_Result_load"/></StgValue>
@@ -413,9 +413,9 @@ _ZlSILi162ELb0EER11ap_int_baseIXT_EXT0_EES2_i.exit.i.preheader.exitStub:0 %p_Res
 </and_exp></or_exp>
 </condition>
 
-<Node id="33" bw="0" op_0_bw="0" op_1_bw="161" op_2_bw="161">
+<Node id="33" bw="0" op_0_bw="0" op_1_bw="201" op_2_bw="201">
 <![CDATA[
-_ZlSILi162ELb0EER11ap_int_baseIXT_EXT0_EES2_i.exit.i.preheader.exitStub:1 %write_ln0 = write void @_ssdm_op_Write.ap_auto.i161P0A, i161 %X_V_4_out, i161 %p_Result_load
+_ZlSILi202ELb0EER11ap_int_baseIXT_EXT0_EES2_i.exit.i.preheader.exitStub:1 %write_ln0 = write void @_ssdm_op_Write.ap_auto.i201P0A, i201 %X_V_4_out, i201 %p_Result_load
 
 ]]></Node>
 <StgValue><ssdm name="write_ln0"/></StgValue>
@@ -431,7 +431,7 @@ _ZlSILi162ELb0EER11ap_int_baseIXT_EXT0_EES2_i.exit.i.preheader.exitStub:1 %write
 
 <Node id="34" bw="0">
 <![CDATA[
-_ZlSILi162ELb0EER11ap_int_baseIXT_EXT0_EES2_i.exit.i.preheader.exitStub:2 %ret_ln0 = ret
+_ZlSILi202ELb0EER11ap_int_baseIXT_EXT0_EES2_i.exit.i.preheader.exitStub:2 %ret_ln0 = ret
 
 ]]></Node>
 <StgValue><ssdm name="ret_ln0"/></StgValue>
@@ -461,15 +461,15 @@ _ZlSILi162ELb0EER11ap_int_baseIXT_EXT0_EES2_i.exit.i.preheader.exitStub:2 %ret_l
 </dataflow>
 <dataflow id="44" from="StgValue_42" to="i_2" fromId="42" toId="5">
 </dataflow>
-<dataflow id="46" from="_ssdm_op_Read.ap_auto.i80" to="r_in_V_2_03_reload_read" fromId="45" toId="6">
+<dataflow id="46" from="_ssdm_op_Read.ap_auto.i100" to="r_in_V_2_03_reload_read" fromId="45" toId="6">
 </dataflow>
 <dataflow id="47" from="r_in_V_2_03_reload" to="r_in_V_2_03_reload_read" fromId="40" toId="6">
 </dataflow>
-<dataflow id="48" from="_ssdm_op_Read.ap_auto.i80" to="r_in_V_1_02_reload_read" fromId="45" toId="7">
+<dataflow id="48" from="_ssdm_op_Read.ap_auto.i100" to="r_in_V_1_02_reload_read" fromId="45" toId="7">
 </dataflow>
 <dataflow id="49" from="r_in_V_1_02_reload" to="r_in_V_1_02_reload_read" fromId="39" toId="7">
 </dataflow>
-<dataflow id="50" from="_ssdm_op_Read.ap_auto.i80" to="r_in_V_0_01_reload_read" fromId="45" toId="8">
+<dataflow id="50" from="_ssdm_op_Read.ap_auto.i100" to="r_in_V_0_01_reload_read" fromId="45" toId="8">
 </dataflow>
 <dataflow id="51" from="r_in_V_0_01_reload" to="r_in_V_0_01_reload_read" fromId="38" toId="8">
 </dataflow>
@@ -517,9 +517,9 @@ _ZlSILi162ELb0EER11ap_int_baseIXT_EXT0_EES2_i.exit.i.preheader.exitStub:2 %ret_l
 </dataflow>
 <dataflow id="84" from="_ssdm_op_SpecLoopName" to="specloopname_ln75" fromId="83" toId="19">
 </dataflow>
-<dataflow id="86" from="empty_16" to="specloopname_ln75" fromId="85" toId="19">
+<dataflow id="86" from="empty_17" to="specloopname_ln75" fromId="85" toId="19">
 </dataflow>
-<dataflow id="88" from="_ssdm_op_Mux.ap_auto.3i80.i2" to="r_V" fromId="87" toId="20">
+<dataflow id="88" from="_ssdm_op_Mux.ap_auto.3i100.i2" to="r_V" fromId="87" toId="20">
 </dataflow>
 <dataflow id="89" from="r_in_V_0_01_reload_read" to="r_V" fromId="8" toId="20">
 </dataflow>
@@ -551,7 +551,7 @@ _ZlSILi162ELb0EER11ap_int_baseIXT_EXT0_EES2_i.exit.i.preheader.exitStub:2 %ret_l
 </dataflow>
 <dataflow id="103" from="p_Result_s" to="p_Result_load" fromId="4" toId="28">
 </dataflow>
-<dataflow id="105" from="_ssdm_op_Write.ap_auto.i161P0A" to="write_ln0" fromId="104" toId="29">
+<dataflow id="105" from="_ssdm_op_Write.ap_auto.i201P0A" to="write_ln0" fromId="104" toId="29">
 </dataflow>
 <dataflow id="106" from="X_V_4_out" to="write_ln0" fromId="41" toId="29">
 </dataflow>

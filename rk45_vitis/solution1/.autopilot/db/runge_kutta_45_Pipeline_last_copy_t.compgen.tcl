@@ -11,14 +11,14 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 93 \
+    id 97 \
     name tt_loc_V \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename tt_loc_V \
     op interface \
-    ports { tt_loc_V_address0 { O 11 vector } tt_loc_V_ce0 { O 1 bit } tt_loc_V_q0 { I 80 vector } } \
+    ports { tt_loc_V_address0 { O 11 vector } tt_loc_V_ce0 { O 1 bit } tt_loc_V_q0 { I 100 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'tt_loc_V'"
@@ -29,7 +29,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 91 \
+    id 95 \
     name T_BUS \
     type other \
     dir O \
@@ -44,22 +44,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 92 \
-    name add382 \
+    id 96 \
+    name add413 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_add382 \
+    corename dc_add413 \
     op interface \
-    ports { add382 { I 32 vector } } \
+    ports { add413 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 94 \
+    id 98 \
     name tt \
     type other \
     dir I \
@@ -74,22 +74,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 95 \
-    name zext_ln279 \
+    id 99 \
+    name zext_ln291 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_zext_ln279 \
+    corename dc_zext_ln291 \
     op interface \
-    ports { zext_ln279 { I 35 vector } } \
+    ports { zext_ln291 { I 35 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 96 \
+    id 100 \
     name trunc_ln5 \
     type other \
     dir I \

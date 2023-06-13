@@ -18,6 +18,7 @@
   <xd:arg xd:name="mu" xd:originalName="mu" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x64" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
   <xd:arg xd:name="mu" xd:originalName="mu" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x68" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
   <xd:arg xd:name="*(size)" xd:originalName="size" xd:direction="out" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x70" xd:statusOffset="0x74" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(flag)" xd:originalName="flag" xd:direction="out" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x80" xd:statusOffset="0x84" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
   <xd:latencyEstimates xd:best-case="undef" xd:worst-case="undef" xd:average-case="undef"/>
-  <xd:resourceEstimates xd:LUT="38589" xd:FF="15059" xd:BRAM="0" xd:DSP="92"/>
+  <xd:resourceEstimates xd:LUT="38375" xd:FF="16893" xd:BRAM="0" xd:DSP="96"/>
 </xd:acceleratorMap>

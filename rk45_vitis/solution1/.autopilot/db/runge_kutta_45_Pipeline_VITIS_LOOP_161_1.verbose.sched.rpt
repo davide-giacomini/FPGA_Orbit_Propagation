@@ -1,0 +1,245 @@
+
+
+================================================================
+== Vitis HLS Report for 'runge_kutta_45_Pipeline_VITIS_LOOP_161_1'
+================================================================
+* Date:           Tue Jun 13 00:34:29 2023
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
+* Project:        rk45_vitis
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+-----------+------------+
+    |  Clock |  Target  | Estimated | Uncertainty|
+    +--------+----------+-----------+------------+
+    |ap_clk  |  50.00 ns|  36.500 ns|    13.50 ns|
+    +--------+----------+-----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       16|       16|  0.800 us|  0.800 us|   16|   16|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_161_1  |       14|       14|        10|          1|          1|     6|       yes|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 10
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 10
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 10, States = { 1 2 3 4 5 6 7 8 9 10 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 3.52>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%shiftreg3344 = alloca i32 1"   --->   Operation 13 'alloca' 'shiftreg3344' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%i = alloca i32 1"   --->   Operation 14 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i512 %X_BUS, void @empty_36, i32 0, i32 0, void @empty_14, i32 0, i32 12288, void @empty_13, void @empty, void @empty_14, i32 16, i32 16, i32 16, i32 16, void @empty_14, void @empty_14, i32 4294967295, i32 0"   --->   Operation 15 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%trunc_ln1_read = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %trunc_ln1"   --->   Operation 16 'read' 'trunc_ln1_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%yy_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %yy"   --->   Operation 17 'read' 'yy_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (1.58ns)   --->   "%store_ln0 = store i3 0, i3 %i"   --->   Operation 18 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 19 [1/1] (1.58ns)   --->   "%store_ln0 = store i64 0, i64 %shiftreg3344"   --->   Operation 19 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc"   --->   Operation 20 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%i_8 = load i3 %i"   --->   Operation 21 'load' 'i_8' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i512 %X_BUS"   --->   Operation 22 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 23 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (1.13ns)   --->   "%icmp_ln161 = icmp_eq  i3 %i_8, i3 6" [src/runge_kutta_45.cpp:161]   --->   Operation 24 'icmp' 'icmp_ln161' <Predicate = true> <Delay = 1.13> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 6, i64 6, i64 6"   --->   Operation 25 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (1.65ns)   --->   "%add_ln161 = add i3 %i_8, i3 1" [src/runge_kutta_45.cpp:161]   --->   Operation 26 'add' 'add_ln161' <Predicate = true> <Delay = 1.65> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.65> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%br_ln161 = br i1 %icmp_ln161, void %for.inc.split, void %for.end.exitStub" [src/runge_kutta_45.cpp:161]   --->   Operation 27 'br' 'br_ln161' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%empty_66 = trunc i3 %i_8"   --->   Operation 28 'trunc' 'empty_66' <Predicate = (!icmp_ln161)> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%tmp_s = partselect i2 @_ssdm_op_PartSelect.i2.i3.i32.i32, i3 %i_8, i32 1, i32 2" [src/runge_kutta_45.cpp:162]   --->   Operation 29 'partselect' 'tmp_s' <Predicate = (!icmp_ln161 & !empty_66)> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%and_ln = bitconcatenate i6 @_ssdm_op_BitConcatenate.i6.i2.i4, i2 %tmp_s, i4 0" [src/runge_kutta_45.cpp:162]   --->   Operation 30 'bitconcatenate' 'and_ln' <Predicate = (!icmp_ln161 & !empty_66)> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%zext_ln162 = zext i6 %and_ln" [src/runge_kutta_45.cpp:162]   --->   Operation 31 'zext' 'zext_ln162' <Predicate = (!icmp_ln161 & !empty_66)> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (3.52ns)   --->   "%add_ln162 = add i64 %zext_ln162, i64 %yy_read" [src/runge_kutta_45.cpp:162]   --->   Operation 32 'add' 'add_ln162' <Predicate = (!icmp_ln161 & !empty_66)> <Delay = 3.52> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.52> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%trunc_ln162_3 = partselect i58 @_ssdm_op_PartSelect.i58.i64.i32.i32, i64 %add_ln162, i32 6, i32 63" [src/runge_kutta_45.cpp:162]   --->   Operation 33 'partselect' 'trunc_ln162_3' <Predicate = (!icmp_ln161 & !empty_66)> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (1.82ns)   --->   "%add_ln162_1 = add i6 %and_ln, i6 %trunc_ln1_read" [src/runge_kutta_45.cpp:162]   --->   Operation 34 'add' 'add_ln162_1' <Predicate = (!icmp_ln161 & !empty_66)> <Delay = 1.82> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 35 [1/1] (1.58ns)   --->   "%store_ln161 = store i3 %add_ln161, i3 %i" [src/runge_kutta_45.cpp:161]   --->   Operation 35 'store' 'store_ln161' <Predicate = (!icmp_ln161)> <Delay = 1.58>
+
+State 2 <SV = 1> <Delay = 36.5>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%sext_ln162 = sext i58 %trunc_ln162_3" [src/runge_kutta_45.cpp:162]   --->   Operation 36 'sext' 'sext_ln162' <Predicate = (!icmp_ln161 & !empty_66)> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%X_BUS_addr = getelementptr i512 %X_BUS, i64 %sext_ln162" [src/runge_kutta_45.cpp:162]   --->   Operation 37 'getelementptr' 'X_BUS_addr' <Predicate = (!icmp_ln161 & !empty_66)> <Delay = 0.00>
+ST_2 : Operation 38 [7/7] (36.5ns)   --->   "%X_BUS_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i512P1A, i512 %X_BUS_addr, i32 1" [src/runge_kutta_45.cpp:162]   --->   Operation 38 'readreq' 'X_BUS_load_req' <Predicate = (!icmp_ln161 & !empty_66)> <Delay = 36.5> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 3 <SV = 2> <Delay = 36.5>
+ST_3 : Operation 39 [6/7] (36.5ns)   --->   "%X_BUS_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i512P1A, i512 %X_BUS_addr, i32 1" [src/runge_kutta_45.cpp:162]   --->   Operation 39 'readreq' 'X_BUS_load_req' <Predicate = (!icmp_ln161 & !empty_66)> <Delay = 36.5> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 4 <SV = 3> <Delay = 36.5>
+ST_4 : Operation 40 [5/7] (36.5ns)   --->   "%X_BUS_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i512P1A, i512 %X_BUS_addr, i32 1" [src/runge_kutta_45.cpp:162]   --->   Operation 40 'readreq' 'X_BUS_load_req' <Predicate = (!icmp_ln161 & !empty_66)> <Delay = 36.5> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 5 <SV = 4> <Delay = 36.5>
+ST_5 : Operation 41 [4/7] (36.5ns)   --->   "%X_BUS_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i512P1A, i512 %X_BUS_addr, i32 1" [src/runge_kutta_45.cpp:162]   --->   Operation 41 'readreq' 'X_BUS_load_req' <Predicate = (!icmp_ln161 & !empty_66)> <Delay = 36.5> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 6 <SV = 5> <Delay = 36.5>
+ST_6 : Operation 42 [3/7] (36.5ns)   --->   "%X_BUS_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i512P1A, i512 %X_BUS_addr, i32 1" [src/runge_kutta_45.cpp:162]   --->   Operation 42 'readreq' 'X_BUS_load_req' <Predicate = (!icmp_ln161 & !empty_66)> <Delay = 36.5> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 7 <SV = 6> <Delay = 36.5>
+ST_7 : Operation 43 [2/7] (36.5ns)   --->   "%X_BUS_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i512P1A, i512 %X_BUS_addr, i32 1" [src/runge_kutta_45.cpp:162]   --->   Operation 43 'readreq' 'X_BUS_load_req' <Predicate = (!icmp_ln161 & !empty_66)> <Delay = 36.5> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 8 <SV = 7> <Delay = 36.5>
+ST_8 : Operation 44 [1/7] (36.5ns)   --->   "%X_BUS_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i512P1A, i512 %X_BUS_addr, i32 1" [src/runge_kutta_45.cpp:162]   --->   Operation 44 'readreq' 'X_BUS_load_req' <Predicate = (!icmp_ln161 & !empty_66)> <Delay = 36.5> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 9 <SV = 8> <Delay = 36.5>
+ST_9 : Operation 45 [1/1] (36.5ns)   --->   "%X_BUS_addr_read = read i512 @_ssdm_op_Read.m_axi.i512P1A, i512 %X_BUS_addr" [src/runge_kutta_45.cpp:162]   --->   Operation 45 'read' 'X_BUS_addr_read' <Predicate = (!icmp_ln161 & !empty_66)> <Delay = 36.5> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_9 : Operation 65 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 65 'ret' 'ret_ln0' <Predicate = (icmp_ln161)> <Delay = 0.00>
+
+State 10 <SV = 9> <Delay = 28.3>
+ST_10 : Operation 46 [1/1] (0.00ns)   --->   "%shiftreg3344_load = load i64 %shiftreg3344"   --->   Operation 46 'load' 'shiftreg3344_load' <Predicate = (!icmp_ln161)> <Delay = 0.00>
+ST_10 : Operation 47 [1/1] (0.00ns)   --->   "%shiftreg3344_cast = zext i64 %shiftreg3344_load"   --->   Operation 47 'zext' 'shiftreg3344_cast' <Predicate = (!icmp_ln161)> <Delay = 0.00>
+ST_10 : Operation 48 [1/1] (0.00ns)   --->   "%i_cast82 = zext i3 %i_8"   --->   Operation 48 'zext' 'i_cast82' <Predicate = (!icmp_ln161)> <Delay = 0.00>
+ST_10 : Operation 49 [1/1] (0.00ns)   --->   "%yy_loc_V_addr = getelementptr i100 %yy_loc_V, i64 0, i64 %i_cast82" [src/runge_kutta_45.cpp:162]   --->   Operation 49 'getelementptr' 'yy_loc_V_addr' <Predicate = (!icmp_ln161)> <Delay = 0.00>
+ST_10 : Operation 50 [1/1] (0.00ns)   --->   "%specloopname_ln161 = specloopname void @_ssdm_op_SpecLoopName, void @empty_34" [src/runge_kutta_45.cpp:161]   --->   Operation 50 'specloopname' 'specloopname_ln161' <Predicate = (!icmp_ln161)> <Delay = 0.00>
+ST_10 : Operation 51 [1/1] (1.58ns)   --->   "%br_ln162 = br i1 %empty_66, void, void %for.inc.split._crit_edge" [src/runge_kutta_45.cpp:162]   --->   Operation 51 'br' 'br_ln162' <Predicate = (!icmp_ln161)> <Delay = 1.58>
+ST_10 : Operation 52 [1/1] (0.00ns)   --->   "%shl_ln162_1 = bitconcatenate i9 @_ssdm_op_BitConcatenate.i9.i6.i3, i6 %add_ln162_1, i3 0" [src/runge_kutta_45.cpp:162]   --->   Operation 52 'bitconcatenate' 'shl_ln162_1' <Predicate = (!icmp_ln161 & !empty_66)> <Delay = 0.00>
+ST_10 : Operation 53 [1/1] (0.00ns)   --->   "%zext_ln162_1 = zext i9 %shl_ln162_1" [src/runge_kutta_45.cpp:162]   --->   Operation 53 'zext' 'zext_ln162_1' <Predicate = (!icmp_ln161 & !empty_66)> <Delay = 0.00>
+ST_10 : Operation 54 [1/1] (5.94ns)   --->   "%lshr_ln162 = lshr i512 %X_BUS_addr_read, i512 %zext_ln162_1" [src/runge_kutta_45.cpp:162]   --->   Operation 54 'lshr' 'lshr_ln162' <Predicate = (!icmp_ln161 & !empty_66)> <Delay = 5.94> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 5.94> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 55 [1/1] (0.00ns)   --->   "%trunc_ln162 = trunc i512 %lshr_ln162" [src/runge_kutta_45.cpp:162]   --->   Operation 55 'trunc' 'trunc_ln162' <Predicate = (!icmp_ln161 & !empty_66)> <Delay = 0.00>
+ST_10 : Operation 56 [1/1] (1.58ns)   --->   "%br_ln162 = br void %for.inc.split._crit_edge" [src/runge_kutta_45.cpp:162]   --->   Operation 56 'br' 'br_ln162' <Predicate = (!icmp_ln161 & !empty_66)> <Delay = 1.58>
+ST_10 : Operation 57 [1/1] (0.00ns)   --->   "%empty = phi i128 %trunc_ln162, void, i128 %shiftreg3344_cast, void %for.inc.split" [src/runge_kutta_45.cpp:162]   --->   Operation 57 'phi' 'empty' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 58 [1/1] (0.00ns)   --->   "%trunc_ln162_1 = trunc i128 %empty" [src/runge_kutta_45.cpp:162]   --->   Operation 58 'trunc' 'trunc_ln162_1' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 59 [1/1] (0.00ns)   --->   "%bitcast_ln162 = bitcast i64 %trunc_ln162_1" [src/runge_kutta_45.cpp:162]   --->   Operation 59 'bitcast' 'bitcast_ln162' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 60 [1/1] (0.00ns)   --->   "%trunc_ln3 = partselect i64 @_ssdm_op_PartSelect.i64.i128.i32.i32, i128 %empty, i32 64, i32 127"   --->   Operation 60 'partselect' 'trunc_ln3' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 61 [1/1] (17.5ns)   --->   "%ref_tmp1 = call i100 @ap_fixed_base, i64 %bitcast_ln162"   --->   Operation 61 'call' 'ref_tmp1' <Predicate = true> <Delay = 17.5> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_10 : Operation 62 [1/1] (3.25ns)   --->   "%store_ln162 = store i100 %ref_tmp1, i14 %yy_loc_V_addr" [src/runge_kutta_45.cpp:162]   --->   Operation 62 'store' 'store_ln162' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 100> <Depth = 12288> <RAM>
+ST_10 : Operation 63 [1/1] (1.58ns)   --->   "%store_ln161 = store i64 %trunc_ln3, i64 %shiftreg3344" [src/runge_kutta_45.cpp:161]   --->   Operation 63 'store' 'store_ln161' <Predicate = true> <Delay = 1.58>
+ST_10 : Operation 64 [1/1] (0.00ns)   --->   "%br_ln161 = br void %for.inc" [src/runge_kutta_45.cpp:161]   --->   Operation 64 'br' 'br_ln161' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 50ns, clock uncertainty: 13.5ns.
+
+ <State 1>: 3.52ns
+The critical path consists of the following:
+	'alloca' operation ('i') [6]  (0 ns)
+	'load' operation ('i') on local variable 'i' [14]  (0 ns)
+	'add' operation ('add_ln162', src/runge_kutta_45.cpp:162) [33]  (3.52 ns)
+
+ <State 2>: 36.5ns
+The critical path consists of the following:
+	'getelementptr' operation ('X_BUS_addr', src/runge_kutta_45.cpp:162) [36]  (0 ns)
+	bus request operation ('X_BUS_load_req', src/runge_kutta_45.cpp:162) on port 'X_BUS' (src/runge_kutta_45.cpp:162) [37]  (36.5 ns)
+
+ <State 3>: 36.5ns
+The critical path consists of the following:
+	bus request operation ('X_BUS_load_req', src/runge_kutta_45.cpp:162) on port 'X_BUS' (src/runge_kutta_45.cpp:162) [37]  (36.5 ns)
+
+ <State 4>: 36.5ns
+The critical path consists of the following:
+	bus request operation ('X_BUS_load_req', src/runge_kutta_45.cpp:162) on port 'X_BUS' (src/runge_kutta_45.cpp:162) [37]  (36.5 ns)
+
+ <State 5>: 36.5ns
+The critical path consists of the following:
+	bus request operation ('X_BUS_load_req', src/runge_kutta_45.cpp:162) on port 'X_BUS' (src/runge_kutta_45.cpp:162) [37]  (36.5 ns)
+
+ <State 6>: 36.5ns
+The critical path consists of the following:
+	bus request operation ('X_BUS_load_req', src/runge_kutta_45.cpp:162) on port 'X_BUS' (src/runge_kutta_45.cpp:162) [37]  (36.5 ns)
+
+ <State 7>: 36.5ns
+The critical path consists of the following:
+	bus request operation ('X_BUS_load_req', src/runge_kutta_45.cpp:162) on port 'X_BUS' (src/runge_kutta_45.cpp:162) [37]  (36.5 ns)
+
+ <State 8>: 36.5ns
+The critical path consists of the following:
+	bus request operation ('X_BUS_load_req', src/runge_kutta_45.cpp:162) on port 'X_BUS' (src/runge_kutta_45.cpp:162) [37]  (36.5 ns)
+
+ <State 9>: 36.5ns
+The critical path consists of the following:
+	bus read operation ('X_BUS_addr_read', src/runge_kutta_45.cpp:162) on port 'X_BUS' (src/runge_kutta_45.cpp:162) [38]  (36.5 ns)
+
+ <State 10>: 28.4ns
+The critical path consists of the following:
+	'lshr' operation ('lshr_ln162', src/runge_kutta_45.cpp:162) [42]  (5.94 ns)
+	multiplexor before 'phi' operation ('empty', src/runge_kutta_45.cpp:162) with incoming values : ('shiftreg3344_cast') ('trunc_ln162', src/runge_kutta_45.cpp:162) [46]  (1.59 ns)
+	'phi' operation ('empty', src/runge_kutta_45.cpp:162) with incoming values : ('shiftreg3344_cast') ('trunc_ln162', src/runge_kutta_45.cpp:162) [46]  (0 ns)
+	'call' operation ('ref_tmp1') to 'ap_fixed_base' [50]  (17.6 ns)
+	'store' operation ('store_ln162', src/runge_kutta_45.cpp:162) of variable 'ref_tmp1' on array 'yy_loc_V' [51]  (3.25 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

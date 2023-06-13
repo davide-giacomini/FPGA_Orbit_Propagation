@@ -37,7 +37,7 @@
 <Latency>undef</Latency>
 <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
-<PipelineDepth>8</PipelineDepth>
+<PipelineDepth>9</PipelineDepth>
 <InstanceList>
 </InstanceList>
 </last_copy_y>
@@ -46,8 +46,8 @@
 
 <AreaEstimates>
 <Resources>
-<FF>812</FF>
-<LUT>4329</LUT>
+<FF>982</FF>
+<LUT>4638</LUT>
 <BRAM_18K>0</BRAM_18K>
 <DSP>0</DSP>
 <URAM>0</URAM>
@@ -635,8 +635,8 @@
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>mul366</name>
-<Object>mul366</Object>
+<name>mul397</name>
+<Object>mul397</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -675,7 +675,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>80</Bits>
+<Bits>100</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -690,8 +690,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>zext_ln276</name>
-<Object>zext_ln276</Object>
+<name>zext_ln288</name>
+<Object>zext_ln288</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>

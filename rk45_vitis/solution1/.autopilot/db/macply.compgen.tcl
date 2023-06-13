@@ -1,6 +1,6 @@
 # This script segment is generated automatically by AutoPilot
 
-set name runge_kutta_45_mul_80s_80s_140_1_1
+set name runge_kutta_45_mul_100s_100s_160_1_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 0 ALLOW_PRAGMA 1
 }
@@ -24,7 +24,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_result_V_read \
     op interface \
-    ports { result_V_read { I 80 vector } } \
+    ports { result_V_read { I 100 vector } } \
 } "
 }
 
@@ -39,7 +39,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_x \
     op interface \
-    ports { x { I 80 vector } } \
+    ports { x { I 100 vector } } \
 } "
 }
 
@@ -54,7 +54,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_y \
     op interface \
-    ports { y { I 80 vector } } \
+    ports { y { I 100 vector } } \
 } "
 }
 
@@ -82,7 +82,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename ap_return \
     op interface \
-    ports { ap_return { O 80 vector } } \
+    ports { ap_return { O 100 vector } } \
 } "
 }
 

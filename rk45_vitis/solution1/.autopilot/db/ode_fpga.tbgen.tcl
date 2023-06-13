@@ -13,20 +13,20 @@ set hasInterrupt 0
 set C_modelName {ode_fpga}
 set C_modelType { void 0 }
 set C_modelArgList {
-	{ out_r int 80 regular {array 42 { 0 3 } 0 1 }  }
+	{ out_r int 100 regular {array 42 { 0 3 } 0 1 }  }
 	{ out_offset int 64 regular  }
-	{ in_r int 80 regular {array 12288 { 1 3 } 1 1 }  }
+	{ in_r int 100 regular {array 12288 { 1 3 } 1 1 }  }
 	{ in_offset int 64 regular  }
-	{ c int 80 regular {array 6 { 1 3 } 1 1 }  }
-	{ mu int 80 regular  }
+	{ c int 100 regular {array 6 { 1 3 } 1 1 }  }
+	{ mu int 100 regular  }
 }
 set C_modelArgMapList {[ 
-	{ "Name" : "out_r", "interface" : "memory", "bitwidth" : 80, "direction" : "WRITEONLY"} , 
+	{ "Name" : "out_r", "interface" : "memory", "bitwidth" : 100, "direction" : "WRITEONLY"} , 
  	{ "Name" : "out_offset", "interface" : "wire", "bitwidth" : 64, "direction" : "READONLY"} , 
- 	{ "Name" : "in_r", "interface" : "memory", "bitwidth" : 80, "direction" : "READONLY"} , 
+ 	{ "Name" : "in_r", "interface" : "memory", "bitwidth" : 100, "direction" : "READONLY"} , 
  	{ "Name" : "in_offset", "interface" : "wire", "bitwidth" : 64, "direction" : "READONLY"} , 
- 	{ "Name" : "c", "interface" : "memory", "bitwidth" : 80, "direction" : "READONLY"} , 
- 	{ "Name" : "mu", "interface" : "wire", "bitwidth" : 80, "direction" : "READONLY"} ]}
+ 	{ "Name" : "c", "interface" : "memory", "bitwidth" : 100, "direction" : "READONLY"} , 
+ 	{ "Name" : "mu", "interface" : "wire", "bitwidth" : 100, "direction" : "READONLY"} ]}
 # RTL Port declarations: 
 set portNum 19
 set portList { 
@@ -39,16 +39,16 @@ set portList {
 	{ out_r_address0 sc_out sc_lv 6 signal 0 } 
 	{ out_r_ce0 sc_out sc_logic 1 signal 0 } 
 	{ out_r_we0 sc_out sc_logic 1 signal 0 } 
-	{ out_r_d0 sc_out sc_lv 80 signal 0 } 
+	{ out_r_d0 sc_out sc_lv 100 signal 0 } 
 	{ out_offset sc_in sc_lv 64 signal 1 } 
 	{ in_r_address0 sc_out sc_lv 14 signal 2 } 
 	{ in_r_ce0 sc_out sc_logic 1 signal 2 } 
-	{ in_r_q0 sc_in sc_lv 80 signal 2 } 
+	{ in_r_q0 sc_in sc_lv 100 signal 2 } 
 	{ in_offset sc_in sc_lv 64 signal 3 } 
 	{ c_address0 sc_out sc_lv 3 signal 4 } 
 	{ c_ce0 sc_out sc_logic 1 signal 4 } 
-	{ c_q0 sc_in sc_lv 80 signal 4 } 
-	{ mu sc_in sc_lv 80 signal 5 } 
+	{ c_q0 sc_in sc_lv 100 signal 4 } 
+	{ mu sc_in sc_lv 100 signal 5 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -60,16 +60,16 @@ set NewPortList {[
  	{ "name": "out_r_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "out_r", "role": "address0" }} , 
  	{ "name": "out_r_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "out_r", "role": "ce0" }} , 
  	{ "name": "out_r_we0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "out_r", "role": "we0" }} , 
- 	{ "name": "out_r_d0", "direction": "out", "datatype": "sc_lv", "bitwidth":80, "type": "signal", "bundle":{"name": "out_r", "role": "d0" }} , 
+ 	{ "name": "out_r_d0", "direction": "out", "datatype": "sc_lv", "bitwidth":100, "type": "signal", "bundle":{"name": "out_r", "role": "d0" }} , 
  	{ "name": "out_offset", "direction": "in", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "out_offset", "role": "default" }} , 
  	{ "name": "in_r_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":14, "type": "signal", "bundle":{"name": "in_r", "role": "address0" }} , 
  	{ "name": "in_r_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "in_r", "role": "ce0" }} , 
- 	{ "name": "in_r_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":80, "type": "signal", "bundle":{"name": "in_r", "role": "q0" }} , 
+ 	{ "name": "in_r_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":100, "type": "signal", "bundle":{"name": "in_r", "role": "q0" }} , 
  	{ "name": "in_offset", "direction": "in", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "in_offset", "role": "default" }} , 
  	{ "name": "c_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":3, "type": "signal", "bundle":{"name": "c", "role": "address0" }} , 
  	{ "name": "c_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "c", "role": "ce0" }} , 
- 	{ "name": "c_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":80, "type": "signal", "bundle":{"name": "c", "role": "q0" }} , 
- 	{ "name": "mu", "direction": "in", "datatype": "sc_lv", "bitwidth":80, "type": "signal", "bundle":{"name": "mu", "role": "default" }}  ]}
+ 	{ "name": "c_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":100, "type": "signal", "bundle":{"name": "c", "role": "q0" }} , 
+ 	{ "name": "mu", "direction": "in", "datatype": "sc_lv", "bitwidth":100, "type": "signal", "bundle":{"name": "mu", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "16", "19", "22", "23"],
@@ -78,7 +78,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "1317", "EstimateLatencyMax" : "1317",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "1440", "EstimateLatencyMax" : "1440",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -89,8 +89,8 @@ set RtlHierarchyInfo {[
 		"Port" : [
 			{"Name" : "out_r", "Type" : "Memory", "Direction" : "O",
 				"SubConnect" : [
-					{"ID" : "16", "SubInstance" : "grp_ode_fpga_Pipeline_1_fu_220", "Port" : "out_r", "Inst_start_state" : "10", "Inst_end_state" : "12"},
-					{"ID" : "19", "SubInstance" : "grp_ode_fpga_Pipeline_2_fu_230", "Port" : "out_r", "Inst_start_state" : "13", "Inst_end_state" : "14"}]},
+					{"ID" : "19", "SubInstance" : "grp_ode_fpga_Pipeline_2_fu_230", "Port" : "out_r", "Inst_start_state" : "13", "Inst_end_state" : "14"},
+					{"ID" : "16", "SubInstance" : "grp_ode_fpga_Pipeline_1_fu_220", "Port" : "out_r", "Inst_start_state" : "10", "Inst_end_state" : "12"}]},
 			{"Name" : "out_offset", "Type" : "None", "Direction" : "I"},
 			{"Name" : "in_r", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "in_offset", "Type" : "None", "Direction" : "I"},
@@ -113,7 +113,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "423", "EstimateLatencyMax" : "423",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "464", "EstimateLatencyMax" : "464",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -156,8 +156,8 @@ set RtlHierarchyInfo {[
 			{"Name" : "r_in_V_0_01_out", "Type" : "Vld", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_70_1", "PipelineType" : "NotSupport"}]},
-	{"ID" : "3", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_fu_208.grp_vel_der_Pipeline_VITIS_LOOP_70_1_fu_112.mux_32_80_1_1_U12", "Parent" : "2"},
-	{"ID" : "4", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_fu_208.grp_vel_der_Pipeline_VITIS_LOOP_70_1_fu_112.mux_32_80_1_1_U13", "Parent" : "2"},
+	{"ID" : "3", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_fu_208.grp_vel_der_Pipeline_VITIS_LOOP_70_1_fu_112.mux_32_100_1_1_U12", "Parent" : "2"},
+	{"ID" : "4", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_fu_208.grp_vel_der_Pipeline_VITIS_LOOP_70_1_fu_112.mux_32_100_1_1_U13", "Parent" : "2"},
 	{"ID" : "5", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_fu_208.grp_vel_der_Pipeline_VITIS_LOOP_70_1_fu_112.flow_control_loop_pipe_sequential_init_U", "Parent" : "2"},
 	{"ID" : "6", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_fu_208.grp_vel_der_Pipeline_sq_sum_loop_fu_131", "Parent" : "1", "Child" : ["7", "8", "9"],
 		"CDFG" : "vel_der_Pipeline_sq_sum_loop",
@@ -181,8 +181,8 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "sq_sum_loop", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter1", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter1", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter1", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "7", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_fu_208.grp_vel_der_Pipeline_sq_sum_loop_fu_131.mux_32_80_1_1_U24", "Parent" : "6"},
-	{"ID" : "8", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_fu_208.grp_vel_der_Pipeline_sq_sum_loop_fu_131.mul_80s_80s_160_1_1_U25", "Parent" : "6"},
+	{"ID" : "7", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_fu_208.grp_vel_der_Pipeline_sq_sum_loop_fu_131.mux_32_100_1_1_U24", "Parent" : "6"},
+	{"ID" : "8", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_fu_208.grp_vel_der_Pipeline_sq_sum_loop_fu_131.mul_100s_100s_200_1_1_U25", "Parent" : "6"},
 	{"ID" : "9", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_fu_208.grp_vel_der_Pipeline_sq_sum_loop_fu_131.flow_control_loop_pipe_sequential_init_U", "Parent" : "6"},
 	{"ID" : "10", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_fu_208.grp_vel_der_Pipeline_sqrt_loop_fu_139", "Parent" : "1", "Child" : ["11"],
 		"CDFG" : "vel_der_Pipeline_sqrt_loop",
@@ -190,7 +190,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "83", "EstimateLatencyMax" : "83",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "103", "EstimateLatencyMax" : "103",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -211,7 +211,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "203", "EstimateLatencyMax" : "203",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "223", "EstimateLatencyMax" : "223",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -222,9 +222,9 @@ set RtlHierarchyInfo {[
 		"Port" : [
 			{"Name" : "num", "Type" : "None", "Direction" : "I"},
 			{"Name" : "den", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "13", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_fu_208.grp_division_fu_145.sdiv_200ns_163ns_140_204_seq_1_U33", "Parent" : "12"},
-	{"ID" : "14", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_fu_208.mux_32_80_1_1_U37", "Parent" : "1"},
-	{"ID" : "15", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_fu_208.mul_140s_140s_140_1_1_U38", "Parent" : "1"},
+	{"ID" : "13", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_fu_208.grp_division_fu_145.sdiv_220ns_203ns_160_224_seq_1_U33", "Parent" : "12"},
+	{"ID" : "14", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_fu_208.mux_32_100_1_1_U37", "Parent" : "1"},
+	{"ID" : "15", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_vel_der_fu_208.mul_160s_160s_160_2_1_U38", "Parent" : "1"},
 	{"ID" : "16", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_ode_fpga_Pipeline_1_fu_220", "Parent" : "0", "Child" : ["17", "18"],
 		"CDFG" : "ode_fpga_Pipeline_1",
 		"Protocol" : "ap_ctrl_hs",
@@ -247,7 +247,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "out_r", "Type" : "Memory", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "Loop 1", "PipelineType" : "NotSupport"}]},
-	{"ID" : "17", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ode_fpga_Pipeline_1_fu_220.mux_32_80_1_1_U48", "Parent" : "16"},
+	{"ID" : "17", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ode_fpga_Pipeline_1_fu_220.mux_32_100_1_1_U48", "Parent" : "16"},
 	{"ID" : "18", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ode_fpga_Pipeline_1_fu_220.flow_control_loop_pipe_sequential_init_U", "Parent" : "16"},
 	{"ID" : "19", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_ode_fpga_Pipeline_2_fu_230", "Parent" : "0", "Child" : ["20", "21"],
 		"CDFG" : "ode_fpga_Pipeline_2",
@@ -271,10 +271,10 @@ set RtlHierarchyInfo {[
 			{"Name" : "out_r", "Type" : "Memory", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "Loop 1", "PipelineType" : "NotSupport"}]},
-	{"ID" : "20", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ode_fpga_Pipeline_2_fu_230.mux_32_80_1_1_U54", "Parent" : "19"},
+	{"ID" : "20", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ode_fpga_Pipeline_2_fu_230.mux_32_100_1_1_U54", "Parent" : "19"},
 	{"ID" : "21", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_ode_fpga_Pipeline_2_fu_230.flow_control_loop_pipe_sequential_init_U", "Parent" : "19"},
-	{"ID" : "22", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_32_80_1_1_U60", "Parent" : "0"},
-	{"ID" : "23", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_32_80_1_1_U61", "Parent" : "0"}]}
+	{"ID" : "22", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_32_100_1_1_U60", "Parent" : "0"},
+	{"ID" : "23", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_32_100_1_1_U61", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -331,18 +331,18 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "1317", "Max" : "1317"}
-	, {"Name" : "Interval", "Min" : "1317", "Max" : "1317"}
+	{"Name" : "Latency", "Min" : "1440", "Max" : "1440"}
+	, {"Name" : "Interval", "Min" : "1440", "Max" : "1440"}
 ]}
 
 set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
-	out_r { ap_memory {  { out_r_address0 mem_address 1 6 }  { out_r_ce0 mem_ce 1 1 }  { out_r_we0 mem_we 1 1 }  { out_r_d0 mem_din 1 80 } } }
+	out_r { ap_memory {  { out_r_address0 mem_address 1 6 }  { out_r_ce0 mem_ce 1 1 }  { out_r_we0 mem_we 1 1 }  { out_r_d0 mem_din 1 100 } } }
 	out_offset { ap_none {  { out_offset in_data 0 64 } } }
-	in_r { ap_memory {  { in_r_address0 mem_address 1 14 }  { in_r_ce0 mem_ce 1 1 }  { in_r_q0 in_data 0 80 } } }
+	in_r { ap_memory {  { in_r_address0 mem_address 1 14 }  { in_r_ce0 mem_ce 1 1 }  { in_r_q0 in_data 0 100 } } }
 	in_offset { ap_none {  { in_offset in_data 0 64 } } }
-	c { ap_memory {  { c_address0 mem_address 1 3 }  { c_ce0 mem_ce 1 1 }  { c_q0 in_data 0 80 } } }
-	mu { ap_none {  { mu in_data 0 80 } } }
+	c { ap_memory {  { c_address0 mem_address 1 3 }  { c_ce0 mem_ce 1 1 }  { c_q0 in_data 0 100 } } }
+	mu { ap_none {  { mu in_data 0 100 } } }
 }

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'vel_der'" level="0">
-<item name = "Date">Mon May 22 17:32:29 2023
+<item name = "Date">Tue Jun 13 00:34:34 2023
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
 <item name = "Project">rk45_vitis</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">50.00 ns, 31.057 ns, 13.50 ns</column>
+<column name="ap_clk">50.00 ns, 26.581 ns, 13.50 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">423, 423, 21.150 us, 21.150 us, 423, 423, no</column>
+<column name="">464, 464, 23.200 us, 23.200 us, 464, 464, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -33,8 +33,8 @@
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
 <column name="grp_vel_der_Pipeline_VITIS_LOOP_70_1_fu_112">vel_der_Pipeline_VITIS_LOOP_70_1, 5, 5, 0.250 us, 0.250 us, 5, 5, no</column>
 <column name="grp_vel_der_Pipeline_sq_sum_loop_fu_131">vel_der_Pipeline_sq_sum_loop, 5, 5, 0.250 us, 0.250 us, 5, 5, no</column>
-<column name="grp_vel_der_Pipeline_sqrt_loop_fu_139">vel_der_Pipeline_sqrt_loop, 83, 83, 4.150 us, 4.150 us, 83, 83, no</column>
-<column name="grp_division_fu_145">division, 203, 203, 10.150 us, 10.150 us, 203, 203, no</column>
+<column name="grp_vel_der_Pipeline_sqrt_loop_fu_139">vel_der_Pipeline_sqrt_loop, 103, 103, 5.150 us, 5.150 us, 103, 103, no</column>
+<column name="grp_division_fu_145">division, 223, 223, 11.150 us, 11.150 us, 223, 223, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

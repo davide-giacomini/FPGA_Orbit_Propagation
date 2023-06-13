@@ -19,7 +19,7 @@ using namespace sc_dt;
 
 struct runge_kutta_45_yy_loc_V_RAM_AUTO_1R1W_ram : public sc_core::sc_module {
 
-  static const unsigned DataWidth = 80;
+  static const unsigned DataWidth = 100;
   static const unsigned AddressRange = 12288;
   static const unsigned AddressWidth = 14;
 
@@ -95,7 +95,7 @@ void prc_write_1()
 SC_MODULE(runge_kutta_45_yy_loc_V_RAM_AUTO_1R1W) {
 
 
-static const unsigned DataWidth = 80;
+static const unsigned DataWidth = 100;
 static const unsigned AddressRange = 12288;
 static const unsigned AddressWidth = 14;
 

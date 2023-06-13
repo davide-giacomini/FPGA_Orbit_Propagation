@@ -17,9 +17,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="3" bw="80" op_0_bw="80" op_1_bw="80">
+<Node id="3" bw="100" op_0_bw="100" op_1_bw="100">
 <![CDATA[
-entry:0 %y_read = read i80 @_ssdm_op_Read.ap_auto.i80, i80 %y
+entry:0 %y_read = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %y
 
 ]]></Node>
 <StgValue><ssdm name="y_read"/></StgValue>
@@ -32,9 +32,9 @@ entry:0 %y_read = read i80 @_ssdm_op_Read.ap_auto.i80, i80 %y
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="4" bw="80" op_0_bw="80" op_1_bw="80">
+<Node id="4" bw="100" op_0_bw="100" op_1_bw="100">
 <![CDATA[
-entry:1 %x_read = read i80 @_ssdm_op_Read.ap_auto.i80, i80 %x
+entry:1 %x_read = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %x
 
 ]]></Node>
 <StgValue><ssdm name="x_read"/></StgValue>
@@ -47,9 +47,9 @@ entry:1 %x_read = read i80 @_ssdm_op_Read.ap_auto.i80, i80 %x
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="5" bw="160" op_0_bw="80">
+<Node id="5" bw="200" op_0_bw="100">
 <![CDATA[
-entry:2 %sext_ln1317 = sext i80 %x_read
+entry:2 %sext_ln1317 = sext i100 %x_read
 
 ]]></Node>
 <StgValue><ssdm name="sext_ln1317"/></StgValue>
@@ -62,9 +62,9 @@ entry:2 %sext_ln1317 = sext i80 %x_read
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="6" bw="160" op_0_bw="80">
+<Node id="6" bw="200" op_0_bw="100">
 <![CDATA[
-entry:3 %sext_ln1319 = sext i80 %y_read
+entry:3 %sext_ln1319 = sext i100 %y_read
 
 ]]></Node>
 <StgValue><ssdm name="sext_ln1319"/></StgValue>
@@ -77,9 +77,9 @@ entry:3 %sext_ln1319 = sext i80 %y_read
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="7" bw="160" op_0_bw="160" op_1_bw="160">
+<Node id="7" bw="200" op_0_bw="200" op_1_bw="200">
 <![CDATA[
-entry:4 %r_V = mul i160 %sext_ln1319, i160 %sext_ln1317
+entry:4 %r_V = mul i200 %sext_ln1319, i200 %sext_ln1317
 
 ]]></Node>
 <StgValue><ssdm name="r_V"/></StgValue>
@@ -92,9 +92,9 @@ entry:4 %r_V = mul i160 %sext_ln1319, i160 %sext_ln1317
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="8" bw="0" op_0_bw="160">
+<Node id="8" bw="0" op_0_bw="200">
 <![CDATA[
-entry:5 %ret_ln55 = ret i160 %r_V
+entry:5 %ret_ln55 = ret i200 %r_V
 
 ]]></Node>
 <StgValue><ssdm name="ret_ln55"/></StgValue>

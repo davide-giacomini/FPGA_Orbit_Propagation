@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'division'" level="0">
-<item name = "Date">Mon May 22 17:32:37 2023
+<item name = "Date">Tue Jun 13 00:34:46 2023
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
 <item name = "Project">rk45_vitis</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">203, 203, 10.150 us, 10.150 us, 203, 203, no</column>
+<column name="">223, 223, 11.150 us, 11.150 us, 223, 223, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -51,17 +51,17 @@
 <column name="FIFO">-, -, -, -, -</column>
 <column name="Instance">-, -, 779, 469, -</column>
 <column name="Memory">-, -, -, -, -</column>
-<column name="Multiplexer">-, -, -, 1101, -</column>
-<column name="Register">-, -, 344, -, -</column>
+<column name="Multiplexer">-, -, -, 1207, -</column>
+<column name="Register">-, -, 384, -, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
-<specialColumn name="Utilization (%)">0, 0, 1, 2, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, 1, 3, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="sdiv_200ns_163ns_140_204_seq_1_U33">sdiv_200ns_163ns_140_204_seq_1, 0, 0, 779, 469, 0</column>
+<column name="sdiv_220ns_203ns_160_224_seq_1_U33">sdiv_220ns_203ns_160_224_seq_1, 0, 0, 779, 469, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -82,14 +82,14 @@
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="ap_NS_fsm">1092, 205, 1, 205</column>
-<column name="ap_return">9, 2, 140, 280</column>
+<column name="ap_NS_fsm">1198, 225, 1, 225</column>
+<column name="ap_return">9, 2, 160, 320</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="ap_CS_fsm">204, 0, 204, 0</column>
-<column name="ap_return_preg">140, 0, 140, 0</column>
+<column name="ap_CS_fsm">224, 0, 224, 0</column>
+<column name="ap_return_preg">160, 0, 160, 0</column>
 </table>
 </item>
 </section>
@@ -105,9 +105,9 @@
 <column name="ap_done">out, 1, ap_ctrl_hs, division, return value</column>
 <column name="ap_idle">out, 1, ap_ctrl_hs, division, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, division, return value</column>
-<column name="ap_return">out, 140, ap_ctrl_hs, division, return value</column>
-<column name="num">in, 80, ap_none, num, scalar</column>
-<column name="den">in, 161, ap_none, den, scalar</column>
+<column name="ap_return">out, 160, ap_ctrl_hs, division, return value</column>
+<column name="num">in, 100, ap_none, num, scalar</column>
+<column name="den">in, 201, ap_none, den, scalar</column>
 </table>
 </item>
 </section>

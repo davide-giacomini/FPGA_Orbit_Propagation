@@ -181,8 +181,8 @@ class AESL_RUNTIME_BC {
     string mName;
 };
 struct __cosim_s64__ { char data[64]; };
-extern "C" void runge_kutta_45(__cosim_s64__*, __cosim_s64__*, int, int, double, double, double, double, double, double, volatile void *);
-extern "C" void apatb_runge_kutta_45_hw(volatile void * __xlx_apatb_param_yy, volatile void * __xlx_apatb_param_tt, double __xlx_apatb_param_tf, double __xlx_apatb_param_h0, double __xlx_apatb_param_atol, double __xlx_apatb_param_h_max, double __xlx_apatb_param_h_min, double __xlx_apatb_param_mu, volatile void * __xlx_apatb_param_size) {
+extern "C" void runge_kutta_45(__cosim_s64__*, __cosim_s64__*, int, int, double, double, double, double, double, double, volatile void *, volatile void *);
+extern "C" void apatb_runge_kutta_45_hw(volatile void * __xlx_apatb_param_yy, volatile void * __xlx_apatb_param_tt, double __xlx_apatb_param_tf, double __xlx_apatb_param_h0, double __xlx_apatb_param_atol, double __xlx_apatb_param_h_max, double __xlx_apatb_param_h_min, double __xlx_apatb_param_mu, volatile void * __xlx_apatb_param_size, volatile void * __xlx_apatb_param_flag) {
   // Collect __xlx_yy__tmp_vec
   vector<sc_bv<512> >__xlx_yy__tmp_vec;
   for (int j = 0, e = 1536; j != e; ++j) {
@@ -352,7 +352,7 @@ extern "C" void apatb_runge_kutta_45_hw(volatile void * __xlx_apatb_param_yy, vo
     ((long long*)__xlx_tt__input_buffer)[i*8+7] = __xlx_tt__tmp_vec[i].range(511, 448).to_uint64();
   }
   // DUT call
-  runge_kutta_45(__xlx_yy__input_buffer, __xlx_tt__input_buffer, __xlx_offset_byte_param_yy, __xlx_offset_byte_param_tt, __xlx_apatb_param_tf, __xlx_apatb_param_h0, __xlx_apatb_param_atol, __xlx_apatb_param_h_max, __xlx_apatb_param_h_min, __xlx_apatb_param_mu, __xlx_apatb_param_size);
+  runge_kutta_45(__xlx_yy__input_buffer, __xlx_tt__input_buffer, __xlx_offset_byte_param_yy, __xlx_offset_byte_param_tt, __xlx_apatb_param_tf, __xlx_apatb_param_h0, __xlx_apatb_param_atol, __xlx_apatb_param_h_max, __xlx_apatb_param_h_min, __xlx_apatb_param_mu, __xlx_apatb_param_size, __xlx_apatb_param_flag);
 // print __xlx_apatb_param_yy
   sc_bv<512>*__xlx_yy_output_buffer = new sc_bv<512>[__xlx_size_param_yy];
   for (int i = 0; i < __xlx_size_param_yy; ++i) {
