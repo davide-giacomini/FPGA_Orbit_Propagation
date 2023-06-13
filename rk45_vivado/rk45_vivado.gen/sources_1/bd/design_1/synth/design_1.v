@@ -1,7 +1,7 @@
 //Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
-//Date        : Mon May 22 17:36:25 2023
+//Date        : Tue Jun 13 00:41:07 2023
 //Host        : davide-N552VW running 64-bit Ubuntu 20.04.6 LTS
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -704,10 +704,10 @@ module design_1
         .m_axi_X_BUS_WREADY(runge_kutta_45_0_m_axi_X_BUS_WREADY),
         .m_axi_X_BUS_WSTRB(runge_kutta_45_0_m_axi_X_BUS_WSTRB),
         .m_axi_X_BUS_WVALID(runge_kutta_45_0_m_axi_X_BUS_WVALID),
-        .s_axi_control_ARADDR(ps7_0_axi_periph_M00_AXI_ARADDR[6:0]),
+        .s_axi_control_ARADDR(ps7_0_axi_periph_M00_AXI_ARADDR[7:0]),
         .s_axi_control_ARREADY(ps7_0_axi_periph_M00_AXI_ARREADY),
         .s_axi_control_ARVALID(ps7_0_axi_periph_M00_AXI_ARVALID),
-        .s_axi_control_AWADDR(ps7_0_axi_periph_M00_AXI_AWADDR[6:0]),
+        .s_axi_control_AWADDR(ps7_0_axi_periph_M00_AXI_AWADDR[7:0]),
         .s_axi_control_AWREADY(ps7_0_axi_periph_M00_AXI_AWREADY),
         .s_axi_control_AWVALID(ps7_0_axi_periph_M00_AXI_AWVALID),
         .s_axi_control_BREADY(ps7_0_axi_periph_M00_AXI_BREADY),

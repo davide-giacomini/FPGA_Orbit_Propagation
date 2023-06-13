@@ -246,6 +246,26 @@ u32 XRunge_kutta_45_Get_size_vld(XRunge_kutta_45 *InstancePtr) {
     return Data & 0x1;
 }
 
+u32 XRunge_kutta_45_Get_flag(XRunge_kutta_45 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XRunge_kutta_45_ReadReg(InstancePtr->Control_BaseAddress, XRUNGE_KUTTA_45_CONTROL_ADDR_FLAG_DATA);
+    return Data;
+}
+
+u32 XRunge_kutta_45_Get_flag_vld(XRunge_kutta_45 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XRunge_kutta_45_ReadReg(InstancePtr->Control_BaseAddress, XRUNGE_KUTTA_45_CONTROL_ADDR_FLAG_CTRL);
+    return Data & 0x1;
+}
+
 void XRunge_kutta_45_InterruptGlobalEnable(XRunge_kutta_45 *InstancePtr) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);

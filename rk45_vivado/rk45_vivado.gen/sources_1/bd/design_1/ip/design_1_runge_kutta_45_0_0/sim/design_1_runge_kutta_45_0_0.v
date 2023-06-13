@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:hls:runge_kutta_45:1.0
-// IP Revision: 2113041993
+// IP Revision: 2113072657
 
 `timescale 1ns/1ps
 
@@ -148,7 +148,7 @@ module design_1_runge_kutta_45_0_0 (
 );
 
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_control AWADDR" *)
-input wire [6 : 0] s_axi_control_AWADDR;
+input wire [7 : 0] s_axi_control_AWADDR;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_control AWVALID" *)
 input wire s_axi_control_AWVALID;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_control AWREADY" *)
@@ -168,7 +168,7 @@ output wire s_axi_control_BVALID;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_control BREADY" *)
 input wire s_axi_control_BREADY;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_control ARADDR" *)
-input wire [6 : 0] s_axi_control_ARADDR;
+input wire [7 : 0] s_axi_control_ARADDR;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_control ARVALID" *)
 input wire s_axi_control_ARVALID;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_control ARREADY" *)
@@ -179,7 +179,7 @@ output wire [31 : 0] s_axi_control_RDATA;
 output wire [1 : 0] s_axi_control_RRESP;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_control RVALID" *)
 output wire s_axi_control_RVALID;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s_axi_control, ADDR_WIDTH 7, DATA_WIDTH 32, PROTOCOL AXI4LITE, READ_WRITE_MODE READ_WRITE, FREQ_HZ 20000000, ID_WIDTH 0, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, NUM_READ_TH\
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s_axi_control, ADDR_WIDTH 8, DATA_WIDTH 32, PROTOCOL AXI4LITE, READ_WRITE_MODE READ_WRITE, FREQ_HZ 20000000, ID_WIDTH 0, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, NUM_READ_TH\
 READS 4, NUM_WRITE_THREADS 4, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_control RREADY" *)
 input wire s_axi_control_RREADY;
@@ -341,7 +341,7 @@ output wire m_axi_T_BUS_RREADY;
 (* SDX_KERNEL_TYPE = "hls" *)
 (* SDX_KERNEL_SIM_INST = "" *)
   runge_kutta_45 #(
-    .C_S_AXI_CONTROL_ADDR_WIDTH(7),
+    .C_S_AXI_CONTROL_ADDR_WIDTH(8),
     .C_S_AXI_CONTROL_DATA_WIDTH(32),
     .C_M_AXI_X_BUS_ID_WIDTH(1),
     .C_M_AXI_X_BUS_ADDR_WIDTH(64),

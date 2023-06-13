@@ -25,30 +25,30 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 105006
+INFO: [Synth 8-7075] Helper process launched with PID 147037
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 3119.055 ; gain = 0.000 ; free physical = 6144 ; free virtual = 8047
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 3149.832 ; gain = 8.000 ; free physical = 6276 ; free virtual = 8141
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'design_1_wrapper' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:12]
 INFO: [Synth 8-6157] synthesizing module 'design_1' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/synth/design_1.v:12]
 INFO: [Synth 8-6157] synthesizing module 'design_1_axi_mem_intercon_0' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/synth/design_1.v:726]
 INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_7HNO1D' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/synth/design_1.v:2239]
-INFO: [Synth 8-6157] synthesizing module 'design_1_auto_ds_0' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-104974-davide-N552VW/realtime/design_1_auto_ds_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_ds_0' (0#1) [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-104974-davide-N552VW/realtime/design_1_auto_ds_0_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'design_1_auto_pc_0' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-104974-davide-N552VW/realtime/design_1_auto_pc_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_pc_0' (0#1) [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-104974-davide-N552VW/realtime/design_1_auto_pc_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'design_1_auto_ds_0' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-146982-davide-N552VW/realtime/design_1_auto_ds_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_ds_0' (0#1) [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-146982-davide-N552VW/realtime/design_1_auto_ds_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'design_1_auto_pc_0' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-146982-davide-N552VW/realtime/design_1_auto_pc_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_pc_0' (0#1) [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-146982-davide-N552VW/realtime/design_1_auto_pc_0_stub.v:5]
 INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_7HNO1D' (0#1) [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/synth/design_1.v:2239]
 INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_mem_intercon_0' (0#1) [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/synth/design_1.v:726]
 INFO: [Synth 8-6157] synthesizing module 'design_1_axi_mem_intercon_1_0' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/synth/design_1.v:1096]
 INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_1FI55ZU' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/synth/design_1.v:1771]
-INFO: [Synth 8-6157] synthesizing module 'design_1_auto_ds_1' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-104974-davide-N552VW/realtime/design_1_auto_ds_1_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_ds_1' (0#1) [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-104974-davide-N552VW/realtime/design_1_auto_ds_1_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'design_1_auto_pc_1' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-104974-davide-N552VW/realtime/design_1_auto_pc_1_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_pc_1' (0#1) [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-104974-davide-N552VW/realtime/design_1_auto_pc_1_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'design_1_auto_ds_1' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-146982-davide-N552VW/realtime/design_1_auto_ds_1_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_ds_1' (0#1) [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-146982-davide-N552VW/realtime/design_1_auto_ds_1_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'design_1_auto_pc_1' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-146982-davide-N552VW/realtime/design_1_auto_pc_1_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_pc_1' (0#1) [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-146982-davide-N552VW/realtime/design_1_auto_pc_1_stub.v:5]
 INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_1FI55ZU' (0#1) [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/synth/design_1.v:1771]
 INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_mem_intercon_1_0' (0#1) [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/synth/design_1.v:1096]
-INFO: [Synth 8-6157] synthesizing module 'design_1_processing_system7_0_0' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-104974-davide-N552VW/realtime/design_1_processing_system7_0_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_processing_system7_0_0' (0#1) [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-104974-davide-N552VW/realtime/design_1_processing_system7_0_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'design_1_processing_system7_0_0' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-146982-davide-N552VW/realtime/design_1_processing_system7_0_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_processing_system7_0_0' (0#1) [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-146982-davide-N552VW/realtime/design_1_processing_system7_0_0_stub.v:5]
 WARNING: [Synth 8-7071] port 'USB0_PORT_INDCTL' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/synth/design_1.v:423]
 WARNING: [Synth 8-7071] port 'USB0_VBUS_PWRSELECT' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/synth/design_1.v:423]
 WARNING: [Synth 8-7071] port 'S_AXI_HP0_BID' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/synth/design_1.v:423]
@@ -66,22 +66,22 @@ WARNING: [Synth 8-7071] port 'S_AXI_HP1_WACOUNT' of module 'design_1_processing_
 WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'design_1_processing_system7_0_0' has 155 connections declared, but only 141 given [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/synth/design_1.v:423]
 INFO: [Synth 8-6157] synthesizing module 'design_1_ps7_0_axi_periph_0' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/synth/design_1.v:1466]
 INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_UYSKKA' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/synth/design_1.v:2707]
-INFO: [Synth 8-6157] synthesizing module 'design_1_auto_pc_2' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-104974-davide-N552VW/realtime/design_1_auto_pc_2_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_pc_2' (0#1) [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-104974-davide-N552VW/realtime/design_1_auto_pc_2_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'design_1_auto_pc_2' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-146982-davide-N552VW/realtime/design_1_auto_pc_2_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_pc_2' (0#1) [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-146982-davide-N552VW/realtime/design_1_auto_pc_2_stub.v:5]
 WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'design_1_auto_pc_2' is unconnected for instance 'auto_pc' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/synth/design_1.v:2942]
 WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'design_1_auto_pc_2' is unconnected for instance 'auto_pc' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/synth/design_1.v:2942]
 WARNING: [Synth 8-7023] instance 'auto_pc' of module 'design_1_auto_pc_2' has 59 connections declared, but only 57 given [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/synth/design_1.v:2942]
 INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_UYSKKA' (0#1) [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/synth/design_1.v:2707]
 INFO: [Synth 8-6155] done synthesizing module 'design_1_ps7_0_axi_periph_0' (0#1) [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/synth/design_1.v:1466]
-INFO: [Synth 8-6157] synthesizing module 'design_1_rst_ps7_0_100M_0' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-104974-davide-N552VW/realtime/design_1_rst_ps7_0_100M_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_rst_ps7_0_100M_0' (0#1) [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-104974-davide-N552VW/realtime/design_1_rst_ps7_0_100M_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'design_1_rst_ps7_0_100M_0' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-146982-davide-N552VW/realtime/design_1_rst_ps7_0_100M_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_rst_ps7_0_100M_0' (0#1) [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-146982-davide-N552VW/realtime/design_1_rst_ps7_0_100M_0_stub.v:5]
 WARNING: [Synth 8-7071] port 'mb_reset' of module 'design_1_rst_ps7_0_100M_0' is unconnected for instance 'rst_ps7_0_100M' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/synth/design_1.v:627]
 WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'design_1_rst_ps7_0_100M_0' is unconnected for instance 'rst_ps7_0_100M' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/synth/design_1.v:627]
 WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'design_1_rst_ps7_0_100M_0' is unconnected for instance 'rst_ps7_0_100M' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/synth/design_1.v:627]
 WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'design_1_rst_ps7_0_100M_0' is unconnected for instance 'rst_ps7_0_100M' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/synth/design_1.v:627]
 WARNING: [Synth 8-7023] instance 'rst_ps7_0_100M' of module 'design_1_rst_ps7_0_100M_0' has 10 connections declared, but only 6 given [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/synth/design_1.v:627]
-INFO: [Synth 8-6157] synthesizing module 'design_1_runge_kutta_45_0_0' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-104974-davide-N552VW/realtime/design_1_runge_kutta_45_0_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_runge_kutta_45_0_0' (0#1) [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-104974-davide-N552VW/realtime/design_1_runge_kutta_45_0_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'design_1_runge_kutta_45_0_0' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-146982-davide-N552VW/realtime/design_1_runge_kutta_45_0_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_runge_kutta_45_0_0' (0#1) [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/.Xil/Vivado-146982-davide-N552VW/realtime/design_1_runge_kutta_45_0_0_stub.v:5]
 WARNING: [Synth 8-7071] port 'interrupt' of module 'design_1_runge_kutta_45_0_0' is unconnected for instance 'runge_kutta_45_0' [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/synth/design_1.v:634]
 WARNING: [Synth 8-7023] instance 'runge_kutta_45_0' of module 'design_1_runge_kutta_45_0_0' has 90 connections declared, but only 89 given [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/synth/design_1.v:634]
 INFO: [Synth 8-6155] done synthesizing module 'design_1' (0#1) [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/synth/design_1.v:12]
@@ -103,32 +103,32 @@ WARNING: [Synth 8-7129] Port S_AXI_awlock[1] in module s00_couplers_imp_7HNO1D i
 WARNING: [Synth 8-7129] Port ACLK in module design_1_axi_mem_intercon_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ARESETN in module design_1_axi_mem_intercon_0 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 3127.055 ; gain = 8.000 ; free physical = 7227 ; free virtual = 9135
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 3149.832 ; gain = 8.000 ; free physical = 7365 ; free virtual = 9232
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 3127.055 ; gain = 8.000 ; free physical = 7230 ; free virtual = 9137
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 3149.832 ; gain = 8.000 ; free physical = 7365 ; free virtual = 9232
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 3127.055 ; gain = 8.000 ; free physical = 7230 ; free virtual = 9137
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 3149.832 ; gain = 8.000 ; free physical = 7365 ; free virtual = 9232
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3127.055 ; gain = 0.000 ; free physical = 7230 ; free virtual = 9137
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3149.832 ; gain = 0.000 ; free physical = 7364 ; free virtual = 9231
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0/design_1_processing_system7_0_0_in_context.xdc] for cell 'design_1_i/processing_system7_0'
 Finished Parsing XDC File [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0/design_1_processing_system7_0_0_in_context.xdc] for cell 'design_1_i/processing_system7_0'
-Parsing XDC File [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_auto_ds_0/design_1_auto_ds_0/design_1_auto_ds_0_in_context.xdc] for cell 'design_1_i/axi_mem_intercon/s00_couplers/auto_ds'
-Finished Parsing XDC File [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_auto_ds_0/design_1_auto_ds_0/design_1_auto_ds_0_in_context.xdc] for cell 'design_1_i/axi_mem_intercon/s00_couplers/auto_ds'
+Parsing XDC File [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_auto_ds_0/design_1_auto_ds_0/design_1_auto_ds_1_in_context.xdc] for cell 'design_1_i/axi_mem_intercon/s00_couplers/auto_ds'
+Finished Parsing XDC File [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_auto_ds_0/design_1_auto_ds_0/design_1_auto_ds_1_in_context.xdc] for cell 'design_1_i/axi_mem_intercon/s00_couplers/auto_ds'
 Parsing XDC File [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0/design_1_auto_pc_0_in_context.xdc] for cell 'design_1_i/axi_mem_intercon/s00_couplers/auto_pc'
 Finished Parsing XDC File [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0/design_1_auto_pc_0_in_context.xdc] for cell 'design_1_i/axi_mem_intercon/s00_couplers/auto_pc'
 Parsing XDC File [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0_in_context.xdc] for cell 'design_1_i/rst_ps7_0_100M'
 Finished Parsing XDC File [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0_in_context.xdc] for cell 'design_1_i/rst_ps7_0_100M'
-Parsing XDC File [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_auto_ds_1/design_1_auto_ds_1/design_1_auto_ds_0_in_context.xdc] for cell 'design_1_i/axi_mem_intercon_1/s00_couplers/auto_ds'
-Finished Parsing XDC File [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_auto_ds_1/design_1_auto_ds_1/design_1_auto_ds_0_in_context.xdc] for cell 'design_1_i/axi_mem_intercon_1/s00_couplers/auto_ds'
+Parsing XDC File [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_auto_ds_1/design_1_auto_ds_1/design_1_auto_ds_1_in_context.xdc] for cell 'design_1_i/axi_mem_intercon_1/s00_couplers/auto_ds'
+Finished Parsing XDC File [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_auto_ds_1/design_1_auto_ds_1/design_1_auto_ds_1_in_context.xdc] for cell 'design_1_i/axi_mem_intercon_1/s00_couplers/auto_ds'
 Parsing XDC File [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1/design_1_auto_pc_0_in_context.xdc] for cell 'design_1_i/axi_mem_intercon_1/s00_couplers/auto_pc'
 Finished Parsing XDC File [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1/design_1_auto_pc_0_in_context.xdc] for cell 'design_1_i/axi_mem_intercon_1/s00_couplers/auto_pc'
 Parsing XDC File [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_auto_pc_2/design_1_auto_pc_2/design_1_auto_pc_2_in_context.xdc] for cell 'design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc'
@@ -139,22 +139,22 @@ Parsing XDC File [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.r
 Finished Parsing XDC File [/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3191.086 ; gain = 0.000 ; free physical = 7136 ; free virtual = 9046
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3213.863 ; gain = 0.000 ; free physical = 7274 ; free virtual = 9141
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3191.086 ; gain = 0.000 ; free physical = 7136 ; free virtual = 9046
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3213.863 ; gain = 0.000 ; free physical = 7274 ; free virtual = 9141
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 3191.086 ; gain = 72.031 ; free physical = 7219 ; free virtual = 9129
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 3213.863 ; gain = 72.031 ; free physical = 7343 ; free virtual = 9211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 3191.086 ; gain = 72.031 ; free physical = 7219 ; free virtual = 9128
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 3213.863 ; gain = 72.031 ; free physical = 7343 ; free virtual = 9211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -432,10 +432,10 @@ Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/ps7_0_axi_periph/s00_c
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/ps7_0_axi_periph. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/runge_kutta_45_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 3191.086 ; gain = 72.031 ; free physical = 7219 ; free virtual = 9129
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 3213.863 ; gain = 72.031 ; free physical = 7343 ; free virtual = 9211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 3191.086 ; gain = 72.031 ; free physical = 7219 ; free virtual = 9130
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 3213.863 ; gain = 72.031 ; free physical = 7342 ; free virtual = 9211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -474,25 +474,25 @@ WARNING: [Synth 8-7129] Port M00_ARESETN in module design_1_axi_mem_intercon_0 i
 WARNING: [Synth 8-7129] Port S00_AXI_arlock[1] in module design_1_axi_mem_intercon_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S00_AXI_awlock[1] in module design_1_axi_mem_intercon_0 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 3191.086 ; gain = 72.031 ; free physical = 7205 ; free virtual = 9123
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 3213.863 ; gain = 72.031 ; free physical = 7335 ; free virtual = 9211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 3191.086 ; gain = 72.031 ; free physical = 7077 ; free virtual = 9003
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 3213.863 ; gain = 72.031 ; free physical = 7223 ; free virtual = 9099
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 3191.086 ; gain = 72.031 ; free physical = 7077 ; free virtual = 9002
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 3213.863 ; gain = 72.031 ; free physical = 7223 ; free virtual = 9099
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 3191.086 ; gain = 72.031 ; free physical = 7067 ; free virtual = 8992
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 3213.863 ; gain = 72.031 ; free physical = 7213 ; free virtual = 9089
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -510,37 +510,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 3191.086 ; gain = 72.031 ; free physical = 7067 ; free virtual = 8992
+Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 3213.863 ; gain = 72.031 ; free physical = 7213 ; free virtual = 9089
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 3191.086 ; gain = 72.031 ; free physical = 7067 ; free virtual = 8992
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 3213.863 ; gain = 72.031 ; free physical = 7213 ; free virtual = 9089
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 3191.086 ; gain = 72.031 ; free physical = 7067 ; free virtual = 8992
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 3213.863 ; gain = 72.031 ; free physical = 7213 ; free virtual = 9089
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 3191.086 ; gain = 72.031 ; free physical = 7067 ; free virtual = 8992
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 3213.863 ; gain = 72.031 ; free physical = 7213 ; free virtual = 9089
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 3191.086 ; gain = 72.031 ; free physical = 7067 ; free virtual = 8992
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 3213.863 ; gain = 72.031 ; free physical = 7213 ; free virtual = 9089
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 3191.086 ; gain = 72.031 ; free physical = 7067 ; free virtual = 8992
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 3213.863 ; gain = 72.031 ; free physical = 7213 ; free virtual = 9089
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -571,24 +571,24 @@ Report Cell Usage:
 |8     |design_1_runge_kutta_45_0     |     1|
 +------+------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 3191.086 ; gain = 72.031 ; free physical = 7067 ; free virtual = 8992
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 3213.863 ; gain = 72.031 ; free physical = 7213 ; free virtual = 9089
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 17 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 3191.086 ; gain = 8.000 ; free physical = 7126 ; free virtual = 9051
-Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 3191.086 ; gain = 72.031 ; free physical = 7126 ; free virtual = 9051
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 3213.863 ; gain = 8.000 ; free physical = 7271 ; free virtual = 9148
+Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 3213.863 ; gain = 72.031 ; free physical = 7271 ; free virtual = 9148
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3191.086 ; gain = 0.000 ; free physical = 7213 ; free virtual = 9139
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3213.863 ; gain = 0.000 ; free physical = 7361 ; free virtual = 9238
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3191.086 ; gain = 0.000 ; free physical = 7143 ; free virtual = 9068
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3213.863 ; gain = 0.000 ; free physical = 7293 ; free virtual = 9170
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete, checksum: 8845189e
+Synth Design complete, checksum: 95cd9762
 INFO: [Common 17-83] Releasing license: Synthesis
 53 Infos, 59 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:33 . Memory (MB): peak = 3191.086 ; gain = 72.031 ; free physical = 7338 ; free virtual = 9264
+synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:34 . Memory (MB): peak = 3213.863 ; gain = 72.031 ; free physical = 7487 ; free virtual = 9364
 INFO: [Common 17-1381] The checkpoint '/home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/synth_1/design_1_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon May 22 17:42:32 2023...
+INFO: [Common 17-206] Exiting Vivado at Tue Jun 13 00:53:19 2023...
