@@ -50,8 +50,8 @@ h_rk45_python = pd.read_csv(dir + 'h_rk45_tol09_python.csv', header=None).to_num
 # y_rk45_cpp_fpga_sim = pd.read_csv(dir + 'y_rk45_tol09_fpga_sim.csv', header=None).to_numpy() # (T,N)
 # t_rk45_cpp_fpga_sim = pd.read_csv(dir + 't_rk45_tol09_fpga_sim.csv', header=None).to_numpy().reshape((-1,))  # (T,)
 
-# y_rk45_fpga_impl = pd.read_csv(dir + 'y_fpga_tol09_jupyter.csv', header=None).to_numpy() # (T,N)
-# t_rk45_fpga_impl = pd.read_csv(dir + 't_fpga_tol09_jupyter.csv', header=None).to_numpy().reshape((-1,))  # (T,)
+y_rk45_fpga_impl = pd.read_csv(dir + 'y_fpga_tol09_jupyter.csv', header=None).to_numpy() # (T,N)
+t_rk45_fpga_impl = pd.read_csv(dir + 't_fpga_tol09_jupyter.csv', header=None).to_numpy().reshape((-1,))  # (T,)
 
 # y_rk45_adim_fpga_impl = pd.read_csv(dir + 'y_fpga_tol09_adim_jupyter.csv', header=None).to_numpy() # (T,N)
 # t_rk45_adim_fpga_impl = pd.read_csv(dir + 't_fpga_tol09_adim_jupyter.csv', header=None).to_numpy().reshape((-1,))  # (T,)
@@ -73,13 +73,17 @@ v0 = constants.v0
 mu = constants.mu
 
 # Plot Matlab error
-ax_pos.plot(t_rk45_matlab[::100], euclidean_distance(y_rk45_matlab[::100, :3], utils.kepler_orbit(t_rk45_matlab[::100], r0, v0, mu)[:, :3]), label="Matlab (tol=" + str(constants.tol) + ")", color="black")
-ax_vel.plot(t_rk45_matlab[::100], euclidean_distance(y_rk45_matlab[::100, 3:], utils.kepler_orbit(t_rk45_matlab[::100], r0, v0, mu)[:, 3:]), label="Matlab (tol=" + str(constants.tol) + ")", color="black")
+ax_pos.plot(t_rk45_matlab[::100], euclidean_distance(y_rk45_matlab[::100, :3], utils.kepler_orbit(t_rk45_matlab[::100], r0, v0, mu)[:, :3]), label="Matlab (LTE <= " + str(constants.tol) + ")", color="black")
+ax_vel.plot(t_rk45_matlab[::100], euclidean_distance(y_rk45_matlab[::100, 3:], utils.kepler_orbit(t_rk45_matlab[::100], r0, v0, mu)[:, 3:]), label="Matlab (LTE <= " + str(constants.tol) + ")", color="black")
 
 # Plot Python error
-ax_pos.plot(t_rk45_python[::10], euclidean_distance(y_rk45_python[::10, :3], utils.kepler_orbit(t_rk45_python[::10], r0, v0, mu)[:, :3]), label="Python (tol=" + str(constants.tol) + ")", color="purple")
-ax_vel.plot(t_rk45_python[::10], euclidean_distance(y_rk45_python[::10, 3:], utils.kepler_orbit(t_rk45_python[::10], r0, v0, mu)[:, 3:]), label="Python (tol=" + str(constants.tol) + ")", color="purple")
-ax_h.plot(t_rk45_python[::10], h_rk45_python[::10], label="Python (tol=" + str(constants.tol) + ")", color="purple")
+ax_pos.plot(t_rk45_python[::10], euclidean_distance(y_rk45_python[::10, :3], utils.kepler_orbit(t_rk45_python[::10], r0, v0, mu)[:, :3]), label="Python (LTE <= " + str(constants.tol) + ")", color="purple")
+ax_vel.plot(t_rk45_python[::10], euclidean_distance(y_rk45_python[::10, 3:], utils.kepler_orbit(t_rk45_python[::10], r0, v0, mu)[:, 3:]), label="Python (LTE <= " + str(constants.tol) + ")", color="purple")
+ax_h.plot(t_rk45_python[::10], h_rk45_python[::10], label="Python (LTE <= " + str(constants.tol) + ")", color="purple")
+
+# Plot FPGA error
+ax_pos.plot(t_rk45_fpga_impl[::10], euclidean_distance(y_rk45_fpga_impl[::10, :3], utils.kepler_orbit(t_rk45_fpga_impl[::10], r0, v0, mu)[:, :3]), label="FPGA (LTE <= " + str(constants.tol) + ")", color="red")
+ax_vel.plot(t_rk45_fpga_impl[::10], euclidean_distance(y_rk45_fpga_impl[::10, 3:], utils.kepler_orbit(t_rk45_fpga_impl[::10], r0, v0, mu)[:, 3:]), label="FPGA (LTE <= " + str(constants.tol) + ")", color="red")
 
 # ax.plot(t_rk45_correct_scale_python[::10], euclidean_distance(y_rk45_correct_scale_python[::10, :], utils.kepler_orbit(t_rk45_correct_scale_python[::10], r0, v0, mu)[:, :]), label="Distance between exact orbit and rk45 in Python with tol=1e-09 and scale = 0.9*(atol / np.linalg.norm(e))**(1/5)", color="green")
 # ax.plot(t_rk45_adim_python[::10], euclidean_distance(y_rk45_adim_python[::10, :], utils.kepler_orbit(t_rk45_adim_python[::10], r0, v0, mu)[:, :]), label="Distance between exact orbit and rk45 in Python with tol=1e-09 and scale = 0.99, adimensional", color="green")
