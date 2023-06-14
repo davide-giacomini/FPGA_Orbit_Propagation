@@ -38,11 +38,11 @@ h_rk45_adim_python = pd.read_csv(dir + 'h_rk45_tol09_adim_python.csv', header=No
 # t_rk45_correct_scale_python = pd.read_csv(dir + 't_rk45_tol09_python_correct_scale.csv', header=None).to_numpy().reshape((-1,))  # (T,)
 # h_rk45_correct_scale_python = pd.read_csv(dir + 'h_rk45_tol09_python_correct_scale.csv', header=None).to_numpy().reshape((-1,))  # (T,)
 
-# y_rk45_jupyter_cpu = pd.read_csv(dir + 'y_rk5_tol09_jupyter_cpu.csv', header=None).to_numpy() # (T,N)
-# t_rk45_jupyter_cpu = pd.read_csv(dir + 't_rk5_tol09_jupyter_cpu.csv', header=None).to_numpy().reshape((-1,))  # (T,)
+y_rk45_jupyter_cpu = pd.read_csv(dir + 'y_rk5_tol09_jupyter_cpu.csv', header=None).to_numpy() # (T,N)
+t_rk45_jupyter_cpu = pd.read_csv(dir + 't_rk5_tol09_jupyter_cpu.csv', header=None).to_numpy().reshape((-1,))  # (T,)
 
-# y_rk45_adim_jupyter_cpu = pd.read_csv(dir + 'y_rk5_tol09_jupyter_adim_cpu.csv', header=None).to_numpy() # (T,N)
-# t_rk45_adim_jupyter_cpu = pd.read_csv(dir + 't_rk5_tol09_jupyter_adim_cpu.csv', header=None).to_numpy().reshape((-1,))  # (T,)
+y_rk45_adim_jupyter_cpu = pd.read_csv(dir + 'y_rk5_tol09_jupyter_adim_cpu.csv', header=None).to_numpy() # (T,N)
+t_rk45_adim_jupyter_cpu = pd.read_csv(dir + 't_rk5_tol09_jupyter_adim_cpu.csv', header=None).to_numpy().reshape((-1,))  # (T,)
 
 # y_rk45_cpp = pd.read_csv(dir + 'y_rk45_tol09_cpp.csv', header=None).to_numpy() # (T,N)
 # t_rk45_cpp = pd.read_csv(dir + 't_rk45_tol09_cpp.csv', header=None).to_numpy().reshape((-1,))  # (T,)
@@ -53,8 +53,8 @@ h_rk45_adim_python = pd.read_csv(dir + 'h_rk45_tol09_adim_python.csv', header=No
 y_rk45_fpga_impl = pd.read_csv(dir + 'y_fpga_tol09_jupyter.csv', header=None).to_numpy() # (T,N)
 t_rk45_fpga_impl = pd.read_csv(dir + 't_fpga_tol09_jupyter.csv', header=None).to_numpy().reshape((-1,))  # (T,)
 
-# y_rk45_adim_fpga_impl = pd.read_csv(dir + 'y_fpga_tol09_adim_jupyter.csv', header=None).to_numpy() # (T,N)
-# t_rk45_adim_fpga_impl = pd.read_csv(dir + 't_fpga_tol09_adim_jupyter.csv', header=None).to_numpy().reshape((-1,))  # (T,)
+y_rk45_adim_fpga_impl = pd.read_csv(dir + 'y_fpga_tol09_adim_jupyter.csv', header=None).to_numpy() # (T,N)
+t_rk45_adim_fpga_impl = pd.read_csv(dir + 't_fpga_tol09_adim_jupyter.csv', header=None).to_numpy().reshape((-1,))  # (T,)
 
 # y_rk45_matlab_h8 = pd.read_csv(dir + 'y_rk45_matlab_h8.csv', header=None).to_numpy() # (T,N)
 # t_rk45_matlab_h8 = pd.read_csv(dir + 't_rk45_matlab_h8.csv', header=None).to_numpy().reshape((-1,))  # (T,)
@@ -79,10 +79,10 @@ ax.plot(t_rk45_python[::10], euclidean_distance(y_rk45_python[::10, :], utils.ke
 # ax.plot(t_rk45_adim_python[::10], euclidean_distance(y_rk45_adim_python[::10, :], utils.kepler_orbit(t_rk45_adim_python[::10], r0, v0, mu)[:, :]), label="Distance between exact orbit and rk45 in Python with tol=1e-09 and scale = 0.99, adimensional", color="green")
 # ax.plot(t_rk45_cpp[::10], euclidean_distance(y_rk45_cpp[::10, :], utils.kepler_orbit(t_rk45_cpp[::10], r0, v0, mu)[:, :]), label="Distance between exact orbit and rk45 in C++ with tol=1e-09", color="blue")
 # ax.plot(t_rk45_cpp_fpga_sim[::10], euclidean_distance(y_rk45_cpp_fpga_sim[::10, :], utils.kepler_orbit(t_rk45_cpp_fpga_sim[::10], r0, v0, mu)[:, :]), label="Distance between exact orbit and rk45 in FPGA simulation with tol=1e-09", color="green")
-# ax.plot(t_rk45_adim_jupyter_cpu[::10], euclidean_distance(y_rk45_adim_jupyter_cpu[::10, :], utils.kepler_orbit(t_rk45_adim_jupyter_cpu[::10], r0, v0, mu)[:, :]), label="Distance between exact orbit and rk45 in Python Jupyter with tol=1e-09, adimensional", color="blue")
 # ax.plot(t_rk45_jupyter_cpu[::10], euclidean_distance(y_rk45_jupyter_cpu[::10, :], utils.kepler_orbit(t_rk45_jupyter_cpu[::10], r0, v0, mu)[:, :]), label="Distance between exact orbit and rk45 in Python Jupyter with tol=1e-09", color="green")
-# ax.plot(t_rk45_fpga_impl[::10], euclidean_distance(y_rk45_fpga_impl[::10, :], utils.kepler_orbit(t_rk45_fpga_impl[::10], r0, v0, mu)[:, :]), label="Distance between exact orbit and rk45 in FPGA implementation with tol=1e-09", color="red")
-# ax.plot(t_rk45_adim_fpga_impl[::10], euclidean_distance(y_rk45_adim_fpga_impl[::10, :], utils.kepler_orbit(t_rk45_adim_fpga_impl[::10], r0, v0, mu)[:, :]), label="Distance between exact orbit and rk45 in FPGA implementation with tol=1e-09, adimensional", color="blue")
+# ax.plot(t_rk45_adim_jupyter_cpu[::10], euclidean_distance(y_rk45_adim_jupyter_cpu[::10, :], utils.kepler_orbit(t_rk45_adim_jupyter_cpu[::10], r0, v0, mu)[:, :]), label="Distance between exact orbit and rk45 in Python Jupyter with tol=1e-09, adimensional", color="blue")
+ax.plot(t_rk45_fpga_impl[::10], euclidean_distance(y_rk45_fpga_impl[::10, :], utils.kepler_orbit(t_rk45_fpga_impl[::10], r0, v0, mu)[:, :]), label="Distance between exact orbit and rk45 in FPGA implementation with tol=1e-09", color="red")
+ax.plot(t_rk45_adim_fpga_impl[::10], euclidean_distance(y_rk45_adim_fpga_impl[::10, :], utils.kepler_orbit(t_rk45_adim_fpga_impl[::10], r0, v0, mu)[:, :]), label="Distance between exact orbit and rk45 in FPGA implementation with tol=1e-09, adimensional", color="blue")
 
 if (constants.orbit_type == "67P - Rosetta comet"):
     ax.set_xlabel('Time [orbital period: ' + str(constants.tf_1_rev / (365.0/365.0)) + ' years]')
@@ -113,20 +113,20 @@ ax.tick_params(axis='y')
 ax.legend(loc = 'best')
 
 
-#### time step axis ####
-ax2 = ax.twinx()
-ax2.plot(t_rk45_python[::10], h_rk45_python[::10], label="Time step per second", color="red")
-ax2.set_yscale('log')
-# Set the grid for the secondary y-axes
-ax2.grid(True, linestyle=':', color='lightgrey')
-# Other formatting and labels
-ax2.set_ylabel('Delta t [s]')
-ax2.tick_params(axis='y')
-# Legend for the primary and secondary y-axes
-handles, labels = ax.get_legend_handles_labels()
-handles2, labels2 = ax2.get_legend_handles_labels()
-ax.legend(handles + handles2, labels + labels2, loc='lower right')
-#### time step axis ####
+# #### time step axis ####
+# ax2 = ax.twinx()
+# ax2.plot(t_rk45_python[::10], h_rk45_python[::10], label="Time step per second", color="red")
+# ax2.set_yscale('log')
+# # Set the grid for the secondary y-axes
+# ax2.grid(True, linestyle=':', color='lightgrey')
+# # Other formatting and labels
+# ax2.set_ylabel('Delta t [s]')
+# ax2.tick_params(axis='y')
+# # Legend for the primary and secondary y-axes
+# handles, labels = ax.get_legend_handles_labels()
+# handles2, labels2 = ax2.get_legend_handles_labels()
+# ax.legend(handles + handles2, labels + labels2, loc='lower right')
+# #### time step axis ####
 
 
 plt.title(constants.orbit_type, fontdict=font_title)
