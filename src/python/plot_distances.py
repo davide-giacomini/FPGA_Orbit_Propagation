@@ -6,6 +6,16 @@ import matplotlib.pyplot as plt
 import utils
 import constants
 
+# Set the font properties for the title
+font = {'family': 'DejaVu Sans',
+        'size': 12,
+        'weight': 'bold'}
+
+# Set the font properties for the title
+font_title = {'family': 'DejaVu Sans',
+        'size': 16,
+        'weight': 'bold'}
+
 def euclidean_distance(x, y):
     """Calculate the Euclidean distance between two vectors x and y."""
     return np.sqrt(np.sum(np.square(x - y), axis=-1))
@@ -71,14 +81,53 @@ ax.plot(t_rk45_python[::10], euclidean_distance(y_rk45_python[::10, :], utils.ke
 # ax.plot(t_rk45_cpp_fpga_sim[::10], euclidean_distance(y_rk45_cpp_fpga_sim[::10, :], utils.kepler_orbit(t_rk45_cpp_fpga_sim[::10], r0, v0, mu)[:, :]), label="Distance between exact orbit and rk45 in FPGA simulation with tol=1e-09", color="green")
 # ax.plot(t_rk45_adim_jupyter_cpu[::10], euclidean_distance(y_rk45_adim_jupyter_cpu[::10, :], utils.kepler_orbit(t_rk45_adim_jupyter_cpu[::10], r0, v0, mu)[:, :]), label="Distance between exact orbit and rk45 in Python Jupyter with tol=1e-09, adimensional", color="blue")
 # ax.plot(t_rk45_jupyter_cpu[::10], euclidean_distance(y_rk45_jupyter_cpu[::10, :], utils.kepler_orbit(t_rk45_jupyter_cpu[::10], r0, v0, mu)[:, :]), label="Distance between exact orbit and rk45 in Python Jupyter with tol=1e-09", color="green")
-ax.plot(t_rk45_fpga_impl[::10], euclidean_distance(y_rk45_fpga_impl[::10, :], utils.kepler_orbit(t_rk45_fpga_impl[::10], r0, v0, mu)[:, :]), label="Distance between exact orbit and rk45 in FPGA implementation with tol=1e-09", color="red")
+# ax.plot(t_rk45_fpga_impl[::10], euclidean_distance(y_rk45_fpga_impl[::10, :], utils.kepler_orbit(t_rk45_fpga_impl[::10], r0, v0, mu)[:, :]), label="Distance between exact orbit and rk45 in FPGA implementation with tol=1e-09", color="red")
 # ax.plot(t_rk45_adim_fpga_impl[::10], euclidean_distance(y_rk45_adim_fpga_impl[::10, :], utils.kepler_orbit(t_rk45_adim_fpga_impl[::10], r0, v0, mu)[:, :]), label="Distance between exact orbit and rk45 in FPGA implementation with tol=1e-09, adimensional", color="blue")
 
-# ax2 = ax.twinx()
-# ax2.plot(t_rk5_python[1::100], h_rk5_python[1::100], label="Distance between exact orbit and CPU in python", color="purple")
+if (constants.orbit_type == "67P - Rosetta comet"):
+    ax.set_xlabel('Time [orbital period: ' + str(constants.tf_1_rev / (365.0/365.0)) + ' years]')
+    ax.set_ylabel('Error [Euclidean distance of state vector -- [AU,AU/year]]')
+elif (constants.orbit_type == "LEO Orbit"):
+    ax.set_xlabel('Time [orbital period: ' + str(constants.tf_1_rev / 60.0) + ' minutes]')
+    ax.set_ylabel('Error [Euclidean distance of state vector -- [km,km/s]]')
+elif (constants.orbit_type == "GTO Orbit"):
+    ax.set_xlabel('Time [orbital period: ' + str(constants.tf_1_rev / 3600.0) + ' hours]')
+    ax.set_ylabel('Error [Euclidean distance of state vector -- [km,km/s]]')
 
-plt.xlabel('Time [d]')
-plt.ylabel('Error [Euclidean distance of state vector -- [AU,AU/d]]')
-plt.title(constants.dir)
-plt.legend()
+# Get the current tick positions and labels
+tick_positions, tick_labels = plt.xticks()
+# Calculate the tick positions and labels in revolutions
+tick_positions = [tick for tick in np.arange(0, constants.n_rev*constants.tf_1_rev + 1e-09, constants.tf_1_rev * 0.25)]
+# Update the tick labels to display orbits
+tick_labels = [f'{tick / constants.tf_1_rev:.2f}' for tick in tick_positions]
+# Set the updated tick positions and labels
+plt.xticks(tick_positions, tick_labels)
+
+# Set the grid for the primary and secondary y-axes
+ax.grid(True, linestyle=':', color='lightgrey')
+# Set the grid for the x-axis
+ax.xaxis.grid(True, linestyle=':', color='lightgrey')
+# Other formatting and labels
+ax.tick_params(axis='y')
+# Show legend
+ax.legend(loc = 'best')
+
+
+#### time step axis ####
+ax2 = ax.twinx()
+ax2.plot(t_rk45_python[::10], h_rk45_python[::10], label="Time step per second", color="red")
+ax2.set_yscale('log')
+# Set the grid for the secondary y-axes
+ax2.grid(True, linestyle=':', color='lightgrey')
+# Other formatting and labels
+ax2.set_ylabel('Delta t [s]')
+ax2.tick_params(axis='y')
+# Legend for the primary and secondary y-axes
+handles, labels = ax.get_legend_handles_labels()
+handles2, labels2 = ax2.get_legend_handles_labels()
+ax.legend(handles + handles2, labels + labels2, loc='lower right')
+#### time step axis ####
+
+
+plt.title(constants.orbit_type, fontdict=font_title)
 plt.show()

@@ -96,6 +96,8 @@ def ode(t, y, mu):
 mu = constants.mu
 tol = constants.tol
 h_init = constants.h_init
+h_min = constants.h_min
+h_max = constants.h_max
 
 r0 = constants.r0
 v0 = constants.v0
@@ -106,9 +108,6 @@ tf = tf_1_rev * n_rev
 t0 = constants.t0
 
 print("Revolution time: " , tf_1_rev)
-
-h_max = 0.1*abs(tf-t0)  # same as default in matlab
-h_min = 0.1             # just a small number
 
 #**** Non adimensional starts *****#
 ode_wrapper = lambda t, y: ode(t, y, mu)
