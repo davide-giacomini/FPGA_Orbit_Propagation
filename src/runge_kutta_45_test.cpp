@@ -328,7 +328,7 @@ int main(int argc, char** argv)
     // Extract values from the JSON object
     const string dir = json_object.value("dir", "default");
     const double T_REV = json_object.value("T_REV", 5828.516637686026);
-    const int N_REV = json_object.value("N_REV", 1);
+    const double N_REV = json_object.value("N_REV", 1.0);
     const double MU = json_object.value("MU", 398600.4418);
     const double TOL = json_object.value("TOL", 1e-09);
     const double H0 = json_object.value("H0", 15.0);
@@ -345,7 +345,7 @@ int main(int argc, char** argv)
     cout << endl;
     print_info("Orbit type: " + json_object.value("Type", "ERROR"));
     print_info("T_REV: %f", T_REV);
-    print_info("N_REV: %d", N_REV);
+    print_info("N_REV: %f", N_REV);
     print_info("MU: %f", MU);
     print_info("TOL: %e", TOL);
     print_info("H0: %f", H0);

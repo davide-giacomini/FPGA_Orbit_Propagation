@@ -60,7 +60,7 @@
 // specific version of this function.
 
 template <int W2, int IW2, int W1, int IW1>
-void fxp_sqrt(ap_ufixed<W2,IW2>& result, ap_ufixed<W1,IW1>& in_val) {
+void fxp_sqrt(ap_ufixed<W2,IW2>& result, const ap_ufixed<W1,IW1>& in_val) {
 
   assert( ( "IW2 must be >= ceil(IW1/2)", (IW2 >= (IW1+1)/2) ) );
 
@@ -83,7 +83,7 @@ void fxp_sqrt(ap_ufixed<W2,IW2>& result, ap_ufixed<W1,IW1>& in_val) {
 
 
   sqrt_loop:for (int i=0; i<W_Q; i++) {
-#pragma HLS PIPELINE II=4
+      #pragma HLS PIPELINE II=4
 	   // In this loop:
 	   // - T needs A, then A needs T
 	   // - 1 iter:

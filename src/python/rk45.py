@@ -6,7 +6,7 @@ import constants
 # https://pdf.sciencedirectassets.com/271610/1-s2.0-S0771050X00X00216/1-s2.0-0771050X80900133/main.pdf?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCwsRgNDdZ5%2Bp9%2FfALrURa5ywqHctEsjv1SqG4KlK0iFQIgPKFDRTbcr%2BsHFL5vNq90pAxzVbB3cIafciC2jQ3BnwsquwUIwf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAFGgwwNTkwMDM1NDY4NjUiDGvUujTfcuEzURULfCqPBc9ln80VsuGWuX7LOK4ywRmo9e1na%2B2RA3rNfufO68Z%2BX7nnxDkS6sQWqAttzH%2BKDe1TAraRtq1uq7N%2BuwbRdu%2FVwitW6j3xoZS%2FCdoS%2BhdRrQaw26k6O74nORMIOefdJfLm8WYhRF6vUbTR1dNRdZyzzzjlcrSYCpBQJ3WaIBkQhzXepu5cCOdPcjaE2fm4ao8ady6UgXMA%2FL5fVF%2FA7NYVEgKFx9WoOIBsNYdJZJYUqC51zlddfOEcHP8x9hCOvV3JH604F1iKlV4b2MNEXMMfU8tGUcfc1rP4FufKzBb5xuA7Vrlr6BsnMOoqsRjsYoWU%2B5uQzmk%2FZwAtEY2pk5d2GO%2F8UfgDQzj%2FJHHVDB3pXstkCSHrGdkrAOmxFCFfQ00sbGGEvgoPgQrPzSjocO%2BkHzpSYHgLAGObGrrSTrHCW3j5d3uLq3vdcTB2FVAHeRvFoHMPKNrQu8XR7xq68VbfaDNAc%2BoypJbMllWYQSueNNZzxXVHs23JHnQrG1LOEQzo1LG6xtvxCN4cpvFbN9ZJkP%2FhUYYSp873PLF5QXalrIiV5RZvzcPXvtC2O7ASN2kcPuki%2BZuPogbPvuofGUOhhG2Nu336Gkd%2FWAnwYk2oGuGOa0sZl0azpkS0zY7vK32P%2B9o6Ul5LwpzadoZXbqO%2BwiwrcLxgvxQXEyht1TgSs92o%2BoOojVaQFSncVAmOs8ZweaPzUTxILfqMbwCtuCZUIBh3MefdSraE7SFHtog%2B1b8ZSMmoXjAtuGxXdRFxr0y%2B2EeCRYMMYKyO9LYOU8h2SbFMt2UUpY7kKWlb3i%2F4cBY286vFE4bl3bVjPdPNp6GAUJlCiPGuayWEUrMFoDPw9sp1MeeVf%2FkWu9ccTNQw6qauowY6sQH7wQ0yk6aP5yQi7j%2BCLLnVJM9Ow6m0tzs%2FhjPlzmx5CopwNi2Pgy6GWtyBfdDOqUT5z1CFiIwmGzU08BpnC8EP%2FljXhGzu3saHezmzQNXhLJYdIanWvlCRwoOjTzuko0%2B%2BWQvad%2FJvQCfs95oWQ3JWCL95sCttkvI%2BJ2fK5P7VDScU1bC2P7AjfYsQWJa0ZeX%2BaKgiazkaOoR%2FGp0nDX5RYrQqUWjG%2Bfk%2BitFCwH6b720%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230522T174103Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAQ3PHCVTYWLDLDVFO%2F20230522%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=60e1a9dd2c292c32dd3a07de9618dd2f3d926a2a4946501df9185b33dab6af4b&hash=ba44bf4545281e857098648254c9a3b3c5c521a0abb8d1b8c9487655121b9346&host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&pii=0771050X80900133&tid=spdf-9ae1840e-9900-463c-8751-4218102a35e5&sid=2886034620568547b53b08b-f30170615df1gxrqa&type=client&tsoh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&ua=0f15550105570b57505f55&rr=7cb6d909297be1b6&cc=us
 
 # RK5(4)7M CONSTANTS
-C = np.array([1/5, 3/10, 4/5, 8/9, 1, 1])
+C = np.array([0, 1/5, 3/10, 4/5, 8/9, 1, 1])
 
 A = np.array([[0, 0, 0, 0, 0],
               [1/5, 0, 0, 0, 0],
@@ -33,14 +33,14 @@ def rk_45(f, t0, tf, y0, h0, atol, h_max, h_min):
             h = tf - t_h[-1]
 
         # ciclo iterativo per calcolare la soluzione                
-        k_0 = f(t_h + h       , u_h[-1])
+        k_0 = f(t_h + C[0] * h, u_h[-1])
         k_1 = f(t_h + C[1] * h, u_h[-1] + h * (A[1,0]*k_0))
         k_2 = f(t_h + C[2] * h, u_h[-1] + h * (A[2,0]*k_0 + A[2,1]*k_1))
         k_3 = f(t_h + C[3] * h, u_h[-1] + h * (A[3,0]*k_0 + A[3,1]*k_1 + A[3,2]*k_2))
         k_4 = f(t_h + C[4] * h, u_h[-1] + h * (A[4,0]*k_0 + A[4,1]*k_1 + A[4,2]*k_2 + A[4,3]*k_3))
         k_5 = f(t_h + C[5] * h, u_h[-1] + h * (A[5,0]*k_0 + A[5,1]*k_1 + A[5,2]*k_2 + A[5,3]*k_3 + A[5,4]*k_4))
 
-        tnew = t_h[-1] + h
+        tnew = t_h[-1] + C[6] * h
         ynew = u_h[-1] + h * (B[0]*k_0 + B[1]*k_1 + B[2]*k_2 + B[3]*k_3 + B[4]*k_4 + B[5]*k_5)
 
         k_6 = f(tnew, ynew)

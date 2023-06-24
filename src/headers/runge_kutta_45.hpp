@@ -24,17 +24,17 @@
 #include "fxp_sqrt.h"
 // #include "hls_vector.h"  // If declared but not used, it throws an error
 
-#define W 100    // total digits in ap_fixed or ap_int
-#define I 40    // total integer digits in ap_fixed
+#define W 85    // total digits in ap_fixed or ap_int
+#define I 30    // total integer digits in ap_fixed
 #define F W-I   // fractional digits
 
 #define D 3 // dimension
 #define N 2*D   // number of elements in a vector
 
-#define STEP_MAX 2048
+#define STEP_MAX 4096
 
 typedef ap_fixed<W, I, AP_TRN, AP_WRAP> d_fixed_t;
-typedef ap_fixed<W, I, AP_TRN, AP_WRAP> d_t_t;
+typedef ap_ufixed<W, I, AP_TRN, AP_WRAP> d_ufixed_t;
 
 // Top function
 void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, const double atol, const double h_max, const double h_min, const double mu, unsigned int& size, bool& flag);
