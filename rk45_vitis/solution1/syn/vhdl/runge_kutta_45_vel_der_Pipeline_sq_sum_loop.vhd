@@ -17,11 +17,11 @@ port (
     ap_done : OUT STD_LOGIC;
     ap_idle : OUT STD_LOGIC;
     ap_ready : OUT STD_LOGIC;
-    r_in_V_0_01_reload : IN STD_LOGIC_VECTOR (99 downto 0);
-    r_in_V_1_02_reload : IN STD_LOGIC_VECTOR (99 downto 0);
-    r_in_V_2_03_reload : IN STD_LOGIC_VECTOR (99 downto 0);
-    X_V_4_out : OUT STD_LOGIC_VECTOR (200 downto 0);
-    X_V_4_out_ap_vld : OUT STD_LOGIC );
+    r_in_V_0_01_reload : IN STD_LOGIC_VECTOR (85 downto 0);
+    r_in_V_1_02_reload : IN STD_LOGIC_VECTOR (85 downto 0);
+    r_in_V_2_03_reload : IN STD_LOGIC_VECTOR (85 downto 0);
+    squared_sum_V_out : OUT STD_LOGIC_VECTOR (172 downto 0);
+    squared_sum_V_out_ap_vld : OUT STD_LOGIC );
 end;
 
 
@@ -33,7 +33,7 @@ architecture behav of runge_kutta_45_vel_der_Pipeline_sq_sum_loop is
     constant ap_const_boolean_1 : BOOLEAN := true;
     constant ap_const_boolean_0 : BOOLEAN := false;
     constant ap_const_lv1_1 : STD_LOGIC_VECTOR (0 downto 0) := "1";
-    constant ap_const_lv201_lc_1 : STD_LOGIC_VECTOR (200 downto 0) := "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_const_lv173_lc_1 : STD_LOGIC_VECTOR (172 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
     constant ap_const_lv1_0 : STD_LOGIC_VECTOR (0 downto 0) := "0";
     constant ap_const_lv2_0 : STD_LOGIC_VECTOR (1 downto 0) := "00";
     constant ap_const_lv2_3 : STD_LOGIC_VECTOR (1 downto 0) := "11";
@@ -51,24 +51,24 @@ attribute shreg_extract : string;
     signal ap_block_state1_pp0_stage0_iter0 : BOOLEAN;
     signal ap_block_state2_pp0_stage0_iter1 : BOOLEAN;
     signal ap_block_pp0_stage0_subdone : BOOLEAN;
-    signal icmp_ln75_fu_86_p2 : STD_LOGIC_VECTOR (0 downto 0);
+    signal icmp_ln67_fu_84_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal ap_condition_exit_pp0_iter1_stage0 : STD_LOGIC;
     signal ap_loop_exit_ready : STD_LOGIC;
     signal ap_ready_int : STD_LOGIC;
     signal ap_block_pp0_stage0_11001 : BOOLEAN;
-    signal p_Result_s_fu_40 : STD_LOGIC_VECTOR (200 downto 0);
-    signal p_Val2_s_fu_124_p2 : STD_LOGIC_VECTOR (200 downto 0);
+    signal squared_sum_V_fu_38 : STD_LOGIC_VECTOR (172 downto 0);
+    signal squared_sum_V_1_fu_122_p2 : STD_LOGIC_VECTOR (172 downto 0);
     signal ap_loop_init : STD_LOGIC;
     signal ap_block_pp0_stage0 : BOOLEAN;
-    signal i_2_fu_44 : STD_LOGIC_VECTOR (1 downto 0);
-    signal add_ln75_fu_92_p2 : STD_LOGIC_VECTOR (1 downto 0);
+    signal i_1_fu_42 : STD_LOGIC_VECTOR (1 downto 0);
+    signal add_ln67_fu_90_p2 : STD_LOGIC_VECTOR (1 downto 0);
     signal ap_block_pp0_stage0_01001 : BOOLEAN;
-    signal r_V_fu_101_p5 : STD_LOGIC_VECTOR (99 downto 0);
-    signal r_V_1_fu_114_p0 : STD_LOGIC_VECTOR (99 downto 0);
-    signal sext_ln1317_fu_110_p1 : STD_LOGIC_VECTOR (199 downto 0);
-    signal r_V_1_fu_114_p1 : STD_LOGIC_VECTOR (99 downto 0);
-    signal r_V_1_fu_114_p2 : STD_LOGIC_VECTOR (199 downto 0);
-    signal sext_ln859_fu_120_p1 : STD_LOGIC_VECTOR (200 downto 0);
+    signal r_V_fu_99_p5 : STD_LOGIC_VECTOR (85 downto 0);
+    signal r_V_1_fu_112_p0 : STD_LOGIC_VECTOR (85 downto 0);
+    signal sext_ln1317_fu_108_p1 : STD_LOGIC_VECTOR (171 downto 0);
+    signal r_V_1_fu_112_p1 : STD_LOGIC_VECTOR (85 downto 0);
+    signal r_V_1_fu_112_p2 : STD_LOGIC_VECTOR (171 downto 0);
+    signal sext_ln859_fu_118_p1 : STD_LOGIC_VECTOR (172 downto 0);
     signal ap_done_reg : STD_LOGIC := '0';
     signal ap_continue_int : STD_LOGIC;
     signal ap_done_int : STD_LOGIC;
@@ -77,7 +77,7 @@ attribute shreg_extract : string;
     signal ap_start_int : STD_LOGIC;
     signal ap_ce_reg : STD_LOGIC;
 
-    component runge_kutta_45_mux_32_100_1_1 IS
+    component runge_kutta_45_mux_32_86_1_1 IS
     generic (
         ID : INTEGER;
         NUM_STAGE : INTEGER;
@@ -87,15 +87,15 @@ attribute shreg_extract : string;
         din3_WIDTH : INTEGER;
         dout_WIDTH : INTEGER );
     port (
-        din0 : IN STD_LOGIC_VECTOR (99 downto 0);
-        din1 : IN STD_LOGIC_VECTOR (99 downto 0);
-        din2 : IN STD_LOGIC_VECTOR (99 downto 0);
+        din0 : IN STD_LOGIC_VECTOR (85 downto 0);
+        din1 : IN STD_LOGIC_VECTOR (85 downto 0);
+        din2 : IN STD_LOGIC_VECTOR (85 downto 0);
         din3 : IN STD_LOGIC_VECTOR (1 downto 0);
-        dout : OUT STD_LOGIC_VECTOR (99 downto 0) );
+        dout : OUT STD_LOGIC_VECTOR (85 downto 0) );
     end component;
 
 
-    component runge_kutta_45_mul_100s_100s_200_1_1 IS
+    component runge_kutta_45_mul_86s_86s_172_1_1 IS
     generic (
         ID : INTEGER;
         NUM_STAGE : INTEGER;
@@ -103,9 +103,9 @@ attribute shreg_extract : string;
         din1_WIDTH : INTEGER;
         dout_WIDTH : INTEGER );
     port (
-        din0 : IN STD_LOGIC_VECTOR (99 downto 0);
-        din1 : IN STD_LOGIC_VECTOR (99 downto 0);
-        dout : OUT STD_LOGIC_VECTOR (199 downto 0) );
+        din0 : IN STD_LOGIC_VECTOR (85 downto 0);
+        din1 : IN STD_LOGIC_VECTOR (85 downto 0);
+        dout : OUT STD_LOGIC_VECTOR (171 downto 0) );
     end component;
 
 
@@ -128,33 +128,33 @@ attribute shreg_extract : string;
 
 
 begin
-    mux_32_100_1_1_U24 : component runge_kutta_45_mux_32_100_1_1
+    mux_32_86_1_1_U23 : component runge_kutta_45_mux_32_86_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
-        din0_WIDTH => 100,
-        din1_WIDTH => 100,
-        din2_WIDTH => 100,
+        din0_WIDTH => 86,
+        din1_WIDTH => 86,
+        din2_WIDTH => 86,
         din3_WIDTH => 2,
-        dout_WIDTH => 100)
+        dout_WIDTH => 86)
     port map (
         din0 => r_in_V_0_01_reload,
         din1 => r_in_V_1_02_reload,
         din2 => r_in_V_2_03_reload,
-        din3 => i_2_fu_44,
-        dout => r_V_fu_101_p5);
+        din3 => i_1_fu_42,
+        dout => r_V_fu_99_p5);
 
-    mul_100s_100s_200_1_1_U25 : component runge_kutta_45_mul_100s_100s_200_1_1
+    mul_86s_86s_172_1_1_U24 : component runge_kutta_45_mul_86s_86s_172_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
-        din0_WIDTH => 100,
-        din1_WIDTH => 100,
-        dout_WIDTH => 200)
+        din0_WIDTH => 86,
+        din1_WIDTH => 86,
+        dout_WIDTH => 172)
     port map (
-        din0 => r_V_1_fu_114_p0,
-        din1 => r_V_1_fu_114_p1,
-        dout => r_V_1_fu_114_p2);
+        din0 => r_V_1_fu_112_p0,
+        din1 => r_V_1_fu_112_p1,
+        dout => r_V_1_fu_112_p2);
 
     flow_control_loop_pipe_sequential_init_U : component runge_kutta_45_flow_control_loop_pipe_sequential_init
     port map (
@@ -219,27 +219,27 @@ begin
     end process;
 
 
-    i_2_fu_44_assign_proc : process (ap_clk)
+    i_1_fu_42_assign_proc : process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((ap_const_boolean_0 = ap_block_pp0_stage0_11001) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0))) then
                 if ((ap_loop_init = ap_const_logic_1)) then 
-                    i_2_fu_44 <= ap_const_lv2_0;
-                elsif (((icmp_ln75_fu_86_p2 = ap_const_lv1_0) and (ap_enable_reg_pp0_iter1 = ap_const_logic_1))) then 
-                    i_2_fu_44 <= add_ln75_fu_92_p2;
+                    i_1_fu_42 <= ap_const_lv2_0;
+                elsif (((icmp_ln67_fu_84_p2 = ap_const_lv1_0) and (ap_enable_reg_pp0_iter1 = ap_const_logic_1))) then 
+                    i_1_fu_42 <= add_ln67_fu_90_p2;
                 end if;
             end if; 
         end if;
     end process;
 
-    p_Result_s_fu_40_assign_proc : process (ap_clk)
+    squared_sum_V_fu_38_assign_proc : process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((ap_const_boolean_0 = ap_block_pp0_stage0_11001) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0))) then
                 if ((ap_loop_init = ap_const_logic_1)) then 
-                    p_Result_s_fu_40 <= ap_const_lv201_lc_1;
-                elsif (((icmp_ln75_fu_86_p2 = ap_const_lv1_0) and (ap_enable_reg_pp0_iter1 = ap_const_logic_1))) then 
-                    p_Result_s_fu_40 <= p_Val2_s_fu_124_p2;
+                    squared_sum_V_fu_38 <= ap_const_lv173_lc_1;
+                elsif (((icmp_ln67_fu_84_p2 = ap_const_lv1_0) and (ap_enable_reg_pp0_iter1 = ap_const_logic_1))) then 
+                    squared_sum_V_fu_38 <= squared_sum_V_1_fu_122_p2;
                 end if;
             end if; 
         end if;
@@ -254,18 +254,7 @@ begin
                 ap_NS_fsm <= "X";
         end case;
     end process;
-    X_V_4_out <= p_Result_s_fu_40;
-
-    X_V_4_out_ap_vld_assign_proc : process(ap_CS_fsm_pp0_stage0, icmp_ln75_fu_86_p2, ap_block_pp0_stage0_11001)
-    begin
-        if (((icmp_ln75_fu_86_p2 = ap_const_lv1_1) and (ap_const_boolean_0 = ap_block_pp0_stage0_11001) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0))) then 
-            X_V_4_out_ap_vld <= ap_const_logic_1;
-        else 
-            X_V_4_out_ap_vld <= ap_const_logic_0;
-        end if; 
-    end process;
-
-    add_ln75_fu_92_p2 <= std_logic_vector(unsigned(i_2_fu_44) + unsigned(ap_const_lv2_1));
+    add_ln67_fu_90_p2 <= std_logic_vector(unsigned(i_1_fu_42) + unsigned(ap_const_lv2_1));
     ap_CS_fsm_pp0_stage0 <= ap_CS_fsm(0);
         ap_block_pp0_stage0 <= not((ap_const_boolean_1 = ap_const_boolean_1));
         ap_block_pp0_stage0_01001 <= not((ap_const_boolean_1 = ap_const_boolean_1));
@@ -274,9 +263,9 @@ begin
         ap_block_state1_pp0_stage0_iter0 <= not((ap_const_boolean_1 = ap_const_boolean_1));
         ap_block_state2_pp0_stage0_iter1 <= not((ap_const_boolean_1 = ap_const_boolean_1));
 
-    ap_condition_exit_pp0_iter1_stage0_assign_proc : process(ap_CS_fsm_pp0_stage0, ap_enable_reg_pp0_iter1, ap_block_pp0_stage0_subdone, icmp_ln75_fu_86_p2)
+    ap_condition_exit_pp0_iter1_stage0_assign_proc : process(ap_CS_fsm_pp0_stage0, ap_enable_reg_pp0_iter1, ap_block_pp0_stage0_subdone, icmp_ln67_fu_84_p2)
     begin
-        if (((icmp_ln75_fu_86_p2 = ap_const_lv1_1) and (ap_const_boolean_0 = ap_block_pp0_stage0_subdone) and (ap_enable_reg_pp0_iter1 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0))) then 
+        if (((icmp_ln67_fu_84_p2 = ap_const_lv1_1) and (ap_const_boolean_0 = ap_block_pp0_stage0_subdone) and (ap_enable_reg_pp0_iter1 = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0))) then 
             ap_condition_exit_pp0_iter1_stage0 <= ap_const_logic_1;
         else 
             ap_condition_exit_pp0_iter1_stage0 <= ap_const_logic_0;
@@ -326,12 +315,23 @@ begin
         end if; 
     end process;
 
-    icmp_ln75_fu_86_p2 <= "1" when (i_2_fu_44 = ap_const_lv2_3) else "0";
-    p_Val2_s_fu_124_p2 <= std_logic_vector(signed(sext_ln859_fu_120_p1) + signed(p_Result_s_fu_40));
-    r_V_1_fu_114_p0 <= sext_ln1317_fu_110_p1(100 - 1 downto 0);
-    r_V_1_fu_114_p1 <= sext_ln1317_fu_110_p1(100 - 1 downto 0);
-        sext_ln1317_fu_110_p1 <= std_logic_vector(IEEE.numeric_std.resize(signed(r_V_fu_101_p5),200));
+    icmp_ln67_fu_84_p2 <= "1" when (i_1_fu_42 = ap_const_lv2_3) else "0";
+    r_V_1_fu_112_p0 <= sext_ln1317_fu_108_p1(86 - 1 downto 0);
+    r_V_1_fu_112_p1 <= sext_ln1317_fu_108_p1(86 - 1 downto 0);
+        sext_ln1317_fu_108_p1 <= std_logic_vector(IEEE.numeric_std.resize(signed(r_V_fu_99_p5),172));
 
-        sext_ln859_fu_120_p1 <= std_logic_vector(IEEE.numeric_std.resize(signed(r_V_1_fu_114_p2),201));
+        sext_ln859_fu_118_p1 <= std_logic_vector(IEEE.numeric_std.resize(signed(r_V_1_fu_112_p2),173));
+
+    squared_sum_V_1_fu_122_p2 <= std_logic_vector(signed(sext_ln859_fu_118_p1) + signed(squared_sum_V_fu_38));
+    squared_sum_V_out <= squared_sum_V_fu_38;
+
+    squared_sum_V_out_ap_vld_assign_proc : process(ap_CS_fsm_pp0_stage0, icmp_ln67_fu_84_p2, ap_block_pp0_stage0_11001)
+    begin
+        if (((icmp_ln67_fu_84_p2 = ap_const_lv1_1) and (ap_const_boolean_0 = ap_block_pp0_stage0_11001) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage0))) then 
+            squared_sum_V_out_ap_vld <= ap_const_logic_1;
+        else 
+            squared_sum_V_out_ap_vld <= ap_const_logic_0;
+        end if; 
+    end process;
 
 end behav;

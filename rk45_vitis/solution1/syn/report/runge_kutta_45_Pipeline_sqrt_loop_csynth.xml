@@ -9,8 +9,8 @@
 <ProductFamily>zynq</ProductFamily>
 <Part>xc7z020-clg400-1</Part>
 <TopModelName>runge_kutta_45_Pipeline_sqrt_loop</TopModelName>
-<TargetClockPeriod>50.00</TargetClockPeriod>
-<ClockUncertainty>13.50</ClockUncertainty>
+<TargetClockPeriod>100.00</TargetClockPeriod>
+<ClockUncertainty>27.00</ClockUncertainty>
 <FlowTarget>vivado</FlowTarget>
 </UserAssignments>
 
@@ -18,24 +18,24 @@
 <PipelineType>no</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>10.416</EstimatedClockPeriod>
+<EstimatedClockPeriod>9.679</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>103</Best-caseLatency>
-<Average-caseLatency>103</Average-caseLatency>
-<Worst-caseLatency>103</Worst-caseLatency>
-<Best-caseRealTimeLatency>5.150 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>5.150 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>5.150 us</Worst-caseRealTimeLatency>
-<Interval-min>103</Interval-min>
-<Interval-max>103</Interval-max>
+<Best-caseLatency>91</Best-caseLatency>
+<Average-caseLatency>91</Average-caseLatency>
+<Worst-caseLatency>91</Worst-caseLatency>
+<Best-caseRealTimeLatency>9.100 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>9.100 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>9.100 us</Worst-caseRealTimeLatency>
+<Interval-min>91</Interval-min>
+<Interval-max>91</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <sqrt_loop>
-<TripCount>101</TripCount>
-<Latency>101</Latency>
-<AbsoluteTimeLatency>5050</AbsoluteTimeLatency>
+<TripCount>89</TripCount>
+<Latency>89</Latency>
+<AbsoluteTimeLatency>8900</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>1</PipelineDepth>
 <InstanceList>
@@ -46,8 +46,8 @@
 
 <AreaEstimates>
 <Resources>
-<FF>513</FF>
-<LUT>590</LUT>
+<FF>453</FF>
+<LUT>530</LUT>
 <BRAM_18K>0</BRAM_18K>
 <DSP>0</DSP>
 <URAM>0</URAM>
@@ -129,14 +129,14 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>X_V_7_reload</name>
-<Object>X_V_7_reload</Object>
+<name>zext_ln449</name>
+<Object>zext_ln449</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>202</Bits>
+<Bits>177</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -147,7 +147,7 @@
 <IOProtocol>ap_vld</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>101</Bits>
+<Bits>89</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>

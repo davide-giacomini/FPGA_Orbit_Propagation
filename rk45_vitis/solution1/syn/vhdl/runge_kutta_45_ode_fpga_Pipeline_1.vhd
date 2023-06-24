@@ -17,14 +17,14 @@ port (
     ap_done : OUT STD_LOGIC;
     ap_idle : OUT STD_LOGIC;
     ap_ready : OUT STD_LOGIC;
-    r_out_V_0_04 : IN STD_LOGIC_VECTOR (99 downto 0);
-    r_out_V_1_05 : IN STD_LOGIC_VECTOR (99 downto 0);
-    r_out_V_2_06 : IN STD_LOGIC_VECTOR (99 downto 0);
+    dr_dt_V_0_04 : IN STD_LOGIC_VECTOR (84 downto 0);
+    dr_dt_V_1_05 : IN STD_LOGIC_VECTOR (84 downto 0);
+    dr_dt_V_2_06 : IN STD_LOGIC_VECTOR (84 downto 0);
     empty : IN STD_LOGIC_VECTOR (5 downto 0);
     out_r_address0 : OUT STD_LOGIC_VECTOR (5 downto 0);
     out_r_ce0 : OUT STD_LOGIC;
     out_r_we0 : OUT STD_LOGIC;
-    out_r_d0 : OUT STD_LOGIC_VECTOR (99 downto 0) );
+    out_r_d0 : OUT STD_LOGIC_VECTOR (84 downto 0) );
 end;
 
 
@@ -47,18 +47,18 @@ attribute shreg_extract : string;
     signal ap_CS_fsm_state1 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state1 : signal is "none";
     signal ap_block_state1_pp0_stage0_iter0 : BOOLEAN;
-    signal exitcond82_fu_87_p2 : STD_LOGIC_VECTOR (0 downto 0);
+    signal exitcond72_fu_87_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal ap_condition_exit_pp0_iter0_stage0 : STD_LOGIC;
     signal ap_loop_exit_ready : STD_LOGIC;
     signal ap_ready_int : STD_LOGIC;
     signal p_cast_fu_122_p1 : STD_LOGIC_VECTOR (63 downto 0);
     signal loop_index17_t_fu_38 : STD_LOGIC_VECTOR (1 downto 0);
-    signal empty_75_fu_93_p2 : STD_LOGIC_VECTOR (1 downto 0);
+    signal empty_76_fu_93_p2 : STD_LOGIC_VECTOR (1 downto 0);
     signal ap_loop_init : STD_LOGIC;
     signal ap_sig_allocacmp_loop_index17_t_load : STD_LOGIC_VECTOR (1 downto 0);
-    signal tmp_6_fu_103_p5 : STD_LOGIC_VECTOR (99 downto 0);
+    signal tmp_6_fu_103_p5 : STD_LOGIC_VECTOR (84 downto 0);
     signal loop_index17_t_cast1_fu_99_p1 : STD_LOGIC_VECTOR (5 downto 0);
-    signal empty_76_fu_116_p2 : STD_LOGIC_VECTOR (5 downto 0);
+    signal empty_77_fu_116_p2 : STD_LOGIC_VECTOR (5 downto 0);
     signal ap_done_reg : STD_LOGIC := '0';
     signal ap_continue_int : STD_LOGIC;
     signal ap_done_int : STD_LOGIC;
@@ -67,7 +67,7 @@ attribute shreg_extract : string;
     signal ap_start_int : STD_LOGIC;
     signal ap_ce_reg : STD_LOGIC;
 
-    component runge_kutta_45_mux_32_100_1_1 IS
+    component runge_kutta_45_mux_32_85_1_1 IS
     generic (
         ID : INTEGER;
         NUM_STAGE : INTEGER;
@@ -77,11 +77,11 @@ attribute shreg_extract : string;
         din3_WIDTH : INTEGER;
         dout_WIDTH : INTEGER );
     port (
-        din0 : IN STD_LOGIC_VECTOR (99 downto 0);
-        din1 : IN STD_LOGIC_VECTOR (99 downto 0);
-        din2 : IN STD_LOGIC_VECTOR (99 downto 0);
+        din0 : IN STD_LOGIC_VECTOR (84 downto 0);
+        din1 : IN STD_LOGIC_VECTOR (84 downto 0);
+        din2 : IN STD_LOGIC_VECTOR (84 downto 0);
         din3 : IN STD_LOGIC_VECTOR (1 downto 0);
-        dout : OUT STD_LOGIC_VECTOR (99 downto 0) );
+        dout : OUT STD_LOGIC_VECTOR (84 downto 0) );
     end component;
 
 
@@ -104,19 +104,19 @@ attribute shreg_extract : string;
 
 
 begin
-    mux_32_100_1_1_U48 : component runge_kutta_45_mux_32_100_1_1
+    mux_32_85_1_1_U48 : component runge_kutta_45_mux_32_85_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
-        din0_WIDTH => 100,
-        din1_WIDTH => 100,
-        din2_WIDTH => 100,
+        din0_WIDTH => 85,
+        din1_WIDTH => 85,
+        din2_WIDTH => 85,
         din3_WIDTH => 2,
-        dout_WIDTH => 100)
+        dout_WIDTH => 85)
     port map (
-        din0 => r_out_V_0_04,
-        din1 => r_out_V_1_05,
-        din2 => r_out_V_2_06,
+        din0 => dr_dt_V_0_04,
+        din1 => dr_dt_V_1_05,
+        din2 => dr_dt_V_2_06,
         din3 => ap_sig_allocacmp_loop_index17_t_load,
         dout => tmp_6_fu_103_p5);
 
@@ -171,8 +171,8 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((ap_const_logic_1 = ap_CS_fsm_state1) and (ap_start_int = ap_const_logic_1))) then
-                if ((exitcond82_fu_87_p2 = ap_const_lv1_0)) then 
-                    loop_index17_t_fu_38 <= empty_75_fu_93_p2;
+                if ((exitcond72_fu_87_p2 = ap_const_lv1_0)) then 
+                    loop_index17_t_fu_38 <= empty_76_fu_93_p2;
                 elsif ((ap_loop_init = ap_const_logic_1)) then 
                     loop_index17_t_fu_38 <= ap_const_lv2_0;
                 end if;
@@ -207,9 +207,9 @@ begin
     end process;
 
 
-    ap_condition_exit_pp0_iter0_stage0_assign_proc : process(ap_CS_fsm_state1, exitcond82_fu_87_p2, ap_start_int)
+    ap_condition_exit_pp0_iter0_stage0_assign_proc : process(ap_CS_fsm_state1, exitcond72_fu_87_p2, ap_start_int)
     begin
-        if (((exitcond82_fu_87_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state1) and (ap_start_int = ap_const_logic_1))) then 
+        if (((exitcond72_fu_87_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state1) and (ap_start_int = ap_const_logic_1))) then 
             ap_condition_exit_pp0_iter0_stage0 <= ap_const_logic_1;
         else 
             ap_condition_exit_pp0_iter0_stage0 <= ap_const_logic_0;
@@ -257,9 +257,9 @@ begin
         end if; 
     end process;
 
-    empty_75_fu_93_p2 <= std_logic_vector(unsigned(ap_sig_allocacmp_loop_index17_t_load) + unsigned(ap_const_lv2_1));
-    empty_76_fu_116_p2 <= std_logic_vector(unsigned(empty) + unsigned(loop_index17_t_cast1_fu_99_p1));
-    exitcond82_fu_87_p2 <= "1" when (ap_sig_allocacmp_loop_index17_t_load = ap_const_lv2_3) else "0";
+    empty_76_fu_93_p2 <= std_logic_vector(unsigned(ap_sig_allocacmp_loop_index17_t_load) + unsigned(ap_const_lv2_1));
+    empty_77_fu_116_p2 <= std_logic_vector(unsigned(empty) + unsigned(loop_index17_t_cast1_fu_99_p1));
+    exitcond72_fu_87_p2 <= "1" when (ap_sig_allocacmp_loop_index17_t_load = ap_const_lv2_3) else "0";
     loop_index17_t_cast1_fu_99_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(ap_sig_allocacmp_loop_index17_t_load),6));
     out_r_address0 <= p_cast_fu_122_p1(6 - 1 downto 0);
 
@@ -274,14 +274,14 @@ begin
 
     out_r_d0 <= tmp_6_fu_103_p5;
 
-    out_r_we0_assign_proc : process(ap_CS_fsm_state1, exitcond82_fu_87_p2, ap_start_int)
+    out_r_we0_assign_proc : process(ap_CS_fsm_state1, exitcond72_fu_87_p2, ap_start_int)
     begin
-        if (((exitcond82_fu_87_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state1) and (ap_start_int = ap_const_logic_1))) then 
+        if (((exitcond72_fu_87_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state1) and (ap_start_int = ap_const_logic_1))) then 
             out_r_we0 <= ap_const_logic_1;
         else 
             out_r_we0 <= ap_const_logic_0;
         end if; 
     end process;
 
-    p_cast_fu_122_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(empty_76_fu_116_p2),64));
+    p_cast_fu_122_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(empty_77_fu_116_p2),64));
 end behav;

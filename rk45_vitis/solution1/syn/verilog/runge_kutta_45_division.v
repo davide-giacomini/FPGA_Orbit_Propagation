@@ -19,230 +19,206 @@ module runge_kutta_45_division (
         ap_return
 );
 
-parameter    ap_ST_fsm_state1 = 224'd1;
-parameter    ap_ST_fsm_state2 = 224'd2;
-parameter    ap_ST_fsm_state3 = 224'd4;
-parameter    ap_ST_fsm_state4 = 224'd8;
-parameter    ap_ST_fsm_state5 = 224'd16;
-parameter    ap_ST_fsm_state6 = 224'd32;
-parameter    ap_ST_fsm_state7 = 224'd64;
-parameter    ap_ST_fsm_state8 = 224'd128;
-parameter    ap_ST_fsm_state9 = 224'd256;
-parameter    ap_ST_fsm_state10 = 224'd512;
-parameter    ap_ST_fsm_state11 = 224'd1024;
-parameter    ap_ST_fsm_state12 = 224'd2048;
-parameter    ap_ST_fsm_state13 = 224'd4096;
-parameter    ap_ST_fsm_state14 = 224'd8192;
-parameter    ap_ST_fsm_state15 = 224'd16384;
-parameter    ap_ST_fsm_state16 = 224'd32768;
-parameter    ap_ST_fsm_state17 = 224'd65536;
-parameter    ap_ST_fsm_state18 = 224'd131072;
-parameter    ap_ST_fsm_state19 = 224'd262144;
-parameter    ap_ST_fsm_state20 = 224'd524288;
-parameter    ap_ST_fsm_state21 = 224'd1048576;
-parameter    ap_ST_fsm_state22 = 224'd2097152;
-parameter    ap_ST_fsm_state23 = 224'd4194304;
-parameter    ap_ST_fsm_state24 = 224'd8388608;
-parameter    ap_ST_fsm_state25 = 224'd16777216;
-parameter    ap_ST_fsm_state26 = 224'd33554432;
-parameter    ap_ST_fsm_state27 = 224'd67108864;
-parameter    ap_ST_fsm_state28 = 224'd134217728;
-parameter    ap_ST_fsm_state29 = 224'd268435456;
-parameter    ap_ST_fsm_state30 = 224'd536870912;
-parameter    ap_ST_fsm_state31 = 224'd1073741824;
-parameter    ap_ST_fsm_state32 = 224'd2147483648;
-parameter    ap_ST_fsm_state33 = 224'd4294967296;
-parameter    ap_ST_fsm_state34 = 224'd8589934592;
-parameter    ap_ST_fsm_state35 = 224'd17179869184;
-parameter    ap_ST_fsm_state36 = 224'd34359738368;
-parameter    ap_ST_fsm_state37 = 224'd68719476736;
-parameter    ap_ST_fsm_state38 = 224'd137438953472;
-parameter    ap_ST_fsm_state39 = 224'd274877906944;
-parameter    ap_ST_fsm_state40 = 224'd549755813888;
-parameter    ap_ST_fsm_state41 = 224'd1099511627776;
-parameter    ap_ST_fsm_state42 = 224'd2199023255552;
-parameter    ap_ST_fsm_state43 = 224'd4398046511104;
-parameter    ap_ST_fsm_state44 = 224'd8796093022208;
-parameter    ap_ST_fsm_state45 = 224'd17592186044416;
-parameter    ap_ST_fsm_state46 = 224'd35184372088832;
-parameter    ap_ST_fsm_state47 = 224'd70368744177664;
-parameter    ap_ST_fsm_state48 = 224'd140737488355328;
-parameter    ap_ST_fsm_state49 = 224'd281474976710656;
-parameter    ap_ST_fsm_state50 = 224'd562949953421312;
-parameter    ap_ST_fsm_state51 = 224'd1125899906842624;
-parameter    ap_ST_fsm_state52 = 224'd2251799813685248;
-parameter    ap_ST_fsm_state53 = 224'd4503599627370496;
-parameter    ap_ST_fsm_state54 = 224'd9007199254740992;
-parameter    ap_ST_fsm_state55 = 224'd18014398509481984;
-parameter    ap_ST_fsm_state56 = 224'd36028797018963968;
-parameter    ap_ST_fsm_state57 = 224'd72057594037927936;
-parameter    ap_ST_fsm_state58 = 224'd144115188075855872;
-parameter    ap_ST_fsm_state59 = 224'd288230376151711744;
-parameter    ap_ST_fsm_state60 = 224'd576460752303423488;
-parameter    ap_ST_fsm_state61 = 224'd1152921504606846976;
-parameter    ap_ST_fsm_state62 = 224'd2305843009213693952;
-parameter    ap_ST_fsm_state63 = 224'd4611686018427387904;
-parameter    ap_ST_fsm_state64 = 224'd9223372036854775808;
-parameter    ap_ST_fsm_state65 = 224'd18446744073709551616;
-parameter    ap_ST_fsm_state66 = 224'd36893488147419103232;
-parameter    ap_ST_fsm_state67 = 224'd73786976294838206464;
-parameter    ap_ST_fsm_state68 = 224'd147573952589676412928;
-parameter    ap_ST_fsm_state69 = 224'd295147905179352825856;
-parameter    ap_ST_fsm_state70 = 224'd590295810358705651712;
-parameter    ap_ST_fsm_state71 = 224'd1180591620717411303424;
-parameter    ap_ST_fsm_state72 = 224'd2361183241434822606848;
-parameter    ap_ST_fsm_state73 = 224'd4722366482869645213696;
-parameter    ap_ST_fsm_state74 = 224'd9444732965739290427392;
-parameter    ap_ST_fsm_state75 = 224'd18889465931478580854784;
-parameter    ap_ST_fsm_state76 = 224'd37778931862957161709568;
-parameter    ap_ST_fsm_state77 = 224'd75557863725914323419136;
-parameter    ap_ST_fsm_state78 = 224'd151115727451828646838272;
-parameter    ap_ST_fsm_state79 = 224'd302231454903657293676544;
-parameter    ap_ST_fsm_state80 = 224'd604462909807314587353088;
-parameter    ap_ST_fsm_state81 = 224'd1208925819614629174706176;
-parameter    ap_ST_fsm_state82 = 224'd2417851639229258349412352;
-parameter    ap_ST_fsm_state83 = 224'd4835703278458516698824704;
-parameter    ap_ST_fsm_state84 = 224'd9671406556917033397649408;
-parameter    ap_ST_fsm_state85 = 224'd19342813113834066795298816;
-parameter    ap_ST_fsm_state86 = 224'd38685626227668133590597632;
-parameter    ap_ST_fsm_state87 = 224'd77371252455336267181195264;
-parameter    ap_ST_fsm_state88 = 224'd154742504910672534362390528;
-parameter    ap_ST_fsm_state89 = 224'd309485009821345068724781056;
-parameter    ap_ST_fsm_state90 = 224'd618970019642690137449562112;
-parameter    ap_ST_fsm_state91 = 224'd1237940039285380274899124224;
-parameter    ap_ST_fsm_state92 = 224'd2475880078570760549798248448;
-parameter    ap_ST_fsm_state93 = 224'd4951760157141521099596496896;
-parameter    ap_ST_fsm_state94 = 224'd9903520314283042199192993792;
-parameter    ap_ST_fsm_state95 = 224'd19807040628566084398385987584;
-parameter    ap_ST_fsm_state96 = 224'd39614081257132168796771975168;
-parameter    ap_ST_fsm_state97 = 224'd79228162514264337593543950336;
-parameter    ap_ST_fsm_state98 = 224'd158456325028528675187087900672;
-parameter    ap_ST_fsm_state99 = 224'd316912650057057350374175801344;
-parameter    ap_ST_fsm_state100 = 224'd633825300114114700748351602688;
-parameter    ap_ST_fsm_state101 = 224'd1267650600228229401496703205376;
-parameter    ap_ST_fsm_state102 = 224'd2535301200456458802993406410752;
-parameter    ap_ST_fsm_state103 = 224'd5070602400912917605986812821504;
-parameter    ap_ST_fsm_state104 = 224'd10141204801825835211973625643008;
-parameter    ap_ST_fsm_state105 = 224'd20282409603651670423947251286016;
-parameter    ap_ST_fsm_state106 = 224'd40564819207303340847894502572032;
-parameter    ap_ST_fsm_state107 = 224'd81129638414606681695789005144064;
-parameter    ap_ST_fsm_state108 = 224'd162259276829213363391578010288128;
-parameter    ap_ST_fsm_state109 = 224'd324518553658426726783156020576256;
-parameter    ap_ST_fsm_state110 = 224'd649037107316853453566312041152512;
-parameter    ap_ST_fsm_state111 = 224'd1298074214633706907132624082305024;
-parameter    ap_ST_fsm_state112 = 224'd2596148429267413814265248164610048;
-parameter    ap_ST_fsm_state113 = 224'd5192296858534827628530496329220096;
-parameter    ap_ST_fsm_state114 = 224'd10384593717069655257060992658440192;
-parameter    ap_ST_fsm_state115 = 224'd20769187434139310514121985316880384;
-parameter    ap_ST_fsm_state116 = 224'd41538374868278621028243970633760768;
-parameter    ap_ST_fsm_state117 = 224'd83076749736557242056487941267521536;
-parameter    ap_ST_fsm_state118 = 224'd166153499473114484112975882535043072;
-parameter    ap_ST_fsm_state119 = 224'd332306998946228968225951765070086144;
-parameter    ap_ST_fsm_state120 = 224'd664613997892457936451903530140172288;
-parameter    ap_ST_fsm_state121 = 224'd1329227995784915872903807060280344576;
-parameter    ap_ST_fsm_state122 = 224'd2658455991569831745807614120560689152;
-parameter    ap_ST_fsm_state123 = 224'd5316911983139663491615228241121378304;
-parameter    ap_ST_fsm_state124 = 224'd10633823966279326983230456482242756608;
-parameter    ap_ST_fsm_state125 = 224'd21267647932558653966460912964485513216;
-parameter    ap_ST_fsm_state126 = 224'd42535295865117307932921825928971026432;
-parameter    ap_ST_fsm_state127 = 224'd85070591730234615865843651857942052864;
-parameter    ap_ST_fsm_state128 = 224'd170141183460469231731687303715884105728;
-parameter    ap_ST_fsm_state129 = 224'd340282366920938463463374607431768211456;
-parameter    ap_ST_fsm_state130 = 224'd680564733841876926926749214863536422912;
-parameter    ap_ST_fsm_state131 = 224'd1361129467683753853853498429727072845824;
-parameter    ap_ST_fsm_state132 = 224'd2722258935367507707706996859454145691648;
-parameter    ap_ST_fsm_state133 = 224'd5444517870735015415413993718908291383296;
-parameter    ap_ST_fsm_state134 = 224'd10889035741470030830827987437816582766592;
-parameter    ap_ST_fsm_state135 = 224'd21778071482940061661655974875633165533184;
-parameter    ap_ST_fsm_state136 = 224'd43556142965880123323311949751266331066368;
-parameter    ap_ST_fsm_state137 = 224'd87112285931760246646623899502532662132736;
-parameter    ap_ST_fsm_state138 = 224'd174224571863520493293247799005065324265472;
-parameter    ap_ST_fsm_state139 = 224'd348449143727040986586495598010130648530944;
-parameter    ap_ST_fsm_state140 = 224'd696898287454081973172991196020261297061888;
-parameter    ap_ST_fsm_state141 = 224'd1393796574908163946345982392040522594123776;
-parameter    ap_ST_fsm_state142 = 224'd2787593149816327892691964784081045188247552;
-parameter    ap_ST_fsm_state143 = 224'd5575186299632655785383929568162090376495104;
-parameter    ap_ST_fsm_state144 = 224'd11150372599265311570767859136324180752990208;
-parameter    ap_ST_fsm_state145 = 224'd22300745198530623141535718272648361505980416;
-parameter    ap_ST_fsm_state146 = 224'd44601490397061246283071436545296723011960832;
-parameter    ap_ST_fsm_state147 = 224'd89202980794122492566142873090593446023921664;
-parameter    ap_ST_fsm_state148 = 224'd178405961588244985132285746181186892047843328;
-parameter    ap_ST_fsm_state149 = 224'd356811923176489970264571492362373784095686656;
-parameter    ap_ST_fsm_state150 = 224'd713623846352979940529142984724747568191373312;
-parameter    ap_ST_fsm_state151 = 224'd1427247692705959881058285969449495136382746624;
-parameter    ap_ST_fsm_state152 = 224'd2854495385411919762116571938898990272765493248;
-parameter    ap_ST_fsm_state153 = 224'd5708990770823839524233143877797980545530986496;
-parameter    ap_ST_fsm_state154 = 224'd11417981541647679048466287755595961091061972992;
-parameter    ap_ST_fsm_state155 = 224'd22835963083295358096932575511191922182123945984;
-parameter    ap_ST_fsm_state156 = 224'd45671926166590716193865151022383844364247891968;
-parameter    ap_ST_fsm_state157 = 224'd91343852333181432387730302044767688728495783936;
-parameter    ap_ST_fsm_state158 = 224'd182687704666362864775460604089535377456991567872;
-parameter    ap_ST_fsm_state159 = 224'd365375409332725729550921208179070754913983135744;
-parameter    ap_ST_fsm_state160 = 224'd730750818665451459101842416358141509827966271488;
-parameter    ap_ST_fsm_state161 = 224'd1461501637330902918203684832716283019655932542976;
-parameter    ap_ST_fsm_state162 = 224'd2923003274661805836407369665432566039311865085952;
-parameter    ap_ST_fsm_state163 = 224'd5846006549323611672814739330865132078623730171904;
-parameter    ap_ST_fsm_state164 = 224'd11692013098647223345629478661730264157247460343808;
-parameter    ap_ST_fsm_state165 = 224'd23384026197294446691258957323460528314494920687616;
-parameter    ap_ST_fsm_state166 = 224'd46768052394588893382517914646921056628989841375232;
-parameter    ap_ST_fsm_state167 = 224'd93536104789177786765035829293842113257979682750464;
-parameter    ap_ST_fsm_state168 = 224'd187072209578355573530071658587684226515959365500928;
-parameter    ap_ST_fsm_state169 = 224'd374144419156711147060143317175368453031918731001856;
-parameter    ap_ST_fsm_state170 = 224'd748288838313422294120286634350736906063837462003712;
-parameter    ap_ST_fsm_state171 = 224'd1496577676626844588240573268701473812127674924007424;
-parameter    ap_ST_fsm_state172 = 224'd2993155353253689176481146537402947624255349848014848;
-parameter    ap_ST_fsm_state173 = 224'd5986310706507378352962293074805895248510699696029696;
-parameter    ap_ST_fsm_state174 = 224'd11972621413014756705924586149611790497021399392059392;
-parameter    ap_ST_fsm_state175 = 224'd23945242826029513411849172299223580994042798784118784;
-parameter    ap_ST_fsm_state176 = 224'd47890485652059026823698344598447161988085597568237568;
-parameter    ap_ST_fsm_state177 = 224'd95780971304118053647396689196894323976171195136475136;
-parameter    ap_ST_fsm_state178 = 224'd191561942608236107294793378393788647952342390272950272;
-parameter    ap_ST_fsm_state179 = 224'd383123885216472214589586756787577295904684780545900544;
-parameter    ap_ST_fsm_state180 = 224'd766247770432944429179173513575154591809369561091801088;
-parameter    ap_ST_fsm_state181 = 224'd1532495540865888858358347027150309183618739122183602176;
-parameter    ap_ST_fsm_state182 = 224'd3064991081731777716716694054300618367237478244367204352;
-parameter    ap_ST_fsm_state183 = 224'd6129982163463555433433388108601236734474956488734408704;
-parameter    ap_ST_fsm_state184 = 224'd12259964326927110866866776217202473468949912977468817408;
-parameter    ap_ST_fsm_state185 = 224'd24519928653854221733733552434404946937899825954937634816;
-parameter    ap_ST_fsm_state186 = 224'd49039857307708443467467104868809893875799651909875269632;
-parameter    ap_ST_fsm_state187 = 224'd98079714615416886934934209737619787751599303819750539264;
-parameter    ap_ST_fsm_state188 = 224'd196159429230833773869868419475239575503198607639501078528;
-parameter    ap_ST_fsm_state189 = 224'd392318858461667547739736838950479151006397215279002157056;
-parameter    ap_ST_fsm_state190 = 224'd784637716923335095479473677900958302012794430558004314112;
-parameter    ap_ST_fsm_state191 = 224'd1569275433846670190958947355801916604025588861116008628224;
-parameter    ap_ST_fsm_state192 = 224'd3138550867693340381917894711603833208051177722232017256448;
-parameter    ap_ST_fsm_state193 = 224'd6277101735386680763835789423207666416102355444464034512896;
-parameter    ap_ST_fsm_state194 = 224'd12554203470773361527671578846415332832204710888928069025792;
-parameter    ap_ST_fsm_state195 = 224'd25108406941546723055343157692830665664409421777856138051584;
-parameter    ap_ST_fsm_state196 = 224'd50216813883093446110686315385661331328818843555712276103168;
-parameter    ap_ST_fsm_state197 = 224'd100433627766186892221372630771322662657637687111424552206336;
-parameter    ap_ST_fsm_state198 = 224'd200867255532373784442745261542645325315275374222849104412672;
-parameter    ap_ST_fsm_state199 = 224'd401734511064747568885490523085290650630550748445698208825344;
-parameter    ap_ST_fsm_state200 = 224'd803469022129495137770981046170581301261101496891396417650688;
-parameter    ap_ST_fsm_state201 = 224'd1606938044258990275541962092341162602522202993782792835301376;
-parameter    ap_ST_fsm_state202 = 224'd3213876088517980551083924184682325205044405987565585670602752;
-parameter    ap_ST_fsm_state203 = 224'd6427752177035961102167848369364650410088811975131171341205504;
-parameter    ap_ST_fsm_state204 = 224'd12855504354071922204335696738729300820177623950262342682411008;
-parameter    ap_ST_fsm_state205 = 224'd25711008708143844408671393477458601640355247900524685364822016;
-parameter    ap_ST_fsm_state206 = 224'd51422017416287688817342786954917203280710495801049370729644032;
-parameter    ap_ST_fsm_state207 = 224'd102844034832575377634685573909834406561420991602098741459288064;
-parameter    ap_ST_fsm_state208 = 224'd205688069665150755269371147819668813122841983204197482918576128;
-parameter    ap_ST_fsm_state209 = 224'd411376139330301510538742295639337626245683966408394965837152256;
-parameter    ap_ST_fsm_state210 = 224'd822752278660603021077484591278675252491367932816789931674304512;
-parameter    ap_ST_fsm_state211 = 224'd1645504557321206042154969182557350504982735865633579863348609024;
-parameter    ap_ST_fsm_state212 = 224'd3291009114642412084309938365114701009965471731267159726697218048;
-parameter    ap_ST_fsm_state213 = 224'd6582018229284824168619876730229402019930943462534319453394436096;
-parameter    ap_ST_fsm_state214 = 224'd13164036458569648337239753460458804039861886925068638906788872192;
-parameter    ap_ST_fsm_state215 = 224'd26328072917139296674479506920917608079723773850137277813577744384;
-parameter    ap_ST_fsm_state216 = 224'd52656145834278593348959013841835216159447547700274555627155488768;
-parameter    ap_ST_fsm_state217 = 224'd105312291668557186697918027683670432318895095400549111254310977536;
-parameter    ap_ST_fsm_state218 = 224'd210624583337114373395836055367340864637790190801098222508621955072;
-parameter    ap_ST_fsm_state219 = 224'd421249166674228746791672110734681729275580381602196445017243910144;
-parameter    ap_ST_fsm_state220 = 224'd842498333348457493583344221469363458551160763204392890034487820288;
-parameter    ap_ST_fsm_state221 = 224'd1684996666696914987166688442938726917102321526408785780068975640576;
-parameter    ap_ST_fsm_state222 = 224'd3369993333393829974333376885877453834204643052817571560137951281152;
-parameter    ap_ST_fsm_state223 = 224'd6739986666787659948666753771754907668409286105635143120275902562304;
-parameter    ap_ST_fsm_state224 = 224'd13479973333575319897333507543509815336818572211270286240551805124608;
+parameter    ap_ST_fsm_state1 = 200'd1;
+parameter    ap_ST_fsm_state2 = 200'd2;
+parameter    ap_ST_fsm_state3 = 200'd4;
+parameter    ap_ST_fsm_state4 = 200'd8;
+parameter    ap_ST_fsm_state5 = 200'd16;
+parameter    ap_ST_fsm_state6 = 200'd32;
+parameter    ap_ST_fsm_state7 = 200'd64;
+parameter    ap_ST_fsm_state8 = 200'd128;
+parameter    ap_ST_fsm_state9 = 200'd256;
+parameter    ap_ST_fsm_state10 = 200'd512;
+parameter    ap_ST_fsm_state11 = 200'd1024;
+parameter    ap_ST_fsm_state12 = 200'd2048;
+parameter    ap_ST_fsm_state13 = 200'd4096;
+parameter    ap_ST_fsm_state14 = 200'd8192;
+parameter    ap_ST_fsm_state15 = 200'd16384;
+parameter    ap_ST_fsm_state16 = 200'd32768;
+parameter    ap_ST_fsm_state17 = 200'd65536;
+parameter    ap_ST_fsm_state18 = 200'd131072;
+parameter    ap_ST_fsm_state19 = 200'd262144;
+parameter    ap_ST_fsm_state20 = 200'd524288;
+parameter    ap_ST_fsm_state21 = 200'd1048576;
+parameter    ap_ST_fsm_state22 = 200'd2097152;
+parameter    ap_ST_fsm_state23 = 200'd4194304;
+parameter    ap_ST_fsm_state24 = 200'd8388608;
+parameter    ap_ST_fsm_state25 = 200'd16777216;
+parameter    ap_ST_fsm_state26 = 200'd33554432;
+parameter    ap_ST_fsm_state27 = 200'd67108864;
+parameter    ap_ST_fsm_state28 = 200'd134217728;
+parameter    ap_ST_fsm_state29 = 200'd268435456;
+parameter    ap_ST_fsm_state30 = 200'd536870912;
+parameter    ap_ST_fsm_state31 = 200'd1073741824;
+parameter    ap_ST_fsm_state32 = 200'd2147483648;
+parameter    ap_ST_fsm_state33 = 200'd4294967296;
+parameter    ap_ST_fsm_state34 = 200'd8589934592;
+parameter    ap_ST_fsm_state35 = 200'd17179869184;
+parameter    ap_ST_fsm_state36 = 200'd34359738368;
+parameter    ap_ST_fsm_state37 = 200'd68719476736;
+parameter    ap_ST_fsm_state38 = 200'd137438953472;
+parameter    ap_ST_fsm_state39 = 200'd274877906944;
+parameter    ap_ST_fsm_state40 = 200'd549755813888;
+parameter    ap_ST_fsm_state41 = 200'd1099511627776;
+parameter    ap_ST_fsm_state42 = 200'd2199023255552;
+parameter    ap_ST_fsm_state43 = 200'd4398046511104;
+parameter    ap_ST_fsm_state44 = 200'd8796093022208;
+parameter    ap_ST_fsm_state45 = 200'd17592186044416;
+parameter    ap_ST_fsm_state46 = 200'd35184372088832;
+parameter    ap_ST_fsm_state47 = 200'd70368744177664;
+parameter    ap_ST_fsm_state48 = 200'd140737488355328;
+parameter    ap_ST_fsm_state49 = 200'd281474976710656;
+parameter    ap_ST_fsm_state50 = 200'd562949953421312;
+parameter    ap_ST_fsm_state51 = 200'd1125899906842624;
+parameter    ap_ST_fsm_state52 = 200'd2251799813685248;
+parameter    ap_ST_fsm_state53 = 200'd4503599627370496;
+parameter    ap_ST_fsm_state54 = 200'd9007199254740992;
+parameter    ap_ST_fsm_state55 = 200'd18014398509481984;
+parameter    ap_ST_fsm_state56 = 200'd36028797018963968;
+parameter    ap_ST_fsm_state57 = 200'd72057594037927936;
+parameter    ap_ST_fsm_state58 = 200'd144115188075855872;
+parameter    ap_ST_fsm_state59 = 200'd288230376151711744;
+parameter    ap_ST_fsm_state60 = 200'd576460752303423488;
+parameter    ap_ST_fsm_state61 = 200'd1152921504606846976;
+parameter    ap_ST_fsm_state62 = 200'd2305843009213693952;
+parameter    ap_ST_fsm_state63 = 200'd4611686018427387904;
+parameter    ap_ST_fsm_state64 = 200'd9223372036854775808;
+parameter    ap_ST_fsm_state65 = 200'd18446744073709551616;
+parameter    ap_ST_fsm_state66 = 200'd36893488147419103232;
+parameter    ap_ST_fsm_state67 = 200'd73786976294838206464;
+parameter    ap_ST_fsm_state68 = 200'd147573952589676412928;
+parameter    ap_ST_fsm_state69 = 200'd295147905179352825856;
+parameter    ap_ST_fsm_state70 = 200'd590295810358705651712;
+parameter    ap_ST_fsm_state71 = 200'd1180591620717411303424;
+parameter    ap_ST_fsm_state72 = 200'd2361183241434822606848;
+parameter    ap_ST_fsm_state73 = 200'd4722366482869645213696;
+parameter    ap_ST_fsm_state74 = 200'd9444732965739290427392;
+parameter    ap_ST_fsm_state75 = 200'd18889465931478580854784;
+parameter    ap_ST_fsm_state76 = 200'd37778931862957161709568;
+parameter    ap_ST_fsm_state77 = 200'd75557863725914323419136;
+parameter    ap_ST_fsm_state78 = 200'd151115727451828646838272;
+parameter    ap_ST_fsm_state79 = 200'd302231454903657293676544;
+parameter    ap_ST_fsm_state80 = 200'd604462909807314587353088;
+parameter    ap_ST_fsm_state81 = 200'd1208925819614629174706176;
+parameter    ap_ST_fsm_state82 = 200'd2417851639229258349412352;
+parameter    ap_ST_fsm_state83 = 200'd4835703278458516698824704;
+parameter    ap_ST_fsm_state84 = 200'd9671406556917033397649408;
+parameter    ap_ST_fsm_state85 = 200'd19342813113834066795298816;
+parameter    ap_ST_fsm_state86 = 200'd38685626227668133590597632;
+parameter    ap_ST_fsm_state87 = 200'd77371252455336267181195264;
+parameter    ap_ST_fsm_state88 = 200'd154742504910672534362390528;
+parameter    ap_ST_fsm_state89 = 200'd309485009821345068724781056;
+parameter    ap_ST_fsm_state90 = 200'd618970019642690137449562112;
+parameter    ap_ST_fsm_state91 = 200'd1237940039285380274899124224;
+parameter    ap_ST_fsm_state92 = 200'd2475880078570760549798248448;
+parameter    ap_ST_fsm_state93 = 200'd4951760157141521099596496896;
+parameter    ap_ST_fsm_state94 = 200'd9903520314283042199192993792;
+parameter    ap_ST_fsm_state95 = 200'd19807040628566084398385987584;
+parameter    ap_ST_fsm_state96 = 200'd39614081257132168796771975168;
+parameter    ap_ST_fsm_state97 = 200'd79228162514264337593543950336;
+parameter    ap_ST_fsm_state98 = 200'd158456325028528675187087900672;
+parameter    ap_ST_fsm_state99 = 200'd316912650057057350374175801344;
+parameter    ap_ST_fsm_state100 = 200'd633825300114114700748351602688;
+parameter    ap_ST_fsm_state101 = 200'd1267650600228229401496703205376;
+parameter    ap_ST_fsm_state102 = 200'd2535301200456458802993406410752;
+parameter    ap_ST_fsm_state103 = 200'd5070602400912917605986812821504;
+parameter    ap_ST_fsm_state104 = 200'd10141204801825835211973625643008;
+parameter    ap_ST_fsm_state105 = 200'd20282409603651670423947251286016;
+parameter    ap_ST_fsm_state106 = 200'd40564819207303340847894502572032;
+parameter    ap_ST_fsm_state107 = 200'd81129638414606681695789005144064;
+parameter    ap_ST_fsm_state108 = 200'd162259276829213363391578010288128;
+parameter    ap_ST_fsm_state109 = 200'd324518553658426726783156020576256;
+parameter    ap_ST_fsm_state110 = 200'd649037107316853453566312041152512;
+parameter    ap_ST_fsm_state111 = 200'd1298074214633706907132624082305024;
+parameter    ap_ST_fsm_state112 = 200'd2596148429267413814265248164610048;
+parameter    ap_ST_fsm_state113 = 200'd5192296858534827628530496329220096;
+parameter    ap_ST_fsm_state114 = 200'd10384593717069655257060992658440192;
+parameter    ap_ST_fsm_state115 = 200'd20769187434139310514121985316880384;
+parameter    ap_ST_fsm_state116 = 200'd41538374868278621028243970633760768;
+parameter    ap_ST_fsm_state117 = 200'd83076749736557242056487941267521536;
+parameter    ap_ST_fsm_state118 = 200'd166153499473114484112975882535043072;
+parameter    ap_ST_fsm_state119 = 200'd332306998946228968225951765070086144;
+parameter    ap_ST_fsm_state120 = 200'd664613997892457936451903530140172288;
+parameter    ap_ST_fsm_state121 = 200'd1329227995784915872903807060280344576;
+parameter    ap_ST_fsm_state122 = 200'd2658455991569831745807614120560689152;
+parameter    ap_ST_fsm_state123 = 200'd5316911983139663491615228241121378304;
+parameter    ap_ST_fsm_state124 = 200'd10633823966279326983230456482242756608;
+parameter    ap_ST_fsm_state125 = 200'd21267647932558653966460912964485513216;
+parameter    ap_ST_fsm_state126 = 200'd42535295865117307932921825928971026432;
+parameter    ap_ST_fsm_state127 = 200'd85070591730234615865843651857942052864;
+parameter    ap_ST_fsm_state128 = 200'd170141183460469231731687303715884105728;
+parameter    ap_ST_fsm_state129 = 200'd340282366920938463463374607431768211456;
+parameter    ap_ST_fsm_state130 = 200'd680564733841876926926749214863536422912;
+parameter    ap_ST_fsm_state131 = 200'd1361129467683753853853498429727072845824;
+parameter    ap_ST_fsm_state132 = 200'd2722258935367507707706996859454145691648;
+parameter    ap_ST_fsm_state133 = 200'd5444517870735015415413993718908291383296;
+parameter    ap_ST_fsm_state134 = 200'd10889035741470030830827987437816582766592;
+parameter    ap_ST_fsm_state135 = 200'd21778071482940061661655974875633165533184;
+parameter    ap_ST_fsm_state136 = 200'd43556142965880123323311949751266331066368;
+parameter    ap_ST_fsm_state137 = 200'd87112285931760246646623899502532662132736;
+parameter    ap_ST_fsm_state138 = 200'd174224571863520493293247799005065324265472;
+parameter    ap_ST_fsm_state139 = 200'd348449143727040986586495598010130648530944;
+parameter    ap_ST_fsm_state140 = 200'd696898287454081973172991196020261297061888;
+parameter    ap_ST_fsm_state141 = 200'd1393796574908163946345982392040522594123776;
+parameter    ap_ST_fsm_state142 = 200'd2787593149816327892691964784081045188247552;
+parameter    ap_ST_fsm_state143 = 200'd5575186299632655785383929568162090376495104;
+parameter    ap_ST_fsm_state144 = 200'd11150372599265311570767859136324180752990208;
+parameter    ap_ST_fsm_state145 = 200'd22300745198530623141535718272648361505980416;
+parameter    ap_ST_fsm_state146 = 200'd44601490397061246283071436545296723011960832;
+parameter    ap_ST_fsm_state147 = 200'd89202980794122492566142873090593446023921664;
+parameter    ap_ST_fsm_state148 = 200'd178405961588244985132285746181186892047843328;
+parameter    ap_ST_fsm_state149 = 200'd356811923176489970264571492362373784095686656;
+parameter    ap_ST_fsm_state150 = 200'd713623846352979940529142984724747568191373312;
+parameter    ap_ST_fsm_state151 = 200'd1427247692705959881058285969449495136382746624;
+parameter    ap_ST_fsm_state152 = 200'd2854495385411919762116571938898990272765493248;
+parameter    ap_ST_fsm_state153 = 200'd5708990770823839524233143877797980545530986496;
+parameter    ap_ST_fsm_state154 = 200'd11417981541647679048466287755595961091061972992;
+parameter    ap_ST_fsm_state155 = 200'd22835963083295358096932575511191922182123945984;
+parameter    ap_ST_fsm_state156 = 200'd45671926166590716193865151022383844364247891968;
+parameter    ap_ST_fsm_state157 = 200'd91343852333181432387730302044767688728495783936;
+parameter    ap_ST_fsm_state158 = 200'd182687704666362864775460604089535377456991567872;
+parameter    ap_ST_fsm_state159 = 200'd365375409332725729550921208179070754913983135744;
+parameter    ap_ST_fsm_state160 = 200'd730750818665451459101842416358141509827966271488;
+parameter    ap_ST_fsm_state161 = 200'd1461501637330902918203684832716283019655932542976;
+parameter    ap_ST_fsm_state162 = 200'd2923003274661805836407369665432566039311865085952;
+parameter    ap_ST_fsm_state163 = 200'd5846006549323611672814739330865132078623730171904;
+parameter    ap_ST_fsm_state164 = 200'd11692013098647223345629478661730264157247460343808;
+parameter    ap_ST_fsm_state165 = 200'd23384026197294446691258957323460528314494920687616;
+parameter    ap_ST_fsm_state166 = 200'd46768052394588893382517914646921056628989841375232;
+parameter    ap_ST_fsm_state167 = 200'd93536104789177786765035829293842113257979682750464;
+parameter    ap_ST_fsm_state168 = 200'd187072209578355573530071658587684226515959365500928;
+parameter    ap_ST_fsm_state169 = 200'd374144419156711147060143317175368453031918731001856;
+parameter    ap_ST_fsm_state170 = 200'd748288838313422294120286634350736906063837462003712;
+parameter    ap_ST_fsm_state171 = 200'd1496577676626844588240573268701473812127674924007424;
+parameter    ap_ST_fsm_state172 = 200'd2993155353253689176481146537402947624255349848014848;
+parameter    ap_ST_fsm_state173 = 200'd5986310706507378352962293074805895248510699696029696;
+parameter    ap_ST_fsm_state174 = 200'd11972621413014756705924586149611790497021399392059392;
+parameter    ap_ST_fsm_state175 = 200'd23945242826029513411849172299223580994042798784118784;
+parameter    ap_ST_fsm_state176 = 200'd47890485652059026823698344598447161988085597568237568;
+parameter    ap_ST_fsm_state177 = 200'd95780971304118053647396689196894323976171195136475136;
+parameter    ap_ST_fsm_state178 = 200'd191561942608236107294793378393788647952342390272950272;
+parameter    ap_ST_fsm_state179 = 200'd383123885216472214589586756787577295904684780545900544;
+parameter    ap_ST_fsm_state180 = 200'd766247770432944429179173513575154591809369561091801088;
+parameter    ap_ST_fsm_state181 = 200'd1532495540865888858358347027150309183618739122183602176;
+parameter    ap_ST_fsm_state182 = 200'd3064991081731777716716694054300618367237478244367204352;
+parameter    ap_ST_fsm_state183 = 200'd6129982163463555433433388108601236734474956488734408704;
+parameter    ap_ST_fsm_state184 = 200'd12259964326927110866866776217202473468949912977468817408;
+parameter    ap_ST_fsm_state185 = 200'd24519928653854221733733552434404946937899825954937634816;
+parameter    ap_ST_fsm_state186 = 200'd49039857307708443467467104868809893875799651909875269632;
+parameter    ap_ST_fsm_state187 = 200'd98079714615416886934934209737619787751599303819750539264;
+parameter    ap_ST_fsm_state188 = 200'd196159429230833773869868419475239575503198607639501078528;
+parameter    ap_ST_fsm_state189 = 200'd392318858461667547739736838950479151006397215279002157056;
+parameter    ap_ST_fsm_state190 = 200'd784637716923335095479473677900958302012794430558004314112;
+parameter    ap_ST_fsm_state191 = 200'd1569275433846670190958947355801916604025588861116008628224;
+parameter    ap_ST_fsm_state192 = 200'd3138550867693340381917894711603833208051177722232017256448;
+parameter    ap_ST_fsm_state193 = 200'd6277101735386680763835789423207666416102355444464034512896;
+parameter    ap_ST_fsm_state194 = 200'd12554203470773361527671578846415332832204710888928069025792;
+parameter    ap_ST_fsm_state195 = 200'd25108406941546723055343157692830665664409421777856138051584;
+parameter    ap_ST_fsm_state196 = 200'd50216813883093446110686315385661331328818843555712276103168;
+parameter    ap_ST_fsm_state197 = 200'd100433627766186892221372630771322662657637687111424552206336;
+parameter    ap_ST_fsm_state198 = 200'd200867255532373784442745261542645325315275374222849104412672;
+parameter    ap_ST_fsm_state199 = 200'd401734511064747568885490523085290650630550748445698208825344;
+parameter    ap_ST_fsm_state200 = 200'd803469022129495137770981046170581301261101496891396417650688;
 
 input   ap_clk;
 input   ap_rst;
@@ -250,27 +226,25 @@ input   ap_start;
 output   ap_done;
 output   ap_idle;
 output   ap_ready;
-input  [99:0] num;
-input  [200:0] den;
-output  [159:0] ap_return;
+input  [85:0] num;
+input  [173:0] den;
+output  [195:0] ap_return;
 
 reg ap_done;
 reg ap_idle;
 reg ap_ready;
-reg[159:0] ap_return;
+reg[195:0] ap_return;
 
-(* fsm_encoding = "none" *) reg   [223:0] ap_CS_fsm;
+(* fsm_encoding = "none" *) reg   [199:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
-wire  signed [201:0] sext_ln1349_fu_32_p1;
-wire   [219:0] grp_fu_40_p0;
-wire   [202:0] grp_fu_40_p1;
-wire   [159:0] grp_fu_40_p2;
-wire    ap_CS_fsm_state224;
-reg    grp_fu_40_ap_start;
-wire    grp_fu_40_ap_done;
-wire   [159:0] trunc_ln0_fu_46_p1;
-reg   [159:0] ap_return_preg;
-reg   [223:0] ap_NS_fsm;
+wire   [195:0] grp_fu_36_p0;
+wire   [174:0] grp_fu_36_p1;
+wire   [195:0] grp_fu_36_p2;
+reg    grp_fu_36_ap_start;
+wire    grp_fu_36_ap_done;
+reg   [195:0] ap_return_preg;
+wire    ap_CS_fsm_state200;
+reg   [199:0] ap_NS_fsm;
 reg    ap_ST_fsm_state1_blk;
 wire    ap_ST_fsm_state2_blk;
 wire    ap_ST_fsm_state3_blk;
@@ -471,54 +445,30 @@ wire    ap_ST_fsm_state197_blk;
 wire    ap_ST_fsm_state198_blk;
 wire    ap_ST_fsm_state199_blk;
 wire    ap_ST_fsm_state200_blk;
-wire    ap_ST_fsm_state201_blk;
-wire    ap_ST_fsm_state202_blk;
-wire    ap_ST_fsm_state203_blk;
-wire    ap_ST_fsm_state204_blk;
-wire    ap_ST_fsm_state205_blk;
-wire    ap_ST_fsm_state206_blk;
-wire    ap_ST_fsm_state207_blk;
-wire    ap_ST_fsm_state208_blk;
-wire    ap_ST_fsm_state209_blk;
-wire    ap_ST_fsm_state210_blk;
-wire    ap_ST_fsm_state211_blk;
-wire    ap_ST_fsm_state212_blk;
-wire    ap_ST_fsm_state213_blk;
-wire    ap_ST_fsm_state214_blk;
-wire    ap_ST_fsm_state215_blk;
-wire    ap_ST_fsm_state216_blk;
-wire    ap_ST_fsm_state217_blk;
-wire    ap_ST_fsm_state218_blk;
-wire    ap_ST_fsm_state219_blk;
-wire    ap_ST_fsm_state220_blk;
-wire    ap_ST_fsm_state221_blk;
-wire    ap_ST_fsm_state222_blk;
-wire    ap_ST_fsm_state223_blk;
-wire    ap_ST_fsm_state224_blk;
-wire   [219:0] grp_fu_40_p10;
+wire   [195:0] grp_fu_36_p10;
 wire    ap_ce_reg;
 
 // power-on initialization
 initial begin
-#0 ap_CS_fsm = 224'd1;
-#0 ap_return_preg = 160'd0;
+#0 ap_CS_fsm = 200'd1;
+#0 ap_return_preg = 196'd0;
 end
 
-runge_kutta_45_sdiv_220ns_203ns_160_224_seq_1 #(
+runge_kutta_45_sdiv_196ns_175ns_196_200_seq_1 #(
     .ID( 1 ),
-    .NUM_STAGE( 224 ),
-    .din0_WIDTH( 220 ),
-    .din1_WIDTH( 203 ),
-    .dout_WIDTH( 160 ))
-sdiv_220ns_203ns_160_224_seq_1_U33(
+    .NUM_STAGE( 200 ),
+    .din0_WIDTH( 196 ),
+    .din1_WIDTH( 175 ),
+    .dout_WIDTH( 196 ))
+sdiv_196ns_175ns_196_200_seq_1_U33(
     .clk(ap_clk),
     .reset(ap_rst),
-    .start(grp_fu_40_ap_start),
-    .done(grp_fu_40_ap_done),
-    .din0(grp_fu_40_p0),
-    .din1(grp_fu_40_p1),
+    .start(grp_fu_36_ap_start),
+    .done(grp_fu_36_ap_done),
+    .din0(grp_fu_36_p0),
+    .din1(grp_fu_36_p1),
     .ce(1'b1),
-    .dout(grp_fu_40_p2)
+    .dout(grp_fu_36_p2)
 );
 
 always @ (posedge ap_clk) begin
@@ -531,10 +481,10 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_return_preg <= 160'd0;
+        ap_return_preg <= 196'd0;
     end else begin
-        if ((1'b1 == ap_CS_fsm_state224)) begin
-            ap_return_preg <= trunc_ln0_fu_46_p1;
+        if ((1'b1 == ap_CS_fsm_state200)) begin
+            ap_return_preg <= grp_fu_36_p2;
         end
     end
 end
@@ -769,57 +719,9 @@ end
 
 assign ap_ST_fsm_state200_blk = 1'b0;
 
-assign ap_ST_fsm_state201_blk = 1'b0;
-
-assign ap_ST_fsm_state202_blk = 1'b0;
-
-assign ap_ST_fsm_state203_blk = 1'b0;
-
-assign ap_ST_fsm_state204_blk = 1'b0;
-
-assign ap_ST_fsm_state205_blk = 1'b0;
-
-assign ap_ST_fsm_state206_blk = 1'b0;
-
-assign ap_ST_fsm_state207_blk = 1'b0;
-
-assign ap_ST_fsm_state208_blk = 1'b0;
-
-assign ap_ST_fsm_state209_blk = 1'b0;
-
 assign ap_ST_fsm_state20_blk = 1'b0;
 
-assign ap_ST_fsm_state210_blk = 1'b0;
-
-assign ap_ST_fsm_state211_blk = 1'b0;
-
-assign ap_ST_fsm_state212_blk = 1'b0;
-
-assign ap_ST_fsm_state213_blk = 1'b0;
-
-assign ap_ST_fsm_state214_blk = 1'b0;
-
-assign ap_ST_fsm_state215_blk = 1'b0;
-
-assign ap_ST_fsm_state216_blk = 1'b0;
-
-assign ap_ST_fsm_state217_blk = 1'b0;
-
-assign ap_ST_fsm_state218_blk = 1'b0;
-
-assign ap_ST_fsm_state219_blk = 1'b0;
-
 assign ap_ST_fsm_state21_blk = 1'b0;
-
-assign ap_ST_fsm_state220_blk = 1'b0;
-
-assign ap_ST_fsm_state221_blk = 1'b0;
-
-assign ap_ST_fsm_state222_blk = 1'b0;
-
-assign ap_ST_fsm_state223_blk = 1'b0;
-
-assign ap_ST_fsm_state224_blk = 1'b0;
 
 assign ap_ST_fsm_state22_blk = 1'b0;
 
@@ -994,7 +896,7 @@ assign ap_ST_fsm_state99_blk = 1'b0;
 assign ap_ST_fsm_state9_blk = 1'b0;
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state224) | ((ap_start == 1'b0) & (1'b1 == ap_CS_fsm_state1)))) begin
+    if (((1'b1 == ap_CS_fsm_state200) | ((ap_start == 1'b0) & (1'b1 == ap_CS_fsm_state1)))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = 1'b0;
@@ -1010,7 +912,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state224)) begin
+    if ((1'b1 == ap_CS_fsm_state200)) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -1018,8 +920,8 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state224)) begin
-        ap_return = trunc_ln0_fu_46_p1;
+    if ((1'b1 == ap_CS_fsm_state200)) begin
+        ap_return = grp_fu_36_p2;
     end else begin
         ap_return = ap_return_preg;
     end
@@ -1027,9 +929,9 @@ end
 
 always @ (*) begin
     if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
-        grp_fu_40_ap_start = 1'b1;
+        grp_fu_36_ap_start = 1'b1;
     end else begin
-        grp_fu_40_ap_start = 1'b0;
+        grp_fu_36_ap_start = 1'b0;
     end
 end
 
@@ -1637,78 +1539,6 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state200;
         end
         ap_ST_fsm_state200 : begin
-            ap_NS_fsm = ap_ST_fsm_state201;
-        end
-        ap_ST_fsm_state201 : begin
-            ap_NS_fsm = ap_ST_fsm_state202;
-        end
-        ap_ST_fsm_state202 : begin
-            ap_NS_fsm = ap_ST_fsm_state203;
-        end
-        ap_ST_fsm_state203 : begin
-            ap_NS_fsm = ap_ST_fsm_state204;
-        end
-        ap_ST_fsm_state204 : begin
-            ap_NS_fsm = ap_ST_fsm_state205;
-        end
-        ap_ST_fsm_state205 : begin
-            ap_NS_fsm = ap_ST_fsm_state206;
-        end
-        ap_ST_fsm_state206 : begin
-            ap_NS_fsm = ap_ST_fsm_state207;
-        end
-        ap_ST_fsm_state207 : begin
-            ap_NS_fsm = ap_ST_fsm_state208;
-        end
-        ap_ST_fsm_state208 : begin
-            ap_NS_fsm = ap_ST_fsm_state209;
-        end
-        ap_ST_fsm_state209 : begin
-            ap_NS_fsm = ap_ST_fsm_state210;
-        end
-        ap_ST_fsm_state210 : begin
-            ap_NS_fsm = ap_ST_fsm_state211;
-        end
-        ap_ST_fsm_state211 : begin
-            ap_NS_fsm = ap_ST_fsm_state212;
-        end
-        ap_ST_fsm_state212 : begin
-            ap_NS_fsm = ap_ST_fsm_state213;
-        end
-        ap_ST_fsm_state213 : begin
-            ap_NS_fsm = ap_ST_fsm_state214;
-        end
-        ap_ST_fsm_state214 : begin
-            ap_NS_fsm = ap_ST_fsm_state215;
-        end
-        ap_ST_fsm_state215 : begin
-            ap_NS_fsm = ap_ST_fsm_state216;
-        end
-        ap_ST_fsm_state216 : begin
-            ap_NS_fsm = ap_ST_fsm_state217;
-        end
-        ap_ST_fsm_state217 : begin
-            ap_NS_fsm = ap_ST_fsm_state218;
-        end
-        ap_ST_fsm_state218 : begin
-            ap_NS_fsm = ap_ST_fsm_state219;
-        end
-        ap_ST_fsm_state219 : begin
-            ap_NS_fsm = ap_ST_fsm_state220;
-        end
-        ap_ST_fsm_state220 : begin
-            ap_NS_fsm = ap_ST_fsm_state221;
-        end
-        ap_ST_fsm_state221 : begin
-            ap_NS_fsm = ap_ST_fsm_state222;
-        end
-        ap_ST_fsm_state222 : begin
-            ap_NS_fsm = ap_ST_fsm_state223;
-        end
-        ap_ST_fsm_state223 : begin
-            ap_NS_fsm = ap_ST_fsm_state224;
-        end
-        ap_ST_fsm_state224 : begin
             ap_NS_fsm = ap_ST_fsm_state1;
         end
         default : begin
@@ -1719,16 +1549,12 @@ end
 
 assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
 
-assign ap_CS_fsm_state224 = ap_CS_fsm[32'd223];
+assign ap_CS_fsm_state200 = ap_CS_fsm[32'd199];
 
-assign grp_fu_40_p0 = {{num}, {120'd0}};
+assign grp_fu_36_p0 = {{num}, {110'd0}};
 
-assign grp_fu_40_p1 = grp_fu_40_p10;
+assign grp_fu_36_p1 = grp_fu_36_p10;
 
-assign grp_fu_40_p10 = $unsigned(sext_ln1349_fu_32_p1);
-
-assign sext_ln1349_fu_32_p1 = $signed(den);
-
-assign trunc_ln0_fu_46_p1 = grp_fu_40_p2[159:0];
+assign grp_fu_36_p10 = den;
 
 endmodule //runge_kutta_45_division

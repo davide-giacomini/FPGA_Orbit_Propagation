@@ -16,26 +16,26 @@ module runge_kutta_45_multiply (
 
 
 output   ap_ready;
-input  [99:0] x;
-input  [99:0] y;
-output  [199:0] ap_return;
+input  [176:0] x;
+input  [176:0] y;
+output  [176:0] ap_return;
 
-wire   [199:0] r_V_fu_26_p2;
+wire   [286:0] r_V_fu_32_p2;
 
-runge_kutta_45_mul_100s_100s_200_1_1 #(
+runge_kutta_45_mul_177s_177s_287_1_1 #(
     .ID( 1 ),
     .NUM_STAGE( 1 ),
-    .din0_WIDTH( 100 ),
-    .din1_WIDTH( 100 ),
-    .dout_WIDTH( 200 ))
-mul_100s_100s_200_1_1_U73(
+    .din0_WIDTH( 177 ),
+    .din1_WIDTH( 177 ),
+    .dout_WIDTH( 287 ))
+mul_177s_177s_287_1_1_U79(
     .din0(y),
     .din1(x),
-    .dout(r_V_fu_26_p2)
+    .dout(r_V_fu_32_p2)
 );
 
 assign ap_ready = 1'b1;
 
-assign ap_return = r_V_fu_26_p2;
+assign ap_return = {{r_V_fu_32_p2[286:110]}};
 
 endmodule //runge_kutta_45_multiply

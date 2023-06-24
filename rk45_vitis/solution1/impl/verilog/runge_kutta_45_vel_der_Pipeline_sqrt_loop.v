@@ -14,7 +14,7 @@ module runge_kutta_45_vel_der_Pipeline_sqrt_loop (
         ap_done,
         ap_idle,
         ap_ready,
-        sext_ln73,
+        r_V_4,
         Q_V_2_out,
         Q_V_2_out_ap_vld
 );
@@ -27,8 +27,8 @@ input   ap_start;
 output   ap_done;
 output   ap_idle;
 output   ap_ready;
-input  [200:0] sext_ln73;
-output  [100:0] Q_V_2_out;
+input  [87:0] r_V_4;
+output  [43:0] Q_V_2_out;
 output   Q_V_2_out_ap_vld;
 
 reg ap_idle;
@@ -42,36 +42,34 @@ reg    ap_idle_pp0;
 wire    ap_block_state1_pp0_stage0_iter0;
 wire    ap_block_state2_pp0_stage0_iter1;
 wire    ap_block_pp0_stage0_subdone;
-wire   [0:0] icmp_ln85_fu_116_p2;
+wire   [0:0] icmp_ln85_fu_112_p2;
 reg    ap_condition_exit_pp0_iter1_stage0;
 wire    ap_loop_exit_ready;
 reg    ap_ready_int;
-reg   [100:0] p_Repl2_s_fu_60;
-wire   [100:0] Q_V_1_fu_209_p3;
+reg   [43:0] p_Repl2_s_fu_60;
+wire   [43:0] Q_V_1_fu_201_p3;
 wire    ap_block_pp0_stage0_11001;
 wire    ap_loop_init;
 wire    ap_block_pp0_stage0;
-reg   [201:0] p_Val2_s_fu_64;
-wire   [201:0] X_V_fu_155_p2;
-wire  signed [201:0] sext_ln73_cast_fu_89_p1;
-reg   [199:0] A_V_fu_68;
-wire   [199:0] A_V_3_fu_233_p3;
-reg   [6:0] i_fu_72;
-wire   [6:0] i_2_fu_122_p2;
+reg   [87:0] p_Val2_s_fu_64;
+wire   [87:0] X_V_fu_151_p2;
+reg   [85:0] A_V_fu_68;
+wire   [85:0] A_V_3_fu_225_p3;
+reg   [5:0] i_fu_72;
+wire   [5:0] i_2_fu_118_p2;
 wire    ap_block_pp0_stage0_01001;
-wire   [1:0] tmp3_fu_137_p4;
-wire   [61:0] trunc_ln312_fu_161_p1;
-wire   [63:0] i_op_assign_fu_165_p3;
-wire   [201:0] p_Result_2_fu_147_p3;
-wire   [201:0] zext_ln75_fu_173_p1;
-wire   [201:0] T_V_fu_177_p2;
-wire   [99:0] trunc_ln1027_fu_183_p1;
-wire   [0:0] p_Result_s_fu_193_p3;
-wire   [100:0] Q_V_2_fu_187_p2;
-wire   [100:0] p_Result_3_fu_201_p3;
-wire   [197:0] trunc_ln642_fu_217_p1;
-wire   [199:0] tmp_7_fu_221_p3;
-wire   [199:0] trunc_ln642_1_fu_229_p1;
+wire   [1:0] tmp2_fu_133_p4;
+wire   [45:0] p_Result_3_fu_157_p3;
+wire   [87:0] p_Result_2_fu_143_p3;
+wire   [87:0] zext_ln75_fu_165_p1;
+wire   [87:0] T_V_fu_169_p2;
+wire   [42:0] trunc_ln1027_fu_175_p1;
+wire   [0:0] p_Result_s_fu_185_p3;
+wire   [43:0] Q_V_2_fu_179_p2;
+wire   [43:0] p_Result_4_fu_193_p3;
+wire   [83:0] trunc_ln642_fu_209_p1;
+wire   [85:0] tmp_6_fu_213_p3;
+wire   [85:0] trunc_ln642_1_fu_221_p1;
 reg    ap_done_reg;
 wire    ap_continue_int;
 reg    ap_done_int;
@@ -137,9 +135,9 @@ end
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         if ((ap_loop_init == 1'b1)) begin
-            A_V_fu_68 <= 200'd0;
-        end else if (((icmp_ln85_fu_116_p2 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1))) begin
-            A_V_fu_68 <= A_V_3_fu_233_p3;
+            A_V_fu_68 <= 86'd0;
+        end else if (((icmp_ln85_fu_112_p2 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1))) begin
+            A_V_fu_68 <= A_V_3_fu_225_p3;
         end
     end
 end
@@ -147,9 +145,9 @@ end
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         if ((ap_loop_init == 1'b1)) begin
-            i_fu_72 <= 7'd0;
-        end else if (((icmp_ln85_fu_116_p2 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1))) begin
-            i_fu_72 <= i_2_fu_122_p2;
+            i_fu_72 <= 6'd0;
+        end else if (((icmp_ln85_fu_112_p2 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1))) begin
+            i_fu_72 <= i_2_fu_118_p2;
         end
     end
 end
@@ -157,9 +155,9 @@ end
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         if ((ap_loop_init == 1'b1)) begin
-            p_Repl2_s_fu_60 <= 101'd0;
-        end else if (((icmp_ln85_fu_116_p2 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1))) begin
-            p_Repl2_s_fu_60 <= Q_V_1_fu_209_p3;
+            p_Repl2_s_fu_60 <= 44'd0;
+        end else if (((icmp_ln85_fu_112_p2 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1))) begin
+            p_Repl2_s_fu_60 <= Q_V_1_fu_201_p3;
         end
     end
 end
@@ -167,15 +165,15 @@ end
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         if ((ap_loop_init == 1'b1)) begin
-            p_Val2_s_fu_64 <= sext_ln73_cast_fu_89_p1;
-        end else if (((icmp_ln85_fu_116_p2 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1))) begin
-            p_Val2_s_fu_64 <= X_V_fu_155_p2;
+            p_Val2_s_fu_64 <= r_V_4;
+        end else if (((icmp_ln85_fu_112_p2 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1))) begin
+            p_Val2_s_fu_64 <= X_V_fu_151_p2;
         end
     end
 end
 
 always @ (*) begin
-    if (((icmp_ln85_fu_116_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((icmp_ln85_fu_112_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         Q_V_2_out_ap_vld = 1'b1;
     end else begin
         Q_V_2_out_ap_vld = 1'b0;
@@ -183,7 +181,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((icmp_ln85_fu_116_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((icmp_ln85_fu_112_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_condition_exit_pp0_iter1_stage0 = 1'b1;
     end else begin
         ap_condition_exit_pp0_iter1_stage0 = 1'b0;
@@ -199,7 +197,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((ap_idle_pp0 == 1'b1) & (ap_start_int == 1'b0) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((ap_idle_pp0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (ap_start_int == 1'b0))) begin
         ap_idle = 1'b1;
     end else begin
         ap_idle = 1'b0;
@@ -233,17 +231,17 @@ always @ (*) begin
     endcase
 end
 
-assign A_V_3_fu_233_p3 = ((p_Result_s_fu_193_p3[0:0] == 1'b1) ? tmp_7_fu_221_p3 : trunc_ln642_1_fu_229_p1);
+assign A_V_3_fu_225_p3 = ((p_Result_s_fu_185_p3[0:0] == 1'b1) ? tmp_6_fu_213_p3 : trunc_ln642_1_fu_221_p1);
 
-assign Q_V_1_fu_209_p3 = ((p_Result_s_fu_193_p3[0:0] == 1'b1) ? Q_V_2_fu_187_p2 : p_Result_3_fu_201_p3);
+assign Q_V_1_fu_201_p3 = ((p_Result_s_fu_185_p3[0:0] == 1'b1) ? Q_V_2_fu_179_p2 : p_Result_4_fu_193_p3);
 
-assign Q_V_2_fu_187_p2 = p_Repl2_s_fu_60 << 101'd1;
+assign Q_V_2_fu_179_p2 = p_Repl2_s_fu_60 << 44'd1;
 
 assign Q_V_2_out = p_Repl2_s_fu_60;
 
-assign T_V_fu_177_p2 = (p_Result_2_fu_147_p3 - zext_ln75_fu_173_p1);
+assign T_V_fu_169_p2 = (p_Result_2_fu_143_p3 - zext_ln75_fu_165_p1);
 
-assign X_V_fu_155_p2 = p_Val2_s_fu_64 << 202'd2;
+assign X_V_fu_151_p2 = p_Val2_s_fu_64 << 88'd2;
 
 assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd0];
 
@@ -265,32 +263,28 @@ assign ap_enable_reg_pp0_iter0 = ap_start_int;
 
 assign ap_loop_exit_ready = ap_condition_exit_pp0_iter1_stage0;
 
-assign i_2_fu_122_p2 = (i_fu_72 + 7'd1);
+assign i_2_fu_118_p2 = (i_fu_72 + 6'd1);
 
-assign i_op_assign_fu_165_p3 = {{trunc_ln312_fu_161_p1}, {2'd1}};
+assign icmp_ln85_fu_112_p2 = ((i_fu_72 == 6'd44) ? 1'b1 : 1'b0);
 
-assign icmp_ln85_fu_116_p2 = ((i_fu_72 == 7'd101) ? 1'b1 : 1'b0);
+assign p_Result_2_fu_143_p3 = {{A_V_fu_68}, {tmp2_fu_133_p4}};
 
-assign p_Result_2_fu_147_p3 = {{A_V_fu_68}, {tmp3_fu_137_p4}};
+assign p_Result_3_fu_157_p3 = {{p_Repl2_s_fu_60}, {2'd1}};
 
-assign p_Result_3_fu_201_p3 = {{trunc_ln1027_fu_183_p1}, {1'd1}};
+assign p_Result_4_fu_193_p3 = {{trunc_ln1027_fu_175_p1}, {1'd1}};
 
-assign p_Result_s_fu_193_p3 = T_V_fu_177_p2[32'd201];
+assign p_Result_s_fu_185_p3 = T_V_fu_169_p2[32'd87];
 
-assign sext_ln73_cast_fu_89_p1 = $signed(sext_ln73);
+assign tmp2_fu_133_p4 = {{p_Val2_s_fu_64[87:86]}};
 
-assign tmp3_fu_137_p4 = {{p_Val2_s_fu_64[201:200]}};
+assign tmp_6_fu_213_p3 = {{trunc_ln642_fu_209_p1}, {tmp2_fu_133_p4}};
 
-assign tmp_7_fu_221_p3 = {{trunc_ln642_fu_217_p1}, {tmp3_fu_137_p4}};
+assign trunc_ln1027_fu_175_p1 = p_Repl2_s_fu_60[42:0];
 
-assign trunc_ln1027_fu_183_p1 = p_Repl2_s_fu_60[99:0];
+assign trunc_ln642_1_fu_221_p1 = T_V_fu_169_p2[85:0];
 
-assign trunc_ln312_fu_161_p1 = p_Repl2_s_fu_60[61:0];
+assign trunc_ln642_fu_209_p1 = A_V_fu_68[83:0];
 
-assign trunc_ln642_1_fu_229_p1 = T_V_fu_177_p2[199:0];
-
-assign trunc_ln642_fu_217_p1 = A_V_fu_68[197:0];
-
-assign zext_ln75_fu_173_p1 = i_op_assign_fu_165_p3;
+assign zext_ln75_fu_165_p1 = p_Result_3_fu_157_p3;
 
 endmodule //runge_kutta_45_vel_der_Pipeline_sqrt_loop

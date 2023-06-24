@@ -12,21 +12,23 @@ use IEEE.numeric_std.all;
 entity runge_kutta_45_multiply is
 port (
     ap_ready : OUT STD_LOGIC;
-    x : IN STD_LOGIC_VECTOR (99 downto 0);
-    y : IN STD_LOGIC_VECTOR (99 downto 0);
-    ap_return : OUT STD_LOGIC_VECTOR (199 downto 0) );
+    x : IN STD_LOGIC_VECTOR (176 downto 0);
+    y : IN STD_LOGIC_VECTOR (176 downto 0);
+    ap_return : OUT STD_LOGIC_VECTOR (176 downto 0) );
 end;
 
 
 architecture behav of runge_kutta_45_multiply is 
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant ap_const_boolean_1 : BOOLEAN := true;
+    constant ap_const_lv32_6E : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001101110";
+    constant ap_const_lv32_11E : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000100011110";
     constant ap_const_logic_0 : STD_LOGIC := '0';
 
 attribute shreg_extract : string;
-    signal r_V_fu_26_p2 : STD_LOGIC_VECTOR (199 downto 0);
+    signal r_V_fu_32_p2 : STD_LOGIC_VECTOR (286 downto 0);
 
-    component runge_kutta_45_mul_100s_100s_200_1_1 IS
+    component runge_kutta_45_mul_177s_177s_287_1_1 IS
     generic (
         ID : INTEGER;
         NUM_STAGE : INTEGER;
@@ -34,29 +36,29 @@ attribute shreg_extract : string;
         din1_WIDTH : INTEGER;
         dout_WIDTH : INTEGER );
     port (
-        din0 : IN STD_LOGIC_VECTOR (99 downto 0);
-        din1 : IN STD_LOGIC_VECTOR (99 downto 0);
-        dout : OUT STD_LOGIC_VECTOR (199 downto 0) );
+        din0 : IN STD_LOGIC_VECTOR (176 downto 0);
+        din1 : IN STD_LOGIC_VECTOR (176 downto 0);
+        dout : OUT STD_LOGIC_VECTOR (286 downto 0) );
     end component;
 
 
 
 begin
-    mul_100s_100s_200_1_1_U73 : component runge_kutta_45_mul_100s_100s_200_1_1
+    mul_177s_177s_287_1_1_U79 : component runge_kutta_45_mul_177s_177s_287_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
-        din0_WIDTH => 100,
-        din1_WIDTH => 100,
-        dout_WIDTH => 200)
+        din0_WIDTH => 177,
+        din1_WIDTH => 177,
+        dout_WIDTH => 287)
     port map (
         din0 => y,
         din1 => x,
-        dout => r_V_fu_26_p2);
+        dout => r_V_fu_32_p2);
 
 
 
 
     ap_ready <= ap_const_logic_1;
-    ap_return <= r_V_fu_26_p2;
+    ap_return <= r_V_fu_32_p2(286 downto 110);
 end behav;

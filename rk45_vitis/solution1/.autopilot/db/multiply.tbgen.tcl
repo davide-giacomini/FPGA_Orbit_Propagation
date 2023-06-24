@@ -3,7 +3,7 @@ set isTopModule 0
 set isCombinational 1
 set isDatapathOnly 0
 set isPipelined 0
-set pipeline_type none
+set pipeline_type function
 set FunctionProtocol ap_ctrl_hs
 set isOneStateSeq 0
 set ProfileFlag 0
@@ -11,28 +11,28 @@ set StallSigGenFlag 0
 set isEnableWaveformDebug 1
 set hasInterrupt 0
 set C_modelName {multiply}
-set C_modelType { int 200 }
+set C_modelType { int 177 }
 set C_modelArgList {
-	{ x int 100 regular  }
-	{ y int 100 regular  }
+	{ x int 177 regular  }
+	{ y int 177 regular  }
 }
 set C_modelArgMapList {[ 
-	{ "Name" : "x", "interface" : "wire", "bitwidth" : 100, "direction" : "READONLY"} , 
- 	{ "Name" : "y", "interface" : "wire", "bitwidth" : 100, "direction" : "READONLY"} , 
- 	{ "Name" : "ap_return", "interface" : "wire", "bitwidth" : 200} ]}
+	{ "Name" : "x", "interface" : "wire", "bitwidth" : 177, "direction" : "READONLY"} , 
+ 	{ "Name" : "y", "interface" : "wire", "bitwidth" : 177, "direction" : "READONLY"} , 
+ 	{ "Name" : "ap_return", "interface" : "wire", "bitwidth" : 177} ]}
 # RTL Port declarations: 
 set portNum 4
 set portList { 
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
-	{ x sc_in sc_lv 100 signal 0 } 
-	{ y sc_in sc_lv 100 signal 1 } 
-	{ ap_return sc_out sc_lv 200 signal -1 } 
+	{ x sc_in sc_lv 177 signal 0 } 
+	{ y sc_in sc_lv 177 signal 1 } 
+	{ ap_return sc_out sc_lv 177 signal -1 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
- 	{ "name": "x", "direction": "in", "datatype": "sc_lv", "bitwidth":100, "type": "signal", "bundle":{"name": "x", "role": "default" }} , 
- 	{ "name": "y", "direction": "in", "datatype": "sc_lv", "bitwidth":100, "type": "signal", "bundle":{"name": "y", "role": "default" }} , 
- 	{ "name": "ap_return", "direction": "out", "datatype": "sc_lv", "bitwidth":200, "type": "signal", "bundle":{"name": "ap_return", "role": "default" }}  ]}
+ 	{ "name": "x", "direction": "in", "datatype": "sc_lv", "bitwidth":177, "type": "signal", "bundle":{"name": "x", "role": "default" }} , 
+ 	{ "name": "y", "direction": "in", "datatype": "sc_lv", "bitwidth":177, "type": "signal", "bundle":{"name": "y", "role": "default" }} , 
+ 	{ "name": "ap_return", "direction": "out", "datatype": "sc_lv", "bitwidth":177, "type": "signal", "bundle":{"name": "ap_return", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1"],
@@ -52,7 +52,7 @@ set RtlHierarchyInfo {[
 		"Port" : [
 			{"Name" : "x", "Type" : "None", "Direction" : "I"},
 			{"Name" : "y", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_100s_100s_200_1_1_U73", "Parent" : "0"}]}
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_177s_177s_287_1_1_U79", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -64,13 +64,13 @@ set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
 	{"Name" : "Latency", "Min" : "0", "Max" : "0"}
-	, {"Name" : "Interval", "Min" : "0", "Max" : "0"}
+	, {"Name" : "Interval", "Min" : "1", "Max" : "1"}
 ]}
 
 set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
-	x { ap_none {  { x in_data 0 100 } } }
-	y { ap_none {  { y in_data 0 100 } } }
+	x { ap_none {  { x in_data 0 177 } } }
+	y { ap_none {  { y in_data 0 177 } } }
 }

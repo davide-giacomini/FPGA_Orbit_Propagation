@@ -7,7 +7,7 @@
 	<cdfg class_id="1" tracking_level="1" version="0" object_id="_0">
 		<name>division</name>
 		<module_structure>Sequential</module_structure>
-		<ret_bitwidth>160</ret_bitwidth>
+		<ret_bitwidth>196</ret_bitwidth>
 		<ports class_id="2" tracking_level="0" version="0">
 			<count>2</count>
 			<item_version>0</item_version>
@@ -34,10 +34,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1536132271</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>100</bitwidth>
+					<bitwidth>86</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -70,10 +70,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>4191555647</coreId>
+						<coreId>1538709440</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>201</bitwidth>
+					<bitwidth>174</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -85,7 +85,7 @@
 			</item>
 		</ports>
 		<nodes class_id="8" tracking_level="0" version="0">
-			<count>8</count>
+			<count>6</count>
 			<item_version>0</item_version>
 			<item class_id="9" tracking_level="1" version="0" object_id="_3">
 				<Value>
@@ -113,13 +113,13 @@
 						<coreId>863395689</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>201</bitwidth>
+					<bitwidth>174</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>13</item>
-					<item>14</item>
+					<item>11</item>
+					<item>12</item>
 				</oprand_edges>
 				<opcode>read</opcode>
 				<m_Display>0</m_Display>
@@ -156,13 +156,13 @@
 						<coreId>863395689</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>100</bitwidth>
+					<bitwidth>86</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>16</item>
-					<item>17</item>
+					<item>14</item>
+					<item>15</item>
 				</oprand_edges>
 				<opcode>read</opcode>
 				<m_Display>0</m_Display>
@@ -182,8 +182,8 @@
 						<fileName>/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h</fileName>
 						<fileDirectory>/home/davide/Projects/runge_kutta_45</fileDirectory>
 						<lineNumber>884</lineNumber>
-						<contextFuncName>operator=&amp;lt;100, 40, true, AP_TRN, AP_WRAP, 0&amp;gt;</contextFuncName>
-						<contextNormFuncName>operator_assign_100_40_true_AP_TRN_AP_WRAP_0</contextNormFuncName>
+						<contextFuncName>operator=&amp;lt;86, 31, true, AP_TRN, AP_WRAP, 0&amp;gt;</contextFuncName>
+						<contextNormFuncName>operator_assign_86_31_true_AP_TRN_AP_WRAP_0</contextNormFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
@@ -195,7 +195,7 @@
 									<item class_id="13" tracking_level="0" version="0">
 										<first class_id="14" tracking_level="0" version="0">
 											<first>/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h</first>
-											<second>operator=&amp;lt;100, 40, true, AP_TRN, AP_WRAP, 0&amp;gt;</second>
+											<second>operator=&amp;lt;86, 31, true, AP_TRN, AP_WRAP, 0&amp;gt;</second>
 										</first>
 										<second>884</second>
 									</item>
@@ -213,14 +213,14 @@
 						<coreId>863395689</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>220</bitwidth>
+					<bitwidth>196</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
 					<item_version>0</item_version>
-					<item>19</item>
+					<item>17</item>
+					<item>18</item>
 					<item>20</item>
-					<item>22</item>
 				</oprand_edges>
 				<opcode>bitconcatenate</opcode>
 				<m_Display>0</m_Display>
@@ -236,12 +236,12 @@
 					<Obj>
 						<type>0</type>
 						<id>6</id>
-						<name>sext_ln1349</name>
+						<name>zext_ln1349</name>
 						<fileName>/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h</fileName>
 						<fileDirectory>/home/davide/Projects/runge_kutta_45</fileDirectory>
 						<lineNumber>1349</lineNumber>
-						<contextFuncName>operator/&amp;lt;202, 82, false, AP_TRN, AP_WRAP, 0&amp;gt;</contextFuncName>
-						<contextNormFuncName>operator_div_202_82_false_AP_TRN_AP_WRAP_0</contextNormFuncName>
+						<contextFuncName>operator/&amp;lt;174, 64, false, AP_TRN, AP_WRAP, 0&amp;gt;</contextFuncName>
+						<contextNormFuncName>operator_div_174_64_false_AP_TRN_AP_WRAP_0</contextNormFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
@@ -253,7 +253,7 @@
 									<item>
 										<first>
 											<first>/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h</first>
-											<second>operator/&amp;lt;202, 82, false, AP_TRN, AP_WRAP, 0&amp;gt;</second>
+											<second>operator/&amp;lt;174, 64, false, AP_TRN, AP_WRAP, 0&amp;gt;</second>
 										</first>
 										<second>1349</second>
 									</item>
@@ -268,17 +268,17 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>4193616672</coreId>
+						<coreId>1539033056</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>202</bitwidth>
+					<bitwidth>196</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>23</item>
+					<item>21</item>
 				</oprand_edges>
-				<opcode>sext</opcode>
+				<opcode>zext</opcode>
 				<m_Display>0</m_Display>
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
@@ -292,68 +292,12 @@
 					<Obj>
 						<type>0</type>
 						<id>7</id>
-						<name>zext_ln1349</name>
-						<fileName>/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h</fileName>
-						<fileDirectory>/home/davide/Projects/runge_kutta_45</fileDirectory>
-						<lineNumber>1349</lineNumber>
-						<contextFuncName>operator/&amp;lt;202, 82, false, AP_TRN, AP_WRAP, 0&amp;gt;</contextFuncName>
-						<contextNormFuncName>operator_div_202_82_false_AP_TRN_AP_WRAP_0</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/davide/Projects/runge_kutta_45</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h</first>
-											<second>operator/&amp;lt;202, 82, false, AP_TRN, AP_WRAP, 0&amp;gt;</second>
-										</first>
-										<second>1349</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4194283552</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>220</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>24</item>
-				</oprand_edges>
-				<opcode>zext</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>5</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_8">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>8</id>
 						<name>r_V</name>
 						<fileName>/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h</fileName>
 						<fileDirectory>/home/davide/Projects/runge_kutta_45</fileDirectory>
 						<lineNumber>1349</lineNumber>
-						<contextFuncName>operator/&amp;lt;202, 82, false, AP_TRN, AP_WRAP, 0&amp;gt;</contextFuncName>
-						<contextNormFuncName>operator_div_202_82_false_AP_TRN_AP_WRAP_0</contextNormFuncName>
+						<contextFuncName>operator/&amp;lt;174, 64, false, AP_TRN, AP_WRAP, 0&amp;gt;</contextFuncName>
+						<contextNormFuncName>operator_div_174_64_false_AP_TRN_AP_WRAP_0</contextNormFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
@@ -365,7 +309,7 @@
 									<item>
 										<first>
 											<first>/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h</first>
-											<second>operator/&amp;lt;202, 82, false, AP_TRN, AP_WRAP, 0&amp;gt;</second>
+											<second>operator/&amp;lt;174, 64, false, AP_TRN, AP_WRAP, 0&amp;gt;</second>
 										</first>
 										<second>1349</second>
 									</item>
@@ -380,16 +324,16 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>4194467904</coreId>
+						<coreId>1539780448</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>160</bitwidth>
+					<bitwidth>196</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>25</item>
-					<item>26</item>
+					<item>22</item>
+					<item>23</item>
 				</oprand_edges>
 				<opcode>sdiv</opcode>
 				<m_Display>0</m_Display>
@@ -397,74 +341,18 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>5.07</m_delay>
-				<m_topoIndex>6</m_topoIndex>
+				<m_topoIndex>5</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_9">
+			<item class_id_reference="9" object_id="_8">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>9</id>
-						<name>trunc_ln0</name>
-						<fileName>/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed.h</fileName>
-						<fileDirectory>/home/davide/Projects/runge_kutta_45</fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName>ap_ufixed&amp;lt;220, 160, true, AP_TRN, AP_WRAP, 0&amp;gt;</contextFuncName>
-						<contextNormFuncName>ap_ufixed_220_160_true_AP_TRN_AP_WRAP_0_s</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/home/davide/Projects/runge_kutta_45</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed.h</first>
-											<second>ap_ufixed&amp;lt;220, 160, true, AP_TRN, AP_WRAP, 0&amp;gt;</second>
-										</first>
-										<second>0</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4194183952</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>160</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>27</item>
-				</oprand_edges>
-				<opcode>trunc</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>7</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_10">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>10</id>
-						<name>_ln62</name>
+						<id>8</id>
+						<name>_ln53</name>
 						<fileName>src/runge_kutta_45.cpp</fileName>
 						<fileDirectory>/home/davide/Projects/runge_kutta_45</fileDirectory>
-						<lineNumber>62</lineNumber>
+						<lineNumber>53</lineNumber>
 						<contextFuncName>division</contextFuncName>
 						<contextNormFuncName>division</contextNormFuncName>
 						<inlineStackInfo>
@@ -480,7 +368,7 @@
 											<first>src/runge_kutta_45.cpp</first>
 											<second>division</second>
 										</first>
-										<second>62</second>
+										<second>53</second>
 									</item>
 								</second>
 							</item>
@@ -493,7 +381,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>4193587632</coreId>
+						<coreId>1539873024</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -501,7 +389,7 @@
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>28</item>
+					<item>24</item>
 				</oprand_edges>
 				<opcode>ret</opcode>
 				<m_Display>0</m_Display>
@@ -509,18 +397,18 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>8</m_topoIndex>
+				<m_topoIndex>6</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
 		</nodes>
 		<consts class_id="15" tracking_level="0" version="0">
 			<count>1</count>
 			<item_version>0</item_version>
-			<item class_id="16" tracking_level="1" version="0" object_id="_11">
+			<item class_id="16" tracking_level="1" version="0" object_id="_9">
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>21</id>
+						<id>19</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -539,10 +427,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>4193262320</coreId>
+						<coreId>1540249392</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>120</bitwidth>
+					<bitwidth>110</bitwidth>
 				</Value>
 				<const_type>0</const_type>
 				<content>0</content>
@@ -551,10 +439,10 @@
 		<blocks class_id="17" tracking_level="0" version="0">
 			<count>1</count>
 			<item_version>0</item_version>
-			<item class_id="18" tracking_level="1" version="0" object_id="_12">
+			<item class_id="18" tracking_level="1" version="0" object_id="_10">
 				<Obj>
 					<type>3</type>
-					<id>11</id>
+					<id>9</id>
 					<name>division</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
@@ -573,11 +461,11 @@
 					<coreName></coreName>
 					<isStorage>0</isStorage>
 					<storageDepth>0</storageDepth>
-					<coreId>4194478320</coreId>
+					<coreId>0</coreId>
 					<rtlModuleName></rtlModuleName>
 				</Obj>
 				<node_objs>
-					<count>8</count>
+					<count>6</count>
 					<item_version>0</item_version>
 					<item>3</item>
 					<item>4</item>
@@ -585,82 +473,66 @@
 					<item>6</item>
 					<item>7</item>
 					<item>8</item>
-					<item>9</item>
-					<item>10</item>
 				</node_objs>
 			</item>
 		</blocks>
 		<edges class_id="19" tracking_level="0" version="0">
-			<count>10</count>
+			<count>8</count>
 			<item_version>0</item_version>
-			<item class_id="20" tracking_level="1" version="0" object_id="_13">
-				<id>14</id>
+			<item class_id="20" tracking_level="1" version="0" object_id="_11">
+				<id>12</id>
 				<edge_type>1</edge_type>
 				<source_obj>2</source_obj>
 				<sink_obj>3</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_14">
-				<id>17</id>
+			<item class_id_reference="20" object_id="_12">
+				<id>15</id>
 				<edge_type>1</edge_type>
 				<source_obj>1</source_obj>
 				<sink_obj>4</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_15">
-				<id>20</id>
+			<item class_id_reference="20" object_id="_13">
+				<id>18</id>
 				<edge_type>1</edge_type>
 				<source_obj>4</source_obj>
 				<sink_obj>5</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_16">
-				<id>22</id>
+			<item class_id_reference="20" object_id="_14">
+				<id>20</id>
 				<edge_type>1</edge_type>
-				<source_obj>21</source_obj>
+				<source_obj>19</source_obj>
 				<sink_obj>5</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_17">
-				<id>23</id>
+			<item class_id_reference="20" object_id="_15">
+				<id>21</id>
 				<edge_type>1</edge_type>
 				<source_obj>3</source_obj>
 				<sink_obj>6</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_18">
-				<id>24</id>
+			<item class_id_reference="20" object_id="_16">
+				<id>22</id>
+				<edge_type>1</edge_type>
+				<source_obj>5</source_obj>
+				<sink_obj>7</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_17">
+				<id>23</id>
 				<edge_type>1</edge_type>
 				<source_obj>6</source_obj>
 				<sink_obj>7</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
-			<item class_id_reference="20" object_id="_19">
-				<id>25</id>
-				<edge_type>1</edge_type>
-				<source_obj>5</source_obj>
-				<sink_obj>8</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_20">
-				<id>26</id>
+			<item class_id_reference="20" object_id="_18">
+				<id>24</id>
 				<edge_type>1</edge_type>
 				<source_obj>7</source_obj>
 				<sink_obj>8</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_21">
-				<id>27</id>
-				<edge_type>1</edge_type>
-				<source_obj>8</source_obj>
-				<sink_obj>9</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_22">
-				<id>28</id>
-				<edge_type>1</edge_type>
-				<source_obj>9</source_obj>
-				<sink_obj>10</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 		</edges>
@@ -668,7 +540,7 @@
 	<cdfg_regions class_id="21" tracking_level="0" version="0">
 		<count>1</count>
 		<item_version>0</item_version>
-		<item class_id="22" tracking_level="1" version="0" object_id="_23">
+		<item class_id="22" tracking_level="1" version="0" object_id="_19">
 			<mId>1</mId>
 			<mTag>division</mTag>
 			<mNormTag>division</mNormTag>
@@ -680,14 +552,14 @@
 			<basic_blocks>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>11</item>
+				<item>9</item>
 			</basic_blocks>
 			<mII>-1</mII>
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>223</mMinLatency>
-			<mMaxLatency>223</mMaxLatency>
+			<mMinLatency>199</mMinLatency>
+			<mMaxLatency>199</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -695,7 +567,7 @@
 	<fsm class_id="-1"></fsm>
 	<res class_id="-1"></res>
 	<node_label_latency class_id="26" tracking_level="0" version="0">
-		<count>8</count>
+		<count>6</count>
 		<item_version>0</item_version>
 		<item class_id="27" tracking_level="0" version="0">
 			<first>3</first>
@@ -729,27 +601,13 @@
 			<first>7</first>
 			<second>
 				<first>0</first>
-				<second>0</second>
+				<second>199</second>
 			</second>
 		</item>
 		<item>
 			<first>8</first>
 			<second>
-				<first>0</first>
-				<second>223</second>
-			</second>
-		</item>
-		<item>
-			<first>9</first>
-			<second>
-				<first>223</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>10</first>
-			<second>
-				<first>223</first>
+				<first>199</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -758,10 +616,10 @@
 		<count>1</count>
 		<item_version>0</item_version>
 		<item class_id="30" tracking_level="0" version="0">
-			<first>11</first>
+			<first>9</first>
 			<second class_id="31" tracking_level="0" version="0">
 				<first>0</first>
-				<second>223</second>
+				<second>199</second>
 			</second>
 		</item>
 	</bblk_ent_exit>

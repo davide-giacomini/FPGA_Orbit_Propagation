@@ -6,9 +6,9 @@
 `timescale 1 ns / 1 ps
 module runge_kutta_45_yy_loc_V_RAM_AUTO_1R1W (address0, ce0, d0, we0, q0, address1, ce1, q1,  reset,clk);
 
-parameter DataWidth = 100;
-parameter AddressWidth = 14;
-parameter AddressRange = 12288;
+parameter DataWidth = 85;
+parameter AddressWidth = 15;
+parameter AddressRange = 24576;
 
 input[AddressWidth-1:0] address0;
 input ce0;

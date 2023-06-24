@@ -13,12 +13,12 @@ set hasInterrupt 0
 set C_modelName {runge_kutta_45_Pipeline_sqrt_loop}
 set C_modelType { void 0 }
 set C_modelArgList {
-	{ X_V_7_reload int 202 regular  }
-	{ Q_V_5_out int 101 regular {pointer 1}  }
+	{ zext_ln449 int 177 regular  }
+	{ Q_V_5_out int 89 regular {pointer 1}  }
 }
 set C_modelArgMapList {[ 
-	{ "Name" : "X_V_7_reload", "interface" : "wire", "bitwidth" : 202, "direction" : "READONLY"} , 
- 	{ "Name" : "Q_V_5_out", "interface" : "wire", "bitwidth" : 101, "direction" : "WRITEONLY"} ]}
+	{ "Name" : "zext_ln449", "interface" : "wire", "bitwidth" : 177, "direction" : "READONLY"} , 
+ 	{ "Name" : "Q_V_5_out", "interface" : "wire", "bitwidth" : 89, "direction" : "WRITEONLY"} ]}
 # RTL Port declarations: 
 set portNum 9
 set portList { 
@@ -28,8 +28,8 @@ set portList {
 	{ ap_done sc_out sc_logic 1 predone -1 } 
 	{ ap_idle sc_out sc_logic 1 done -1 } 
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
-	{ X_V_7_reload sc_in sc_lv 202 signal 0 } 
-	{ Q_V_5_out sc_out sc_lv 101 signal 1 } 
+	{ zext_ln449 sc_in sc_lv 177 signal 0 } 
+	{ Q_V_5_out sc_out sc_lv 89 signal 1 } 
 	{ Q_V_5_out_ap_vld sc_out sc_logic 1 outvld 1 } 
 }
 set NewPortList {[ 
@@ -39,8 +39,8 @@ set NewPortList {[
  	{ "name": "ap_done", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "predone", "bundle":{"name": "ap_done", "role": "default" }} , 
  	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
- 	{ "name": "X_V_7_reload", "direction": "in", "datatype": "sc_lv", "bitwidth":202, "type": "signal", "bundle":{"name": "X_V_7_reload", "role": "default" }} , 
- 	{ "name": "Q_V_5_out", "direction": "out", "datatype": "sc_lv", "bitwidth":101, "type": "signal", "bundle":{"name": "Q_V_5_out", "role": "default" }} , 
+ 	{ "name": "zext_ln449", "direction": "in", "datatype": "sc_lv", "bitwidth":177, "type": "signal", "bundle":{"name": "zext_ln449", "role": "default" }} , 
+ 	{ "name": "Q_V_5_out", "direction": "out", "datatype": "sc_lv", "bitwidth":89, "type": "signal", "bundle":{"name": "Q_V_5_out", "role": "default" }} , 
  	{ "name": "Q_V_5_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "Q_V_5_out", "role": "ap_vld" }}  ]}
 
 set RtlHierarchyInfo {[
@@ -50,7 +50,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "103", "EstimateLatencyMax" : "103",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "91", "EstimateLatencyMax" : "91",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -59,7 +59,7 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"IsBlackBox" : "0",
 		"Port" : [
-			{"Name" : "X_V_7_reload", "Type" : "None", "Direction" : "I"},
+			{"Name" : "zext_ln449", "Type" : "None", "Direction" : "I"},
 			{"Name" : "Q_V_5_out", "Type" : "Vld", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "sqrt_loop", "PipelineType" : "UPC",
@@ -69,14 +69,14 @@ set RtlHierarchyInfo {[
 
 set ArgLastReadFirstWriteLatency {
 	runge_kutta_45_Pipeline_sqrt_loop {
-		X_V_7_reload {Type I LastRead 0 FirstWrite -1}
+		zext_ln449 {Type I LastRead 0 FirstWrite -1}
 		Q_V_5_out {Type O LastRead -1 FirstWrite 1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "103", "Max" : "103"}
-	, {"Name" : "Interval", "Min" : "103", "Max" : "103"}
+	{"Name" : "Latency", "Min" : "91", "Max" : "91"}
+	, {"Name" : "Interval", "Min" : "91", "Max" : "91"}
 ]}
 
 set PipelineEnableSignalInfo {[
@@ -84,6 +84,6 @@ set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
-	X_V_7_reload { ap_none {  { X_V_7_reload in_data 0 202 } } }
-	Q_V_5_out { ap_vld {  { Q_V_5_out out_data 1 101 }  { Q_V_5_out_ap_vld out_vld 1 1 } } }
+	zext_ln449 { ap_none {  { zext_ln449 in_data 0 177 } } }
+	Q_V_5_out { ap_vld {  { Q_V_5_out out_data 1 89 }  { Q_V_5_out_ap_vld out_vld 1 1 } } }
 }

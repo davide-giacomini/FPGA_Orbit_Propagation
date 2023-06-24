@@ -9,8 +9,8 @@
 <ProductFamily>zynq</ProductFamily>
 <Part>xc7z020-clg400-1</Part>
 <TopModelName>ap_fixed_base</TopModelName>
-<TargetClockPeriod>50.00</TargetClockPeriod>
-<ClockUncertainty>13.50</ClockUncertainty>
+<TargetClockPeriod>100.00</TargetClockPeriod>
+<ClockUncertainty>27.00</ClockUncertainty>
 <TargetInitiationInterval>4294967295</TargetInitiationInterval>
 <FlowTarget>vivado</FlowTarget>
 </UserAssignments>
@@ -19,7 +19,7 @@
 <PipelineType>yes</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>17.593</EstimatedClockPeriod>
+<EstimatedClockPeriod>17.478</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
@@ -39,7 +39,7 @@
 <AreaEstimates>
 <Resources>
 <FF>0</FF>
-<LUT>1123</LUT>
+<LUT>1019</LUT>
 <BRAM_18K>0</BRAM_18K>
 <DSP>0</DSP>
 <URAM>0</URAM>
@@ -73,7 +73,7 @@
 <IOProtocol>ap_ctrl_hs</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>100</Bits>
+<Bits>85</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>

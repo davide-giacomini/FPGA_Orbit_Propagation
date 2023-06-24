@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'multiply'
 ================================================================
-* Date:           Tue Jun 13 00:34:36 2023
+* Date:           Sat Jun 24 07:23:02 2023
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        rk45_vitis
@@ -17,11 +17,11 @@
 ================================================================
 + Timing: 
     * Summary: 
-    +--------+----------+-----------+------------+
-    |  Clock |  Target  | Estimated | Uncertainty|
-    +--------+----------+-----------+------------+
-    |ap_clk  |  50.00 ns|  15.814 ns|    13.50 ns|
-    +--------+----------+-----------+------------+
+    +--------+---------+-----------+------------+
+    |  Clock |  Target | Estimated | Uncertainty|
+    +--------+---------+-----------+------------+
+    |ap_clk  |  0.10 us|  49.289 ns|    27.00 ns|
+    +--------+---------+-----------+------------+
 
 + Latency: 
     * Summary: 
@@ -29,7 +29,7 @@
     |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
     |   min   |   max   |    min   |    max   | min | max |   Type  |
     +---------+---------+----------+----------+-----+-----+---------+
-    |        0|        0|      0 ns|      0 ns|    0|    0|       no|
+    |        0|        0|      0 ns|      0 ns|    1|    1|      yes|
     +---------+---------+----------+----------+-----+-----+---------+
 
     + Detail: 
@@ -52,21 +52,25 @@ ResetActiveHigh: 1
 IsCombinational: 0
 IsDatapathOnly: 0
 HasWiredReturn: 1
-HasMFsm: 0
+HasMFsm: 2
 HasVarLatency: 0
-IsPipeline: 0
+IsPipeline: 1
 IsRtlPipelined: 0
 IsInstanceOverlapped: 0
 IsDontTouch: 0
 HasImplIP: 0
 IsGatedGlobalClock: 0
 
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+
 
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
 * Number of FSM states : 1
-* Pipeline : 0
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 1, States = { 1 }
 * Dataflow Pipeline: 0
 
 * FSM state transitions: 
@@ -74,13 +78,14 @@ IsGatedGlobalClock: 0
 
 * FSM state operations: 
 
-State 1 <SV = 0> <Delay = 15.8>
-ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%y_read = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %y"   --->   Operation 2 'read' 'y_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%x_read = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %x"   --->   Operation 3 'read' 'x_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%sext_ln1317 = sext i100 %x_read"   --->   Operation 4 'sext' 'sext_ln1317' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%sext_ln1319 = sext i100 %y_read"   --->   Operation 5 'sext' 'sext_ln1319' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 6 [1/1] (15.8ns)   --->   "%r_V = mul i200 %sext_ln1319, i200 %sext_ln1317"   --->   Operation 6 'mul' 'r_V' <Predicate = true> <Delay = 15.8> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 0> <II = 1> <Delay = 15.8> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%ret_ln55 = ret i200 %r_V" [src/runge_kutta_45.cpp:55]   --->   Operation 7 'ret' 'ret_ln55' <Predicate = true> <Delay = 0.00>
+State 1 <SV = 0> <Delay = 49.2>
+ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%y_read = read i177 @_ssdm_op_Read.ap_auto.i177, i177 %y"   --->   Operation 2 'read' 'y_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%x_read = read i177 @_ssdm_op_Read.ap_auto.i177, i177 %x"   --->   Operation 3 'read' 'x_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%sext_ln1316 = sext i177 %x_read"   --->   Operation 4 'sext' 'sext_ln1316' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%sext_ln1319 = sext i177 %y_read"   --->   Operation 5 'sext' 'sext_ln1319' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (49.2ns)   --->   "%r_V = mul i287 %sext_ln1319, i287 %sext_ln1316"   --->   Operation 6 'mul' 'r_V' <Predicate = true> <Delay = 49.2> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 0> <II = 1> <Delay = 49.2> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%this_V_write_assign = partselect i177 @_ssdm_op_PartSelect.i177.i287.i32.i32, i287 %r_V, i32 110, i32 286"   --->   Operation 7 'partselect' 'this_V_write_assign' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%ret_ln44 = ret i177 %this_V_write_assign" [src/runge_kutta_45.cpp:44]   --->   Operation 8 'ret' 'ret_ln44' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -91,7 +96,7 @@ STG Binding:
 - Is combinational: 1
 - Is one-state seq: 0
 - Is datapath-only: 0
-- Is pipelined: 0
+- Is pipelined: 1
 - Is top level: 0
 Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
 Port [ x]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
@@ -102,12 +107,13 @@ Port [ y]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0
 
 <LifeTime>
 <method=bitvector/>
-y_read      (read) [ 00]
-x_read      (read) [ 00]
-sext_ln1317 (sext) [ 00]
-sext_ln1319 (sext) [ 00]
-r_V         (mul ) [ 00]
-ret_ln55    (ret ) [ 00]
+y_read              (read      ) [ 00]
+x_read              (read      ) [ 00]
+sext_ln1316         (sext      ) [ 00]
+sext_ln1319         (sext      ) [ 00]
+r_V                 (mul       ) [ 00]
+this_V_write_assign (partselect) [ 00]
+ret_ln44            (ret       ) [ 00]
 </LifeTime>
 
 <model>
@@ -136,15 +142,42 @@ ret_ln55    (ret ) [ 00]
 <pin id="5" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i100"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i177"/></StgValue>
 </bind>
 </comp>
 
-<comp id="6" class="1004" name="y_read_read_fu_6">
+<comp id="6" class="1001" name="const_6">
 <pin_list>
-<pin id="7" dir="0" index="0" bw="100" slack="0"/>
-<pin id="8" dir="0" index="1" bw="100" slack="0"/>
-<pin id="9" dir="1" index="2" bw="100" slack="0"/>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_PartSelect.i177.i287.i32.i32"/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1001" name="const_8">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1001" name="const_10">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1004" name="y_read_read_fu_12">
+<pin_list>
+<pin id="13" dir="0" index="0" bw="177" slack="0"/>
+<pin id="14" dir="0" index="1" bw="177" slack="0"/>
+<pin id="15" dir="1" index="2" bw="177" slack="0"/>
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
@@ -152,11 +185,11 @@ ret_ln55    (ret ) [ 00]
 </bind>
 </comp>
 
-<comp id="12" class="1004" name="x_read_read_fu_12">
+<comp id="18" class="1004" name="x_read_read_fu_18">
 <pin_list>
-<pin id="13" dir="0" index="0" bw="100" slack="0"/>
-<pin id="14" dir="0" index="1" bw="100" slack="0"/>
-<pin id="15" dir="1" index="2" bw="100" slack="0"/>
+<pin id="19" dir="0" index="0" bw="177" slack="0"/>
+<pin id="20" dir="0" index="1" bw="177" slack="0"/>
+<pin id="21" dir="1" index="2" bw="177" slack="0"/>
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
@@ -164,21 +197,21 @@ ret_ln55    (ret ) [ 00]
 </bind>
 </comp>
 
-<comp id="18" class="1004" name="sext_ln1317_fu_18">
+<comp id="24" class="1004" name="sext_ln1316_fu_24">
 <pin_list>
-<pin id="19" dir="0" index="0" bw="100" slack="0"/>
-<pin id="20" dir="1" index="1" bw="200" slack="0"/>
+<pin id="25" dir="0" index="0" bw="177" slack="0"/>
+<pin id="26" dir="1" index="1" bw="287" slack="0"/>
 </pin_list>
 <bind>
 <opcode="sext(35) " fcode="sext"/>
-<opset="sext_ln1317/1 "/>
+<opset="sext_ln1316/1 "/>
 </bind>
 </comp>
 
-<comp id="22" class="1004" name="sext_ln1319_fu_22">
+<comp id="28" class="1004" name="sext_ln1319_fu_28">
 <pin_list>
-<pin id="23" dir="0" index="0" bw="100" slack="0"/>
-<pin id="24" dir="1" index="1" bw="200" slack="0"/>
+<pin id="29" dir="0" index="0" bw="177" slack="0"/>
+<pin id="30" dir="1" index="1" bw="287" slack="0"/>
 </pin_list>
 <bind>
 <opcode="sext(35) " fcode="sext"/>
@@ -186,11 +219,11 @@ ret_ln55    (ret ) [ 00]
 </bind>
 </comp>
 
-<comp id="26" class="1004" name="r_V_fu_26">
+<comp id="32" class="1004" name="r_V_fu_32">
 <pin_list>
-<pin id="27" dir="0" index="0" bw="100" slack="0"/>
-<pin id="28" dir="0" index="1" bw="100" slack="0"/>
-<pin id="29" dir="1" index="2" bw="200" slack="2147483647"/>
+<pin id="33" dir="0" index="0" bw="177" slack="0"/>
+<pin id="34" dir="0" index="1" bw="177" slack="0"/>
+<pin id="35" dir="1" index="2" bw="287" slack="0"/>
 </pin_list>
 <bind>
 <opcode="mul(12) " fcode="mul"/>
@@ -198,24 +231,46 @@ ret_ln55    (ret ) [ 00]
 </bind>
 </comp>
 
+<comp id="38" class="1004" name="this_V_write_assign_fu_38">
+<pin_list>
+<pin id="39" dir="0" index="0" bw="177" slack="0"/>
+<pin id="40" dir="0" index="1" bw="287" slack="0"/>
+<pin id="41" dir="0" index="2" bw="8" slack="0"/>
+<pin id="42" dir="0" index="3" bw="10" slack="0"/>
+<pin id="43" dir="1" index="4" bw="177" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="partselect(1002) " fcode="partselect"/>
+<opset="this_V_write_assign/1 "/>
+</bind>
+</comp>
+
 </comp_list>
 
 <net_list>
-<net id="10"><net_src comp="4" pin="0"/><net_sink comp="6" pin=0"/></net>
-
-<net id="11"><net_src comp="2" pin="0"/><net_sink comp="6" pin=1"/></net>
-
 <net id="16"><net_src comp="4" pin="0"/><net_sink comp="12" pin=0"/></net>
 
-<net id="17"><net_src comp="0" pin="0"/><net_sink comp="12" pin=1"/></net>
+<net id="17"><net_src comp="2" pin="0"/><net_sink comp="12" pin=1"/></net>
 
-<net id="21"><net_src comp="12" pin="2"/><net_sink comp="18" pin=0"/></net>
+<net id="22"><net_src comp="4" pin="0"/><net_sink comp="18" pin=0"/></net>
 
-<net id="25"><net_src comp="6" pin="2"/><net_sink comp="22" pin=0"/></net>
+<net id="23"><net_src comp="0" pin="0"/><net_sink comp="18" pin=1"/></net>
 
-<net id="30"><net_src comp="22" pin="1"/><net_sink comp="26" pin=0"/></net>
+<net id="27"><net_src comp="18" pin="2"/><net_sink comp="24" pin=0"/></net>
 
-<net id="31"><net_src comp="18" pin="1"/><net_sink comp="26" pin=1"/></net>
+<net id="31"><net_src comp="12" pin="2"/><net_sink comp="28" pin=0"/></net>
+
+<net id="36"><net_src comp="28" pin="1"/><net_sink comp="32" pin=0"/></net>
+
+<net id="37"><net_src comp="24" pin="1"/><net_sink comp="32" pin=1"/></net>
+
+<net id="44"><net_src comp="6" pin="0"/><net_sink comp="38" pin=0"/></net>
+
+<net id="45"><net_src comp="32" pin="2"/><net_sink comp="38" pin=1"/></net>
+
+<net id="46"><net_src comp="8" pin="0"/><net_sink comp="38" pin=2"/></net>
+
+<net id="47"><net_src comp="10" pin="0"/><net_sink comp="38" pin=3"/></net>
 
 </net_list>
 
@@ -230,7 +285,8 @@ ret_ln55    (ret ) [ 00]
   - Chain level:
 	State 1
 		r_V : 1
-		ret_ln55 : 2
+		this_V_write_assign : 2
+		ret_ln44 : 3
 
 
 ============================================================
@@ -238,19 +294,21 @@ ret_ln55    (ret ) [ 00]
 ============================================================
 
 * Functional unit list:
-|----------|-------------------|---------|---------|---------|
-| Operation|  Functional Unit  |   DSP   |    FF   |   LUT   |
-|----------|-------------------|---------|---------|---------|
-|    mul   |     r_V_fu_26     |    16   |    0    |   167   |
-|----------|-------------------|---------|---------|---------|
-|   read   |  y_read_read_fu_6 |    0    |    0    |    0    |
-|          | x_read_read_fu_12 |    0    |    0    |    0    |
-|----------|-------------------|---------|---------|---------|
-|   sext   | sext_ln1317_fu_18 |    0    |    0    |    0    |
-|          | sext_ln1319_fu_22 |    0    |    0    |    0    |
-|----------|-------------------|---------|---------|---------|
-|   Total  |                   |    16   |    0    |   167   |
-|----------|-------------------|---------|---------|---------|
+|----------|---------------------------|---------|---------|---------|
+| Operation|      Functional Unit      |   DSP   |    FF   |   LUT   |
+|----------|---------------------------|---------|---------|---------|
+|    mul   |         r_V_fu_32         |    46   |    0    |  14833  |
+|----------|---------------------------|---------|---------|---------|
+|   read   |     y_read_read_fu_12     |    0    |    0    |    0    |
+|          |     x_read_read_fu_18     |    0    |    0    |    0    |
+|----------|---------------------------|---------|---------|---------|
+|   sext   |     sext_ln1316_fu_24     |    0    |    0    |    0    |
+|          |     sext_ln1319_fu_28     |    0    |    0    |    0    |
+|----------|---------------------------|---------|---------|---------|
+|partselect| this_V_write_assign_fu_38 |    0    |    0    |    0    |
+|----------|---------------------------|---------|---------|---------|
+|   Total  |                           |    46   |    0    |  14833  |
+|----------|---------------------------|---------|---------|---------|
 
 Memories:
 N/A
@@ -271,10 +329,10 @@ N/A
 +-----------+--------+--------+--------+
 |           |   DSP  |   FF   |   LUT  |
 +-----------+--------+--------+--------+
-|  Function |   16   |    0   |   167  |
+|  Function |   46   |    0   |  14833 |
 |   Memory  |    -   |    -   |    -   |
 |Multiplexer|    -   |    -   |    -   |
 |  Register |    -   |    -   |    -   |
 +-----------+--------+--------+--------+
-|   Total   |   16   |    0   |   167  |
+|   Total   |   46   |    0   |  14833 |
 +-----------+--------+--------+--------+

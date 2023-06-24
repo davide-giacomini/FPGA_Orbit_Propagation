@@ -1,6 +1,53 @@
 # This script segment is generated automatically by AutoPilot
 
-set name runge_kutta_45_mul_100s_100s_200_1_1
+set id 23
+set name runge_kutta_45_mux_32_86_1_1
+set corename simcore_mux
+set op mux
+set stage_num 1
+set din0_width 86
+set din0_signed 0
+set din1_width 86
+set din1_signed 0
+set din2_width 86
+set din2_signed 0
+set din3_width 2
+set din3_signed 0
+set dout_width 86
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mux} IMPL {auto} LATENCY 0 ALLOW_PRAGMA 1
+}
+
+
+set op mux
+set corename Multiplexer
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_pipemux] == "::AESL_LIB_VIRTEX::xil_gen_pipemux"} {
+eval "::AESL_LIB_VIRTEX::xil_gen_pipemux { \
+    id ${id} \
+    name ${name} \
+    corename ${corename} \
+    op ${op} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${stage_num} \
+    din0_width ${din0_width} \
+    din0_signed ${din0_signed} \
+    din1_width ${din1_width} \
+    din1_signed ${din1_signed} \
+    din2_width ${din2_width} \
+    din2_signed ${din2_signed} \
+    din3_width ${din3_width} \
+    din3_signed ${din3_signed} \
+    dout_width ${dout_width} \
+}"
+} else {
+puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_pipemux, check your platform lib"
+}
+}
+
+
+set name runge_kutta_45_mul_86s_86s_172_1_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 0 ALLOW_PRAGMA 1
 }
@@ -24,7 +71,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_r_in_V_0_01_reload \
     op interface \
-    ports { r_in_V_0_01_reload { I 100 vector } } \
+    ports { r_in_V_0_01_reload { I 86 vector } } \
 } "
 }
 
@@ -39,7 +86,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_r_in_V_1_02_reload \
     op interface \
-    ports { r_in_V_1_02_reload { I 100 vector } } \
+    ports { r_in_V_1_02_reload { I 86 vector } } \
 } "
 }
 
@@ -54,7 +101,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_r_in_V_2_03_reload \
     op interface \
-    ports { r_in_V_2_03_reload { I 100 vector } } \
+    ports { r_in_V_2_03_reload { I 86 vector } } \
 } "
 }
 
@@ -62,14 +109,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 30 \
-    name X_V_4_out \
+    name squared_sum_V_out \
     type other \
     dir O \
     reset_level 1 \
     sync_rst true \
-    corename dc_X_V_4_out \
+    corename dc_squared_sum_V_out \
     op interface \
-    ports { X_V_4_out { O 201 vector } X_V_4_out_ap_vld { O 1 bit } } \
+    ports { squared_sum_V_out { O 173 vector } squared_sum_V_out_ap_vld { O 1 bit } } \
 } "
 }
 

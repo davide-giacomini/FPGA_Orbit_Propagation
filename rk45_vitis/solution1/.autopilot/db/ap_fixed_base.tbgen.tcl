@@ -11,24 +11,24 @@ set StallSigGenFlag 0
 set isEnableWaveformDebug 1
 set hasInterrupt 0
 set C_modelName {ap_fixed_base}
-set C_modelType { int 100 }
+set C_modelType { int 85 }
 set C_modelArgList {
 	{ d double 64 regular  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "d", "interface" : "wire", "bitwidth" : 64, "direction" : "READONLY"} , 
- 	{ "Name" : "ap_return", "interface" : "wire", "bitwidth" : 100} ]}
+ 	{ "Name" : "ap_return", "interface" : "wire", "bitwidth" : 85} ]}
 # RTL Port declarations: 
 set portNum 3
 set portList { 
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
 	{ d sc_in sc_lv 64 signal 0 } 
-	{ ap_return sc_out sc_lv 100 signal -1 } 
+	{ ap_return sc_out sc_lv 85 signal -1 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
  	{ "name": "d", "direction": "in", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "d", "role": "default" }} , 
- 	{ "name": "ap_return", "direction": "out", "datatype": "sc_lv", "bitwidth":100, "type": "signal", "bundle":{"name": "ap_return", "role": "default" }}  ]}
+ 	{ "name": "ap_return", "direction": "out", "datatype": "sc_lv", "bitwidth":85, "type": "signal", "bundle":{"name": "ap_return", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "",

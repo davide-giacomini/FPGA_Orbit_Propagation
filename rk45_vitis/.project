@@ -27,6 +27,11 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>ap_fixed_base.h</name>
+			<type>1</type>
+			<location>/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h</location>
+		</link>
+		<link>
 			<name>source</name>
 			<type>2</type>
 			<location>/home/davide/Projects/runge_kutta_45/rk45_vitis/.apc/.src</location>
@@ -35,11 +40,6 @@
 			<name>testbench</name>
 			<type>2</type>
 			<location>/home/davide/Projects/runge_kutta_45/rk45_vitis/.apc/.tb</location>
-		</link>
-		<link>
-			<name>.reference/runge_kutta_45.hpp</name>
-			<type>1</type>
-			<location>/home/davide/Projects/runge_kutta_45/src/headers/runge_kutta_45.hpp</location>
 		</link>
 		<link>
 			<name>solution1/constraints</name>

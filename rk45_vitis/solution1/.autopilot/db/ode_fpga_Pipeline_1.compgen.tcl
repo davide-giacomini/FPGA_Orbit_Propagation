@@ -18,7 +18,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename out_r \
     op interface \
-    ports { out_r_address0 { O 6 vector } out_r_ce0 { O 1 bit } out_r_we0 { O 1 bit } out_r_d0 { O 100 vector } } \
+    ports { out_r_address0 { O 6 vector } out_r_ce0 { O 1 bit } out_r_we0 { O 1 bit } out_r_d0 { O 85 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'out_r'"
@@ -30,14 +30,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 49 \
-    name r_out_V_0_04 \
+    name dr_dt_V_0_04 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_r_out_V_0_04 \
+    corename dc_dr_dt_V_0_04 \
     op interface \
-    ports { r_out_V_0_04 { I 100 vector } } \
+    ports { dr_dt_V_0_04 { I 85 vector } } \
 } "
 }
 
@@ -45,14 +45,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 50 \
-    name r_out_V_1_05 \
+    name dr_dt_V_1_05 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_r_out_V_1_05 \
+    corename dc_dr_dt_V_1_05 \
     op interface \
-    ports { r_out_V_1_05 { I 100 vector } } \
+    ports { dr_dt_V_1_05 { I 85 vector } } \
 } "
 }
 
@@ -60,14 +60,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 51 \
-    name r_out_V_2_06 \
+    name dr_dt_V_2_06 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_r_out_V_2_06 \
+    corename dc_dr_dt_V_2_06 \
     op interface \
-    ports { r_out_V_2_06 { I 100 vector } } \
+    ports { dr_dt_V_2_06 { I 85 vector } } \
 } "
 }
 

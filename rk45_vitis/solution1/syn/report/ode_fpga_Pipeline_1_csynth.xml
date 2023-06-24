@@ -9,8 +9,8 @@
 <ProductFamily>zynq</ProductFamily>
 <Part>xc7z020-clg400-1</Part>
 <TopModelName>ode_fpga_Pipeline_1</TopModelName>
-<TargetClockPeriod>50.00</TargetClockPeriod>
-<ClockUncertainty>13.50</ClockUncertainty>
+<TargetClockPeriod>100.00</TargetClockPeriod>
+<ClockUncertainty>27.00</ClockUncertainty>
 <FlowTarget>vivado</FlowTarget>
 </UserAssignments>
 
@@ -25,9 +25,9 @@
 <Best-caseLatency>5</Best-caseLatency>
 <Average-caseLatency>5</Average-caseLatency>
 <Worst-caseLatency>5</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.250 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.250 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.250 us</Worst-caseRealTimeLatency>
+<Best-caseRealTimeLatency>0.500 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.500 us</Worst-caseRealTimeLatency>
 <Interval-min>5</Interval-min>
 <Interval-max>5</Interval-max>
 </SummaryOfOverallLatency>
@@ -35,7 +35,7 @@
 <Loop1>
 <TripCount>3</TripCount>
 <Latency>3</Latency>
-<AbsoluteTimeLatency>150</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>300</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>1</PipelineDepth>
 <InstanceList>
@@ -129,36 +129,36 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>r_out_V_0_04</name>
-<Object>r_out_V_0_04</Object>
+<name>dr_dt_V_0_04</name>
+<Object>dr_dt_V_0_04</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>100</Bits>
+<Bits>85</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>r_out_V_1_05</name>
-<Object>r_out_V_1_05</Object>
+<name>dr_dt_V_1_05</name>
+<Object>dr_dt_V_1_05</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>100</Bits>
+<Bits>85</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>r_out_V_2_06</name>
-<Object>r_out_V_2_06</Object>
+<name>dr_dt_V_2_06</name>
+<Object>dr_dt_V_2_06</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>100</Bits>
+<Bits>85</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -213,7 +213,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>100</Bits>
+<Bits>85</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 </InterfaceSummary>

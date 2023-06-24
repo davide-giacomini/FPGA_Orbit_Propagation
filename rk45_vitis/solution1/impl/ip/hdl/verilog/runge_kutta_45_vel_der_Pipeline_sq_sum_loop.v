@@ -17,8 +17,8 @@ module runge_kutta_45_vel_der_Pipeline_sq_sum_loop (
         r_in_V_0_01_reload,
         r_in_V_1_02_reload,
         r_in_V_2_03_reload,
-        X_V_4_out,
-        X_V_4_out_ap_vld
+        squared_sum_V_out,
+        squared_sum_V_out_ap_vld
 );
 
 parameter    ap_ST_fsm_pp0_stage0 = 1'd1;
@@ -29,14 +29,14 @@ input   ap_start;
 output   ap_done;
 output   ap_idle;
 output   ap_ready;
-input  [99:0] r_in_V_0_01_reload;
-input  [99:0] r_in_V_1_02_reload;
-input  [99:0] r_in_V_2_03_reload;
-output  [200:0] X_V_4_out;
-output   X_V_4_out_ap_vld;
+input  [85:0] r_in_V_0_01_reload;
+input  [85:0] r_in_V_1_02_reload;
+input  [85:0] r_in_V_2_03_reload;
+output  [172:0] squared_sum_V_out;
+output   squared_sum_V_out_ap_vld;
 
 reg ap_idle;
-reg X_V_4_out_ap_vld;
+reg squared_sum_V_out_ap_vld;
 
 (* fsm_encoding = "none" *) reg   [0:0] ap_CS_fsm;
 wire    ap_CS_fsm_pp0_stage0;
@@ -46,24 +46,24 @@ reg    ap_idle_pp0;
 wire    ap_block_state1_pp0_stage0_iter0;
 wire    ap_block_state2_pp0_stage0_iter1;
 wire    ap_block_pp0_stage0_subdone;
-wire   [0:0] icmp_ln75_fu_86_p2;
+wire   [0:0] icmp_ln67_fu_84_p2;
 reg    ap_condition_exit_pp0_iter1_stage0;
 wire    ap_loop_exit_ready;
 reg    ap_ready_int;
 wire    ap_block_pp0_stage0_11001;
-reg   [200:0] p_Result_s_fu_40;
-wire   [200:0] p_Val2_s_fu_124_p2;
+reg   [172:0] squared_sum_V_fu_38;
+wire   [172:0] squared_sum_V_1_fu_122_p2;
 wire    ap_loop_init;
 wire    ap_block_pp0_stage0;
-reg   [1:0] i_2_fu_44;
-wire   [1:0] add_ln75_fu_92_p2;
+reg   [1:0] i_1_fu_42;
+wire   [1:0] add_ln67_fu_90_p2;
 wire    ap_block_pp0_stage0_01001;
-wire   [99:0] r_V_fu_101_p5;
-wire  signed [99:0] r_V_1_fu_114_p0;
-wire  signed [199:0] sext_ln1317_fu_110_p1;
-wire  signed [99:0] r_V_1_fu_114_p1;
-wire   [199:0] r_V_1_fu_114_p2;
-wire  signed [200:0] sext_ln859_fu_120_p1;
+wire   [85:0] r_V_fu_99_p5;
+wire  signed [85:0] r_V_1_fu_112_p0;
+wire  signed [171:0] sext_ln1317_fu_108_p1;
+wire  signed [85:0] r_V_1_fu_112_p1;
+wire   [171:0] r_V_1_fu_112_p2;
+wire  signed [172:0] sext_ln859_fu_118_p1;
 reg    ap_done_reg;
 wire    ap_continue_int;
 reg    ap_done_int;
@@ -79,32 +79,32 @@ initial begin
 #0 ap_done_reg = 1'b0;
 end
 
-runge_kutta_45_mux_32_100_1_1 #(
+runge_kutta_45_mux_32_86_1_1 #(
     .ID( 1 ),
     .NUM_STAGE( 1 ),
-    .din0_WIDTH( 100 ),
-    .din1_WIDTH( 100 ),
-    .din2_WIDTH( 100 ),
+    .din0_WIDTH( 86 ),
+    .din1_WIDTH( 86 ),
+    .din2_WIDTH( 86 ),
     .din3_WIDTH( 2 ),
-    .dout_WIDTH( 100 ))
-mux_32_100_1_1_U24(
+    .dout_WIDTH( 86 ))
+mux_32_86_1_1_U23(
     .din0(r_in_V_0_01_reload),
     .din1(r_in_V_1_02_reload),
     .din2(r_in_V_2_03_reload),
-    .din3(i_2_fu_44),
-    .dout(r_V_fu_101_p5)
+    .din3(i_1_fu_42),
+    .dout(r_V_fu_99_p5)
 );
 
-runge_kutta_45_mul_100s_100s_200_1_1 #(
+runge_kutta_45_mul_86s_86s_172_1_1 #(
     .ID( 1 ),
     .NUM_STAGE( 1 ),
-    .din0_WIDTH( 100 ),
-    .din1_WIDTH( 100 ),
-    .dout_WIDTH( 200 ))
-mul_100s_100s_200_1_1_U25(
-    .din0(r_V_1_fu_114_p0),
-    .din1(r_V_1_fu_114_p1),
-    .dout(r_V_1_fu_114_p2)
+    .din0_WIDTH( 86 ),
+    .din1_WIDTH( 86 ),
+    .dout_WIDTH( 172 ))
+mul_86s_86s_172_1_1_U24(
+    .din0(r_V_1_fu_112_p0),
+    .din1(r_V_1_fu_112_p1),
+    .dout(r_V_1_fu_112_p2)
 );
 
 runge_kutta_45_flow_control_loop_pipe_sequential_init flow_control_loop_pipe_sequential_init_U(
@@ -157,9 +157,9 @@ end
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         if ((ap_loop_init == 1'b1)) begin
-            i_2_fu_44 <= 2'd0;
-        end else if (((icmp_ln75_fu_86_p2 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1))) begin
-            i_2_fu_44 <= add_ln75_fu_92_p2;
+            i_1_fu_42 <= 2'd0;
+        end else if (((icmp_ln67_fu_84_p2 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1))) begin
+            i_1_fu_42 <= add_ln67_fu_90_p2;
         end
     end
 end
@@ -167,23 +167,15 @@ end
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         if ((ap_loop_init == 1'b1)) begin
-            p_Result_s_fu_40 <= 201'd0;
-        end else if (((icmp_ln75_fu_86_p2 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1))) begin
-            p_Result_s_fu_40 <= p_Val2_s_fu_124_p2;
+            squared_sum_V_fu_38 <= 173'd0;
+        end else if (((icmp_ln67_fu_84_p2 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1))) begin
+            squared_sum_V_fu_38 <= squared_sum_V_1_fu_122_p2;
         end
     end
 end
 
 always @ (*) begin
-    if (((icmp_ln75_fu_86_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        X_V_4_out_ap_vld = 1'b1;
-    end else begin
-        X_V_4_out_ap_vld = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if (((icmp_ln75_fu_86_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((icmp_ln67_fu_84_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_condition_exit_pp0_iter1_stage0 = 1'b1;
     end else begin
         ap_condition_exit_pp0_iter1_stage0 = 1'b0;
@@ -223,6 +215,14 @@ always @ (*) begin
 end
 
 always @ (*) begin
+    if (((icmp_ln67_fu_84_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        squared_sum_V_out_ap_vld = 1'b1;
+    end else begin
+        squared_sum_V_out_ap_vld = 1'b0;
+    end
+end
+
+always @ (*) begin
     case (ap_CS_fsm)
         ap_ST_fsm_pp0_stage0 : begin
             ap_NS_fsm = ap_ST_fsm_pp0_stage0;
@@ -233,9 +233,7 @@ always @ (*) begin
     endcase
 end
 
-assign X_V_4_out = p_Result_s_fu_40;
-
-assign add_ln75_fu_92_p2 = (i_2_fu_44 + 2'd1);
+assign add_ln67_fu_90_p2 = (i_1_fu_42 + 2'd1);
 
 assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd0];
 
@@ -257,16 +255,18 @@ assign ap_enable_reg_pp0_iter0 = ap_start_int;
 
 assign ap_loop_exit_ready = ap_condition_exit_pp0_iter1_stage0;
 
-assign icmp_ln75_fu_86_p2 = ((i_2_fu_44 == 2'd3) ? 1'b1 : 1'b0);
+assign icmp_ln67_fu_84_p2 = ((i_1_fu_42 == 2'd3) ? 1'b1 : 1'b0);
 
-assign p_Val2_s_fu_124_p2 = ($signed(sext_ln859_fu_120_p1) + $signed(p_Result_s_fu_40));
+assign r_V_1_fu_112_p0 = sext_ln1317_fu_108_p1;
 
-assign r_V_1_fu_114_p0 = sext_ln1317_fu_110_p1;
+assign r_V_1_fu_112_p1 = sext_ln1317_fu_108_p1;
 
-assign r_V_1_fu_114_p1 = sext_ln1317_fu_110_p1;
+assign sext_ln1317_fu_108_p1 = $signed(r_V_fu_99_p5);
 
-assign sext_ln1317_fu_110_p1 = $signed(r_V_fu_101_p5);
+assign sext_ln859_fu_118_p1 = $signed(r_V_1_fu_112_p2);
 
-assign sext_ln859_fu_120_p1 = $signed(r_V_1_fu_114_p2);
+assign squared_sum_V_1_fu_122_p2 = ($signed(sext_ln859_fu_118_p1) + $signed(squared_sum_V_fu_38));
+
+assign squared_sum_V_out = squared_sum_V_fu_38;
 
 endmodule //runge_kutta_45_vel_der_Pipeline_sq_sum_loop

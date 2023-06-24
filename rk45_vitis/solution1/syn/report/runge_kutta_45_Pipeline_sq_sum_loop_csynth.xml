@@ -9,8 +9,8 @@
 <ProductFamily>zynq</ProductFamily>
 <Part>xc7z020-clg400-1</Part>
 <TopModelName>runge_kutta_45_Pipeline_sq_sum_loop</TopModelName>
-<TargetClockPeriod>50.00</TargetClockPeriod>
-<ClockUncertainty>13.50</ClockUncertainty>
+<TargetClockPeriod>100.00</TargetClockPeriod>
+<ClockUncertainty>27.00</ClockUncertainty>
 <FlowTarget>vivado</FlowTarget>
 </UserAssignments>
 
@@ -18,25 +18,25 @@
 <PipelineType>no</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>27.204</EstimatedClockPeriod>
+<EstimatedClockPeriod>63.863</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>8</Best-caseLatency>
-<Average-caseLatency>8</Average-caseLatency>
-<Worst-caseLatency>8</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.400 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.400 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.400 us</Worst-caseRealTimeLatency>
-<Interval-min>8</Interval-min>
-<Interval-max>8</Interval-max>
+<Best-caseLatency>14</Best-caseLatency>
+<Average-caseLatency>14</Average-caseLatency>
+<Worst-caseLatency>14</Worst-caseLatency>
+<Best-caseRealTimeLatency>1.400 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>1.400 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>1.400 us</Worst-caseRealTimeLatency>
+<Interval-min>14</Interval-min>
+<Interval-max>14</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <sq_sum_loop>
 <TripCount>6</TripCount>
-<Latency>6</Latency>
-<AbsoluteTimeLatency>300</AbsoluteTimeLatency>
-<PipelineII>1</PipelineII>
+<Latency>12</Latency>
+<AbsoluteTimeLatency>1200</AbsoluteTimeLatency>
+<PipelineII>2</PipelineII>
 <PipelineDepth>2</PipelineDepth>
 <InstanceList>
 </InstanceList>
@@ -46,10 +46,10 @@
 
 <AreaEstimates>
 <Resources>
-<DSP>16</DSP>
-<FF>208</FF>
-<LUT>442</LUT>
+<FF>183</FF>
+<LUT>69</LUT>
 <BRAM_18K>0</BRAM_18K>
+<DSP>0</DSP>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>
@@ -129,6 +129,61 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
+<name>grp_macply_fu_993_p_din1</name>
+<Object>runge_kutta_45_Pipeline_sq_sum_loop</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>177</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>grp_macply_fu_993_p_din2</name>
+<Object>runge_kutta_45_Pipeline_sq_sum_loop</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>177</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>grp_macply_fu_993_p_din3</name>
+<Object>runge_kutta_45_Pipeline_sq_sum_loop</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>177</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>grp_macply_fu_993_p_dout0</name>
+<Object>runge_kutta_45_Pipeline_sq_sum_loop</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>177</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>grp_macply_fu_993_p_ready</name>
+<Object>runge_kutta_45_Pipeline_sq_sum_loop</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
 <name>e_V_address0</name>
 <Object>e_V</Object>
 <Type>array</Type>
@@ -158,23 +213,23 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>100</Bits>
+<Bits>177</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>X_V_7_out</name>
-<Object>X_V_7_out</Object>
+<name>p_Val2_20_out</name>
+<Object>p_Val2_20_out</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_vld</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>202</Bits>
+<Bits>177</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>X_V_7_out_ap_vld</name>
-<Object>X_V_7_out</Object>
+<name>p_Val2_20_out_ap_vld</name>
+<Object>p_Val2_20_out</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_vld</IOProtocol>

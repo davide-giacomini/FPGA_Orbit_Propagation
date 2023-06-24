@@ -11,7 +11,10 @@
     <msg msg_groups="" msg_id="207-5286" msg_severity="WARNING" msg_loc="src/headers/fxp_sqrt.h:65:26" msg_body="expression result unused">
         <args ClangWarningOption="unused-value"/>
     </msg>
-    <msg msg_groups="" msg_id="207-4235" msg_severity="INFO" msg_loc="src/runge_kutta_45.cpp:80:22" msg_body="in instantiation of function template specialization 'fxp_sqrt&lt;101, 41, 202, 82&gt;' requested here">
+    <msg msg_groups="" msg_id="207-4235" msg_severity="INFO" msg_loc="src/runge_kutta_45.cpp:73:78" msg_body="in instantiation of function template specialization 'fxp_sqrt&lt;87, 32, 87, 32&gt;' requested here">
+        <args/>
+    </msg>
+    <msg msg_groups="" msg_id="207-4235" msg_severity="INFO" msg_loc="src/runge_kutta_45.cpp:244:81" msg_body="in instantiation of function template specialization 'fxp_sqrt&lt;89, 34, 177, 67&gt;' requested here">
         <args/>
     </msg>
     <msg msg_groups="" msg_id="207-4827" msg_severity="WARNING" msg_loc="/usr/include/x86_64-linux-gnu/gmp.h:2142:383" msg_body="equality comparison with extraneous parentheses">
@@ -947,26 +950,32 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/headers/fxp_sqrt.h:86:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="fxp_sqrt" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=4" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:29:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dot_product" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:41:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="custom_dot_product" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:49:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:37:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="macply" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:54:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:43:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="multiply" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:61:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:52:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="division" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:66:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:57:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="vel_der" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:90:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:58:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="vel_der" ARG_PragmaIsValid="1" ARG_PragmaOptions="function instances=division limit=1" ARG_PragmaType="allocation" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:62:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="vel_der" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:68:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="vel_der" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:83:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="ode_fpga" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:84:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="ode_fpga" ARG_PragmaIsValid="1" ARG_PragmaOptions="function instances=vel_der limit=1" ARG_PragmaType="allocation" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/davide/Projects/runge_kutta_45/rk45_vitis/solution1/csynth.tcl:16:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=runge_kutta_45" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
@@ -974,87 +983,114 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/davide/Projects/runge_kutta_45/rk45_vitis/solution1/directives.tcl:6:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=runge_kutta_45" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:113:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:107:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="function instances=macply limit=1" ARG_PragmaType="allocation" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:114:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="function instances=division limit=1" ARG_PragmaType="allocation" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:115:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:108:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="function instances=multiply limit=1" ARG_PragmaType="allocation" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:116:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="function instances=vel_der limit=1" ARG_PragmaType="allocation" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:117:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:109:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="function instances=ode_fpga limit=1" ARG_PragmaType="allocation" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:118:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="function instances=dot_product limit=1" ARG_PragmaType="allocation" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:114:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=m_axi bundle=X_BUS depth=12288 max_read_burst_length=16 max_widen_bitwidth=128 max_write_burst_length=16 num_read_outstanding=1 num_write_outstanding=8 port=yy" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:123:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=m_axi bundle=X_BUS depth=12288 max_widen_bitwidth=512 port=yy" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:115:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=m_axi bundle=T_BUS depth=2048 max_read_burst_length=16 max_widen_bitwidth=128 max_write_burst_length=16 num_read_outstanding=1 num_write_outstanding=8 port=tt" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:124:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=m_axi bundle=T_BUS depth=2048 max_widen_bitwidth=512 port=tt" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:126:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:117:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=yy" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:127:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:118:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=tt" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:128:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:119:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=tf" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:129:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:120:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=h0" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:130:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:121:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=atol" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:131:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:122:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=h_max" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:132:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:123:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=h_min" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:133:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:124:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=mu" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:134:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:125:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=size" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:135:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:126:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=flag" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:136:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:127:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:172:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="max=1000000 avg=500" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:162:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="max=50000 avg=25000" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:208:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:195:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="rewind" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:199:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="max=5" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:209:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:200:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=3" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:213:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="rewind" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:225:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:217:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:228:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="rewind" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:237:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="rewind" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:231:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=2" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/runge_kutta_45.cpp:65:0" msg_body="Inlining function 'void fxp_sqrt&lt;101, 41, 202, 82&gt;(ap_ufixed&lt;101, 41, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_ufixed&lt;202, 82, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;)' into 'vel_der(ap_fixed&lt;100, 40, (ap_q_mode)5, (ap_o_mode)3, 0&gt; const*, int, ap_fixed&lt;100, 40, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, ap_fixed&lt;100, 40, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*)'">
-        <args Callee="void fxp_sqrt&lt;101, 41, 202, 82&gt;(ap_ufixed&lt;101, 41, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_ufixed&lt;202, 82, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;)" Caller="vel_der(ap_fixed&lt;100, 40, (ap_q_mode)5, (ap_o_mode)3, 0&gt; const*, int, ap_fixed&lt;100, 40, (ap_q_mode)5, (ap_o_mode)3, 0&gt;, ap_fixed&lt;100, 40, (ap_q_mode)5, (ap_o_mode)3, 0&gt;*)"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:241:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=3" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/runge_kutta_45.cpp:111:0" msg_body="Inlining function 'void fxp_sqrt&lt;101, 41, 202, 82&gt;(ap_ufixed&lt;101, 41, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_ufixed&lt;202, 82, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;)' into 'runge_kutta_45(double*, double*, double, double, double, double, double, double, unsigned int&amp;, bool&amp;)'">
-        <args Callee="void fxp_sqrt&lt;101, 41, 202, 82&gt;(ap_ufixed&lt;101, 41, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_ufixed&lt;202, 82, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;)" Caller="runge_kutta_45(double*, double*, double, double, double, double, double, double, unsigned int&amp;, bool&amp;)"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:251:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-167" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:180:42" msg_body="The program may have out of bound array access"/>
-    <msg msg_groups="PRAGMA_ALLOCATION" msg_id="214-209" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:118:9" msg_body="Ignoring ALLOCATION pragma, because the corresponding call is removed"/>
-    <msg msg_groups="PRAGMA_ALLOCATION" msg_id="214-209" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:116:9" msg_body="Ignoring ALLOCATION pragma, because the corresponding call is removed"/>
-    <msg msg_groups="PRAGMA_ALLOCATION" msg_id="214-209" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:114:9" msg_body="Ignoring ALLOCATION pragma, because the corresponding call is removed"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:262:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="runge_kutta_45" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="src/runge_kutta_45.cpp:198:25" msg_body="Loop 'k_inner' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="k_inner"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="src/runge_kutta_45.cpp:216:25" msg_body="Loop 'y_new_inner' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="y_new_inner"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="src/runge_kutta_45.cpp:230:12" msg_body="Loop 'err_inner' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="err_inner"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="src/runge_kutta_45.cpp:105:0" msg_body="Unrolling loop 'y_new_inner' (src/runge_kutta_45.cpp:216:25) in function 'runge_kutta_45' completely with a factor of 7">
+        <args Factor="7" LoopLoc="src/runge_kutta_45.cpp:216:25" LoopName="y_new_inner"/>
+    </msg>
+    <msg msg_groups="PRAGMA_PIPELINE" msg_id="214-189" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:105:0" msg_body="Pipeline directive for loop 'y_new_inner' (src/runge_kutta_45.cpp:216:25) in function 'runge_kutta_45' has been removed because the loop is unrolled completely">
+        <args LoopLoc="src/runge_kutta_45.cpp:216:25" LoopName="y_new_inner"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="src/runge_kutta_45.cpp:105:0" msg_body="Unrolling loop 'err_inner' (src/runge_kutta_45.cpp:230:12) in function 'runge_kutta_45' completely with a factor of 7">
+        <args Factor="7" LoopLoc="src/runge_kutta_45.cpp:230:12" LoopName="err_inner"/>
+    </msg>
+    <msg msg_groups="PRAGMA_PIPELINE" msg_id="214-189" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:105:0" msg_body="Pipeline directive for loop 'err_inner' (src/runge_kutta_45.cpp:230:12) in function 'runge_kutta_45' has been removed because the loop is unrolled completely">
+        <args LoopLoc="src/runge_kutta_45.cpp:230:12" LoopName="err_inner"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/runge_kutta_45.cpp:56:0" msg_body="Inlining function 'void fxp_sqrt&lt;87, 32, 87, 32&gt;(ap_ufixed&lt;87, 32, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_ufixed&lt;87, 32, (ap_q_mode)5, (ap_o_mode)3, 0&gt; const&amp;)' into 'vel_der(ap_fixed&lt;85, 30, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_fixed&lt;85, 30, (ap_q_mode)5, (ap_o_mode)3, 0&gt; const*, int const&amp;, ap_fixed&lt;85, 30, (ap_q_mode)5, (ap_o_mode)3, 0&gt; const&amp;, ap_fixed&lt;85, 30, (ap_q_mode)5, (ap_o_mode)3, 0&gt; const*) (.133.139.145)'">
+        <args Callee="void fxp_sqrt&lt;87, 32, 87, 32&gt;(ap_ufixed&lt;87, 32, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_ufixed&lt;87, 32, (ap_q_mode)5, (ap_o_mode)3, 0&gt; const&amp;)" Caller="vel_der(ap_fixed&lt;85, 30, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_fixed&lt;85, 30, (ap_q_mode)5, (ap_o_mode)3, 0&gt; const*, int const&amp;, ap_fixed&lt;85, 30, (ap_q_mode)5, (ap_o_mode)3, 0&gt; const&amp;, ap_fixed&lt;85, 30, (ap_q_mode)5, (ap_o_mode)3, 0&gt; const*) (.133.139.145)"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="src/runge_kutta_45.cpp:105:0" msg_body="Inlining function 'void fxp_sqrt&lt;89, 34, 177, 67&gt;(ap_ufixed&lt;89, 34, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_ufixed&lt;177, 67, (ap_q_mode)5, (ap_o_mode)3, 0&gt; const&amp;)' into 'runge_kutta_45(double*, double*, double, double, double, double, double, double, unsigned int&amp;, bool&amp;)'">
+        <args Callee="void fxp_sqrt&lt;89, 34, 177, 67&gt;(ap_ufixed&lt;89, 34, (ap_q_mode)5, (ap_o_mode)3, 0&gt;&amp;, ap_ufixed&lt;177, 67, (ap_q_mode)5, (ap_o_mode)3, 0&gt; const&amp;)" Caller="runge_kutta_45(double*, double*, double, double, double, double, double, double, unsigned int&amp;, bool&amp;)"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-167" msg_severity="WARNING" msg_loc="src/runge_kutta_45.cpp:170:42" msg_body="The program may have out of bound array access"/>
 </xilinx:hls_fe_msgs>
 

@@ -9,8 +9,8 @@
 <ProductFamily>zynq</ProductFamily>
 <Part>xc7z020-clg400-1</Part>
 <TopModelName>vel_der_Pipeline_sq_sum_loop</TopModelName>
-<TargetClockPeriod>50.00</TargetClockPeriod>
-<ClockUncertainty>13.50</ClockUncertainty>
+<TargetClockPeriod>100.00</TargetClockPeriod>
+<ClockUncertainty>27.00</ClockUncertainty>
 <FlowTarget>vivado</FlowTarget>
 </UserAssignments>
 
@@ -18,16 +18,16 @@
 <PipelineType>no</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>26.581</EstimatedClockPeriod>
+<EstimatedClockPeriod>24.633</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
 <Best-caseLatency>5</Best-caseLatency>
 <Average-caseLatency>5</Average-caseLatency>
 <Worst-caseLatency>5</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.250 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.250 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.250 us</Worst-caseRealTimeLatency>
+<Best-caseRealTimeLatency>0.500 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.500 us</Worst-caseRealTimeLatency>
 <Interval-min>5</Interval-min>
 <Interval-max>5</Interval-max>
 </SummaryOfOverallLatency>
@@ -35,7 +35,7 @@
 <sq_sum_loop>
 <TripCount>3</TripCount>
 <Latency>3</Latency>
-<AbsoluteTimeLatency>150</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>300</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>1</PipelineDepth>
 <InstanceList>
@@ -46,9 +46,9 @@
 
 <AreaEstimates>
 <Resources>
-<DSP>16</DSP>
-<FF>206</FF>
-<LUT>445</LUT>
+<DSP>15</DSP>
+<FF>178</FF>
+<LUT>363</LUT>
 <BRAM_18K>0</BRAM_18K>
 <URAM>0</URAM>
 </Resources>
@@ -136,7 +136,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>100</Bits>
+<Bits>86</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -147,7 +147,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>100</Bits>
+<Bits>86</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -158,23 +158,23 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>100</Bits>
+<Bits>86</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>X_V_4_out</name>
-<Object>X_V_4_out</Object>
+<name>squared_sum_V_out</name>
+<Object>squared_sum_V_out</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_vld</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>201</Bits>
+<Bits>173</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>X_V_4_out_ap_vld</name>
-<Object>X_V_4_out</Object>
+<name>squared_sum_V_out_ap_vld</name>
+<Object>squared_sum_V_out</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_vld</IOProtocol>

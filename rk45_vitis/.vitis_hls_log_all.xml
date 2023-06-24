@@ -8,7 +8,18 @@
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="rk45_vitis" solutionName="solution1" date="2023-06-13T00:34:50.816-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="rk45_vitis" solutionName="solution1" date="2023-06-24T07:23:12.394-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'runge_kutta_45_Pipeline_last_axi_write_yy/m_axi_X_BUS_BREADY' to 0." projectName="rk45_vitis" solutionName="solution1" date="2023-06-24T07:23:11.568-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'runge_kutta_45_Pipeline_last_axi_write_yy/m_axi_X_BUS_AWUSER' to 0." projectName="rk45_vitis" solutionName="solution1" date="2023-06-24T07:23:11.557-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'runge_kutta_45_Pipeline_last_axi_write_yy/m_axi_X_BUS_AWREGION' to 0." projectName="rk45_vitis" solutionName="solution1" date="2023-06-24T07:23:11.543-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'runge_kutta_45_Pipeline_last_axi_write_yy/m_axi_X_BUS_AWQOS' to 0." projectName="rk45_vitis" solutionName="solution1" date="2023-06-24T07:23:11.532-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'runge_kutta_45_Pipeline_last_axi_write_yy/m_axi_X_BUS_AWPROT' to 0." projectName="rk45_vitis" solutionName="solution1" date="2023-06-24T07:23:11.524-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'runge_kutta_45_Pipeline_last_axi_write_yy/m_axi_X_BUS_AWCACHE' to 0." projectName="rk45_vitis" solutionName="solution1" date="2023-06-24T07:23:11.518-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'runge_kutta_45_Pipeline_last_axi_write_yy/m_axi_X_BUS_AWLOCK' to 0." projectName="rk45_vitis" solutionName="solution1" date="2023-06-24T07:23:11.506-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'runge_kutta_45_Pipeline_last_axi_write_yy/m_axi_X_BUS_AWBURST' to 0." projectName="rk45_vitis" solutionName="solution1" date="2023-06-24T07:23:11.499-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'runge_kutta_45_Pipeline_last_axi_write_yy/m_axi_X_BUS_AWSIZE' to 0." projectName="rk45_vitis" solutionName="solution1" date="2023-06-24T07:23:11.488-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'runge_kutta_45_Pipeline_last_axi_write_yy/m_axi_X_BUS_AWLEN' to 0." projectName="rk45_vitis" solutionName="solution1" date="2023-06-24T07:23:11.479-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'runge_kutta_45_Pipeline_last_axi_write_yy/m_axi_X_BUS_AWID' to 0." projectName="rk45_vitis" solutionName="solution1" date="2023-06-24T07:23:11.471-0500" type="Warning"/>
       </synLog>
     </logs>
   </warningLogs>

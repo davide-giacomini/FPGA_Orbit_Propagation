@@ -9,8 +9,8 @@
 <ProductFamily>zynq</ProductFamily>
 <Part>xc7z020-clg400-1</Part>
 <TopModelName>ode_fpga</TopModelName>
-<TargetClockPeriod>50.00</TargetClockPeriod>
-<ClockUncertainty>13.50</ClockUncertainty>
+<TargetClockPeriod>100.00</TargetClockPeriod>
+<ClockUncertainty>27.00</ClockUncertainty>
 <FlowTarget>vivado</FlowTarget>
 </UserAssignments>
 
@@ -18,24 +18,24 @@
 <PipelineType>no</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>26.581</EstimatedClockPeriod>
+<EstimatedClockPeriod>36.128</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>1440</Best-caseLatency>
-<Average-caseLatency>1440</Average-caseLatency>
-<Worst-caseLatency>1440</Worst-caseLatency>
-<Best-caseRealTimeLatency>72.000 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>72.000 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>72.000 us</Worst-caseRealTimeLatency>
-<Interval-min>1440</Interval-min>
-<Interval-max>1440</Interval-max>
+<Best-caseLatency>1293</Best-caseLatency>
+<Average-caseLatency>1293</Average-caseLatency>
+<Worst-caseLatency>1293</Worst-caseLatency>
+<Best-caseRealTimeLatency>0.129 ms</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.129 ms</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.129 ms</Worst-caseRealTimeLatency>
+<Interval-min>1293</Interval-min>
+<Interval-max>1293</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <Loop1>
 <TripCount>3</TripCount>
 <Latency>6</Latency>
-<AbsoluteTimeLatency>300</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>600</AbsoluteTimeLatency>
 <IterationLatency>2</IterationLatency>
 <InstanceList>
 </InstanceList>
@@ -43,7 +43,7 @@
 <Loop2>
 <TripCount>3</TripCount>
 <Latency>6</Latency>
-<AbsoluteTimeLatency>300</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>600</AbsoluteTimeLatency>
 <IterationLatency>2</IterationLatency>
 <InstanceList>
 </InstanceList>
@@ -51,7 +51,7 @@
 <Loop3>
 <TripCount>3</TripCount>
 <Latency>6</Latency>
-<AbsoluteTimeLatency>300</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>600</AbsoluteTimeLatency>
 <IterationLatency>2</IterationLatency>
 <InstanceList>
 </InstanceList>
@@ -59,16 +59,16 @@
 <Loop4>
 <TripCount>3</TripCount>
 <Latency>6</Latency>
-<AbsoluteTimeLatency>300</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>600</AbsoluteTimeLatency>
 <IterationLatency>2</IterationLatency>
 <InstanceList>
 </InstanceList>
 </Loop4>
 <update_vel_pos>
 <TripCount>3</TripCount>
-<Latency>1398</Latency>
-<AbsoluteTimeLatency>69900</AbsoluteTimeLatency>
-<IterationLatency>466</IterationLatency>
+<Latency>1251</Latency>
+<AbsoluteTimeLatency>125100</AbsoluteTimeLatency>
+<IterationLatency>417</IterationLatency>
 <InstanceList>
 </InstanceList>
 </update_vel_pos>
@@ -77,9 +77,9 @@
 
 <AreaEstimates>
 <Resources>
-<DSP>37</DSP>
-<FF>4894</FF>
-<LUT>4022</LUT>
+<DSP>36</DSP>
+<FF>4162</FF>
+<LUT>7130</LUT>
 <BRAM_18K>0</BRAM_18K>
 <URAM>0</URAM>
 </Resources>
@@ -200,7 +200,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>100</Bits>
+<Bits>85</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -222,7 +222,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>14</Bits>
+<Bits>15</Bits>
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -244,7 +244,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>100</Bits>
+<Bits>85</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -288,7 +288,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>100</Bits>
+<Bits>85</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -299,7 +299,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>100</Bits>
+<Bits>85</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 </InterfaceSummary>

@@ -1,8 +1,8 @@
 # This script segment is generated automatically by AutoPilot
 
-set name runge_kutta_45_mul_160s_160s_160_2_1
+set name runge_kutta_45_mul_140s_140s_140_1_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 1 ALLOW_PRAGMA 1
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 0 ALLOW_PRAGMA 1
 }
 
 
@@ -24,7 +24,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_p_read \
     op interface \
-    ports { p_read { I 100 vector } } \
+    ports { p_read { I 85 vector } } \
 } "
 }
 
@@ -39,7 +39,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_p_read1 \
     op interface \
-    ports { p_read1 { I 100 vector } } \
+    ports { p_read1 { I 85 vector } } \
 } "
 }
 
@@ -54,7 +54,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_p_read2 \
     op interface \
-    ports { p_read2 { I 100 vector } } \
+    ports { p_read2 { I 85 vector } } \
 } "
 }
 
@@ -62,14 +62,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 43 \
-    name i \
+    name i_read \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_i \
+    corename dc_i_read \
     op interface \
-    ports { i { I 2 vector } } \
+    ports { i_read { I 32 vector } } \
 } "
 }
 
@@ -77,14 +77,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 44 \
-    name mu \
+    name mu_V_read \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_mu \
+    corename dc_mu_V_read \
     op interface \
-    ports { mu { I 100 vector } } \
+    ports { mu_V_read { I 85 vector } } \
 } "
 }
 
@@ -99,7 +99,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_p_read3 \
     op interface \
-    ports { p_read3 { I 100 vector } } \
+    ports { p_read3 { I 85 vector } } \
 } "
 }
 
@@ -114,7 +114,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_p_read4 \
     op interface \
-    ports { p_read4 { I 100 vector } } \
+    ports { p_read4 { I 85 vector } } \
 } "
 }
 
@@ -129,7 +129,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_p_read5 \
     op interface \
-    ports { p_read5 { I 100 vector } } \
+    ports { p_read5 { I 85 vector } } \
 } "
 }
 
@@ -157,7 +157,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename ap_return \
     op interface \
-    ports { ap_return { O 100 vector } } \
+    ports { ap_return { O 85 vector } } \
 } "
 }
 

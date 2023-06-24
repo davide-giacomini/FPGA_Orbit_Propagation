@@ -10,22 +10,22 @@ if {${::AESL::PGuard_autoexp_gen}} {
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 79 \
-    name X_V_7_reload \
+    id 85 \
+    name zext_ln449 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_X_V_7_reload \
+    corename dc_zext_ln449 \
     op interface \
-    ports { X_V_7_reload { I 202 vector } } \
+    ports { zext_ln449 { I 177 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 80 \
+    id 86 \
     name Q_V_5_out \
     type other \
     dir O \
@@ -33,7 +33,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_Q_V_5_out \
     op interface \
-    ports { Q_V_5_out { O 101 vector } Q_V_5_out_ap_vld { O 1 bit } } \
+    ports { Q_V_5_out { O 89 vector } Q_V_5_out_ap_vld { O 1 bit } } \
 } "
 }
 

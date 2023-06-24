@@ -11,14 +11,14 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 31 \
-    name sext_ln73 \
+    name r_V_4 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_sext_ln73 \
+    corename dc_r_V_4 \
     op interface \
-    ports { sext_ln73 { I 201 vector } } \
+    ports { r_V_4 { I 88 vector } } \
 } "
 }
 
@@ -33,7 +33,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_Q_V_2_out \
     op interface \
-    ports { Q_V_2_out { O 101 vector } Q_V_2_out_ap_vld { O 1 bit } } \
+    ports { Q_V_2_out { O 44 vector } Q_V_2_out_ap_vld { O 1 bit } } \
 } "
 }
 

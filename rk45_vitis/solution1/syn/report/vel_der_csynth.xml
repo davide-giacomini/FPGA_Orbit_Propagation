@@ -9,8 +9,8 @@
 <ProductFamily>zynq</ProductFamily>
 <Part>xc7z020-clg400-1</Part>
 <TopModelName>vel_der</TopModelName>
-<TargetClockPeriod>50.00</TargetClockPeriod>
-<ClockUncertainty>13.50</ClockUncertainty>
+<TargetClockPeriod>100.00</TargetClockPeriod>
+<ClockUncertainty>27.00</ClockUncertainty>
 <FlowTarget>vivado</FlowTarget>
 </UserAssignments>
 
@@ -18,26 +18,26 @@
 <PipelineType>no</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>26.581</EstimatedClockPeriod>
+<EstimatedClockPeriod>36.128</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>464</Best-caseLatency>
-<Average-caseLatency>464</Average-caseLatency>
-<Worst-caseLatency>464</Worst-caseLatency>
-<Best-caseRealTimeLatency>23.200 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>23.200 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>23.200 us</Worst-caseRealTimeLatency>
-<Interval-min>464</Interval-min>
-<Interval-max>464</Interval-max>
+<Best-caseLatency>415</Best-caseLatency>
+<Average-caseLatency>415</Average-caseLatency>
+<Worst-caseLatency>415</Worst-caseLatency>
+<Best-caseRealTimeLatency>41.500 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>41.500 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>41.500 us</Worst-caseRealTimeLatency>
+<Interval-min>415</Interval-min>
+<Interval-max>415</Interval-max>
 </SummaryOfOverallLatency>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
-<DSP>37</DSP>
-<FF>3021</FF>
-<LUT>3359</LUT>
+<DSP>36</DSP>
+<FF>2556</FF>
+<LUT>6473</LUT>
 <BRAM_18K>0</BRAM_18K>
 <URAM>0</URAM>
 </Resources>
@@ -125,7 +125,7 @@
 <IOProtocol>ap_ctrl_hs</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>100</Bits>
+<Bits>85</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -136,7 +136,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>100</Bits>
+<Bits>85</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -147,7 +147,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>100</Bits>
+<Bits>85</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -158,29 +158,29 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>100</Bits>
+<Bits>85</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>i</name>
-<Object>i</Object>
+<name>i_read</name>
+<Object>i_read</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>2</Bits>
+<Bits>32</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>mu</name>
-<Object>mu</Object>
+<name>mu_V_read</name>
+<Object>mu_V_read</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>100</Bits>
+<Bits>85</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -191,7 +191,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>100</Bits>
+<Bits>85</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -202,7 +202,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>100</Bits>
+<Bits>85</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -213,7 +213,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>100</Bits>
+<Bits>85</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 </InterfaceSummary>

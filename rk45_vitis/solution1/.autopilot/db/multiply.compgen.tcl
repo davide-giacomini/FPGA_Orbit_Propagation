@@ -1,5 +1,11 @@
 # This script segment is generated automatically by AutoPilot
 
+set name runge_kutta_45_mul_177s_177s_287_1_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 0 ALLOW_PRAGMA 1
+}
+
+
 # clear list
 if {${::AESL::PGuard_autoexp_gen}} {
     cg_default_interface_gen_dc_begin
@@ -10,7 +16,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 74 \
+    id 81 \
     name x \
     type other \
     dir I \
@@ -18,14 +24,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_x \
     op interface \
-    ports { x { I 100 vector } } \
+    ports { x { I 177 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 75 \
+    id 82 \
     name y \
     type other \
     dir I \
@@ -33,7 +39,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_y \
     op interface \
-    ports { y { I 100 vector } } \
+    ports { y { I 177 vector } } \
 } "
 }
 
@@ -61,7 +67,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename ap_return \
     op interface \
-    ports { ap_return { O 200 vector } } \
+    ports { ap_return { O 177 vector } } \
 } "
 }
 

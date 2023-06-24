@@ -13,16 +13,16 @@ set hasInterrupt 0
 set C_modelName {vel_der_Pipeline_sq_sum_loop}
 set C_modelType { void 0 }
 set C_modelArgList {
-	{ r_in_V_0_01_reload int 100 regular  }
-	{ r_in_V_1_02_reload int 100 regular  }
-	{ r_in_V_2_03_reload int 100 regular  }
-	{ X_V_4_out int 201 regular {pointer 1}  }
+	{ r_in_V_0_01_reload int 86 regular  }
+	{ r_in_V_1_02_reload int 86 regular  }
+	{ r_in_V_2_03_reload int 86 regular  }
+	{ squared_sum_V_out int 173 regular {pointer 1}  }
 }
 set C_modelArgMapList {[ 
-	{ "Name" : "r_in_V_0_01_reload", "interface" : "wire", "bitwidth" : 100, "direction" : "READONLY"} , 
- 	{ "Name" : "r_in_V_1_02_reload", "interface" : "wire", "bitwidth" : 100, "direction" : "READONLY"} , 
- 	{ "Name" : "r_in_V_2_03_reload", "interface" : "wire", "bitwidth" : 100, "direction" : "READONLY"} , 
- 	{ "Name" : "X_V_4_out", "interface" : "wire", "bitwidth" : 201, "direction" : "WRITEONLY"} ]}
+	{ "Name" : "r_in_V_0_01_reload", "interface" : "wire", "bitwidth" : 86, "direction" : "READONLY"} , 
+ 	{ "Name" : "r_in_V_1_02_reload", "interface" : "wire", "bitwidth" : 86, "direction" : "READONLY"} , 
+ 	{ "Name" : "r_in_V_2_03_reload", "interface" : "wire", "bitwidth" : 86, "direction" : "READONLY"} , 
+ 	{ "Name" : "squared_sum_V_out", "interface" : "wire", "bitwidth" : 173, "direction" : "WRITEONLY"} ]}
 # RTL Port declarations: 
 set portNum 11
 set portList { 
@@ -32,11 +32,11 @@ set portList {
 	{ ap_done sc_out sc_logic 1 predone -1 } 
 	{ ap_idle sc_out sc_logic 1 done -1 } 
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
-	{ r_in_V_0_01_reload sc_in sc_lv 100 signal 0 } 
-	{ r_in_V_1_02_reload sc_in sc_lv 100 signal 1 } 
-	{ r_in_V_2_03_reload sc_in sc_lv 100 signal 2 } 
-	{ X_V_4_out sc_out sc_lv 201 signal 3 } 
-	{ X_V_4_out_ap_vld sc_out sc_logic 1 outvld 3 } 
+	{ r_in_V_0_01_reload sc_in sc_lv 86 signal 0 } 
+	{ r_in_V_1_02_reload sc_in sc_lv 86 signal 1 } 
+	{ r_in_V_2_03_reload sc_in sc_lv 86 signal 2 } 
+	{ squared_sum_V_out sc_out sc_lv 173 signal 3 } 
+	{ squared_sum_V_out_ap_vld sc_out sc_logic 1 outvld 3 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -45,11 +45,11 @@ set NewPortList {[
  	{ "name": "ap_done", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "predone", "bundle":{"name": "ap_done", "role": "default" }} , 
  	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
- 	{ "name": "r_in_V_0_01_reload", "direction": "in", "datatype": "sc_lv", "bitwidth":100, "type": "signal", "bundle":{"name": "r_in_V_0_01_reload", "role": "default" }} , 
- 	{ "name": "r_in_V_1_02_reload", "direction": "in", "datatype": "sc_lv", "bitwidth":100, "type": "signal", "bundle":{"name": "r_in_V_1_02_reload", "role": "default" }} , 
- 	{ "name": "r_in_V_2_03_reload", "direction": "in", "datatype": "sc_lv", "bitwidth":100, "type": "signal", "bundle":{"name": "r_in_V_2_03_reload", "role": "default" }} , 
- 	{ "name": "X_V_4_out", "direction": "out", "datatype": "sc_lv", "bitwidth":201, "type": "signal", "bundle":{"name": "X_V_4_out", "role": "default" }} , 
- 	{ "name": "X_V_4_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "X_V_4_out", "role": "ap_vld" }}  ]}
+ 	{ "name": "r_in_V_0_01_reload", "direction": "in", "datatype": "sc_lv", "bitwidth":86, "type": "signal", "bundle":{"name": "r_in_V_0_01_reload", "role": "default" }} , 
+ 	{ "name": "r_in_V_1_02_reload", "direction": "in", "datatype": "sc_lv", "bitwidth":86, "type": "signal", "bundle":{"name": "r_in_V_1_02_reload", "role": "default" }} , 
+ 	{ "name": "r_in_V_2_03_reload", "direction": "in", "datatype": "sc_lv", "bitwidth":86, "type": "signal", "bundle":{"name": "r_in_V_2_03_reload", "role": "default" }} , 
+ 	{ "name": "squared_sum_V_out", "direction": "out", "datatype": "sc_lv", "bitwidth":173, "type": "signal", "bundle":{"name": "squared_sum_V_out", "role": "default" }} , 
+ 	{ "name": "squared_sum_V_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "squared_sum_V_out", "role": "ap_vld" }}  ]}
 
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3"],
@@ -70,12 +70,12 @@ set RtlHierarchyInfo {[
 			{"Name" : "r_in_V_0_01_reload", "Type" : "None", "Direction" : "I"},
 			{"Name" : "r_in_V_1_02_reload", "Type" : "None", "Direction" : "I"},
 			{"Name" : "r_in_V_2_03_reload", "Type" : "None", "Direction" : "I"},
-			{"Name" : "X_V_4_out", "Type" : "Vld", "Direction" : "O"}],
+			{"Name" : "squared_sum_V_out", "Type" : "Vld", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "sq_sum_loop", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter1", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter1", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter1", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_32_100_1_1_U24", "Parent" : "0"},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_100s_100s_200_1_1_U25", "Parent" : "0"},
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_32_86_1_1_U23", "Parent" : "0"},
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_86s_86s_172_1_1_U24", "Parent" : "0"},
 	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.flow_control_loop_pipe_sequential_init_U", "Parent" : "0"}]}
 
 
@@ -84,7 +84,7 @@ set ArgLastReadFirstWriteLatency {
 		r_in_V_0_01_reload {Type I LastRead 0 FirstWrite -1}
 		r_in_V_1_02_reload {Type I LastRead 0 FirstWrite -1}
 		r_in_V_2_03_reload {Type I LastRead 0 FirstWrite -1}
-		X_V_4_out {Type O LastRead -1 FirstWrite 1}}}
+		squared_sum_V_out {Type O LastRead -1 FirstWrite 1}}}
 
 set hasDtUnsupportedChannel 0
 
@@ -98,8 +98,8 @@ set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
-	r_in_V_0_01_reload { ap_none {  { r_in_V_0_01_reload in_data 0 100 } } }
-	r_in_V_1_02_reload { ap_none {  { r_in_V_1_02_reload in_data 0 100 } } }
-	r_in_V_2_03_reload { ap_none {  { r_in_V_2_03_reload in_data 0 100 } } }
-	X_V_4_out { ap_vld {  { X_V_4_out out_data 1 201 }  { X_V_4_out_ap_vld out_vld 1 1 } } }
+	r_in_V_0_01_reload { ap_none {  { r_in_V_0_01_reload in_data 0 86 } } }
+	r_in_V_1_02_reload { ap_none {  { r_in_V_1_02_reload in_data 0 86 } } }
+	r_in_V_2_03_reload { ap_none {  { r_in_V_2_03_reload in_data 0 86 } } }
+	squared_sum_V_out { ap_vld {  { squared_sum_V_out out_data 1 173 }  { squared_sum_V_out_ap_vld out_vld 1 1 } } }
 }

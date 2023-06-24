@@ -9,16 +9,17 @@
 <ProductFamily>zynq</ProductFamily>
 <Part>xc7z020-clg400-1</Part>
 <TopModelName>multiply</TopModelName>
-<TargetClockPeriod>50.00</TargetClockPeriod>
-<ClockUncertainty>13.50</ClockUncertainty>
+<TargetClockPeriod>100.00</TargetClockPeriod>
+<ClockUncertainty>27.00</ClockUncertainty>
+<TargetInitiationInterval>4294967295</TargetInitiationInterval>
 <FlowTarget>vivado</FlowTarget>
 </UserAssignments>
 
 <PerformanceEstimates>
-<PipelineType>no</PipelineType>
+<PipelineType>yes</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>15.814</EstimatedClockPeriod>
+<EstimatedClockPeriod>49.289</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
@@ -28,16 +29,18 @@
 <Best-caseRealTimeLatency>0 ns</Best-caseRealTimeLatency>
 <Average-caseRealTimeLatency>0 ns</Average-caseRealTimeLatency>
 <Worst-caseRealTimeLatency>0 ns</Worst-caseRealTimeLatency>
-<Interval-min>0</Interval-min>
-<Interval-max>0</Interval-max>
+<PipelineInitiationInterval>1</PipelineInitiationInterval>
+<PipelineDepth>1</PipelineDepth>
+<Interval-min>1</Interval-min>
+<Interval-max>1</Interval-max>
 </SummaryOfOverallLatency>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
-<DSP>16</DSP>
+<DSP>46</DSP>
 <FF>0</FF>
-<LUT>167</LUT>
+<LUT>14833</LUT>
 <BRAM_18K>0</BRAM_18K>
 <URAM>0</URAM>
 </Resources>
@@ -70,7 +73,7 @@
 <IOProtocol>ap_ctrl_hs</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>200</Bits>
+<Bits>177</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -81,7 +84,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>100</Bits>
+<Bits>177</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -92,7 +95,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>100</Bits>
+<Bits>177</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 </InterfaceSummary>

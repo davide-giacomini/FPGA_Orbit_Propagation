@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'ode_fpga_Pipeline_1'
 ================================================================
-* Date:           Tue Jun 13 00:34:35 2023
+* Date:           Sat Jun 24 07:23:01 2023
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        rk45_vitis
@@ -17,11 +17,11 @@
 ================================================================
 + Timing: 
     * Summary: 
-    +--------+----------+----------+------------+
-    |  Clock |  Target  | Estimated| Uncertainty|
-    +--------+----------+----------+------------+
-    |ap_clk  |  50.00 ns|  5.079 ns|    13.50 ns|
-    +--------+----------+----------+------------+
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  0.10 us|  5.079 ns|    27.00 ns|
+    +--------+---------+----------+------------+
 
 + Latency: 
     * Summary: 
@@ -29,7 +29,7 @@
     |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
     |   min   |   max   |    min   |    max   | min | max |   Type  |
     +---------+---------+----------+----------+-----+-----+---------+
-    |        5|        5|  0.250 us|  0.250 us|    5|    5|       no|
+    |        5|        5|  0.500 us|  0.500 us|    5|    5|       no|
     +---------+---------+----------+----------+-----+-----+---------+
 
     + Detail: 
@@ -86,26 +86,26 @@ IsGatedGlobalClock: 0
 State 1 <SV = 0> <Delay = 5.07>
 ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%loop_index17_t = alloca i32 1"   --->   Operation 4 'alloca' 'loop_index17_t' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%tmp = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %empty"   --->   Operation 5 'read' 'tmp' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%r_out_V_2_06_read = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %r_out_V_2_06"   --->   Operation 6 'read' 'r_out_V_2_06_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%r_out_V_1_05_read = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %r_out_V_1_05"   --->   Operation 7 'read' 'r_out_V_1_05_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%r_out_V_0_04_read = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %r_out_V_0_04"   --->   Operation 8 'read' 'r_out_V_0_04_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%dr_dt_V_2_06_read = read i85 @_ssdm_op_Read.ap_auto.i85, i85 %dr_dt_V_2_06"   --->   Operation 6 'read' 'dr_dt_V_2_06_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%dr_dt_V_1_05_read = read i85 @_ssdm_op_Read.ap_auto.i85, i85 %dr_dt_V_1_05"   --->   Operation 7 'read' 'dr_dt_V_1_05_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%dr_dt_V_0_04_read = read i85 @_ssdm_op_Read.ap_auto.i85, i85 %dr_dt_V_0_04"   --->   Operation 8 'read' 'dr_dt_V_0_04_read' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 9 [1/1] (1.58ns)   --->   "%store_ln0 = store i2 0, i2 %loop_index17_t"   --->   Operation 9 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>
 ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%br_ln0 = br void %load-store-loop16"   --->   Operation 10 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%loop_index17_t_load = load i2 %loop_index17_t"   --->   Operation 11 'load' 'loop_index17_t_load' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 12 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 13 [1/1] (0.95ns)   --->   "%exitcond82 = icmp_eq  i2 %loop_index17_t_load, i2 3"   --->   Operation 13 'icmp' 'exitcond82' <Predicate = true> <Delay = 0.95> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.95> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 13 [1/1] (0.95ns)   --->   "%exitcond72 = icmp_eq  i2 %loop_index17_t_load, i2 3"   --->   Operation 13 'icmp' 'exitcond72' <Predicate = true> <Delay = 0.95> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.95> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 3, i64 3, i64 3"   --->   Operation 14 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 15 [1/1] (1.56ns)   --->   "%empty_75 = add i2 %loop_index17_t_load, i2 1"   --->   Operation 15 'add' 'empty_75' <Predicate = true> <Delay = 1.56> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%br_ln0 = br i1 %exitcond82, void %load-store-loop16.split, void %load-store-loop.preheader.exitStub"   --->   Operation 16 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%loop_index17_t_cast1 = zext i2 %loop_index17_t_load"   --->   Operation 17 'zext' 'loop_index17_t_cast1' <Predicate = (!exitcond82)> <Delay = 0.00>
-ST_1 : Operation 18 [1/1] (1.70ns)   --->   "%tmp_6 = mux i100 @_ssdm_op_Mux.ap_auto.3i100.i2, i100 %r_out_V_0_04_read, i100 %r_out_V_1_05_read, i100 %r_out_V_2_06_read, i2 %loop_index17_t_load"   --->   Operation 18 'mux' 'tmp_6' <Predicate = (!exitcond82)> <Delay = 1.70> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 1.70> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 19 [1/1] (1.82ns)   --->   "%empty_76 = add i6 %tmp, i6 %loop_index17_t_cast1"   --->   Operation 19 'add' 'empty_76' <Predicate = (!exitcond82)> <Delay = 1.82> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%p_cast = zext i6 %empty_76"   --->   Operation 20 'zext' 'p_cast' <Predicate = (!exitcond82)> <Delay = 0.00>
-ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%out_addr = getelementptr i100 %out_r, i64 0, i64 %p_cast"   --->   Operation 21 'getelementptr' 'out_addr' <Predicate = (!exitcond82)> <Delay = 0.00>
-ST_1 : Operation 22 [1/1] (3.25ns)   --->   "%store_ln0 = store i100 %tmp_6, i6 %out_addr"   --->   Operation 22 'store' 'store_ln0' <Predicate = (!exitcond82)> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 100> <Depth = 42> <RAM>
-ST_1 : Operation 23 [1/1] (1.58ns)   --->   "%store_ln0 = store i2 %empty_75, i2 %loop_index17_t"   --->   Operation 23 'store' 'store_ln0' <Predicate = (!exitcond82)> <Delay = 1.58>
-ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%br_ln0 = br void %load-store-loop16"   --->   Operation 24 'br' 'br_ln0' <Predicate = (!exitcond82)> <Delay = 0.00>
-ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 25 'ret' 'ret_ln0' <Predicate = (exitcond82)> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (1.56ns)   --->   "%empty_76 = add i2 %loop_index17_t_load, i2 1"   --->   Operation 15 'add' 'empty_76' <Predicate = true> <Delay = 1.56> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%br_ln0 = br i1 %exitcond72, void %load-store-loop16.split, void %load-store-loop.preheader.exitStub"   --->   Operation 16 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%loop_index17_t_cast1 = zext i2 %loop_index17_t_load"   --->   Operation 17 'zext' 'loop_index17_t_cast1' <Predicate = (!exitcond72)> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (1.70ns)   --->   "%tmp_6 = mux i85 @_ssdm_op_Mux.ap_auto.3i85.i2, i85 %dr_dt_V_0_04_read, i85 %dr_dt_V_1_05_read, i85 %dr_dt_V_2_06_read, i2 %loop_index17_t_load"   --->   Operation 18 'mux' 'tmp_6' <Predicate = (!exitcond72)> <Delay = 1.70> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 1.70> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 19 [1/1] (1.82ns)   --->   "%empty_77 = add i6 %tmp, i6 %loop_index17_t_cast1"   --->   Operation 19 'add' 'empty_77' <Predicate = (!exitcond72)> <Delay = 1.82> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%p_cast = zext i6 %empty_77"   --->   Operation 20 'zext' 'p_cast' <Predicate = (!exitcond72)> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%out_addr = getelementptr i85 %out_r, i64 0, i64 %p_cast"   --->   Operation 21 'getelementptr' 'out_addr' <Predicate = (!exitcond72)> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (3.25ns)   --->   "%store_ln0 = store i85 %tmp_6, i6 %out_addr"   --->   Operation 22 'store' 'store_ln0' <Predicate = (!exitcond72)> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 85> <Depth = 42> <RAM>
+ST_1 : Operation 23 [1/1] (1.58ns)   --->   "%store_ln0 = store i2 %empty_76, i2 %loop_index17_t"   --->   Operation 23 'store' 'store_ln0' <Predicate = (!exitcond72)> <Delay = 1.58>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%br_ln0 = br void %load-store-loop16"   --->   Operation 24 'br' 'br_ln0' <Predicate = (!exitcond72)> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 25 'ret' 'ret_ln0' <Predicate = (exitcond72)> <Delay = 0.00>
 
 
 ============================================================
@@ -119,9 +119,9 @@ STG Binding:
 - Is pipelined: 0
 - Is top level: 0
 Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
-Port [ r_out_V_0_04]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
-Port [ r_out_V_1_05]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
-Port [ r_out_V_2_06]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ dr_dt_V_0_04]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ dr_dt_V_1_05]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ dr_dt_V_2_06]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
 Port [ empty]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
 Port [ out_r]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=0; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
 ---------------- STG Properties END ------------------
@@ -132,20 +132,20 @@ Port [ out_r]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; exte
 <method=bitvector/>
 loop_index17_t        (alloca           ) [ 01]
 tmp                   (read             ) [ 00]
-r_out_V_2_06_read     (read             ) [ 00]
-r_out_V_1_05_read     (read             ) [ 00]
-r_out_V_0_04_read     (read             ) [ 00]
+dr_dt_V_2_06_read     (read             ) [ 00]
+dr_dt_V_1_05_read     (read             ) [ 00]
+dr_dt_V_0_04_read     (read             ) [ 00]
 store_ln0             (store            ) [ 00]
 br_ln0                (br               ) [ 00]
 loop_index17_t_load   (load             ) [ 00]
 specpipeline_ln0      (specpipeline     ) [ 00]
-exitcond82            (icmp             ) [ 01]
+exitcond72            (icmp             ) [ 01]
 speclooptripcount_ln0 (speclooptripcount) [ 00]
-empty_75              (add              ) [ 00]
+empty_76              (add              ) [ 00]
 br_ln0                (br               ) [ 00]
 loop_index17_t_cast1  (zext             ) [ 00]
 tmp_6                 (mux              ) [ 00]
-empty_76              (add              ) [ 00]
+empty_77              (add              ) [ 00]
 p_cast                (zext             ) [ 00]
 out_addr              (getelementptr    ) [ 00]
 store_ln0             (store            ) [ 00]
@@ -157,30 +157,30 @@ ret_ln0               (ret              ) [ 00]
 <model>
 
 <comp_list>
-<comp id="0" class="1000" name="r_out_V_0_04">
+<comp id="0" class="1000" name="dr_dt_V_0_04">
 <pin_list>
 <pin id="1" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="r_out_V_0_04"/></StgValue>
+<StgValue><ssdm name="dr_dt_V_0_04"/></StgValue>
 </bind>
 </comp>
 
-<comp id="2" class="1000" name="r_out_V_1_05">
+<comp id="2" class="1000" name="dr_dt_V_1_05">
 <pin_list>
 <pin id="3" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="r_out_V_1_05"/></StgValue>
+<StgValue><ssdm name="dr_dt_V_1_05"/></StgValue>
 </bind>
 </comp>
 
-<comp id="4" class="1000" name="r_out_V_2_06">
+<comp id="4" class="1000" name="dr_dt_V_2_06">
 <pin_list>
 <pin id="5" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="r_out_V_2_06"/></StgValue>
+<StgValue><ssdm name="dr_dt_V_2_06"/></StgValue>
 </bind>
 </comp>
 
@@ -226,7 +226,7 @@ ret_ln0               (ret              ) [ 00]
 <pin id="15" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i100"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i85"/></StgValue>
 </bind>
 </comp>
 
@@ -316,7 +316,7 @@ ret_ln0               (ret              ) [ 00]
 <pin id="35" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_Mux.ap_auto.3i100.i2"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_Mux.ap_auto.3i85.i2"/></StgValue>
 </bind>
 </comp>
 
@@ -352,45 +352,45 @@ ret_ln0               (ret              ) [ 00]
 </bind>
 </comp>
 
-<comp id="48" class="1004" name="r_out_V_2_06_read_read_fu_48">
+<comp id="48" class="1004" name="dr_dt_V_2_06_read_read_fu_48">
 <pin_list>
-<pin id="49" dir="0" index="0" bw="100" slack="0"/>
-<pin id="50" dir="0" index="1" bw="100" slack="0"/>
-<pin id="51" dir="1" index="2" bw="100" slack="0"/>
+<pin id="49" dir="0" index="0" bw="85" slack="0"/>
+<pin id="50" dir="0" index="1" bw="85" slack="0"/>
+<pin id="51" dir="1" index="2" bw="85" slack="0"/>
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
-<opset="r_out_V_2_06_read/1 "/>
+<opset="dr_dt_V_2_06_read/1 "/>
 </bind>
 </comp>
 
-<comp id="54" class="1004" name="r_out_V_1_05_read_read_fu_54">
+<comp id="54" class="1004" name="dr_dt_V_1_05_read_read_fu_54">
 <pin_list>
-<pin id="55" dir="0" index="0" bw="100" slack="0"/>
-<pin id="56" dir="0" index="1" bw="100" slack="0"/>
-<pin id="57" dir="1" index="2" bw="100" slack="0"/>
+<pin id="55" dir="0" index="0" bw="85" slack="0"/>
+<pin id="56" dir="0" index="1" bw="85" slack="0"/>
+<pin id="57" dir="1" index="2" bw="85" slack="0"/>
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
-<opset="r_out_V_1_05_read/1 "/>
+<opset="dr_dt_V_1_05_read/1 "/>
 </bind>
 </comp>
 
-<comp id="60" class="1004" name="r_out_V_0_04_read_read_fu_60">
+<comp id="60" class="1004" name="dr_dt_V_0_04_read_read_fu_60">
 <pin_list>
-<pin id="61" dir="0" index="0" bw="100" slack="0"/>
-<pin id="62" dir="0" index="1" bw="100" slack="0"/>
-<pin id="63" dir="1" index="2" bw="100" slack="0"/>
+<pin id="61" dir="0" index="0" bw="85" slack="0"/>
+<pin id="62" dir="0" index="1" bw="85" slack="0"/>
+<pin id="63" dir="1" index="2" bw="85" slack="0"/>
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
-<opset="r_out_V_0_04_read/1 "/>
+<opset="dr_dt_V_0_04_read/1 "/>
 </bind>
 </comp>
 
 <comp id="66" class="1004" name="out_addr_gep_fu_66">
 <pin_list>
-<pin id="67" dir="0" index="0" bw="100" slack="0"/>
+<pin id="67" dir="0" index="0" bw="85" slack="0"/>
 <pin id="68" dir="0" index="1" bw="1" slack="0"/>
 <pin id="69" dir="0" index="2" bw="6" slack="0"/>
 <pin id="70" dir="1" index="3" bw="6" slack="0"/>
@@ -404,9 +404,9 @@ ret_ln0               (ret              ) [ 00]
 <comp id="73" class="1004" name="store_ln0_access_fu_73">
 <pin_list>
 <pin id="74" dir="0" index="0" bw="6" slack="0"/>
-<pin id="75" dir="0" index="1" bw="100" slack="0"/>
+<pin id="75" dir="0" index="1" bw="85" slack="0"/>
 <pin id="76" dir="0" index="2" bw="0" slack="2147483647"/>
-<pin id="77" dir="1" index="3" bw="100" slack="2147483647"/>
+<pin id="77" dir="1" index="3" bw="85" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
@@ -437,7 +437,7 @@ ret_ln0               (ret              ) [ 00]
 </bind>
 </comp>
 
-<comp id="87" class="1004" name="exitcond82_fu_87">
+<comp id="87" class="1004" name="exitcond72_fu_87">
 <pin_list>
 <pin id="88" dir="0" index="0" bw="2" slack="0"/>
 <pin id="89" dir="0" index="1" bw="1" slack="0"/>
@@ -445,11 +445,11 @@ ret_ln0               (ret              ) [ 00]
 </pin_list>
 <bind>
 <opcode="icmp(45) " fcode="icmp"/>
-<opset="exitcond82/1 "/>
+<opset="exitcond72/1 "/>
 </bind>
 </comp>
 
-<comp id="93" class="1004" name="empty_75_fu_93">
+<comp id="93" class="1004" name="empty_76_fu_93">
 <pin_list>
 <pin id="94" dir="0" index="0" bw="2" slack="0"/>
 <pin id="95" dir="0" index="1" bw="1" slack="0"/>
@@ -457,7 +457,7 @@ ret_ln0               (ret              ) [ 00]
 </pin_list>
 <bind>
 <opcode="add(8) " fcode="add"/>
-<opset="empty_75/1 "/>
+<opset="empty_76/1 "/>
 </bind>
 </comp>
 
@@ -474,12 +474,12 @@ ret_ln0               (ret              ) [ 00]
 
 <comp id="103" class="1004" name="tmp_6_fu_103">
 <pin_list>
-<pin id="104" dir="0" index="0" bw="100" slack="0"/>
-<pin id="105" dir="0" index="1" bw="100" slack="0"/>
-<pin id="106" dir="0" index="2" bw="100" slack="0"/>
-<pin id="107" dir="0" index="3" bw="100" slack="0"/>
+<pin id="104" dir="0" index="0" bw="85" slack="0"/>
+<pin id="105" dir="0" index="1" bw="85" slack="0"/>
+<pin id="106" dir="0" index="2" bw="85" slack="0"/>
+<pin id="107" dir="0" index="3" bw="85" slack="0"/>
 <pin id="108" dir="0" index="4" bw="2" slack="0"/>
-<pin id="109" dir="1" index="5" bw="100" slack="0"/>
+<pin id="109" dir="1" index="5" bw="85" slack="0"/>
 </pin_list>
 <bind>
 <opcode="mux(1196) " fcode="mux"/>
@@ -487,7 +487,7 @@ ret_ln0               (ret              ) [ 00]
 </bind>
 </comp>
 
-<comp id="116" class="1004" name="empty_76_fu_116">
+<comp id="116" class="1004" name="empty_77_fu_116">
 <pin_list>
 <pin id="117" dir="0" index="0" bw="6" slack="0"/>
 <pin id="118" dir="0" index="1" bw="2" slack="0"/>
@@ -495,7 +495,7 @@ ret_ln0               (ret              ) [ 00]
 </pin_list>
 <bind>
 <opcode="add(8) " fcode="add"/>
-<opset="empty_76/1 "/>
+<opset="empty_77/1 "/>
 </bind>
 </comp>
 
@@ -610,20 +610,20 @@ ret_ln0               (ret              ) [ 00]
   - Output states:
 	Port: out_r | {1 }
  - Input state : 
-	Port: ode_fpga_Pipeline_1 : r_out_V_0_04 | {1 }
-	Port: ode_fpga_Pipeline_1 : r_out_V_1_05 | {1 }
-	Port: ode_fpga_Pipeline_1 : r_out_V_2_06 | {1 }
+	Port: ode_fpga_Pipeline_1 : dr_dt_V_0_04 | {1 }
+	Port: ode_fpga_Pipeline_1 : dr_dt_V_1_05 | {1 }
+	Port: ode_fpga_Pipeline_1 : dr_dt_V_2_06 | {1 }
 	Port: ode_fpga_Pipeline_1 : empty | {1 }
   - Chain level:
 	State 1
 		store_ln0 : 1
 		loop_index17_t_load : 1
-		exitcond82 : 2
-		empty_75 : 2
+		exitcond72 : 2
+		empty_76 : 2
 		br_ln0 : 3
 		loop_index17_t_cast1 : 2
 		tmp_6 : 2
-		empty_76 : 3
+		empty_77 : 3
 		p_cast : 4
 		out_addr : 5
 		store_ln0 : 6
@@ -638,17 +638,17 @@ ret_ln0               (ret              ) [ 00]
 |----------|------------------------------|---------|---------|
 | Operation|        Functional Unit       |    FF   |   LUT   |
 |----------|------------------------------|---------|---------|
-|    add   |        empty_75_fu_93        |    0    |    10   |
-|          |        empty_76_fu_116       |    0    |    14   |
+|    add   |        empty_76_fu_93        |    0    |    10   |
+|          |        empty_77_fu_116       |    0    |    14   |
 |----------|------------------------------|---------|---------|
 |    mux   |         tmp_6_fu_103         |    0    |    14   |
 |----------|------------------------------|---------|---------|
-|   icmp   |       exitcond82_fu_87       |    0    |    8    |
+|   icmp   |       exitcond72_fu_87       |    0    |    8    |
 |----------|------------------------------|---------|---------|
 |          |        tmp_read_fu_42        |    0    |    0    |
-|   read   | r_out_V_2_06_read_read_fu_48 |    0    |    0    |
-|          | r_out_V_1_05_read_read_fu_54 |    0    |    0    |
-|          | r_out_V_0_04_read_read_fu_60 |    0    |    0    |
+|   read   | dr_dt_V_2_06_read_read_fu_48 |    0    |    0    |
+|          | dr_dt_V_1_05_read_read_fu_54 |    0    |    0    |
+|          | dr_dt_V_0_04_read_read_fu_60 |    0    |    0    |
 |----------|------------------------------|---------|---------|
 |   zext   |  loop_index17_t_cast1_fu_99  |    0    |    0    |
 |          |         p_cast_fu_122        |    0    |    0    |

@@ -611,11 +611,11 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>NUM_READ_OUTSTANDING</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_X_BUS.NUM_READ_OUTSTANDING">16</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_X_BUS.NUM_READ_OUTSTANDING">1</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>NUM_WRITE_OUTSTANDING</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_X_BUS.NUM_WRITE_OUTSTANDING">16</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_X_BUS.NUM_WRITE_OUTSTANDING">8</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>MAX_READ_BURST_LENGTH</spirit:name>
@@ -1019,11 +1019,11 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>NUM_READ_OUTSTANDING</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_T_BUS.NUM_READ_OUTSTANDING">16</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_T_BUS.NUM_READ_OUTSTANDING">1</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>NUM_WRITE_OUTSTANDING</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_T_BUS.NUM_WRITE_OUTSTANDING">16</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_T_BUS.NUM_WRITE_OUTSTANDING">8</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>MAX_READ_BURST_LENGTH</spirit:name>
@@ -1893,7 +1893,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>28a3b64f</spirit:value>
+            <spirit:value>bba1cd15</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1909,7 +1909,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>fe3e9df3</spirit:value>
+            <spirit:value>11da41e2</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1925,7 +1925,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>9590375b</spirit:value>
+            <spirit:value>112e72bd</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1941,7 +1941,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>22ec05f3</spirit:value>
+            <spirit:value>128cd81e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2555,7 +2555,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_X_BUS_DATA_WIDTH&apos;)) - 1)">511</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_X_BUS_DATA_WIDTH&apos;)) - 1)">127</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -2572,7 +2572,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_X_BUS_DATA_WIDTH&apos;)) div 8) - 1)">63</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_X_BUS_DATA_WIDTH&apos;)) div 8) - 1)">15</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -2997,7 +2997,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_X_BUS_DATA_WIDTH&apos;)) - 1)">511</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_X_BUS_DATA_WIDTH&apos;)) - 1)">127</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -3348,7 +3348,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_T_BUS_DATA_WIDTH&apos;)) - 1)">511</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_T_BUS_DATA_WIDTH&apos;)) - 1)">127</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -3365,7 +3365,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_T_BUS_DATA_WIDTH&apos;)) div 8) - 1)">63</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_T_BUS_DATA_WIDTH&apos;)) div 8) - 1)">15</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -3790,7 +3790,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_T_BUS_DATA_WIDTH&apos;)) - 1)">511</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M_AXI_T_BUS_DATA_WIDTH&apos;)) - 1)">127</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -3912,7 +3912,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_M_AXI_X_BUS_DATA_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_X_BUS_DATA_WIDTH">512</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_X_BUS_DATA_WIDTH">128</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_M_AXI_X_BUS_AWUSER_WIDTH</spirit:name>
@@ -4005,7 +4005,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_M_AXI_T_BUS_DATA_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_T_BUS_DATA_WIDTH">512</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXI_T_BUS_DATA_WIDTH">128</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_M_AXI_T_BUS_AWUSER_WIDTH</spirit:name>
@@ -4103,23 +4103,7 @@
         <spirit:userFileType>USED_IN_out_of_context</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_A_ROM_AUTO_1R.dat</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_A_ROM_AUTO_1R.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
         <spirit:name>hdl/verilog/runge_kutta_45_ap_fixed_base.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_B_ROM_AUTO_1R.dat</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_B_ROM_AUTO_1R.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -4132,14 +4116,6 @@
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/verilog/runge_kutta_45_division.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_E1_ROM_AUTO_1R.dat</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_E1_ROM_AUTO_1R.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -4159,19 +4135,23 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_mul_61ns_100s_160_1_1.v</spirit:name>
+        <spirit:name>hdl/verilog/runge_kutta_45_mul_56ns_85s_140_1_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_mul_100s_100s_160_1_1.v</spirit:name>
+        <spirit:name>hdl/verilog/runge_kutta_45_mul_86s_86s_172_1_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_mul_100s_100s_200_1_1.v</spirit:name>
+        <spirit:name>hdl/verilog/runge_kutta_45_mul_140s_140s_140_1_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_mul_160s_160s_160_2_1.v</spirit:name>
+        <spirit:name>hdl/verilog/runge_kutta_45_mul_177s_177s_280_1_1.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/runge_kutta_45_mul_177s_177s_287_1_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -4179,7 +4159,11 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_mux_32_100_1_1.v</spirit:name>
+        <spirit:name>hdl/verilog/runge_kutta_45_mux_32_85_1_1.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/runge_kutta_45_mux_32_86_1_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -4195,11 +4179,31 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_runge_kutta_45_Pipeline_last_copy_t.v</spirit:name>
+        <spirit:name>hdl/verilog/runge_kutta_45_runge_kutta_45_Pipeline_axi_write_tt.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_runge_kutta_45_Pipeline_last_copy_y.v</spirit:name>
+        <spirit:name>hdl/verilog/runge_kutta_45_runge_kutta_45_Pipeline_axi_write_yy.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/runge_kutta_45_runge_kutta_45_Pipeline_k_inner.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/runge_kutta_45_runge_kutta_45_Pipeline_k_inner_A_ROM_AUTO_1R.dat</spirit:name>
+        <spirit:userFileType>mif</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/runge_kutta_45_runge_kutta_45_Pipeline_k_inner_A_ROM_AUTO_1R.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/runge_kutta_45_runge_kutta_45_Pipeline_last_axi_write_tt.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/runge_kutta_45_runge_kutta_45_Pipeline_last_axi_write_yy.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -4219,19 +4223,11 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_runge_kutta_45_Pipeline_VITIS_LOOP_161_1.v</spirit:name>
+        <spirit:name>hdl/verilog/runge_kutta_45_runge_kutta_45_Pipeline_VITIS_LOOP_151_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_runge_kutta_45_Pipeline_VITIS_LOOP_179_2.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_runge_kutta_45_Pipeline_VITIS_LOOP_182_3.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_sdiv_220ns_203ns_160_224_seq_1.v</spirit:name>
+        <spirit:name>hdl/verilog/runge_kutta_45_sdiv_196ns_175ns_196_200_seq_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -4247,15 +4243,15 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
+        <spirit:name>hdl/verilog/runge_kutta_45_vel_der_Pipeline_add_constant_loop.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>hdl/verilog/runge_kutta_45_vel_der_Pipeline_sq_sum_loop.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/verilog/runge_kutta_45_vel_der_Pipeline_sqrt_loop.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_vel_der_Pipeline_VITIS_LOOP_70_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -4274,25 +4270,7 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_A_ROM_AUTO_1R.dat</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_A_ROM_AUTO_1R.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
         <spirit:name>hdl/verilog/runge_kutta_45_ap_fixed_base.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_B_ROM_AUTO_1R.dat</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_B_ROM_AUTO_1R.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -4308,15 +4286,6 @@
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/verilog/runge_kutta_45_division.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_E1_ROM_AUTO_1R.dat</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_E1_ROM_AUTO_1R.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -4341,22 +4310,27 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_mul_61ns_100s_160_1_1.v</spirit:name>
+        <spirit:name>hdl/verilog/runge_kutta_45_mul_56ns_85s_140_1_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_mul_100s_100s_160_1_1.v</spirit:name>
+        <spirit:name>hdl/verilog/runge_kutta_45_mul_86s_86s_172_1_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_mul_100s_100s_200_1_1.v</spirit:name>
+        <spirit:name>hdl/verilog/runge_kutta_45_mul_140s_140s_140_1_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_mul_160s_160s_160_2_1.v</spirit:name>
+        <spirit:name>hdl/verilog/runge_kutta_45_mul_177s_177s_280_1_1.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/runge_kutta_45_mul_177s_177s_287_1_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -4366,7 +4340,12 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_mux_32_100_1_1.v</spirit:name>
+        <spirit:name>hdl/verilog/runge_kutta_45_mux_32_85_1_1.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/runge_kutta_45_mux_32_86_1_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -4386,12 +4365,36 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_runge_kutta_45_Pipeline_last_copy_t.v</spirit:name>
+        <spirit:name>hdl/verilog/runge_kutta_45_runge_kutta_45_Pipeline_axi_write_tt.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_runge_kutta_45_Pipeline_last_copy_y.v</spirit:name>
+        <spirit:name>hdl/verilog/runge_kutta_45_runge_kutta_45_Pipeline_axi_write_yy.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/runge_kutta_45_runge_kutta_45_Pipeline_k_inner.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/runge_kutta_45_runge_kutta_45_Pipeline_k_inner_A_ROM_AUTO_1R.dat</spirit:name>
+        <spirit:userFileType>mif</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/runge_kutta_45_runge_kutta_45_Pipeline_k_inner_A_ROM_AUTO_1R.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/runge_kutta_45_runge_kutta_45_Pipeline_last_axi_write_tt.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/runge_kutta_45_runge_kutta_45_Pipeline_last_axi_write_yy.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -4416,22 +4419,12 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_runge_kutta_45_Pipeline_VITIS_LOOP_161_1.v</spirit:name>
+        <spirit:name>hdl/verilog/runge_kutta_45_runge_kutta_45_Pipeline_VITIS_LOOP_151_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_runge_kutta_45_Pipeline_VITIS_LOOP_179_2.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_runge_kutta_45_Pipeline_VITIS_LOOP_182_3.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_sdiv_220ns_203ns_160_224_seq_1.v</spirit:name>
+        <spirit:name>hdl/verilog/runge_kutta_45_sdiv_196ns_175ns_196_200_seq_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -4451,17 +4444,17 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
+        <spirit:name>hdl/verilog/runge_kutta_45_vel_der_Pipeline_add_constant_loop.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>hdl/verilog/runge_kutta_45_vel_der_Pipeline_sq_sum_loop.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/verilog/runge_kutta_45_vel_der_Pipeline_sqrt_loop.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/runge_kutta_45_vel_der_Pipeline_VITIS_LOOP_70_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -4489,15 +4482,7 @@
         <spirit:userFileType>USED_IN_out_of_context</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_A_ROM_AUTO_1R.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
         <spirit:name>hdl/vhdl/runge_kutta_45_ap_fixed_base.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_B_ROM_AUTO_1R.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -4510,10 +4495,6 @@
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/vhdl/runge_kutta_45_division.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_E1_ROM_AUTO_1R.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -4533,19 +4514,23 @@
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_mul_61ns_100s_160_1_1.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/runge_kutta_45_mul_56ns_85s_140_1_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_mul_100s_100s_160_1_1.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/runge_kutta_45_mul_86s_86s_172_1_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_mul_100s_100s_200_1_1.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/runge_kutta_45_mul_140s_140s_140_1_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_mul_160s_160s_160_2_1.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/runge_kutta_45_mul_177s_177s_280_1_1.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/runge_kutta_45_mul_177s_177s_287_1_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -4553,7 +4538,11 @@
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_mux_32_100_1_1.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/runge_kutta_45_mux_32_85_1_1.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/runge_kutta_45_mux_32_86_1_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -4569,11 +4558,27 @@
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_runge_kutta_45_Pipeline_last_copy_t.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/runge_kutta_45_runge_kutta_45_Pipeline_axi_write_tt.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_runge_kutta_45_Pipeline_last_copy_y.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/runge_kutta_45_runge_kutta_45_Pipeline_axi_write_yy.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/runge_kutta_45_runge_kutta_45_Pipeline_k_inner.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/runge_kutta_45_runge_kutta_45_Pipeline_k_inner_A_ROM_AUTO_1R.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/runge_kutta_45_runge_kutta_45_Pipeline_last_axi_write_tt.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/runge_kutta_45_runge_kutta_45_Pipeline_last_axi_write_yy.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -4593,19 +4598,11 @@
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_runge_kutta_45_Pipeline_VITIS_LOOP_161_1.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/runge_kutta_45_runge_kutta_45_Pipeline_VITIS_LOOP_151_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_runge_kutta_45_Pipeline_VITIS_LOOP_179_2.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_runge_kutta_45_Pipeline_VITIS_LOOP_182_3.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_sdiv_220ns_203ns_160_224_seq_1.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/runge_kutta_45_sdiv_196ns_175ns_196_200_seq_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -4621,15 +4618,15 @@
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
+        <spirit:name>hdl/vhdl/runge_kutta_45_vel_der_Pipeline_add_constant_loop.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>hdl/vhdl/runge_kutta_45_vel_der_Pipeline_sq_sum_loop.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/vhdl/runge_kutta_45_vel_der_Pipeline_sqrt_loop.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_vel_der_Pipeline_VITIS_LOOP_70_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -4643,23 +4640,13 @@
       <spirit:file>
         <spirit:name>hdl/vhdl/runge_kutta_45.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_75d78f3d</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_54fb6b34</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_vhdlbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_A_ROM_AUTO_1R.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
         <spirit:name>hdl/vhdl/runge_kutta_45_ap_fixed_base.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_B_ROM_AUTO_1R.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -4675,11 +4662,6 @@
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/vhdl/runge_kutta_45_division.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_E1_ROM_AUTO_1R.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -4704,22 +4686,27 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_mul_61ns_100s_160_1_1.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/runge_kutta_45_mul_56ns_85s_140_1_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_mul_100s_100s_160_1_1.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/runge_kutta_45_mul_86s_86s_172_1_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_mul_100s_100s_200_1_1.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/runge_kutta_45_mul_140s_140s_140_1_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_mul_160s_160s_160_2_1.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/runge_kutta_45_mul_177s_177s_280_1_1.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/runge_kutta_45_mul_177s_177s_287_1_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -4729,7 +4716,12 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_mux_32_100_1_1.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/runge_kutta_45_mux_32_85_1_1.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/runge_kutta_45_mux_32_86_1_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -4749,12 +4741,32 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_runge_kutta_45_Pipeline_last_copy_t.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/runge_kutta_45_runge_kutta_45_Pipeline_axi_write_tt.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_runge_kutta_45_Pipeline_last_copy_y.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/runge_kutta_45_runge_kutta_45_Pipeline_axi_write_yy.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/runge_kutta_45_runge_kutta_45_Pipeline_k_inner.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/runge_kutta_45_runge_kutta_45_Pipeline_k_inner_A_ROM_AUTO_1R.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/runge_kutta_45_runge_kutta_45_Pipeline_last_axi_write_tt.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/runge_kutta_45_runge_kutta_45_Pipeline_last_axi_write_yy.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -4779,22 +4791,12 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_runge_kutta_45_Pipeline_VITIS_LOOP_161_1.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/runge_kutta_45_runge_kutta_45_Pipeline_VITIS_LOOP_151_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_runge_kutta_45_Pipeline_VITIS_LOOP_179_2.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_runge_kutta_45_Pipeline_VITIS_LOOP_182_3.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_sdiv_220ns_203ns_160_224_seq_1.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/runge_kutta_45_sdiv_196ns_175ns_196_200_seq_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -4814,17 +4816,17 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
+        <spirit:name>hdl/vhdl/runge_kutta_45_vel_der_Pipeline_add_constant_loop.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>hdl/vhdl/runge_kutta_45_vel_der_Pipeline_sq_sum_loop.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/vhdl/runge_kutta_45_vel_der_Pipeline_sqrt_loop.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/vhdl/runge_kutta_45_vel_der_Pipeline_VITIS_LOOP_70_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -4933,7 +4935,7 @@
     <spirit:parameter>
       <spirit:name>C_M_AXI_X_BUS_DATA_WIDTH</spirit:name>
       <spirit:displayName>Data width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_X_BUS_DATA_WIDTH" spirit:choiceRef="choice_list_40181835" spirit:order="4" spirit:configGroups="1 m axi X BUS (AXI4 Master Interface)">512</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_X_BUS_DATA_WIDTH" spirit:choiceRef="choice_list_40181835" spirit:order="4" spirit:configGroups="1 m axi X BUS (AXI4 Master Interface)">128</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_M_AXI_X_BUS_ENABLE_USER_PORTS</spirit:name>
@@ -5042,7 +5044,7 @@
     <spirit:parameter>
       <spirit:name>C_M_AXI_T_BUS_DATA_WIDTH</spirit:name>
       <spirit:displayName>Data width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_T_BUS_DATA_WIDTH" spirit:choiceRef="choice_list_40181835" spirit:order="16" spirit:configGroups="1 m axi T BUS (AXI4 Master Interface)">512</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M_AXI_T_BUS_DATA_WIDTH" spirit:choiceRef="choice_list_40181835" spirit:order="16" spirit:configGroups="1 m axi T BUS (AXI4 Master Interface)">128</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_M_AXI_T_BUS_ENABLE_USER_PORTS</spirit:name>
@@ -5137,7 +5139,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>clk_period</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.clk_period" spirit:order="26">50</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.clk_period" spirit:order="26">100</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>machine</spirit:name>
@@ -5166,8 +5168,8 @@
       </xilinx:taxonomies>
       <xilinx:displayName>Runge_kutta_45</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>2113072657</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2023-06-13T05:37:23Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>2113088904</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2023-06-24T12:24:23Z</xilinx:coreCreationDateTime>
       <xilinx:sdxKernelAttributes>
         <xilinx:sdx_kernel>true</xilinx:sdx_kernel>
         <xilinx:sdx_kernel_type>hls</xilinx:sdx_kernel_type>
@@ -5175,13 +5177,13 @@
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2022.1</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="d87cc9da"/>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="9c3bccfe"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="79923f8a"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="634def0a"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="c781e363"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="c908bf99"/>
-      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="b878d84c"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="57cb124c"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="eb4a16b0"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="1ef41f10"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="05f498c1"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="a0219e4d"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

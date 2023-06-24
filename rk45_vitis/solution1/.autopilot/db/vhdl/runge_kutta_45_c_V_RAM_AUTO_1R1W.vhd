@@ -11,7 +11,7 @@ use ieee.std_logic_unsigned.all;
 entity runge_kutta_45_c_V_RAM_AUTO_1R1W is 
     generic(
             MEM_TYPE    : string := "auto"; 
-            DataWidth     : integer := 100; 
+            DataWidth     : integer := 85; 
             AddressWidth     : integer := 3; 
             AddressRange    : integer := 6
     ); 

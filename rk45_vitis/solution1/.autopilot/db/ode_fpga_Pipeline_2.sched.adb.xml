@@ -47,12 +47,12 @@ newFuncRoot:1 %tmp = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %empty
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="8" bw="100" op_0_bw="100" op_1_bw="100">
+<Node id="8" bw="85" op_0_bw="85" op_1_bw="85">
 <![CDATA[
-newFuncRoot:2 %v_out_V_2_09_read = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %v_out_V_2_09
+newFuncRoot:2 %dv_dt_V_2_09_read = read i85 @_ssdm_op_Read.ap_auto.i85, i85 %dv_dt_V_2_09
 
 ]]></Node>
-<StgValue><ssdm name="v_out_V_2_09_read"/></StgValue>
+<StgValue><ssdm name="dv_dt_V_2_09_read"/></StgValue>
 </operation>
 
 <operation id="7" st_id="1" stage="1" lat="1">
@@ -62,12 +62,12 @@ newFuncRoot:2 %v_out_V_2_09_read = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="9" bw="100" op_0_bw="100" op_1_bw="100">
+<Node id="9" bw="85" op_0_bw="85" op_1_bw="85">
 <![CDATA[
-newFuncRoot:3 %v_out_V_1_08_read = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %v_out_V_1_08
+newFuncRoot:3 %dv_dt_V_1_08_read = read i85 @_ssdm_op_Read.ap_auto.i85, i85 %dv_dt_V_1_08
 
 ]]></Node>
-<StgValue><ssdm name="v_out_V_1_08_read"/></StgValue>
+<StgValue><ssdm name="dv_dt_V_1_08_read"/></StgValue>
 </operation>
 
 <operation id="8" st_id="1" stage="1" lat="1">
@@ -77,12 +77,12 @@ newFuncRoot:3 %v_out_V_1_08_read = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="10" bw="100" op_0_bw="100" op_1_bw="100">
+<Node id="10" bw="85" op_0_bw="85" op_1_bw="85">
 <![CDATA[
-newFuncRoot:4 %v_out_V_0_07_read = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %v_out_V_0_07
+newFuncRoot:4 %dv_dt_V_0_07_read = read i85 @_ssdm_op_Read.ap_auto.i85, i85 %dv_dt_V_0_07
 
 ]]></Node>
-<StgValue><ssdm name="v_out_V_0_07_read"/></StgValue>
+<StgValue><ssdm name="dv_dt_V_0_07_read"/></StgValue>
 </operation>
 
 <operation id="9" st_id="1" stage="1" lat="1">
@@ -184,10 +184,10 @@ load-store-loop:3 %speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_Spec
 
 <Node id="18" bw="2" op_0_bw="2" op_1_bw="2">
 <![CDATA[
-load-store-loop:4 %empty_73 = add i2 %loop_index_t_load, i2 1
+load-store-loop:4 %empty_74 = add i2 %loop_index_t_load, i2 1
 
 ]]></Node>
-<StgValue><ssdm name="empty_73"/></StgValue>
+<StgValue><ssdm name="empty_74"/></StgValue>
 </operation>
 
 <operation id="16" st_id="1" stage="1" lat="1">
@@ -229,9 +229,9 @@ load-store-loop.split:0 %loop_index_t_cast = zext i2 %loop_index_t_load
 </and_exp></or_exp>
 </condition>
 
-<Node id="22" bw="100" op_0_bw="100" op_1_bw="100" op_2_bw="100" op_3_bw="100" op_4_bw="2">
+<Node id="22" bw="85" op_0_bw="85" op_1_bw="85" op_2_bw="85" op_3_bw="85" op_4_bw="2">
 <![CDATA[
-load-store-loop.split:1 %tmp_7 = mux i100 @_ssdm_op_Mux.ap_auto.3i100.i2, i100 %v_out_V_0_07_read, i100 %v_out_V_1_08_read, i100 %v_out_V_2_09_read, i2 %loop_index_t_load
+load-store-loop.split:1 %tmp_7 = mux i85 @_ssdm_op_Mux.ap_auto.3i85.i2, i85 %dv_dt_V_0_07_read, i85 %dv_dt_V_1_08_read, i85 %dv_dt_V_2_09_read, i2 %loop_index_t_load
 
 ]]></Node>
 <StgValue><ssdm name="tmp_7"/></StgValue>
@@ -247,10 +247,10 @@ load-store-loop.split:1 %tmp_7 = mux i100 @_ssdm_op_Mux.ap_auto.3i100.i2, i100 %
 
 <Node id="23" bw="3" op_0_bw="3" op_1_bw="3">
 <![CDATA[
-load-store-loop.split:2 %add_ptr53_sum = add i3 %loop_index_t_cast, i3 3
+load-store-loop.split:2 %add_ptr52_sum = add i3 %loop_index_t_cast, i3 3
 
 ]]></Node>
-<StgValue><ssdm name="add_ptr53_sum"/></StgValue>
+<StgValue><ssdm name="add_ptr52_sum"/></StgValue>
 </operation>
 
 <operation id="20" st_id="1" stage="1" lat="1">
@@ -263,10 +263,10 @@ load-store-loop.split:2 %add_ptr53_sum = add i3 %loop_index_t_cast, i3 3
 
 <Node id="24" bw="6" op_0_bw="3">
 <![CDATA[
-load-store-loop.split:3 %add_ptr53_sum_cast1 = zext i3 %add_ptr53_sum
+load-store-loop.split:3 %add_ptr52_sum_cast1 = zext i3 %add_ptr52_sum
 
 ]]></Node>
-<StgValue><ssdm name="add_ptr53_sum_cast1"/></StgValue>
+<StgValue><ssdm name="add_ptr52_sum_cast1"/></StgValue>
 </operation>
 
 <operation id="21" st_id="1" stage="1" lat="1">
@@ -279,10 +279,10 @@ load-store-loop.split:3 %add_ptr53_sum_cast1 = zext i3 %add_ptr53_sum
 
 <Node id="25" bw="6" op_0_bw="6" op_1_bw="6">
 <![CDATA[
-load-store-loop.split:4 %empty_74 = add i6 %tmp, i6 %add_ptr53_sum_cast1
+load-store-loop.split:4 %empty_75 = add i6 %tmp, i6 %add_ptr52_sum_cast1
 
 ]]></Node>
-<StgValue><ssdm name="empty_74"/></StgValue>
+<StgValue><ssdm name="empty_75"/></StgValue>
 </operation>
 
 <operation id="22" st_id="1" stage="1" lat="1">
@@ -295,7 +295,7 @@ load-store-loop.split:4 %empty_74 = add i6 %tmp, i6 %add_ptr53_sum_cast1
 
 <Node id="26" bw="64" op_0_bw="6">
 <![CDATA[
-load-store-loop.split:5 %p_cast = zext i6 %empty_74
+load-store-loop.split:5 %p_cast = zext i6 %empty_75
 
 ]]></Node>
 <StgValue><ssdm name="p_cast"/></StgValue>
@@ -309,9 +309,9 @@ load-store-loop.split:5 %p_cast = zext i6 %empty_74
 </and_exp></or_exp>
 </condition>
 
-<Node id="27" bw="6" op_0_bw="100" op_1_bw="64" op_2_bw="64">
+<Node id="27" bw="6" op_0_bw="85" op_1_bw="64" op_2_bw="64">
 <![CDATA[
-load-store-loop.split:6 %out_addr = getelementptr i100 %out_r, i64 0, i64 %p_cast
+load-store-loop.split:6 %out_addr = getelementptr i85 %out_r, i64 0, i64 %p_cast
 
 ]]></Node>
 <StgValue><ssdm name="out_addr"/></StgValue>
@@ -325,9 +325,9 @@ load-store-loop.split:6 %out_addr = getelementptr i100 %out_r, i64 0, i64 %p_cas
 </and_exp></or_exp>
 </condition>
 
-<Node id="28" bw="0" op_0_bw="100" op_1_bw="6">
+<Node id="28" bw="0" op_0_bw="85" op_1_bw="6">
 <![CDATA[
-load-store-loop.split:7 %store_ln0 = store i100 %tmp_7, i6 %out_addr
+load-store-loop.split:7 %store_ln0 = store i85 %tmp_7, i6 %out_addr
 
 ]]></Node>
 <StgValue><ssdm name="store_ln0"/></StgValue>
@@ -343,7 +343,7 @@ load-store-loop.split:7 %store_ln0 = store i100 %tmp_7, i6 %out_addr
 
 <Node id="29" bw="0" op_0_bw="2" op_1_bw="2" op_2_bw="0" op_3_bw="0">
 <![CDATA[
-load-store-loop.split:8 %store_ln0 = store i2 %empty_73, i2 %loop_index_t
+load-store-loop.split:8 %store_ln0 = store i2 %empty_74, i2 %loop_index_t
 
 ]]></Node>
 <StgValue><ssdm name="store_ln0"/></StgValue>
