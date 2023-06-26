@@ -1,0 +1,142 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'vel_der'" level="0">
+<item name = "Date">Mon Jun 26 11:08:27 2023
+</item>
+<item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
+<item name = "Project">rk45_vitis</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg400-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">0.10 us, 60.064 ns, 27.00 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">415, 415, 41.500 us, 41.500 us, 415, 415, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_vel_der_Pipeline_add_constant_loop_fu_116">vel_der_Pipeline_add_constant_loop, 5, 5, 0.500 us, 0.500 us, 5, 5, no</column>
+<column name="grp_vel_der_Pipeline_sq_sum_loop_fu_135">vel_der_Pipeline_sq_sum_loop, 5, 5, 0.500 us, 0.500 us, 5, 5, no</column>
+<column name="grp_vel_der_Pipeline_sqrt_loop_fu_143">vel_der_Pipeline_sqrt_loop, 91, 91, 9.100 us, 9.100 us, 91, 91, no</column>
+<column name="grp_division_fu_149">division, 199, 199, 19.900 us, 19.900 us, 199, 199, no</column>
+<column name="op_V_multiply_fu_155">multiply, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 149, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, 61, 1998, 17456, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 85, -</column>
+<column name="Register">-, -, 480, -, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 27, 2, 33, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="grp_division_fu_149">division, 0, 0, 1101, 1549, 0</column>
+<column name="op_V_multiply_fu_155">multiply, 0, 46, 0, 14833, 0</column>
+<column name="mux_32_86_1_1_U44">mux_32_86_1_1, 0, 0, 0, 14, 0</column>
+<column name="grp_vel_der_Pipeline_add_constant_loop_fu_116">vel_der_Pipeline_add_constant_loop, 0, 0, 262, 166, 0</column>
+<column name="grp_vel_der_Pipeline_sq_sum_loop_fu_135">vel_der_Pipeline_sq_sum_loop, 0, 15, 182, 364, 0</column>
+<column name="grp_vel_der_Pipeline_sqrt_loop_fu_143">vel_der_Pipeline_sqrt_loop, 0, 0, 453, 530, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="r_V_fu_232_p2">-, 0, 0, 147, 1, 140</column>
+<column name="ap_block_state6_on_subcall_done">or, 0, 0, 2, 1, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">48, 9, 1, 9</column>
+<column name="ap_return">9, 2, 85, 170</column>
+<column name="grp_division_fu_149_den_V_read">14, 3, 177, 531</column>
+<column name="grp_division_fu_149_num_V_read">14, 3, 86, 258</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">8, 0, 8, 0</column>
+<column name="ap_return_preg">85, 0, 85, 0</column>
+<column name="grp_division_fu_149_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_vel_der_Pipeline_add_constant_loop_fu_116_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_vel_der_Pipeline_sq_sum_loop_fu_135_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_vel_der_Pipeline_sqrt_loop_fu_143_ap_start_reg">1, 0, 1, 0</column>
+<column name="mu_over_r_squared_V_reg_330">122, 0, 122, 0</column>
+<column name="sext_ln859_reg_325">86, 0, 86, 0</column>
+<column name="tmp_4_reg_317">86, 0, 86, 0</column>
+<column name="zext_ln45_reg_335">89, 0, 177, 88</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, vel_der, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, vel_der, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, vel_der, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, vel_der, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, vel_der, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, vel_der, return value</column>
+<column name="ap_return">out, 85, ap_ctrl_hs, vel_der, return value</column>
+<column name="p_read">in, 85, ap_none, p_read, scalar</column>
+<column name="p_read1">in, 85, ap_none, p_read1, scalar</column>
+<column name="p_read2">in, 85, ap_none, p_read2, scalar</column>
+<column name="i_read">in, 2, ap_none, i_read, scalar</column>
+<column name="mu_V_read">in, 85, ap_none, mu_V_read, scalar</column>
+<column name="p_read3">in, 85, ap_none, p_read3, scalar</column>
+<column name="p_read4">in, 85, ap_none, p_read4, scalar</column>
+<column name="p_read5">in, 85, ap_none, p_read5, scalar</column>
+</table>
+</item>
+</section>
+</profile>

@@ -21,7 +21,7 @@ output  [84:0] ap_return;
 wire   [63:0] ireg_fu_42_p1;
 wire   [10:0] exp_tmp_fu_58_p4;
 wire   [51:0] trunc_ln600_fu_72_p1;
-wire   [52:0] p_Result_31_fu_76_p3;
+wire   [52:0] p_Result_35_fu_76_p3;
 wire   [53:0] zext_ln604_fu_84_p1;
 wire   [0:0] p_Result_s_fu_50_p3;
 wire   [53:0] man_V_11_fu_88_p2;
@@ -118,7 +118,7 @@ assign or_ln638_8_fu_320_p2 = (or_ln638_7_fu_306_p2 | or_ln638_6_fu_288_p2);
 
 assign or_ln638_fu_274_p2 = (icmp_ln606_fu_102_p2 | and_ln638_6_fu_268_p2);
 
-assign p_Result_31_fu_76_p3 = {{1'd1}, {trunc_ln600_fu_72_p1}};
+assign p_Result_35_fu_76_p3 = {{1'd1}, {trunc_ln600_fu_72_p1}};
 
 assign p_Result_s_fu_50_p3 = ireg_fu_42_p1[32'd63];
 
@@ -158,7 +158,7 @@ assign xor_ln638_fu_262_p2 = (icmp_ln638_fu_156_p2 ^ 1'd1);
 
 assign zext_ln501_fu_68_p1 = exp_tmp_fu_58_p4;
 
-assign zext_ln604_fu_84_p1 = p_Result_31_fu_76_p3;
+assign zext_ln604_fu_84_p1 = p_Result_35_fu_76_p3;
 
 assign zext_ln621_fu_166_p1 = $unsigned(sext_ln621_fu_162_p1);
 

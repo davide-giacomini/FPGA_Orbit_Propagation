@@ -2,12 +2,12 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Tue Jun 13 00:46:39 2023
-# Process ID: 145902
+# Start of session at: Mon Jun 26 11:11:31 2023
+# Process ID: 36180
 # Current directory: /home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/design_1_runge_kutta_45_0_0_synth_1
 # Command line: vivado -log design_1_runge_kutta_45_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_runge_kutta_45_0_0.tcl
 # Log file: /home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/design_1_runge_kutta_45_0_0_synth_1/design_1_runge_kutta_45_0_0.vds
 # Journal file: /home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/design_1_runge_kutta_45_0_0_synth_1/vivado.jou
-# Running On: davide-N552VW, OS: Linux, CPU Frequency: 2600.000 MHz, CPU Physical cores: 4, Host memory: 16671 MB
+# Running On: davide-N552VW, OS: Linux, CPU Frequency: 3099.299 MHz, CPU Physical cores: 4, Host memory: 16659 MB
 #-----------------------------------------------------------
 source design_1_runge_kutta_45_0_0.tcl -notrace

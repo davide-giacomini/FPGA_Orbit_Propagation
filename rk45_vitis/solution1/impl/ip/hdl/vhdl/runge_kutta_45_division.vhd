@@ -470,7 +470,7 @@ attribute shreg_extract : string;
 
 
 begin
-    sdiv_196ns_177s_122_200_seq_1_U68 : component runge_kutta_45_sdiv_196ns_177s_122_200_seq_1
+    sdiv_196ns_177s_122_200_seq_1_U36 : component runge_kutta_45_sdiv_196ns_177s_122_200_seq_1
     generic map (
         ID => 1,
         NUM_STAGE => 200,

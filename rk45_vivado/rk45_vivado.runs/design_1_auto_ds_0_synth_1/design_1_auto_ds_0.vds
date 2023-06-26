@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Mon Jun 26 11:13:38 2023
+# Process ID: 37795
+# Current directory: /home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/design_1_auto_ds_0_synth_1
+# Command line: vivado -log design_1_auto_ds_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_auto_ds_0.tcl
+# Log file: /home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/design_1_auto_ds_0_synth_1/design_1_auto_ds_0.vds
+# Journal file: /home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.runs/design_1_auto_ds_0_synth_1/vivado.jou
+# Running On: davide-N552VW, OS: Linux, CPU Frequency: 2700.001 MHz, CPU Physical cores: 4, Host memory: 16659 MB
+#-----------------------------------------------------------
+source design_1_auto_ds_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 3113.113 ; gain = 0.023 ; free physical = 1259 ; free virtual = 3295
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/davide/Projects/runge_kutta_45/rk45_vitis'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2022.1/data/ip'.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP design_1_auto_ds_0, cache-ID = 71c13bb67e8044a1.
+INFO: [Common 17-206] Exiting Vivado at Mon Jun 26 11:14:04 2023...

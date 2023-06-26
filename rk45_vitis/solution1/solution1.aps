@@ -70,7 +70,7 @@
         <library value="xilinx/zynq/zynq" name="DefaultPlatform"/>
     </libraryList>
     <clockList>
-        <clock name="default" default="false" period="50"/>
+        <clock name="default" default="false" period="100"/>
     </clockList>
 </solution>
 

@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 2
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg400-1
 
@@ -84,7 +85,7 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part_repo_paths {/home/davide/.Xilinx/Vivado/2022.1/xhub/board_store/xilinx_board_store} [current_project]
 set_property board_part tul.com.tw:pynq-z2:part0:1.0 [current_project]
-set_property ip_repo_paths /home/davide/Projects/runge_kutta_45 [current_project]
+set_property ip_repo_paths /home/davide/Projects/runge_kutta_45/rk45_vitis [current_project]
 update_ip_catalog
 set_property ip_output_repo /home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
@@ -93,19 +94,19 @@ OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib /home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v
 add_files /home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.srcs/sources_1/bd/design_1/design_1.bd
 set_property used_in_implementation false [get_files -all /home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc]
+set_property used_in_implementation false [get_files -all /home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_20M_0/design_1_rst_ps7_0_20M_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_20M_0/design_1_rst_ps7_0_20M_0.xdc]
+set_property used_in_implementation false [get_files -all /home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_20M_0/design_1_rst_ps7_0_20M_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_runge_kutta_45_0_0/constraints/runge_kutta_45_ooc.xdc]
 set_property used_in_synthesis false [get_files -all /home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_auto_ds_0/design_1_auto_ds_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all /home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_auto_ds_0/design_1_auto_ds_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all /home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_auto_ds_0/design_1_auto_ds_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0.xdc]
-set_property used_in_implementation false [get_files -all /home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0_ooc.xdc]
 set_property used_in_synthesis false [get_files -all /home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_auto_ds_1/design_1_auto_ds_1_clocks.xdc]
 set_property used_in_implementation false [get_files -all /home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_auto_ds_1/design_1_auto_ds_1_clocks.xdc]
 set_property used_in_implementation false [get_files -all /home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_auto_ds_1/design_1_auto_ds_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_auto_pc_2/design_1_auto_pc_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/ip/design_1_runge_kutta_45_0_0/constraints/runge_kutta_45_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/davide/Projects/runge_kutta_45/rk45_vivado/rk45_vivado.gen/sources_1/bd/design_1/design_1_ooc.xdc]
 
 OPTRACE "Adding files" END { }

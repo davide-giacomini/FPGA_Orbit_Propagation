@@ -1,6 +1,6 @@
 
 set TopModule "runge_kutta_45"
-set ClockPeriod 50
+set ClockPeriod 100
 set ClockList ap_clk
 set HasVivadoClockPeriod 0
 set CombLogicFlag 0

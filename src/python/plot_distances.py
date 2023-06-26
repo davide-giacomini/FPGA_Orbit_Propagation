@@ -57,17 +57,17 @@ ax_pos.plot(t_rk45_python[::10], euclidean_distance(y_rk45_python[::10, :3], uti
 ax_vel.plot(t_rk45_python[::10], euclidean_distance(y_rk45_python[::10, 3:], utils.kepler_orbit(t_rk45_python[::10], r0, v0, mu)[:, 3:]), label="Python (Tol: " + str(constants.tol) + ")", color="red")
 # ax_h.plot(t_rk45_python[::10], h_rk45_python[::10], label="Python (Tol: " + str(constants.tol) + ")", color="purple")
 
-# Plot CPU error
-ax_pos.plot(t_rk45_cpp[::10], euclidean_distance(y_rk45_cpp[::10, :3], utils.kepler_orbit(t_rk45_cpp[::10], r0, v0, mu)[:, :3]), label="CPU (Tol: " + str(constants.tol) + ")", color="green")
-ax_vel.plot(t_rk45_cpp[::10], euclidean_distance(y_rk45_cpp[::10, 3:], utils.kepler_orbit(t_rk45_cpp[::10], r0, v0, mu)[:, 3:]), label="CPU (Tol: " + str(constants.tol) + ")", color="green")
+# # Plot CPU error
+# ax_pos.plot(t_rk45_cpp[::10], euclidean_distance(y_rk45_cpp[::10, :3], utils.kepler_orbit(t_rk45_cpp[::10], r0, v0, mu)[:, :3]), label="CPU (Tol: " + str(constants.tol) + ")", color="green")
+# ax_vel.plot(t_rk45_cpp[::10], euclidean_distance(y_rk45_cpp[::10, 3:], utils.kepler_orbit(t_rk45_cpp[::10], r0, v0, mu)[:, 3:]), label="CPU (Tol: " + str(constants.tol) + ")", color="green")
 
 # Plot FPGA simulation error
-ax_pos.plot(t_rk45_cpp_fpga_sim[::10], euclidean_distance(y_rk45_cpp_fpga_sim[::10, :3], utils.kepler_orbit(t_rk45_cpp_fpga_sim[::10], r0, v0, mu)[:, :3]), label="FPGA sim (Tol: " + str(constants.tol) + ")", color="purple")
-ax_vel.plot(t_rk45_cpp_fpga_sim[::10], euclidean_distance(y_rk45_cpp_fpga_sim[::10, 3:], utils.kepler_orbit(t_rk45_cpp_fpga_sim[::10], r0, v0, mu)[:, 3:]), label="FPGA sim (Tol: " + str(constants.tol) + ")", color="purple")
+# ax_pos.plot(t_rk45_cpp_fpga_sim[::10], euclidean_distance(y_rk45_cpp_fpga_sim[::10, :3], utils.kepler_orbit(t_rk45_cpp_fpga_sim[::10], r0, v0, mu)[:, :3]), label="FPGA sim (Tol: " + str(constants.tol) + ")", color="purple")
+# ax_vel.plot(t_rk45_cpp_fpga_sim[::10], euclidean_distance(y_rk45_cpp_fpga_sim[::10, 3:], utils.kepler_orbit(t_rk45_cpp_fpga_sim[::10], r0, v0, mu)[:, 3:]), label="FPGA sim (Tol: " + str(constants.tol) + ")", color="purple")
 
-# # Plot FPGA error
-# ax_pos.plot(t_rk45_fpga_impl[::10], euclidean_distance(y_rk45_fpga_impl[::10, :3], utils.kepler_orbit(t_rk45_fpga_impl[::10], r0, v0, mu)[:, :3]), label="FPGA (Tol: " + str(constants.tol) + ")", color="green")
-# ax_vel.plot(t_rk45_fpga_impl[::10], euclidean_distance(y_rk45_fpga_impl[::10, 3:], utils.kepler_orbit(t_rk45_fpga_impl[::10], r0, v0, mu)[:, 3:]), label="FPGA (Tol: " + str(constants.tol) + ")", color="green")
+# Plot FPGA error
+ax_pos.plot(t_rk45_fpga_impl[::10], euclidean_distance(y_rk45_fpga_impl[::10, :3], utils.kepler_orbit(t_rk45_fpga_impl[::10], r0, v0, mu)[:, :3]), label="FPGA (Tol: " + str(constants.tol) + ")", color="green")
+ax_vel.plot(t_rk45_fpga_impl[::10], euclidean_distance(y_rk45_fpga_impl[::10, 3:], utils.kepler_orbit(t_rk45_fpga_impl[::10], r0, v0, mu)[:, 3:]), label="FPGA (Tol: " + str(constants.tol) + ")", color="green")
 
 if (constants.orbit_type == "67P - Rosetta comet"):
     ax_pos.set_ylabel('Positional error [AU]', fontsize=_fontsize)

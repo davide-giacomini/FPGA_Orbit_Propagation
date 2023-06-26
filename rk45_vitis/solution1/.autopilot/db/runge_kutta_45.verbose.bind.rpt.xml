@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'runge_kutta_45'" level="0">
-<item name = "Date">Mon Jun 26 10:21:33 2023
+<item name = "Date">Mon Jun 26 11:08:23 2023
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
 <item name = "Project">rk45_vitis</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">50.00 ns, 36.500 ns, 13.50 ns</column>
+<column name="ap_clk">0.10 us, 73.000 ns, 27.00 ns</column>
 </table>
 </item>
 </section>
@@ -31,57 +31,30 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_macply_fu_1911">macply, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
-<column name="grp_multiply_fu_2328">multiply, 1, 1, 50.000 ns, 50.000 ns, 1, 1, yes</column>
-<column name="grp_ap_fixed_base_fu_2365">ap_fixed_base, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
-<column name="atol_loc_V_ap_fixed_base_fu_2370">ap_fixed_base, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
-<column name="tf_loc_V_ap_fixed_base_fu_2375">ap_fixed_base, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
-<column name="grp_runge_kutta_45_Pipeline_VITIS_LOOP_121_1_fu_2381">runge_kutta_45_Pipeline_VITIS_LOOP_121_1, 9, 9, 0.450 us, 0.450 us, 9, 9, no</column>
-<column name="grp_runge_kutta_45_Pipeline_axi_write_yy_fu_2389">runge_kutta_45_Pipeline_axi_write_yy, 24579, 24579, 1.229 ms, 1.229 ms, 24579, 24579, no</column>
-<column name="grp_runge_kutta_45_Pipeline_axi_write_tt_fu_2397">runge_kutta_45_Pipeline_axi_write_tt, 4099, 4099, 0.205 ms, 0.205 ms, 4099, 4099, no</column>
-<column name="grp_runge_kutta_45_Pipeline_4_fu_2405">runge_kutta_45_Pipeline_4, 5, 5, 0.250 us, 0.250 us, 5, 5, no</column>
-<column name="grp_runge_kutta_45_Pipeline_6_fu_2418">runge_kutta_45_Pipeline_6, 5, 5, 0.250 us, 0.250 us, 5, 5, no</column>
-<column name="grp_runge_kutta_45_Pipeline_5_fu_2429">runge_kutta_45_Pipeline_5, 5, 5, 0.250 us, 0.250 us, 5, 5, no</column>
-<column name="grp_runge_kutta_45_Pipeline_7_fu_2442">runge_kutta_45_Pipeline_7, 5, 5, 0.250 us, 0.250 us, 5, 5, no</column>
-<column name="grp_runge_kutta_45_Pipeline_add_constant_loop_fu_2453">runge_kutta_45_Pipeline_add_constant_loop, 5, 5, 0.250 us, 0.250 us, 5, 5, no</column>
-<column name="grp_runge_kutta_45_Pipeline_10_fu_2469">runge_kutta_45_Pipeline_10, 5, 5, 0.250 us, 0.250 us, 5, 5, no</column>
-<column name="grp_runge_kutta_45_Pipeline_sq_sum_loop_fu_2477">runge_kutta_45_Pipeline_sq_sum_loop, 5, 5, 0.250 us, 0.250 us, 5, 5, no</column>
-<column name="grp_fxp_sqrt_89_34_177_67_s_fu_2485">fxp_sqrt_89_34_177_67_s, 91, 91, 4.550 us, 4.550 us, 91, 91, no</column>
-<column name="grp_division_fu_2490">division, 200, 200, 10.000 us, 10.000 us, 200, 200, no</column>
-<column name="grp_runge_kutta_45_Pipeline_11_fu_2496">runge_kutta_45_Pipeline_11, 5, 5, 0.250 us, 0.250 us, 5, 5, no</column>
-<column name="grp_runge_kutta_45_Pipeline_k_inner_fu_2504">runge_kutta_45_Pipeline_k_inner, 3, 7, 0.150 us, 0.350 us, 3, 7, no</column>
-<column name="grp_runge_kutta_45_Pipeline_13_fu_2517">runge_kutta_45_Pipeline_13, 5, 5, 0.250 us, 0.250 us, 5, 5, no</column>
-<column name="grp_runge_kutta_45_Pipeline_15_fu_2533">runge_kutta_45_Pipeline_15, 5, 5, 0.250 us, 0.250 us, 5, 5, no</column>
-<column name="grp_runge_kutta_45_Pipeline_14_fu_2547">runge_kutta_45_Pipeline_14, 5, 5, 0.250 us, 0.250 us, 5, 5, no</column>
-<column name="grp_runge_kutta_45_Pipeline_16_fu_2563">runge_kutta_45_Pipeline_16, 5, 5, 0.250 us, 0.250 us, 5, 5, no</column>
-<column name="grp_runge_kutta_45_Pipeline_add_constant_loop1_fu_2577">runge_kutta_45_Pipeline_add_constant_loop1, 5, 5, 0.250 us, 0.250 us, 5, 5, no</column>
-<column name="grp_runge_kutta_45_Pipeline_19_fu_2596">runge_kutta_45_Pipeline_19, 5, 5, 0.250 us, 0.250 us, 5, 5, no</column>
-<column name="grp_runge_kutta_45_Pipeline_sq_sum_loop2_fu_2608">runge_kutta_45_Pipeline_sq_sum_loop2, 5, 5, 0.250 us, 0.250 us, 5, 5, no</column>
-<column name="grp_runge_kutta_45_Pipeline_20_fu_2616">runge_kutta_45_Pipeline_20, 5, 5, 0.250 us, 0.250 us, 5, 5, no</column>
-<column name="grp_runge_kutta_45_Pipeline_21_fu_2628">runge_kutta_45_Pipeline_21, 5, 5, 0.250 us, 0.250 us, 5, 5, no</column>
-<column name="grp_runge_kutta_45_Pipeline_23_fu_2641">runge_kutta_45_Pipeline_23, 5, 5, 0.250 us, 0.250 us, 5, 5, no</column>
-<column name="grp_runge_kutta_45_Pipeline_22_fu_2652">runge_kutta_45_Pipeline_22, 5, 5, 0.250 us, 0.250 us, 5, 5, no</column>
-<column name="grp_runge_kutta_45_Pipeline_24_fu_2665">runge_kutta_45_Pipeline_24, 5, 5, 0.250 us, 0.250 us, 5, 5, no</column>
-<column name="grp_runge_kutta_45_Pipeline_add_constant_loop3_fu_2676">runge_kutta_45_Pipeline_add_constant_loop3, 5, 5, 0.250 us, 0.250 us, 5, 5, no</column>
-<column name="grp_runge_kutta_45_Pipeline_27_fu_2692">runge_kutta_45_Pipeline_27, 5, 5, 0.250 us, 0.250 us, 5, 5, no</column>
-<column name="grp_runge_kutta_45_Pipeline_sq_sum_loop4_fu_2700">runge_kutta_45_Pipeline_sq_sum_loop4, 5, 5, 0.250 us, 0.250 us, 5, 5, no</column>
-<column name="grp_runge_kutta_45_Pipeline_28_fu_2708">runge_kutta_45_Pipeline_28, 5, 5, 0.250 us, 0.250 us, 5, 5, no</column>
-<column name="grp_runge_kutta_45_Pipeline_sq_sum_loop5_fu_2716">runge_kutta_45_Pipeline_sq_sum_loop5, 8, 8, 0.400 us, 0.400 us, 8, 8, no</column>
-<column name="grp_runge_kutta_45_Pipeline_update_1_fu_2722">runge_kutta_45_Pipeline_update_1, 8, 8, 0.400 us, 0.400 us, 8, 8, no</column>
-<column name="grp_runge_kutta_45_Pipeline_update_2_fu_2731">runge_kutta_45_Pipeline_update_2, 8, 8, 0.400 us, 0.400 us, 8, 8, no</column>
-<column name="grp_runge_kutta_45_Pipeline_last_axi_write_yy_fu_2740">runge_kutta_45_Pipeline_last_axi_write_yy, ?, ?, ?, ?, ?, ?, no</column>
-<column name="grp_runge_kutta_45_Pipeline_last_axi_write_tt_fu_2749">runge_kutta_45_Pipeline_last_axi_write_tt, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_macply_fu_959">macply, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="grp_multiply_fu_1093">multiply, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="grp_ap_fixed_base_fu_1123">ap_fixed_base, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="atol_loc_V_ap_fixed_base_fu_1128">ap_fixed_base, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="tf_loc_V_ap_fixed_base_fu_1133">ap_fixed_base, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="grp_runge_kutta_45_Pipeline_VITIS_LOOP_119_1_fu_1139">runge_kutta_45_Pipeline_VITIS_LOOP_119_1, 9, 9, 0.900 us, 0.900 us, 9, 9, no</column>
+<column name="grp_runge_kutta_45_Pipeline_axi_write_yy_fu_1147">runge_kutta_45_Pipeline_axi_write_yy, 24579, 24579, 2.458 ms, 2.458 ms, 24579, 24579, no</column>
+<column name="grp_runge_kutta_45_Pipeline_axi_write_tt_fu_1155">runge_kutta_45_Pipeline_axi_write_tt, 4099, 4099, 0.410 ms, 0.410 ms, 4099, 4099, no</column>
+<column name="grp_ode_fpga_fu_1163">ode_fpga, 1293, 1293, 0.129 ms, 0.129 ms, 1293, 1293, no</column>
+<column name="grp_runge_kutta_45_Pipeline_k_inner_fu_1176">runge_kutta_45_Pipeline_k_inner, 3, 7, 0.300 us, 0.700 us, 3, 7, no</column>
+<column name="grp_runge_kutta_45_Pipeline_sq_sum_loop_fu_1189">runge_kutta_45_Pipeline_sq_sum_loop, 8, 8, 0.800 us, 0.800 us, 8, 8, no</column>
+<column name="grp_runge_kutta_45_Pipeline_sqrt_loop_fu_1195">runge_kutta_45_Pipeline_sqrt_loop, 91, 91, 9.100 us, 9.100 us, 91, 91, no</column>
+<column name="grp_runge_kutta_45_Pipeline_update_1_fu_1201">runge_kutta_45_Pipeline_update_1, 8, 8, 0.800 us, 0.800 us, 8, 8, no</column>
+<column name="grp_runge_kutta_45_Pipeline_update_2_fu_1210">runge_kutta_45_Pipeline_update_2, 8, 8, 0.800 us, 0.800 us, 8, 8, no</column>
+<column name="grp_runge_kutta_45_Pipeline_last_axi_write_yy_fu_1219">runge_kutta_45_Pipeline_last_axi_write_yy, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_runge_kutta_45_Pipeline_last_axi_write_tt_fu_1228">runge_kutta_45_Pipeline_last_axi_write_tt, ?, ?, ?, ?, ?, ?, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- main_loop">66, 1706100066, 9408 ~ 34122, -, -, 0 ~ 50000, no</column>
-<column name=" + update_vel_pos">1254, 1254, 418, -, -, 3, no</column>
-<column name=" + k_outer">6644, 6764, 1329 ~ 1353, -, -, 5, no</column>
-<column name="  ++ k_middle">41, 65, 7 ~ 11, -, -, 6, no</column>
-<column name="  ++ update_vel_pos">1257, 1257, 419, -, -, 3, no</column>
-<column name=" + y_new_outer">43, 43, 9, 7, 1, 6, yes</column>
-<column name=" + update_vel_pos">1254, 1254, 418, -, -, 3, no</column>
+<column name="- main_loop">9447, 1708099999, 9448 ~ 34162, -, -, 0 ~ 50000, no</column>
+<column name=" + k_outer">6659, 6779, 1332 ~ 1356, -, -, 5, no</column>
+<column name="  ++ k_middle">35, 59, 6 ~ 10, -, -, 6, no</column>
+<column name=" + y_new_outer">42, 42, 8, 7, 1, 6, yes</column>
 <column name=" + err_outer">43, 43, 9, 7, 1, 6, yes</column>
 </table>
 </item>

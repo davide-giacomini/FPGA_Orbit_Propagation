@@ -9,8 +9,8 @@
 <ProductFamily>zynq</ProductFamily>
 <Part>xc7z020-clg400-1</Part>
 <TopModelName>runge_kutta_45_Pipeline_sq_sum_loop</TopModelName>
-<TargetClockPeriod>50.00</TargetClockPeriod>
-<ClockUncertainty>13.50</ClockUncertainty>
+<TargetClockPeriod>100.00</TargetClockPeriod>
+<ClockUncertainty>27.00</ClockUncertainty>
 <FlowTarget>vivado</FlowTarget>
 </UserAssignments>
 
@@ -18,26 +18,26 @@
 <PipelineType>no</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>24.661</EstimatedClockPeriod>
+<EstimatedClockPeriod>26.208</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>5</Best-caseLatency>
-<Average-caseLatency>5</Average-caseLatency>
-<Worst-caseLatency>5</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.250 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.250 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.250 us</Worst-caseRealTimeLatency>
-<Interval-min>5</Interval-min>
-<Interval-max>5</Interval-max>
+<Best-caseLatency>8</Best-caseLatency>
+<Average-caseLatency>8</Average-caseLatency>
+<Worst-caseLatency>8</Worst-caseLatency>
+<Best-caseRealTimeLatency>0.800 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.800 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.800 us</Worst-caseRealTimeLatency>
+<Interval-min>8</Interval-min>
+<Interval-max>8</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <sq_sum_loop>
-<TripCount>3</TripCount>
-<Latency>3</Latency>
-<AbsoluteTimeLatency>150</AbsoluteTimeLatency>
+<TripCount>6</TripCount>
+<Latency>6</Latency>
+<AbsoluteTimeLatency>600</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
-<PipelineDepth>1</PipelineDepth>
+<PipelineDepth>2</PipelineDepth>
 <InstanceList>
 </InstanceList>
 </sq_sum_loop>
@@ -46,8 +46,8 @@
 
 <AreaEstimates>
 <Resources>
-<FF>182</FF>
-<LUT>70</LUT>
+<FF>183</FF>
+<LUT>66</LUT>
 <BRAM_18K>0</BRAM_18K>
 <DSP>0</DSP>
 <URAM>0</URAM>
@@ -129,7 +129,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_macply_fu_1911_p_din1</name>
+<name>grp_macply_fu_959_p_din1</name>
 <Object>runge_kutta_45_Pipeline_sq_sum_loop</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -140,7 +140,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_macply_fu_1911_p_din2</name>
+<name>grp_macply_fu_959_p_din2</name>
 <Object>runge_kutta_45_Pipeline_sq_sum_loop</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -151,7 +151,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_macply_fu_1911_p_din3</name>
+<name>grp_macply_fu_959_p_din3</name>
 <Object>runge_kutta_45_Pipeline_sq_sum_loop</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -162,7 +162,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_macply_fu_1911_p_dout0</name>
+<name>grp_macply_fu_959_p_dout0</name>
 <Object>runge_kutta_45_Pipeline_sq_sum_loop</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -173,7 +173,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_macply_fu_1911_p_ready</name>
+<name>grp_macply_fu_959_p_ready</name>
 <Object>runge_kutta_45_Pipeline_sq_sum_loop</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -184,41 +184,41 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>r_in_V_0_26_reload</name>
-<Object>r_in_V_0_26_reload</Object>
-<Type>scalar</Type>
+<name>e_V_address0</name>
+<Object>e_V</Object>
+<Type>array</Type>
 <Scope></Scope>
-<IOProtocol>ap_none</IOProtocol>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>3</Bits>
+<Attribute>address</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>e_V_ce0</name>
+<Object>e_V</Object>
+<Type>array</Type>
+<Scope></Scope>
+<IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>e_V_q0</name>
+<Object>e_V</Object>
+<Type>array</Type>
+<Scope></Scope>
+<IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>86</Bits>
+<Bits>177</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>r_in_V_1_210_reload</name>
-<Object>r_in_V_1_210_reload</Object>
-<Type>scalar</Type>
-<Scope></Scope>
-<IOProtocol>ap_none</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>in</Dir>
-<Bits>86</Bits>
-<Attribute>data</Attribute>
-</RtlPorts>
-<RtlPorts>
-<name>r_in_V_2_214_reload</name>
-<Object>r_in_V_2_214_reload</Object>
-<Type>scalar</Type>
-<Scope></Scope>
-<IOProtocol>ap_none</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>in</Dir>
-<Bits>86</Bits>
-<Attribute>data</Attribute>
-</RtlPorts>
-<RtlPorts>
-<name>squared_sum_V_0_out</name>
-<Object>squared_sum_V_0_out</Object>
+<name>p_Val2_21_out</name>
+<Object>p_Val2_21_out</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_vld</IOProtocol>
@@ -228,8 +228,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>squared_sum_V_0_out_ap_vld</name>
-<Object>squared_sum_V_0_out</Object>
+<name>p_Val2_21_out_ap_vld</name>
+<Object>p_Val2_21_out</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_vld</IOProtocol>

@@ -3,7 +3,7 @@
   <CTypeInfo>
   </CTypeInfo>
   <DesignConstraint>
-    <clk_period>50</clk_period>
+    <clk_period>100</clk_period>
   </DesignConstraint>
   <Machine>64</Machine>
   <modelParameters>

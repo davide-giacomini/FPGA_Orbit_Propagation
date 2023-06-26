@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'runge_kutta_45_Pipeline_last_axi_write_tt'" level="0">
-<item name = "Date">Mon Jun 26 10:21:41 2023
+<item name = "Date">Mon Jun 26 11:08:29 2023
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
 <item name = "Project">rk45_vitis</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">50.00 ns, 36.500 ns, 13.50 ns</column>
+<column name="ap_clk">0.10 us, 73.000 ns, 27.00 ns</column>
 </table>
 </item>
 </section>
@@ -81,10 +81,10 @@
 <column name="NZeros_4_fu_342_p2">+, 0, 0, 39, 32, 32</column>
 <column name="add_ln1105_fu_470_p2">+, 0, 0, 39, 32, 7</column>
 <column name="add_ln1122_fu_568_p2">+, 0, 0, 11, 11, 11</column>
-<column name="add_ln259_fu_208_p2">+, 0, 0, 39, 32, 1</column>
-<column name="add_ln260_1_fu_613_p2">+, 0, 0, 13, 4, 4</column>
-<column name="add_ln260_2_fu_235_p2">+, 0, 0, 64, 64, 64</column>
-<column name="add_ln260_fu_241_p2">+, 0, 0, 64, 64, 64</column>
+<column name="add_ln257_fu_208_p2">+, 0, 0, 39, 32, 1</column>
+<column name="add_ln258_1_fu_613_p2">+, 0, 0, 13, 4, 4</column>
+<column name="add_ln258_2_fu_235_p2">+, 0, 0, 64, 64, 64</column>
+<column name="add_ln258_fu_241_p2">+, 0, 0, 64, 64, 64</column>
 <column name="lsb_index_fu_362_p2">+, 0, 0, 39, 32, 7</column>
 <column name="m_5_fu_522_p2">+, 0, 0, 71, 64, 64</column>
 <column name="sub_ln1095_fu_356_p2">-, 0, 0, 39, 7, 32</column>
@@ -101,7 +101,7 @@
 <column name="icmp_ln1097_fu_378_p2">icmp, 0, 0, 17, 31, 1</column>
 <column name="icmp_ln1098_fu_410_p2">icmp, 0, 0, 35, 85, 1</column>
 <column name="icmp_ln1105_fu_464_p2">icmp, 0, 0, 18, 32, 1</column>
-<column name="icmp_ln259_fu_202_p2">icmp, 0, 0, 18, 32, 32</column>
+<column name="icmp_ln257_fu_202_p2">icmp, 0, 0, 18, 32, 32</column>
 <column name="lshr_ln1098_fu_398_p2">lshr, 0, 0, 266, 2, 85</column>
 <column name="lshr_ln1105_fu_480_p2">lshr, 0, 0, 266, 85, 85</column>
 <column name="ap_block_pp0_stage0_11001">or, 0, 0, 2, 1, 1</column>
@@ -112,8 +112,8 @@
 <column name="select_ln1094_fu_550_p3">select, 0, 0, 10, 1, 10</column>
 <column name="tmp_V_4_fu_282_p3">select, 0, 0, 85, 1, 85</column>
 <column name="shl_ln1106_fu_496_p2">shl, 0, 0, 266, 85, 85</column>
-<column name="shl_ln260_1_fu_640_p2">shl, 0, 0, 423, 128, 128</column>
-<column name="shl_ln260_fu_622_p2">shl, 0, 0, 35, 8, 16</column>
+<column name="shl_ln258_1_fu_640_p2">shl, 0, 0, 423, 128, 128</column>
+<column name="shl_ln258_fu_622_p2">shl, 0, 0, 35, 8, 16</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
 <column name="xor_ln1100_fu_430_p2">xor, 0, 0, 2, 1, 2</column>
 </table>
@@ -125,8 +125,8 @@
 <column name="T_BUS_blk_n_W">9, 2, 1, 2</column>
 <column name="ap_done_int">9, 2, 1, 2</column>
 <column name="ap_enable_reg_pp0_iter1">9, 2, 1, 2</column>
-<column name="ap_sig_allocacmp_i">9, 2, 32, 64</column>
-<column name="i_4_fu_134">9, 2, 32, 64</column>
+<column name="ap_sig_allocacmp_i_7">9, 2, 32, 64</column>
+<column name="i_fu_134">9, 2, 32, 64</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
@@ -146,10 +146,10 @@
 <column name="ap_loop_exit_ready_pp0_iter4_reg">1, 0, 1, 0</column>
 <column name="ap_loop_exit_ready_pp0_iter5_reg">1, 0, 1, 0</column>
 <column name="ap_loop_exit_ready_pp0_iter6_reg">1, 0, 1, 0</column>
-<column name="i_4_fu_134">32, 0, 32, 0</column>
-<column name="shl_ln260_1_reg_692">128, 0, 128, 0</column>
-<column name="shl_ln260_reg_687">16, 0, 16, 0</column>
-<column name="trunc_ln260_reg_677">1, 0, 1, 0</column>
+<column name="i_fu_134">32, 0, 32, 0</column>
+<column name="shl_ln258_1_reg_692">128, 0, 128, 0</column>
+<column name="shl_ln258_reg_687">16, 0, 16, 0</column>
+<column name="trunc_ln258_reg_677">1, 0, 1, 0</column>
 <column name="trunc_ln_reg_682">60, 0, 60, 0</column>
 </table>
 </item>
@@ -217,8 +217,8 @@
 <column name="tt_loc_V_ce0">out, 1, ap_memory, tt_loc_V, array</column>
 <column name="tt_loc_V_q0">in, 85, ap_memory, tt_loc_V, array</column>
 <column name="tt">in, 64, ap_none, tt, scalar</column>
-<column name="zext_ln259">in, 35, ap_none, zext_ln259, scalar</column>
-<column name="trunc_ln11">in, 4, ap_none, trunc_ln11, scalar</column>
+<column name="zext_ln257">in, 35, ap_none, zext_ln257, scalar</column>
+<column name="trunc_ln14">in, 4, ap_none, trunc_ln14, scalar</column>
 </table>
 </item>
 </section>

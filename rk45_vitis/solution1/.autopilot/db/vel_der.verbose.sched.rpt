@@ -1,0 +1,205 @@
+
+
+================================================================
+== Vitis HLS Report for 'vel_der'
+================================================================
+* Date:           Mon Jun 26 11:08:19 2023
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
+* Project:        rk45_vitis
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+-----------+------------+
+    |  Clock |  Target | Estimated | Uncertainty|
+    +--------+---------+-----------+------------+
+    |ap_clk  |  0.10 us|  60.064 ns|    27.00 ns|
+    +--------+---------+-----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |      415|      415|  41.500 us|  41.500 us|  415|  415|       no|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 8
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 5.82>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%p_read_7 = read i85 @_ssdm_op_Read.ap_auto.i85, i85 %p_read5"   --->   Operation 9 'read' 'p_read_7' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%p_read_8 = read i85 @_ssdm_op_Read.ap_auto.i85, i85 %p_read4"   --->   Operation 10 'read' 'p_read_8' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%p_read_9 = read i85 @_ssdm_op_Read.ap_auto.i85, i85 %p_read3"   --->   Operation 11 'read' 'p_read_9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%p_read28 = read i85 @_ssdm_op_Read.ap_auto.i85, i85 %p_read2"   --->   Operation 12 'read' 'p_read28' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%p_read17 = read i85 @_ssdm_op_Read.ap_auto.i85, i85 %p_read1"   --->   Operation 13 'read' 'p_read17' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%p_read_10 = read i85 @_ssdm_op_Read.ap_auto.i85, i85 %p_read"   --->   Operation 14 'read' 'p_read_10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%Q_V_2_loc = alloca i64 1"   --->   Operation 15 'alloca' 'Q_V_2_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%p_Val2_3_loc = alloca i64 1"   --->   Operation 16 'alloca' 'p_Val2_3_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%r_in_V_0_01_loc = alloca i64 1"   --->   Operation 17 'alloca' 'r_in_V_0_01_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%r_in_V_1_02_loc = alloca i64 1"   --->   Operation 18 'alloca' 'r_in_V_1_02_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%r_in_V_2_03_loc = alloca i64 1"   --->   Operation 19 'alloca' 'r_in_V_2_03_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [2/2] (5.82ns)   --->   "%call_ln0 = call void @vel_der_Pipeline_add_constant_loop, i85 %p_read_10, i85 %p_read17, i85 %p_read28, i85 %p_read_9, i85 %p_read_8, i85 %p_read_7, i86 %r_in_V_2_03_loc, i86 %r_in_V_1_02_loc, i86 %r_in_V_0_01_loc"   --->   Operation 20 'call' 'call_ln0' <Predicate = true> <Delay = 5.82> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 2.54>
+ST_2 : Operation 21 [1/2] (2.54ns)   --->   "%call_ln0 = call void @vel_der_Pipeline_add_constant_loop, i85 %p_read_10, i85 %p_read17, i85 %p_read28, i85 %p_read_9, i85 %p_read_8, i85 %p_read_7, i86 %r_in_V_2_03_loc, i86 %r_in_V_1_02_loc, i86 %r_in_V_0_01_loc"   --->   Operation 21 'call' 'call_ln0' <Predicate = true> <Delay = 2.54> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 1.70>
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%i_read_1 = read i2 @_ssdm_op_Read.ap_auto.i2, i2 %i_read"   --->   Operation 22 'read' 'i_read_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%r_in_V_2_03_loc_load = load i86 %r_in_V_2_03_loc"   --->   Operation 23 'load' 'r_in_V_2_03_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%r_in_V_1_02_loc_load = load i86 %r_in_V_1_02_loc"   --->   Operation 24 'load' 'r_in_V_1_02_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 25 [1/1] (0.00ns)   --->   "%r_in_V_0_01_loc_load = load i86 %r_in_V_0_01_loc"   --->   Operation 25 'load' 'r_in_V_0_01_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 26 [2/2] (0.00ns)   --->   "%call_ln0 = call void @vel_der_Pipeline_sq_sum_loop, i86 %r_in_V_0_01_loc_load, i86 %r_in_V_1_02_loc_load, i86 %r_in_V_2_03_loc_load, i177 %p_Val2_3_loc"   --->   Operation 26 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 27 [1/1] (1.70ns)   --->   "%tmp_4 = mux i86 @_ssdm_op_Mux.ap_auto.3i86.i2, i86 %r_in_V_0_01_loc_load, i86 %r_in_V_1_02_loc_load, i86 %r_in_V_2_03_loc_load, i2 %i_read_1" [src/runge_kutta_45.cpp:45]   --->   Operation 27 'mux' 'tmp_4' <Predicate = true> <Delay = 1.70> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 1.70> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 0.95>
+ST_4 : Operation 28 [1/2] (0.95ns)   --->   "%call_ln0 = call void @vel_der_Pipeline_sq_sum_loop, i86 %r_in_V_0_01_loc_load, i86 %r_in_V_1_02_loc_load, i86 %r_in_V_2_03_loc_load, i177 %p_Val2_3_loc"   --->   Operation 28 'call' 'call_ln0' <Predicate = true> <Delay = 0.95> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 5.07>
+ST_5 : Operation 29 [1/1] (0.00ns)   --->   "%mu_V_read_1 = read i85 @_ssdm_op_Read.ap_auto.i85, i85 %mu_V_read"   --->   Operation 29 'read' 'mu_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 30 [1/1] (0.00ns)   --->   "%p_Val2_3_loc_load = load i177 %p_Val2_3_loc"   --->   Operation 30 'load' 'p_Val2_3_loc_load' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 31 [2/2] (1.58ns)   --->   "%call_ln0 = call void @vel_der_Pipeline_sqrt_loop, i177 %p_Val2_3_loc_load, i89 %Q_V_2_loc"   --->   Operation 31 'call' 'call_ln0' <Predicate = true> <Delay = 1.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_5 : Operation 32 [1/1] (0.00ns)   --->   "%sext_ln859 = sext i85 %mu_V_read_1"   --->   Operation 32 'sext' 'sext_ln859' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 33 [2/2] (5.07ns)   --->   "%mu_over_r_squared_V = call i122 @division, i86 %sext_ln859, i177 %p_Val2_3_loc_load"   --->   Operation 33 'call' 'mu_over_r_squared_V' <Predicate = true> <Delay = 5.07> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 5.07>
+ST_6 : Operation 34 [1/2] (1.48ns)   --->   "%call_ln0 = call void @vel_der_Pipeline_sqrt_loop, i177 %p_Val2_3_loc_load, i89 %Q_V_2_loc"   --->   Operation 34 'call' 'call_ln0' <Predicate = true> <Delay = 1.48> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 35 [1/2] (5.07ns)   --->   "%mu_over_r_squared_V = call i122 @division, i86 %sext_ln859, i177 %p_Val2_3_loc_load"   --->   Operation 35 'call' 'mu_over_r_squared_V' <Predicate = true> <Delay = 5.07> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 6> <Delay = 5.07>
+ST_7 : Operation 36 [1/1] (0.00ns)   --->   "%Q_V_2_loc_load = load i89 %Q_V_2_loc"   --->   Operation 36 'load' 'Q_V_2_loc_load' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 37 [1/1] (0.00ns)   --->   "%shl_ln = bitconcatenate i144 @_ssdm_op_BitConcatenate.i144.i89.i55, i89 %Q_V_2_loc_load, i55 0"   --->   Operation 37 'bitconcatenate' 'shl_ln' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 38 [1/1] (0.00ns)   --->   "%zext_ln45 = zext i144 %shl_ln" [src/runge_kutta_45.cpp:45]   --->   Operation 38 'zext' 'zext_ln45' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 39 [2/2] (5.07ns)   --->   "%versor_r_i_V = call i122 @division, i86 %tmp_4, i177 %zext_ln45"   --->   Operation 39 'call' 'versor_r_i_V' <Predicate = true> <Delay = 5.07> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 60.0>
+ST_8 : Operation 40 [1/2] (5.07ns)   --->   "%versor_r_i_V = call i122 @division, i86 %tmp_4, i177 %zext_ln45"   --->   Operation 40 'call' 'versor_r_i_V' <Predicate = true> <Delay = 5.07> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 41 [1/1] (0.00ns)   --->   "%shl_ln1 = bitconcatenate i177 @_ssdm_op_BitConcatenate.i177.i122.i55, i122 %mu_over_r_squared_V, i55 0"   --->   Operation 41 'bitconcatenate' 'shl_ln1' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 42 [1/1] (0.00ns)   --->   "%shl_ln887_1 = bitconcatenate i177 @_ssdm_op_BitConcatenate.i177.i122.i55, i122 %versor_r_i_V, i55 0"   --->   Operation 42 'bitconcatenate' 'shl_ln887_1' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 43 [1/1] (49.2ns)   --->   "%op_V = call i177 @multiply, i177 %shl_ln1, i177 %shl_ln887_1" [src/runge_kutta_45.cpp:47]   --->   Operation 43 'call' 'op_V' <Predicate = true> <Delay = 49.2> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 44 [1/1] (0.00ns)   --->   "%trunc_ln1454 = trunc i177 %op_V"   --->   Operation 44 'trunc' 'trunc_ln1454' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 45 [1/1] (5.70ns)   --->   "%r_V = sub i140 0, i140 %trunc_ln1454"   --->   Operation 45 'sub' 'r_V' <Predicate = true> <Delay = 5.70> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 46 [1/1] (0.00ns)   --->   "%dv_dt_V_write_assign = partselect i85 @_ssdm_op_PartSelect.i85.i140.i32.i32, i140 %r_V, i32 55, i32 139"   --->   Operation 46 'partselect' 'dv_dt_V_write_assign' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 47 [1/1] (0.00ns)   --->   "%ret_ln48 = ret i85 %dv_dt_V_write_assign" [src/runge_kutta_45.cpp:48]   --->   Operation 47 'ret' 'ret_ln48' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 100ns, clock uncertainty: 27ns.
+
+ <State 1>: 5.83ns
+The critical path consists of the following:
+	wire read operation ('c.V[2]') on port 'p_read5' [9]  (0 ns)
+	'call' operation ('call_ln0') to 'vel_der_Pipeline_add_constant_loop' [22]  (5.83 ns)
+
+ <State 2>: 2.55ns
+The critical path consists of the following:
+	'call' operation ('call_ln0') to 'vel_der_Pipeline_add_constant_loop' [22]  (2.55 ns)
+
+ <State 3>: 1.71ns
+The critical path consists of the following:
+	wire read operation ('i') on port 'i_read' [13]  (0 ns)
+	'mux' operation ('tmp_4', src/runge_kutta_45.cpp:45) [34]  (1.71 ns)
+
+ <State 4>: 0.959ns
+The critical path consists of the following:
+	'call' operation ('call_ln0') to 'vel_der_Pipeline_sq_sum_loop' [26]  (0.959 ns)
+
+ <State 5>: 5.07ns
+The critical path consists of the following:
+	wire read operation ('mu.V') on port 'mu_V_read' [12]  (0 ns)
+	'call' operation ('mu_over_r_squared.V') to 'division' [31]  (5.07 ns)
+
+ <State 6>: 5.07ns
+The critical path consists of the following:
+	'call' operation ('mu_over_r_squared.V') to 'division' [31]  (5.07 ns)
+
+ <State 7>: 5.07ns
+The critical path consists of the following:
+	'load' operation ('Q_V_2_loc_load') on local variable 'Q_V_2_loc' [29]  (0 ns)
+	'call' operation ('versor_r_i.V') to 'division' [35]  (5.07 ns)
+
+ <State 8>: 60.1ns
+The critical path consists of the following:
+	'call' operation ('versor_r_i.V') to 'division' [35]  (5.07 ns)
+	'call' operation ('op_V', src/runge_kutta_45.cpp:47) to 'multiply' [38]  (49.3 ns)
+	'sub' operation ('r.V') [40]  (5.7 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

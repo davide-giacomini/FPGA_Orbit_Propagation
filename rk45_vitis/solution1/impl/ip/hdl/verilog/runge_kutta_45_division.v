@@ -459,7 +459,7 @@ runge_kutta_45_sdiv_196ns_177s_122_200_seq_1 #(
     .din0_WIDTH( 196 ),
     .din1_WIDTH( 177 ),
     .dout_WIDTH( 122 ))
-sdiv_196ns_177s_122_200_seq_1_U68(
+sdiv_196ns_177s_122_200_seq_1_U36(
     .clk(ap_clk),
     .reset(ap_rst),
     .start(grp_fu_36_ap_start),

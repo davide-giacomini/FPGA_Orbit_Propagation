@@ -8,82 +8,34 @@
 `timescale 1 ns / 1 ps 
 
 module runge_kutta_45_multiply (
-        ap_clk,
-        ap_rst,
+        ap_ready,
         x_V_read,
         y_V_read,
-        ap_return,
-        ap_ce
+        ap_return
 );
 
 
-input   ap_clk;
-input   ap_rst;
+output   ap_ready;
 input  [176:0] x_V_read;
 input  [176:0] y_V_read;
 output  [176:0] ap_return;
-input   ap_ce;
 
-reg[176:0] ap_return;
+wire   [286:0] r_V_fu_32_p2;
 
-wire    ap_block_state1_pp0_stage0_iter0;
-wire    ap_block_state2_pp0_stage0_iter1;
-wire    ap_block_pp0_stage0_11001;
-wire    ap_block_pp0_stage0;
-wire   [286:0] grp_fu_32_p2;
-reg    grp_fu_32_ce;
-reg    ap_ce_reg;
-reg   [176:0] ap_return_int_reg;
-
-runge_kutta_45_mul_177s_177s_287_2_0 #(
+runge_kutta_45_mul_177s_177s_287_1_1 #(
     .ID( 1 ),
-    .NUM_STAGE( 2 ),
+    .NUM_STAGE( 1 ),
     .din0_WIDTH( 177 ),
     .din1_WIDTH( 177 ),
     .dout_WIDTH( 287 ))
-mul_177s_177s_287_2_0_U72(
-    .clk(ap_clk),
-    .reset(ap_rst),
+mul_177s_177s_287_1_1_U40(
     .din0(y_V_read),
     .din1(x_V_read),
-    .ce(grp_fu_32_ce),
-    .dout(grp_fu_32_p2)
+    .dout(r_V_fu_32_p2)
 );
 
-always @ (posedge ap_clk) begin
-    ap_ce_reg <= ap_ce;
-end
+assign ap_ready = 1'b1;
 
-always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_ce_reg)) begin
-        ap_return_int_reg <= {{grp_fu_32_p2[286:110]}};
-    end
-end
-
-always @ (*) begin
-    if ((1'b0 == ap_ce_reg)) begin
-        ap_return = ap_return_int_reg;
-    end else if ((1'b1 == ap_ce_reg)) begin
-        ap_return = {{grp_fu_32_p2[286:110]}};
-    end else begin
-        ap_return = 'bx;
-    end
-end
-
-always @ (*) begin
-    if (((1'b1 == 1'b1) & (1'b0 == ap_block_pp0_stage0_11001))) begin
-        grp_fu_32_ce = 1'b1;
-    end else begin
-        grp_fu_32_ce = 1'b0;
-    end
-end
-
-assign ap_block_pp0_stage0 = ~(1'b1 == 1'b1);
-
-assign ap_block_pp0_stage0_11001 = ~(1'b1 == 1'b1);
-
-assign ap_block_state1_pp0_stage0_iter0 = ~(1'b1 == 1'b1);
-
-assign ap_block_state2_pp0_stage0_iter1 = ~(1'b1 == 1'b1);
+assign ap_return = {{r_V_fu_32_p2[286:110]}};
 
 endmodule //runge_kutta_45_multiply

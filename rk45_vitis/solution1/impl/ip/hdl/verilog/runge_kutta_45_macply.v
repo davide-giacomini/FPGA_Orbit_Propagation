@@ -31,7 +31,7 @@ runge_kutta_45_mul_85s_85s_170_1_1 #(
     .din0_WIDTH( 85 ),
     .din1_WIDTH( 85 ),
     .dout_WIDTH( 170 ))
-mul_85s_85s_170_1_1_U56(
+mul_85s_85s_170_1_1_U23(
     .din0(y_V_read),
     .din1(x_V_read),
     .dout(r_V_fu_36_p2)

@@ -14,12 +14,12 @@ set C_modelName {runge_kutta_45_Pipeline_axi_write_yy}
 set C_modelType { void 0 }
 set C_modelArgList {
 	{ X_BUS int 128 regular {axi_master 1}  }
-	{ sext_ln139 int 60 regular  }
+	{ sext_ln137 int 60 regular  }
 	{ yy_loc_V int 85 regular {array 24576 { 1 3 } 1 1 }  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "X_BUS", "interface" : "axi_master", "bitwidth" : 128, "direction" : "WRITEONLY", "bitSlice":[ {"cElement": [{"cName": "yy","offset": { "type": "dynamic","port_name": "yy","bundle": "control"},"direction": "READWRITE"}]}]} , 
- 	{ "Name" : "sext_ln139", "interface" : "wire", "bitwidth" : 60, "direction" : "READONLY"} , 
+ 	{ "Name" : "sext_ln137", "interface" : "wire", "bitwidth" : 60, "direction" : "READONLY"} , 
  	{ "Name" : "yy_loc_V", "interface" : "memory", "bitwidth" : 85, "direction" : "READONLY"} ]}
 # RTL Port declarations: 
 set portNum 56
@@ -76,7 +76,7 @@ set portList {
 	{ m_axi_X_BUS_BRESP sc_in sc_lv 2 signal 0 } 
 	{ m_axi_X_BUS_BID sc_in sc_lv 1 signal 0 } 
 	{ m_axi_X_BUS_BUSER sc_in sc_lv 1 signal 0 } 
-	{ sext_ln139 sc_in sc_lv 60 signal 1 } 
+	{ sext_ln137 sc_in sc_lv 60 signal 1 } 
 	{ yy_loc_V_address0 sc_out sc_lv 15 signal 2 } 
 	{ yy_loc_V_ce0 sc_out sc_logic 1 signal 2 } 
 	{ yy_loc_V_q0 sc_in sc_lv 85 signal 2 } 
@@ -134,7 +134,7 @@ set NewPortList {[
  	{ "name": "m_axi_X_BUS_BRESP", "direction": "in", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "X_BUS", "role": "BRESP" }} , 
  	{ "name": "m_axi_X_BUS_BID", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "X_BUS", "role": "BID" }} , 
  	{ "name": "m_axi_X_BUS_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "X_BUS", "role": "BUSER" }} , 
- 	{ "name": "sext_ln139", "direction": "in", "datatype": "sc_lv", "bitwidth":60, "type": "signal", "bundle":{"name": "sext_ln139", "role": "default" }} , 
+ 	{ "name": "sext_ln137", "direction": "in", "datatype": "sc_lv", "bitwidth":60, "type": "signal", "bundle":{"name": "sext_ln137", "role": "default" }} , 
  	{ "name": "yy_loc_V_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":15, "type": "signal", "bundle":{"name": "yy_loc_V", "role": "address0" }} , 
  	{ "name": "yy_loc_V_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "yy_loc_V", "role": "ce0" }} , 
  	{ "name": "yy_loc_V_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":85, "type": "signal", "bundle":{"name": "yy_loc_V", "role": "q0" }}  ]}
@@ -158,7 +158,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "X_BUS", "Type" : "MAXI", "Direction" : "O",
 				"BlockSignal" : [
 					{"Name" : "X_BUS_blk_n_W", "Type" : "RtlSignal"}]},
-			{"Name" : "sext_ln139", "Type" : "None", "Direction" : "I"},
+			{"Name" : "sext_ln137", "Type" : "None", "Direction" : "I"},
 			{"Name" : "yy_loc_V", "Type" : "Memory", "Direction" : "I"}],
 		"Loop" : [
 			{"Name" : "axi_write_yy", "PipelineType" : "UPC",
@@ -169,7 +169,7 @@ set RtlHierarchyInfo {[
 set ArgLastReadFirstWriteLatency {
 	runge_kutta_45_Pipeline_axi_write_yy {
 		X_BUS {Type O LastRead -1 FirstWrite 2}
-		sext_ln139 {Type I LastRead 0 FirstWrite -1}
+		sext_ln137 {Type I LastRead 0 FirstWrite -1}
 		yy_loc_V {Type I LastRead 0 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
@@ -185,6 +185,6 @@ set PipelineEnableSignalInfo {[
 
 set Spec2ImplPortList { 
 	 { m_axi {  { m_axi_X_BUS_AWVALID VALID 1 1 }  { m_axi_X_BUS_AWREADY READY 0 1 }  { m_axi_X_BUS_AWADDR ADDR 1 64 }  { m_axi_X_BUS_AWID ID 1 1 }  { m_axi_X_BUS_AWLEN SIZE 1 32 }  { m_axi_X_BUS_AWSIZE BURST 1 3 }  { m_axi_X_BUS_AWBURST LOCK 1 2 }  { m_axi_X_BUS_AWLOCK CACHE 1 2 }  { m_axi_X_BUS_AWCACHE PROT 1 4 }  { m_axi_X_BUS_AWPROT QOS 1 3 }  { m_axi_X_BUS_AWQOS REGION 1 4 }  { m_axi_X_BUS_AWREGION USER 1 4 }  { m_axi_X_BUS_AWUSER DATA 1 1 }  { m_axi_X_BUS_WVALID VALID 1 1 }  { m_axi_X_BUS_WREADY READY 0 1 }  { m_axi_X_BUS_WDATA FIFONUM 1 128 }  { m_axi_X_BUS_WSTRB STRB 1 16 }  { m_axi_X_BUS_WLAST LAST 1 1 }  { m_axi_X_BUS_WID ID 1 1 }  { m_axi_X_BUS_WUSER DATA 1 1 }  { m_axi_X_BUS_ARVALID VALID 1 1 }  { m_axi_X_BUS_ARREADY READY 0 1 }  { m_axi_X_BUS_ARADDR ADDR 1 64 }  { m_axi_X_BUS_ARID ID 1 1 }  { m_axi_X_BUS_ARLEN SIZE 1 32 }  { m_axi_X_BUS_ARSIZE BURST 1 3 }  { m_axi_X_BUS_ARBURST LOCK 1 2 }  { m_axi_X_BUS_ARLOCK CACHE 1 2 }  { m_axi_X_BUS_ARCACHE PROT 1 4 }  { m_axi_X_BUS_ARPROT QOS 1 3 }  { m_axi_X_BUS_ARQOS REGION 1 4 }  { m_axi_X_BUS_ARREGION USER 1 4 }  { m_axi_X_BUS_ARUSER DATA 1 1 }  { m_axi_X_BUS_RVALID VALID 0 1 }  { m_axi_X_BUS_RREADY READY 1 1 }  { m_axi_X_BUS_RDATA FIFONUM 0 128 }  { m_axi_X_BUS_RLAST LAST 0 1 }  { m_axi_X_BUS_RID ID 0 1 }  { m_axi_X_BUS_RFIFONUM LEN 0 5 }  { m_axi_X_BUS_RUSER DATA 0 1 }  { m_axi_X_BUS_RRESP RESP 0 2 }  { m_axi_X_BUS_BVALID VALID 0 1 }  { m_axi_X_BUS_BREADY READY 1 1 }  { m_axi_X_BUS_BRESP RESP 0 2 }  { m_axi_X_BUS_BID ID 0 1 }  { m_axi_X_BUS_BUSER DATA 0 1 } } }
-	sext_ln139 { ap_none {  { sext_ln139 in_data 0 60 } } }
+	sext_ln137 { ap_none {  { sext_ln137 in_data 0 60 } } }
 	yy_loc_V { ap_memory {  { yy_loc_V_address0 mem_address 1 15 }  { yy_loc_V_ce0 mem_ce 1 1 }  { yy_loc_V_q0 in_data 0 85 } } }
 }

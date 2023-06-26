@@ -18,7 +18,7 @@
           "auto_pc": ""
         }
       },
-      "rst_ps7_0_100M": "",
+      "rst_ps7_0_20M": "",
       "axi_mem_intercon_1": {
         "s00_couplers": {
           "auto_ds": "",
@@ -129,7 +129,7 @@
             "value": "10.000000"
           },
           "PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ": {
-            "value": "20.000000"
+            "value": "10.000000"
           },
           "PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ": {
             "value": "10.000000"
@@ -213,7 +213,7 @@
             "value": "0"
           },
           "PCW_CLK0_FREQ": {
-            "value": "20000000"
+            "value": "10000000"
           },
           "PCW_CLK1_FREQ": {
             "value": "10000000"
@@ -513,7 +513,7 @@
             "value": "TRUE"
           },
           "PCW_FPGA0_PERIPHERAL_FREQMHZ": {
-            "value": "20"
+            "value": "10"
           },
           "PCW_FPGA1_PERIPHERAL_FREQMHZ": {
             "value": "50"
@@ -1982,7 +1982,7 @@
                     "value": "64"
                   },
                   "SI_DATA_WIDTH": {
-                    "value": "512"
+                    "value": "128"
                   }
                 },
                 "interface_ports": {
@@ -2101,11 +2101,11 @@
           }
         }
       },
-      "rst_ps7_0_100M": {
+      "rst_ps7_0_20M": {
         "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
-        "xci_name": "design_1_rst_ps7_0_100M_0",
-        "xci_path": "ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0.xci",
-        "inst_hier_path": "rst_ps7_0_100M"
+        "xci_name": "design_1_rst_ps7_0_20M_0",
+        "xci_path": "ip/design_1_rst_ps7_0_20M_0/design_1_rst_ps7_0_20M_0.xci",
+        "inst_hier_path": "rst_ps7_0_20M"
       },
       "axi_mem_intercon_1": {
         "vlnv": "xilinx.com:ip:axi_interconnect:2.1",
@@ -2238,7 +2238,7 @@
                     "value": "64"
                   },
                   "SI_DATA_WIDTH": {
-                    "value": "512"
+                    "value": "128"
                   }
                 },
                 "interface_ports": {
@@ -2666,7 +2666,7 @@
         "ports": [
           "processing_system7_0/FCLK_CLK0",
           "axi_mem_intercon/S00_ACLK",
-          "rst_ps7_0_100M/slowest_sync_clk",
+          "rst_ps7_0_20M/slowest_sync_clk",
           "processing_system7_0/S_AXI_HP0_ACLK",
           "axi_mem_intercon/M00_ACLK",
           "axi_mem_intercon/ACLK",
@@ -2684,12 +2684,12 @@
       "processing_system7_0_FCLK_RESET0_N": {
         "ports": [
           "processing_system7_0/FCLK_RESET0_N",
-          "rst_ps7_0_100M/ext_reset_in"
+          "rst_ps7_0_20M/ext_reset_in"
         ]
       },
-      "rst_ps7_0_100M_peripheral_aresetn": {
+      "rst_ps7_0_20M_peripheral_aresetn": {
         "ports": [
-          "rst_ps7_0_100M/peripheral_aresetn",
+          "rst_ps7_0_20M/peripheral_aresetn",
           "axi_mem_intercon/S00_ARESETN",
           "axi_mem_intercon/M00_ARESETN",
           "axi_mem_intercon/ARESETN",

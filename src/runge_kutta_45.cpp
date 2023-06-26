@@ -22,7 +22,7 @@ ap_fixed<((I+1) + (W_ext-I_ext)) + (W-I), (I+1) + (W_ext-I_ext)> division(const 
 }
 
 void vel_der(d_fixed_t& dv_dt, const d_fixed_t r[D], const int& i, const d_fixed_t& mu, const d_fixed_t c[D]){
-	#pragma HLS INLINE
+	#pragma HLS INLINE off
     #pragma HLS ALLOCATION function instances=division limit=1  // Without the pragma allocation it used 15k LUT, ith the pragma it used 1681 LUTs
 
     ap_fixed<W+1, I+1> r_in[D];
@@ -48,7 +48,7 @@ void vel_der(d_fixed_t& dv_dt, const d_fixed_t r[D], const int& i, const d_fixed
 }
 
 void ode_fpga(d_fixed_t out[N], const d_fixed_t in[N], const d_fixed_t c[N], const d_fixed_t& mu) {
-	#pragma HLS INLINE
+	#pragma HLS INLINE off
 	//#pragma HLS ALLOCATION function instances=vel_der limit=1
 
     d_fixed_t r_in[D], v_in[D], dr_dt[D], dv_dt[D];

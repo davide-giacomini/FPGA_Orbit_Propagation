@@ -44,7 +44,7 @@ attribute shreg_extract : string;
 
 
 begin
-    mul_85s_85s_170_1_1_U56 : component runge_kutta_45_mul_85s_85s_170_1_1
+    mul_85s_85s_170_1_1_U23 : component runge_kutta_45_mul_85s_85s_170_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
