@@ -9,8 +9,8 @@
 <ProductFamily>zynq</ProductFamily>
 <Part>xc7z020-clg400-1</Part>
 <TopModelName>runge_kutta_45_Pipeline_update_1</TopModelName>
-<TargetClockPeriod>50.00</TargetClockPeriod>
-<ClockUncertainty>13.50</ClockUncertainty>
+<TargetClockPeriod>100.00</TargetClockPeriod>
+<ClockUncertainty>27.00</ClockUncertainty>
 <FlowTarget>vivado</FlowTarget>
 </UserAssignments>
 
@@ -25,9 +25,9 @@
 <Best-caseLatency>8</Best-caseLatency>
 <Average-caseLatency>8</Average-caseLatency>
 <Worst-caseLatency>8</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.400 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.400 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.400 us</Worst-caseRealTimeLatency>
+<Best-caseRealTimeLatency>0.800 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.800 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.800 us</Worst-caseRealTimeLatency>
 <Interval-min>8</Interval-min>
 <Interval-max>8</Interval-max>
 </SummaryOfOverallLatency>
@@ -35,7 +35,7 @@
 <update_1>
 <TripCount>6</TripCount>
 <Latency>6</Latency>
-<AbsoluteTimeLatency>300</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>600</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>2</PipelineDepth>
 <InstanceList>
@@ -217,8 +217,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>sub_ln222</name>
-<Object>sub_ln222</Object>
+<name>sub_ln220</name>
+<Object>sub_ln220</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>

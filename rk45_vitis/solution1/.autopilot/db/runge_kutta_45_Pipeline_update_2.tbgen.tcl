@@ -15,13 +15,13 @@ set C_modelType { void 0 }
 set C_modelArgList {
 	{ empty int 15 regular  }
 	{ yy_loc_V int 85 regular {array 24576 { 0 1 } 1 1 }  }
-	{ sub_ln233 int 15 regular  }
+	{ sub_ln231 int 15 regular  }
 	{ c_V int 85 regular {array 6 { 1 3 } 1 1 }  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "empty", "interface" : "wire", "bitwidth" : 15, "direction" : "READONLY"} , 
  	{ "Name" : "yy_loc_V", "interface" : "memory", "bitwidth" : 85, "direction" : "READWRITE"} , 
- 	{ "Name" : "sub_ln233", "interface" : "wire", "bitwidth" : 15, "direction" : "READONLY"} , 
+ 	{ "Name" : "sub_ln231", "interface" : "wire", "bitwidth" : 15, "direction" : "READONLY"} , 
  	{ "Name" : "c_V", "interface" : "memory", "bitwidth" : 85, "direction" : "READONLY"} ]}
 # RTL Port declarations: 
 set portNum 18
@@ -40,7 +40,7 @@ set portList {
 	{ yy_loc_V_address1 sc_out sc_lv 15 signal 1 } 
 	{ yy_loc_V_ce1 sc_out sc_logic 1 signal 1 } 
 	{ yy_loc_V_q1 sc_in sc_lv 85 signal 1 } 
-	{ sub_ln233 sc_in sc_lv 15 signal 2 } 
+	{ sub_ln231 sc_in sc_lv 15 signal 2 } 
 	{ c_V_address0 sc_out sc_lv 3 signal 3 } 
 	{ c_V_ce0 sc_out sc_logic 1 signal 3 } 
 	{ c_V_q0 sc_in sc_lv 85 signal 3 } 
@@ -60,7 +60,7 @@ set NewPortList {[
  	{ "name": "yy_loc_V_address1", "direction": "out", "datatype": "sc_lv", "bitwidth":15, "type": "signal", "bundle":{"name": "yy_loc_V", "role": "address1" }} , 
  	{ "name": "yy_loc_V_ce1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "yy_loc_V", "role": "ce1" }} , 
  	{ "name": "yy_loc_V_q1", "direction": "in", "datatype": "sc_lv", "bitwidth":85, "type": "signal", "bundle":{"name": "yy_loc_V", "role": "q1" }} , 
- 	{ "name": "sub_ln233", "direction": "in", "datatype": "sc_lv", "bitwidth":15, "type": "signal", "bundle":{"name": "sub_ln233", "role": "default" }} , 
+ 	{ "name": "sub_ln231", "direction": "in", "datatype": "sc_lv", "bitwidth":15, "type": "signal", "bundle":{"name": "sub_ln231", "role": "default" }} , 
  	{ "name": "c_V_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":3, "type": "signal", "bundle":{"name": "c_V", "role": "address0" }} , 
  	{ "name": "c_V_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "c_V", "role": "ce0" }} , 
  	{ "name": "c_V_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":85, "type": "signal", "bundle":{"name": "c_V", "role": "q0" }}  ]}
@@ -83,7 +83,7 @@ set RtlHierarchyInfo {[
 		"Port" : [
 			{"Name" : "empty", "Type" : "None", "Direction" : "I"},
 			{"Name" : "yy_loc_V", "Type" : "Memory", "Direction" : "IO"},
-			{"Name" : "sub_ln233", "Type" : "None", "Direction" : "I"},
+			{"Name" : "sub_ln231", "Type" : "None", "Direction" : "I"},
 			{"Name" : "c_V", "Type" : "Memory", "Direction" : "I"}],
 		"Loop" : [
 			{"Name" : "update_2", "PipelineType" : "UPC",
@@ -95,7 +95,7 @@ set ArgLastReadFirstWriteLatency {
 	runge_kutta_45_Pipeline_update_2 {
 		empty {Type I LastRead 0 FirstWrite -1}
 		yy_loc_V {Type IO LastRead 0 FirstWrite 1}
-		sub_ln233 {Type I LastRead 0 FirstWrite -1}
+		sub_ln231 {Type I LastRead 0 FirstWrite -1}
 		c_V {Type I LastRead 0 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
@@ -112,6 +112,6 @@ set PipelineEnableSignalInfo {[
 set Spec2ImplPortList { 
 	empty { ap_none {  { empty in_data 0 15 } } }
 	yy_loc_V { ap_memory {  { yy_loc_V_address0 mem_address 1 15 }  { yy_loc_V_ce0 mem_ce 1 1 }  { yy_loc_V_we0 mem_we 1 1 }  { yy_loc_V_d0 mem_din 1 85 }  { yy_loc_V_address1 MemPortADDR2 1 15 }  { yy_loc_V_ce1 MemPortCE2 1 1 }  { yy_loc_V_q1 in_data 0 85 } } }
-	sub_ln233 { ap_none {  { sub_ln233 in_data 0 15 } } }
+	sub_ln231 { ap_none {  { sub_ln231 in_data 0 15 } } }
 	c_V { ap_memory {  { c_V_address0 mem_address 1 3 }  { c_V_ce0 mem_ce 1 1 }  { c_V_q0 in_data 0 85 } } }
 }

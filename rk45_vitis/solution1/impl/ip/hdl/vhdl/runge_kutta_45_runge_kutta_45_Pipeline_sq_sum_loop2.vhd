@@ -22,11 +22,11 @@ port (
     r_in_V_2_2_3_reload : IN STD_LOGIC_VECTOR (85 downto 0);
     squared_sum_V_4_0_out : OUT STD_LOGIC_VECTOR (176 downto 0);
     squared_sum_V_4_0_out_ap_vld : OUT STD_LOGIC;
-    grp_macply_fu_1911_p_din1 : OUT STD_LOGIC_VECTOR (176 downto 0);
-    grp_macply_fu_1911_p_din2 : OUT STD_LOGIC_VECTOR (84 downto 0);
-    grp_macply_fu_1911_p_din3 : OUT STD_LOGIC_VECTOR (84 downto 0);
-    grp_macply_fu_1911_p_dout0 : IN STD_LOGIC_VECTOR (176 downto 0);
-    grp_macply_fu_1911_p_ready : IN STD_LOGIC );
+    grp_macply_fu_1913_p_din1 : OUT STD_LOGIC_VECTOR (176 downto 0);
+    grp_macply_fu_1913_p_din2 : OUT STD_LOGIC_VECTOR (84 downto 0);
+    grp_macply_fu_1913_p_din3 : OUT STD_LOGIC_VECTOR (84 downto 0);
+    grp_macply_fu_1913_p_dout0 : IN STD_LOGIC_VECTOR (176 downto 0);
+    grp_macply_fu_1913_p_ready : IN STD_LOGIC );
 end;
 
 
@@ -223,7 +223,7 @@ begin
                 if ((ap_loop_init = ap_const_logic_1)) then 
                     squared_sum_V_fu_44 <= ap_const_lv177_lc_1;
                 elsif (((icmp_ln35_fu_93_p2 = ap_const_lv1_0) and (ap_enable_reg_pp0_iter1 = ap_const_logic_1))) then 
-                    squared_sum_V_fu_44 <= grp_macply_fu_1911_p_dout0;
+                    squared_sum_V_fu_44 <= grp_macply_fu_1913_p_dout0;
                 end if;
             end if; 
         end if;
@@ -299,9 +299,9 @@ begin
         end if; 
     end process;
 
-    grp_macply_fu_1911_p_din1 <= squared_sum_V_fu_44;
-    grp_macply_fu_1911_p_din2 <= trunc_ln859_fu_118_p1;
-    grp_macply_fu_1911_p_din3 <= trunc_ln859_fu_118_p1;
+    grp_macply_fu_1913_p_din1 <= squared_sum_V_fu_44;
+    grp_macply_fu_1913_p_din2 <= trunc_ln859_fu_118_p1;
+    grp_macply_fu_1913_p_din3 <= trunc_ln859_fu_118_p1;
     icmp_ln35_fu_93_p2 <= "1" when (i_fu_40 = ap_const_lv2_3) else "0";
     squared_sum_V_4_0_out <= squared_sum_V_fu_44;
 

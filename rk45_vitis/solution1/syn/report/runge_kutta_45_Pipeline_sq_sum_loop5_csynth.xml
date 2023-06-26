@@ -9,8 +9,8 @@
 <ProductFamily>zynq</ProductFamily>
 <Part>xc7z020-clg400-1</Part>
 <TopModelName>runge_kutta_45_Pipeline_sq_sum_loop5</TopModelName>
-<TargetClockPeriod>50.00</TargetClockPeriod>
-<ClockUncertainty>13.50</ClockUncertainty>
+<TargetClockPeriod>100.00</TargetClockPeriod>
+<ClockUncertainty>27.00</ClockUncertainty>
 <FlowTarget>vivado</FlowTarget>
 </UserAssignments>
 
@@ -25,9 +25,9 @@
 <Best-caseLatency>8</Best-caseLatency>
 <Average-caseLatency>8</Average-caseLatency>
 <Worst-caseLatency>8</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.400 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.400 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.400 us</Worst-caseRealTimeLatency>
+<Best-caseRealTimeLatency>0.800 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.800 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.800 us</Worst-caseRealTimeLatency>
 <Interval-min>8</Interval-min>
 <Interval-max>8</Interval-max>
 </SummaryOfOverallLatency>
@@ -35,7 +35,7 @@
 <sq_sum_loop>
 <TripCount>6</TripCount>
 <Latency>6</Latency>
-<AbsoluteTimeLatency>300</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>600</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>2</PipelineDepth>
 <InstanceList>
@@ -129,7 +129,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_macply_fu_1911_p_din1</name>
+<name>grp_macply_fu_1913_p_din1</name>
 <Object>runge_kutta_45_Pipeline_sq_sum_loop5</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -140,7 +140,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_macply_fu_1911_p_din2</name>
+<name>grp_macply_fu_1913_p_din2</name>
 <Object>runge_kutta_45_Pipeline_sq_sum_loop5</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -151,7 +151,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_macply_fu_1911_p_din3</name>
+<name>grp_macply_fu_1913_p_din3</name>
 <Object>runge_kutta_45_Pipeline_sq_sum_loop5</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -162,7 +162,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_macply_fu_1911_p_dout0</name>
+<name>grp_macply_fu_1913_p_dout0</name>
 <Object>runge_kutta_45_Pipeline_sq_sum_loop5</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -173,7 +173,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_macply_fu_1911_p_ready</name>
+<name>grp_macply_fu_1913_p_ready</name>
 <Object>runge_kutta_45_Pipeline_sq_sum_loop5</Object>
 <Type>return value</Type>
 <Scope></Scope>

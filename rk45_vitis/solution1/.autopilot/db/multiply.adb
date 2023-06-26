@@ -70,7 +70,7 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>1869635878</coreId>
+              <coreId>639657324</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>177</bitwidth>
@@ -294,7 +294,7 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>3342808240</coreId>
+              <coreId>1195357824</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>287</bitwidth>
@@ -343,7 +343,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>r.V</originalName>
-              <rtlName>mul_177s_177s_287_2_0_U72</rtlName>
+              <rtlName>mul_177s_177s_287_1_1_U72</rtlName>
               <control>auto</control>
               <opType>mul</opType>
               <implIndex>auto</implIndex>
@@ -366,7 +366,7 @@
           <m_isOnCriticalPath>0</m_isOnCriticalPath>
           <m_isLCDNode>0</m_isLCDNode>
           <m_isStartOfPath>0</m_isStartOfPath>
-          <m_delay>10.3</m_delay>
+          <m_delay>49.2</m_delay>
           <m_topoIndex>5</m_topoIndex>
           <m_clusterGroupNumber>-1</m_clusterGroupNumber>
         </item>
@@ -400,14 +400,14 @@
                 </item>
               </inlineStackInfo>
               <originalName>this.V</originalName>
-              <rtlName>ap_return_int_reg</rtlName>
+              <rtlName>ap_return</rtlName>
               <control/>
               <opType/>
               <implIndex/>
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>3344709280</coreId>
+              <coreId>1330007625</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>177</bitwidth>
@@ -466,7 +466,7 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>3343394352</coreId>
+              <coreId>542329928</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>0</bitwidth>
@@ -512,7 +512,7 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>1953789291</coreId>
+              <coreId>1195393024</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -543,7 +543,7 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>3342630976</coreId>
+              <coreId>1197245488</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -577,7 +577,7 @@
             <coreName/>
             <isStorage>0</isStorage>
             <storageDepth>0</storageDepth>
-            <coreId>3342490768</coreId>
+            <coreId>1196904224</coreId>
             <rtlModuleName/>
           </Obj>
           <node_objs>
@@ -686,23 +686,23 @@
           <item>10</item>
         </basic_blocks>
         <mII>1</mII>
-        <mDepth>2</mDepth>
+        <mDepth>1</mDepth>
         <mMinTripCount>-1</mMinTripCount>
         <mMaxTripCount>-1</mMaxTripCount>
-        <mMinLatency>1</mMinLatency>
-        <mMaxLatency>1</mMaxLatency>
+        <mMinLatency>0</mMinLatency>
+        <mMaxLatency>0</mMaxLatency>
         <mIsDfPipe>0</mIsDfPipe>
         <mDfPipe class_id="-1"/>
       </item>
     </cdfg_regions>
     <fsm class_id="24" tracking_level="1" version="0" object_id="_24">
       <states class_id="25" tracking_level="0" version="0">
-        <count>2</count>
+        <count>1</count>
         <item_version>0</item_version>
         <item class_id="26" tracking_level="1" version="0" object_id="_25">
           <id>1</id>
           <operations class_id="27" tracking_level="0" version="0">
-            <count>5</count>
+            <count>7</count>
             <item_version>0</item_version>
             <item class_id="28" tracking_level="1" version="0" object_id="_26">
               <id>3</id>
@@ -726,27 +726,15 @@
             </item>
             <item class_id_reference="28" object_id="_30">
               <id>7</id>
-              <stage>2</stage>
-              <latency>2</latency>
-            </item>
-          </operations>
-        </item>
-        <item class_id_reference="26" object_id="_31">
-          <id>2</id>
-          <operations>
-            <count>3</count>
-            <item_version>0</item_version>
-            <item class_id_reference="28" object_id="_32">
-              <id>7</id>
               <stage>1</stage>
-              <latency>2</latency>
+              <latency>1</latency>
             </item>
-            <item class_id_reference="28" object_id="_33">
+            <item class_id_reference="28" object_id="_31">
               <id>8</id>
               <stage>1</stage>
               <latency>1</latency>
             </item>
-            <item class_id_reference="28" object_id="_34">
+            <item class_id_reference="28" object_id="_32">
               <id>9</id>
               <stage>1</stage>
               <latency>1</latency>
@@ -755,45 +743,30 @@
         </item>
       </states>
       <transitions class_id="29" tracking_level="0" version="0">
-        <count>1</count>
+        <count>0</count>
         <item_version>0</item_version>
-        <item class_id="30" tracking_level="1" version="0" object_id="_35">
-          <inState>1</inState>
-          <outState>2</outState>
-          <condition class_id="31" tracking_level="0" version="0">
-            <id>-1</id>
-            <sop class_id="32" tracking_level="0" version="0">
-              <count>1</count>
-              <item_version>0</item_version>
-              <item class_id="33" tracking_level="0" version="0">
-                <count>0</count>
-                <item_version>0</item_version>
-              </item>
-            </sop>
-          </condition>
-        </item>
       </transitions>
     </fsm>
-    <res class_id="34" tracking_level="1" version="0" object_id="_36">
-      <dp_component_resource class_id="35" tracking_level="0" version="0">
+    <res class_id="30" tracking_level="1" version="0" object_id="_33">
+      <dp_component_resource class_id="31" tracking_level="0" version="0">
         <count>1</count>
         <item_version>0</item_version>
-        <item class_id="36" tracking_level="0" version="0">
-          <first>mul_177s_177s_287_2_0_U72 (mul_177s_177s_287_2_0)</first>
-          <second class_id="37" tracking_level="0" version="0">
+        <item class_id="32" tracking_level="0" version="0">
+          <first>mul_177s_177s_287_1_1_U72 (mul_177s_177s_287_1_1)</first>
+          <second class_id="33" tracking_level="0" version="0">
             <count>3</count>
             <item_version>0</item_version>
-            <item class_id="38" tracking_level="0" version="0">
+            <item class_id="34" tracking_level="0" version="0">
               <first>DSP</first>
               <second>46</second>
             </item>
             <item>
               <first>FF</first>
-              <second>361</second>
+              <second>0</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>195</second>
+              <second>14833</second>
             </item>
           </second>
         </item>
@@ -811,90 +784,29 @@
         <item_version>0</item_version>
       </dp_memory_resource>
       <dp_multiplexer_resource>
-        <count>1</count>
+        <count>0</count>
         <item_version>0</item_version>
-        <item>
-          <first>ap_return</first>
-          <second>
-            <count>4</count>
-            <item_version>0</item_version>
-            <item>
-              <first>(0Size)</first>
-              <second>3</second>
-            </item>
-            <item>
-              <first>(1Bits)</first>
-              <second>177</second>
-            </item>
-            <item>
-              <first>(2Count)</first>
-              <second>531</second>
-            </item>
-            <item>
-              <first>LUT</first>
-              <second>14</second>
-            </item>
-          </second>
-        </item>
       </dp_multiplexer_resource>
       <dp_register_resource>
-        <count>2</count>
+        <count>0</count>
         <item_version>0</item_version>
-        <item>
-          <first>ap_ce_reg</first>
-          <second>
-            <count>3</count>
-            <item_version>0</item_version>
-            <item>
-              <first>(Bits)</first>
-              <second>1</second>
-            </item>
-            <item>
-              <first>(Consts)</first>
-              <second>0</second>
-            </item>
-            <item>
-              <first>FF</first>
-              <second>1</second>
-            </item>
-          </second>
-        </item>
-        <item>
-          <first>ap_return_int_reg</first>
-          <second>
-            <count>3</count>
-            <item_version>0</item_version>
-            <item>
-              <first>(Bits)</first>
-              <second>177</second>
-            </item>
-            <item>
-              <first>(Consts)</first>
-              <second>0</second>
-            </item>
-            <item>
-              <first>FF</first>
-              <second>177</second>
-            </item>
-          </second>
-        </item>
       </dp_register_resource>
       <dp_dsp_resource>
         <count>1</count>
         <item_version>0</item_version>
         <item>
-          <first>mul_177s_177s_287_2_0_U72</first>
+          <first>mul_177s_177s_287_1_1_U72</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
           </second>
         </item>
       </dp_dsp_resource>
-      <dp_component_map class_id="39" tracking_level="0" version="0">
+      <dp_component_map class_id="35" tracking_level="0" version="0">
         <count>1</count>
         <item_version>0</item_version>
-        <item class_id="40" tracking_level="0" version="0">
-          <first>mul_177s_177s_287_2_0_U72 (mul_177s_177s_287_2_0)</first>
+        <item class_id="36" tracking_level="0" version="0">
+          <first>mul_177s_177s_287_1_1_U72 (mul_177s_177s_287_1_1)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -915,12 +827,12 @@
         <item_version>0</item_version>
       </dp_memory_map>
     </res>
-    <node_label_latency class_id="41" tracking_level="0" version="0">
+    <node_label_latency class_id="37" tracking_level="0" version="0">
       <count>7</count>
       <item_version>0</item_version>
-      <item class_id="42" tracking_level="0" version="0">
+      <item class_id="38" tracking_level="0" version="0">
         <first>3</first>
-        <second class_id="43" tracking_level="0" version="0">
+        <second class_id="39" tracking_level="0" version="0">
           <first>0</first>
           <second>0</second>
         </second>
@@ -950,39 +862,39 @@
         <first>7</first>
         <second>
           <first>0</first>
-          <second>1</second>
+          <second>0</second>
         </second>
       </item>
       <item>
         <first>8</first>
         <second>
-          <first>1</first>
+          <first>0</first>
           <second>0</second>
         </second>
       </item>
       <item>
         <first>9</first>
         <second>
-          <first>1</first>
+          <first>0</first>
           <second>0</second>
         </second>
       </item>
     </node_label_latency>
-    <bblk_ent_exit class_id="44" tracking_level="0" version="0">
+    <bblk_ent_exit class_id="40" tracking_level="0" version="0">
       <count>1</count>
       <item_version>0</item_version>
-      <item class_id="45" tracking_level="0" version="0">
+      <item class_id="41" tracking_level="0" version="0">
         <first>10</first>
-        <second class_id="46" tracking_level="0" version="0">
+        <second class_id="42" tracking_level="0" version="0">
           <first>0</first>
-          <second>1</second>
+          <second>0</second>
         </second>
       </item>
     </bblk_ent_exit>
-    <regions class_id="47" tracking_level="0" version="0">
+    <regions class_id="43" tracking_level="0" version="0">
       <count>1</count>
       <item_version>0</item_version>
-      <item class_id="48" tracking_level="1" version="0" object_id="_37">
+      <item class_id="44" tracking_level="1" version="0" object_id="_34">
         <region_name>multiply</region_name>
         <basic_blocks>
           <count>1</count>
@@ -996,17 +908,17 @@
         <anchor_node>-1</anchor_node>
         <region_type>8</region_type>
         <interval>1</interval>
-        <pipe_depth>2</pipe_depth>
-        <mDBIIViolationVec class_id="49" tracking_level="0" version="0">
+        <pipe_depth>1</pipe_depth>
+        <mDBIIViolationVec class_id="45" tracking_level="0" version="0">
           <count>0</count>
           <item_version>0</item_version>
         </mDBIIViolationVec>
       </item>
     </regions>
-    <dp_fu_nodes class_id="50" tracking_level="0" version="0">
+    <dp_fu_nodes class_id="46" tracking_level="0" version="0">
       <count>6</count>
       <item_version>0</item_version>
-      <item class_id="51" tracking_level="0" version="0">
+      <item class_id="47" tracking_level="0" version="0">
         <first>12</first>
         <second>
           <count>1</count>
@@ -1041,9 +953,8 @@
       <item>
         <first>32</first>
         <second>
-          <count>2</count>
+          <count>1</count>
           <item_version>0</item_version>
-          <item>7</item>
           <item>7</item>
         </second>
       </item>
@@ -1056,10 +967,18 @@
         </second>
       </item>
     </dp_fu_nodes>
-    <dp_fu_nodes_expression class_id="53" tracking_level="0" version="0">
-      <count>3</count>
+    <dp_fu_nodes_expression class_id="49" tracking_level="0" version="0">
+      <count>4</count>
       <item_version>0</item_version>
-      <item class_id="54" tracking_level="0" version="0">
+      <item class_id="50" tracking_level="0" version="0">
+        <first>r_V_fu_32</first>
+        <second>
+          <count>1</count>
+          <item_version>0</item_version>
+          <item>7</item>
+        </second>
+      </item>
+      <item>
         <first>sext_ln1316_fu_24</first>
         <second>
           <count>1</count>
@@ -1085,17 +1004,8 @@
       </item>
     </dp_fu_nodes_expression>
     <dp_fu_nodes_module>
-      <count>1</count>
+      <count>0</count>
       <item_version>0</item_version>
-      <item>
-        <first>grp_fu_32</first>
-        <second>
-          <count>2</count>
-          <item_version>0</item_version>
-          <item>7</item>
-          <item>7</item>
-        </second>
-      </item>
     </dp_fu_nodes_module>
     <dp_fu_nodes_io>
       <count>2</count>
@@ -1129,49 +1039,17 @@
         </second>
       </item>
     </return_ports>
-    <dp_mem_port_nodes class_id="55" tracking_level="0" version="0">
+    <dp_mem_port_nodes class_id="51" tracking_level="0" version="0">
       <count>0</count>
       <item_version>0</item_version>
     </dp_mem_port_nodes>
     <dp_reg_nodes>
-      <count>2</count>
+      <count>0</count>
       <item_version>0</item_version>
-      <item>
-        <first>48</first>
-        <second>
-          <count>1</count>
-          <item_version>0</item_version>
-          <item>5</item>
-        </second>
-      </item>
-      <item>
-        <first>53</first>
-        <second>
-          <count>1</count>
-          <item_version>0</item_version>
-          <item>6</item>
-        </second>
-      </item>
     </dp_reg_nodes>
     <dp_regname_nodes>
-      <count>2</count>
+      <count>0</count>
       <item_version>0</item_version>
-      <item>
-        <first>sext_ln1316_reg_48</first>
-        <second>
-          <count>1</count>
-          <item_version>0</item_version>
-          <item>5</item>
-        </second>
-      </item>
-      <item>
-        <first>sext_ln1319_reg_53</first>
-        <second>
-          <count>1</count>
-          <item_version>0</item_version>
-          <item>6</item>
-        </second>
-      </item>
     </dp_regname_nodes>
     <dp_reg_phi>
       <count>0</count>
@@ -1181,10 +1059,10 @@
       <count>0</count>
       <item_version>0</item_version>
     </dp_regname_phi>
-    <dp_port_io_nodes class_id="56" tracking_level="0" version="0">
+    <dp_port_io_nodes class_id="52" tracking_level="0" version="0">
       <count>2</count>
       <item_version>0</item_version>
-      <item class_id="57" tracking_level="0" version="0">
+      <item class_id="53" tracking_level="0" version="0">
         <first>x_V_read</first>
         <second>
           <count>1</count>

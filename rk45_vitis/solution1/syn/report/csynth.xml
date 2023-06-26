@@ -7,15 +7,15 @@
         <ProductFamily>zynq</ProductFamily>
         <Part>xc7z020-clg400-1</Part>
         <TopModelName>runge_kutta_45</TopModelName>
-        <TargetClockPeriod>50.00</TargetClockPeriod>
-        <ClockUncertainty>13.50</ClockUncertainty>
+        <TargetClockPeriod>100.00</TargetClockPeriod>
+        <ClockUncertainty>27.00</ClockUncertainty>
         <FlowTarget>vivado</FlowTarget>
     </UserAssignments>
     <PerformanceEstimates>
         <PipelineType>no</PipelineType>
         <SummaryOfTimingAnalysis>
             <unit>ns</unit>
-            <EstimatedClockPeriod>36.500</EstimatedClockPeriod>
+            <EstimatedClockPeriod>73.000</EstimatedClockPeriod>
         </SummaryOfTimingAnalysis>
         <SummaryOfOverallLatency>
             <unit>clock cycles</unit>
@@ -38,48 +38,48 @@
                 </TripCount>
                 <Latency>
                     <range>
-                        <min>66</min>
-                        <max>1706100066</max>
+                        <min>64</min>
+                        <max>1703500064</max>
                     </range>
                 </Latency>
                 <AbsoluteTimeLatency>
                     <range>
-                        <min>3300</min>
-                        <max>85305003300</max>
+                        <min>6400</min>
+                        <max>170350006400</max>
                     </range>
                 </AbsoluteTimeLatency>
                 <IterationLatency>
                     <range>
-                        <min>9408</min>
-                        <max>34122</max>
+                        <min>9356</min>
+                        <max>34070</max>
                     </range>
                 </IterationLatency>
                 <InstanceList/>
                 <update_vel_pos>
                     <TripCount>3</TripCount>
-                    <Latency>1254</Latency>
-                    <AbsoluteTimeLatency>62700</AbsoluteTimeLatency>
-                    <IterationLatency>418</IterationLatency>
+                    <Latency>1251</Latency>
+                    <AbsoluteTimeLatency>125100</AbsoluteTimeLatency>
+                    <IterationLatency>417</IterationLatency>
                     <InstanceList/>
                 </update_vel_pos>
                 <k_outer>
                     <TripCount>5</TripCount>
                     <Latency>
                         <range>
-                            <min>6644</min>
-                            <max>6764</max>
+                            <min>6599</min>
+                            <max>6719</max>
                         </range>
                     </Latency>
                     <AbsoluteTimeLatency>
                         <range>
-                            <min>332200</min>
-                            <max>338200</max>
+                            <min>659900</min>
+                            <max>671900</max>
                         </range>
                     </AbsoluteTimeLatency>
                     <IterationLatency>
                         <range>
-                            <min>1329</min>
-                            <max>1353</max>
+                            <min>1320</min>
+                            <max>1344</max>
                         </range>
                     </IterationLatency>
                     <InstanceList/>
@@ -87,51 +87,51 @@
                         <TripCount>6</TripCount>
                         <Latency>
                             <range>
-                                <min>41</min>
-                                <max>65</max>
+                                <min>35</min>
+                                <max>59</max>
                             </range>
                         </Latency>
                         <AbsoluteTimeLatency>
                             <range>
-                                <min>2050</min>
-                                <max>3250</max>
+                                <min>3500</min>
+                                <max>5900</max>
                             </range>
                         </AbsoluteTimeLatency>
                         <IterationLatency>
                             <range>
-                                <min>7</min>
-                                <max>11</max>
+                                <min>6</min>
+                                <max>10</max>
                             </range>
                         </IterationLatency>
                         <InstanceList/>
                     </k_middle>
                     <update_vel_pos>
                         <TripCount>3</TripCount>
-                        <Latency>1257</Latency>
-                        <AbsoluteTimeLatency>62850</AbsoluteTimeLatency>
-                        <IterationLatency>419</IterationLatency>
+                        <Latency>1254</Latency>
+                        <AbsoluteTimeLatency>125400</AbsoluteTimeLatency>
+                        <IterationLatency>418</IterationLatency>
                         <InstanceList/>
                     </update_vel_pos>
                 </k_outer>
                 <y_new_outer>
                     <TripCount>6</TripCount>
-                    <Latency>43</Latency>
-                    <AbsoluteTimeLatency>2150</AbsoluteTimeLatency>
+                    <Latency>42</Latency>
+                    <AbsoluteTimeLatency>4200</AbsoluteTimeLatency>
                     <PipelineII>7</PipelineII>
-                    <PipelineDepth>9</PipelineDepth>
+                    <PipelineDepth>8</PipelineDepth>
                     <InstanceList/>
                 </y_new_outer>
                 <update_vel_pos>
                     <TripCount>3</TripCount>
-                    <Latency>1254</Latency>
-                    <AbsoluteTimeLatency>62700</AbsoluteTimeLatency>
-                    <IterationLatency>418</IterationLatency>
+                    <Latency>1251</Latency>
+                    <AbsoluteTimeLatency>125100</AbsoluteTimeLatency>
+                    <IterationLatency>417</IterationLatency>
                     <InstanceList/>
                 </update_vel_pos>
                 <err_outer>
                     <TripCount>6</TripCount>
                     <Latency>43</Latency>
-                    <AbsoluteTimeLatency>2150</AbsoluteTimeLatency>
+                    <AbsoluteTimeLatency>4300</AbsoluteTimeLatency>
                     <PipelineII>7</PipelineII>
                     <PipelineDepth>9</PipelineDepth>
                     <InstanceList/>
@@ -143,8 +143,8 @@
         <Resources>
             <BRAM_18K>207</BRAM_18K>
             <DSP>61</DSP>
-            <FF>23118</FF>
-            <LUT>28087</LUT>
+            <FF>22572</FF>
+            <LUT>42684</LUT>
             <URAM>0</URAM>
         </Resources>
         <AvailableResources>
@@ -1462,31 +1462,31 @@
             <ModuleName>runge_kutta_45</ModuleName>
             <InstancesList>
                 <Instance>
-                    <InstName>grp_ap_fixed_base_fu_2365</InstName>
+                    <InstName>grp_ap_fixed_base_fu_2401</InstName>
                     <ModuleName>ap_fixed_base</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2365</ID>
+                    <ID>2401</ID>
                     <BindInstances>man_V_11_fu_88_p2 F2_fu_108_p2 add_ln616_fu_120_p2 sub_ln616_fu_126_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>atol_loc_V_ap_fixed_base_fu_2370</InstName>
+                    <InstName>atol_loc_V_ap_fixed_base_fu_2406</InstName>
                     <ModuleName>ap_fixed_base</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2370</ID>
+                    <ID>2406</ID>
                     <BindInstances>man_V_11_fu_88_p2 F2_fu_108_p2 add_ln616_fu_120_p2 sub_ln616_fu_126_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>tf_loc_V_ap_fixed_base_fu_2375</InstName>
+                    <InstName>tf_loc_V_ap_fixed_base_fu_2411</InstName>
                     <ModuleName>ap_fixed_base</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2375</ID>
+                    <ID>2411</ID>
                     <BindInstances>man_V_11_fu_88_p2 F2_fu_108_p2 add_ln616_fu_120_p2 sub_ln616_fu_126_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_VITIS_LOOP_121_1_fu_2381</InstName>
-                    <ModuleName>runge_kutta_45_Pipeline_VITIS_LOOP_121_1</ModuleName>
+                    <InstName>grp_runge_kutta_45_Pipeline_VITIS_LOOP_119_1_fu_2417</InstName>
+                    <ModuleName>runge_kutta_45_Pipeline_VITIS_LOOP_119_1</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2381</ID>
+                    <ID>2417</ID>
                     <InstancesList>
                         <Instance>
                             <InstName>ref_tmp1_ap_fixed_base_fu_103</InstName>
@@ -1496,69 +1496,69 @@
                             <BindInstances>man_V_11_fu_88_p2 F2_fu_108_p2 add_ln616_fu_120_p2 sub_ln616_fu_126_p2</BindInstances>
                         </Instance>
                     </InstancesList>
-                    <BindInstances>add_ln121_fu_132_p2</BindInstances>
+                    <BindInstances>add_ln119_fu_132_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_axi_write_yy_fu_2389</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_axi_write_yy_fu_2425</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_axi_write_yy</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2389</ID>
-                    <BindInstances>add_ln139_fu_176_p2 tmp_V_fu_215_p2 NZeros_7_fu_281_p2 sub_ln1095_fu_295_p2 lsb_index_fu_301_p2 sub_ln1098_fu_327_p2 add_ln1105_fu_409_p2 sub_ln1106_fu_425_p2 m_9_fu_461_p2</BindInstances>
+                    <ID>2425</ID>
+                    <BindInstances>add_ln137_fu_176_p2 tmp_V_fu_215_p2 NZeros_7_fu_281_p2 sub_ln1095_fu_295_p2 lsb_index_fu_301_p2 sub_ln1098_fu_327_p2 add_ln1105_fu_409_p2 sub_ln1106_fu_425_p2 m_9_fu_461_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_axi_write_tt_fu_2397</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_axi_write_tt_fu_2433</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_axi_write_tt</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2397</ID>
-                    <BindInstances>add_ln142_fu_176_p2 tmp_V_fu_215_p2 NZeros_10_fu_281_p2 sub_ln1095_fu_295_p2 lsb_index_fu_301_p2 sub_ln1098_fu_327_p2 add_ln1105_fu_409_p2 sub_ln1106_fu_425_p2 m_13_fu_461_p2</BindInstances>
+                    <ID>2433</ID>
+                    <BindInstances>add_ln140_fu_176_p2 tmp_V_fu_215_p2 NZeros_10_fu_281_p2 sub_ln1095_fu_295_p2 lsb_index_fu_301_p2 sub_ln1098_fu_327_p2 add_ln1105_fu_409_p2 sub_ln1106_fu_425_p2 m_13_fu_461_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_4_fu_2405</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_4_fu_2441</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_4</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2405</ID>
+                    <ID>2441</ID>
                     <BindInstances>empty_63_fu_147_p2 empty_64_fu_157_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_6_fu_2418</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_6_fu_2454</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_6</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2418</ID>
+                    <ID>2454</ID>
                     <BindInstances>empty_fu_137_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_5_fu_2429</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_5_fu_2465</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_5</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2429</ID>
+                    <ID>2465</ID>
                     <BindInstances>empty_61_fu_149_p2 add_ptr_i18582925_sum_fu_159_p2 empty_62_fu_169_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_7_fu_2442</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_7_fu_2478</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_7</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2442</ID>
+                    <ID>2478</ID>
                     <BindInstances>empty_fu_139_p2 add_ptr41_i18592926_sum_fu_149_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_add_constant_loop_fu_2453</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_add_constant_loop_fu_2489</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_add_constant_loop</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2453</ID>
+                    <ID>2489</ID>
                     <BindInstances>add_ln29_fu_174_p2 r_in_V_1_12_fu_212_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_10_fu_2469</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_10_fu_2505</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_10</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2469</ID>
+                    <ID>2505</ID>
                     <BindInstances>empty_fu_83_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_sq_sum_loop_fu_2477</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_sq_sum_loop_fu_2513</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_sq_sum_loop</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2477</ID>
+                    <ID>2513</ID>
                     <InstancesList>
                         <Instance>
                             <InstName>squared_sum_V_macply_fu_73</InstName>
@@ -1571,37 +1571,37 @@
                     <BindInstances>add_ln35_fu_99_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_fxp_sqrt_89_34_177_67_s_fu_2485</InstName>
+                    <InstName>grp_fxp_sqrt_89_34_177_67_s_fu_2521</InstName>
                     <ModuleName>fxp_sqrt_89_34_177_67_s</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2485</ID>
+                    <ID>2521</ID>
                     <BindInstances>i_13_fu_111_p2 T_V_fu_166_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_division_fu_2490</InstName>
+                    <InstName>grp_division_fu_2526</InstName>
                     <ModuleName>division</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2490</ID>
+                    <ID>2526</ID>
                 </Instance>
                 <Instance>
-                    <InstName>grp_multiply_fu_2328</InstName>
+                    <InstName>grp_multiply_fu_2362</InstName>
                     <ModuleName>multiply</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2328</ID>
-                    <BindInstances>mul_177s_177s_287_2_0_U72</BindInstances>
+                    <ID>2362</ID>
+                    <BindInstances>mul_177s_177s_287_1_1_U72</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_11_fu_2496</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_11_fu_2532</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_11</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2496</ID>
+                    <ID>2532</ID>
                     <BindInstances>empty_fu_85_p2 add_ptr52_i21682927_sum_fu_108_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_k_inner_fu_2504</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_k_inner_fu_2540</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_k_inner</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2504</ID>
+                    <ID>2540</ID>
                     <InstancesList>
                         <Instance>
                             <InstName>sum_V_1_macply_fu_115</InstName>
@@ -1611,55 +1611,55 @@
                             <BindInstances>mul_85s_85s_170_1_1_U56 ap_return</BindInstances>
                         </Instance>
                     </InstancesList>
-                    <BindInstances>add_ln168_fu_142_p2 add_ln172_1_fu_152_p2 A_U</BindInstances>
+                    <BindInstances>add_ln166_fu_142_p2 add_ln170_1_fu_152_p2 A_U</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_13_fu_2517</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_13_fu_2553</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_13</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2517</ID>
+                    <ID>2553</ID>
                     <BindInstances>empty_76_fu_147_p2 empty_77_fu_157_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_15_fu_2533</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_15_fu_2569</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_15</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2533</ID>
+                    <ID>2569</ID>
                     <BindInstances>empty_fu_137_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_14_fu_2547</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_14_fu_2583</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_14</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2547</ID>
+                    <ID>2583</ID>
                     <BindInstances>empty_74_fu_149_p2 add_ptr_i13203186_sum_fu_159_p2 empty_75_fu_169_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_16_fu_2563</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_16_fu_2599</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_16</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2563</ID>
+                    <ID>2599</ID>
                     <BindInstances>empty_fu_139_p2 add_ptr41_i13213187_sum_fu_149_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_add_constant_loop1_fu_2577</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_add_constant_loop1_fu_2613</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_add_constant_loop1</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2577</ID>
+                    <ID>2613</ID>
                     <BindInstances>add_ln29_fu_174_p2 r_in_V_1_8_fu_212_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_19_fu_2596</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_19_fu_2632</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_19</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2596</ID>
+                    <ID>2632</ID>
                     <BindInstances>empty_72_fu_93_p2 empty_73_fu_103_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_sq_sum_loop2_fu_2608</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_sq_sum_loop2_fu_2644</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_sq_sum_loop2</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2608</ID>
+                    <ID>2644</ID>
                     <InstancesList>
                         <Instance>
                             <InstName>squared_sum_V_2_macply_fu_73</InstName>
@@ -1672,66 +1672,66 @@
                     <BindInstances>add_ln35_fu_99_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_20_fu_2616</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_20_fu_2652</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_20</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2616</ID>
+                    <ID>2652</ID>
                     <BindInstances>empty_70_fu_95_p2 add_ptr52_i16303188_sum_fu_118_p2 empty_71_fu_128_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_macply_fu_1911</InstName>
+                    <InstName>grp_macply_fu_1913</InstName>
                     <ModuleName>macply</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>1911</ID>
+                    <ID>1913</ID>
                     <BindInstances>mul_85s_85s_170_1_1_U56 ap_return</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_21_fu_2628</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_21_fu_2664</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_21</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2628</ID>
+                    <ID>2664</ID>
                     <BindInstances>empty_68_fu_147_p2 empty_69_fu_157_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_23_fu_2641</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_23_fu_2677</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_23</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2641</ID>
+                    <ID>2677</ID>
                     <BindInstances>empty_fu_137_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_22_fu_2652</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_22_fu_2688</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_22</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2652</ID>
+                    <ID>2688</ID>
                     <BindInstances>empty_66_fu_149_p2 add_ptr_i2928_sum_fu_159_p2 empty_67_fu_169_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_24_fu_2665</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_24_fu_2701</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_24</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2665</ID>
+                    <ID>2701</ID>
                     <BindInstances>empty_fu_139_p2 add_ptr41_i2929_sum_fu_149_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_add_constant_loop3_fu_2676</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_add_constant_loop3_fu_2712</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_add_constant_loop3</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2676</ID>
+                    <ID>2712</ID>
                     <BindInstances>add_ln29_fu_174_p2 r_in_V_1_4_fu_212_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_27_fu_2692</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_27_fu_2728</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_27</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2692</ID>
+                    <ID>2728</ID>
                     <BindInstances>empty_fu_87_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_sq_sum_loop4_fu_2700</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_sq_sum_loop4_fu_2736</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_sq_sum_loop4</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2700</ID>
+                    <ID>2736</ID>
                     <InstancesList>
                         <Instance>
                             <InstName>squared_sum_V_1_macply_fu_73</InstName>
@@ -1744,17 +1744,17 @@
                     <BindInstances>add_ln35_fu_99_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_28_fu_2708</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_28_fu_2744</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_28</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2708</ID>
+                    <ID>2744</ID>
                     <BindInstances>empty_fu_87_p2 add_ptr52_i2930_sum_fu_110_p2 empty_65_fu_120_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_sq_sum_loop5_fu_2716</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_sq_sum_loop5_fu_2752</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_sq_sum_loop5</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2716</ID>
+                    <ID>2752</ID>
                     <InstancesList>
                         <Instance>
                             <InstName>err_squared_sum_V_macply_fu_70</InstName>
@@ -1764,38 +1764,38 @@
                             <BindInstances>mul_85s_85s_170_1_1_U56 ap_return</BindInstances>
                         </Instance>
                     </InstancesList>
-                    <BindInstances>add_ln210_fu_96_p2</BindInstances>
+                    <BindInstances>add_ln208_fu_96_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_update_1_fu_2722</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_update_1_fu_2758</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_update_1</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2722</ID>
-                    <BindInstances>add_ln220_fu_104_p2 add_ln859_fu_119_p2 add_ln222_fu_130_p2 yy_loc_V_d0</BindInstances>
+                    <ID>2758</ID>
+                    <BindInstances>add_ln218_fu_104_p2 add_ln859_fu_119_p2 add_ln220_fu_130_p2 yy_loc_V_d0</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_update_2_fu_2731</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_update_2_fu_2767</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_update_2</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2731</ID>
-                    <BindInstances>add_ln231_fu_104_p2 add_ln859_fu_119_p2 add_ln233_fu_130_p2 yy_loc_V_d0</BindInstances>
+                    <ID>2767</ID>
+                    <BindInstances>add_ln229_fu_104_p2 add_ln859_fu_119_p2 add_ln231_fu_130_p2 yy_loc_V_d0</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_last_axi_write_yy_fu_2740</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_last_axi_write_yy_fu_2776</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_last_axi_write_yy</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2740</ID>
-                    <BindInstances>add_ln256_fu_176_p2 tmp_V_fu_215_p2 NZeros_1_fu_281_p2 sub_ln1095_fu_295_p2 lsb_index_fu_301_p2 sub_ln1098_fu_327_p2 add_ln1105_fu_409_p2 sub_ln1106_fu_425_p2 m_1_fu_461_p2</BindInstances>
+                    <ID>2776</ID>
+                    <BindInstances>add_ln254_fu_176_p2 tmp_V_fu_215_p2 NZeros_1_fu_281_p2 sub_ln1095_fu_295_p2 lsb_index_fu_301_p2 sub_ln1098_fu_327_p2 add_ln1105_fu_409_p2 sub_ln1106_fu_425_p2 m_1_fu_461_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_runge_kutta_45_Pipeline_last_axi_write_tt_fu_2749</InstName>
+                    <InstName>grp_runge_kutta_45_Pipeline_last_axi_write_tt_fu_2785</InstName>
                     <ModuleName>runge_kutta_45_Pipeline_last_axi_write_tt</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>2749</ID>
-                    <BindInstances>add_ln259_fu_208_p2 tmp_V_fu_276_p2 NZeros_4_fu_342_p2 sub_ln1095_fu_356_p2 lsb_index_fu_362_p2 sub_ln1098_fu_388_p2 add_ln1105_fu_470_p2 sub_ln1106_fu_486_p2 m_5_fu_522_p2 add_ln260_1_fu_613_p2</BindInstances>
+                    <ID>2785</ID>
+                    <BindInstances>add_ln257_fu_208_p2 tmp_V_fu_276_p2 NZeros_4_fu_342_p2 sub_ln1095_fu_356_p2 lsb_index_fu_362_p2 sub_ln1098_fu_388_p2 add_ln1105_fu_470_p2 sub_ln1106_fu_486_p2 m_5_fu_522_p2 add_ln258_1_fu_613_p2</BindInstances>
                 </Instance>
             </InstancesList>
-            <BindInstances>k_V_U yy_loc_V_U tt_loc_V_U c_V_U e_V_U man_V_2_fu_2889_p2 F2_fu_2909_p2 add_ln616_fu_2921_p2 sub_ln616_fu_2927_p2 man_V_6_fu_3162_p2 F2_1_fu_3182_p2 add_ln616_1_fu_3194_p2 sub_ln616_1_fu_3200_p2 man_V_7_fu_3435_p2 F2_2_fu_3455_p2 add_ln616_2_fu_3467_p2 sub_ln616_2_fu_3473_p2 add_ln151_fu_3786_p2 y_gap_1_fu_3816_p2 add_ln139_fu_3834_p2 add_ln142_fu_3861_p2 cycles_1_fu_3896_p2 h_loc_7_fu_3993_p2 add_ln65_fu_4013_p2 dr_dt_V_0_fu_4037_p2 r_V_fu_4165_p2 ret_V_fu_4086_p2 add_ln172_fu_4243_p2 empty_83_fu_4269_p2 n_fu_4275_p2 add_ln65_2_fu_4338_p2 dr_dt_V_0_1_fu_4362_p2 r_V_2_fu_4444_p2 i_12_fu_4368_p2 add_ln189_fu_4469_p2 add_ln189_1_fu_4484_p2 add_ln189_2_fu_4495_p2 add_ln189_3_fu_4527_p2 add_ln189_4_fu_4544_p2 n_3_fu_4554_p2 add_ln65_1_fu_4650_p2 dr_dt_V_0_2_fu_4674_p2 r_V_3_fu_4781_p2 add_ln203_fu_4846_p2 add_ln203_1_fu_4861_p2 add_ln203_2_fu_4872_p2 add_ln203_3_fu_4904_p2 add_ln203_4_fu_4921_p2 n_4_fu_4931_p2 sub_ln222_fu_4965_p2 grp_fu_2772_p2 sub_ln233_fu_4995_p2 grp_fu_2772_p2 empty_84_fu_5044_p2 y_gap_fu_5300_p2 add_ln256_fu_5348_p2 add405_fu_5387_p2 size</BindInstances>
+            <BindInstances>k_V_U yy_loc_V_U tt_loc_V_U c_V_U e_V_U man_V_2_fu_2925_p2 F2_fu_2945_p2 add_ln616_fu_2957_p2 sub_ln616_fu_2963_p2 man_V_6_fu_3198_p2 F2_1_fu_3218_p2 add_ln616_1_fu_3230_p2 sub_ln616_1_fu_3236_p2 man_V_7_fu_3471_p2 F2_2_fu_3491_p2 add_ln616_2_fu_3503_p2 sub_ln616_2_fu_3509_p2 add_ln149_fu_3822_p2 y_gap_1_fu_3852_p2 add_ln137_fu_3870_p2 add_ln140_fu_3897_p2 cycles_1_fu_3932_p2 h_loc_7_fu_4029_p2 add_ln63_fu_4049_p2 dr_dt_V_0_fu_4073_p2 r_V_fu_4201_p2 ret_V_fu_4122_p2 add_ln170_fu_4279_p2 empty_83_fu_4305_p2 n_fu_4311_p2 add_ln63_2_fu_4374_p2 dr_dt_V_0_1_fu_4398_p2 r_V_2_fu_4480_p2 i_12_fu_4404_p2 add_ln187_fu_4505_p2 add_ln187_1_fu_4520_p2 add_ln187_2_fu_4531_p2 add_ln187_3_fu_4563_p2 add_ln187_4_fu_4586_p2 n_3_fu_4574_p2 add_ln63_1_fu_4686_p2 dr_dt_V_0_2_fu_4710_p2 r_V_3_fu_4817_p2 add_ln201_fu_4882_p2 add_ln201_1_fu_4897_p2 add_ln201_2_fu_4908_p2 add_ln201_3_fu_4940_p2 add_ln201_4_fu_4957_p2 n_4_fu_4967_p2 sub_ln220_fu_5001_p2 grp_fu_2808_p2 sub_ln231_fu_5031_p2 grp_fu_2808_p2 empty_84_fu_5067_p2 y_gap_fu_5336_p2 add_ln254_fu_5384_p2 add405_fu_5423_p2 size</BindInstances>
         </TopModule>
     </RTLDesignHierarchy>
     <ModuleInformation>
@@ -1803,8 +1803,8 @@
             <Name>ap_fixed_base</Name>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <TargetInitiationInterval>4294967295</TargetInitiationInterval>
                     <EstimatedClockPeriod>17.478</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
@@ -1847,39 +1847,39 @@
             </BindNodes>
         </Module>
         <Module>
-            <Name>runge_kutta_45_Pipeline_VITIS_LOOP_121_1</Name>
+            <Name>runge_kutta_45_Pipeline_VITIS_LOOP_119_1</Name>
             <Loops>
-                <VITIS_LOOP_121_1/>
+                <VITIS_LOOP_119_1/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
-                    <EstimatedClockPeriod>36.500</EstimatedClockPeriod>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
+                    <EstimatedClockPeriod>73.000</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>9</Best-caseLatency>
                     <Average-caseLatency>9</Average-caseLatency>
                     <Worst-caseLatency>9</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.450 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.450 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.450 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.900 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.900 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.900 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>9</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <VITIS_LOOP_121_1>
-                        <Name>VITIS_LOOP_121_1</Name>
+                    <VITIS_LOOP_119_1>
+                        <Name>VITIS_LOOP_119_1</Name>
                         <TripCount>6</TripCount>
                         <Latency>7</Latency>
-                        <AbsoluteTimeLatency>0.350 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.700 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>3</PipelineDepth>
                         <PipelineType>yes</PipelineType>
                         <InstanceList>
                             <Instance>ref_tmp1_ap_fixed_base_fu_103</Instance>
                         </InstanceList>
-                    </VITIS_LOOP_121_1>
+                    </VITIS_LOOP_119_1>
                 </SummaryOfLoopLatency>
             </PerformanceEstimates>
             <AreaEstimates>
@@ -1902,7 +1902,7 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_121_1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln121_fu_132_p2" SOURCE="src/runge_kutta_45.cpp:121" URAM="0" VARIABLE="add_ln121"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_119_1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln119_fu_132_p2" SOURCE="src/runge_kutta_45.cpp:119" URAM="0" VARIABLE="add_ln119"/>
             </BindNodes>
         </Module>
         <Module>
@@ -1912,17 +1912,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
-                    <EstimatedClockPeriod>36.500</EstimatedClockPeriod>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
+                    <EstimatedClockPeriod>73.000</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>24579</Best-caseLatency>
                     <Average-caseLatency>24579</Average-caseLatency>
                     <Worst-caseLatency>24579</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>1.229 ms</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>1.229 ms</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>1.229 ms</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>2.458 ms</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>2.458 ms</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>2.458 ms</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>24579</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -1931,7 +1931,7 @@
                         <Name>axi_write_yy</Name>
                         <TripCount>24576</TripCount>
                         <Latency>24577</Latency>
-                        <AbsoluteTimeLatency>1.229 ms</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>2.458 ms</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>3</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -1959,7 +1959,7 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="axi_write_yy" OPTYPE="add" PRAGMA="" RTLNAME="add_ln139_fu_176_p2" SOURCE="src/runge_kutta_45.cpp:139" URAM="0" VARIABLE="add_ln139"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="axi_write_yy" OPTYPE="add" PRAGMA="" RTLNAME="add_ln137_fu_176_p2" SOURCE="src/runge_kutta_45.cpp:137" URAM="0" VARIABLE="add_ln137"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="axi_write_yy" OPTYPE="sub" PRAGMA="" RTLNAME="tmp_V_fu_215_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:1090" URAM="0" VARIABLE="tmp_V"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="axi_write_yy" OPTYPE="add" PRAGMA="" RTLNAME="NZeros_7_fu_281_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h:1269" URAM="0" VARIABLE="NZeros_7"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="axi_write_yy" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln1095_fu_295_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:1095" URAM="0" VARIABLE="sub_ln1095"/>
@@ -1977,17 +1977,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
-                    <EstimatedClockPeriod>36.500</EstimatedClockPeriod>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
+                    <EstimatedClockPeriod>73.000</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>4099</Best-caseLatency>
                     <Average-caseLatency>4099</Average-caseLatency>
                     <Worst-caseLatency>4099</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.205 ms</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.205 ms</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.205 ms</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.410 ms</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.410 ms</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.410 ms</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>4099</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -1996,7 +1996,7 @@
                         <Name>axi_write_tt</Name>
                         <TripCount>4096</TripCount>
                         <Latency>4097</Latency>
-                        <AbsoluteTimeLatency>0.205 ms</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.410 ms</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>3</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -2024,7 +2024,7 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="axi_write_tt" OPTYPE="add" PRAGMA="" RTLNAME="add_ln142_fu_176_p2" SOURCE="src/runge_kutta_45.cpp:142" URAM="0" VARIABLE="add_ln142"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="axi_write_tt" OPTYPE="add" PRAGMA="" RTLNAME="add_ln140_fu_176_p2" SOURCE="src/runge_kutta_45.cpp:140" URAM="0" VARIABLE="add_ln140"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="axi_write_tt" OPTYPE="sub" PRAGMA="" RTLNAME="tmp_V_fu_215_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:1090" URAM="0" VARIABLE="tmp_V"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="axi_write_tt" OPTYPE="add" PRAGMA="" RTLNAME="NZeros_10_fu_281_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h:1269" URAM="0" VARIABLE="NZeros_10"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="axi_write_tt" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln1095_fu_295_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:1095" URAM="0" VARIABLE="sub_ln1095"/>
@@ -2042,17 +2042,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>5.199</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>5</Best-caseLatency>
                     <Average-caseLatency>5</Average-caseLatency>
                     <Worst-caseLatency>5</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.250 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.250 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.250 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.500 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.500 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>5</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -2061,7 +2061,7 @@
                         <Name>Loop 1</Name>
                         <TripCount>3</TripCount>
                         <Latency>3</Latency>
-                        <AbsoluteTimeLatency>0.150 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>2</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -2100,17 +2100,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>6.848</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>5</Best-caseLatency>
                     <Average-caseLatency>5</Average-caseLatency>
                     <Worst-caseLatency>5</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.250 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.250 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.250 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.500 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.500 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>5</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -2119,7 +2119,7 @@
                         <Name>Loop 1</Name>
                         <TripCount>3</TripCount>
                         <Latency>3</Latency>
-                        <AbsoluteTimeLatency>0.150 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>2</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -2159,17 +2159,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>3.899</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>5</Best-caseLatency>
                     <Average-caseLatency>5</Average-caseLatency>
                     <Worst-caseLatency>5</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.250 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.250 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.250 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.500 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.500 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>5</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -2178,7 +2178,7 @@
                         <Name>Loop 1</Name>
                         <TripCount>3</TripCount>
                         <Latency>3</Latency>
-                        <AbsoluteTimeLatency>0.150 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>2</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -2216,17 +2216,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>3.961</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>5</Best-caseLatency>
                     <Average-caseLatency>5</Average-caseLatency>
                     <Worst-caseLatency>5</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.250 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.250 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.250 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.500 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.500 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>5</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -2235,7 +2235,7 @@
                         <Name>Loop 1</Name>
                         <TripCount>3</TripCount>
                         <Latency>3</Latency>
-                        <AbsoluteTimeLatency>0.150 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>2</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -2274,17 +2274,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>7.417</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>5</Best-caseLatency>
                     <Average-caseLatency>5</Average-caseLatency>
                     <Worst-caseLatency>5</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.250 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.250 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.250 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.500 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.500 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>5</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -2293,7 +2293,7 @@
                         <Name>add_constant_loop</Name>
                         <TripCount>3</TripCount>
                         <Latency>3</Latency>
-                        <AbsoluteTimeLatency>0.150 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -2329,8 +2329,8 @@
             <Name>macply</Name>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <TargetInitiationInterval>4294967295</TargetInitiationInterval>
                     <EstimatedClockPeriod>21.366</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
@@ -2377,17 +2377,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>24.661</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>5</Best-caseLatency>
                     <Average-caseLatency>5</Average-caseLatency>
                     <Worst-caseLatency>5</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.250 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.250 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.250 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.500 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.500 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>5</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -2396,7 +2396,7 @@
                         <Name>sq_sum_loop</Name>
                         <TripCount>3</TripCount>
                         <Latency>3</Latency>
-                        <AbsoluteTimeLatency>0.150 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -2436,17 +2436,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>9.679</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>91</Best-caseLatency>
                     <Average-caseLatency>91</Average-caseLatency>
                     <Worst-caseLatency>91</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>4.550 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>4.550 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>4.550 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>9.100 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>9.100 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>9.100 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>91</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -2455,7 +2455,7 @@
                         <Name>sqrt_loop</Name>
                         <TripCount>89</TripCount>
                         <Latency>89</Latency>
-                        <AbsoluteTimeLatency>4.450 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>8.900 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -2491,17 +2491,17 @@
             <Name>division</Name>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>5.071</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>200</Best-caseLatency>
                     <Average-caseLatency>200</Average-caseLatency>
                     <Worst-caseLatency>200</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>10.000 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>10.000 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>10.000 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>20.000 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>20.000 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>20.000 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>200</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -2530,20 +2530,20 @@
             <Name>multiply</Name>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <TargetInitiationInterval>4294967295</TargetInitiationInterval>
-                    <EstimatedClockPeriod>10.338</EstimatedClockPeriod>
+                    <EstimatedClockPeriod>49.289</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>1</Best-caseLatency>
-                    <Average-caseLatency>1</Average-caseLatency>
-                    <Worst-caseLatency>1</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>50.000 ns</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>50.000 ns</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>50.000 ns</Worst-caseRealTimeLatency>
+                    <Best-caseLatency>0</Best-caseLatency>
+                    <Average-caseLatency>0</Average-caseLatency>
+                    <Worst-caseLatency>0</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0 ns</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0 ns</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0 ns</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>1</PipelineInitiationInterval>
-                    <PipelineDepth>2</PipelineDepth>
+                    <PipelineDepth>1</PipelineDepth>
                     <PipelineType>yes</PipelineType>
                 </SummaryOfOverallLatency>
             </PerformanceEstimates>
@@ -2552,12 +2552,12 @@
                     <DSP>46</DSP>
                     <AVAIL_DSP>220</AVAIL_DSP>
                     <UTIL_DSP>20</UTIL_DSP>
-                    <FF>539</FF>
+                    <FF>0</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
-                    <UTIL_FF>~0</UTIL_FF>
-                    <LUT>209</LUT>
+                    <UTIL_FF>0</UTIL_FF>
+                    <LUT>14833</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
-                    <UTIL_LUT>~0</UTIL_LUT>
+                    <UTIL_LUT>27</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
                     <AVAIL_BRAM>280</AVAIL_BRAM>
                     <UTIL_BRAM>0</UTIL_BRAM>
@@ -2567,7 +2567,7 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="46" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_177s_177s_287_2_0_U72" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:1319" URAM="0" VARIABLE="r_V"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="46" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_177s_177s_287_1_1_U72" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:1319" URAM="0" VARIABLE="r_V"/>
             </BindNodes>
         </Module>
         <Module>
@@ -2577,17 +2577,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>4.961</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>5</Best-caseLatency>
                     <Average-caseLatency>5</Average-caseLatency>
                     <Worst-caseLatency>5</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.250 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.250 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.250 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.500 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.500 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>5</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -2596,7 +2596,7 @@
                         <Name>Loop 1</Name>
                         <TripCount>3</TripCount>
                         <Latency>3</Latency>
-                        <AbsoluteTimeLatency>0.150 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -2634,17 +2634,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>4.961</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>5</Best-caseLatency>
                     <Average-caseLatency>5</Average-caseLatency>
                     <Worst-caseLatency>5</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.250 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.250 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.250 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.500 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.500 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>5</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -2653,7 +2653,7 @@
                         <Name>Loop 1</Name>
                         <TripCount>3</TripCount>
                         <Latency>3</Latency>
-                        <AbsoluteTimeLatency>0.150 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -2692,8 +2692,8 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <TargetInitiationInterval>4294967295</TargetInitiationInterval>
                     <EstimatedClockPeriod>26.208</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
@@ -2701,9 +2701,9 @@
                     <Best-caseLatency>3</Best-caseLatency>
                     <Average-caseLatency>4</Average-caseLatency>
                     <Worst-caseLatency>7</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.150 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.200 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.350 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.300 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.400 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.700 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>3 ~ 7</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -2717,7 +2717,7 @@
                             </range>
                         </TripCount>
                         <Latency>1 ~ 5</Latency>
-                        <AbsoluteTimeLatency>50.000 ns ~ 0.250 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.100 us ~ 0.500 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>2</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -2747,8 +2747,8 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="k_inner" OPTYPE="add" PRAGMA="" RTLNAME="add_ln168_fu_142_p2" SOURCE="src/runge_kutta_45.cpp:168" URAM="0" VARIABLE="add_ln168"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="k_inner" OPTYPE="add" PRAGMA="" RTLNAME="add_ln172_1_fu_152_p2" SOURCE="src/runge_kutta_45.cpp:172" URAM="0" VARIABLE="add_ln172_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="k_inner" OPTYPE="add" PRAGMA="" RTLNAME="add_ln166_fu_142_p2" SOURCE="src/runge_kutta_45.cpp:166" URAM="0" VARIABLE="add_ln166"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="k_inner" OPTYPE="add" PRAGMA="" RTLNAME="add_ln170_1_fu_152_p2" SOURCE="src/runge_kutta_45.cpp:170" URAM="0" VARIABLE="add_ln170_1"/>
                 <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="" RTLNAME="A_U" SOURCE="" URAM="0" VARIABLE="A"/>
             </BindNodes>
         </Module>
@@ -2759,17 +2759,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>5.199</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>5</Best-caseLatency>
                     <Average-caseLatency>5</Average-caseLatency>
                     <Worst-caseLatency>5</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.250 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.250 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.250 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.500 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.500 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>5</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -2778,7 +2778,7 @@
                         <Name>Loop 1</Name>
                         <TripCount>3</TripCount>
                         <Latency>3</Latency>
-                        <AbsoluteTimeLatency>0.150 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>2</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -2817,17 +2817,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>6.848</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>5</Best-caseLatency>
                     <Average-caseLatency>5</Average-caseLatency>
                     <Worst-caseLatency>5</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.250 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.250 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.250 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.500 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.500 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>5</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -2836,7 +2836,7 @@
                         <Name>Loop 1</Name>
                         <TripCount>3</TripCount>
                         <Latency>3</Latency>
-                        <AbsoluteTimeLatency>0.150 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>2</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -2876,17 +2876,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>3.899</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>5</Best-caseLatency>
                     <Average-caseLatency>5</Average-caseLatency>
                     <Worst-caseLatency>5</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.250 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.250 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.250 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.500 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.500 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>5</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -2895,7 +2895,7 @@
                         <Name>Loop 1</Name>
                         <TripCount>3</TripCount>
                         <Latency>3</Latency>
-                        <AbsoluteTimeLatency>0.150 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>2</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -2933,17 +2933,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>3.961</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>5</Best-caseLatency>
                     <Average-caseLatency>5</Average-caseLatency>
                     <Worst-caseLatency>5</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.250 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.250 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.250 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.500 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.500 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>5</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -2952,7 +2952,7 @@
                         <Name>Loop 1</Name>
                         <TripCount>3</TripCount>
                         <Latency>3</Latency>
-                        <AbsoluteTimeLatency>0.150 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>2</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -2991,17 +2991,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>7.417</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>5</Best-caseLatency>
                     <Average-caseLatency>5</Average-caseLatency>
                     <Worst-caseLatency>5</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.250 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.250 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.250 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.500 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.500 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>5</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -3010,7 +3010,7 @@
                         <Name>add_constant_loop</Name>
                         <TripCount>3</TripCount>
                         <Latency>3</Latency>
-                        <AbsoluteTimeLatency>0.150 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -3049,17 +3049,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>24.661</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>5</Best-caseLatency>
                     <Average-caseLatency>5</Average-caseLatency>
                     <Worst-caseLatency>5</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.250 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.250 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.250 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.500 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.500 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>5</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -3068,7 +3068,7 @@
                         <Name>sq_sum_loop</Name>
                         <TripCount>3</TripCount>
                         <Latency>3</Latency>
-                        <AbsoluteTimeLatency>0.150 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -3108,17 +3108,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>5.079</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>5</Best-caseLatency>
                     <Average-caseLatency>5</Average-caseLatency>
                     <Worst-caseLatency>5</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.250 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.250 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.250 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.500 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.500 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>5</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -3127,7 +3127,7 @@
                         <Name>Loop 1</Name>
                         <TripCount>3</TripCount>
                         <Latency>3</Latency>
-                        <AbsoluteTimeLatency>0.150 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -3166,17 +3166,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>6.729</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>5</Best-caseLatency>
                     <Average-caseLatency>5</Average-caseLatency>
                     <Worst-caseLatency>5</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.250 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.250 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.250 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.500 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.500 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>5</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -3185,7 +3185,7 @@
                         <Name>Loop 1</Name>
                         <TripCount>3</TripCount>
                         <Latency>3</Latency>
-                        <AbsoluteTimeLatency>0.150 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -3225,17 +3225,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>5.199</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>5</Best-caseLatency>
                     <Average-caseLatency>5</Average-caseLatency>
                     <Worst-caseLatency>5</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.250 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.250 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.250 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.500 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.500 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>5</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -3244,7 +3244,7 @@
                         <Name>Loop 1</Name>
                         <TripCount>3</TripCount>
                         <Latency>3</Latency>
-                        <AbsoluteTimeLatency>0.150 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>2</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -3283,17 +3283,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>6.848</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>5</Best-caseLatency>
                     <Average-caseLatency>5</Average-caseLatency>
                     <Worst-caseLatency>5</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.250 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.250 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.250 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.500 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.500 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>5</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -3302,7 +3302,7 @@
                         <Name>Loop 1</Name>
                         <TripCount>3</TripCount>
                         <Latency>3</Latency>
-                        <AbsoluteTimeLatency>0.150 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>2</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -3342,17 +3342,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>3.899</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>5</Best-caseLatency>
                     <Average-caseLatency>5</Average-caseLatency>
                     <Worst-caseLatency>5</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.250 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.250 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.250 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.500 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.500 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>5</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -3361,7 +3361,7 @@
                         <Name>Loop 1</Name>
                         <TripCount>3</TripCount>
                         <Latency>3</Latency>
-                        <AbsoluteTimeLatency>0.150 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>2</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -3399,17 +3399,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>3.961</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>5</Best-caseLatency>
                     <Average-caseLatency>5</Average-caseLatency>
                     <Worst-caseLatency>5</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.250 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.250 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.250 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.500 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.500 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>5</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -3418,7 +3418,7 @@
                         <Name>Loop 1</Name>
                         <TripCount>3</TripCount>
                         <Latency>3</Latency>
-                        <AbsoluteTimeLatency>0.150 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>2</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -3457,17 +3457,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>7.417</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>5</Best-caseLatency>
                     <Average-caseLatency>5</Average-caseLatency>
                     <Worst-caseLatency>5</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.250 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.250 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.250 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.500 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.500 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>5</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -3476,7 +3476,7 @@
                         <Name>add_constant_loop</Name>
                         <TripCount>3</TripCount>
                         <Latency>3</Latency>
-                        <AbsoluteTimeLatency>0.150 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -3515,17 +3515,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>24.661</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>5</Best-caseLatency>
                     <Average-caseLatency>5</Average-caseLatency>
                     <Worst-caseLatency>5</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.250 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.250 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.250 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.500 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.500 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>5</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -3534,7 +3534,7 @@
                         <Name>sq_sum_loop</Name>
                         <TripCount>3</TripCount>
                         <Latency>3</Latency>
-                        <AbsoluteTimeLatency>0.150 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -3574,17 +3574,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>4.961</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>5</Best-caseLatency>
                     <Average-caseLatency>5</Average-caseLatency>
                     <Worst-caseLatency>5</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.250 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.250 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.250 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.500 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.500 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>5</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -3593,7 +3593,7 @@
                         <Name>Loop 1</Name>
                         <TripCount>3</TripCount>
                         <Latency>3</Latency>
-                        <AbsoluteTimeLatency>0.150 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -3631,17 +3631,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>6.729</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>5</Best-caseLatency>
                     <Average-caseLatency>5</Average-caseLatency>
                     <Worst-caseLatency>5</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.250 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.250 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.250 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.500 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.500 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>5</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -3650,7 +3650,7 @@
                         <Name>Loop 1</Name>
                         <TripCount>3</TripCount>
                         <Latency>3</Latency>
-                        <AbsoluteTimeLatency>0.150 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -3690,17 +3690,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>26.208</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>8</Best-caseLatency>
                     <Average-caseLatency>8</Average-caseLatency>
                     <Worst-caseLatency>8</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.400 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.400 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.400 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.800 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.800 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.800 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>8</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -3709,7 +3709,7 @@
                         <Name>sq_sum_loop</Name>
                         <TripCount>6</TripCount>
                         <Latency>6</Latency>
-                        <AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.600 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>2</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -3739,7 +3739,7 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="sq_sum_loop" OPTYPE="add" PRAGMA="" RTLNAME="add_ln210_fu_96_p2" SOURCE="src/runge_kutta_45.cpp:210" URAM="0" VARIABLE="add_ln210"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="sq_sum_loop" OPTYPE="add" PRAGMA="" RTLNAME="add_ln208_fu_96_p2" SOURCE="src/runge_kutta_45.cpp:208" URAM="0" VARIABLE="add_ln208"/>
             </BindNodes>
         </Module>
         <Module>
@@ -3749,17 +3749,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>10.629</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>8</Best-caseLatency>
                     <Average-caseLatency>8</Average-caseLatency>
                     <Worst-caseLatency>8</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.400 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.400 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.400 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.800 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.800 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.800 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>8</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -3768,7 +3768,7 @@
                         <Name>update_1</Name>
                         <TripCount>6</TripCount>
                         <Latency>6</Latency>
-                        <AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.600 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>2</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -3796,9 +3796,9 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln220_fu_104_p2" SOURCE="src/runge_kutta_45.cpp:220" URAM="0" VARIABLE="add_ln220"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln218_fu_104_p2" SOURCE="src/runge_kutta_45.cpp:218" URAM="0" VARIABLE="add_ln218"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln859_fu_119_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:859" URAM="0" VARIABLE="add_ln859"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln222_fu_130_p2" SOURCE="src/runge_kutta_45.cpp:222" URAM="0" VARIABLE="add_ln222"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln220_fu_130_p2" SOURCE="src/runge_kutta_45.cpp:220" URAM="0" VARIABLE="add_ln220"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_1" OPTYPE="add" PRAGMA="" RTLNAME="yy_loc_V_d0" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:859" URAM="0" VARIABLE="add_ln859_2"/>
             </BindNodes>
         </Module>
@@ -3809,17 +3809,17 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
                     <EstimatedClockPeriod>10.629</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>8</Best-caseLatency>
                     <Average-caseLatency>8</Average-caseLatency>
                     <Worst-caseLatency>8</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.400 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.400 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.400 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>0.800 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.800 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.800 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>8</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -3828,7 +3828,7 @@
                         <Name>update_2</Name>
                         <TripCount>6</TripCount>
                         <Latency>6</Latency>
-                        <AbsoluteTimeLatency>0.300 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>0.600 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>2</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -3856,9 +3856,9 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln231_fu_104_p2" SOURCE="src/runge_kutta_45.cpp:231" URAM="0" VARIABLE="add_ln231"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln229_fu_104_p2" SOURCE="src/runge_kutta_45.cpp:229" URAM="0" VARIABLE="add_ln229"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln859_fu_119_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:859" URAM="0" VARIABLE="add_ln859"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln233_fu_130_p2" SOURCE="src/runge_kutta_45.cpp:233" URAM="0" VARIABLE="add_ln233"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln231_fu_130_p2" SOURCE="src/runge_kutta_45.cpp:231" URAM="0" VARIABLE="add_ln231"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_2" OPTYPE="add" PRAGMA="" RTLNAME="yy_loc_V_d0" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:859" URAM="0" VARIABLE="add_ln859_1"/>
             </BindNodes>
         </Module>
@@ -3869,9 +3869,9 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
-                    <EstimatedClockPeriod>36.500</EstimatedClockPeriod>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
+                    <EstimatedClockPeriod>73.000</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>undef</Best-caseLatency>
@@ -3916,7 +3916,7 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="last_axi_write_yy" OPTYPE="add" PRAGMA="" RTLNAME="add_ln256_fu_176_p2" SOURCE="src/runge_kutta_45.cpp:256" URAM="0" VARIABLE="add_ln256"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="last_axi_write_yy" OPTYPE="add" PRAGMA="" RTLNAME="add_ln254_fu_176_p2" SOURCE="src/runge_kutta_45.cpp:254" URAM="0" VARIABLE="add_ln254"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="last_axi_write_yy" OPTYPE="sub" PRAGMA="" RTLNAME="tmp_V_fu_215_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:1090" URAM="0" VARIABLE="tmp_V"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="last_axi_write_yy" OPTYPE="add" PRAGMA="" RTLNAME="NZeros_1_fu_281_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h:1269" URAM="0" VARIABLE="NZeros_1"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="last_axi_write_yy" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln1095_fu_295_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:1095" URAM="0" VARIABLE="sub_ln1095"/>
@@ -3934,9 +3934,9 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
-                    <EstimatedClockPeriod>36.500</EstimatedClockPeriod>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
+                    <EstimatedClockPeriod>73.000</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>undef</Best-caseLatency>
@@ -3981,7 +3981,7 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="last_axi_write_tt" OPTYPE="add" PRAGMA="" RTLNAME="add_ln259_fu_208_p2" SOURCE="src/runge_kutta_45.cpp:259" URAM="0" VARIABLE="add_ln259"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="last_axi_write_tt" OPTYPE="add" PRAGMA="" RTLNAME="add_ln257_fu_208_p2" SOURCE="src/runge_kutta_45.cpp:257" URAM="0" VARIABLE="add_ln257"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="last_axi_write_tt" OPTYPE="sub" PRAGMA="" RTLNAME="tmp_V_fu_276_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:1090" URAM="0" VARIABLE="tmp_V"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="last_axi_write_tt" OPTYPE="add" PRAGMA="" RTLNAME="NZeros_4_fu_342_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h:1269" URAM="0" VARIABLE="NZeros_4"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="last_axi_write_tt" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln1095_fu_356_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:1095" URAM="0" VARIABLE="sub_ln1095"/>
@@ -3990,7 +3990,7 @@
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="last_axi_write_tt" OPTYPE="add" PRAGMA="" RTLNAME="add_ln1105_fu_470_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:1105" URAM="0" VARIABLE="add_ln1105"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="last_axi_write_tt" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln1106_fu_486_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:1106" URAM="0" VARIABLE="sub_ln1106"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="last_axi_write_tt" OPTYPE="add" PRAGMA="" RTLNAME="m_5_fu_522_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:1112" URAM="0" VARIABLE="m_5"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="last_axi_write_tt" OPTYPE="add" PRAGMA="" RTLNAME="add_ln260_1_fu_613_p2" SOURCE="src/runge_kutta_45.cpp:260" URAM="0" VARIABLE="add_ln260_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="last_axi_write_tt" OPTYPE="add" PRAGMA="" RTLNAME="add_ln258_1_fu_613_p2" SOURCE="src/runge_kutta_45.cpp:258" URAM="0" VARIABLE="add_ln258_1"/>
             </BindNodes>
         </Module>
         <Module>
@@ -4009,9 +4009,9 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>50.00</TargetClockPeriod>
-                    <ClockUncertainty>13.50</ClockUncertainty>
-                    <EstimatedClockPeriod>36.500</EstimatedClockPeriod>
+                    <TargetClockPeriod>100.00</TargetClockPeriod>
+                    <ClockUncertainty>27.00</ClockUncertainty>
+                    <EstimatedClockPeriod>73.000</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>undef</Best-caseLatency>
@@ -4032,133 +4032,133 @@
                                 <max>50000</max>
                             </range>
                         </TripCount>
-                        <Latency>66 ~ 1706100066</Latency>
-                        <AbsoluteTimeLatency>3.300 us ~ 85.305 sec</AbsoluteTimeLatency>
+                        <Latency>64 ~ 1703500064</Latency>
+                        <AbsoluteTimeLatency>6.400 us ~ 170.350 sec</AbsoluteTimeLatency>
                         <IterationLatency>
                             <range>
-                                <min>9408</min>
-                                <max>34122</max>
+                                <min>9356</min>
+                                <max>34070</max>
                             </range>
                         </IterationLatency>
-                        <PipelineDepth>9408 ~ 34122</PipelineDepth>
+                        <PipelineDepth>9356 ~ 34070</PipelineDepth>
                         <PipelineType>no</PipelineType>
                         <InstanceList>
-                            <Instance>grp_runge_kutta_45_Pipeline_axi_write_yy_fu_2389</Instance>
-                            <Instance>grp_runge_kutta_45_Pipeline_axi_write_tt_fu_2397</Instance>
-                            <Instance>grp_runge_kutta_45_Pipeline_4_fu_2405</Instance>
-                            <Instance>grp_runge_kutta_45_Pipeline_6_fu_2418</Instance>
-                            <Instance>grp_runge_kutta_45_Pipeline_5_fu_2429</Instance>
-                            <Instance>grp_runge_kutta_45_Pipeline_7_fu_2442</Instance>
-                            <Instance>grp_runge_kutta_45_Pipeline_10_fu_2469</Instance>
-                            <Instance>grp_runge_kutta_45_Pipeline_11_fu_2496</Instance>
-                            <Instance>grp_runge_kutta_45_Pipeline_21_fu_2628</Instance>
-                            <Instance>grp_runge_kutta_45_Pipeline_23_fu_2641</Instance>
-                            <Instance>grp_runge_kutta_45_Pipeline_22_fu_2652</Instance>
-                            <Instance>grp_runge_kutta_45_Pipeline_24_fu_2665</Instance>
-                            <Instance>grp_runge_kutta_45_Pipeline_27_fu_2692</Instance>
-                            <Instance>grp_runge_kutta_45_Pipeline_28_fu_2708</Instance>
-                            <Instance>grp_runge_kutta_45_Pipeline_sq_sum_loop5_fu_2716</Instance>
-                            <Instance>grp_runge_kutta_45_Pipeline_update_1_fu_2722</Instance>
-                            <Instance>grp_runge_kutta_45_Pipeline_update_2_fu_2731</Instance>
+                            <Instance>grp_runge_kutta_45_Pipeline_axi_write_yy_fu_2425</Instance>
+                            <Instance>grp_runge_kutta_45_Pipeline_axi_write_tt_fu_2433</Instance>
+                            <Instance>grp_runge_kutta_45_Pipeline_4_fu_2441</Instance>
+                            <Instance>grp_runge_kutta_45_Pipeline_6_fu_2454</Instance>
+                            <Instance>grp_runge_kutta_45_Pipeline_5_fu_2465</Instance>
+                            <Instance>grp_runge_kutta_45_Pipeline_7_fu_2478</Instance>
+                            <Instance>grp_runge_kutta_45_Pipeline_10_fu_2505</Instance>
+                            <Instance>grp_runge_kutta_45_Pipeline_11_fu_2532</Instance>
+                            <Instance>grp_runge_kutta_45_Pipeline_21_fu_2664</Instance>
+                            <Instance>grp_runge_kutta_45_Pipeline_23_fu_2677</Instance>
+                            <Instance>grp_runge_kutta_45_Pipeline_22_fu_2688</Instance>
+                            <Instance>grp_runge_kutta_45_Pipeline_24_fu_2701</Instance>
+                            <Instance>grp_runge_kutta_45_Pipeline_27_fu_2728</Instance>
+                            <Instance>grp_runge_kutta_45_Pipeline_28_fu_2744</Instance>
+                            <Instance>grp_runge_kutta_45_Pipeline_sq_sum_loop5_fu_2752</Instance>
+                            <Instance>grp_runge_kutta_45_Pipeline_update_1_fu_2758</Instance>
+                            <Instance>grp_runge_kutta_45_Pipeline_update_2_fu_2767</Instance>
                         </InstanceList>
                         <update_vel_pos>
                             <Name>update_vel_pos</Name>
                             <TripCount>3</TripCount>
-                            <Latency>1254</Latency>
-                            <AbsoluteTimeLatency>62.700 us</AbsoluteTimeLatency>
-                            <IterationLatency>418</IterationLatency>
-                            <PipelineDepth>418</PipelineDepth>
+                            <Latency>1251</Latency>
+                            <AbsoluteTimeLatency>0.125 ms</AbsoluteTimeLatency>
+                            <IterationLatency>417</IterationLatency>
+                            <PipelineDepth>417</PipelineDepth>
                             <PipelineType>no</PipelineType>
                             <InstanceList>
-                                <Instance>grp_multiply_fu_2328</Instance>
-                                <Instance>grp_runge_kutta_45_Pipeline_add_constant_loop_fu_2453</Instance>
-                                <Instance>grp_runge_kutta_45_Pipeline_sq_sum_loop_fu_2477</Instance>
-                                <Instance>grp_fxp_sqrt_89_34_177_67_s_fu_2485</Instance>
-                                <Instance>grp_division_fu_2490</Instance>
+                                <Instance>grp_multiply_fu_2362</Instance>
+                                <Instance>grp_runge_kutta_45_Pipeline_add_constant_loop_fu_2489</Instance>
+                                <Instance>grp_runge_kutta_45_Pipeline_sq_sum_loop_fu_2513</Instance>
+                                <Instance>grp_fxp_sqrt_89_34_177_67_s_fu_2521</Instance>
+                                <Instance>grp_division_fu_2526</Instance>
                             </InstanceList>
                         </update_vel_pos>
                         <k_outer>
                             <Name>k_outer</Name>
                             <TripCount>5</TripCount>
-                            <Latency>6644 ~ 6764</Latency>
-                            <AbsoluteTimeLatency>0.332 ms ~ 0.338 ms</AbsoluteTimeLatency>
+                            <Latency>6599 ~ 6719</Latency>
+                            <AbsoluteTimeLatency>0.660 ms ~ 0.672 ms</AbsoluteTimeLatency>
                             <IterationLatency>
                                 <range>
-                                    <min>1329</min>
-                                    <max>1353</max>
+                                    <min>1320</min>
+                                    <max>1344</max>
                                 </range>
                             </IterationLatency>
-                            <PipelineDepth>1329 ~ 1353</PipelineDepth>
+                            <PipelineDepth>1320 ~ 1344</PipelineDepth>
                             <PipelineType>no</PipelineType>
                             <InstanceList>
-                                <Instance>grp_runge_kutta_45_Pipeline_13_fu_2517</Instance>
-                                <Instance>grp_runge_kutta_45_Pipeline_15_fu_2533</Instance>
-                                <Instance>grp_runge_kutta_45_Pipeline_14_fu_2547</Instance>
-                                <Instance>grp_runge_kutta_45_Pipeline_16_fu_2563</Instance>
-                                <Instance>grp_runge_kutta_45_Pipeline_19_fu_2596</Instance>
-                                <Instance>grp_runge_kutta_45_Pipeline_20_fu_2616</Instance>
+                                <Instance>grp_runge_kutta_45_Pipeline_13_fu_2553</Instance>
+                                <Instance>grp_runge_kutta_45_Pipeline_15_fu_2569</Instance>
+                                <Instance>grp_runge_kutta_45_Pipeline_14_fu_2583</Instance>
+                                <Instance>grp_runge_kutta_45_Pipeline_16_fu_2599</Instance>
+                                <Instance>grp_runge_kutta_45_Pipeline_19_fu_2632</Instance>
+                                <Instance>grp_runge_kutta_45_Pipeline_20_fu_2652</Instance>
                             </InstanceList>
                             <k_middle>
                                 <Name>k_middle</Name>
                                 <TripCount>6</TripCount>
-                                <Latency>41 ~ 65</Latency>
-                                <AbsoluteTimeLatency>2.050 us ~ 3.250 us</AbsoluteTimeLatency>
+                                <Latency>35 ~ 59</Latency>
+                                <AbsoluteTimeLatency>3.500 us ~ 5.900 us</AbsoluteTimeLatency>
                                 <IterationLatency>
                                     <range>
-                                        <min>7</min>
-                                        <max>11</max>
+                                        <min>6</min>
+                                        <max>10</max>
                                     </range>
                                 </IterationLatency>
-                                <PipelineDepth>7 ~ 11</PipelineDepth>
+                                <PipelineDepth>6 ~ 10</PipelineDepth>
                                 <PipelineType>no</PipelineType>
                                 <InstanceList>
-                                    <Instance>grp_runge_kutta_45_Pipeline_k_inner_fu_2504</Instance>
+                                    <Instance>grp_runge_kutta_45_Pipeline_k_inner_fu_2540</Instance>
                                 </InstanceList>
                             </k_middle>
                             <update_vel_pos>
                                 <Name>update_vel_pos</Name>
                                 <TripCount>3</TripCount>
-                                <Latency>1257</Latency>
-                                <AbsoluteTimeLatency>62.850 us</AbsoluteTimeLatency>
-                                <IterationLatency>419</IterationLatency>
-                                <PipelineDepth>419</PipelineDepth>
+                                <Latency>1254</Latency>
+                                <AbsoluteTimeLatency>0.125 ms</AbsoluteTimeLatency>
+                                <IterationLatency>418</IterationLatency>
+                                <PipelineDepth>418</PipelineDepth>
                                 <PipelineType>no</PipelineType>
                                 <InstanceList>
-                                    <Instance>grp_runge_kutta_45_Pipeline_add_constant_loop1_fu_2577</Instance>
-                                    <Instance>grp_runge_kutta_45_Pipeline_sq_sum_loop2_fu_2608</Instance>
+                                    <Instance>grp_runge_kutta_45_Pipeline_add_constant_loop1_fu_2613</Instance>
+                                    <Instance>grp_runge_kutta_45_Pipeline_sq_sum_loop2_fu_2644</Instance>
                                 </InstanceList>
                             </update_vel_pos>
                         </k_outer>
                         <y_new_outer>
                             <Name>y_new_outer</Name>
                             <TripCount>6</TripCount>
-                            <Latency>43</Latency>
-                            <AbsoluteTimeLatency>2.150 us</AbsoluteTimeLatency>
+                            <Latency>42</Latency>
+                            <AbsoluteTimeLatency>4.200 us</AbsoluteTimeLatency>
                             <PipelineII>7</PipelineII>
-                            <PipelineDepth>9</PipelineDepth>
+                            <PipelineDepth>8</PipelineDepth>
                             <PipelineType>yes</PipelineType>
                             <InstanceList>
-                                <Instance>grp_macply_fu_1911</Instance>
+                                <Instance>grp_macply_fu_1913</Instance>
                             </InstanceList>
                         </y_new_outer>
                         <update_vel_pos>
                             <Name>update_vel_pos</Name>
                             <TripCount>3</TripCount>
-                            <Latency>1254</Latency>
-                            <AbsoluteTimeLatency>62.700 us</AbsoluteTimeLatency>
-                            <IterationLatency>418</IterationLatency>
-                            <PipelineDepth>418</PipelineDepth>
+                            <Latency>1251</Latency>
+                            <AbsoluteTimeLatency>0.125 ms</AbsoluteTimeLatency>
+                            <IterationLatency>417</IterationLatency>
+                            <PipelineDepth>417</PipelineDepth>
                             <PipelineType>no</PipelineType>
                             <InstanceList>
-                                <Instance>grp_runge_kutta_45_Pipeline_add_constant_loop3_fu_2676</Instance>
-                                <Instance>grp_runge_kutta_45_Pipeline_sq_sum_loop4_fu_2700</Instance>
+                                <Instance>grp_runge_kutta_45_Pipeline_add_constant_loop3_fu_2712</Instance>
+                                <Instance>grp_runge_kutta_45_Pipeline_sq_sum_loop4_fu_2736</Instance>
                             </InstanceList>
                         </update_vel_pos>
                         <err_outer>
                             <Name>err_outer</Name>
                             <TripCount>6</TripCount>
                             <Latency>43</Latency>
-                            <AbsoluteTimeLatency>2.150 us</AbsoluteTimeLatency>
+                            <AbsoluteTimeLatency>4.300 us</AbsoluteTimeLatency>
                             <PipelineII>7</PipelineII>
                             <PipelineDepth>9</PipelineDepth>
                             <PipelineType>yes</PipelineType>
@@ -4175,76 +4175,76 @@
                     <DSP>61</DSP>
                     <AVAIL_DSP>220</AVAIL_DSP>
                     <UTIL_DSP>27</UTIL_DSP>
-                    <FF>23118</FF>
+                    <FF>22572</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
                     <UTIL_FF>21</UTIL_FF>
-                    <LUT>28087</LUT>
+                    <LUT>42684</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
-                    <UTIL_LUT>52</UTIL_LUT>
+                    <UTIL_LUT>80</UTIL_LUT>
                     <URAM>0</URAM>
                     <AVAIL_URAM>0</AVAIL_URAM>
                     <UTIL_URAM>0</UTIL_URAM>
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="storage" BRAM="5" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="k_V_U" SOURCE="src/runge_kutta_45.cpp:115" URAM="0" VARIABLE="k_V"/>
-                <BindNode BINDTYPE="storage" BRAM="170" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="yy_loc_V_U" SOURCE="src/runge_kutta_45.cpp:118" URAM="0" VARIABLE="yy_loc_V"/>
-                <BindNode BINDTYPE="storage" BRAM="20" BUNDLEDNAME="" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="tt_loc_V_U" SOURCE="src/runge_kutta_45.cpp:119" URAM="0" VARIABLE="tt_loc_V"/>
-                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="c_V_U" SOURCE="src/runge_kutta_45.cpp:158" URAM="0" VARIABLE="c_V"/>
-                <BindNode BINDTYPE="storage" BRAM="10" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="e_V_U" SOURCE="src/runge_kutta_45.cpp:196" URAM="0" VARIABLE="e_V"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="man_V_2_fu_2889_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h:501" URAM="0" VARIABLE="man_V_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="F2_fu_2909_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:610" URAM="0" VARIABLE="F2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln616_fu_2921_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:616" URAM="0" VARIABLE="add_ln616"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln616_fu_2927_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:616" URAM="0" VARIABLE="sub_ln616"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="man_V_6_fu_3162_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h:501" URAM="0" VARIABLE="man_V_6"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="F2_1_fu_3182_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:610" URAM="0" VARIABLE="F2_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln616_1_fu_3194_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:616" URAM="0" VARIABLE="add_ln616_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln616_1_fu_3200_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:616" URAM="0" VARIABLE="sub_ln616_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="man_V_7_fu_3435_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h:501" URAM="0" VARIABLE="man_V_7"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="F2_2_fu_3455_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:610" URAM="0" VARIABLE="F2_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln616_2_fu_3467_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:616" URAM="0" VARIABLE="add_ln616_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln616_2_fu_3473_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:616" URAM="0" VARIABLE="sub_ln616_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="main_loop" OPTYPE="add" PRAGMA="" RTLNAME="add_ln151_fu_3786_p2" SOURCE="src/runge_kutta_45.cpp:151" URAM="0" VARIABLE="add_ln151"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="main_loop" OPTYPE="sub" PRAGMA="" RTLNAME="y_gap_1_fu_3816_p2" SOURCE="src/runge_kutta_45.cpp:137" URAM="0" VARIABLE="y_gap_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="main_loop" OPTYPE="add" PRAGMA="" RTLNAME="add_ln139_fu_3834_p2" SOURCE="src/runge_kutta_45.cpp:139" URAM="0" VARIABLE="add_ln139"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="main_loop" OPTYPE="add" PRAGMA="" RTLNAME="add_ln142_fu_3861_p2" SOURCE="src/runge_kutta_45.cpp:142" URAM="0" VARIABLE="add_ln142"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="main_loop" OPTYPE="add" PRAGMA="" RTLNAME="cycles_1_fu_3896_p2" SOURCE="src/runge_kutta_45.cpp:147" URAM="0" VARIABLE="cycles_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="main_loop" OPTYPE="sub" PRAGMA="" RTLNAME="h_loc_7_fu_3993_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:859" URAM="0" VARIABLE="h_loc_7"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_vel_pos" OPTYPE="add" PRAGMA="" RTLNAME="add_ln65_fu_4013_p2" SOURCE="src/runge_kutta_45.cpp:65" URAM="0" VARIABLE="add_ln65"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_vel_pos" OPTYPE="add" PRAGMA="" RTLNAME="dr_dt_V_0_fu_4037_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:859" URAM="0" VARIABLE="dr_dt_V_0"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_vel_pos" OPTYPE="sub" PRAGMA="" RTLNAME="r_V_fu_4165_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:1454" URAM="0" VARIABLE="r_V"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="main_loop" OPTYPE="add" PRAGMA="" RTLNAME="ret_V_fu_4086_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:1393" URAM="0" VARIABLE="ret_V"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="k_outer" OPTYPE="add" PRAGMA="" RTLNAME="add_ln172_fu_4243_p2" SOURCE="src/runge_kutta_45.cpp:172" URAM="0" VARIABLE="add_ln172"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="k_outer" OPTYPE="sub" PRAGMA="" RTLNAME="empty_83_fu_4269_p2" SOURCE="src/runge_kutta_45.cpp:162" URAM="0" VARIABLE="empty_83"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="k_middle" OPTYPE="add" PRAGMA="" RTLNAME="n_fu_4275_p2" SOURCE="src/runge_kutta_45.cpp:164" URAM="0" VARIABLE="n"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_vel_pos" OPTYPE="add" PRAGMA="" RTLNAME="add_ln65_2_fu_4338_p2" SOURCE="src/runge_kutta_45.cpp:65" URAM="0" VARIABLE="add_ln65_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_vel_pos" OPTYPE="add" PRAGMA="" RTLNAME="dr_dt_V_0_1_fu_4362_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:859" URAM="0" VARIABLE="dr_dt_V_0_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_vel_pos" OPTYPE="sub" PRAGMA="" RTLNAME="r_V_2_fu_4444_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:1454" URAM="0" VARIABLE="r_V_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="k_outer" OPTYPE="add" PRAGMA="" RTLNAME="i_12_fu_4368_p2" SOURCE="src/runge_kutta_45.cpp:162" URAM="0" VARIABLE="i_12"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="y_new_outer" OPTYPE="add" PRAGMA="" RTLNAME="add_ln189_fu_4469_p2" SOURCE="src/runge_kutta_45.cpp:189" URAM="0" VARIABLE="add_ln189"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="y_new_outer" OPTYPE="add" PRAGMA="" RTLNAME="add_ln189_1_fu_4484_p2" SOURCE="src/runge_kutta_45.cpp:189" URAM="0" VARIABLE="add_ln189_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="y_new_outer" OPTYPE="add" PRAGMA="" RTLNAME="add_ln189_2_fu_4495_p2" SOURCE="src/runge_kutta_45.cpp:189" URAM="0" VARIABLE="add_ln189_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="y_new_outer" OPTYPE="add" PRAGMA="" RTLNAME="add_ln189_3_fu_4527_p2" SOURCE="src/runge_kutta_45.cpp:189" URAM="0" VARIABLE="add_ln189_3"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="y_new_outer" OPTYPE="add" PRAGMA="" RTLNAME="add_ln189_4_fu_4544_p2" SOURCE="src/runge_kutta_45.cpp:189" URAM="0" VARIABLE="add_ln189_4"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="y_new_outer" OPTYPE="add" PRAGMA="" RTLNAME="n_3_fu_4554_p2" SOURCE="src/runge_kutta_45.cpp:182" URAM="0" VARIABLE="n_3"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_vel_pos" OPTYPE="add" PRAGMA="" RTLNAME="add_ln65_1_fu_4650_p2" SOURCE="src/runge_kutta_45.cpp:65" URAM="0" VARIABLE="add_ln65_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_vel_pos" OPTYPE="add" PRAGMA="" RTLNAME="dr_dt_V_0_2_fu_4674_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:859" URAM="0" VARIABLE="dr_dt_V_0_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_vel_pos" OPTYPE="sub" PRAGMA="" RTLNAME="r_V_3_fu_4781_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:1454" URAM="0" VARIABLE="r_V_3"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="err_outer" OPTYPE="add" PRAGMA="" RTLNAME="add_ln203_fu_4846_p2" SOURCE="src/runge_kutta_45.cpp:203" URAM="0" VARIABLE="add_ln203"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="err_outer" OPTYPE="add" PRAGMA="" RTLNAME="add_ln203_1_fu_4861_p2" SOURCE="src/runge_kutta_45.cpp:203" URAM="0" VARIABLE="add_ln203_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="err_outer" OPTYPE="add" PRAGMA="" RTLNAME="add_ln203_2_fu_4872_p2" SOURCE="src/runge_kutta_45.cpp:203" URAM="0" VARIABLE="add_ln203_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="err_outer" OPTYPE="add" PRAGMA="" RTLNAME="add_ln203_3_fu_4904_p2" SOURCE="src/runge_kutta_45.cpp:203" URAM="0" VARIABLE="add_ln203_3"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="err_outer" OPTYPE="add" PRAGMA="" RTLNAME="add_ln203_4_fu_4921_p2" SOURCE="src/runge_kutta_45.cpp:203" URAM="0" VARIABLE="add_ln203_4"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="err_outer" OPTYPE="add" PRAGMA="" RTLNAME="n_4_fu_4931_p2" SOURCE="src/runge_kutta_45.cpp:197" URAM="0" VARIABLE="n_4"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="main_loop" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln222_fu_4965_p2" SOURCE="src/runge_kutta_45.cpp:222" URAM="0" VARIABLE="sub_ln222"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="main_loop" OPTYPE="add" PRAGMA="" RTLNAME="grp_fu_2772_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:859" URAM="0" VARIABLE="add_ln859"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="main_loop" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln233_fu_4995_p2" SOURCE="src/runge_kutta_45.cpp:233" URAM="0" VARIABLE="sub_ln233"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="main_loop" OPTYPE="add" PRAGMA="" RTLNAME="grp_fu_2772_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:859" URAM="0" VARIABLE="add_ln859_3"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="main_loop" OPTYPE="sub" PRAGMA="" RTLNAME="empty_84_fu_5044_p2" SOURCE="src/runge_kutta_45.cpp:129" URAM="0" VARIABLE="empty_84"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="y_gap_fu_5300_p2" SOURCE="src/runge_kutta_45.cpp:254" URAM="0" VARIABLE="y_gap"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln256_fu_5348_p2" SOURCE="src/runge_kutta_45.cpp:256" URAM="0" VARIABLE="add_ln256"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add405_fu_5387_p2" SOURCE="src/runge_kutta_45.cpp:150" URAM="0" VARIABLE="add405"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="size" SOURCE="src/runge_kutta_45.cpp:262" URAM="0" VARIABLE="add_ln262"/>
+                <BindNode BINDTYPE="storage" BRAM="5" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="k_V_U" SOURCE="src/runge_kutta_45.cpp:113" URAM="0" VARIABLE="k_V"/>
+                <BindNode BINDTYPE="storage" BRAM="170" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="yy_loc_V_U" SOURCE="src/runge_kutta_45.cpp:116" URAM="0" VARIABLE="yy_loc_V"/>
+                <BindNode BINDTYPE="storage" BRAM="20" BUNDLEDNAME="" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="tt_loc_V_U" SOURCE="src/runge_kutta_45.cpp:117" URAM="0" VARIABLE="tt_loc_V"/>
+                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="c_V_U" SOURCE="src/runge_kutta_45.cpp:156" URAM="0" VARIABLE="c_V"/>
+                <BindNode BINDTYPE="storage" BRAM="10" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="e_V_U" SOURCE="src/runge_kutta_45.cpp:194" URAM="0" VARIABLE="e_V"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="man_V_2_fu_2925_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h:501" URAM="0" VARIABLE="man_V_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="F2_fu_2945_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:610" URAM="0" VARIABLE="F2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln616_fu_2957_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:616" URAM="0" VARIABLE="add_ln616"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln616_fu_2963_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:616" URAM="0" VARIABLE="sub_ln616"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="man_V_6_fu_3198_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h:501" URAM="0" VARIABLE="man_V_6"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="F2_1_fu_3218_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:610" URAM="0" VARIABLE="F2_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln616_1_fu_3230_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:616" URAM="0" VARIABLE="add_ln616_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln616_1_fu_3236_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:616" URAM="0" VARIABLE="sub_ln616_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="man_V_7_fu_3471_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_int_base.h:501" URAM="0" VARIABLE="man_V_7"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="F2_2_fu_3491_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:610" URAM="0" VARIABLE="F2_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln616_2_fu_3503_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:616" URAM="0" VARIABLE="add_ln616_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln616_2_fu_3509_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:616" URAM="0" VARIABLE="sub_ln616_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="main_loop" OPTYPE="add" PRAGMA="" RTLNAME="add_ln149_fu_3822_p2" SOURCE="src/runge_kutta_45.cpp:149" URAM="0" VARIABLE="add_ln149"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="main_loop" OPTYPE="sub" PRAGMA="" RTLNAME="y_gap_1_fu_3852_p2" SOURCE="src/runge_kutta_45.cpp:135" URAM="0" VARIABLE="y_gap_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="main_loop" OPTYPE="add" PRAGMA="" RTLNAME="add_ln137_fu_3870_p2" SOURCE="src/runge_kutta_45.cpp:137" URAM="0" VARIABLE="add_ln137"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="main_loop" OPTYPE="add" PRAGMA="" RTLNAME="add_ln140_fu_3897_p2" SOURCE="src/runge_kutta_45.cpp:140" URAM="0" VARIABLE="add_ln140"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="main_loop" OPTYPE="add" PRAGMA="" RTLNAME="cycles_1_fu_3932_p2" SOURCE="src/runge_kutta_45.cpp:145" URAM="0" VARIABLE="cycles_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="main_loop" OPTYPE="sub" PRAGMA="" RTLNAME="h_loc_7_fu_4029_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:859" URAM="0" VARIABLE="h_loc_7"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_vel_pos" OPTYPE="add" PRAGMA="" RTLNAME="add_ln63_fu_4049_p2" SOURCE="src/runge_kutta_45.cpp:63" URAM="0" VARIABLE="add_ln63"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_vel_pos" OPTYPE="add" PRAGMA="" RTLNAME="dr_dt_V_0_fu_4073_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:859" URAM="0" VARIABLE="dr_dt_V_0"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_vel_pos" OPTYPE="sub" PRAGMA="" RTLNAME="r_V_fu_4201_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:1454" URAM="0" VARIABLE="r_V"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="main_loop" OPTYPE="add" PRAGMA="" RTLNAME="ret_V_fu_4122_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:1393" URAM="0" VARIABLE="ret_V"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="k_outer" OPTYPE="add" PRAGMA="" RTLNAME="add_ln170_fu_4279_p2" SOURCE="src/runge_kutta_45.cpp:170" URAM="0" VARIABLE="add_ln170"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="k_outer" OPTYPE="sub" PRAGMA="" RTLNAME="empty_83_fu_4305_p2" SOURCE="src/runge_kutta_45.cpp:160" URAM="0" VARIABLE="empty_83"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="k_middle" OPTYPE="add" PRAGMA="" RTLNAME="n_fu_4311_p2" SOURCE="src/runge_kutta_45.cpp:162" URAM="0" VARIABLE="n"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_vel_pos" OPTYPE="add" PRAGMA="" RTLNAME="add_ln63_2_fu_4374_p2" SOURCE="src/runge_kutta_45.cpp:63" URAM="0" VARIABLE="add_ln63_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_vel_pos" OPTYPE="add" PRAGMA="" RTLNAME="dr_dt_V_0_1_fu_4398_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:859" URAM="0" VARIABLE="dr_dt_V_0_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_vel_pos" OPTYPE="sub" PRAGMA="" RTLNAME="r_V_2_fu_4480_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:1454" URAM="0" VARIABLE="r_V_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="k_outer" OPTYPE="add" PRAGMA="" RTLNAME="i_12_fu_4404_p2" SOURCE="src/runge_kutta_45.cpp:160" URAM="0" VARIABLE="i_12"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="y_new_outer" OPTYPE="add" PRAGMA="" RTLNAME="add_ln187_fu_4505_p2" SOURCE="src/runge_kutta_45.cpp:187" URAM="0" VARIABLE="add_ln187"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="y_new_outer" OPTYPE="add" PRAGMA="" RTLNAME="add_ln187_1_fu_4520_p2" SOURCE="src/runge_kutta_45.cpp:187" URAM="0" VARIABLE="add_ln187_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="y_new_outer" OPTYPE="add" PRAGMA="" RTLNAME="add_ln187_2_fu_4531_p2" SOURCE="src/runge_kutta_45.cpp:187" URAM="0" VARIABLE="add_ln187_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="y_new_outer" OPTYPE="add" PRAGMA="" RTLNAME="add_ln187_3_fu_4563_p2" SOURCE="src/runge_kutta_45.cpp:187" URAM="0" VARIABLE="add_ln187_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="y_new_outer" OPTYPE="add" PRAGMA="" RTLNAME="add_ln187_4_fu_4586_p2" SOURCE="src/runge_kutta_45.cpp:187" URAM="0" VARIABLE="add_ln187_4"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="y_new_outer" OPTYPE="add" PRAGMA="" RTLNAME="n_3_fu_4574_p2" SOURCE="src/runge_kutta_45.cpp:180" URAM="0" VARIABLE="n_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_vel_pos" OPTYPE="add" PRAGMA="" RTLNAME="add_ln63_1_fu_4686_p2" SOURCE="src/runge_kutta_45.cpp:63" URAM="0" VARIABLE="add_ln63_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_vel_pos" OPTYPE="add" PRAGMA="" RTLNAME="dr_dt_V_0_2_fu_4710_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:859" URAM="0" VARIABLE="dr_dt_V_0_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="update_vel_pos" OPTYPE="sub" PRAGMA="" RTLNAME="r_V_3_fu_4817_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:1454" URAM="0" VARIABLE="r_V_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="err_outer" OPTYPE="add" PRAGMA="" RTLNAME="add_ln201_fu_4882_p2" SOURCE="src/runge_kutta_45.cpp:201" URAM="0" VARIABLE="add_ln201"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="err_outer" OPTYPE="add" PRAGMA="" RTLNAME="add_ln201_1_fu_4897_p2" SOURCE="src/runge_kutta_45.cpp:201" URAM="0" VARIABLE="add_ln201_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="err_outer" OPTYPE="add" PRAGMA="" RTLNAME="add_ln201_2_fu_4908_p2" SOURCE="src/runge_kutta_45.cpp:201" URAM="0" VARIABLE="add_ln201_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="err_outer" OPTYPE="add" PRAGMA="" RTLNAME="add_ln201_3_fu_4940_p2" SOURCE="src/runge_kutta_45.cpp:201" URAM="0" VARIABLE="add_ln201_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="err_outer" OPTYPE="add" PRAGMA="" RTLNAME="add_ln201_4_fu_4957_p2" SOURCE="src/runge_kutta_45.cpp:201" URAM="0" VARIABLE="add_ln201_4"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="err_outer" OPTYPE="add" PRAGMA="" RTLNAME="n_4_fu_4967_p2" SOURCE="src/runge_kutta_45.cpp:195" URAM="0" VARIABLE="n_4"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="main_loop" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln220_fu_5001_p2" SOURCE="src/runge_kutta_45.cpp:220" URAM="0" VARIABLE="sub_ln220"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="main_loop" OPTYPE="add" PRAGMA="" RTLNAME="grp_fu_2808_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:859" URAM="0" VARIABLE="add_ln859"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="main_loop" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln231_fu_5031_p2" SOURCE="src/runge_kutta_45.cpp:231" URAM="0" VARIABLE="sub_ln231"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="main_loop" OPTYPE="add" PRAGMA="" RTLNAME="grp_fu_2808_p2" SOURCE="/opt/Xilinx/Vitis_HLS/2022.1/common/technology/autopilot/ap_fixed_base.h:859" URAM="0" VARIABLE="add_ln859_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="main_loop" OPTYPE="sub" PRAGMA="" RTLNAME="empty_84_fu_5067_p2" SOURCE="src/runge_kutta_45.cpp:127" URAM="0" VARIABLE="empty_84"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="y_gap_fu_5336_p2" SOURCE="src/runge_kutta_45.cpp:252" URAM="0" VARIABLE="y_gap"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln254_fu_5384_p2" SOURCE="src/runge_kutta_45.cpp:254" URAM="0" VARIABLE="add_ln254"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add405_fu_5423_p2" SOURCE="src/runge_kutta_45.cpp:148" URAM="0" VARIABLE="add405"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="size" SOURCE="src/runge_kutta_45.cpp:260" URAM="0" VARIABLE="add_ln260"/>
             </BindNodes>
         </Module>
     </ModuleInformation>
@@ -4791,16 +4791,16 @@
             <item name="Inferred Burst Summary">
                 <table>
                     <keys size="5">HW Interface, Direction, Length, Width, Location</keys>
-                    <column name="m_axi_X_BUS">read, 3, 128, src/runge_kutta_45.cpp:121:23</column>
-                    <column name="m_axi_X_BUS">write, 12288, 128, src/runge_kutta_45.cpp:139:26</column>
-                    <column name="m_axi_T_BUS">write, 2048, 128, src/runge_kutta_45.cpp:142:26</column>
-                    <column name="m_axi_X_BUS">write, variable, 128, src/runge_kutta_45.cpp:256:20</column>
+                    <column name="m_axi_X_BUS">read, 3, 128, src/runge_kutta_45.cpp:119:23</column>
+                    <column name="m_axi_X_BUS">write, 12288, 128, src/runge_kutta_45.cpp:137:26</column>
+                    <column name="m_axi_T_BUS">write, 2048, 128, src/runge_kutta_45.cpp:140:26</column>
+                    <column name="m_axi_X_BUS">write, variable, 128, src/runge_kutta_45.cpp:254:20</column>
                 </table>
             </item>
             <item name="Inferred Bursts and Widening Missed">
                 <table>
                     <keys size="6">HW Interface, Variable, Loop, Problem, Resolution, Location</keys>
-                    <column name="m_axi_T_BUS">tt, last_axi_write_tt, Sequential access length is not divisible by 2, 214-234, src/runge_kutta_45.cpp:259:23</column>
+                    <column name="m_axi_T_BUS">tt, last_axi_write_tt, Sequential access length is not divisible by 2, 214-234, src/runge_kutta_45.cpp:257:23</column>
                 </table>
             </item>
         </section>
@@ -4816,33 +4816,33 @@
         </Pragma>
         <Pragma type="pipeline" location="src/runge_kutta_45.cpp:30" status="valid" parentFunction="vel_der" variable="" isDirective="0" options="II=1"/>
         <Pragma type="pipeline" location="src/runge_kutta_45.cpp:36" status="valid" parentFunction="vel_der" variable="" isDirective="0" options="II=1"/>
-        <Pragma type="inline" location="src/runge_kutta_45.cpp:53" status="valid" parentFunction="ode_fpga" variable="" isDirective="0" options=""/>
-        <Pragma type="allocation" location="src/runge_kutta_45.cpp:77" status="valid" parentFunction="runge_kutta_45" variable="" isDirective="0" options="function instances=macply limit=1"/>
-        <Pragma type="allocation" location="src/runge_kutta_45.cpp:78" status="valid" parentFunction="runge_kutta_45" variable="" isDirective="0" options="function instances=multiply limit=1"/>
-        <Pragma type="interface" location="src/runge_kutta_45.cpp:84" status="valid" parentFunction="runge_kutta_45" variable="yy" isDirective="0" options="mode=m_axi bundle=X_BUS depth=12288 max_read_burst_length=16 max_widen_bitwidth=128 max_write_burst_length=16 num_read_outstanding=1 num_write_outstanding=8 port=yy"/>
-        <Pragma type="interface" location="src/runge_kutta_45.cpp:85" status="valid" parentFunction="runge_kutta_45" variable="tt" isDirective="0" options="mode=m_axi bundle=T_BUS depth=2048 max_read_burst_length=16 max_widen_bitwidth=128 max_write_burst_length=16 num_read_outstanding=1 num_write_outstanding=8 port=tt"/>
-        <Pragma type="interface" location="src/runge_kutta_45.cpp:87" status="valid" parentFunction="runge_kutta_45" variable="yy" isDirective="0" options="s_axilite port=yy"/>
-        <Pragma type="interface" location="src/runge_kutta_45.cpp:88" status="valid" parentFunction="runge_kutta_45" variable="tt" isDirective="0" options="s_axilite port=tt"/>
-        <Pragma type="interface" location="src/runge_kutta_45.cpp:89" status="valid" parentFunction="runge_kutta_45" variable="tf" isDirective="0" options="s_axilite port=tf"/>
-        <Pragma type="interface" location="src/runge_kutta_45.cpp:90" status="valid" parentFunction="runge_kutta_45" variable="h0" isDirective="0" options="s_axilite port=h0"/>
-        <Pragma type="interface" location="src/runge_kutta_45.cpp:91" status="valid" parentFunction="runge_kutta_45" variable="atol" isDirective="0" options="s_axilite port=atol"/>
-        <Pragma type="interface" location="src/runge_kutta_45.cpp:92" status="valid" parentFunction="runge_kutta_45" variable="h_max" isDirective="0" options="s_axilite port=h_max"/>
-        <Pragma type="interface" location="src/runge_kutta_45.cpp:93" status="valid" parentFunction="runge_kutta_45" variable="h_min" isDirective="0" options="s_axilite port=h_min"/>
-        <Pragma type="interface" location="src/runge_kutta_45.cpp:94" status="valid" parentFunction="runge_kutta_45" variable="mu" isDirective="0" options="s_axilite port=mu"/>
-        <Pragma type="interface" location="src/runge_kutta_45.cpp:95" status="valid" parentFunction="runge_kutta_45" variable="size" isDirective="0" options="s_axilite port=size"/>
-        <Pragma type="interface" location="src/runge_kutta_45.cpp:96" status="valid" parentFunction="runge_kutta_45" variable="flag" isDirective="0" options="s_axilite port=flag"/>
-        <Pragma type="interface" location="src/runge_kutta_45.cpp:97" status="valid" parentFunction="runge_kutta_45" variable="return" isDirective="0" options="s_axilite port=return"/>
-        <Pragma type="loop_tripcount" location="src/runge_kutta_45.cpp:132" status="valid" parentFunction="runge_kutta_45" variable="" isDirective="0" options="max=50000 avg=25000"/>
-        <Pragma type="pipeline" location="src/runge_kutta_45.cpp:165" status="valid" parentFunction="runge_kutta_45" variable="" isDirective="0" options="rewind"/>
-        <Pragma type="loop_tripcount" location="src/runge_kutta_45.cpp:169" status="valid" parentFunction="runge_kutta_45" variable="" isDirective="0" options="max=5"/>
-        <Pragma type="pipeline" location="src/runge_kutta_45.cpp:170" status="valid" parentFunction="runge_kutta_45" variable="" isDirective="0" options=""/>
-        <Pragma type="pipeline" location="src/runge_kutta_45.cpp:183" status="valid" parentFunction="runge_kutta_45" variable="" isDirective="0" options="rewind"/>
-        <Pragma type="pipeline" location="src/runge_kutta_45.cpp:187" status="valid" parentFunction="runge_kutta_45" variable="" isDirective="0" options=""/>
-        <Pragma type="pipeline" location="src/runge_kutta_45.cpp:198" status="valid" parentFunction="runge_kutta_45" variable="" isDirective="0" options="rewind"/>
-        <Pragma type="pipeline" location="src/runge_kutta_45.cpp:201" status="valid" parentFunction="runge_kutta_45" variable="" isDirective="0" options=""/>
-        <Pragma type="pipeline" location="src/runge_kutta_45.cpp:211" status="valid" parentFunction="runge_kutta_45" variable="" isDirective="0" options=""/>
-        <Pragma type="pipeline" location="src/runge_kutta_45.cpp:221" status="valid" parentFunction="runge_kutta_45" variable="" isDirective="0" options=""/>
-        <Pragma type="pipeline" location="src/runge_kutta_45.cpp:232" status="valid" parentFunction="runge_kutta_45" variable="" isDirective="0" options=""/>
+        <Pragma type="inline" location="src/runge_kutta_45.cpp:51" status="valid" parentFunction="ode_fpga" variable="" isDirective="0" options=""/>
+        <Pragma type="allocation" location="src/runge_kutta_45.cpp:75" status="valid" parentFunction="runge_kutta_45" variable="" isDirective="0" options="function instances=macply limit=1"/>
+        <Pragma type="allocation" location="src/runge_kutta_45.cpp:76" status="valid" parentFunction="runge_kutta_45" variable="" isDirective="0" options="function instances=multiply limit=1"/>
+        <Pragma type="interface" location="src/runge_kutta_45.cpp:82" status="valid" parentFunction="runge_kutta_45" variable="yy" isDirective="0" options="mode=m_axi bundle=X_BUS depth=12288 max_read_burst_length=16 max_widen_bitwidth=128 max_write_burst_length=16 num_read_outstanding=1 num_write_outstanding=8 port=yy"/>
+        <Pragma type="interface" location="src/runge_kutta_45.cpp:83" status="valid" parentFunction="runge_kutta_45" variable="tt" isDirective="0" options="mode=m_axi bundle=T_BUS depth=2048 max_read_burst_length=16 max_widen_bitwidth=128 max_write_burst_length=16 num_read_outstanding=1 num_write_outstanding=8 port=tt"/>
+        <Pragma type="interface" location="src/runge_kutta_45.cpp:85" status="valid" parentFunction="runge_kutta_45" variable="yy" isDirective="0" options="s_axilite port=yy"/>
+        <Pragma type="interface" location="src/runge_kutta_45.cpp:86" status="valid" parentFunction="runge_kutta_45" variable="tt" isDirective="0" options="s_axilite port=tt"/>
+        <Pragma type="interface" location="src/runge_kutta_45.cpp:87" status="valid" parentFunction="runge_kutta_45" variable="tf" isDirective="0" options="s_axilite port=tf"/>
+        <Pragma type="interface" location="src/runge_kutta_45.cpp:88" status="valid" parentFunction="runge_kutta_45" variable="h0" isDirective="0" options="s_axilite port=h0"/>
+        <Pragma type="interface" location="src/runge_kutta_45.cpp:89" status="valid" parentFunction="runge_kutta_45" variable="atol" isDirective="0" options="s_axilite port=atol"/>
+        <Pragma type="interface" location="src/runge_kutta_45.cpp:90" status="valid" parentFunction="runge_kutta_45" variable="h_max" isDirective="0" options="s_axilite port=h_max"/>
+        <Pragma type="interface" location="src/runge_kutta_45.cpp:91" status="valid" parentFunction="runge_kutta_45" variable="h_min" isDirective="0" options="s_axilite port=h_min"/>
+        <Pragma type="interface" location="src/runge_kutta_45.cpp:92" status="valid" parentFunction="runge_kutta_45" variable="mu" isDirective="0" options="s_axilite port=mu"/>
+        <Pragma type="interface" location="src/runge_kutta_45.cpp:93" status="valid" parentFunction="runge_kutta_45" variable="size" isDirective="0" options="s_axilite port=size"/>
+        <Pragma type="interface" location="src/runge_kutta_45.cpp:94" status="valid" parentFunction="runge_kutta_45" variable="flag" isDirective="0" options="s_axilite port=flag"/>
+        <Pragma type="interface" location="src/runge_kutta_45.cpp:95" status="valid" parentFunction="runge_kutta_45" variable="return" isDirective="0" options="s_axilite port=return"/>
+        <Pragma type="loop_tripcount" location="src/runge_kutta_45.cpp:130" status="valid" parentFunction="runge_kutta_45" variable="" isDirective="0" options="max=50000 avg=25000"/>
+        <Pragma type="pipeline" location="src/runge_kutta_45.cpp:163" status="valid" parentFunction="runge_kutta_45" variable="" isDirective="0" options="rewind"/>
+        <Pragma type="loop_tripcount" location="src/runge_kutta_45.cpp:167" status="valid" parentFunction="runge_kutta_45" variable="" isDirective="0" options="max=5"/>
+        <Pragma type="pipeline" location="src/runge_kutta_45.cpp:168" status="valid" parentFunction="runge_kutta_45" variable="" isDirective="0" options=""/>
+        <Pragma type="pipeline" location="src/runge_kutta_45.cpp:181" status="valid" parentFunction="runge_kutta_45" variable="" isDirective="0" options="rewind"/>
+        <Pragma type="pipeline" location="src/runge_kutta_45.cpp:185" status="valid" parentFunction="runge_kutta_45" variable="" isDirective="0" options=""/>
+        <Pragma type="pipeline" location="src/runge_kutta_45.cpp:196" status="valid" parentFunction="runge_kutta_45" variable="" isDirective="0" options="rewind"/>
+        <Pragma type="pipeline" location="src/runge_kutta_45.cpp:199" status="valid" parentFunction="runge_kutta_45" variable="" isDirective="0" options=""/>
+        <Pragma type="pipeline" location="src/runge_kutta_45.cpp:209" status="valid" parentFunction="runge_kutta_45" variable="" isDirective="0" options=""/>
+        <Pragma type="pipeline" location="src/runge_kutta_45.cpp:219" status="valid" parentFunction="runge_kutta_45" variable="" isDirective="0" options=""/>
+        <Pragma type="pipeline" location="src/runge_kutta_45.cpp:230" status="valid" parentFunction="runge_kutta_45" variable="" isDirective="0" options=""/>
     </PragmaReport>
 </profile>
 

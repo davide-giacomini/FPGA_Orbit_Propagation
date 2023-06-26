@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'runge_kutta_45_Pipeline_sq_sum_loop4'
 ================================================================
-* Date:           Mon Jun 26 10:21:30 2023
+* Date:           Mon Jun 26 15:21:22 2023
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        rk45_vitis
@@ -17,11 +17,11 @@
 ================================================================
 + Timing: 
     * Summary: 
-    +--------+----------+-----------+------------+
-    |  Clock |  Target  | Estimated | Uncertainty|
-    +--------+----------+-----------+------------+
-    |ap_clk  |  50.00 ns|  24.661 ns|    13.50 ns|
-    +--------+----------+-----------+------------+
+    +--------+---------+-----------+------------+
+    |  Clock |  Target | Estimated | Uncertainty|
+    +--------+---------+-----------+------------+
+    |ap_clk  |  0.10 us|  24.661 ns|    27.00 ns|
+    +--------+---------+-----------+------------+
 
 + Latency: 
     * Summary: 
@@ -29,7 +29,7 @@
     |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
     |   min   |   max   |    min   |    max   | min | max |   Type  |
     +---------+---------+----------+----------+-----+-----+---------+
-    |        5|        5|  0.250 us|  0.250 us|    5|    5|       no|
+    |        5|        5|  0.500 us|  0.500 us|    5|    5|       no|
     +---------+---------+----------+----------+-----+-----+---------+
 
     + Detail: 
@@ -105,12 +105,12 @@ ST_2 : Operation 13 [1/1] (0.95ns)   --->   "%icmp_ln35 = icmp_eq  i2 %i_2, i2 3
 ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 3, i64 3, i64 3"   --->   Operation 14 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 15 [1/1] (1.56ns)   --->   "%add_ln35 = add i2 %i_2, i2 1" [src/runge_kutta_45.cpp:35]   --->   Operation 15 'add' 'add_ln35' <Predicate = true> <Delay = 1.56> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.56> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%br_ln35 = br i1 %icmp_ln35, void %for.body12.i.i.split, void %for.cond.cleanup11.i.i.exitStub" [src/runge_kutta_45.cpp:35]   --->   Operation 16 'br' 'br_ln35' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%squared_sum_V_load_1 = load i177 %squared_sum_V" [src/runge_kutta_45.cpp:39]   --->   Operation 17 'load' 'squared_sum_V_load_1' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%squared_sum_V_load_1 = load i177 %squared_sum_V" [src/runge_kutta_45.cpp:38]   --->   Operation 17 'load' 'squared_sum_V_load_1' <Predicate = (!icmp_ln35)> <Delay = 0.00>
 ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%specpipeline_ln36 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_24" [src/runge_kutta_45.cpp:36]   --->   Operation 18 'specpipeline' 'specpipeline_ln36' <Predicate = (!icmp_ln35)> <Delay = 0.00>
 ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%specloopname_ln35 = specloopname void @_ssdm_op_SpecLoopName, void @empty_20" [src/runge_kutta_45.cpp:35]   --->   Operation 19 'specloopname' 'specloopname_ln35' <Predicate = (!icmp_ln35)> <Delay = 0.00>
 ST_2 : Operation 20 [1/1] (1.70ns)   --->   "%tmp_s = mux i86 @_ssdm_op_Mux.ap_auto.3i86.i2, i86 %r_in_V_0_4_2_reload_read, i86 %r_in_V_1_4_2_reload_read, i86 %r_in_V_2_4_2_reload_read, i2 %i_2"   --->   Operation 20 'mux' 'tmp_s' <Predicate = (!icmp_ln35)> <Delay = 1.70> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 1.70> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
 ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%trunc_ln859 = trunc i86 %tmp_s"   --->   Operation 21 'trunc' 'trunc_ln859' <Predicate = (!icmp_ln35)> <Delay = 0.00>
-ST_2 : Operation 22 [1/1] (21.3ns)   --->   "%squared_sum_V_1 = call i177 @macply, i177 %squared_sum_V_load_1, i85 %trunc_ln859, i85 %trunc_ln859" [src/runge_kutta_45.cpp:39]   --->   Operation 22 'call' 'squared_sum_V_1' <Predicate = (!icmp_ln35)> <Delay = 21.3> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 22 [1/1] (21.3ns)   --->   "%squared_sum_V_1 = call i177 @macply, i177 %squared_sum_V_load_1, i85 %trunc_ln859, i85 %trunc_ln859" [src/runge_kutta_45.cpp:38]   --->   Operation 22 'call' 'squared_sum_V_1' <Predicate = (!icmp_ln35)> <Delay = 21.3> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 ST_2 : Operation 23 [1/1] (1.58ns)   --->   "%store_ln35 = store i177 %squared_sum_V_1, i177 %squared_sum_V" [src/runge_kutta_45.cpp:35]   --->   Operation 23 'store' 'store_ln35' <Predicate = (!icmp_ln35)> <Delay = 1.58>
 ST_2 : Operation 24 [1/1] (1.58ns)   --->   "%store_ln35 = store i2 %add_ln35, i2 %i" [src/runge_kutta_45.cpp:35]   --->   Operation 24 'store' 'store_ln35' <Predicate = (!icmp_ln35)> <Delay = 1.58>
 ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%br_ln35 = br void %for.body12.i.i" [src/runge_kutta_45.cpp:35]   --->   Operation 25 'br' 'br_ln35' <Predicate = (!icmp_ln35)> <Delay = 0.00>

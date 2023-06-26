@@ -37,11 +37,11 @@ set portList {
 	{ r_in_V_2_4_2_reload sc_in sc_lv 86 signal 2 } 
 	{ squared_sum_V_3_0_out sc_out sc_lv 177 signal 3 } 
 	{ squared_sum_V_3_0_out_ap_vld sc_out sc_logic 1 outvld 3 } 
-	{ grp_macply_fu_1911_p_din1 sc_out sc_lv 177 signal -1 } 
-	{ grp_macply_fu_1911_p_din2 sc_out sc_lv 85 signal -1 } 
-	{ grp_macply_fu_1911_p_din3 sc_out sc_lv 85 signal -1 } 
-	{ grp_macply_fu_1911_p_dout0 sc_in sc_lv 177 signal -1 } 
-	{ grp_macply_fu_1911_p_ready sc_in sc_logic 1 signal -1 } 
+	{ grp_macply_fu_1913_p_din1 sc_out sc_lv 177 signal -1 } 
+	{ grp_macply_fu_1913_p_din2 sc_out sc_lv 85 signal -1 } 
+	{ grp_macply_fu_1913_p_din3 sc_out sc_lv 85 signal -1 } 
+	{ grp_macply_fu_1913_p_dout0 sc_in sc_lv 177 signal -1 } 
+	{ grp_macply_fu_1913_p_ready sc_in sc_logic 1 signal -1 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -55,11 +55,11 @@ set NewPortList {[
  	{ "name": "r_in_V_2_4_2_reload", "direction": "in", "datatype": "sc_lv", "bitwidth":86, "type": "signal", "bundle":{"name": "r_in_V_2_4_2_reload", "role": "default" }} , 
  	{ "name": "squared_sum_V_3_0_out", "direction": "out", "datatype": "sc_lv", "bitwidth":177, "type": "signal", "bundle":{"name": "squared_sum_V_3_0_out", "role": "default" }} , 
  	{ "name": "squared_sum_V_3_0_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "squared_sum_V_3_0_out", "role": "ap_vld" }} , 
- 	{ "name": "grp_macply_fu_1911_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":177, "type": "signal", "bundle":{"name": "grp_macply_fu_1911_p_din1", "role": "default" }} , 
- 	{ "name": "grp_macply_fu_1911_p_din2", "direction": "out", "datatype": "sc_lv", "bitwidth":85, "type": "signal", "bundle":{"name": "grp_macply_fu_1911_p_din2", "role": "default" }} , 
- 	{ "name": "grp_macply_fu_1911_p_din3", "direction": "out", "datatype": "sc_lv", "bitwidth":85, "type": "signal", "bundle":{"name": "grp_macply_fu_1911_p_din3", "role": "default" }} , 
- 	{ "name": "grp_macply_fu_1911_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":177, "type": "signal", "bundle":{"name": "grp_macply_fu_1911_p_dout0", "role": "default" }} , 
- 	{ "name": "grp_macply_fu_1911_p_ready", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_macply_fu_1911_p_ready", "role": "default" }}  ]}
+ 	{ "name": "grp_macply_fu_1913_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":177, "type": "signal", "bundle":{"name": "grp_macply_fu_1913_p_din1", "role": "default" }} , 
+ 	{ "name": "grp_macply_fu_1913_p_din2", "direction": "out", "datatype": "sc_lv", "bitwidth":85, "type": "signal", "bundle":{"name": "grp_macply_fu_1913_p_din2", "role": "default" }} , 
+ 	{ "name": "grp_macply_fu_1913_p_din3", "direction": "out", "datatype": "sc_lv", "bitwidth":85, "type": "signal", "bundle":{"name": "grp_macply_fu_1913_p_din3", "role": "default" }} , 
+ 	{ "name": "grp_macply_fu_1913_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":177, "type": "signal", "bundle":{"name": "grp_macply_fu_1913_p_dout0", "role": "default" }} , 
+ 	{ "name": "grp_macply_fu_1913_p_ready", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_macply_fu_1913_p_ready", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2"],

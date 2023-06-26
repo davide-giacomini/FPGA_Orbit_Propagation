@@ -9,8 +9,8 @@
 <ProductFamily>zynq</ProductFamily>
 <Part>xc7z020-clg400-1</Part>
 <TopModelName>fxp_sqrt_89_34_177_67_s</TopModelName>
-<TargetClockPeriod>50.00</TargetClockPeriod>
-<ClockUncertainty>13.50</ClockUncertainty>
+<TargetClockPeriod>100.00</TargetClockPeriod>
+<ClockUncertainty>27.00</ClockUncertainty>
 <FlowTarget>vivado</FlowTarget>
 </UserAssignments>
 
@@ -25,9 +25,9 @@
 <Best-caseLatency>91</Best-caseLatency>
 <Average-caseLatency>91</Average-caseLatency>
 <Worst-caseLatency>91</Worst-caseLatency>
-<Best-caseRealTimeLatency>4.550 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>4.550 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>4.550 us</Worst-caseRealTimeLatency>
+<Best-caseRealTimeLatency>9.100 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>9.100 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>9.100 us</Worst-caseRealTimeLatency>
 <Interval-min>91</Interval-min>
 <Interval-max>91</Interval-max>
 </SummaryOfOverallLatency>
@@ -35,7 +35,7 @@
 <sqrt_loop>
 <TripCount>89</TripCount>
 <Latency>89</Latency>
-<AbsoluteTimeLatency>4450</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>8900</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>1</PipelineDepth>
 <InstanceList>

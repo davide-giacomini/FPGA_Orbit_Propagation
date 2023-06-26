@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'ap_fixed_base'
 ================================================================
-* Date:           Mon Jun 26 10:21:25 2023
+* Date:           Mon Jun 26 15:21:15 2023
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        rk45_vitis
@@ -17,11 +17,11 @@
 ================================================================
 + Timing: 
     * Summary: 
-    +--------+----------+-----------+------------+
-    |  Clock |  Target  | Estimated | Uncertainty|
-    +--------+----------+-----------+------------+
-    |ap_clk  |  50.00 ns|  17.478 ns|    13.50 ns|
-    +--------+----------+-----------+------------+
+    +--------+---------+-----------+------------+
+    |  Clock |  Target | Estimated | Uncertainty|
+    +--------+---------+-----------+------------+
+    |ap_clk  |  0.10 us|  17.478 ns|    27.00 ns|
+    +--------+---------+-----------+------------+
 
 + Latency: 
     * Summary: 
@@ -134,7 +134,7 @@ ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%ret_ln704 = ret i85 %select_ln638_
 ============================================================
 + Verbose Summary: Timing violations
 ============================================================
-Target clock period: 50ns, clock uncertainty: 13.5ns.
+Target clock period: 100ns, clock uncertainty: 27ns.
 
  <State 1>: 17.5ns
 The critical path consists of the following:

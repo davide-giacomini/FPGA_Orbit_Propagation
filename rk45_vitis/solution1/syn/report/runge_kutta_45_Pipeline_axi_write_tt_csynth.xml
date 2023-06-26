@@ -9,8 +9,8 @@
 <ProductFamily>zynq</ProductFamily>
 <Part>xc7z020-clg400-1</Part>
 <TopModelName>runge_kutta_45_Pipeline_axi_write_tt</TopModelName>
-<TargetClockPeriod>50.00</TargetClockPeriod>
-<ClockUncertainty>13.50</ClockUncertainty>
+<TargetClockPeriod>100.00</TargetClockPeriod>
+<ClockUncertainty>27.00</ClockUncertainty>
 <FlowTarget>vivado</FlowTarget>
 </UserAssignments>
 
@@ -18,16 +18,16 @@
 <PipelineType>no</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>36.500</EstimatedClockPeriod>
+<EstimatedClockPeriod>73.000</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
 <Best-caseLatency>4099</Best-caseLatency>
 <Average-caseLatency>4099</Average-caseLatency>
 <Worst-caseLatency>4099</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.205 ms</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.205 ms</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.205 ms</Worst-caseRealTimeLatency>
+<Best-caseRealTimeLatency>0.410 ms</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.410 ms</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.410 ms</Worst-caseRealTimeLatency>
 <Interval-min>4099</Interval-min>
 <Interval-max>4099</Interval-max>
 </SummaryOfOverallLatency>
@@ -35,7 +35,7 @@
 <axi_write_tt>
 <TripCount>4096</TripCount>
 <Latency>4097</Latency>
-<AbsoluteTimeLatency>204850</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>409700</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>3</PipelineDepth>
 <InstanceList>
@@ -635,8 +635,8 @@
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>sext_ln142</name>
-<Object>sext_ln142</Object>
+<name>sext_ln140</name>
+<Object>sext_ln140</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>

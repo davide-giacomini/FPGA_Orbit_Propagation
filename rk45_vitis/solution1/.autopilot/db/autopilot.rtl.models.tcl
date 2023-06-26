@@ -1,6 +1,6 @@
 set SynModuleInfo {
   {SRCNAME ap_fixed_base MODELNAME ap_fixed_base RTLNAME runge_kutta_45_ap_fixed_base}
-  {SRCNAME runge_kutta_45_Pipeline_VITIS_LOOP_121_1 MODELNAME runge_kutta_45_Pipeline_VITIS_LOOP_121_1 RTLNAME runge_kutta_45_runge_kutta_45_Pipeline_VITIS_LOOP_121_1
+  {SRCNAME runge_kutta_45_Pipeline_VITIS_LOOP_119_1 MODELNAME runge_kutta_45_Pipeline_VITIS_LOOP_119_1 RTLNAME runge_kutta_45_runge_kutta_45_Pipeline_VITIS_LOOP_119_1
     SUBMODULES {
       {MODELNAME runge_kutta_45_flow_control_loop_pipe_sequential_init RTLNAME runge_kutta_45_flow_control_loop_pipe_sequential_init BINDTYPE interface TYPE internal_upc_flow_control INSTNAME runge_kutta_45_flow_control_loop_pipe_sequential_init_U}
     }
@@ -34,7 +34,7 @@ set SynModuleInfo {
   }
   {SRCNAME multiply MODELNAME multiply RTLNAME runge_kutta_45_multiply
     SUBMODULES {
-      {MODELNAME runge_kutta_45_mul_177s_177s_287_2_0 RTLNAME runge_kutta_45_mul_177s_177s_287_2_0 BINDTYPE op TYPE mul IMPL auto LATENCY 1 ALLOW_PRAGMA 1}
+      {MODELNAME runge_kutta_45_mul_177s_177s_287_1_1 RTLNAME runge_kutta_45_mul_177s_177s_287_1_1 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
     }
   }
   {SRCNAME runge_kutta_45_Pipeline_10 MODELNAME runge_kutta_45_Pipeline_10 RTLNAME runge_kutta_45_runge_kutta_45_Pipeline_10}

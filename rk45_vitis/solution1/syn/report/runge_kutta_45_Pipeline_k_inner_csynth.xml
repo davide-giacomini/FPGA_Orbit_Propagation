@@ -9,8 +9,8 @@
 <ProductFamily>zynq</ProductFamily>
 <Part>xc7z020-clg400-1</Part>
 <TopModelName>runge_kutta_45_Pipeline_k_inner</TopModelName>
-<TargetClockPeriod>50.00</TargetClockPeriod>
-<ClockUncertainty>13.50</ClockUncertainty>
+<TargetClockPeriod>100.00</TargetClockPeriod>
+<ClockUncertainty>27.00</ClockUncertainty>
 <TargetInitiationInterval>4294967295</TargetInitiationInterval>
 <FlowTarget>vivado</FlowTarget>
 </UserAssignments>
@@ -26,9 +26,9 @@
 <Best-caseLatency>3</Best-caseLatency>
 <Average-caseLatency>4</Average-caseLatency>
 <Worst-caseLatency>7</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.150 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.200 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.350 us</Worst-caseRealTimeLatency>
+<Best-caseRealTimeLatency>0.300 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.400 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.700 us</Worst-caseRealTimeLatency>
 <Interval-min>3</Interval-min>
 <Interval-max>7</Interval-max>
 </SummaryOfOverallLatency>
@@ -48,8 +48,8 @@
 </Latency>
 <AbsoluteTimeLatency>
 <range>
-<min>50</min>
-<max>250</max>
+<min>100</min>
+<max>500</max>
 </range>
 </AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
@@ -145,7 +145,7 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_macply_fu_1911_p_din1</name>
+<name>grp_macply_fu_1913_p_din1</name>
 <Object>runge_kutta_45_Pipeline_k_inner</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -156,7 +156,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_macply_fu_1911_p_din2</name>
+<name>grp_macply_fu_1913_p_din2</name>
 <Object>runge_kutta_45_Pipeline_k_inner</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -167,7 +167,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_macply_fu_1911_p_din3</name>
+<name>grp_macply_fu_1913_p_din3</name>
 <Object>runge_kutta_45_Pipeline_k_inner</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -178,7 +178,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_macply_fu_1911_p_dout0</name>
+<name>grp_macply_fu_1913_p_dout0</name>
 <Object>runge_kutta_45_Pipeline_k_inner</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -189,7 +189,7 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>grp_macply_fu_1911_p_ready</name>
+<name>grp_macply_fu_1913_p_ready</name>
 <Object>runge_kutta_45_Pipeline_k_inner</Object>
 <Type>return value</Type>
 <Scope></Scope>
@@ -211,8 +211,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>add_ln172</name>
-<Object>add_ln172</Object>
+<name>add_ln170</name>
+<Object>add_ln170</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>

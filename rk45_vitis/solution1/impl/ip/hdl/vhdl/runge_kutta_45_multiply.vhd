@@ -11,34 +11,24 @@ use IEEE.numeric_std.all;
 
 entity runge_kutta_45_multiply is
 port (
-    ap_clk : IN STD_LOGIC;
-    ap_rst : IN STD_LOGIC;
+    ap_ready : OUT STD_LOGIC;
     x_V_read : IN STD_LOGIC_VECTOR (176 downto 0);
     y_V_read : IN STD_LOGIC_VECTOR (176 downto 0);
-    ap_return : OUT STD_LOGIC_VECTOR (176 downto 0);
-    ap_ce : IN STD_LOGIC );
+    ap_return : OUT STD_LOGIC_VECTOR (176 downto 0) );
 end;
 
 
 architecture behav of runge_kutta_45_multiply is 
     constant ap_const_logic_1 : STD_LOGIC := '1';
-    constant ap_const_logic_0 : STD_LOGIC := '0';
     constant ap_const_boolean_1 : BOOLEAN := true;
-    constant ap_const_boolean_0 : BOOLEAN := false;
     constant ap_const_lv32_6E : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000001101110";
     constant ap_const_lv32_11E : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000100011110";
+    constant ap_const_logic_0 : STD_LOGIC := '0';
 
 attribute shreg_extract : string;
-    signal ap_block_state1_pp0_stage0_iter0 : BOOLEAN;
-    signal ap_block_state2_pp0_stage0_iter1 : BOOLEAN;
-    signal ap_block_pp0_stage0_11001 : BOOLEAN;
-    signal ap_block_pp0_stage0 : BOOLEAN;
-    signal grp_fu_32_p2 : STD_LOGIC_VECTOR (286 downto 0);
-    signal grp_fu_32_ce : STD_LOGIC;
-    signal ap_ce_reg : STD_LOGIC;
-    signal ap_return_int_reg : STD_LOGIC_VECTOR (176 downto 0);
+    signal r_V_fu_32_p2 : STD_LOGIC_VECTOR (286 downto 0);
 
-    component runge_kutta_45_mul_177s_177s_287_2_0 IS
+    component runge_kutta_45_mul_177s_177s_287_1_1 IS
     generic (
         ID : INTEGER;
         NUM_STAGE : INTEGER;
@@ -46,74 +36,29 @@ attribute shreg_extract : string;
         din1_WIDTH : INTEGER;
         dout_WIDTH : INTEGER );
     port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
         din0 : IN STD_LOGIC_VECTOR (176 downto 0);
         din1 : IN STD_LOGIC_VECTOR (176 downto 0);
-        ce : IN STD_LOGIC;
         dout : OUT STD_LOGIC_VECTOR (286 downto 0) );
     end component;
 
 
 
 begin
-    mul_177s_177s_287_2_0_U72 : component runge_kutta_45_mul_177s_177s_287_2_0
+    mul_177s_177s_287_1_1_U72 : component runge_kutta_45_mul_177s_177s_287_1_1
     generic map (
         ID => 1,
-        NUM_STAGE => 2,
+        NUM_STAGE => 1,
         din0_WIDTH => 177,
         din1_WIDTH => 177,
         dout_WIDTH => 287)
     port map (
-        clk => ap_clk,
-        reset => ap_rst,
         din0 => y_V_read,
         din1 => x_V_read,
-        ce => grp_fu_32_ce,
-        dout => grp_fu_32_p2);
+        dout => r_V_fu_32_p2);
 
 
 
 
-
-    ap_ce_reg_assign_proc : process (ap_clk)
-    begin
-        if (ap_clk'event and ap_clk = '1') then
-            ap_ce_reg <= ap_ce;
-        end if;
-    end process;
-    process (ap_clk)
-    begin
-        if (ap_clk'event and ap_clk = '1') then
-            if ((ap_const_logic_1 = ap_ce_reg)) then
-                ap_return_int_reg <= grp_fu_32_p2(286 downto 110);
-            end if;
-        end if;
-    end process;
-        ap_block_pp0_stage0 <= not((ap_const_boolean_1 = ap_const_boolean_1));
-        ap_block_pp0_stage0_11001 <= not((ap_const_boolean_1 = ap_const_boolean_1));
-        ap_block_state1_pp0_stage0_iter0 <= not((ap_const_boolean_1 = ap_const_boolean_1));
-        ap_block_state2_pp0_stage0_iter1 <= not((ap_const_boolean_1 = ap_const_boolean_1));
-
-    ap_return_assign_proc : process(grp_fu_32_p2, ap_ce_reg, ap_return_int_reg)
-    begin
-        if ((ap_const_logic_0 = ap_ce_reg)) then 
-            ap_return <= ap_return_int_reg;
-        elsif ((ap_const_logic_1 = ap_ce_reg)) then 
-            ap_return <= grp_fu_32_p2(286 downto 110);
-        else 
-            ap_return <= "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
-        end if; 
-    end process;
-
-
-    grp_fu_32_ce_assign_proc : process(ap_block_pp0_stage0_11001)
-    begin
-        if (((ap_const_logic_1 = ap_const_logic_1) and (ap_const_boolean_0 = ap_block_pp0_stage0_11001))) then 
-            grp_fu_32_ce <= ap_const_logic_1;
-        else 
-            grp_fu_32_ce <= ap_const_logic_0;
-        end if; 
-    end process;
-
+    ap_ready <= ap_const_logic_1;
+    ap_return <= r_V_fu_32_p2(286 downto 110);
 end behav;

@@ -19,11 +19,11 @@ module runge_kutta_45_runge_kutta_45_Pipeline_sq_sum_loop (
         r_in_V_2_214_reload,
         squared_sum_V_0_out,
         squared_sum_V_0_out_ap_vld,
-        grp_macply_fu_1911_p_din1,
-        grp_macply_fu_1911_p_din2,
-        grp_macply_fu_1911_p_din3,
-        grp_macply_fu_1911_p_dout0,
-        grp_macply_fu_1911_p_ready
+        grp_macply_fu_1913_p_din1,
+        grp_macply_fu_1913_p_din2,
+        grp_macply_fu_1913_p_din3,
+        grp_macply_fu_1913_p_dout0,
+        grp_macply_fu_1913_p_ready
 );
 
 parameter    ap_ST_fsm_pp0_stage0 = 1'd1;
@@ -39,11 +39,11 @@ input  [85:0] r_in_V_1_210_reload;
 input  [85:0] r_in_V_2_214_reload;
 output  [176:0] squared_sum_V_0_out;
 output   squared_sum_V_0_out_ap_vld;
-output  [176:0] grp_macply_fu_1911_p_din1;
-output  [84:0] grp_macply_fu_1911_p_din2;
-output  [84:0] grp_macply_fu_1911_p_din3;
-input  [176:0] grp_macply_fu_1911_p_dout0;
-input   grp_macply_fu_1911_p_ready;
+output  [176:0] grp_macply_fu_1913_p_din1;
+output  [84:0] grp_macply_fu_1913_p_din2;
+output  [84:0] grp_macply_fu_1913_p_din3;
+input  [176:0] grp_macply_fu_1913_p_dout0;
+input   grp_macply_fu_1913_p_ready;
 
 reg ap_idle;
 reg squared_sum_V_0_out_ap_vld;
@@ -162,7 +162,7 @@ always @ (posedge ap_clk) begin
         if ((ap_loop_init == 1'b1)) begin
             squared_sum_V_3_fu_44 <= 177'd0;
         end else if (((icmp_ln35_fu_93_p2 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1))) begin
-            squared_sum_V_3_fu_44 <= grp_macply_fu_1911_p_dout0;
+            squared_sum_V_3_fu_44 <= grp_macply_fu_1913_p_dout0;
         end
     end
 end
@@ -248,11 +248,11 @@ assign ap_enable_reg_pp0_iter0 = ap_start_int;
 
 assign ap_loop_exit_ready = ap_condition_exit_pp0_iter1_stage0;
 
-assign grp_macply_fu_1911_p_din1 = squared_sum_V_3_fu_44;
+assign grp_macply_fu_1913_p_din1 = squared_sum_V_3_fu_44;
 
-assign grp_macply_fu_1911_p_din2 = trunc_ln859_fu_118_p1;
+assign grp_macply_fu_1913_p_din2 = trunc_ln859_fu_118_p1;
 
-assign grp_macply_fu_1911_p_din3 = trunc_ln859_fu_118_p1;
+assign grp_macply_fu_1913_p_din3 = trunc_ln859_fu_118_p1;
 
 assign icmp_ln35_fu_93_p2 = ((i_fu_40 == 2'd3) ? 1'b1 : 1'b0);
 
