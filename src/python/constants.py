@@ -14,7 +14,7 @@ with open(script_directory + '/../constants/constants.json', 'r') as file:
     data = json.load(file)
 
 # Access the object in the JSON array
-json_object = data[2]   # 0: LEO, 1: GTO, 2: 67P
+json_object = data[1]   # 0: LEO, 1: GTO, 2: 67P
 
 tf_1_rev = json_object['T_REV']
 n_rev = json_object['N_REV']
@@ -27,6 +27,7 @@ r0 = np.array(json_object['r0']) # km
 v0 = np.array(json_object['v0']) # km/s
 dir = json_object['dir']
 orbit_type = json_object['Type']
+orbit_name = json_object['Name']
 
 if (orbit_type == "67P - Rosetta comet"):
 

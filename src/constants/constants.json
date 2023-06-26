@@ -1,6 +1,7 @@
 [
     {
       "Type": "LEO Orbit",
+      "Name": "LEO Orbit",
       "T_REV": 5828.516637686026,
       "N_REV": 5,
       "MU": 398600.4418,
@@ -17,6 +18,7 @@
     },
     {
       "Type": "GTO Orbit",
+      "Name": "GTO Orbit",
       "T_REV": 68346.64468025357928127050,
       "N_REV": 5,
       "MU": 398600.4418,
@@ -35,6 +37,7 @@
     },
     {
       "Type": "67P - Rosetta comet",
+      "Name": "67P Orbit",
       "T_REV": 202771631.54115575551986694336,
       "N_REV": 5,
       "MU": 1.3271E+11,
@@ -44,6 +47,24 @@
       "H_MIN": 1500,
       "r0": [5.895349907345363E+02, 1.920471874450068E+08, 1.046996733994131E+07],
       "v0": [-3.271319714698291E+01, 7.091805000507681E+00, 1.698390637263203E+00],
+      "dir": "67P_orbit",
+      "_comments": [
+        "Interplanetary orbit",
+        "67P - Rosetta comet. Also here we have an orbit of a comet which is elliptical. The orbital period is roughly 6.45 years, so take care of using larger (dimensional) step-sizes here, not minutes but most likely days.",
+        "NB: the motion is around the Sun, so use the Sun gravitational parameter (usually indicated as GM or mu) provided below to propagate the orbit."
+      ]
+    },
+    {
+      "Type": "67P - Rosetta comet",
+      "T_REV": 6.429846256378607,
+      "N_REV": 5,
+      "MU": 39.42217911647045,
+      "TOL": 1e-11,
+      "H0": 0.00031709791983764585,
+      "T0": 0.0,
+      "H_MIN": 4.756468797564688e-05,
+      "r0": [3.940798007006331e-06, 1.283756156002697, 0.06998740884786804],
+      "v0": [-6.896110087340837, 1.494988942282755, 0.3580294751763881],
       "dir": "67P_orbit",
       "_comments": [
         "Interplanetary orbit",

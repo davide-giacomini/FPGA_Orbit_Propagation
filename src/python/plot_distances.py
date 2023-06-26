@@ -28,37 +28,14 @@ y_rk45_python = pd.read_csv(dir + 'y_rk45_tol09_python.csv', header=None).to_num
 t_rk45_python = pd.read_csv(dir + 't_rk45_tol09_python.csv', header=None).to_numpy().reshape((-1,))  # (T,)
 h_rk45_python = pd.read_csv(dir + 'h_rk45_tol09_python.csv', header=None).to_numpy().reshape((-1,))  # (T,)
 
-# y_rk45_adim_python = pd.read_csv(dir + 'y_rk45_tol09_adim_python.csv', header=None).to_numpy() # (T,N)
-# t_rk45_adim_python = pd.read_csv(dir + 't_rk45_tol09_adim_python.csv', header=None).to_numpy().reshape((-1,))  # (T,)
-# h_rk45_adim_python = pd.read_csv(dir + 'h_rk45_tol09_adim_python.csv', header=None).to_numpy().reshape((-1,))  # (T,)
+y_rk45_cpp = pd.read_csv(dir + 'y_rk45_tol09_cpp.csv', header=None).to_numpy() # (T,N)
+t_rk45_cpp = pd.read_csv(dir + 't_rk45_tol09_cpp.csv', header=None).to_numpy().reshape((-1,))  # (T,)
 
-# y_rk45_correct_scale_python = pd.read_csv(dir + 'y_rk45_tol09_python_correct_scale.csv', header=None).to_numpy() # (T,N)
-# t_rk45_correct_scale_python = pd.read_csv(dir + 't_rk45_tol09_python_correct_scale.csv', header=None).to_numpy().reshape((-1,))  # (T,)
-# h_rk45_correct_scale_python = pd.read_csv(dir + 'h_rk45_tol09_python_correct_scale.csv', header=None).to_numpy().reshape((-1,))  # (T,)
+y_rk45_cpp_fpga_sim = pd.read_csv(dir + 'y_rk45_tol09_fpga_sim.csv', header=None).to_numpy() # (T,N)
+t_rk45_cpp_fpga_sim = pd.read_csv(dir + 't_rk45_tol09_fpga_sim.csv', header=None).to_numpy().reshape((-1,))  # (T,)
 
-# y_rk45_jupyter_cpu = pd.read_csv(dir + 'y_rk5_tol09_jupyter_cpu.csv', header=None).to_numpy() # (T,N)
-# t_rk45_jupyter_cpu = pd.read_csv(dir + 't_rk5_tol09_jupyter_cpu.csv', header=None).to_numpy().reshape((-1,))  # (T,)
-
-# y_rk45_adim_jupyter_cpu = pd.read_csv(dir + 'y_rk5_tol09_jupyter_adim_cpu.csv', header=None).to_numpy() # (T,N)
-# t_rk45_adim_jupyter_cpu = pd.read_csv(dir + 't_rk5_tol09_jupyter_adim_cpu.csv', header=None).to_numpy().reshape((-1,))  # (T,)
-
-# y_rk45_cpp = pd.read_csv(dir + 'y_rk45_tol09_cpp.csv', header=None).to_numpy() # (T,N)
-# t_rk45_cpp = pd.read_csv(dir + 't_rk45_tol09_cpp.csv', header=None).to_numpy().reshape((-1,))  # (T,)
-
-# y_rk45_cpp_fpga_sim = pd.read_csv(dir + 'y_rk45_tol09_fpga_sim.csv', header=None).to_numpy() # (T,N)
-# t_rk45_cpp_fpga_sim = pd.read_csv(dir + 't_rk45_tol09_fpga_sim.csv', header=None).to_numpy().reshape((-1,))  # (T,)
-
-y_rk45_fpga_impl = pd.read_csv(dir + 'y_fpga_tol09_jupyter.csv', header=None).to_numpy() # (T,N)
-t_rk45_fpga_impl = pd.read_csv(dir + 't_fpga_tol09_jupyter.csv', header=None).to_numpy().reshape((-1,))  # (T,)
-
-# y_rk45_adim_fpga_impl = pd.read_csv(dir + 'y_fpga_tol09_adim_jupyter.csv', header=None).to_numpy() # (T,N)
-# t_rk45_adim_fpga_impl = pd.read_csv(dir + 't_fpga_tol09_adim_jupyter.csv', header=None).to_numpy().reshape((-1,))  # (T,)
-
-# y_rk45_matlab_h8 = pd.read_csv(dir + 'y_rk45_matlab_h8.csv', header=None).to_numpy() # (T,N)
-# t_rk45_matlab_h8 = pd.read_csv(dir + 't_rk45_matlab_h8.csv', header=None).to_numpy().reshape((-1,))  # (T,)
-
-# y_rk45_python_h8 = pd.read_csv(dir + 'y_rk45_tol09_python_h8.csv', header=None).to_numpy() # (T,N)
-# t_rk45_python_h8 = pd.read_csv(dir + 't_rk45_tol09_python_h8.csv', header=None).to_numpy().reshape((-1,))  # (T,)
+y_rk45_fpga_impl = pd.read_csv(dir + 'y_rk45_fpga.csv', header=None).to_numpy() # (T,N)
+t_rk45_fpga_impl = pd.read_csv(dir + 't_rk45_fpga.csv', header=None).to_numpy().reshape((-1,))  # (T,)
 
 # Create a plot with logarithmic scales on both axes
 # fig, (ax_pos, ax_vel, ax_h) = plt.subplots(3, 1, sharex=True, figsize=(8.27, 11.69))
@@ -80,18 +57,17 @@ ax_pos.plot(t_rk45_python[::10], euclidean_distance(y_rk45_python[::10, :3], uti
 ax_vel.plot(t_rk45_python[::10], euclidean_distance(y_rk45_python[::10, 3:], utils.kepler_orbit(t_rk45_python[::10], r0, v0, mu)[:, 3:]), label="Python (Tol: " + str(constants.tol) + ")", color="red")
 # ax_h.plot(t_rk45_python[::10], h_rk45_python[::10], label="Python (Tol: " + str(constants.tol) + ")", color="purple")
 
-# Plot FPGA error
-ax_pos.plot(t_rk45_fpga_impl[::10], euclidean_distance(y_rk45_fpga_impl[::10, :3], utils.kepler_orbit(t_rk45_fpga_impl[::10], r0, v0, mu)[:, :3]), label="FPGA (Tol: " + str(constants.tol) + ")", color="green")
-ax_vel.plot(t_rk45_fpga_impl[::10], euclidean_distance(y_rk45_fpga_impl[::10, 3:], utils.kepler_orbit(t_rk45_fpga_impl[::10], r0, v0, mu)[:, 3:]), label="FPGA (Tol: " + str(constants.tol) + ")", color="green")
+# # Plot CPU error
+# ax_pos.plot(t_rk45_cpp[::10], euclidean_distance(y_rk45_cpp[::10, :3], utils.kepler_orbit(t_rk45_cpp[::10], r0, v0, mu)[:, :3]), label="CPU (Tol: " + str(constants.tol) + ")", color="green")
+# ax_vel.plot(t_rk45_cpp[::10], euclidean_distance(y_rk45_cpp[::10, 3:], utils.kepler_orbit(t_rk45_cpp[::10], r0, v0, mu)[:, 3:]), label="CPU (Tol: " + str(constants.tol) + ")", color="green")
 
-# ax.plot(t_rk45_correct_scale_python[::10], euclidean_distance(y_rk45_correct_scale_python[::10, :], utils.kepler_orbit(t_rk45_correct_scale_python[::10], r0, v0, mu)[:, :]), label="Distance between exact orbit and rk45 in Python with tol=1e-09 and scale = 0.9*(atol / np.linalg.norm(e))**(1/5)", color="green")
-# ax.plot(t_rk45_adim_python[::10], euclidean_distance(y_rk45_adim_python[::10, :], utils.kepler_orbit(t_rk45_adim_python[::10], r0, v0, mu)[:, :]), label="Distance between exact orbit and rk45 in Python with tol=1e-09 and scale = 0.99, adimensional", color="green")
-# ax.plot(t_rk45_cpp[::10], euclidean_distance(y_rk45_cpp[::10, :], utils.kepler_orbit(t_rk45_cpp[::10], r0, v0, mu)[:, :]), label="Distance between exact orbit and rk45 in C++ with tol=1e-09", color="blue")
-# ax.plot(t_rk45_cpp_fpga_sim[::10], euclidean_distance(y_rk45_cpp_fpga_sim[::10, :], utils.kepler_orbit(t_rk45_cpp_fpga_sim[::10], r0, v0, mu)[:, :]), label="Distance between exact orbit and rk45 in FPGA simulation with tol=1e-09", color="green")
-# ax.plot(t_rk45_jupyter_cpu[::10], euclidean_distance(y_rk45_jupyter_cpu[::10, :], utils.kepler_orbit(t_rk45_jupyter_cpu[::10], r0, v0, mu)[:, :]), label="Distance between exact orbit and rk45 in Python Jupyter with tol=1e-09", color="green")
-# ax.plot(t_rk45_adim_jupyter_cpu[::10], euclidean_distance(y_rk45_adim_jupyter_cpu[::10, :], utils.kepler_orbit(t_rk45_adim_jupyter_cpu[::10], r0, v0, mu)[:, :]), label="Distance between exact orbit and rk45 in Python Jupyter with tol=1e-09, adimensional", color="blue")
-# ax_pos.plot(t_rk45_fpga_impl[::10], euclidean_distance(y_rk45_fpga_impl[::10, :], utils.kepler_orbit(t_rk45_fpga_impl[::10], r0, v0, mu)[:, :]), label="Distance between exact orbit and rk45 in FPGA implementation with tol=1e-09", color="red")
-# ax_pos.plot(t_rk45_adim_fpga_impl[::10], euclidean_distance(y_rk45_adim_fpga_impl[::10, :], utils.kepler_orbit(t_rk45_adim_fpga_impl[::10], r0, v0, mu)[:, :]), label="Distance between exact orbit and rk45 in FPGA implementation with tol=1e-09, adimensional", color="blue")
+# Plot FPGA simulation error
+ax_pos.plot(t_rk45_cpp_fpga_sim[::10], euclidean_distance(y_rk45_cpp_fpga_sim[::10, :3], utils.kepler_orbit(t_rk45_cpp_fpga_sim[::10], r0, v0, mu)[:, :3]), label="FPGA sim (Tol: " + str(constants.tol) + ")", color="green")
+ax_vel.plot(t_rk45_cpp_fpga_sim[::10], euclidean_distance(y_rk45_cpp_fpga_sim[::10, 3:], utils.kepler_orbit(t_rk45_cpp_fpga_sim[::10], r0, v0, mu)[:, 3:]), label="FPGA sim (Tol: " + str(constants.tol) + ")", color="green")
+
+# # Plot FPGA error
+# ax_pos.plot(t_rk45_fpga_impl[::10], euclidean_distance(y_rk45_fpga_impl[::10, :3], utils.kepler_orbit(t_rk45_fpga_impl[::10], r0, v0, mu)[:, :3]), label="FPGA (Tol: " + str(constants.tol) + ")", color="green")
+# ax_vel.plot(t_rk45_fpga_impl[::10], euclidean_distance(y_rk45_fpga_impl[::10, 3:], utils.kepler_orbit(t_rk45_fpga_impl[::10], r0, v0, mu)[:, 3:]), label="FPGA (Tol: " + str(constants.tol) + ")", color="green")
 
 if (constants.orbit_type == "67P - Rosetta comet"):
     ax_pos.set_ylabel('Positional error [AU]', fontsize=_fontsize)
@@ -150,13 +126,13 @@ plt.tight_layout()
 # Adjust the spacing between subplots
 plt.subplots_adjust(top=0.9, bottom=0.1)
 # Add the title above the entire figure
-plt.figtext(0.5, 0.92, constants.orbit_type, fontdict=font_title, ha='center')
+plt.figtext(0.5, 0.92, constants.orbit_name, fontdict=font_title, ha='center')
 
+# Save to file
 dir_name = "../../python_results/" + str(constants.dir)
 dir_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), dir_name)
 if not os.path.exists(dir_path):
         os.makedirs(dir_path)
 plt.savefig(os.path.join(dir_path, "fpga_distance.pdf") ,dpi=300)
 
-# plt.title(constants.orbit_type, fontdict=font_title, loc='center')
 plt.show()
