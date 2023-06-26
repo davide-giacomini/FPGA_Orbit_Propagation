@@ -355,7 +355,7 @@ int main(int argc, char** argv)
     print_info("y0: [%e, %e, %e, %e, %e, %e]", y0[0], y0[1], y0[2], y0[3], y0[4], y0[5]);
     cout << endl;
 
-    // ****** CPU computation 1 computation starts ****** //
+    // ****** CPU computation starts ****** //
     vector<array<double, N>> yy;
     vector<double> tt;
     bool flag;
@@ -365,10 +365,10 @@ int main(int argc, char** argv)
 
     write_matrix_to_csv(yy, yy.size(), "y_rk45_tol09_cpp.csv", dir);
     write_array_to_csv(tt, tt.size(), "t_rk45_tol09_cpp.csv", dir);
-    // ****** CPU computation 1 computation ends ****** //
+    // ****** CPU computation ends ****** //
 
 
-    // ****** FPGA computation 1 computation starts ****** //
+    // ****** FPGA computation starts ****** //
     unsigned int size = 0;
     bool flag_fpga;
     const unsigned int max_rows = ceil(TF/H_MIN) + 1;
@@ -388,25 +388,9 @@ int main(int argc, char** argv)
 
     delete_matrix(yy_fpga);
     delete[] tt_fpga;
-    // ****** FPGA computation 1 computation ends ****** //
+    // ****** FPGA computation ends ****** //
 
     cout << endl;   print_info("End of simulation.");   cout << endl;
 
     return 0;
 }
-
-
-
-// Values used by matlab:
-// pow = 1/5;
-// A = [1/5, 3/10, 4/5, 8/9, 1, 1]; % Still used by restarting criteria
-// % B = [
-// %     1/5         3/40    44/45   19372/6561      9017/3168       35/384
-// %     0           9/40    -56/15  -25360/2187     -355/33         0
-// %     0           0       32/9    64448/6561      46732/5247      500/1113
-// %     0           0       0       -212/729        49/176          125/192
-// %     0           0       0       0               -5103/18656     -2187/6784
-// %     0           0       0       0               0               11/84
-// %     0           0       0       0               0               0
-// %     ];
-// % E = [71/57600; 0; -71/16695; 71/1920; -17253/339200; 22/525; -1/40];

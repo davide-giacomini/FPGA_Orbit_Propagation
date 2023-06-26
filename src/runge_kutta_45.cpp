@@ -7,7 +7,7 @@ void macply(d_fix_ext_t& result, const d_fixed_t& x, const d_fixed_t& y) {
 }
 
 // This module should be synthesized with a bunch of DSPs
-d_fix_ext_t multiply(d_fix_ext_t x, d_fix_ext_t y) {
+d_fix_ext_t multiply(const d_fix_ext_t& x, const d_fix_ext_t& y) {
 #pragma HLS INLINE off
     return x*y;
 }
@@ -16,7 +16,7 @@ d_fix_ext_t multiply(d_fix_ext_t x, d_fix_ext_t y) {
 // Without this, two divisions occupy 6k LUTs each, with this the whole function occupies 1200 LUTs...
 // -- The integer bit-width of the result type is sum of the integer bit-width of num and the fraction bit-width of den
 // -- The fraction bit-width of the result type is equal to the fraction bit-width of num --> W = I + F
-ap_fixed<((I+1) + (W_ext-I_ext)) + (W-I), (I+1) + (W_ext-I_ext)> division(ap_fixed<W+1, I+1> num, d_fix_ext_t den) {
+ap_fixed<((I+1) + (W_ext-I_ext)) + (W-I), (I+1) + (W_ext-I_ext)> division(const ap_fixed<W+1, I+1>& num, const d_fix_ext_t& den) {
 #pragma HLS INLINE off
 	return num / den;
 }
@@ -48,7 +48,7 @@ void vel_der(d_fixed_t& dv_dt, const d_fixed_t r[D], const int& i, const d_fixed
 	multiply_versor: dv_dt = - mu_over_r_squared * versor_r_i;    // There is only 1 multiply
 }
 
-void ode_fpga(d_fixed_t out[N], const d_fixed_t in[N], const d_fixed_t c[N], d_fixed_t mu) {
+void ode_fpga(d_fixed_t out[N], const d_fixed_t in[N], const d_fixed_t c[N], const d_fixed_t& mu) {
 	#pragma HLS INLINE off
 	#pragma HLS ALLOCATION function instances=vel_der limit=1
 
@@ -62,7 +62,7 @@ void ode_fpga(d_fixed_t out[N], const d_fixed_t in[N], const d_fixed_t c[N], d_f
     
     // Compute new position and velocity
 	update_vel_pos:for (int i=0; i<D; i++) {
-		update_pos: dr_dt[i] = v_in[i] + cv[i]; // There is only 1 sum, hence it's custom
+		update_pos: dr_dt[i] = v_in[i] + cv[i]; // Sum doesn't take much resources: custom
 		update_vel: vel_der(dv_dt[i], r_in, i, mu, cr);
 	}
     
@@ -71,7 +71,7 @@ void ode_fpga(d_fixed_t out[N], const d_fixed_t in[N], const d_fixed_t c[N], d_f
 }
 
 // Remember that the top level function must have the same name as the file name
-void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, const double atol, const double h_max, const double h_min, const double mu, unsigned int& size,bool& flag){
+void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, const double atol, const double h_max, const double h_min, const double mu, unsigned int& size, bool& flag){
 
 	#pragma HLS ALLOCATION function instances=macply limit=1
 	#pragma HLS ALLOCATION function instances=multiply limit=1
