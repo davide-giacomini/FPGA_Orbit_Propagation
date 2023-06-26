@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'runge_kutta_45_Pipeline_update_2'
 ================================================================
-* Date:           Tue Jun 13 00:34:49 2023
+* Date:           Mon Jun 26 10:21:40 2023
 
 * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
 * Project:        rk45_vitis
@@ -20,7 +20,7 @@
     +--------+----------+-----------+------------+
     |  Clock |  Target  | Estimated | Uncertainty|
     +--------+----------+-----------+------------+
-    |ap_clk  |  50.00 ns|  11.059 ns|    13.50 ns|
+    |ap_clk  |  50.00 ns|  10.629 ns|    13.50 ns|
     +--------+----------+-----------+------------+
 
 + Latency: 
@@ -54,14 +54,14 @@
 |       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
 +-----------------+---------+-----+--------+-------+-----+
 |DSP              |        -|    -|       -|      -|    -|
-|Expression       |        -|    -|       0|    162|    -|
+|Expression       |        -|    -|       0|    153|    -|
 |FIFO             |        -|    -|       -|      -|    -|
 |Instance         |        -|    -|       -|      -|    -|
 |Memory           |        -|    -|       -|      -|    -|
 |Multiplexer      |        -|    -|       -|     36|    -|
-|Register         |        -|    -|      20|      -|    -|
+|Register         |        -|    -|      21|      -|    -|
 +-----------------+---------+-----+--------+-------+-----+
-|Total            |        0|    0|      20|    198|    0|
+|Total            |        0|    0|      21|    189|    0|
 +-----------------+---------+-----+--------+-------+-----+
 |Available        |      280|  220|  106400|  53200|    0|
 +-----------------+---------+-----+--------+-------+-----+
@@ -82,18 +82,18 @@
     N/A
 
     * Expression: 
-    +---------------------+----------+----+---+-----+------------+------------+
-    |    Variable Name    | Operation| DSP| FF| LUT | Bitwidth P0| Bitwidth P1|
-    +---------------------+----------+----+---+-----+------------+------------+
-    |add_ln265_fu_104_p2  |         +|   0|  0|   11|           3|           1|
-    |add_ln266_fu_130_p2  |         +|   0|  0|   17|          14|          14|
-    |add_ln859_fu_119_p2  |         +|   0|  0|   17|          14|          14|
-    |yy_loc_V_d0          |         +|   0|  0|  107|         100|         100|
-    |icmp_ln265_fu_98_p2  |      icmp|   0|  0|    8|           3|           3|
-    |ap_enable_pp0        |       xor|   0|  0|    2|           1|           2|
-    +---------------------+----------+----+---+-----+------------+------------+
-    |Total                |          |   0|  0|  162|         135|         134|
-    +---------------------+----------+----+---+-----+------------+------------+
+    +---------------------+----------+----+---+----+------------+------------+
+    |    Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------+----------+----+---+----+------------+------------+
+    |add_ln231_fu_104_p2  |         +|   0|  0|  11|           3|           1|
+    |add_ln233_fu_130_p2  |         +|   0|  0|  20|          15|          15|
+    |add_ln859_fu_119_p2  |         +|   0|  0|  20|          15|          15|
+    |yy_loc_V_d0          |         +|   0|  0|  92|          85|          85|
+    |icmp_ln231_fu_98_p2  |      icmp|   0|  0|   8|           3|           3|
+    |ap_enable_pp0        |       xor|   0|  0|   2|           1|           2|
+    +---------------------+----------+----+---+----+------------+------------+
+    |Total                |          |   0|  0| 153|         122|         121|
+    +---------------------+----------+----+---+----+------------+------------+
 
     * Multiplexer: 
     +-------------------------+----+-----------+-----+-----------+
@@ -111,13 +111,13 @@
     +-------------------------+----+----+-----+-----------+
     |           Name          | FF | LUT| Bits| Const Bits|
     +-------------------------+----+----+-----+-----------+
-    |add_ln266_reg_167        |  14|   0|   14|          0|
+    |add_ln233_reg_167        |  15|   0|   15|          0|
     |ap_CS_fsm                |   1|   0|    1|          0|
     |ap_done_reg              |   1|   0|    1|          0|
     |ap_enable_reg_pp0_iter1  |   1|   0|    1|          0|
     |n_fu_36                  |   3|   0|    3|          0|
     +-------------------------+----+----+-----+-----------+
-    |Total                    |  20|   0|   20|          0|
+    |Total                    |  21|   0|   21|          0|
     +-------------------------+----+----+-----+-----------+
 
 
@@ -135,17 +135,17 @@
 |ap_done            |  out|    1|  ap_ctrl_hs|  runge_kutta_45_Pipeline_update_2|  return value|
 |ap_idle            |  out|    1|  ap_ctrl_hs|  runge_kutta_45_Pipeline_update_2|  return value|
 |ap_ready           |  out|    1|  ap_ctrl_hs|  runge_kutta_45_Pipeline_update_2|  return value|
-|sub_ln85945        |   in|   14|     ap_none|                       sub_ln85945|        scalar|
-|yy_loc_V_address0  |  out|   14|   ap_memory|                          yy_loc_V|         array|
+|empty              |   in|   15|     ap_none|                             empty|        scalar|
+|yy_loc_V_address0  |  out|   15|   ap_memory|                          yy_loc_V|         array|
 |yy_loc_V_ce0       |  out|    1|   ap_memory|                          yy_loc_V|         array|
 |yy_loc_V_we0       |  out|    1|   ap_memory|                          yy_loc_V|         array|
-|yy_loc_V_d0        |  out|  100|   ap_memory|                          yy_loc_V|         array|
-|yy_loc_V_address1  |  out|   14|   ap_memory|                          yy_loc_V|         array|
+|yy_loc_V_d0        |  out|   85|   ap_memory|                          yy_loc_V|         array|
+|yy_loc_V_address1  |  out|   15|   ap_memory|                          yy_loc_V|         array|
 |yy_loc_V_ce1       |  out|    1|   ap_memory|                          yy_loc_V|         array|
-|yy_loc_V_q1        |   in|  100|   ap_memory|                          yy_loc_V|         array|
-|sub_ln266          |   in|   14|     ap_none|                         sub_ln266|        scalar|
+|yy_loc_V_q1        |   in|   85|   ap_memory|                          yy_loc_V|         array|
+|sub_ln233          |   in|   15|     ap_none|                         sub_ln233|        scalar|
 |c_V_address0       |  out|    3|   ap_memory|                               c_V|         array|
 |c_V_ce0            |  out|    1|   ap_memory|                               c_V|         array|
-|c_V_q0             |   in|  100|   ap_memory|                               c_V|         array|
+|c_V_q0             |   in|   85|   ap_memory|                               c_V|         array|
 +-------------------+-----+-----+------------+----------------------------------+--------------+
 

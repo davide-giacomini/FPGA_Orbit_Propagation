@@ -19,9 +19,9 @@ using namespace sc_dt;
 
 struct runge_kutta_45_yy_loc_V_RAM_AUTO_1R1W_ram : public sc_core::sc_module {
 
-  static const unsigned DataWidth = 100;
-  static const unsigned AddressRange = 12288;
-  static const unsigned AddressWidth = 14;
+  static const unsigned DataWidth = 85;
+  static const unsigned AddressRange = 24576;
+  static const unsigned AddressWidth = 15;
 
 //latency = 1
 //input_reg = 1
@@ -95,9 +95,9 @@ void prc_write_1()
 SC_MODULE(runge_kutta_45_yy_loc_V_RAM_AUTO_1R1W) {
 
 
-static const unsigned DataWidth = 100;
-static const unsigned AddressRange = 12288;
-static const unsigned AddressWidth = 14;
+static const unsigned DataWidth = 85;
+static const unsigned AddressRange = 24576;
+static const unsigned AddressWidth = 15;
 
 sc_core::sc_in <sc_lv<AddressWidth> > address0;
 sc_core::sc_in<sc_logic> ce0;

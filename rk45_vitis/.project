@@ -37,11 +37,6 @@
 			<location>/home/davide/Projects/runge_kutta_45/rk45_vitis/.apc/.tb</location>
 		</link>
 		<link>
-			<name>.reference/runge_kutta_45.hpp</name>
-			<type>1</type>
-			<location>/home/davide/Projects/runge_kutta_45/src/headers/runge_kutta_45.hpp</location>
-		</link>
-		<link>
 			<name>solution1/constraints</name>
 			<type>2</type>
 			<location>/home/davide/Projects/runge_kutta_45/rk45_vitis/solution1/.tcls</location>

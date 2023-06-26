@@ -14,11 +14,16 @@ module runge_kutta_45_runge_kutta_45_Pipeline_sq_sum_loop (
         ap_done,
         ap_idle,
         ap_ready,
-        e_V_address0,
-        e_V_ce0,
-        e_V_q0,
-        X_V_7_out,
-        X_V_7_out_ap_vld
+        r_in_V_0_26_reload,
+        r_in_V_1_210_reload,
+        r_in_V_2_214_reload,
+        squared_sum_V_0_out,
+        squared_sum_V_0_out_ap_vld,
+        grp_macply_fu_1911_p_din1,
+        grp_macply_fu_1911_p_din2,
+        grp_macply_fu_1911_p_din3,
+        grp_macply_fu_1911_p_dout0,
+        grp_macply_fu_1911_p_ready
 );
 
 parameter    ap_ST_fsm_pp0_stage0 = 1'd1;
@@ -29,15 +34,19 @@ input   ap_start;
 output   ap_done;
 output   ap_idle;
 output   ap_ready;
-output  [2:0] e_V_address0;
-output   e_V_ce0;
-input  [99:0] e_V_q0;
-output  [201:0] X_V_7_out;
-output   X_V_7_out_ap_vld;
+input  [85:0] r_in_V_0_26_reload;
+input  [85:0] r_in_V_1_210_reload;
+input  [85:0] r_in_V_2_214_reload;
+output  [176:0] squared_sum_V_0_out;
+output   squared_sum_V_0_out_ap_vld;
+output  [176:0] grp_macply_fu_1911_p_din1;
+output  [84:0] grp_macply_fu_1911_p_din2;
+output  [84:0] grp_macply_fu_1911_p_din3;
+input  [176:0] grp_macply_fu_1911_p_dout0;
+input   grp_macply_fu_1911_p_ready;
 
 reg ap_idle;
-reg e_V_ce0;
-reg X_V_7_out_ap_vld;
+reg squared_sum_V_0_out_ap_vld;
 
 (* fsm_encoding = "none" *) reg   [0:0] ap_CS_fsm;
 wire    ap_CS_fsm_pp0_stage0;
@@ -47,25 +56,19 @@ reg    ap_idle_pp0;
 wire    ap_block_state1_pp0_stage0_iter0;
 wire    ap_block_state2_pp0_stage0_iter1;
 wire    ap_block_pp0_stage0_subdone;
-wire   [0:0] icmp_ln246_fu_75_p2;
-reg    ap_condition_exit_pp0_iter0_stage0;
+wire   [0:0] icmp_ln35_fu_93_p2;
+reg    ap_condition_exit_pp0_iter1_stage0;
 wire    ap_loop_exit_ready;
 reg    ap_ready_int;
 wire    ap_block_pp0_stage0_11001;
-wire   [63:0] zext_ln73_fu_87_p1;
 wire    ap_block_pp0_stage0;
-reg   [201:0] p_Result_s_fu_34;
-wire   [201:0] p_Val2_s_fu_114_p2;
+wire   [84:0] trunc_ln859_fu_118_p1;
+reg   [1:0] i_fu_40;
+wire   [1:0] add_ln35_fu_99_p2;
 wire    ap_loop_init;
-reg   [2:0] i_fu_38;
-wire   [2:0] add_ln246_fu_81_p2;
-reg   [2:0] ap_sig_allocacmp_i_5;
+reg   [176:0] squared_sum_V_3_fu_44;
 wire    ap_block_pp0_stage0_01001;
-wire  signed [99:0] r_V_4_fu_104_p0;
-wire  signed [199:0] sext_ln1317_fu_100_p1;
-wire  signed [99:0] r_V_4_fu_104_p1;
-wire   [199:0] r_V_4_fu_104_p2;
-wire  signed [201:0] sext_ln859_fu_110_p1;
+wire   [85:0] tmp_s_fu_109_p5;
 reg    ap_done_reg;
 wire    ap_continue_int;
 reg    ap_done_int;
@@ -81,16 +84,20 @@ initial begin
 #0 ap_done_reg = 1'b0;
 end
 
-runge_kutta_45_mul_100s_100s_200_1_1 #(
+runge_kutta_45_mux_32_86_1_1 #(
     .ID( 1 ),
     .NUM_STAGE( 1 ),
-    .din0_WIDTH( 100 ),
-    .din1_WIDTH( 100 ),
-    .dout_WIDTH( 200 ))
-mul_100s_100s_200_1_1_U76(
-    .din0(r_V_4_fu_104_p0),
-    .din1(r_V_4_fu_104_p1),
-    .dout(r_V_4_fu_104_p2)
+    .din0_WIDTH( 86 ),
+    .din1_WIDTH( 86 ),
+    .din2_WIDTH( 86 ),
+    .din3_WIDTH( 2 ),
+    .dout_WIDTH( 86 ))
+mux_32_86_1_1_U61(
+    .din0(r_in_V_0_26_reload),
+    .din1(r_in_V_1_210_reload),
+    .din2(r_in_V_2_214_reload),
+    .din3(i_fu_40),
+    .dout(tmp_s_fu_109_p5)
 );
 
 runge_kutta_45_flow_control_loop_pipe_sequential_init flow_control_loop_pipe_sequential_init_U(
@@ -102,7 +109,7 @@ runge_kutta_45_flow_control_loop_pipe_sequential_init flow_control_loop_pipe_seq
     .ap_start_int(ap_start_int),
     .ap_loop_init(ap_loop_init),
     .ap_ready_int(ap_ready_int),
-    .ap_loop_exit_ready(ap_condition_exit_pp0_iter0_stage0),
+    .ap_loop_exit_ready(ap_condition_exit_pp0_iter1_stage0),
     .ap_loop_exit_done(ap_done_int),
     .ap_continue_int(ap_continue_int),
     .ap_done_int(ap_done_int)
@@ -132,7 +139,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_enable_reg_pp0_iter1 <= 1'b0;
     end else begin
-        if ((1'b1 == ap_condition_exit_pp0_iter0_stage0)) begin
+        if ((1'b1 == ap_condition_exit_pp0_iter1_stage0)) begin
             ap_enable_reg_pp0_iter1 <= 1'b0;
         end else if (((1'b0 == ap_block_pp0_stage0_subdone) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
             ap_enable_reg_pp0_iter1 <= ap_start_int;
@@ -142,10 +149,10 @@ end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        if (((icmp_ln246_fu_75_p2 == 1'd0) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
-            i_fu_38 <= add_ln246_fu_81_p2;
-        end else if ((ap_loop_init == 1'b1)) begin
-            i_fu_38 <= 3'd0;
+        if ((ap_loop_init == 1'b1)) begin
+            i_fu_40 <= 2'd0;
+        end else if (((icmp_ln35_fu_93_p2 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1))) begin
+            i_fu_40 <= add_ln35_fu_99_p2;
         end
     end
 end
@@ -153,26 +160,18 @@ end
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         if ((ap_loop_init == 1'b1)) begin
-            p_Result_s_fu_34 <= 202'd0;
-        end else if ((ap_enable_reg_pp0_iter1 == 1'b1)) begin
-            p_Result_s_fu_34 <= p_Val2_s_fu_114_p2;
+            squared_sum_V_3_fu_44 <= 177'd0;
+        end else if (((icmp_ln35_fu_93_p2 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1))) begin
+            squared_sum_V_3_fu_44 <= grp_macply_fu_1911_p_dout0;
         end
     end
 end
 
 always @ (*) begin
-    if (((icmp_ln246_fu_75_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        X_V_7_out_ap_vld = 1'b1;
+    if (((icmp_ln35_fu_93_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        ap_condition_exit_pp0_iter1_stage0 = 1'b1;
     end else begin
-        X_V_7_out_ap_vld = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if (((icmp_ln246_fu_75_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        ap_condition_exit_pp0_iter0_stage0 = 1'b1;
-    end else begin
-        ap_condition_exit_pp0_iter0_stage0 = 1'b0;
+        ap_condition_exit_pp0_iter1_stage0 = 1'b0;
     end
 end
 
@@ -209,18 +208,10 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((ap_loop_init == 1'b1) & (1'b0 == ap_block_pp0_stage0) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        ap_sig_allocacmp_i_5 = 3'd0;
+    if (((icmp_ln35_fu_93_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        squared_sum_V_0_out_ap_vld = 1'b1;
     end else begin
-        ap_sig_allocacmp_i_5 = i_fu_38;
-    end
-end
-
-always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        e_V_ce0 = 1'b1;
-    end else begin
-        e_V_ce0 = 1'b0;
+        squared_sum_V_0_out_ap_vld = 1'b0;
     end
 end
 
@@ -235,9 +226,7 @@ always @ (*) begin
     endcase
 end
 
-assign X_V_7_out = p_Result_s_fu_34;
-
-assign add_ln246_fu_81_p2 = (ap_sig_allocacmp_i_5 + 3'd1);
+assign add_ln35_fu_99_p2 = (i_fu_40 + 2'd1);
 
 assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd0];
 
@@ -257,22 +246,18 @@ assign ap_enable_pp0 = (ap_idle_pp0 ^ 1'b1);
 
 assign ap_enable_reg_pp0_iter0 = ap_start_int;
 
-assign ap_loop_exit_ready = ap_condition_exit_pp0_iter0_stage0;
+assign ap_loop_exit_ready = ap_condition_exit_pp0_iter1_stage0;
 
-assign e_V_address0 = zext_ln73_fu_87_p1;
+assign grp_macply_fu_1911_p_din1 = squared_sum_V_3_fu_44;
 
-assign icmp_ln246_fu_75_p2 = ((ap_sig_allocacmp_i_5 == 3'd6) ? 1'b1 : 1'b0);
+assign grp_macply_fu_1911_p_din2 = trunc_ln859_fu_118_p1;
 
-assign p_Val2_s_fu_114_p2 = ($signed(sext_ln859_fu_110_p1) + $signed(p_Result_s_fu_34));
+assign grp_macply_fu_1911_p_din3 = trunc_ln859_fu_118_p1;
 
-assign r_V_4_fu_104_p0 = sext_ln1317_fu_100_p1;
+assign icmp_ln35_fu_93_p2 = ((i_fu_40 == 2'd3) ? 1'b1 : 1'b0);
 
-assign r_V_4_fu_104_p1 = sext_ln1317_fu_100_p1;
+assign squared_sum_V_0_out = squared_sum_V_3_fu_44;
 
-assign sext_ln1317_fu_100_p1 = $signed(e_V_q0);
-
-assign sext_ln859_fu_110_p1 = $signed(r_V_4_fu_104_p2);
-
-assign zext_ln73_fu_87_p1 = ap_sig_allocacmp_i_5;
+assign trunc_ln859_fu_118_p1 = tmp_s_fu_109_p5[84:0];
 
 endmodule //runge_kutta_45_runge_kutta_45_Pipeline_sq_sum_loop

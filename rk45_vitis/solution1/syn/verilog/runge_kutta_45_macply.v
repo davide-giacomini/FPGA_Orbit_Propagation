@@ -10,40 +10,37 @@
 module runge_kutta_45_macply (
         ap_ready,
         result_V_read,
-        x,
-        y,
+        x_V_read,
+        y_V_read,
         ap_return
 );
 
 
 output   ap_ready;
-input  [99:0] result_V_read;
-input  [99:0] x;
-input  [99:0] y;
-output  [99:0] ap_return;
+input  [176:0] result_V_read;
+input  [84:0] x_V_read;
+input  [84:0] y_V_read;
+output  [176:0] ap_return;
 
-wire   [159:0] lhs_fu_50_p3;
-wire   [159:0] r_V_fu_44_p2;
-wire   [159:0] ret_V_fu_58_p2;
+wire   [169:0] r_V_fu_36_p2;
+wire  signed [176:0] sext_ln859_fu_42_p1;
 
-runge_kutta_45_mul_100s_100s_160_1_1 #(
+runge_kutta_45_mul_85s_85s_170_1_1 #(
     .ID( 1 ),
     .NUM_STAGE( 1 ),
-    .din0_WIDTH( 100 ),
-    .din1_WIDTH( 100 ),
-    .dout_WIDTH( 160 ))
-mul_100s_100s_160_1_1_U68(
-    .din0(y),
-    .din1(x),
-    .dout(r_V_fu_44_p2)
+    .din0_WIDTH( 85 ),
+    .din1_WIDTH( 85 ),
+    .dout_WIDTH( 170 ))
+mul_85s_85s_170_1_1_U56(
+    .din0(y_V_read),
+    .din1(x_V_read),
+    .dout(r_V_fu_36_p2)
 );
 
 assign ap_ready = 1'b1;
 
-assign ap_return = {{ret_V_fu_58_p2[159:60]}};
+assign ap_return = ($signed(sext_ln859_fu_42_p1) + $signed(result_V_read));
 
-assign lhs_fu_50_p3 = {{result_V_read}, {60'd0}};
-
-assign ret_V_fu_58_p2 = (lhs_fu_50_p3 + r_V_fu_44_p2);
+assign sext_ln859_fu_42_p1 = $signed(r_V_fu_36_p2);
 
 endmodule //runge_kutta_45_macply

@@ -17,12 +17,12 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="4" bw="100" op_0_bw="100" op_1_bw="100">
+<Node id="4" bw="85" op_0_bw="85" op_1_bw="85">
 <![CDATA[
-entry:0 %y_read = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %y
+entry:0 %y_V_read_2 = read i85 @_ssdm_op_Read.ap_auto.i85, i85 %y_V_read
 
 ]]></Node>
-<StgValue><ssdm name="y_read"/></StgValue>
+<StgValue><ssdm name="y_V_read_2"/></StgValue>
 </operation>
 
 <operation id="3" st_id="1" stage="1" lat="1">
@@ -32,12 +32,12 @@ entry:0 %y_read = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %y
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="5" bw="100" op_0_bw="100" op_1_bw="100">
+<Node id="5" bw="85" op_0_bw="85" op_1_bw="85">
 <![CDATA[
-entry:1 %x_read = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %x
+entry:1 %x_V_read_2 = read i85 @_ssdm_op_Read.ap_auto.i85, i85 %x_V_read
 
 ]]></Node>
-<StgValue><ssdm name="x_read"/></StgValue>
+<StgValue><ssdm name="x_V_read_2"/></StgValue>
 </operation>
 
 <operation id="4" st_id="1" stage="1" lat="1">
@@ -47,9 +47,9 @@ entry:1 %x_read = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %x
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="6" bw="100" op_0_bw="100" op_1_bw="100">
+<Node id="6" bw="177" op_0_bw="177" op_1_bw="177">
 <![CDATA[
-entry:2 %result_V_read_1 = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %result_V_read
+entry:2 %result_V_read_1 = read i177 @_ssdm_op_Read.ap_auto.i177, i177 %result_V_read
 
 ]]></Node>
 <StgValue><ssdm name="result_V_read_1"/></StgValue>
@@ -62,12 +62,12 @@ entry:2 %result_V_read_1 = read i100 @_ssdm_op_Read.ap_auto.i100, i100 %result_V
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="7" bw="160" op_0_bw="100">
+<Node id="7" bw="170" op_0_bw="85">
 <![CDATA[
-entry:3 %sext_ln1316 = sext i100 %x_read
+entry:3 %sext_ln1317 = sext i85 %x_V_read_2
 
 ]]></Node>
-<StgValue><ssdm name="sext_ln1316"/></StgValue>
+<StgValue><ssdm name="sext_ln1317"/></StgValue>
 </operation>
 
 <operation id="6" st_id="1" stage="1" lat="1">
@@ -77,9 +77,9 @@ entry:3 %sext_ln1316 = sext i100 %x_read
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="8" bw="160" op_0_bw="100">
+<Node id="8" bw="170" op_0_bw="85">
 <![CDATA[
-entry:4 %sext_ln1319 = sext i100 %y_read
+entry:4 %sext_ln1319 = sext i85 %y_V_read_2
 
 ]]></Node>
 <StgValue><ssdm name="sext_ln1319"/></StgValue>
@@ -92,9 +92,9 @@ entry:4 %sext_ln1319 = sext i100 %y_read
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="9" bw="160" op_0_bw="160" op_1_bw="160">
+<Node id="9" bw="170" op_0_bw="170" op_1_bw="170">
 <![CDATA[
-entry:5 %r_V = mul i160 %sext_ln1319, i160 %sext_ln1316
+entry:5 %r_V = mul i170 %sext_ln1319, i170 %sext_ln1317
 
 ]]></Node>
 <StgValue><ssdm name="r_V"/></StgValue>
@@ -107,12 +107,12 @@ entry:5 %r_V = mul i160 %sext_ln1319, i160 %sext_ln1316
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="10" bw="160" op_0_bw="160" op_1_bw="100" op_2_bw="60">
+<Node id="10" bw="177" op_0_bw="170">
 <![CDATA[
-entry:6 %lhs = bitconcatenate i160 @_ssdm_op_BitConcatenate.i160.i100.i60, i100 %result_V_read_1, i60 0
+entry:6 %sext_ln859 = sext i170 %r_V
 
 ]]></Node>
-<StgValue><ssdm name="lhs"/></StgValue>
+<StgValue><ssdm name="sext_ln859"/></StgValue>
 </operation>
 
 <operation id="9" st_id="1" stage="1" lat="1">
@@ -122,12 +122,12 @@ entry:6 %lhs = bitconcatenate i160 @_ssdm_op_BitConcatenate.i160.i100.i60, i100 
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="11" bw="160" op_0_bw="160" op_1_bw="160">
+<Node id="11" bw="177" op_0_bw="177" op_1_bw="177">
 <![CDATA[
-entry:7 %ret_V = add i160 %lhs, i160 %r_V
+entry:7 %add_ln859 = add i177 %sext_ln859, i177 %result_V_read_1
 
 ]]></Node>
-<StgValue><ssdm name="ret_V"/></StgValue>
+<StgValue><ssdm name="add_ln859"/></StgValue>
 </operation>
 
 <operation id="10" st_id="1" stage="1" lat="1">
@@ -137,27 +137,12 @@ entry:7 %ret_V = add i160 %lhs, i160 %r_V
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="12" bw="100" op_0_bw="100" op_1_bw="160" op_2_bw="32" op_3_bw="32">
+<Node id="12" bw="0" op_0_bw="177">
 <![CDATA[
-entry:8 %result_V_write_assign = partselect i100 @_ssdm_op_PartSelect.i100.i160.i32.i32, i160 %ret_V, i32 60, i32 159
+entry:8 %ret_ln7 = ret i177 %add_ln859
 
 ]]></Node>
-<StgValue><ssdm name="result_V_write_assign"/></StgValue>
-</operation>
-
-<operation id="11" st_id="1" stage="1" lat="1">
-<core>NULL</core>
-<MemPortIdVec></MemPortIdVec>
-<condition id="-1">
-<or_exp><and_exp></and_exp></or_exp>
-</condition>
-
-<Node id="13" bw="0" op_0_bw="100">
-<![CDATA[
-entry:9 %ret_ln51 = ret i100 %result_V_write_assign
-
-]]></Node>
-<StgValue><ssdm name="ret_ln51"/></StgValue>
+<StgValue><ssdm name="ret_ln7"/></StgValue>
 </operation>
 </state>
 </state_list>

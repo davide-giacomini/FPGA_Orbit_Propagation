@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="runge_kutta_45" xd:componentRef="runge_kutta_45" xd:initiationInterval="x" xd:clockPeriod="50" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
   <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
-  <xd:arg xd:name="*(yy)" xd:originalName="yy" xd:direction="inout" xd:interfaceRef="m_axi_X_BUS" xd:busTypeRef="aximm" xd:dataWidth="512" xd:bufferDirection="inout"/>
+  <xd:arg xd:name="*(yy)" xd:originalName="yy" xd:direction="inout" xd:interfaceRef="m_axi_X_BUS" xd:busTypeRef="aximm" xd:dataWidth="128" xd:bufferDirection="inout"/>
   <xd:arg xd:name="yy" xd:originalName="yy" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x10" xd:dataWidth="32" xd:aximmInterfaceRef="m_axi_X_BUS"/>
-  <xd:arg xd:name="*(tt)" xd:originalName="tt" xd:direction="inout" xd:interfaceRef="m_axi_T_BUS" xd:busTypeRef="aximm" xd:dataWidth="512" xd:bufferDirection="inout"/>
+  <xd:arg xd:name="*(tt)" xd:originalName="tt" xd:direction="inout" xd:interfaceRef="m_axi_T_BUS" xd:busTypeRef="aximm" xd:dataWidth="128" xd:bufferDirection="inout"/>
   <xd:arg xd:name="tt" xd:originalName="tt" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x1C" xd:dataWidth="32" xd:aximmInterfaceRef="m_axi_T_BUS"/>
   <xd:arg xd:name="tf" xd:originalName="tf" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x28" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
   <xd:arg xd:name="tf" xd:originalName="tf" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x2C" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
@@ -20,5 +20,5 @@
   <xd:arg xd:name="*(size)" xd:originalName="size" xd:direction="out" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x70" xd:statusOffset="0x74" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
   <xd:arg xd:name="*(flag)" xd:originalName="flag" xd:direction="out" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:offset="0x80" xd:statusOffset="0x84" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
   <xd:latencyEstimates xd:best-case="undef" xd:worst-case="undef" xd:average-case="undef"/>
-  <xd:resourceEstimates xd:LUT="38375" xd:FF="16893" xd:BRAM="0" xd:DSP="96"/>
+  <xd:resourceEstimates xd:LUT="28087" xd:FF="23118" xd:BRAM="0" xd:DSP="61"/>
 </xd:acceleratorMap>

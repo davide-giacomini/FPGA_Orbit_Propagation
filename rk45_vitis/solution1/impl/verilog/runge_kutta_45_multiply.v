@@ -8,34 +8,82 @@
 `timescale 1 ns / 1 ps 
 
 module runge_kutta_45_multiply (
-        ap_ready,
-        x,
-        y,
-        ap_return
+        ap_clk,
+        ap_rst,
+        x_V_read,
+        y_V_read,
+        ap_return,
+        ap_ce
 );
 
 
-output   ap_ready;
-input  [99:0] x;
-input  [99:0] y;
-output  [199:0] ap_return;
+input   ap_clk;
+input   ap_rst;
+input  [176:0] x_V_read;
+input  [176:0] y_V_read;
+output  [176:0] ap_return;
+input   ap_ce;
 
-wire   [199:0] r_V_fu_26_p2;
+reg[176:0] ap_return;
 
-runge_kutta_45_mul_100s_100s_200_1_1 #(
+wire    ap_block_state1_pp0_stage0_iter0;
+wire    ap_block_state2_pp0_stage0_iter1;
+wire    ap_block_pp0_stage0_11001;
+wire    ap_block_pp0_stage0;
+wire   [286:0] grp_fu_32_p2;
+reg    grp_fu_32_ce;
+reg    ap_ce_reg;
+reg   [176:0] ap_return_int_reg;
+
+runge_kutta_45_mul_177s_177s_287_2_0 #(
     .ID( 1 ),
-    .NUM_STAGE( 1 ),
-    .din0_WIDTH( 100 ),
-    .din1_WIDTH( 100 ),
-    .dout_WIDTH( 200 ))
-mul_100s_100s_200_1_1_U73(
-    .din0(y),
-    .din1(x),
-    .dout(r_V_fu_26_p2)
+    .NUM_STAGE( 2 ),
+    .din0_WIDTH( 177 ),
+    .din1_WIDTH( 177 ),
+    .dout_WIDTH( 287 ))
+mul_177s_177s_287_2_0_U72(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .din0(y_V_read),
+    .din1(x_V_read),
+    .ce(grp_fu_32_ce),
+    .dout(grp_fu_32_p2)
 );
 
-assign ap_ready = 1'b1;
+always @ (posedge ap_clk) begin
+    ap_ce_reg <= ap_ce;
+end
 
-assign ap_return = r_V_fu_26_p2;
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_ce_reg)) begin
+        ap_return_int_reg <= {{grp_fu_32_p2[286:110]}};
+    end
+end
+
+always @ (*) begin
+    if ((1'b0 == ap_ce_reg)) begin
+        ap_return = ap_return_int_reg;
+    end else if ((1'b1 == ap_ce_reg)) begin
+        ap_return = {{grp_fu_32_p2[286:110]}};
+    end else begin
+        ap_return = 'bx;
+    end
+end
+
+always @ (*) begin
+    if (((1'b1 == 1'b1) & (1'b0 == ap_block_pp0_stage0_11001))) begin
+        grp_fu_32_ce = 1'b1;
+    end else begin
+        grp_fu_32_ce = 1'b0;
+    end
+end
+
+assign ap_block_pp0_stage0 = ~(1'b1 == 1'b1);
+
+assign ap_block_pp0_stage0_11001 = ~(1'b1 == 1'b1);
+
+assign ap_block_state1_pp0_stage0_iter0 = ~(1'b1 == 1'b1);
+
+assign ap_block_state2_pp0_stage0_iter1 = ~(1'b1 == 1'b1);
 
 endmodule //runge_kutta_45_multiply

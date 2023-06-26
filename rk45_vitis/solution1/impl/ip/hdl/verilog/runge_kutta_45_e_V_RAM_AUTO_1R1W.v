@@ -4,9 +4,9 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // ==============================================================
 `timescale 1 ns / 1 ps
-module runge_kutta_45_e_V_RAM_AUTO_1R1W (address0, ce0, d0, we0, q0, address1, ce1, d1, we1, q1,  reset,clk);
+module runge_kutta_45_e_V_RAM_AUTO_1R1W (address0, ce0, d0, we0, q0, address1, ce1, d1, we1,  reset,clk);
 
-parameter DataWidth = 100;
+parameter DataWidth = 177;
 parameter AddressWidth = 3;
 parameter AddressRange = 6;
 
@@ -19,7 +19,6 @@ input[AddressWidth-1:0] address1;
 input ce1;
 input[DataWidth-1:0] d1;
 input we1;
-output reg[DataWidth-1:0] q1;
 input reset;
 input clk;
 
@@ -43,7 +42,6 @@ begin
     if (ce1) begin
         if (we1) 
             ram[address1] <= d1; 
-        q1 <= ram[address1];
     end
 end
 

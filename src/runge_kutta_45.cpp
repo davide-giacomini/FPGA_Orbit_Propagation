@@ -22,7 +22,7 @@ ap_fixed<((I+1) + (W_ext-I_ext)) + (W-I), (I+1) + (W_ext-I_ext)> division(const 
 }
 
 void vel_der(d_fixed_t& dv_dt, const d_fixed_t r[D], const int& i, const d_fixed_t& mu, const d_fixed_t c[D]){
-	#pragma HLS INLINE off
+	#pragma HLS INLINE
     #pragma HLS ALLOCATION function instances=division limit=1  // Without the pragma allocation it used 15k LUT, ith the pragma it used 1681 LUTs
 
     ap_fixed<W+1, I+1> r_in[D];
@@ -35,7 +35,6 @@ void vel_der(d_fixed_t& dv_dt, const d_fixed_t r[D], const int& i, const d_fixed
     sq_sum_loop:for (int i=0; i<D; i++) {
         #pragma HLS PIPELINE II=1
 
-        // sqrd_sum:squared_sum += r_in[i]*r_in[i]; // there is only 1 macply in this level, wo maybe it's better to avoid it
         macply(squared_sum, r_in[i], r_in[i]);
     }
 
@@ -45,12 +44,12 @@ void vel_der(d_fixed_t& dv_dt, const d_fixed_t r[D], const int& i, const d_fixed
 	ap_fixed<((I+1) + (W_ext-I_ext)) + (W-I), (I+1) + (W_ext-I_ext)> mu_over_r_squared = division(mu, squared_sum);
     ap_fixed<((I+1) + (W_ext-I_ext)) + (W-I), (I+1) + (W_ext-I_ext)> versor_r_i = division(r_in[i], norm_r);
 
-	multiply_versor: dv_dt = - mu_over_r_squared * versor_r_i;    // There is only 1 multiply
+	multiply_versor: dv_dt = - multiply(mu_over_r_squared, versor_r_i);
 }
 
 void ode_fpga(d_fixed_t out[N], const d_fixed_t in[N], const d_fixed_t c[N], const d_fixed_t& mu) {
-	#pragma HLS INLINE off
-	#pragma HLS ALLOCATION function instances=vel_der limit=1
+	#pragma HLS INLINE
+	//#pragma HLS ALLOCATION function instances=vel_der limit=1
 
     d_fixed_t r_in[D], v_in[D], dr_dt[D], dv_dt[D];
     d_fixed_t cr[D], cv[D];
@@ -75,7 +74,7 @@ void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, co
 
 	#pragma HLS ALLOCATION function instances=macply limit=1
 	#pragma HLS ALLOCATION function instances=multiply limit=1
-	#pragma HLS ALLOCATION function instances=ode_fpga limit=1
+	//#pragma HLS ALLOCATION function instances=ode_fpga limit=1
 
 	// The depth is necessary for the cosimulation. The depth is equal to the number of elements of the vector (matrix), no matter which data type it is. For example, for a vector V[256], depth=256, for a matrix M[256][256], the depth=65536. You have to synthesize WITH the depth, so that the cosimulation is able to know how many elements the m_axi will read.
 	// depth_X_BUS = STEP_MAX*N, depth_T_BUS = STEP_MAX
@@ -166,7 +165,7 @@ void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, co
                 d_fix_ext_t sum = 0;
                 k_inner:for (int j=0; j<i; j++) {
 					#pragma HLS loop_tripcount max=5
-					#pragma HLS PIPELINE II=3
+					#pragma HLS PIPELINE
                 
                     macply(sum, A[i][j], k[j][n]);    // sum += A[i][j]*k[j][n];
                 }
@@ -183,7 +182,7 @@ void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, co
 
             d_fix_ext_t sum = 0;
             y_new_inner:for (int j=0; j<Q+2; j++) {
-				#pragma HLS PIPELINE II=1
+				#pragma HLS PIPELINE
             
                 macply(sum, B[j], k[j][n]);    // sum += B[j]*k[j][n];
             }
@@ -197,7 +196,7 @@ void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, co
 			#pragma HLS PIPELINE rewind
 
             err_inner:for (int j=0; j<Q+2; j++) {
-				#pragma HLS PIPELINE II=2
+				#pragma HLS PIPELINE
 
                 macply(e[n], E[j], k[j][n]);  // e[n] += E[j]*k[j][n];
             }
@@ -207,7 +206,7 @@ void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, co
 
         d_fix_ext_t err_squared_sum = 0;
         sq_sum_loop:for (int i=0; i<N; i++) {
-            #pragma HLS PIPELINE II=3
+            #pragma HLS PIPELINE
             macply(err_squared_sum, (d_fixed_t) e[i], (d_fixed_t) e[i]); // squared_sum += e[i]*e[i];
         }
         ap_ufixed<(W_ext+1)/2, (I_ext+1)/2> err; err_sqrt:fxp_sqrt(err, (d_ufix_ext_t) err_squared_sum);
@@ -217,7 +216,7 @@ void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, co
         if (err <= atol_loc) {
 
             update_1:for (int n=0; n<N; n++) {
-                #pragma HLS PIPELINE II=1
+                #pragma HLS PIPELINE
                 yy_loc[tk_next][n] = yy_loc[tk_prev][n] + c[n];
             }
             tt_loc[tk_next] = tt_loc[tk_prev] + h_loc;
@@ -228,7 +227,7 @@ void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, co
         }
         else if (h_loc <= h_min_loc) {
             update_2:for (int n=0; n<N; n++) {
-                #pragma HLS PIPELINE II=1
+                #pragma HLS PIPELINE
                 yy_loc[tk_next][n] = yy_loc[tk_prev][n] + c[n];
             }
             tt_loc[tk_next] = tt_loc[tk_prev] + h_loc;
@@ -241,7 +240,7 @@ void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, co
             scale = 0.99;
         }
 
-        update_h:h_loc *= scale;
+        update_h:h_loc = multiply(h_loc, scale);
         h_loc = h_loc < h_max_loc ? h_loc : h_max_loc;
         h_loc = h_loc > h_min_loc ? h_loc : h_min_loc;
 

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'macply'" level="0">
-<item name = "Date">Tue Jun 13 00:34:48 2023
+<item name = "Date">Mon Jun 26 10:21:37 2023
 </item>
 <item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)</item>
 <item name = "Project">rk45_vitis</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">50.00 ns, 22.104 ns, 13.50 ns</column>
+<column name="ap_clk">50.00 ns, 21.366 ns, 13.50 ns</column>
 </table>
 </item>
 </section>
@@ -47,9 +47,9 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="DSP">-, -, -, -, -</column>
-<column name="Expression">-, -, 0, 167, -</column>
+<column name="Expression">-, -, 0, 184, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">-, 15, 0, 167, -</column>
+<column name="Instance">-, 15, 0, 110, -</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, -, -, -</column>
 <column name="Register">-, -, -, -, -</column>
@@ -61,7 +61,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="mul_100s_100s_160_1_1_U68">mul_100s_100s_160_1_1, 0, 15, 0, 167, 0</column>
+<column name="mul_85s_85s_170_1_1_U56">mul_85s_85s_170_1_1, 0, 15, 0, 110, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -78,7 +78,7 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="ret_V_fu_58_p2">+, 0, 0, 167, 160, 160</column>
+<column name="ap_return">+, 0, 0, 184, 177, 177</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
@@ -97,10 +97,10 @@
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
 <column name="ap_ready">out, 1, ap_ctrl_hs, macply, return value</column>
-<column name="ap_return">out, 100, ap_ctrl_hs, macply, return value</column>
-<column name="result_V_read">in, 100, ap_none, result_V_read, scalar</column>
-<column name="x">in, 100, ap_none, x, scalar</column>
-<column name="y">in, 100, ap_none, y, scalar</column>
+<column name="ap_return">out, 177, ap_ctrl_hs, macply, return value</column>
+<column name="result_V_read">in, 177, ap_none, result_V_read, scalar</column>
+<column name="x_V_read">in, 85, ap_none, x_V_read, scalar</column>
+<column name="y_V_read">in, 85, ap_none, y_V_read, scalar</column>
 </table>
 </item>
 </section>

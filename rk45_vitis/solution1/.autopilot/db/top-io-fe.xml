@@ -2,20 +2,20 @@
   <kernel src_name="runge_kutta_45" language="c" hwCtrl="ap_ctrl_hs" mem_layout="fpga64-xilinx-none">
     <args>
       <arg id="0" access_type="rw" src_name="yy" src_type="double*" src_isptr="1" src_bitwidth="64" src_size_or_depth="12288">
-        <hw hw_usage="data" hw_interface="MAXI" hw_name="X_BUS" hw_bitwidth="512" hw_size_or_depth="0" hw_kernel_support="true">
-          <constraint constraint_type="pragma interface" mode="m_axi" register_option="0" offset="slave" latency="0" num_read_outstanding="16" num_write_outstanding="16" max_read_burst_length="16" max_write_burst_length="16" max_widen_bitwidth="512"/>
-          <constraint constraint_type="bitwidth" orig_bitwidth="64" final_bitwidth="512"/>
+        <hw hw_usage="data" hw_interface="MAXI" hw_name="X_BUS" hw_bitwidth="128" hw_size_or_depth="0" hw_kernel_support="true">
+          <constraint constraint_type="pragma interface" mode="m_axi" register_option="0" offset="slave" latency="0" num_read_outstanding="1" num_write_outstanding="8" max_read_burst_length="16" max_write_burst_length="16" max_widen_bitwidth="128"/>
+          <constraint constraint_type="bitwidth" orig_bitwidth="64" final_bitwidth="128"/>
         </hw>
-        <hw hw_usage="address" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="512" hw_size_or_depth="0" hw_kernel_support="true">
+        <hw hw_usage="address" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="128" hw_size_or_depth="0" hw_kernel_support="true">
           <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="16"/>
         </hw>
       </arg>
       <arg id="1" access_type="rw" src_name="tt" src_type="double*" src_isptr="1" src_bitwidth="64" src_size_or_depth="2048">
-        <hw hw_usage="data" hw_interface="MAXI" hw_name="T_BUS" hw_bitwidth="512" hw_size_or_depth="0" hw_kernel_support="true">
-          <constraint constraint_type="pragma interface" mode="m_axi" register_option="0" offset="slave" latency="0" num_read_outstanding="16" num_write_outstanding="16" max_read_burst_length="16" max_write_burst_length="16" max_widen_bitwidth="512"/>
-          <constraint constraint_type="bitwidth" orig_bitwidth="64" final_bitwidth="512"/>
+        <hw hw_usage="data" hw_interface="MAXI" hw_name="T_BUS" hw_bitwidth="128" hw_size_or_depth="0" hw_kernel_support="true">
+          <constraint constraint_type="pragma interface" mode="m_axi" register_option="0" offset="slave" latency="0" num_read_outstanding="1" num_write_outstanding="8" max_read_burst_length="16" max_write_burst_length="16" max_widen_bitwidth="128"/>
+          <constraint constraint_type="bitwidth" orig_bitwidth="64" final_bitwidth="128"/>
         </hw>
-        <hw hw_usage="address" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="512" hw_size_or_depth="0" hw_kernel_support="true">
+        <hw hw_usage="address" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="128" hw_size_or_depth="0" hw_kernel_support="true">
           <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="28"/>
         </hw>
       </arg>

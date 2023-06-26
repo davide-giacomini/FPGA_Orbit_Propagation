@@ -11,14 +11,14 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 82 \
+    id 215 \
     name yy_loc_V \
     reset_level 1 \
     sync_rst true \
     dir IO \
     corename yy_loc_V \
     op interface \
-    ports { yy_loc_V_address0 { O 14 vector } yy_loc_V_ce0 { O 1 bit } yy_loc_V_we0 { O 1 bit } yy_loc_V_d0 { O 100 vector } yy_loc_V_address1 { O 14 vector } yy_loc_V_ce1 { O 1 bit } yy_loc_V_q1 { I 100 vector } } \
+    ports { yy_loc_V_address0 { O 15 vector } yy_loc_V_ce0 { O 1 bit } yy_loc_V_we0 { O 1 bit } yy_loc_V_d0 { O 85 vector } yy_loc_V_address1 { O 15 vector } yy_loc_V_ce1 { O 1 bit } yy_loc_V_q1 { I 85 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'yy_loc_V'"
@@ -30,14 +30,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 84 \
+    id 217 \
     name c_V \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename c_V \
     op interface \
-    ports { c_V_address0 { O 3 vector } c_V_ce0 { O 1 bit } c_V_q0 { I 100 vector } } \
+    ports { c_V_address0 { O 3 vector } c_V_ce0 { O 1 bit } c_V_q0 { I 85 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'c_V'"
@@ -48,30 +48,30 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 81 \
-    name sub_ln85945 \
+    id 214 \
+    name empty \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_sub_ln85945 \
+    corename dc_empty \
     op interface \
-    ports { sub_ln85945 { I 14 vector } } \
+    ports { empty { I 15 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 83 \
-    name sub_ln256 \
+    id 216 \
+    name sub_ln222 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_sub_ln256 \
+    corename dc_sub_ln222 \
     op interface \
-    ports { sub_ln256 { I 14 vector } } \
+    ports { sub_ln222 { I 15 vector } } \
 } "
 }
 

@@ -12,27 +12,23 @@ use IEEE.numeric_std.all;
 entity runge_kutta_45_macply is
 port (
     ap_ready : OUT STD_LOGIC;
-    result_V_read : IN STD_LOGIC_VECTOR (99 downto 0);
-    x : IN STD_LOGIC_VECTOR (99 downto 0);
-    y : IN STD_LOGIC_VECTOR (99 downto 0);
-    ap_return : OUT STD_LOGIC_VECTOR (99 downto 0) );
+    result_V_read : IN STD_LOGIC_VECTOR (176 downto 0);
+    x_V_read : IN STD_LOGIC_VECTOR (84 downto 0);
+    y_V_read : IN STD_LOGIC_VECTOR (84 downto 0);
+    ap_return : OUT STD_LOGIC_VECTOR (176 downto 0) );
 end;
 
 
 architecture behav of runge_kutta_45_macply is 
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant ap_const_boolean_1 : BOOLEAN := true;
-    constant ap_const_lv60_0 : STD_LOGIC_VECTOR (59 downto 0) := "000000000000000000000000000000000000000000000000000000000000";
-    constant ap_const_lv32_3C : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000111100";
-    constant ap_const_lv32_9F : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000010011111";
     constant ap_const_logic_0 : STD_LOGIC := '0';
 
 attribute shreg_extract : string;
-    signal lhs_fu_50_p3 : STD_LOGIC_VECTOR (159 downto 0);
-    signal r_V_fu_44_p2 : STD_LOGIC_VECTOR (159 downto 0);
-    signal ret_V_fu_58_p2 : STD_LOGIC_VECTOR (159 downto 0);
+    signal r_V_fu_36_p2 : STD_LOGIC_VECTOR (169 downto 0);
+    signal sext_ln859_fu_42_p1 : STD_LOGIC_VECTOR (176 downto 0);
 
-    component runge_kutta_45_mul_100s_100s_160_1_1 IS
+    component runge_kutta_45_mul_85s_85s_170_1_1 IS
     generic (
         ID : INTEGER;
         NUM_STAGE : INTEGER;
@@ -40,31 +36,31 @@ attribute shreg_extract : string;
         din1_WIDTH : INTEGER;
         dout_WIDTH : INTEGER );
     port (
-        din0 : IN STD_LOGIC_VECTOR (99 downto 0);
-        din1 : IN STD_LOGIC_VECTOR (99 downto 0);
-        dout : OUT STD_LOGIC_VECTOR (159 downto 0) );
+        din0 : IN STD_LOGIC_VECTOR (84 downto 0);
+        din1 : IN STD_LOGIC_VECTOR (84 downto 0);
+        dout : OUT STD_LOGIC_VECTOR (169 downto 0) );
     end component;
 
 
 
 begin
-    mul_100s_100s_160_1_1_U68 : component runge_kutta_45_mul_100s_100s_160_1_1
+    mul_85s_85s_170_1_1_U56 : component runge_kutta_45_mul_85s_85s_170_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,
-        din0_WIDTH => 100,
-        din1_WIDTH => 100,
-        dout_WIDTH => 160)
+        din0_WIDTH => 85,
+        din1_WIDTH => 85,
+        dout_WIDTH => 170)
     port map (
-        din0 => y,
-        din1 => x,
-        dout => r_V_fu_44_p2);
+        din0 => y_V_read,
+        din1 => x_V_read,
+        dout => r_V_fu_36_p2);
 
 
 
 
     ap_ready <= ap_const_logic_1;
-    ap_return <= ret_V_fu_58_p2(159 downto 60);
-    lhs_fu_50_p3 <= (result_V_read & ap_const_lv60_0);
-    ret_V_fu_58_p2 <= std_logic_vector(unsigned(lhs_fu_50_p3) + unsigned(r_V_fu_44_p2));
+    ap_return <= std_logic_vector(signed(sext_ln859_fu_42_p1) + signed(result_V_read));
+        sext_ln859_fu_42_p1 <= std_logic_vector(IEEE.numeric_std.resize(signed(r_V_fu_36_p2),177));
+
 end behav;

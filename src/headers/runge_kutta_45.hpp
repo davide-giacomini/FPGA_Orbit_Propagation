@@ -30,7 +30,7 @@
 #define D 3 // dimension
 #define N 2*D   // number of elements in a vector
 
-#define STEP_MAX 2048
+#define STEP_MAX 4096
 
 // The worst case scenario is a vector multiplication with 7 elements
 #define W_ext (int) (2*W + 7)   // WARNING: always put parenthesis otherwise it could be expanded in a wrong way
