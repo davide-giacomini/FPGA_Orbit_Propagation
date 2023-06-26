@@ -1,7 +1,7 @@
 #include "headers/runge_kutta_45.hpp"
 
 // This module should be synthesized with a bunch of DSPs
-void macply(d_fix_ext_t& result, const d_fix_ext_t& x, const d_fix_ext_t& y) {
+void macply(d_fix_ext_t& result, const d_fixed_t& x, const d_fixed_t& y) {
 #pragma HLS INLINE off
     result += x*y;
 }
@@ -16,7 +16,7 @@ d_fix_ext_t multiply(d_fix_ext_t x, d_fix_ext_t y) {
 // Without this, two divisions occupy 6k LUTs each, with this the whole function occupies 1200 LUTs...
 // -- The integer bit-width of the result type is sum of the integer bit-width of num and the fraction bit-width of den
 // -- The fraction bit-width of the result type is equal to the fraction bit-width of num --> W = I + F
-ap_fixed<((I+1) + (((W+1)*2 + 2) - ((I+1)*2 + 2))) + ((W+1) - (I+1)), (I+1) + (((W+1)*2 + 2) - ((I+1)*2 + 2))> division(ap_fixed<W+1, I+1> num, ap_ufixed<(W+1)*2 + 2, (I+1)*2 + 2> den) {
+ap_fixed<((I+1) + (W_ext-I_ext)) + (W-I), (I+1) + (W_ext-I_ext)> division(ap_fixed<W+1, I+1> num, d_fix_ext_t den) {
 #pragma HLS INLINE off
 	return num / den;
 }
@@ -31,18 +31,19 @@ void vel_der(d_fixed_t& dv_dt, const d_fixed_t r[D], const int& i, const d_fixed
         r_in[i] = r[i] + c[i];  // Custom sum because it does not cost too much
     }
 
-    ap_ufixed<(W+1)*2 + 2, (I+1)*2 + 2> squared_sum = 0;
+    d_fix_ext_t squared_sum = 0;
     sq_sum_loop:for (int i=0; i<D; i++) {
         #pragma HLS PIPELINE II=1
 
-        sqrd_sum:squared_sum += r_in[i]*r_in[i]; // there is only 1 macply in this level, wo maybe it's better to avoid it
+        // sqrd_sum:squared_sum += r_in[i]*r_in[i]; // there is only 1 macply in this level, wo maybe it's better to avoid it
+        macply(squared_sum, r_in[i], r_in[i]);
     }
 
-    ap_ufixed<((W+1)*2 + 2) / 2, ((I+1)*2 + 2) / 2> norm_r; vel_der_sqrt:fxp_sqrt(norm_r, squared_sum);
+    ap_ufixed<(W_ext+1)/2, (I_ext+1)/2> norm_r; vel_der_sqrt:fxp_sqrt(norm_r, (d_ufix_ext_t) squared_sum);
 
 	// The divisions are extremely costly in terms of time and resources
-	ap_fixed<((I+1) + (((W+1)*2 + 2) - ((I+1)*2 + 2))) + ((W+1) - (I+1)), (I+1) + (((W+1)*2 + 2) - ((I+1)*2 + 2))> mu_over_r_squared = division(mu, squared_sum);
-    ap_fixed<((I+1) + (((W+1)*2 + 2) - ((I+1)*2 + 2))) + ((W+1) - (I+1)), (I+1) + (((W+1)*2 + 2) - ((I+1)*2 + 2))> versor_r_i = division(r_in[i], norm_r);
+	ap_fixed<((I+1) + (W_ext-I_ext)) + (W-I), (I+1) + (W_ext-I_ext)> mu_over_r_squared = division(mu, squared_sum);
+    ap_fixed<((I+1) + (W_ext-I_ext)) + (W-I), (I+1) + (W_ext-I_ext)> versor_r_i = division(r_in[i], norm_r);
 
 	multiply_versor: dv_dt = - mu_over_r_squared * versor_r_i;    // There is only 1 multiply
 }

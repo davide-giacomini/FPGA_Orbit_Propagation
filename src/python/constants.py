@@ -14,7 +14,7 @@ with open(script_directory + '/../constants/constants.json', 'r') as file:
     data = json.load(file)
 
 # Access the object in the JSON array
-json_object = data[1]   # 0: LEO, 1: GTO, 2: 67P
+json_object = data[2]   # 0: LEO, 1: GTO, 2: 67P
 
 tf_1_rev = json_object['T_REV']
 n_rev = json_object['N_REV']
