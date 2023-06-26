@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
-| Date         : Tue Jun 13 00:53:19 2023
-| Host         : davide-N552VW running 64-bit Ubuntu 20.04.6 LTS
+| Tool Version : Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
+| Date         : Mon Jun 26 15:40:40 2023
+| Host         : davide-Precision-7750 running 64-bit Ubuntu 22.04.2 LTS
 | Command      : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
 | Design       : design_1_wrapper
 | Device       : xc7z020clg400-1
@@ -41,6 +41,7 @@ Table of Contents
 | F7 Muxes                |    0 |     0 |          0 |     26600 |  0.00 |
 | F8 Muxes                |    0 |     0 |          0 |     13300 |  0.00 |
 +-------------------------+------+-------+------------+-----------+-------+
+* Warning! LUT value is adjusted to account for LUT combining.
 
 
 1.1 Summary of Registers by Type
@@ -176,14 +177,14 @@ Table of Contents
 +---------------------------------+------+
 |             Ref Name            | Used |
 +---------------------------------+------+
-| design_1_runge_kutta_45_0_0     |    1 |
-| design_1_rst_ps7_0_100M_0       |    1 |
-| design_1_processing_system7_0_0 |    1 |
-| design_1_auto_pc_2              |    1 |
-| design_1_auto_pc_1              |    1 |
-| design_1_auto_pc_0              |    1 |
-| design_1_auto_ds_1              |    1 |
-| design_1_auto_ds_0              |    1 |
+| design_1_runge_kutta_45_0_3     |    1 |
+| design_1_rst_ps7_0_10M_0        |    1 |
+| design_1_processing_system7_0_2 |    1 |
+| design_1_auto_pc_5              |    1 |
+| design_1_auto_pc_4              |    1 |
+| design_1_auto_pc_3              |    1 |
+| design_1_auto_ds_3              |    1 |
+| design_1_auto_ds_2              |    1 |
 +---------------------------------+------+
 
 

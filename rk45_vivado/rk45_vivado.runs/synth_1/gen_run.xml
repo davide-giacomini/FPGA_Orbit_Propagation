@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1686635196" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/design_1_wrapper.dcp">
-  <File Type="VDS-TIMING-PB" Name="design_1_wrapper_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1687811488" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/design_1_wrapper.dcp">
   <File Type="VDS-TIMINGSUMMARY" Name="design_1_wrapper_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="design_1_wrapper.dcp"/>
   <File Type="RDS-UTIL-PB" Name="design_1_wrapper_utilization_synth.pb"/>
@@ -8,6 +7,7 @@
   <File Type="RDS-PROPCONSTRS" Name="design_1_wrapper_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="design_1_wrapper.vds"/>
   <File Type="REPORTS-TCL" Name="design_1_wrapper_reports.tcl"/>
+  <File Type="VDS-TIMING-PB" Name="design_1_wrapper_timing_summary_synth.pb"/>
   <File Type="PA-TCL" Name="design_1_wrapper.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
@@ -55,11 +55,12 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_auto_pc_2"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_auto_ds_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_auto_pc_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_rst_ps7_0_100M_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_runge_kutta_45_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_auto_pc_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_processing_system7_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_auto_ds_2"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_auto_pc_5"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_runge_kutta_45_0_3"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_rst_ps7_0_10M_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_auto_pc_4"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_auto_ds_3"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_auto_pc_3"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_processing_system7_0_2"/>
 </GenRun>
