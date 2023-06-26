@@ -33,16 +33,15 @@
 
 #define STEP_MAX 2048
 
+// The worst case scenario is a vector multiplication with 7 elements
+#define W_ext (int) (2*W + 7)   // WARNING: always put parenthesis otherwise it could be expanded in a wrong way
+#define I_ext (int) (2*I + 7)
+
 typedef ap_fixed<W, I, AP_TRN, AP_WRAP> d_fixed_t;
-typedef ap_fixed<W, I, AP_TRN, AP_WRAP> d_t_t;
+typedef ap_fixed<W_ext, I_ext, AP_TRN, AP_WRAP> d_fix_ext_t;
+typedef ap_ufixed<W_ext, I_ext, AP_TRN, AP_WRAP> d_ufix_ext_t;
 
 // Top function
 void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, const double atol, const double h_max, const double h_min, const double mu, unsigned int& size, bool& flag);
-
-
-//  TODO this is the method used here: https://numerary.readthedocs.io/en/latest/dormand-prince-method.html
-// I need dynamic memory allocation: https://cplusplus.com/doc/tutorial/dynamic/
-
-// https://maths.cnam.fr/IMG/pdf/RungeKuttaFehlbergProof.pdf
 
 #endif //__RUNGE_KUTTA_45__ not defined

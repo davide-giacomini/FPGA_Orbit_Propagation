@@ -60,7 +60,7 @@
 // specific version of this function.
 
 template <int W2, int IW2, int W1, int IW1>
-void fxp_sqrt(ap_ufixed<W2,IW2>& result, ap_ufixed<W1,IW1>& in_val) {
+void fxp_sqrt(ap_ufixed<W2,IW2>& result, const ap_ufixed<W1,IW1>& in_val) {
 
   assert( ( "IW2 must be >= ceil(IW1/2)", (IW2 >= (IW1+1)/2) ) );
 
