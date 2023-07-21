@@ -1,12 +1,46 @@
 #include "headers/runge_kutta_45.hpp"
 
-// This module should be synthesized with a bunch of DSPs
+/**
+ * @brief Multiplies two fixed-point numbers and accumulates the result to the given output variable.
+ *
+ * The function takes two fixed-point numbers 'x' and 'y' and computes their product. The result
+ * is accumulated to the 'result' variable. The 'result' variable is passed by reference to allow
+ * for in-place accumulation.
+ *
+ * @param result    The output variable to store the accumulated result. It should be of type 'd_fix_ext_t'.
+ * @param x         The first fixed-point number to be multiplied. It should be of type 'd_fixed_t'.
+ * @param y         The second fixed-point number to be multiplied. It should be of type 'd_fixed_t'.
+ *
+ * @note This function uses fixed-point arithmetic types, such as 'd_fixed_t' and 'd_fix_ext_t',
+ *       for computational efficiency and to handle fractional values in hardware-aware computations.
+ * @note The 'result' variable is passed by reference to allow in-place accumulation of the multiplication result.
+ * @note The 'INLINE off' pragma is used to ensure that this function is not inlined during synthesis.
+ *       Inlining can lead to unwanted hardware overhead, so this function should be treated as a separate operation.
+ *
+ * @see 'd_fixed_t' and 'd_fix_ext_t' types for the fixed-point arithmetic used in this function.
+ */
 void macply(d_fix_ext_t& result, const d_fixed_t& x, const d_fixed_t& y) {
 #pragma HLS INLINE off
     result += x*y;
 }
 
-// This module should be synthesized with a bunch of DSPs
+/**
+ * @brief Multiplies two fixed-point numbers and returns the result.
+ *
+ * The function takes two fixed-point numbers 'x' and 'y' and computes their product.
+ * The result is returned as a fixed-point number of type 'd_fix_ext_t'.
+ *
+ * @param x  The first fixed-point number to be multiplied. It should be of type 'd_fix_ext_t'.
+ * @param y  The second fixed-point number to be multiplied. It should be of type 'd_fix_ext_t'.
+ * @return   The fixed-point result of multiplying 'x' and 'y', represented by the type 'd_fix_ext_t'.
+ *
+ * @note This function uses fixed-point arithmetic types, such as 'd_fix_ext_t',
+ *       to handle fractional values in hardware-aware computations.
+ * @note The 'INLINE off' pragma is used to ensure that this function is not inlined during synthesis.
+ *       Inlining can lead to unwanted hardware overhead, so this function should be treated as a separate operation.
+ *
+ * @see 'd_fix_ext_t' type for the fixed-point arithmetic used in this function.
+ */
 d_fix_ext_t multiply(const d_fix_ext_t& x, const d_fix_ext_t& y) {
 #pragma HLS INLINE off
     return x*y;
@@ -16,11 +50,59 @@ d_fix_ext_t multiply(const d_fix_ext_t& x, const d_fix_ext_t& y) {
 // Without this, two divisions occupy 6k LUTs each, with this the whole function occupies 1200 LUTs...
 // -- The integer bit-width of the result type is sum of the integer bit-width of num and the fraction bit-width of den
 // -- The fraction bit-width of the result type is equal to the fraction bit-width of num --> W = I + F
+/**
+ * @brief Performs division of a fixed-point number by another number and returns the result.
+ *
+ * The function takes two fixed-point numbers 'num' and 'den' to perform division.
+ * The result is a fixed-point number represented by the type 'ap_fixed<((I+1) + (W_ext-I_ext)) + (W-I), (I+1) + (W_ext-I_ext)>'.
+ *
+ * @param num The fixed-point dividend to be divided. It should be of type 'ap_fixed<W+1, I+1>'.
+ * @param den The divisor value. It should be of type 'd_fix_ext_t'.
+ * @return The fixed-point result of dividing 'num' by 'den', represented by the type
+ *         'ap_fixed<((I+1) + (W_ext-I_ext)) + (W-I), (I+1) + (W_ext-I_ext)>'.
+ *
+ * @note The 'INLINE off' pragma is used to ensure that this function is not inlined during synthesis.
+ *       Inlining can lead to unwanted hardware overhead, so this function should be treated as a separate operation.
+ * @note The result type assures the same accuracy as in input and the impossibility of overflow:
+ *          -- The integer bit-width of the result type is sum of the integer bit-width of num and the fraction bit-width of den
+ *          -- The fraction bit-width of the result type is equal to the fraction bit-width of num --> W = I + F
+ * @note Divisions occupy lots of resources, therefore by isolating one hardware piece and reusing it several times, it saves lots of resources.
+ *
+ * @see 'ap_fixed' type for the fixed-point arithmetic used in this function.
+ * @see 'd_fix_ext_t' type for the fixed-point arithmetic used in this function.
+ */
 ap_fixed<((I+1) + (W_ext-I_ext)) + (W-I), (I+1) + (W_ext-I_ext)> division(const ap_fixed<W+1, I+1>& num, const d_fix_ext_t& den) {
 #pragma HLS INLINE off
 	return num / den;
 }
 
+/**
+ * @brief Calculates the derivative of the velocity component with respect to time for the i-th dimension.
+ *
+ * The function takes various input parameters and computes the derivative of the velocity component
+ * with respect to time for the i-th dimension. The result is stored in the output variable 'dv_dt'.
+ * The order of computation is optimized for reducing the number of bits necessary for maintaining accuracy:
+ * dv/dt = - r * mu / ||r||³ becomes --> dv/dt = -(mu/||r||²)(r/||r||)
+ *
+ * @param dv_dt   Reference to a variable that will store the calculated derivative. It should be of type 'd_fixed_t'.
+ * @param r       Array containing positional coordinates in D-dimensional space. It should be of type 'd_fixed_t' with size D.
+ * @param i       The index representing the i-th dimension for which the velocity derivative is calculated.
+ * @param mu      The gravitational constant of the system.
+ * @param c       Array containing constant values derived from Runge-Kutta. It should be of type 'd_fixed_t' with size D.
+ *
+ * @note The function uses fixed-point arithmetic types, such as 'd_fixed_t', 'ap_fixed', and 'ap_ufixed',
+ *       for computational efficiency and to handle fractional values in hardware-aware computations.
+ * @note The 'INLINE off' pragma is used to ensure that this function is not inlined during synthesis.
+ *       Inlining can lead to unwanted hardware overhead, so this function should be treated as a separate operation.
+ * @note The 'ALLOCATION' pragma is used to control resource allocation for the 'division' function call inside this function.
+ *       Only 1 module is synthesized, and it is reused several times.
+ * @note The 'norm_r' variable represents the Euclidean norm (magnitude) of the vector 'r_in'.
+ *
+ * @see 'd_fixed_t', 'ap_fixed', and 'ap_ufixed' types for the fixed-point arithmetic used in this function.
+ * @see 'division' function for the computation of division, which is a costly operation in terms of time and resources.
+ * @see 'multiply' function for the computation of the multiplication with fixed-point operands.
+ * @see 'macply' function for efficient fixed-point multiplication and accumulation.
+ */
 void vel_der(d_fixed_t& dv_dt, const d_fixed_t r[D], const int& i, const d_fixed_t& mu, const d_fixed_t c[D]){
 	#pragma HLS INLINE off
     #pragma HLS ALLOCATION function instances=division limit=1  // Without the pragma allocation it used 15k LUT, ith the pragma it used 1681 LUTs
@@ -47,9 +129,32 @@ void vel_der(d_fixed_t& dv_dt, const d_fixed_t r[D], const int& i, const d_fixed
 	multiply_versor: dv_dt = - multiply(mu_over_r_squared, versor_r_i);
 }
 
+/**
+ * @brief Performs computation for the Ordinary Differential Equation (ODE) of the two-body problem.
+ *          -- dr/dt = v
+ *          -- dv/dt = - r * mu/||r||³
+ *
+ * The function takes the N-dimensional vector 'in' and another vector 'c' which is the constants addition of it, and the gravitational constant 'mu' for the ODE system.
+ * It calculates the derivative of the input vector with respect to time and updates the output vector 'out'.
+ * The 'out' vector will contain the new position and velocity values after the computation.
+ *
+ * @param out  Output vector containing the derivative values. It should be of type 'd_fixed_t' with size N.
+ * @param in   Input vector representing the current position and velocity values. It should be of type 'd_fixed_t' with size N.
+ * @param c    Auxiliary vector used for computation. It contains the constants derived from Runge-Kutta. It should be of type 'd_fixed_t' with size N.
+ * @param mu   The gravitational constant of the system.
+ *
+ * @note The function uses fixed-point arithmetic type 'd_fixed_t' for computational efficiency and to handle fractional values in hardware-aware computations.
+ * @note The 'INLINE off' pragma is used to ensure that this function is not inlined during synthesis.
+ *       Inlining can lead to unwanted hardware overhead, so this function should be treated as a separate operation.
+ * @note The 'ALLOCATION' pragma is used to control resource allocation for the 'vel_der' function call inside this function.
+ * @note The 'memcpy' function is used to copy data from one array to another efficiently.
+ *
+ * @see 'd_fixed_t' type for the fixed-point arithmetic used in this function.
+ * @see 'vel_der' function for the computation of the velocity derivative.
+ */
 void ode_fpga(d_fixed_t out[N], const d_fixed_t in[N], const d_fixed_t c[N], const d_fixed_t& mu) {
 	#pragma HLS INLINE off
-	//#pragma HLS ALLOCATION function instances=vel_der limit=1
+	#pragma HLS ALLOCATION function instances=vel_der limit=1
 
     d_fixed_t r_in[D], v_in[D], dr_dt[D], dv_dt[D];
     d_fixed_t cr[D], cv[D];
@@ -74,11 +179,9 @@ void runge_kutta_45(double* yy, double* tt, const double tf, const double h0, co
 
 	#pragma HLS ALLOCATION function instances=macply limit=1
 	#pragma HLS ALLOCATION function instances=multiply limit=1
-	//#pragma HLS ALLOCATION function instances=ode_fpga limit=1
+	#pragma HLS ALLOCATION function instances=ode_fpga limit=1
 
-	// The depth is necessary for the cosimulation. The depth is equal to the number of elements of the vector (matrix), no matter which data type it is. For example, for a vector V[256], depth=256, for a matrix M[256][256], the depth=65536. You have to synthesize WITH the depth, so that the cosimulation is able to know how many elements the m_axi will read.
-	// depth_X_BUS = STEP_MAX*N, depth_T_BUS = STEP_MAX
-	// Can't select it here, but m_axi_alygnment_byte_size=64
+	// The depth is necessary for the cosimulation. The depth is equal to the number of elements of the vector (matrix), no matter which data type it is. For example, for a vector V[256], depth=256, for a matrix M[256][256], the depth=65536. The depth must be present during synthesis, so that the co-simulation is able to know how many elements the m_axi will read.
 	#pragma HLS INTERFACE mode=m_axi bundle=X_BUS depth=12288 max_read_burst_length=16 max_widen_bitwidth=128 max_write_burst_length=16 num_read_outstanding=1 num_write_outstanding=8 port=yy
 	#pragma HLS INTERFACE mode=m_axi bundle=T_BUS depth=2048 max_read_burst_length=16 max_widen_bitwidth=128 max_write_burst_length=16 num_read_outstanding=1 num_write_outstanding=8 port=tt
 

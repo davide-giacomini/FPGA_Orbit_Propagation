@@ -84,23 +84,6 @@ void fxp_sqrt(ap_ufixed<W2,IW2>& result, const ap_ufixed<W1,IW1>& in_val) {
 
   sqrt_loop:for (int i=0; i<W_Q; i++) {
 #pragma HLS PIPELINE II=4
-	   // In this loop:
-	   // - T needs A, then A needs T
-	   // - 1 iter:
-	   //	-- cc0: A shifted (it needs A updated)
-	   //	-- cc1: A updated from X (it needs X updated and A updated)
-	   //	-- cc2: X shifted, T updated from Q and A (it needs Q and A updated, and X updated)
-	   //	-- cc3: Q shifted, A updated from T after T checked (it needs Q updated and T updated)
-	   //	-- cc4: Q updated
-	   // - 2 iter:
-	   //	-- cc2: A should be shifted at cc0! It needs A updated, but the last time it gets updated is at cc3 in the last iteration.
-	   //	-- cc3: A updated from X (X is updated at cc3 in the last)
-	   //	-- cc4: X shifted, T updated from Q and A (everything is updated)
-	   //	-- cc5: Q shifted, A updated from T
-	   //	-- cc6: Q updated
-	   // I see II=3, but if I put II=2 works and if I put II=1 it gives me timing violation and not memory violation.
-	   // If I put II>3 it goes down to II=3.
-	   // When I rewind, it creates a timing violation.
 
      A <<= 2;
      A.range(1, 0) = X.range(W-1, W-2);
