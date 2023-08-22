@@ -65,19 +65,22 @@ If it does not, as happened to me, there is an option to import manually import 
 ### Vitis HLS Synthesis and IP Generation
 I uploaded in GitHub also the configuration files of Vitis HLS and Vivado mostly to save the results that I was getting, but it is very unlikely that the project is supported cross-platform as it is. To manually run the HLS Synthesis and the IP Generation in Vitis HLS, it is necessary to follow the steps below:
 - Create a new Project: in the `Part Selection`, just click on `Boards` and choose the PYNQ-Z2. Don't worry about the solution name or clock period, you can change these options. The `FLow Target` has to be set to `Vivado IP Flow Target`, which is the flow designed to manually import the generated IP in Vivado.
-- A window will appear with the source and test bench to add. You can right-click on both and add the source file [`src/runge_kutta_45.cpp`](src/runge_kutta_45.cpp) and the test bench [`src/runge_kutta_45_test.cpp`](src/runge_kutta_45_test.cpp).
-- Right clicking on the root folder of the project, navigate to `Synthesis` and browse the Top Function, which is in this case `runge_kutta_45`.
-- Now you can run the simulation, synthesis and cosimulation. Being the data too big, it could be necessary to skip the cosimulation for timing purposes. Lastly, you can export the RTL.
-
 <p align="center">
     <img src="readme-assets/create-project-vitis-board-choice.png" height="250">
 </p>
+
+- A window will appear with the source and test bench to add. You can right-click on both and add the source file [`src/runge_kutta_45.cpp`](src/runge_kutta_45.cpp) and the test bench [`src/runge_kutta_45_test.cpp`](src/runge_kutta_45_test.cpp).
 <p align="center">
     <img src="readme-assets/vitis-source-files.png" height="250">
 </p>
+
+- Right clicking on the root folder of the project, navigate to `Synthesis` and browse the Top Function, which is in this case `runge_kutta_45`.
 <p align="center">
     <img src="readme-assets/browse-top-function.png" height="250">
 </p>
+
+
+- Now you can run the simulation, synthesis and cosimulation. Being the data too big, it could be necessary to skip the cosimulation for timing purposes. Lastly, you can export the RTL.
 
 ### Vivado Synthesis and Bitstream Generation
 The IP is generated in the folder  `<vitis_root>/<solution_name>/impl/ip`, which in my case is [`rk45_vitis/solution1/impl/ip`](rk45_vitis/solution1/impl/ip).
