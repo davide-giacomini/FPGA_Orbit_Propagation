@@ -69,23 +69,15 @@ I uploaded in GitHub also the configuration files of Vitis HLS and Vivado mostly
 - Right clicking on the root folder of the project, navigate to `Synthesis` and browse the Top Function, which is in this case `runge_kutta_45`.
 - Now you can run the simulation, synthesis and cosimulation. Being the data too big, it could be necessary to skip the cosimulation for timing purposes. Lastly, you can export the RTL.
 
-<div style="display: flex;">
-  <div style="flex: 29%;">
-    <p align="center">
-        <img src="readme-assets/create-project-vitis-board-choice.png">
-    </p>
-  </div>
-  <div style="flex: 19%;">
-    <p align="center">
-        <img src="readme-assets/vitis-source-files.png">
-    </p>
-  </div>
-  <div style="flex: 49%;">
-    <p align="center">
-        <img src="readme-assets/browse-top-function.png">
-    </p>
-  </div>
-</div>
+<p align="center">
+    <img src="readme-assets/create-project-vitis-board-choice.png" height="250">
+</p>
+<p align="center">
+    <img src="readme-assets/vitis-source-files.png" height="250">
+</p>
+<p align="center">
+    <img src="readme-assets/browse-top-function.png" height="250">
+</p>
 
 ### Vivado Synthesis and Bitstream Generation
 The IP is generated in the folder  `<vitis_root>/<solution_name>/impl/ip`, which in my case is [`rk45_vitis/solution1/impl/ip`](rk45_vitis/solution1/impl/ip).
@@ -102,8 +94,7 @@ After integrating the IP block, click on `Create Block Design`. You can add the 
     <img src="readme-assets/vivado-block-design.png" height="250">
 </p>
 
-More information about recreating my project can be found in my thesis,
-TODO here.
+More information about recreating my project can be found in [my thesis](manuscript/Thesis.pdf).
 
 After integrating the block design, you can run the synthesis, the implementation and finally generate the bitstream, which will be used as an overlay.
 
@@ -116,14 +107,16 @@ In order for the bitstream to be implemented as an Overlay, it has to be importe
 
 WARNING: the paths may change with the version of Vivado.
 
-In my case, I have saved everything under the same folder in this Git project: [`jupyer`](jupyter/). More detailed information on how to integrate Python programmability with this board can be found in my thesis
-TODO here.
-At `Section 4.10`, and in [this tutorial](https://pynq.readthedocs.io/en/v3.0.0/getting_started.html), which is extremely well done. Here you can also find information on how to start the board for the first time.
+In my case, I have saved everything under the same folder in this Git project: [`jupyer`](jupyter/). More detailed information on how to integrate Python programmability with this board can be found in [my thesis](manuscript/Thesis.pdf). At `Section 4.10`, and in [this tutorial](https://pynq.readthedocs.io/en/v3.0.0/getting_started.html), which is extremely well done. Here you can also find information on how to start the board for the first time.
 
 # Troubleshooting
 ### Vivado bugs
 - The "ap_int.h" was bugged: https://support.xilinx.com/s/question/0D52E00006lLgn7SAC/vitishls-20201-debugger-doesnt-start?language=en_US. Probably the gdb option was conflicting with something.
 - For the cosimulation working, in my system I did: https://support.xilinx.com/s/article/Use-of-gmp-h-for-Co-simulation?language=en_US. This is ONLY FOR 2021.x, it seems so... Anyway, just be aware of it. Also, if I add `gmp.h` manually, I have to install `sudo apt install libgmp3-dev`: https://stackoverflow.com/questions/7351205/where-to-find-gmp-h
+
+## Author
+
+- Davide Giacomini ([GitHub](https://github.com/davide-giacomini), [Linkedin](https://www.linkedin.com/in/davide-giacomini/), [email](mailto://giacomini.davide@outlook.com))
 
 ## References
 
